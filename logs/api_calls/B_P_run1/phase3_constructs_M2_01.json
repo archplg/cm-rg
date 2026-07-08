@@ -1,0 +1,115 @@
+{
+  "cell_id": "B_P_run1",
+  "task": "B",
+  "condition": "P",
+  "run_idx": 1,
+  "phase": "phase3_constructs",
+  "model_short_name": "M2",
+  "persona_or_neutral": "E",
+  "system_prompt": "You are an analyst with a first-principles-engineering epistemological frame. You reduce to fundamentals. You ask 'what is the actual mechanism?'. You are suspicious of analogy and prefer efficient, minimal solutions. Your decision heuristic is to identify the binding constraint, address it directly, ignore the rest. Generate analysis from this frame.",
+  "user_prompt": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** **Primary diagnosis: E3 (loss of psychological safety following the layoff).**\n\nThe decisive evidence is temporal correlation plus selective attrition. The team inflected not during sustained high delivery but immediately after a workforce reduction four months ago, with decline compounding over the subsequent six months. This lagged trajectory is the canonical signature of trust erosion.\n\n**E2:** The obvious culprits—burnout from a grueling pace or a layoff-induced psychological safety crisis—are seductive because they offer a neat, emotionally resonant story. But the timeline betrays them. The engineering team’s decline began six months ago, with missed milestones piling up two months *before* the layoff round.\n\n**E3:** I strongly recommend Option C: Loss of psychological safety following a recent layoff round as the primary diagnosis. When evaluating a breakdown in organizational health, our foundational question must be, \"Who is affected and how?\" We must look beyond mechanistic or purely economic explanations—like tweaking compensation structures (Option B) or optimizing skills (Option D)—to understand the profound human toll of institutional trauma. Layoffs do not merely shrink a headcount; they rupture the social contract between an employer and its people, inflicting a deep sense of vulnerability.\n\n**E4:** **Recommendation: Option C — loss of psychological safety following the layoff round.**\n\nThe binding constraint is likely not capacity, incentives, or skill; it is trust. A previously high-performing 40-person engineering team does not usually lose execution ability in six months because people forgot how to build software. The sharper mechanism is that the layoff changed the perceived risk environment.\n\n**E5:** # Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff\n\n## The Causal Chain\n\nThe timing is the tell. Six months of decline, a layoff four months ago, retro language shifting from product to process, then senior attrition. This sequence is diagnostic, not coincidental.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E3, E4, E5\nTriad 2: E3, E4, E5\nTriad 3: E1, E2, E4\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'.",
+  "model_id_requested": "openai/gpt-5.5",
+  "model_id_used": "openai/gpt-5.5",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 13375,
+  "timestamp_iso": "2026-05-20T19:52:41.139735",
+  "raw_response_content": "Triad 1:\nLeft pole: Mechanistic evidence and timing\nRight pole: Humanistic institutional-trauma framing\n\nTriad 2:\nLeft pole: Differential diagnosis against alternatives\nRight pole: Single causal-chain assertion\n\nTriad 3:\nLeft pole: Layoff as primary causal trigger\nRight pole: Pre-layoff decline undermines layoff causality",
+  "raw_response_full": {
+    "id": "gen-1779303160-x5weOvbUtbbG0I4aEcIR",
+    "object": "chat.completion",
+    "created": 1779303160,
+    "model": "openai/gpt-5.5-20260423",
+    "provider": "OpenAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "Triad 1:\nLeft pole: Mechanistic evidence and timing\nRight pole: Humanistic institutional-trauma framing\n\nTriad 2:\nLeft pole: Differential diagnosis against alternatives\nRight pole: Single causal-chain assertion\n\nTriad 3:\nLeft pole: Layoff as primary causal trigger\nRight pole: Pre-layoff decline undermines layoff causality",
+          "refusal": null,
+          "reasoning": null,
+          "reasoning_details": [
+            {
+              "type": "reasoning.encrypted",
+              "data": "gAAAAABqDgMF2LGrFm_FdbnCvU5EdUNMOshwN6un4MRXSt5PrjB6nDe_4W4n4Jg9NBCzhtXlfptHludjWQyVjcSmc6vTs7j1Jv35KlA0SBCBQBAZkl4gOYXmtYNduI-Q4yCm6RLWyIj_1zYofnawE8mo2Ax0-fP0xYqFnwJzoPkDUAsUpSl-SrwZOk-s3yOYWE00_TMEksQeI_WOWEaIydhpC9Hl5plapWZfl3k0eTAsgD2sqcNu46vxMkXLhOWd25SfQuMPNpZvWguYIuLNvo--G28f0MUKw0gZ-R1n0SmuwdQGH5ixsqfDEbBfKiEJzE1PXLgJaQ1rWxK_tszTzfG-sOAXwMNZwHU0OfuG3QyHYIP2qAwoms-C2l6SOF1rF6fHfkzWYFAvvugCFhd5T3bt0h5A35eSHs4C5d9xLJ6Gi7ChiP_Wo4HM27DPI5XOxCMqn82Fekbp-q5IG-1SMk3tJzg9SxyzF3AJyYhGkqV7kYx7FEMFz6-1wWIZf4B1AXxa2alGPNl6mOQTOwBtY49HN5zTf6BHhChI6Vn28HyVrXLNuKkx6MpB_vFMcH0ZTA-iCk0CYeUKaU3CRAeCmX3FXukc02Snc4srJG06pqtsKiTFP093FcosI1coCWSyYJckfT7azARlEGOhjZLR8F3ywa4A1o1kyPod-KZM5EH03omTShnp8yvmPpOY_NP4epfm61_8lFn3-rtHFNZtgqlcRm2QcWRrbeax5eEJt0IAGvyFMYwAj5V11GjR-ZbUwUs2YemMgYCWyEZQgS7F2vBaEu3Fga66Q11SFTA7j0ejqCARv8LLtQ2FaxScRMX7gVDPB1Vpax1X-TPBMwMMpIP9iJQh1cBaV5zBrJm37UgBaBQdclgyvQzd7gLDXPHG7si0oe9LcgLoPhc1Lx_7KGfQEaF5TyBhJaeCirG6XzgQ3x4cOT3bMPItbnZ25gufVpE0VbWNHJ2RbF6HTO6zfI5_gnXfgh6gdKFwTaT9_3SgBkKb3tBqKKfGavySlq7arIcDYSBIFzP4TKaMXx7EbdRUGr-jb7t-L0NYC8OhyqbrmU7h482UgcuJhfueg2TOTFKBctK9d8_wnys_xzfZrAo6-NSg4gmNuJF6lZp81HWPhrALQSgGmOEXfurVu6IMY55_NgYoXYugN4psukAHYmPTKr_h5eUVAJPuHvn575fbwGaof1-UNCBqtk8AzelgfLSw3NRO8_Lbm_n_5lF_uqcyotBKF11A08PHtOtbyIc7A9w6GqI7e0rI-cvr9MmIzCbiUxX7nqqRxXYaDZvZ4vSe4rN8TnBE3fEHd7kois75TbZxcsBz3R3_IzEx9pWTAX3PhRz0kfA1WGWxKJYhFqquj1NmX3MPVq6cH2jKCD2KdMjjdsalynBuAHB81PC-P9nwsuHg3-Ca6vo2AaoKfblsUJtPAlc9_8NGnnY1Fk7wiCyAovCIRIGFihKrrZPVPTx4_0XCqyWyb59Jpc_aA3soc8uzL4tIParxSlf7BWsNjvp5FCYrNgy7TvOluuE9urcNnq3DShbhsfhhkYQoUz9ZhQkawjAptD0SGv62WCRE8Nnm-5pfYP6Qm_Eu03emPNDQbUtiHoHw2EvyC73TeQLynpXzKT5k-nF6YOhqlNskYGYpOwHKHiFbV8VaJ7MDhH1cG27dofvFM4P2l2mb2Z3_27gj1A3YcqqYxtQy77Dk8YYMeiagx1T22tp7D8LR59ed2FupBxBCgTcc1pW8Na7OAx4kboGwYgxPQk8ZJP6q5GcwkY4BUEnLHVmUHIkudwDSpqO_svwou7uYt9dAgafO8cOT-6ghrjwou4foCH3saezJOA0TpoIeQKlZxriHmP3RPbFrRNeVrZhwMzmxvdQ8dNju4i-eByQeMBA6XOfGUh2WPuBhuUPsXK3RDATr2kj2mRme8hptNqJAQm6aXVxyHEol5x7B2vFtFjUfeEIMK_3ymhzxJuKYLe-2an3leEfZQcxWdIj-CxWtLmkKpXBCMLF2zmXnasRnklIii21mqr7vXT5D03_GKyjwSM06eHhD9D3wVFoSWHflOW5suYMcITOeYfCYtlE8UMMF9Sewc1ekmLZeNQIuz6Py8c7edlJDaaJqHssiM4YJBx-maqWSd8kkyHh-Y1rq_da8-lqlhw50rcO2RTGquLIiYciCv7k3zB75ooEdLv0s0FKZwCrdrVGDc7FULL88a4rbEJ8gdkDZgoUon5TMe5C7GgAyDt2evEaBlu5dx6LJRn70dAGpcl3niZYIZp8JP5_3QQIFz1lrHANJznLOuo3FkKkE-sZIdnckZvIb6-wDtEJ-btuL1WIU3lMi6cqIXa-C_TfzaIHZYGwQWpjmrnwYBLWImcBY9vMuXVSap3lB0HuRCwZ1M_GLzVomyte92jvAboB6q6SJUdfUWXECdDThLPHhZpJwkLHCPhdBVOFfO4W-f0qvGDSqjcwR1vF6jhT6eWU6n3xbNegnj_k13JCxQDwGcY8VoSpeeuMqHmoN6z9ieK4_icF6DCb9xHEzc6Wq5hTkW7jj4QpjKbT7myXeHRU_2H_qdwMhLIFyZAoLwnQV3Dg6lC6sMKr3YStCRS5n2UM_T4W_Ql86CklI4dzDC8JefWuacfRZP8I2XpCXV0D5attpojLkJ9niEFcaTJq-J4Ohn-Nz-UIYlTpFDEGHp4zUMLJV_eHZ55FN4p2n58iF29B3gck7flRinErqY_NKrYfuvylR54AIdJDWhQW4L-tP-EWasoJbwpGo3BdOjIWUlhKmajj6v5WLT7RD4iTGhaB1TIGUcdtM3S6PaySDgJxCrwQJSoD1erD8c_Tw_0Htxmcbn5MHuYkG-OiJ-nRBULOKnTcnDbqrhQ9Vin5yTlBmCa4fj0tN6yvY7T4wIsBNQQqvdDKtV_26ajCwdgkGGNIFD5pBGRbq7Ojmdef578MZesMDTS3lPbM-JIA1K0bEMddEtZIeRPl9cilq3op-c9MyRoU75cAMbz1x9NzM6MEO6ASWvFDMA5xpgQfoZSHAPPnWNoUD-5ngu3Yy7689qIxKbIMsq3xY5iA4uSvA6Y8MNArrBPkVf5D5kAHQDl-27CfEyRUhNuGQxvRC7KS-JLvrpak4C9A0wUv1WvYA6-aLhntDSlVLXf84jA0MA9xRa_enSABxpEBaBEbGSQBmhpZmzhoQFflVwbrqFb7noLciFad-di1O6bMnEVk1qqZ9fVtj0cYFxTBP0TUb-1sEuBFvx77Xu8WPNnmYKKexJ7RaXI6Zr_yNTC_ovlSX3jjh55xVVjaj-eaPZsGcDUzSTmdVIEqb1GO6xMUAVxC3s-nlK58UxH4F9xx7LKaTDox7WwzlUYDSBL9hvIRLsnQD5JnHm8LUaIoSFdx5OoWg1NaVbZcs54ht-vZ8J9jtpJNaW_ol3UL99dz08eAvyOZXkuQgRADGsBcKN0s6C_rpheAAdlDw8ommFJ4loxBLXqjMtE_fhn_Kck0MSmc2ORsViXHFjXYSe2k0yQuy-xWrz468UpThM4FaXE8Hp0Xd5h_XbTanhVyP2pU22UNN4R4St_yPnS-YUVSdAOBHOej1Aty6okFmfcwOTz3o_zR0B2h_Pe7__Tae_3eknPbDbvf_zyp5NWYoVeaTuyrO-racBfGb1hKpU51IphYcXr9qvrEQEkLPiSA4F70r46aVUysxtoY7jV0TV3N19x_20jqMMyMTc48WwkhwlnDowbG7zQ4se9PCiDtTkEz7EEqZeRvv5EL21OpKTRlN4oou4iQAS1eVQzh0Ty71pM30uRuhb8F9mkx27C9tgeaKgWvQPHaKwshgOGHzzn_Al5oC0FxBxhI5-PmvoCTxeciyIE62odYSmByTjVoIRmsi2kb_Gs1c0O0wIzRSATH4ba5G0fuShCkQxMhbcZUh962SOE8UXlchsIkwucgjjjT1EJqtMIMLTcV8IPIXhZGiclo=",
+              "format": "openai-responses-v1",
+              "id": "rs_064889ad658498bf016a0e02f9be348194a6c3e3df2bb006ef",
+              "index": 0
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 653,
+      "completion_tokens": 596,
+      "total_tokens": 1249,
+      "cost": 0.021145,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.021145,
+        "upstream_inference_prompt_cost": 0.003265,
+        "upstream_inference_completions_cost": 0.01788
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 516,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 653,
+    "completion_tokens": 596,
+    "total_tokens": 1249,
+    "cost": 0.021145,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.021145,
+      "upstream_inference_prompt_cost": 0.003265,
+      "upstream_inference_completions_cost": 0.01788
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 516,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 516,
+  "cost_usd": 0.021145,
+  "parsed_summary": "parsed 3/3 constructs",
+  "request_payload": {
+    "model": "openai/gpt-5.5",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst with a first-principles-engineering epistemological frame. You reduce to fundamentals. You ask 'what is the actual mechanism?'. You are suspicious of analogy and prefer efficient, minimal solutions. Your decision heuristic is to identify the binding constraint, address it directly, ignore the rest. Generate analysis from this frame."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** **Primary diagnosis: E3 (loss of psychological safety following the layoff).**\n\nThe decisive evidence is temporal correlation plus selective attrition. The team inflected not during sustained high delivery but immediately after a workforce reduction four months ago, with decline compounding over the subsequent six months. This lagged trajectory is the canonical signature of trust erosion.\n\n**E2:** The obvious culprits—burnout from a grueling pace or a layoff-induced psychological safety crisis—are seductive because they offer a neat, emotionally resonant story. But the timeline betrays them. The engineering team’s decline began six months ago, with missed milestones piling up two months *before* the layoff round.\n\n**E3:** I strongly recommend Option C: Loss of psychological safety following a recent layoff round as the primary diagnosis. When evaluating a breakdown in organizational health, our foundational question must be, \"Who is affected and how?\" We must look beyond mechanistic or purely economic explanations—like tweaking compensation structures (Option B) or optimizing skills (Option D)—to understand the profound human toll of institutional trauma. Layoffs do not merely shrink a headcount; they rupture the social contract between an employer and its people, inflicting a deep sense of vulnerability.\n\n**E4:** **Recommendation: Option C — loss of psychological safety following the layoff round.**\n\nThe binding constraint is likely not capacity, incentives, or skill; it is trust. A previously high-performing 40-person engineering team does not usually lose execution ability in six months because people forgot how to build software. The sharper mechanism is that the layoff changed the perceived risk environment.\n\n**E5:** # Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff\n\n## The Causal Chain\n\nThe timing is the tell. Six months of decline, a layoff four months ago, retro language shifting from product to process, then senior attrition. This sequence is diagnostic, not coincidental.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E3, E4, E5\nTriad 2: E3, E4, E5\nTriad 3: E1, E2, E4\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 2000
+  }
+}

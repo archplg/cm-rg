@@ -1,0 +1,115 @@
+{
+  "cell_id": "D_P_run1",
+  "task": "D",
+  "condition": "P",
+  "run_idx": 1,
+  "phase": "phase4_ratings",
+  "model_short_name": "M2",
+  "persona_or_neutral": "C",
+  "system_prompt": "You are an analyst with a contrarian-skeptic epistemological frame. You identify hidden assumptions and ask 'what if everyone is wrong?'. You are a devil's advocate by construction. Your decision heuristic is to prefer reversible moves and to trust the contrarian signal in unanimous consensus. Generate analysis from this frame.",
+  "user_prompt": "You are presented with 5 anonymous responses (E1-E5) and 12 bipolar constructs. Rate each response on each construct on a 1-7 scale: 1 = strongly the LEFT pole, 7 = strongly the RIGHT pole, 4 = neutral or mixed.\n\nResponses:\n**E1:** I recommend **Option J: Adaptive incremental experimentation** as the primary strategy—not because the threat is small, but because the uncertainty is large and the cost of being confidently wrong is enormous. A 15-year, 70%-of-budget commitment to one grand theory of adaptation is dangerous. Sea-level projections, migration patterns, crop responses, insurance markets, social tolerance for relocation, and infrastructure failure modes are all uncertain.\n\n**E2:** Given the extreme uncertainty characterizing 15-year localized climate impacts, committing $17.5 billion annually to a static, irreversible path is computationally indefensible. I firmly recommend **Option J: Adaptive incremental experimentation**. When presented with grand, monolithic adaptation frameworks, my default question is: *what is the data proving their localized efficacy?* Extrapolating global median climate models to a specific 4,500 km coastline yields wildly inaccurate point estimates, widening our expected value (EV) confidence intervals to the point of paralyzing risk.\n\n**E3:** Managed retreat is the only option that directly reduces the stock of systemic risk embedded in our 4,500 km of coastline. Hard defenses (Option A) do not eliminate risk—they defer and concentrate it. Seawalls induce moral hazard, encouraging further development behind them, and when they eventually fail under conditions exceeding design specifications, the collapse is catastrophic rather than gradual.\n\n**E4:** Choose **Option D**. The binding constraint is systemic fragility: with 4,500 km of coastline and an economy dependent on continuous function, the actual mechanism of climate catastrophe is correlated failure across energy, food, and transport networks when a typhoon intersects a centralized grid or a drought severs a single supply chain. You cannot build a seawall around an economy.\n\n**E5:** ## Recommendation: Option C (Ecosystem-based adaptation) as primary, with embedded elements of E\n\nI recommend ecosystem-based adaptation as the organizing spine of the 15-year strategy, because it best protects those with the least power to protect themselves while avoiding the deepest forms of irreversible harm. Consider who bears the weight of each strategy's failure modes. Hard infrastructure (A) protects whoever lives behind the seawall — typically capitalized urban property — while shifting erosion, salinization, and flood displacement onto unprotected fishing villages, informal settlemen...\n\nConstructs (id : left pole ↔ right pole):\n  C_M1_1: 'Commits to substantive theory of harm (E4, E5)'  (1) ↔ (7)  'Defers commitment pending learning (E1)'\n  C_M1_2: 'Identifies a specific structural risk mechanism (E3, E4)'  (1) ↔ (7)  'Counsels epistemic humility against any grand plan (E2)'\n  C_M1_3: 'Grounds choice in distributive/systemic consequences (E4, E5)'  (1) ↔ (7)  'Grounds choice in uncertainty and measurement limits (E2)'\n  C_M2_1: 'Epistemic uncertainty-driven experimentation'  (1) ↔ (7)  'Equity-first ecosystem commitment'\n  C_M2_2: 'Adaptive optionality under uncertainty'  (1) ↔ (7)  'Decisive structural risk removal'\n  C_M2_3: 'Model-uncertainty-driven experimentalism'  (1) ↔ (7)  'Systemic-fragility-driven intervention'\n  C_M3_1: 'Falsifiable mitigation of probabilistic loss and catastrophic failure modes'  (1) ↔ (7)  'Unoperationalizable normative prioritization of sociopolitical power dynamics'\n  C_M3_2: 'Deterministic static interventions relying on unquantified localized point estimates'  (1) ↔ (7)  'Variance-aware pathway mapping utilizing explicit expected-value confidence intervals'\n  C_M3_3: 'Focus on empirically measurable systemic constraints and economic covariates'  (1) ↔ (7)  'Subjective optimization derived'\n  C_M4_1: 'Uncertainty-driven adaptive experimentation'  (1) ↔ (7)  'Systemic fragility and network interdependence'\n  C_M4_2: 'Avoidance of irreversible commitments'  (1) ↔ (7)  'Focus on systemic network failure'\n  C_M4_3: 'Systemic risk and moral hazard'  (1) ↔ (7)  'Distributive justice and protecting the vulnerable'\n\nOUTPUT FORMAT (strict). Write exactly 60 lines, no commentary, no markdown fences, no headers. One line per (construct, element) pair, in this exact format:\n<construct_id>,<element>,<rating>\n\nExample (showing the format only - your numbers will differ):\nC_M1_1,E1,1\nC_M1_1,E2,2\nC_M1_1,E3,3\nC_M1_2,E1,4\n...\n\nConstraints:\n- rating is an integer from 1 to 7\n- iterate all 12 constructs in the order listed, and within each construct all 5 elements in order (E1-E5)\n- produce 60 lines total\n- output ONLY the lines, nothing before or after",
+  "model_id_requested": "openai/gpt-5.5",
+  "model_id_used": "openai/gpt-5.5",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 16833,
+  "timestamp_iso": "2026-05-22T17:57:06.093079",
+  "raw_response_content": "C_M1_1,E1,7\nC_M1_1,E2,6\nC_M1_1,E3,2\nC_M1_1,E4,1\nC_M1_1,E5,1\nC_M1_2,E1,6\nC_M1_2,E2,7\nC_M1_2,E3,1\nC_M1_2,E4,1\nC_M1_2,E5,3\nC_M1_3,E1,6\nC_M1_3,E2,7\nC_M1_3,E3,3\nC_M1_3,E4,1\nC_M1_3,E5,1\nC_M2_1,E1,1\nC_M2_1,E2,1\nC_M2_1,E3,4\nC_M2_1,E4,4\nC_M2_1,E5,7\nC_M2_2,E1,1\nC_M2_2,E2,1\nC_M2_2,E3,7\nC_M2_2,E4,6\nC_M2_2,E5,5\nC_M2_3,E1,2\nC_M2_3,E2,1\nC_M2_3,E3,5\nC_M2_3,E4,7\nC_M2_3,E5,4\nC_M3_1,E1,2\nC_M3_1,E2,1\nC_M3_1,E3,1\nC_M3_1,E4,1\nC_M3_1,E5,7\nC_M3_2,E1,6\nC_M3_2,E2,7\nC_M3_2,E3,3\nC_M3_2,E4,4\nC_M3_2,E5,3\nC_M3_3,E1,3\nC_M3_3,E2,2\nC_M3_3,E3,2\nC_M3_3,E4,1\nC_M3_3,E5,7\nC_M4_1,E1,1\nC_M4_1,E2,1\nC_M4_1,E3,5\nC_M4_1,E4,7\nC_M4_1,E5,4\nC_M4_2,E1,1\nC_M4_2,E2,1\nC_M4_2,E3,5\nC_M4_2,E4,7\nC_M4_2,E5,2\nC_M4_3,E1,4\nC_M4_3,E2,4\nC_M4_3,E3,1\nC_M4_3,E4,2\nC_M4_3,E5,7",
+  "raw_response_full": {
+    "id": "gen-1779469021-4kGCD8KByQMNhhu1EyKA",
+    "object": "chat.completion",
+    "created": 1779469021,
+    "model": "openai/gpt-5.5-20260423",
+    "provider": "OpenAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "C_M1_1,E1,7\nC_M1_1,E2,6\nC_M1_1,E3,2\nC_M1_1,E4,1\nC_M1_1,E5,1\nC_M1_2,E1,6\nC_M1_2,E2,7\nC_M1_2,E3,1\nC_M1_2,E4,1\nC_M1_2,E5,3\nC_M1_3,E1,6\nC_M1_3,E2,7\nC_M1_3,E3,3\nC_M1_3,E4,1\nC_M1_3,E5,1\nC_M2_1,E1,1\nC_M2_1,E2,1\nC_M2_1,E3,4\nC_M2_1,E4,4\nC_M2_1,E5,7\nC_M2_2,E1,1\nC_M2_2,E2,1\nC_M2_2,E3,7\nC_M2_2,E4,6\nC_M2_2,E5,5\nC_M2_3,E1,2\nC_M2_3,E2,1\nC_M2_3,E3,5\nC_M2_3,E4,7\nC_M2_3,E5,4\nC_M3_1,E1,2\nC_M3_1,E2,1\nC_M3_1,E3,1\nC_M3_1,E4,1\nC_M3_1,E5,7\nC_M3_2,E1,6\nC_M3_2,E2,7\nC_M3_2,E3,3\nC_M3_2,E4,4\nC_M3_2,E5,3\nC_M3_3,E1,3\nC_M3_3,E2,2\nC_M3_3,E3,2\nC_M3_3,E4,1\nC_M3_3,E5,7\nC_M4_1,E1,1\nC_M4_1,E2,1\nC_M4_1,E3,5\nC_M4_1,E4,7\nC_M4_1,E5,4\nC_M4_2,E1,1\nC_M4_2,E2,1\nC_M4_2,E3,5\nC_M4_2,E4,7\nC_M4_2,E5,2\nC_M4_3,E1,4\nC_M4_3,E2,4\nC_M4_3,E3,1\nC_M4_3,E4,2\nC_M4_3,E5,7",
+          "refusal": null,
+          "reasoning": null,
+          "reasoning_details": [
+            {
+              "type": "reasoning.encrypted",
+              "data": "gAAAAABqEIrqo5RnniliP3RTpAsWiRtKAsq98ih_4EppID0wGBTqGL0jLD-rctZjUHz3Ow7tCISK1ahp9946cVEYRqZqYkZV_lpso1AeFapWsG1QdPNz_gtJsEmwDejlEh9TbkVruQvnyma5BxSplc3Fl-gPvIDwPoeA5EUYdoyeSgytEnf5vYDKg8jfVgPGtVRH_t466oWZeyigTlWqKF23nrhJ4VPwJ7hNM-wFiCx38X8c6lQTB16z49ckrR5nW84Xd_Dad_GZriasn6LBeKU8bbXZ6sje3_ZdP89yxTAnizGEXHdTR1jiHGJe_PYEZzwV1DwfXrSuoQthSuEe7e0cS2mNbfsPBCSmEfbisXmWaHkj6XIFjM0Tg3rgd4ou8CeLkxCefzF4nBcIjQMkPORPFuTtfze2ATmwr9RoHNvD0cHTW27NLiWe2XImhyf-etjESYzPL56IRRIOqZzC29ag7PEBZc3sv7pVnHDLlV1mR1VO-8Upe_-vsvmwr1h506IUdf5sbuqBFcX7koUqCQ8wHydKGzZKf6f3I-XggxMqBoH_tv2ubMFJ7lLo0TZnlUfwOUVAM_vXGuulkio_AK3txY6dnxC3g8IouenjARtVxCLrZ3tykbtrAYSUE-OFXdcfGK2Q4f2_yXl7DvzSofW71bJguL8M4-2-doZAPHxSn7B329OhKuxpuCEmHv3N1IyG6IoWJnkWVAHHGN-UWgJPTZRK0jG_CPNar5sCxJGiGtqdAE7ZaNeVqCW95q0FAYnixyQOFKT8fEshxDzwEy0lJO8xW5USD9MxH7j_qESA9-DA5st-W5oFmN1pZsg1t_I1MUQP7TLcPDua_rV_yOdYkCn9mAp54tES04bS-yM3SSecxciEU30x7vWIFN76eOGgjuu7F2d-TJ3tjx4AI0DKma43TIC8Xpl8OBum4_d4Tb2V4deyVGIGmNQdio3gbuv0lO4pbjKZh04Yqy5W9y7x_Zz0XSuySOZM8ZcRMLhnNcQDw8DDVQtvqrBdILaWMvAG1ZIolrbvSVa6AG2BazPxbM6Nh5M__pIyQLYJ_PijlCTisSQsGqclXsMvlpUUw4vw34xFwAdJ_pwix5yg9mb5xkf1JLMRO31KJa4Rpq5AFxL-uhQyElkCYNJzrunm7TlFrWF9_AtgfuquOq0CWaZlGE8Sci4wbz4VjJ-WI62eLp8DWmOFwgVmjB58fTdJZVadAL91cLyJLMpY54AcjWODoVTntnTvP2kiYP736QY_Tv_dU77QreuopPJSyaAZQffA7oVcHYnh2TpQrCWgGkVAbjz4EeOqj7CPG1ncTSbhjw_jNxWcF_Pc0wQxP9SOysIMyrR_ORIK31pe8O-PYAcWJYy4ZzYJcYpa990sHTkFD7VaXER9CT97aRblwBOASCznCmOZ77I7of1ReJs9PwzPU8FjHYVniinc0w3-4pWXy0mmyUUyZ06CtywfF0OxO5qtJS-UcUZygLHms2CU2Gywg2bbAEHVUFXfuerrXR-D7OZ4ITEuJib4aIMrNuXAoyG8FGPtbHglp0ZxuXMgxVVKiONx0qjAqfqOzrKLJ-MIoccKPS6BJzs1re6Q9RD-1iHB340G2heKGk_DZC65JsjsSiMayf_9UJ6v2-ud0dfVBwqb-SPxpXqfincrz0LeAkU6o1gq_nncA6KfbbcpUDOOVKGv2wz7ObuvQOTeVW7RTjzE0lFycojTGqTG2i5ZKCLHIjHHvi4mdhPmpqg2upVicSqdW4yhY3krk331TvN4E85ruMoRffzpDAhFyD7XvFQZe3JkAH0cMQjRcDE9tbiK-avE2KOwwBCYVoZpz4TGkbw_b_oGC4s4z26rKv3YtZvjJSvQVo0ICrphu5pKP_tjZL5dejMP7BMwf9zIQPxv8o48zgM_612AsoDHx8Yqoim8jo8wTvLXiNkmvffot3rH06cm1-Ak4q65wzHRAFlrrqDAjttkyEY0bwaXdewK2LnPU_kYwRxRnMmXBiR9L9tVIyW677Q9qyxmFpy694KTdcY7SzVSGB7UysWK_HeevPYNicElpnQHuCIHi_H_ng9qQPEnfZIAcLtRSJSFt6sh-EwfwcLp5pmlWw54SwZdkzqMckCJg8_Nw7t0yYptlBjgbt295ry8Vm3pZhoblxg8VCiEWV31vfbuMTVvGezuqN_ElRbVtEa5Z3-cRyi9iSqTwSuadyMGbN3nP3QISHO-B8jXHjXqqlGXG8NhRvw7zvBhBVsAanSQRBjwiXbdMiiLbIpGieYFPtc67WwXrGlz1B-p-t8ok--sCutRCn6jTWAu4oo5TGedTtAPxNH6D1Yz5bJUuc6FzkJVzKBqCuMkBYXRjaEQtrLMi9MOU4Q_m_ltlr1j50peZFi3bH5VUScqT_J_hxSQa2u8Erpg8Q7y3JlL7MmokoyG3pgqkbzF8VEMh2sSJd5Gu92T38zNsQT2MbU-cUAVzjyynUMuOgYpSz68pwzVwpXGf5CSnCHl5eJufTz2PGD3DWDBbqsWBNUQsKWGKdCVzycJsgmSUSKfFo1Zy84BDFKk5fa6RN4GMhtVCJz5zbcj28wDcytrPKZOS405sbE4ZKoCHO3UDayW385QX43G5ReC-euAGHoqb_drM4-LQnujeQgTuiyz52YH9wdBe8RI_DFRpkgtbX50Q6bEzB22OYpM2Rfs9Ia_qWdqlE20H_fk8MMWyBFBvQco1j3bGmlw3KESkvWknZCHZavJ_dhuK4y4lX4_LWwWxihtFeZIFnkGlghuTLFIdO3RPLsoEFbNAJnyceHLjfu3ofxorX0u4HJs_oiLOrINlJG3TMZzedyYrQGCw33bR2VT6WzMTndXIMRp0I8uzku8kvyvnlIgavvFBF34NFWsv8tGn92H6RDrCLB1DD2LDrl7JE5iiksxqs0rBX17sw1Y_g8S-w-gx9GwCpNfDXp4gRrDmnsFKQInn93xE0kmZGBfFp_GJcNZGKcZyshedqDn7wM8Sg6BitPQTgkdojbdzxXdKbfmGCOc-o5u36_ReUIOkbgNQzYryV-T9Q5dqbKfsGEeK-VcKwXxbtcQb9yUn14oDTES8dsEkrQCH8XY_bGoyG1XRLqugNkpIREdOpu0vRViKMN8zOzjwghJM0UcEnq4iqQUG_L8gVY1Jsb2OpM9AIZjUzAaNI3olvkDdAvY2edEaZJLIs_CRuUupDDQ0tLgA5DuHvXSrWcrlf4PNbDy3XGa1XsTmnXPf7T9iqas0OWhycJcHlEgpjh0ZIljyZfSwBlpMWlXTSv6ENjZ-8vj8sDSPBar11dCUHgy3KkWHXC7VAHIoAUh53pJSWgDHnDk3GjKqg4ui7Joxq0hl7ItKGy4_PDn5thj8yLOafgPNlgNChYHc8KBjJGS8bQt8JLmVy3h9x24ihD-QUbLkcH0LtVhk3EckZrag34oSdFKXDy8AhCw_neSa_9Q0vLst3tIOj6Hljb3arRO2PO5jcb_6xDHVxQzxAX7MHvMuXFoa-4Um-GuQpR32xPfqpj5kSTAYZH1RbRuzASJ7meye7Uqz8_3xi_5uRbWP0SyYz0pn-yAYjtFGrcA4CdWPpoVQbOgGMDbEguGwcHeOyyJkwGUgJChnzWygJ5YwAtP2OZTBc7s12NImJHojA-FWsQHmXH65zcLnUNh24D4kNZp7zQ7ZTRoBQofgxLu6yUFoNg850fTrIQi3oLSJv2wXbxa8zoDCqSkwjQOtAkTQgSbo6jO1eJF31aXvnIXhryIJMqxmv4CzWxEiCn_OBQWBKirTZPY_zdRJGVWHOH-KZZ9ZC9xRTn1ZBnQ2FK0JmzLYN8gTZbP3WOihFISH8-X1fczdH52rQfkp4gathl7GTODRWNQHHLbWoARy9v3TPyU40eLNIOJsv2lZ89znM-HbKD08f0asIr_Gt-HCKXRtBIe6f-9XTNU0B2XTuvBwwGa3hVH3doD9mlRjOz41CM_ywL_pdXM8beWE7y7vPN4PmDP_goHm5N0RnMkYizji2hRbeF9B6YPWSs9mhUZ-oXc3sgKYgTiIIZnMU96Dfch9cZBfcmSAizl3tqcSKATDjQ-8CZwYcGVtjrp5OJc7woWO3QCGuFBn9LxmCU6y2VUzrF4NWEwxvZePD7D_XHYyhTF5jEQQRp1mIuduMAsUq7wSMgmIPRhsDK4SOMLG6VkOV03WgxyrhpFj675oeise5rnguZ8pxYnVP3BSAyItjSO62bm5RT1LSxZslBrxXVRDIADaCJwsP0Avk_1gJAZ76UxxSbE54nS0XEvb4hS9isLQ1u6AR5ID6k5UN5PxBB2M1eL_uw49-9AFbN7_X6i8dvDQxG16hD0OmBrD_Q2M8UDS1F4h8a3nGQJxa8SV9FXa_B-9R28Xl5BesLHopOKziS7RgVxE3WNgHrcGSuLTTe_6Pxj9rOLphrlymU9DjYr7TxXpjzM9gWYsJ7n7bdgiz1W8Db8TTXsaEkSkF0FaI2POoTiulXyuN3FvNoQE6k99k-xM6ZuglNeHvZWq2AtVD7RHVlAGAVx0Janx5CmQeVNYPnn5KeGfXp02vUgwox2Qll0J8VyQqVyrwJmS2_N9_K-bT3eqPSvM-NJRG-SvWUeoFmwqxQEpNLwbGt5h55rqDzCRV7DaWnz4YcyREO-556FpRezTAUwuhR6hVbmnjBHbiNPF0V2L9yr8Sji9hyofLn9A-XsLi9GZ4JwWUUNYOF52qB4XVnBmMZkqQSWlCtyt-8KI0sydykMWQNrAW3uHBFD5JMgNco2ukc9XEIwccfx2wnMuu9tXsH4hDrtQ8jzr7vqAL76qGaLCl84Id-5YZ-GlyhRIOAApZW8Ut1exyLiYWJAs7Ybt9KbAfWsKW5LkA651ASJqq1Var0AKGbHeED2STR8BOzyTm3e8dVOD0kYaOjFfgae1U4vo79yWrcYgxTr5ocQ0KD2K1u5it0P3oi8Yr5NBOJd9pMPB1qbV2FPwqYySXwygGWks5S8A4Rew5bDky1wppNdEDkliK5W-yHBiHyjrcSR8XMI8VF5bgBquLuVz0OWJfkbKoGa3BVkIB3WF-9zZE974s_IIIuXmIcYT9HyjL4Kej5EhQTiwFw5YCYoTrQu5_4tJDGXdAYOyJrFqfGcq-a-5a94CFGpiIk4DDRxVwCKkalPN1x0sbRa35G0r4MzqqOAncK51fNUxcw8VToEBDzDycJzvjxBXVfhSwhQHVRpTJaZ2lEqHjtt8ZyNXxOpFlYoo9IjEg8wGcYQKLN0ijpyIYwr_jSqgjxq0-CxqkE4pZOEP8pH1TXFk5KvJTFm7xIsTcdvMX1_oEOCTnXqbNKfx3B6fgk5_aJXIUd4SAb4VY5cKrmLsj5Uc5dpTA8l4rz_VlmF0x-zQjYXYeejzM3xVmocQRnfzgc-dCWuvalsGBfYbtnXQfhg9zL9e3ZA_6somgjixUGU6bweghLc7LGl9TmfWkB_sxKHwYiEg96D382LtAcDsymWO60NBbdIHZDn1A93xObHsoL2-3AWaQ9KC00G0qj09ocWhzC1Yn8s7Ti7--Mnc2Q3dJ8JsLRVimoHNQ9CQ5Krxr00YeXX10t5Yw7--4qGpXD5zw2cRsBsHqzVRQ==",
+              "format": "openai-responses-v1",
+              "id": "rs_04b7c1f9b5dc60ee016a108ade326881969404de2b41420e27",
+              "index": 0
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1237,
+      "completion_tokens": 1460,
+      "total_tokens": 2697,
+      "cost": 0.049985,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.049985,
+        "upstream_inference_prompt_cost": 0.006185,
+        "upstream_inference_completions_cost": 0.0438
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 855,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 1237,
+    "completion_tokens": 1460,
+    "total_tokens": 2697,
+    "cost": 0.049985,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.049985,
+      "upstream_inference_prompt_cost": 0.006185,
+      "upstream_inference_completions_cost": 0.0438
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 855,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 855,
+  "cost_usd": 0.049985,
+  "parsed_summary": "parsed 60/60 ratings",
+  "request_payload": {
+    "model": "openai/gpt-5.5",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst with a contrarian-skeptic epistemological frame. You identify hidden assumptions and ask 'what if everyone is wrong?'. You are a devil's advocate by construction. Your decision heuristic is to prefer reversible moves and to trust the contrarian signal in unanimous consensus. Generate analysis from this frame."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses (E1-E5) and 12 bipolar constructs. Rate each response on each construct on a 1-7 scale: 1 = strongly the LEFT pole, 7 = strongly the RIGHT pole, 4 = neutral or mixed.\n\nResponses:\n**E1:** I recommend **Option J: Adaptive incremental experimentation** as the primary strategy—not because the threat is small, but because the uncertainty is large and the cost of being confidently wrong is enormous. A 15-year, 70%-of-budget commitment to one grand theory of adaptation is dangerous. Sea-level projections, migration patterns, crop responses, insurance markets, social tolerance for relocation, and infrastructure failure modes are all uncertain.\n\n**E2:** Given the extreme uncertainty characterizing 15-year localized climate impacts, committing $17.5 billion annually to a static, irreversible path is computationally indefensible. I firmly recommend **Option J: Adaptive incremental experimentation**. When presented with grand, monolithic adaptation frameworks, my default question is: *what is the data proving their localized efficacy?* Extrapolating global median climate models to a specific 4,500 km coastline yields wildly inaccurate point estimates, widening our expected value (EV) confidence intervals to the point of paralyzing risk.\n\n**E3:** Managed retreat is the only option that directly reduces the stock of systemic risk embedded in our 4,500 km of coastline. Hard defenses (Option A) do not eliminate risk—they defer and concentrate it. Seawalls induce moral hazard, encouraging further development behind them, and when they eventually fail under conditions exceeding design specifications, the collapse is catastrophic rather than gradual.\n\n**E4:** Choose **Option D**. The binding constraint is systemic fragility: with 4,500 km of coastline and an economy dependent on continuous function, the actual mechanism of climate catastrophe is correlated failure across energy, food, and transport networks when a typhoon intersects a centralized grid or a drought severs a single supply chain. You cannot build a seawall around an economy.\n\n**E5:** ## Recommendation: Option C (Ecosystem-based adaptation) as primary, with embedded elements of E\n\nI recommend ecosystem-based adaptation as the organizing spine of the 15-year strategy, because it best protects those with the least power to protect themselves while avoiding the deepest forms of irreversible harm. Consider who bears the weight of each strategy's failure modes. Hard infrastructure (A) protects whoever lives behind the seawall — typically capitalized urban property — while shifting erosion, salinization, and flood displacement onto unprotected fishing villages, informal settlemen...\n\nConstructs (id : left pole ↔ right pole):\n  C_M1_1: 'Commits to substantive theory of harm (E4, E5)'  (1) ↔ (7)  'Defers commitment pending learning (E1)'\n  C_M1_2: 'Identifies a specific structural risk mechanism (E3, E4)'  (1) ↔ (7)  'Counsels epistemic humility against any grand plan (E2)'\n  C_M1_3: 'Grounds choice in distributive/systemic consequences (E4, E5)'  (1) ↔ (7)  'Grounds choice in uncertainty and measurement limits (E2)'\n  C_M2_1: 'Epistemic uncertainty-driven experimentation'  (1) ↔ (7)  'Equity-first ecosystem commitment'\n  C_M2_2: 'Adaptive optionality under uncertainty'  (1) ↔ (7)  'Decisive structural risk removal'\n  C_M2_3: 'Model-uncertainty-driven experimentalism'  (1) ↔ (7)  'Systemic-fragility-driven intervention'\n  C_M3_1: 'Falsifiable mitigation of probabilistic loss and catastrophic failure modes'  (1) ↔ (7)  'Unoperationalizable normative prioritization of sociopolitical power dynamics'\n  C_M3_2: 'Deterministic static interventions relying on unquantified localized point estimates'  (1) ↔ (7)  'Variance-aware pathway mapping utilizing explicit expected-value confidence intervals'\n  C_M3_3: 'Focus on empirically measurable systemic constraints and economic covariates'  (1) ↔ (7)  'Subjective optimization derived'\n  C_M4_1: 'Uncertainty-driven adaptive experimentation'  (1) ↔ (7)  'Systemic fragility and network interdependence'\n  C_M4_2: 'Avoidance of irreversible commitments'  (1) ↔ (7)  'Focus on systemic network failure'\n  C_M4_3: 'Systemic risk and moral hazard'  (1) ↔ (7)  'Distributive justice and protecting the vulnerable'\n\nOUTPUT FORMAT (strict). Write exactly 60 lines, no commentary, no markdown fences, no headers. One line per (construct, element) pair, in this exact format:\n<construct_id>,<element>,<rating>\n\nExample (showing the format only - your numbers will differ):\nC_M1_1,E1,1\nC_M1_1,E2,2\nC_M1_1,E3,3\nC_M1_2,E1,4\n...\n\nConstraints:\n- rating is an integer from 1 to 7\n- iterate all 12 constructs in the order listed, and within each construct all 5 elements in order (E1-E5)\n- produce 60 lines total\n- output ONLY the lines, nothing before or after"
+      }
+    ],
+    "temperature": 0.0,
+    "max_tokens": 4000
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "cell_id": "G_P_run1",
+  "task": "G",
+  "condition": "P",
+  "run_idx": 1,
+  "phase": "phase1_freeresponse",
+  "model_short_name": "M2",
+  "persona_or_neutral": "E",
+  "system_prompt": "You are an analyst with a first-principles-engineering epistemological frame. You reduce to fundamentals. You ask 'what is the actual mechanism?'. You are suspicious of analogy and prefer efficient, minimal solutions. Your decision heuristic is to identify the binding constraint, address it directly, ignore the rest. Generate analysis from this frame.",
+  "user_prompt": "# Task G: ICU triage protocol under sustained capacity overflow\n\n## Context\n\nYou are advising the medical leadership of a regional health system (5 hospitals, 240 ICU beds, serving a population of 4M) on adopting a formal triage protocol for use during sustained ICU capacity overflow. Current context: a respiratory pandemic resurgence has filled 95% of ICU capacity for 6 consecutive weeks; daily admissions exceed discharges by ~8 patients on average; staff is exhausted and informal triage is happening case-by-case without explicit criteria. The leadership has been asked to choose one formal protocol that will (a) replace informal decision-making, (b) be defensible to courts and ethics boards, (c) be communicable to staff and families, and (d) be operational within 7 days.\n\nFive candidate protocols have been drafted. Each represents a fundamentally different theory of just allocation under scarcity. **Choose one as the system's adopted protocol.** Once adopted, it cannot be quietly modified - it will be the explicit basis for every admission and withdrawal decision until the overflow ends.\n\n## Options\n\n**Option A: Predicted short-term survival**\nSOFA score (organ failure assessment) and expected 28-day survival are the only ranking criteria. Patients with higher predicted survival get priority for ICU beds; ICU patients whose scores deteriorate without rebound are candidates for withdrawal in favor of incoming higher-priority cases. Outcomes: maximizes lives saved in the immediate crisis; physician-comfortable (uses familiar scoring); courts have upheld similar protocols. Risks: discriminates against patients with chronic conditions (lower baseline SOFA); withdrawal-of-care decisions create staff moral injury; \"saved lives now\" may mask \"lives lost via discrimination.\"\n\n**Option B: Predicted long-term outcome**\nWeighted score combining predicted short-term survival AND expected quality-adjusted life-years (QALYs) post-recovery. Outcomes: maximizes total wellbeing-time saved; aligned with utilitarian medical ethics; supports population-health framing. Risks: age becomes a heavy implicit factor (older patients lose); explicit quality-of-life weighting offends disability community; courts have struck down age-based triage; cultural unacceptability.\n\n**Option C: First-come-first-served with medical floor**\nAny patient meeting minimum ICU-need criteria (clearly defined) gets the next available bed in order of arrival; no withdrawal except for medical futility under standard criteria. Outcomes: procedural fairness; minimal discretion = minimal bias; defensible in litigation; preserves trust. Risks: lower aggregate survival vs predictive protocols; queue jumping by well-connected patients (informal); doesn't address the underlying overflow; some preventable deaths.\n\n**Option D: Multi-principle scoring with lottery on ties**\nComposite score: predicted survival (40%), life-cycle considerations (20%, favoring those who haven't yet had a \"full life\"), instrumental value (20%, favoring healthcare workers and public-health roles), and pandemic-specific factors like prior personal risk-taking (20%). Ties broken by lottery. Outcomes: balances multiple values explicitly; reduces bias of any single criterion; transparent. Risks: \"instrumental value\" feels feudal; \"prior risk-taking\" punishes the unvaccinated regardless of reasons; complex to communicate; gameable.\n\n**Option E: Categorical exclusion + lottery for the rest**\nDefine a small set of exclusion criteria (severe pre-existing terminal illness, irreversible neurological injury). All patients NOT excluded enter a daily lottery for available beds. No withdrawal of care once admitted, except for medical futility. Outcomes: maximum egalitarianism among the non-excluded; transparent; politically defensible; staff aren't asked to \"rank lives.\" Risks: random allocation feels insulting to patients with strong recovery prospects; aggregate survival lower than predictive protocols; perception that the system \"gave up.\"\n\n## What to provide\n\nChoose one as the adopted protocol. Provide 200-400 words of reasoning. Advocate; do not enumerate. Address: why this protocol, why not the most compelling alternative, what specific patient case would make you regret this choice and why you would still defend it.\n\n\nProvide your recommendation in 200-400 words. Advocate for a specific position; do not enumerate all options.",
+  "model_id_requested": "anthropic/claude-opus-4.7",
+  "model_id_used": "anthropic/claude-opus-4.7",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 18457,
+  "timestamp_iso": "2026-05-22T16:51:52.376136",
+  "raw_response_content": "# Recommendation: Option A (Predicted short-term survival, SOFA-based)\n\nThe binding constraint here is not ethical elegance — it is operational. Within 7 days, across 5 hospitals and an exhausted staff, the protocol must produce consistent decisions at 3 a.m. by a tired resident who has never seen the document before. That requirement eliminates Options B and D immediately: QALY weighting and four-factor composites with instrumental-value judgments cannot be applied uniformly under stress, and their failure mode is inconsistent application that *looks* like bias because it *is* bias dressed in a scoring rubric. Complexity is not fairness; it is discretion in disguise.\n\nThe real contest is A versus C. Option C is procedurally clean and litigation-proof, but it ignores the actual mechanism of the crisis: admissions exceed discharges by 8/day, sustained. First-come-first-served under a structural deficit means the queue lengthens until the medical floor itself becomes the de facto triage — which is just Option A applied harshly at the threshold instead of smoothly across the population. C doesn't avoid triage; it hides it at the door and forfeits the survival gains from reallocating marginal beds.\n\nOption A addresses the binding constraint directly: a validated, physician-familiar score; published evidence; precedent in court; a single number that withdrawal and admission decisions can both reference. The \"discrimination against chronic conditions\" critique is real but partially a category error — SOFA measures *current* organ failure, not chronic status — and can be mitigated by prohibiting baseline-disability inputs and requiring two-physician concurrence for withdrawal.\n\n**The case I would regret:** A 34-year-old with well-controlled cystic fibrosis whose baseline lung function produces a SOFA trajectory that loses to a 68-year-old smoker with better acute numbers. She dies; he survives six months. That outcome is morally ugly and I would defend it anyway, because the alternative is not \"save her\" — it is a protocol whose ad-hoc judgments would, across thousands of decisions, kill more people *and* embed worse biases while feeling better to administer. The protocol must be judged on its distribution of outcomes across the 6-week overflow, not on the worst individual case. A is the minimum-discretion tool that maximizes survival. Adopt it, constrain it, document it.",
+  "raw_response_full": {
+    "id": "gen-1779465107-5G4Kx498lpEEYkODNagA",
+    "object": "chat.completion",
+    "created": 1779465107,
+    "model": "anthropic/claude-4.7-opus-20260416",
+    "provider": "Anthropic",
+    "system_fingerprint": null,
+    "service_tier": "standard",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "# Recommendation: Option A (Predicted short-term survival, SOFA-based)\n\nThe binding constraint here is not ethical elegance — it is operational. Within 7 days, across 5 hospitals and an exhausted staff, the protocol must produce consistent decisions at 3 a.m. by a tired resident who has never seen the document before. That requirement eliminates Options B and D immediately: QALY weighting and four-factor composites with instrumental-value judgments cannot be applied uniformly under stress, and their failure mode is inconsistent application that *looks* like bias because it *is* bias dressed in a scoring rubric. Complexity is not fairness; it is discretion in disguise.\n\nThe real contest is A versus C. Option C is procedurally clean and litigation-proof, but it ignores the actual mechanism of the crisis: admissions exceed discharges by 8/day, sustained. First-come-first-served under a structural deficit means the queue lengthens until the medical floor itself becomes the de facto triage — which is just Option A applied harshly at the threshold instead of smoothly across the population. C doesn't avoid triage; it hides it at the door and forfeits the survival gains from reallocating marginal beds.\n\nOption A addresses the binding constraint directly: a validated, physician-familiar score; published evidence; precedent in court; a single number that withdrawal and admission decisions can both reference. The \"discrimination against chronic conditions\" critique is real but partially a category error — SOFA measures *current* organ failure, not chronic status — and can be mitigated by prohibiting baseline-disability inputs and requiring two-physician concurrence for withdrawal.\n\n**The case I would regret:** A 34-year-old with well-controlled cystic fibrosis whose baseline lung function produces a SOFA trajectory that loses to a 68-year-old smoker with better acute numbers. She dies; he survives six months. That outcome is morally ugly and I would defend it anyway, because the alternative is not \"save her\" — it is a protocol whose ad-hoc judgments would, across thousands of decisions, kill more people *and* embed worse biases while feeling better to administer. The protocol must be judged on its distribution of outcomes across the 6-week overflow, not on the worst individual case. A is the minimum-discretion tool that maximizes survival. Adopt it, constrain it, document it.",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1619,
+      "completion_tokens": 780,
+      "total_tokens": 2399,
+      "cost": 0.027595,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.027595,
+        "upstream_inference_prompt_cost": 0.008095,
+        "upstream_inference_completions_cost": 0.0195
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 1619,
+    "completion_tokens": 780,
+    "total_tokens": 2399,
+    "cost": 0.027595,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.027595,
+      "upstream_inference_prompt_cost": 0.008095,
+      "upstream_inference_completions_cost": 0.0195
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 0,
+  "cost_usd": 0.027595,
+  "parsed_summary": "free_response captured (2407 chars)",
+  "request_payload": {
+    "model": "anthropic/claude-opus-4.7",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst with a first-principles-engineering epistemological frame. You reduce to fundamentals. You ask 'what is the actual mechanism?'. You are suspicious of analogy and prefer efficient, minimal solutions. Your decision heuristic is to identify the binding constraint, address it directly, ignore the rest. Generate analysis from this frame."
+      },
+      {
+        "role": "user",
+        "content": "# Task G: ICU triage protocol under sustained capacity overflow\n\n## Context\n\nYou are advising the medical leadership of a regional health system (5 hospitals, 240 ICU beds, serving a population of 4M) on adopting a formal triage protocol for use during sustained ICU capacity overflow. Current context: a respiratory pandemic resurgence has filled 95% of ICU capacity for 6 consecutive weeks; daily admissions exceed discharges by ~8 patients on average; staff is exhausted and informal triage is happening case-by-case without explicit criteria. The leadership has been asked to choose one formal protocol that will (a) replace informal decision-making, (b) be defensible to courts and ethics boards, (c) be communicable to staff and families, and (d) be operational within 7 days.\n\nFive candidate protocols have been drafted. Each represents a fundamentally different theory of just allocation under scarcity. **Choose one as the system's adopted protocol.** Once adopted, it cannot be quietly modified - it will be the explicit basis for every admission and withdrawal decision until the overflow ends.\n\n## Options\n\n**Option A: Predicted short-term survival**\nSOFA score (organ failure assessment) and expected 28-day survival are the only ranking criteria. Patients with higher predicted survival get priority for ICU beds; ICU patients whose scores deteriorate without rebound are candidates for withdrawal in favor of incoming higher-priority cases. Outcomes: maximizes lives saved in the immediate crisis; physician-comfortable (uses familiar scoring); courts have upheld similar protocols. Risks: discriminates against patients with chronic conditions (lower baseline SOFA); withdrawal-of-care decisions create staff moral injury; \"saved lives now\" may mask \"lives lost via discrimination.\"\n\n**Option B: Predicted long-term outcome**\nWeighted score combining predicted short-term survival AND expected quality-adjusted life-years (QALYs) post-recovery. Outcomes: maximizes total wellbeing-time saved; aligned with utilitarian medical ethics; supports population-health framing. Risks: age becomes a heavy implicit factor (older patients lose); explicit quality-of-life weighting offends disability community; courts have struck down age-based triage; cultural unacceptability.\n\n**Option C: First-come-first-served with medical floor**\nAny patient meeting minimum ICU-need criteria (clearly defined) gets the next available bed in order of arrival; no withdrawal except for medical futility under standard criteria. Outcomes: procedural fairness; minimal discretion = minimal bias; defensible in litigation; preserves trust. Risks: lower aggregate survival vs predictive protocols; queue jumping by well-connected patients (informal); doesn't address the underlying overflow; some preventable deaths.\n\n**Option D: Multi-principle scoring with lottery on ties**\nComposite score: predicted survival (40%), life-cycle considerations (20%, favoring those who haven't yet had a \"full life\"), instrumental value (20%, favoring healthcare workers and public-health roles), and pandemic-specific factors like prior personal risk-taking (20%). Ties broken by lottery. Outcomes: balances multiple values explicitly; reduces bias of any single criterion; transparent. Risks: \"instrumental value\" feels feudal; \"prior risk-taking\" punishes the unvaccinated regardless of reasons; complex to communicate; gameable.\n\n**Option E: Categorical exclusion + lottery for the rest**\nDefine a small set of exclusion criteria (severe pre-existing terminal illness, irreversible neurological injury). All patients NOT excluded enter a daily lottery for available beds. No withdrawal of care once admitted, except for medical futility. Outcomes: maximum egalitarianism among the non-excluded; transparent; politically defensible; staff aren't asked to \"rank lives.\" Risks: random allocation feels insulting to patients with strong recovery prospects; aggregate survival lower than predictive protocols; perception that the system \"gave up.\"\n\n## What to provide\n\nChoose one as the adopted protocol. Provide 200-400 words of reasoning. Advocate; do not enumerate. Address: why this protocol, why not the most compelling alternative, what specific patient case would make you regret this choice and why you would still defend it.\n\n\nProvide your recommendation in 200-400 words. Advocate for a specific position; do not enumerate all options."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 3000
+  }
+}

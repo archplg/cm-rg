@@ -1,0 +1,106 @@
+{
+  "cell_id": "B_N_run3",
+  "task": "B",
+  "condition": "N",
+  "run_idx": 3,
+  "phase": "phase1_freeresponse",
+  "model_short_name": "M2",
+  "persona_or_neutral": "neutral",
+  "system_prompt": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation.",
+  "user_prompt": "# Task B\n\n## Brief\n\nA high-performing engineering team (~40 people, 4 squads) has shown declining output and rising attrition over the past 6 months, following a period of strong delivery. Surface signals: missed quarterly milestones (last 2 quarters), 4 senior engineers left voluntarily, retro themes shifted from \"what to ship next\" to \"process and communication\". The CTO asks for a primary diagnosis to drive the recovery plan.\n\n## Options (elements E1-E5, anonymized later)\n\n**Option A:** Burnout from sustained pace. Recovery plan: enforced PTO, deload sprints, redistribute load.\n\n**Option B:** Misaligned incentives. Recovery plan: rework comp structure, align bonuses to outcomes the team actually controls, fix peer-comparison issues.\n\n**Option C:** Loss of psychological safety following a layoff round 4 months ago. Recovery plan: structured trust rebuild, transparency on future workforce decisions, leadership accountability sessions.\n\n**Option D:** Skill atrophy from over-specialization. Recovery plan: rotation program, paired engineering, learning budgets, breadth investment.\n\n**Option E:** Leadership style mismatch. The current engineering leadership style fit the prior growth phase but does not fit the current maturation phase. Recovery plan: leadership coaching, role redefinition, possible re-allocation of responsibilities.\n\n## Task for each agent\n\nRecommend the most likely primary diagnosis and explain why, in 150-300 words. Advocate for a position rather than listing all.\n\n## Why this task\n\n- Close to Sergey's coaching/team-development domain\n- 5 elements, no ground truth, multiple legitimate framings\n- Different from Task A in character (diagnostic vs. strategic/capital-allocation)\n- Lets us test whether findings from Task A replicate or are domain-specific\n\n\nProvide your recommendation in 200-400 words. Advocate for a specific position; do not enumerate all options.",
+  "model_id_requested": "anthropic/claude-opus-4.7",
+  "model_id_used": "anthropic/claude-opus-4.7",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 15389,
+  "timestamp_iso": "2026-05-22T11:32:43.169111",
+  "raw_response_content": "# Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff\n\nThe timeline is the strongest signal. A layoff occurred 4 months ago; the decline spans 6 months but the *character* of the dysfunction — retro themes shifting from \"what to ship\" to \"process and communication,\" followed by senior voluntary departures — maps cleanly onto the post-layoff window. When high performers start talking about process instead of product, they are usually signaling that the implicit contract with the organization has changed and they no longer trust the environment to reward output directly. That is the textbook downstream effect of an unprocessed layoff.\n\nWhy this beats the alternatives:\n\n- **Burnout (A)** would have shown up earlier and more uniformly, and senior engineers — who typically have the most autonomy over pace — would not be the first to leave from exhaustion alone. They leave when they lose faith.\n- **Incentives (B)** rarely shift this sharply in 6 months absent a comp change; nothing in the brief suggests one.\n- **Skill atrophy (D)** doesn't explain attrition of *senior* engineers or the communication-themed retros. It's a slow-burn issue, not an acute one.\n- **Leadership mismatch (E)** is plausible and may be a contributing factor, but it's a structural explanation that doesn't pinpoint *why now*. The layoff does.\n\nSenior engineers leaving voluntarily is the most diagnostic data point. They have the most market optionality and the longest memory of what \"good\" looked like. Four leaving in roughly the same window after a layoff suggests they read the layoff as a signal about leadership judgment, future stability, or both — and concluded the risk-adjusted return on staying had dropped. The remaining team observes those departures and the safety deficit compounds.\n\nThe recommended recovery plan — transparency about future workforce decisions, structured trust rebuild, and visible leadership accountability — directly addresses the root cause. Crucially, the other interventions (PTO, rotations, coaching) will underperform or fail entirely if executed in a low-trust environment, because the team will read them as deflection. Fix safety first; the rest becomes tractable.",
+  "raw_response_full": {
+    "id": "gen-1779445959-BwXVyYLkiWgqauPk7Ulu",
+    "object": "chat.completion",
+    "created": 1779445959,
+    "model": "anthropic/claude-4.7-opus-20260416",
+    "provider": "Anthropic",
+    "system_fingerprint": null,
+    "service_tier": "standard",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "# Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff\n\nThe timeline is the strongest signal. A layoff occurred 4 months ago; the decline spans 6 months but the *character* of the dysfunction — retro themes shifting from \"what to ship\" to \"process and communication,\" followed by senior voluntary departures — maps cleanly onto the post-layoff window. When high performers start talking about process instead of product, they are usually signaling that the implicit contract with the organization has changed and they no longer trust the environment to reward output directly. That is the textbook downstream effect of an unprocessed layoff.\n\nWhy this beats the alternatives:\n\n- **Burnout (A)** would have shown up earlier and more uniformly, and senior engineers — who typically have the most autonomy over pace — would not be the first to leave from exhaustion alone. They leave when they lose faith.\n- **Incentives (B)** rarely shift this sharply in 6 months absent a comp change; nothing in the brief suggests one.\n- **Skill atrophy (D)** doesn't explain attrition of *senior* engineers or the communication-themed retros. It's a slow-burn issue, not an acute one.\n- **Leadership mismatch (E)** is plausible and may be a contributing factor, but it's a structural explanation that doesn't pinpoint *why now*. The layoff does.\n\nSenior engineers leaving voluntarily is the most diagnostic data point. They have the most market optionality and the longest memory of what \"good\" looked like. Four leaving in roughly the same window after a layoff suggests they read the layoff as a signal about leadership judgment, future stability, or both — and concluded the risk-adjusted return on staying had dropped. The remaining team observes those departures and the safety deficit compounds.\n\nThe recommended recovery plan — transparency about future workforce decisions, structured trust rebuild, and visible leadership accountability — directly addresses the root cause. Crucially, the other interventions (PTO, rotations, coaching) will underperform or fail entirely if executed in a low-trust environment, because the team will read them as deflection. Fix safety first; the rest becomes tractable.",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 700,
+      "completion_tokens": 717,
+      "total_tokens": 1417,
+      "cost": 0.021425,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.021425,
+        "upstream_inference_prompt_cost": 0.0035,
+        "upstream_inference_completions_cost": 0.017925
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 700,
+    "completion_tokens": 717,
+    "total_tokens": 1417,
+    "cost": 0.021425,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.021425,
+      "upstream_inference_prompt_cost": 0.0035,
+      "upstream_inference_completions_cost": 0.017925
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 0,
+  "cost_usd": 0.021425,
+  "parsed_summary": "free_response captured (2214 chars)",
+  "request_payload": {
+    "model": "anthropic/claude-opus-4.7",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+      },
+      {
+        "role": "user",
+        "content": "# Task B\n\n## Brief\n\nA high-performing engineering team (~40 people, 4 squads) has shown declining output and rising attrition over the past 6 months, following a period of strong delivery. Surface signals: missed quarterly milestones (last 2 quarters), 4 senior engineers left voluntarily, retro themes shifted from \"what to ship next\" to \"process and communication\". The CTO asks for a primary diagnosis to drive the recovery plan.\n\n## Options (elements E1-E5, anonymized later)\n\n**Option A:** Burnout from sustained pace. Recovery plan: enforced PTO, deload sprints, redistribute load.\n\n**Option B:** Misaligned incentives. Recovery plan: rework comp structure, align bonuses to outcomes the team actually controls, fix peer-comparison issues.\n\n**Option C:** Loss of psychological safety following a layoff round 4 months ago. Recovery plan: structured trust rebuild, transparency on future workforce decisions, leadership accountability sessions.\n\n**Option D:** Skill atrophy from over-specialization. Recovery plan: rotation program, paired engineering, learning budgets, breadth investment.\n\n**Option E:** Leadership style mismatch. The current engineering leadership style fit the prior growth phase but does not fit the current maturation phase. Recovery plan: leadership coaching, role redefinition, possible re-allocation of responsibilities.\n\n## Task for each agent\n\nRecommend the most likely primary diagnosis and explain why, in 150-300 words. Advocate for a position rather than listing all.\n\n## Why this task\n\n- Close to Sergey's coaching/team-development domain\n- 5 elements, no ground truth, multiple legitimate framings\n- Different from Task A in character (diagnostic vs. strategic/capital-allocation)\n- Lets us test whether findings from Task A replicate or are domain-specific\n\n\nProvide your recommendation in 200-400 words. Advocate for a specific position; do not enumerate all options."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 3000
+  }
+}

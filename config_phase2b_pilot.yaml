@@ -1,0 +1,129 @@
+# Phase 2B configuration - Pilot replication (Claude Opus 4.7 played 5 ways)
+# Direct head-to-head comparison with cross-model results.
+# All 5 "models" are Claude Opus 4.7 - the persona is the only differentiator.
+#
+# Estimated: 7 tasks x 2 conditions x 3 runs = 42 cells. Cost ~$15-20.
+# Output goes to results_pilot/ so as not to clobber cross-model results.
+
+experiment:
+  name: archipelago_pilot_replication_v2
+  description: Phase 2B - pilot replication for head-to-head comparison
+  total_budget_usd: 80     # bumped from 40 - preflight estimator is conservative (~3x actual)
+  estimated_budget_usd: 18
+  output_dir: ./results_pilot
+  log_dir: ./logs_pilot
+
+openrouter:
+  base_url: https://openrouter.ai/api/v1
+  api_key_env: OPENROUTER_API_KEY
+  retries_per_call: 3
+  retry_backoff_seconds: [2, 5, 15]
+  request_timeout_seconds: 120
+
+# All 5 "models" are Claude Opus 4.7 - persona is the only differentiator.
+# This replicates the original pilot's "one model role-played 5 ways" design,
+# but on the exact same tasks as our cross-model Phase 2A.
+models:
+  - id: anthropic/claude-opus-4.7
+    fallback_id: anthropic/claude-sonnet-4.6
+    family: anthropic
+    short_name: M1
+    notes: Single base model role 1 - Quantitative slot
+  - id: anthropic/claude-opus-4.7
+    fallback_id: anthropic/claude-sonnet-4.6
+    family: anthropic
+    short_name: M2
+    notes: Single base model role 2 - Systems slot
+  - id: anthropic/claude-opus-4.7
+    fallback_id: anthropic/claude-sonnet-4.6
+    family: anthropic
+    short_name: M3
+    notes: Single base model role 3 - Engineering slot
+  - id: anthropic/claude-opus-4.7
+    fallback_id: anthropic/claude-sonnet-4.6
+    family: anthropic
+    short_name: M4
+    notes: Single base model role 4 - Humanist slot
+  - id: anthropic/claude-opus-4.7
+    fallback_id: anthropic/claude-sonnet-4.6
+    family: anthropic
+    short_name: M5
+    notes: Single base model role 5 - Contrarian slot
+
+parameters:
+  free_response:
+    temperature: 1.0
+    max_tokens: 3000
+  constructs:
+    temperature: 1.0
+    max_tokens: 2000
+  ratings:
+    temperature: 0.0
+    max_tokens: 2500
+
+tasks:
+  - id: A
+    brief_file: tasks/task_A_brief.md
+    domain: strategic_capital_allocation
+    is_repeat_task: true
+  - id: B
+    brief_file: tasks/task_B_brief.md
+    domain: team_diagnostic
+    is_repeat_task: true
+  - id: C
+    brief_file: tasks/task_C_brief.md
+    domain: product_ethics
+    is_repeat_task: true
+  - id: D
+    brief_file: tasks/task_D_brief.md
+    domain: climate_adaptation
+    is_repeat_task: true
+  - id: E
+    brief_file: tasks/task_E_brief.md
+    domain: ai_governance
+    is_repeat_task: true
+  - id: F
+    brief_file: tasks/task_F_brief.md
+    domain: product_launch_strategy
+    is_repeat_task: true
+  - id: G
+    brief_file: tasks/task_G_brief.md
+    domain: medical_triage_ethics
+    is_repeat_task: true
+
+conditions:
+  - id: N
+    name: neutral
+    system_prompt: "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+    use_personas: false
+
+  - id: P
+    name: persona
+    use_personas: true
+    persona_assignment:
+      A: {M1: Q, M2: S, M3: E, M4: H, M5: C}
+      B: {M1: S, M2: E, M3: H, M4: C, M5: Q}
+      C: {M1: E, M2: H, M3: C, M4: Q, M5: S}
+      D: {M1: H, M2: C, M3: Q, M4: S, M5: E}
+      E: {M1: C, M2: Q, M3: S, M4: E, M5: H}
+      F: {M1: Q, M2: S, M3: E, M4: H, M5: C}
+      G: {M1: S, M2: E, M3: H, M4: C, M5: Q}
+
+# 3 runs per (task, condition) for variance estimation
+repetitions:
+  base_runs_per_cell: 1
+  extra_runs_for_repeat_task: 2
+
+pipeline:
+  n_triads_per_agent: 3
+  n_elements: 5
+  rating_scale: [1, 7]
+  triad_assignment_strategy: balanced_random
+
+# Pre-flight checks before running
+preflight:
+  verify_api_key: true
+  verify_model_ids: true
+  estimate_cost: true
+  require_user_confirmation: true
+  dry_run_mode: false

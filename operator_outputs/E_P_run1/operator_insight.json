@@ -1,0 +1,93 @@
+{
+  "cell_id": "E_P_run1",
+  "task": "E",
+  "condition": "P",
+  "run_idx": 1,
+  "consensus_map": {
+    "by_agent": {
+      "M1": {
+        "model_id": "anthropic/claude-opus-4.7",
+        "persona": "C",
+        "recommendation": "E",
+        "element_label": "E3",
+        "rationale_snippet": "## Recommendation: Option E — Sector-specific regulatory sovereignty"
+      },
+      "M2": {
+        "model_id": "openai/gpt-5.5",
+        "persona": "Q",
+        "recommendation": null,
+        "element_label": "E5",
+        "rationale_snippet": "I recommend **Option A: Capability-thresholds licensing** as the coalition’s primary framework."
+      },
+      "M3": {
+        "model_id": "google/gemini-3.1-pro-preview",
+        "persona": "S",
+        "recommendation": "B",
+        "element_label": "E4",
+        "rationale_snippet": "To maximize our leverage while avoiding systemic fragility, the coalition must adopt **Option B: Outcomes-based liability**. "
+      },
+      "M4": {
+        "model_id": "deepseek/deepseek-v4-pro",
+        "persona": "E",
+        "recommendation": "E",
+        "element_label": "E2",
+        "rationale_snippet": "The coalition should adopt **Option E: Sector-specific regulatory sovereignty**. The binding constraint is not an absence of rules—it’s a lack of domain-aware enforcement capacity that can be deployed within 18 months without fracturing the coalition or crippling domestic AI firms. Option E solves t"
+      },
+      "M5": {
+        "model_id": "moonshotai/kimi-k2.6",
+        "persona": "H",
+        "recommendation": "C",
+        "element_label": "E1",
+        "rationale_snippet": "I recommend **Option C: Rights-and-process-based governance**. For this coalition, the paramount imperative is to correct the severe power asymmetry between frontier AI systems and the ordinary people they affect. This framework answers the question “who is affected and how?” by encoding dignity dir"
+      }
+    },
+    "distribution": {
+      "E": 2,
+      "B": 1,
+      "C": 1
+    },
+    "n_agents": 5,
+    "consensus_strength": "split",
+    "majority_recommendation": null
+  },
+  "hidden_disagreement": {
+    "status": "no_majority",
+    "interpretation": "Agents split across recommendations; no hidden-consensus to expose."
+  },
+  "blind_spots": {
+    "status": "computed",
+    "low_discrimination_constructs": [],
+    "underexplored_components": [
+      {
+        "pc_index": 3,
+        "variance_explained": 0.08426034385469335,
+        "top_construct_id": "C_M2_3"
+      }
+    ],
+    "summary": "No obvious blind spots detected in construct space."
+  },
+  "risk_surface": {
+    "status": "computed",
+    "risks_by_agent": {
+      "M1": [],
+      "M2": [
+        "low-frequency, high-severity, and potentially irreversible"
+      ],
+      "M3": [
+        "metrics as prerequisites for underwriting",
+        "by compute locks in incumbent monopolies and incentivizes labs to train dangerous models just below the threshold to avoid oversight"
+      ],
+      "M4": [],
+      "M5": []
+    },
+    "total_risks_raised": 3,
+    "agents_raising_risks": 2,
+    "note": "Risks listed here were extracted by pattern matching on agent free responses. They are minority signals worth probing before acting on consensus."
+  },
+  "operator_questions": [
+    "Option B was recommended only by M3 (S). What does this agent see that others missed - or what is it weighing differently?",
+    "Option C was recommended only by M5 (H). What does this agent see that others missed - or what is it weighing differently?",
+    "The contrarian agent recommended E against the majority. Contrarian disagreement is a useful signal: what is the strongest argument against the majority choice that hasn't been answered?"
+  ],
+  "headline": "Agents are split across options; no clear consensus to act on."
+}

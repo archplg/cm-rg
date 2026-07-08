@@ -1,0 +1,115 @@
+{
+  "cell_id": "G_N_run3",
+  "task": "G",
+  "condition": "N",
+  "run_idx": 3,
+  "phase": "phase4_ratings",
+  "model_short_name": "M2",
+  "persona_or_neutral": "neutral",
+  "system_prompt": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation.",
+  "user_prompt": "You are presented with 5 anonymous responses (E1-E5) and 9 bipolar constructs. Rate each response on each construct on a 1-7 scale: 1 = strongly the LEFT pole, 7 = strongly the RIGHT pole, 4 = neutral or mixed.\n\nResponses:\n**E1:** # Recommendation: Option H (Tiered system based on resource scarcity)\n\nAdopt the tiered protocol, with Option C governing normal operations, Option A activating at 80-95% capacity, and Option D at >95%. This is the protocol I would put in front of the board within seven days. The core argument is proportionality.\n\n**E2:** Given the protracted 6-week surge, exhausted staff, and the 7-day implementation deadline, our only ethically defensible, operationally viable choice is **Option A: Predicted short-term survival ranking by SOFA score and 28-day mortality prediction**. This protocol alone preserves the core aim of crisis triage—maximizing the number of lives saved—while minimizing moral distress and procedural complexity when the system has no slack. Option A is objectively calculable, transparent, and reproducible.\n\n**E3:** I strongly recommend adopting **Option D: Multi-principle scoring with lottery on ties** as the system-wide triage protocol. After six weeks of sustained overflow, clinicians are experiencing profound moral injury from making ad-hoc life-and-death decisions. Option D provides a highly structured, ethically robust framework that removes this terrible burden from individual bedside providers.\n\n**E4:** Adopt **Option A: predicted short-term survival** as the ICU triage protocol. In a sustained overflow with exhausted staff and only seven days to formalize a system, the protocol must be clinically grounded, fast, reproducible, and defensible at the bedside. Ranking by SOFA score plus predicted 28-day survival best fits the central crisis standard: use scarce ICU beds where they are most likely to save lives.\n\n**E5:** I recommend **Option D: Multi-principle scoring with lottery on ties**. In a six-week overflow disaster, no single ethical value—survival, equity, fairness, or social utility—deserves absolute dominion. Option D keeps saving lives primary at 40 percent, but it refuses to treat a 25-year-old parent with moderate illness as interchangeable with an 85-year-old who has identical short-term organ scores.\n\nConstructs (id : left pole ↔ right pole):\n  C_M2_1: 'Multi-principle ethical balancing'  (1) ↔ (7)  'Short-term survival maximization'\n  C_M2_2: 'Scarcity-contingent tiered protocol'  (1) ↔ (7)  'Single fixed triage protocol'\n  C_M2_3: 'Tiered proportional hybrid'  (1) ↔ (7)  'Pure Option A survival ranking'\n  C_M4_1: 'Single fixed protocol'  (1) ↔ (7)  'Tiered adaptive protocol'\n  C_M4_2: 'Uniform ethical standard'  (1) ↔ (7)  'Surge-adaptive framework'\n  C_M4_3: 'Survival-only criterion'  (1) ↔ (7)  'Multi-principle framework'\n  C_M5_1: 'Single uniform protocol'  (1) ↔ (7)  'Tiered conditional system'\n  C_M5_2: 'Multi-principle ethical scoring'  (1) ↔ (7)  'Single-criterion survival ranking'\n  C_M5_3: 'Complex tiered frameworks'  (1) ↔ (7)  'Simple fixed protocol'\n\nOUTPUT FORMAT (strict). Write exactly 45 lines, no commentary, no markdown fences, no headers. One line per (construct, element) pair, in this exact format:\n<construct_id>,<element>,<rating>\n\nExample (showing the format only - your numbers will differ):\nC_M2_1,E1,1\nC_M2_1,E2,2\nC_M2_1,E3,3\nC_M2_2,E1,4\n...\n\nConstraints:\n- rating is an integer from 1 to 7\n- iterate all 9 constructs in the order listed, and within each construct all 5 elements in order (E1-E5)\n- produce 45 lines total\n- output ONLY the lines, nothing before or after",
+  "model_id_requested": "openai/gpt-5.5",
+  "model_id_used": "openai/gpt-5.5",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 19229,
+  "timestamp_iso": "2026-05-23T01:38:07.516222",
+  "raw_response_content": "C_M2_1,E1,4\nC_M2_1,E2,7\nC_M2_1,E3,1\nC_M2_1,E4,7\nC_M2_1,E5,1\nC_M2_2,E1,1\nC_M2_2,E2,7\nC_M2_2,E3,7\nC_M2_2,E4,7\nC_M2_2,E5,7\nC_M2_3,E1,1\nC_M2_3,E2,7\nC_M2_3,E3,3\nC_M2_3,E4,7\nC_M2_3,E5,3\nC_M4_1,E1,7\nC_M4_1,E2,1\nC_M4_1,E3,1\nC_M4_1,E4,1\nC_M4_1,E5,1\nC_M4_2,E1,7\nC_M4_2,E2,1\nC_M4_2,E3,1\nC_M4_2,E4,1\nC_M4_2,E5,1\nC_M4_3,E1,5\nC_M4_3,E2,1\nC_M4_3,E3,7\nC_M4_3,E4,1\nC_M4_3,E5,7\nC_M5_1,E1,7\nC_M5_1,E2,1\nC_M5_1,E3,1\nC_M5_1,E4,1\nC_M5_1,E5,1\nC_M5_2,E1,4\nC_M5_2,E2,7\nC_M5_2,E3,1\nC_M5_2,E4,7\nC_M5_2,E5,1\nC_M5_3,E1,1\nC_M5_3,E2,7\nC_M5_3,E3,4\nC_M5_3,E4,7\nC_M5_3,E5,4",
+  "raw_response_full": {
+    "id": "gen-1779496686-f9ZrEo4Xi0LtpBVeRrFh",
+    "object": "chat.completion",
+    "created": 1779496686,
+    "model": "openai/gpt-5.5-20260423",
+    "provider": "OpenAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "C_M2_1,E1,4\nC_M2_1,E2,7\nC_M2_1,E3,1\nC_M2_1,E4,7\nC_M2_1,E5,1\nC_M2_2,E1,1\nC_M2_2,E2,7\nC_M2_2,E3,7\nC_M2_2,E4,7\nC_M2_2,E5,7\nC_M2_3,E1,1\nC_M2_3,E2,7\nC_M2_3,E3,3\nC_M2_3,E4,7\nC_M2_3,E5,3\nC_M4_1,E1,7\nC_M4_1,E2,1\nC_M4_1,E3,1\nC_M4_1,E4,1\nC_M4_1,E5,1\nC_M4_2,E1,7\nC_M4_2,E2,1\nC_M4_2,E3,1\nC_M4_2,E4,1\nC_M4_2,E5,1\nC_M4_3,E1,5\nC_M4_3,E2,1\nC_M4_3,E3,7\nC_M4_3,E4,1\nC_M4_3,E5,7\nC_M5_1,E1,7\nC_M5_1,E2,1\nC_M5_1,E3,1\nC_M5_1,E4,1\nC_M5_1,E5,1\nC_M5_2,E1,4\nC_M5_2,E2,7\nC_M5_2,E3,1\nC_M5_2,E4,7\nC_M5_2,E5,1\nC_M5_3,E1,1\nC_M5_3,E2,7\nC_M5_3,E3,4\nC_M5_3,E4,7\nC_M5_3,E5,4",
+          "refusal": null,
+          "reasoning": null,
+          "reasoning_details": [
+            {
+              "type": "reasoning.encrypted",
+              "data": "gAAAAABqEPb-e4KBfQU_AOHKyk6Yl6ePPWy3XKqqmfN4-O1byyHcI3qkSi-KKMGAVRbGf8ZjNbU36k6ZXbd_yUNFy5OnAIeizggZVX1lfGKuilByuS8viDPZHlM6Ut1VMreuS-qO0vQDYQREKJIx60GF7klIl02PGweqL7MOfzVjLNwSZc0pEAqzrHRmEhsFd5_0oGMkLgOC3YStaDzl_hH0xORNbBNpvVyxqGNVGbWQXxrm0ceECUCxHI2pQrW0MQjQnW0zW5PPQokoO7PvobmnfSVfrfOUJQEFF8I1VuiOAAPb-6aQhFi2LfP5nKgGqh5xBqXQE1XklBItp0K1qjO4T5V9bwZ7p54uryiX5nXe4CgneTywFiVN_nYQJ9jFcB9L13jYVeWxKdjRRyUZNPT__cS1yWoFL0LkpiS7MvMtZtVPJ-9g-pPyv6a5Op7cFLzcw_Rimxx_hY5JsRQnJbMBlk7dC6aUa6o9BJgkaCbWZT3if6zO1852lxZemWPeYeUJi-Ss1WR15jIrRQjZngJUAwcBKPZF6knuMxqAXPPEhIELU92JDZY4B5Sfq0vgDog2R_w16GWgKio-EiJqqtt4_lJnlJlRyhH9TiTUPjSo1FInzkNeRYG4RwrD-qieVvHOxM8GFKtxoMumrFkWoJAaA_glmw4x89cBtMdGbzoC-ixswxmkIJdoEF0Aafg-KZeLdT5ro8SVvecqcQRFRfPue1XRxQRpYwx-EcchvE1VIriKy-y3cHFVxG-m5Fp4SVUS2gW-YnxOnQz5zGlXMD-vym5hqdb2ZrItrGs7SvcDCPjX46Ls2usKqXXLi9uwaU1hw3Cq7prV8RGpjTabMf6u4FCsAtgu9JS6LaYcdIO8U9h4htkQ2nnit-lTkaeyHP0H_6pnMv0c4J-9O6bavDrPKatfg2ZAPknSmvu47XIEfPiYkZY_uYhuNXNef0HABvLHHUNg9I00u-kMYHXvDxLBxA16UAA_RTJ-BEVDMZHdUSTT4rwXOZEs7ZZayy0JxRfwr3OO_KIITjos399e65azkIGT4XGSZhZrC8xRQhwpdRcD30WQAGEcDThaAKv1-iEu0gRID3EgGgHK9DwPajHk5m3-5VLERrCOKTnLjZjpAA2XZvoH6xeLIEwM-r5XEiC7CCsDaFkSYGEwFBXXEh71CLPl0zBd_d5yDLp2-oQAgXFxfn93B_XzRmyvVUs6911k5Gx3VjPWrHmeAgPVcYAumqJxQSJqNRqZ1y1hWR7N2mMwz-EAc4neG-w_ce8E7PEB6NAHEU4c82Szuhs8s7WDqvv0Au0XY9qAl8WDuZ0ywBNqY-hG8XWbEAMqq9u0OkyrF_VmL6Jz2xxbgqc8heW5Yq5AQQDlX9Wq_ZNk6jT0xNIwuTE_Rl9puNqvctTLXeEcKyF6NQG5ndMC3d8jmanp5gUMnWc0_xu56ETbbmPPgmDpt3NRMkSzfM9g7DLOlU4g1BUJF7xGA4CCbgHVkUwyW1MEmEKbzXlwuIidrIW_HCDpDODo4-OKRVpmAdul6PPwU6qFhvahGbzUMw3JyVkeka09pJ2DafO3Mu2djJMQZDOljW_bqqoMTOWi4xAiLwNRUC6BJbDHuZdso0MiK5J8r8iuXhwGY8ZGeddi6QLBNmyznbCuYgLS2pCM1T4x3_NStPyNEs_g3kFE5UL2Qz_91w1lNhxCrYNqZy6VmRIrpGApXFNHE8Pe_Mf5GkptEmDfxsVkZEaqwAks4CafFVr4Df-EOz20yuLkmnjFdSeUU2BMHo3TBKgRqW6gTZg_WD5KjfTtLzwFymSmb11BtAJUVw0MCoLyYEjFqsZIqPKwrd6-wPV7GNCdTGnhHQ3JUzfYt3lpxcoGsop4QuJsSCrbikI9cL4OrywNbm-JyBgj95aK0PCu2WhU--qS7eHm5OhXmdTo13kiHSPY49E-6CdFhSQPaZh0Gw5SaC7jZlupafObXc4-cj9unccUfDpcMdX36hftGVsTLW1fOHpGfOiCAC87PNkskocxOz_qFH6g2HqydjxDL-M3f7y-1M5lNC7OkoaY1-GcF7tGzDElNvHCu87hBhPXFFmhJnVA249y4JSU5FFehpf3CiBf0wsvTUFFjBvhOJ_oAjIUvBgSwclYYebbVIWGap3jES7i88Uh29SMBVh-JBmptKQt4zirh-N2-4A0Ob65D24_LoTU30vtv5zhKrpgEP8oeVYbm-n3ZzIz_bySqUkTRZXnUy9qmLae1YWxoUY9cBw1RBbCoo57hDAqEyIt-KXVGUVg158rMVLygUF0nneRMueMhzmcMhatcg3NPnDWwFAevACKWvogRI60DxbnuZVaKIhx71WLrOTNb13E7_tk2jVLv_pIqTgd05ljg7gyiNMsoDEI7_o6TUCK_sPd62CXGrWrSpwZwyE38kArXND26BZ9mQt4YW8PACuQJTR_dMA8sUjCu1DMMVwB_fLnmzP6oXkLclRSGXZDf_9NVV4C_ovAtjxZ7BCB1ADKlK4CZ_qQ-JnHjkElYh1I-m2H7tM2RaM_GbeEfRWbQnp8h6_1LdZDpSbXmVhNqIxnF8QlwkxbR7WeD-cQSxH4fPrtvlLotZNoQB6isduuIB8P6wK5pjekzpHST9ZbmyvHmuXp_sNLOJgaifzKIKGmL1yRkaSvUtuwywrdPQcwd6m06e9MbM34MzUA1x4nXNtM82POxdNfUOdalH9we6-hT_SccKFbmBmk7RbGw6VMXjuUeTVlzbEQ-UXHFuvp7pV2934gBAJw28hQAWEGkwlT7DR55dxsX_R8mwXHMTVFZkrs1e_qOzTz0VhLoyPYSG8gibC0sfxnF0oA3pnPE-7Q8y0v1aDXh4qEFo2FR65ek7XV3AuzIYABN1HbrI4SSQM6T2zFS-WaAn3EpysDCPRQibGeVK96Ihzgb_J222j5KDBw7G4UJKMPaoXYJm0CsqrTJpFFzNtDkUE4dXzI-PoDGgS-3AOx0H3Sqy5ttihNvGdGoGOWWKHQC5we4UszcJV5cI-9zQO766lS7vCRw9chAen8r8T5teA32rQXbvw-NwRElLzwNgShfnAO0NGq_ZrS01ppSz9NOZXvzZIkve7K03CZvLoHANfmrgcypmZMlpcdwmyOBxCTl-iktr1mg9LtDDsDJ02iRxnOmS02iNPth1gU1bbFL47HNrX8zhv4Nt1Pzwy8x-oL2i6cGpCPQT2dn-lFN3oXSD6eoMcMuJDv65cYQ9N3znjgMlub_JK3iozRLs1_KcmgFp9au8SGknudq0_dNbeAGAqEOjv5RIMlfWRPr_IRpjNrkBHlM0wtjcWJ6UmSiPsJi1JAq7_flfAReBBGZV6Ja5wpNMuNm5nZzvOPwf5EQKLMys9te4kMgnycl1uQVqWUKHaE_uoC6vgjFZQ5aamTDQ6DnBjs1wx_PCi2GdYJ_kKKcxMQ-izW9oADNXsSK126DGR6XK5r2jVjPO3YmBqmiL7jWjhqWHlQhvL8GdWZZKWRv_bD6i1Py3xlCHeSdnH7Gd3i0K4XEPV6BE5U0Y3DBukGr38xCyvYtrxQlQivMGbStJURVWGkPPQZHc3Dpcb9YkE0T-4GhuFehGTy0yS9pdYuSIPpqrGIUyKD2QUQRfdixtmYt6F96GhQD07325csvzT8ByafcHzI6EW5XBJqWCD28fhHntc7jTc9oB9VvDQ9OPJsxTIs4f1Trsx4B3gklqbk8JTiFbfSmde-nwi1WOioob-OLKCYKdtvqeIjMaBn85pz0v45M65zY9kFQX-TU3f7qeL4QStrFi-SJtWmZ38Fo_YydTMxxez8Tk35rbhS4RtNag8Yren8nUSvzzXTZAI9mS9LkNOHrgCsMqFpiETUvR3cyfK3HcD8fzroPNp37flzprEgGjpF1RbRdhZ_LvbFwismyuZS37LGUIdNeqymMiK9JifowhGzzFGx0rDPJczpd_89ID-WOjkW1ecejBiW2ddfQ8l8WEVHso0PghKt4Gn9fpemg-_z_Z0LkNIviNFNMdYX8_crKADgP3ccTyQpBNnODbChrn5JX4IvBsSHVbsTg4_Ais7lunDX_ZWK7OMJs_Q8FOMRW8PnCJ9Za9TDGdXfeu9RJzRBm23SSFcMluqgq_tW_JyKckquvfxGnCE9R7MW1w-2faEDeJcpQE6lwQd-zOR2M_tF8yyxLw-im4AvKyuVy9MDh0t7RBcgah40ke4qP3ebgBD9TfRwWw-DTpjZga460bpuKl6tu8FUb4KnGU22fiLN28jt76tnUxfms-qpBss31GGnQBbmT3a00d8GQkW4ozUyuAocOtWxlSmFL5gTuXRBtoRajm63pWH_XAhS-fVi8pYwlMZVNQy1dH4Jhx3zW_4CfRdOkZlA4KU-JAMdRttFVyxcFbELDXmNcsxIEBmxicelVrM_mMjO2sJfgabeJpwMQJ-8YfIyUDXzRmmkIyn5xJuIzmx-H4ng-1swEzdWlt7EU6-yMgGko5hD3UMSJPFT0I5SYThVJ-KuLRys6rhwt2my7A1RmXRkqZnGGvrHw-RK0Kj-36nfnW1Mjn2XyMg2TxyLRu13ALcEyS2VdVingP46bdd6VCMpJP8twswcjYqYk1fipJDx3obgZNEf2VMYN8d_gVvhcXa4Nezo7q8osYg2CnlG_u3wOWH1KkvgfIUuqKs7OacgtFYDDzpkO3fQc2kEvz2qMK6RHX0z2R8Kp8XG46kB7bgrCfwoqAKc2-or8zUhftX2bPZkJWWM61Fjcu1dC8q0VKjPhJSmCT9JH66vg06bjbLxND0dCbavbUnyrRQkD9wMlmh8v_SqtBH8F423mJBqDayTmLEpgbUjavwBHbcWEmJHMvv9PBRyH2almOaj8D7ZGkTqGacy2xU_iYSG1MyCwroMtCdZEwZ4a6h16EOnP_TKM1CSMLcBcdqjIdTm2dxagemb7DunjIssMbklzBhk9BGp8gQhphPnXheph6pCXNhKheIgas8OMRookrouRlRxCItpgJlZ4KuqQfuCdK86oiaRe2oTbmKZPwnbGRbxC7Kfv8j75fvEd95NJLAONHQ24_aduxOa3bPRRVO4-4f4LlXVcQSRfl9X4augxhfDsohnZcVu5JhL9OkYf4RKik2Aw_sDOkI2sxeQVPYmL8-arJ80C7KFfesfjedTTNTirMzocgr0Fkgo_2xppg4YicwJrSgONMsoe1xhKHO_6m5FVoBvRIMlJ9AsZfw3YQ2PwMUmUUWchF-rg2L4z6PGM1ukpYq8AIoIyu9rYdjWAFQLisEWSv5qzFsYMLWO1QUsNw-eljfR_mzZK6e-Q5BenAWSjabEwPlK25hf-Vf5d-NUfdo_965IGyryGLPe90s_GHBkRta3hY4alrRvZCuRRtKDdhjjqZuUqrjzWhv5_04UAcvLPvi0YYbpjMjgwaWbJBDtn4-09q0zEwf2SRuZIUI0751wEnOt87cHBYSZ4OhxDPX0ANWAiT6Q1_gKCq7WtX2tWDNuzNermzhPLMoDIQubPBTJztcW0QzJ5S_eW_tNGM7qHeOCYyIBbSwR8H7tgKXcS1DNuEoe-NJzpf1hst2pdlsOy5jyNBmltJHzbfn0cxK3wxcEPmvbNdqS21a0h0C6ZeHa6F68BkfxhO-7u3pdGc1dmzxEfzDyMYR9XO3fJns80yHHoAmO4pBr55K98L52eOGkcTptLvHcLdimwTbXWLby3pJBaG1NtBZ9lxP8G1kAvPsQRmPLbgnY2I_PqoOleg7-mn1UpyKfC_n_47P4J9Fd2_5_dKqXm3ulC-k7MnjuwtXsHEXPjdp26MJ3ko5okXUGpiD2Xb6SZ3l1d3D6ka2Pu-erH_kaKIW1eXvV1HM9F0pgBbQrulKVAh1PAca8skuP_rJ4Nkw=",
+              "format": "openai-responses-v1",
+              "id": "rs_08ec87ffd98fa709016a10f6ef7ce08193ac672d352fbe35f7",
+              "index": 0
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 959,
+      "completion_tokens": 1489,
+      "total_tokens": 2448,
+      "cost": 0.049465,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.049465,
+        "upstream_inference_prompt_cost": 0.004795,
+        "upstream_inference_completions_cost": 0.04467
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1034,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 959,
+    "completion_tokens": 1489,
+    "total_tokens": 2448,
+    "cost": 0.049465,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.049465,
+      "upstream_inference_prompt_cost": 0.004795,
+      "upstream_inference_completions_cost": 0.04467
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 1034,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 1034,
+  "cost_usd": 0.049465,
+  "parsed_summary": "parsed 45/45 ratings",
+  "request_payload": {
+    "model": "openai/gpt-5.5",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses (E1-E5) and 9 bipolar constructs. Rate each response on each construct on a 1-7 scale: 1 = strongly the LEFT pole, 7 = strongly the RIGHT pole, 4 = neutral or mixed.\n\nResponses:\n**E1:** # Recommendation: Option H (Tiered system based on resource scarcity)\n\nAdopt the tiered protocol, with Option C governing normal operations, Option A activating at 80-95% capacity, and Option D at >95%. This is the protocol I would put in front of the board within seven days. The core argument is proportionality.\n\n**E2:** Given the protracted 6-week surge, exhausted staff, and the 7-day implementation deadline, our only ethically defensible, operationally viable choice is **Option A: Predicted short-term survival ranking by SOFA score and 28-day mortality prediction**. This protocol alone preserves the core aim of crisis triage—maximizing the number of lives saved—while minimizing moral distress and procedural complexity when the system has no slack. Option A is objectively calculable, transparent, and reproducible.\n\n**E3:** I strongly recommend adopting **Option D: Multi-principle scoring with lottery on ties** as the system-wide triage protocol. After six weeks of sustained overflow, clinicians are experiencing profound moral injury from making ad-hoc life-and-death decisions. Option D provides a highly structured, ethically robust framework that removes this terrible burden from individual bedside providers.\n\n**E4:** Adopt **Option A: predicted short-term survival** as the ICU triage protocol. In a sustained overflow with exhausted staff and only seven days to formalize a system, the protocol must be clinically grounded, fast, reproducible, and defensible at the bedside. Ranking by SOFA score plus predicted 28-day survival best fits the central crisis standard: use scarce ICU beds where they are most likely to save lives.\n\n**E5:** I recommend **Option D: Multi-principle scoring with lottery on ties**. In a six-week overflow disaster, no single ethical value—survival, equity, fairness, or social utility—deserves absolute dominion. Option D keeps saving lives primary at 40 percent, but it refuses to treat a 25-year-old parent with moderate illness as interchangeable with an 85-year-old who has identical short-term organ scores.\n\nConstructs (id : left pole ↔ right pole):\n  C_M2_1: 'Multi-principle ethical balancing'  (1) ↔ (7)  'Short-term survival maximization'\n  C_M2_2: 'Scarcity-contingent tiered protocol'  (1) ↔ (7)  'Single fixed triage protocol'\n  C_M2_3: 'Tiered proportional hybrid'  (1) ↔ (7)  'Pure Option A survival ranking'\n  C_M4_1: 'Single fixed protocol'  (1) ↔ (7)  'Tiered adaptive protocol'\n  C_M4_2: 'Uniform ethical standard'  (1) ↔ (7)  'Surge-adaptive framework'\n  C_M4_3: 'Survival-only criterion'  (1) ↔ (7)  'Multi-principle framework'\n  C_M5_1: 'Single uniform protocol'  (1) ↔ (7)  'Tiered conditional system'\n  C_M5_2: 'Multi-principle ethical scoring'  (1) ↔ (7)  'Single-criterion survival ranking'\n  C_M5_3: 'Complex tiered frameworks'  (1) ↔ (7)  'Simple fixed protocol'\n\nOUTPUT FORMAT (strict). Write exactly 45 lines, no commentary, no markdown fences, no headers. One line per (construct, element) pair, in this exact format:\n<construct_id>,<element>,<rating>\n\nExample (showing the format only - your numbers will differ):\nC_M2_1,E1,1\nC_M2_1,E2,2\nC_M2_1,E3,3\nC_M2_2,E1,4\n...\n\nConstraints:\n- rating is an integer from 1 to 7\n- iterate all 9 constructs in the order listed, and within each construct all 5 elements in order (E1-E5)\n- produce 45 lines total\n- output ONLY the lines, nothing before or after"
+      }
+    ],
+    "temperature": 0.0,
+    "max_tokens": 4000
+  }
+}

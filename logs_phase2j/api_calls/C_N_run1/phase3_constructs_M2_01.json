@@ -1,0 +1,121 @@
+{
+  "cell_id": "C_N_run1",
+  "task": "C",
+  "condition": "N",
+  "run_idx": 1,
+  "phase": "phase3_constructs",
+  "model_short_name": "M2",
+  "persona_or_neutral": "neutral",
+  "system_prompt": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation.",
+  "user_prompt": "You are presented with 11 anonymous responses to the same brief. They are labeled E1 through E11.\n\n**E1:** **Recommendation: Option B – Encrypted cloud with no training**\n\nFor a health app with 2 million active users, **Option B** strikes the optimal balance between capability, privacy, and regulatory compliance while maintaining user trust. Here’s why it should be the primary choice:\n\nFirst, **privacy and security are non-negotiable in health tech**. Users entrust the app with sensitive data, and any perception of misuse—even if legally defensible—could erode trust and invite regulatory scrutiny.\n\n**E10:** ## Recommendation\n\nI strongly recommend **Option D: Cloud with opt-in training only** as the primary data policy for the health app's AI-powered health coaching feature. This option strikes a balance between capability, privacy, and regulatory compliance, making it the most suitable choice for the app with ~2M monthly active users. ### Rationale\n\n1.\n\n**E11:** The most appropriate policy is **Option B: Encrypted cloud with no training**. Health coaching demands both impeccable privacy and full AI capability, and this option uniquely delivers both without exposing the company to the regulatory and trust risks that can cripple a consumer health platform. Health data is among the most sensitive personal information.\n\n**E2:** **Recommendation: Option A – Local-only processing.**\n\nThe company should adopt a local-only AI architecture as its primary data policy. With 2 million monthly active users and a product that handles highly sensitive health data, privacy must be the non-negotiable foundation rather than a feature that can be traded for marginal gains in model performance. Structurally maximal privacy is the only position that aligns with both ethical responsibility and long-term business viability.\n\n**E3:** # Recommendation: Option B — Encrypted Cloud with No Training\n\nFor a direct-to-consumer health app at 2M MAU launching an AI coaching feature, I recommend **Option B: encrypted cloud processing in a confidential-computing enclave with no training on user data.**\n\nThe decisive consideration is the asymmetric risk profile of health data. Unlike browsing history or shopping behavior, health data is durably sensitive — a leak or misuse incident can produce regulatory action (HIPAA-adjacent scrutiny in the US, GDPR Article 9 special-category rules in the EU), litigation, and irreversible trust dama...\n\n**E4:** ## Recommendation: Option B — Encrypted Cloud with No Training\n\nFor a 2M-user health app launching AI coaching, **Option B is the right primary policy.** It resolves the central tension of this product better than any alternative: it delivers full clinical-grade capability while making a structurally credible privacy promise. In health, both halves of that sentence are non-negotiable. **Why capability matters here.** A health coach that is 30-40% weaker (Option A's local-only ceiling) is not a privacy-respecting product — it's a worse product that happens to be private.\n\n**E5:** I recommend **Option B: encrypted cloud processing with no training on user health data** as the primary policy. For a direct-to-consumer health app, the central asset is trust. Users may tolerate cloud processing if it produces materially better coaching, but they are unlikely to forgive ambiguous or expansive use of sensitive health data.\n\n**E6:** The recommended primary data policy for the AI-powered health coaching feature is **Option B: Encrypted Cloud with No Training**. This option strikes the optimal balance among privacy, capability, regulatory compliance, and user trust—critical factors for a direct-to-consumer health app with 2 million monthly active users. **Privacy and Trust**: Option B ensures maximal privacy by encrypting user health data in transit and decrypting it only within a confidential-computing enclave at inference time.\n\n**E7:** I strongly recommend **Option D (Cloud with opt-in training only)** for the new AI health coaching feature. For a direct-to-consumer health app with 2 million monthly active users, the success of an AI product hinges on balancing advanced capability with sustainable unit economics and unimpeachable user trust. Option D is the only policy that successfully optimizes across all these competing axes.\n\n**E8:** I recommend **Option D (Cloud with opt-in training only)** as the primary data policy. This approach optimally balances AI capability, regulatory compliance, user trust, and operational cost for a 2M MAU health app. Health coaching requires high-fidelity reasoning; providing degraded or unreliable advice poses a direct safety risk.\n\n**E9:** I recommend **Option B: encrypted cloud processing with confidential-computing enclaves and a strict prohibition on training**. For a direct-to-consumer health app with two million monthly active users, trust is the core commercial asset. Health data is not interchangeable with shopping or social data; it is heavily regulated, emotionally sensitive, and subject to zero-tolerance user expectations.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E5, E7, E10\nTriad 2: E1, E8, E11\nTriad 3: E3, E4, E8\n\nFor each triad, output EXACTLY this format with no markdown, no bold, no bullets, no numbered lists:\nTriad 1:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 2:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 3:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'. Use plain text labels (Triad N, Left pole, Right pole) without any markdown formatting.",
+  "model_id_requested": "openai/gpt-5.5",
+  "model_id_used": "openai/gpt-5.5",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 12018,
+  "timestamp_iso": "2026-05-28T23:50:30.228441",
+  "raw_response_content": "Triad 1:\nLeft pole: Allows opt-in training on user health data\nRight pole: Prohibits training on user health data\n\nTriad 2:\nLeft pole: Prohibits training on user health data\nRight pole: Allows opt-in training on user health data\n\nTriad 3:\nLeft pole: Prohibits training on user health data\nRight pole: Allows opt-in training on user health data",
+  "raw_response_full": {
+    "id": "gen-1780008629-RFkLMYcjVofQ41RFu5uV",
+    "object": "chat.completion",
+    "created": 1780008629,
+    "model": "openai/gpt-5.5-20260423",
+    "provider": "OpenAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "Triad 1:\nLeft pole: Allows opt-in training on user health data\nRight pole: Prohibits training on user health data\n\nTriad 2:\nLeft pole: Prohibits training on user health data\nRight pole: Allows opt-in training on user health data\n\nTriad 3:\nLeft pole: Prohibits training on user health data\nRight pole: Allows opt-in training on user health data",
+          "refusal": null,
+          "reasoning": "**Analyzing triad constructs**\n\nI need to find a structure where two items are similar, distinguishing them from a third. It seems like a recommendation option is at play. For instance, in Triad 1: E5 B, E7 D, E10 D shows two D versus one B. I'll consider “Opt-in training allowed” versus “No user-data training” as potential poles. In Triad 2, E1 B, E8 D, E11 B reflects two B, no training, and one D for opt-in training. Each triad shows nuances, and I need to name the poles without indicating which is which.**Structuring triads with labels**\n\nI need to ensure the labels for each triad are specific, keeping it to a maximum of 12 words without any markdown or bullets. It seems likely that the left pole represents the majority and the right the minority, which is good. For instance, in Triad 1, the majority involves E7/E10 D with cloud and opt-in training versus E5 B with no training. In Triad 2, E1/E11 B shows encrypted cloud with no training against E8 D for opt-in training. Triad 3 reflects E3/E4 B for no training versus opt-in training.**Formulating concise phrases**\n\nI need to create short phrases that are a maximum of 12 words. For instance, “Permits user-data training with opt-in consent” has 6 words, while “Categorically prohibits training on user health data” has 7. I’m considering “Encrypted cloud inference, no user-data training,” which may have 6 words, and “Cloud inference plus opt-in user-data training,” also 6. The main question is about naming the two poles of this dimension—likely distinguishing between no training and opt-in training in Triad 1, comparing E5 to E7/E10.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "**Analyzing triad constructs**\n\nI need to find a structure where two items are similar, distinguishing them from a third. It seems like a recommendation option is at play. For instance, in Triad 1: E5 B, E7 D, E10 D shows two D versus one B. I'll consider “Opt-in training allowed” versus “No user-data training” as potential poles. In Triad 2, E1 B, E8 D, E11 B reflects two B, no training, and one D for opt-in training. Each triad shows nuances, and I need to name the poles without indicating which is which.**Structuring triads with labels**\n\nI need to ensure the labels for each triad are specific, keeping it to a maximum of 12 words without any markdown or bullets. It seems likely that the left pole represents the majority and the right the minority, which is good. For instance, in Triad 1, the majority involves E7/E10 D with cloud and opt-in training versus E5 B with no training. In Triad 2, E1/E11 B shows encrypted cloud with no training against E8 D for opt-in training. Triad 3 reflects E3/E4 B for no training versus opt-in training.**Formulating concise phrases**\n\nI need to create short phrases that are a maximum of 12 words. For instance, “Permits user-data training with opt-in consent” has 6 words, while “Categorically prohibits training on user health data” has 7. I’m considering “Encrypted cloud inference, no user-data training,” which may have 6 words, and “Cloud inference plus opt-in user-data training,” also 6. The main question is about naming the two poles of this dimension—likely distinguishing between no training and opt-in training in Triad 1, comparing E5 to E7/E10.",
+              "format": "openai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "gAAAAABqGMbAj8wG073rYCnjpXKxfC4sUX6vg9RdDwkYqUxeTCPYyojP-BBh351zSzdgfI5-7oXn6SxRsR5fPBnVdKzivUDUf5mZgQmRJ08NVOBvRbstLHbS6EDeRHBbI4dXdsCzrzfUdrP6efU5XPYXS9oQ6FlzBQYikb5CyH55LuOy8rM5AG1krEqi9N5mW1JiC7CvoWaImV6fCmbGAt35SLyek1m4dT9PxgzReAWNG8SuufwgSAMg7bJ9xwRvTL4ylDilJOVBBpT_dsmouGiGoOM5No4wcDtYhi4WwiOJmtmoiIpxpztvEuzklr3XQ3OOLLBwVeyRQoc0TSKvGU6v0uBUs1dzRJutVNN9PepOn07D3BzdREFVoX2vQV5494te80kS-Wsu9TQ2rHLuydYvtxZqUeJ7qwQgzOJkunEei2tf7dLopgakeV91OZkmIjqk8WxoO5arTp_IuGXuoo8ekT9XAljKothf1L_KjY7hsp2MbBQUVgSkKW-_SNz2RNqGDmCTHREP0ZjIfxKG6OZgJOkudKZ9oTE7D9UjQ1WGzaOdHKJhZNUkyLFyIVjoWLAjUpH0xobM-lSJpiBvrk_agWAxsZikfhsmQjBKyedE75l5TTZ3t9JFsJnosag774p6JkjoZt_UD0iJogzUXHda9Nw7eqL36XCE7hwD9mEm7hbaWpct2baAGqj1pzSFqf4oc1-RW6vLDRqTE4kt5gD1NI7rh-W7FedmQ47zHm3cJ16D5DFweNc0pWHuInmkUeN5ie4AFsHST_eg-aE8m-K06nkgr6s1-oLwu5HvysH344csY7qF0cKcelGP9u-ppQ7qHNGR0NT59i8ubLbJeE3LHmPt2rNPfqj1VuRQyKSEbX5VmH-K2-gprjwnzHuXTYhq8IyDQU_SbCPhFojgSyiI2TQMFbhRqnD77jYc3QuEGAkP45RFGvnUyRg7VPNfLJs48klWh1DccjO-hbYJGq8U-HhvoWiJvRLhhKAwYgR40WOkLN37MtXohLoFcGcD5r09tBSdHBTqdQQnmf_rh4viTTNf5EHoqJsQvPuwxotJlf53FUkvPqRoOy9NrwbNietDNAP_qDAT0vc2QsyW83pZvPLEJUvtpWhFnqfPVpwukRbbSNUZu-Qdo0dpHbhnFN_InkkMXFWuXbTdwmk9Yy395hRuvmUIalR-rWLqwuts8fV7xmItntnREr3KJYUyuxyUmCmFBB0UMcdKTkFlWP55GwjAr3idSII1sZUn6RzgFroLsDLX1OBu_DsTctPWXGEP8cv9C09fqMvWtlVpRYK4AO3BeEMmCPnN0s726zo6YxsmjKs2HOnnFTCKJ1sa5izFN_xhYvUwKofNLadF48X1Fl0WnUA9znStxk_QN26ZVCokuhkPst5HtT25rbXchvL_bghRAFDU6xMJq48IjCts-XRuN4dnveOYbMvE3meJa1l87elCdhO2E2NnI9FrHfg9p6p3TAp1YLoj8s1IN3wvLYWr1e2B6W2E8kzoHU6yKlQmQuYaDrs4Q9FLywYljxXr8undyzvz95hvvmYFdjbD6914KjwFuAFf35EvebxsPxB5SCAJs6npR8dTkJuLXNBB0xJAvatQm1_QDVwhm6DE3jpi1Ce2X8bsge3y3LYeV4c3ln1cN-n_RYaxad4yhXPI0pyT0q527ulY_pTkA3XptYmXysZ-IOLYOMgTokFFOI9VyMUBKZkMhQTDHllDidzb2VuSSDBk2nWk93CTbJnZHnMyn08FgLHb_tQIUV3o6OM_20tBQMKwD_Vb5-3SkNvyARtYTe2xVzFwQkujMqRKN7YYhS_06pTZHJJhs6weM7EI8qSbDkOLCo0-YDrg3z3ao034d5O3Qzjo8NKeHXonqMq0KGDtEmiCcWVePHtQuBbvYlCcq-KJRO8y_K_1ZKjP_sijgD3x-Vyx0tVyfG7UHToGs-QNR9BwdSdDB89K-nsMzfsPYOXzBLe30maQB6cGZ5fNCsOePvBmlIl281sbxzBij_33PVJ4Bw37Cu_Ib0j5CxsA30_EGR7qgd0YlyJ69mDa06lrhQjz2-ZmUjdx_28vV205sRF-na8a6a7xACpMCDKJRcQcW_P0Yy4b8ji4qpJZKCfwb8jiv1FJkVY0y2U75Hn1rCR4A_stj55Mud-DgkOgtKxj5bQrB4gdiAYgx0qXe06z3uB8jE0WWj4-LsODO6JFFFhZSqkEopCTSuRybS3vshPzDMHD-q1B5_aeX9uF7yZkgfNZJmybL0Fp_Jp3n9em__73nl4od5UTNhNYMiyww84hKQ9IgkIrMRysLjrLFUxlLrcVZ8drtYuyhRFDqQ6iE9rfZmqdGiNkSUT6vaD4patdJEOnCoqRE1pJReHu610zb2Tx6VWE4Rp_ZG8N0MtbCRM_FHJSlmcRSVfWROwYeExZDnmUfXr_-XzZnabghsqC404tpBb9KJMVkfb2s8Hr1w6-Z6CGE2BDnt4uZuodhntZCrJHS9AJ8-VVbOwfNNZnBt8hypqw7isFb6SiYedXvOt36ksKAsHwfMN8eSaWs_2For8TAqWqavbJnYRmFr3Ysv3ZScITqo7xSwymMgYCwUXo2IJ4ElHsEhhCeEvB7sT4i9bZQCzUzK3g1TEkCCQY28wMUEmNxPEICyHAtFJjZ_IzleAHL8zSSA0HrbLNecDCKkwI_ADaJdqIXU5uz6IGkXI7bZuP_tP5McCphBqMqQILstPGUws78dkaXjg2HXynSJUOjM5E8o0hBXFWmAQb8bylq6X2ubqypI8hVsgFd2wVhWZBKWTcJ6O_SscJ5i5CrIlkEVpogrZ7ZA-0SdzOSSRUpdb8VhGO_utPRiHqgttLgyOlP2I-Oy4pN1VgpDo-Dtwfv7oD_kZK1NtEy5qwkYX7FvD-ahIfMuox-jBHpz3sajXi6wZ1sga1dZzJnweLVCiFLF5Qhzh2xNg1_ipN37b0y5KjzVAUTBJEZFRzdKlqSXRtgA7gDKLk1V3-8g_sa3D-ZBfTH_AczI086BZY74LNUq2ugS0T_obaISuXQVh56569l7f3JDgQRrs34mhN4Fzmih0ul4ZqgifuCR-bsAh8H_yssCprHZCphtPwrYaPtiCw2s3pK4owoSLCiQMk7SX856gsA0Py7oBQBX836i-DTkRsHxg_hlFD0ejBul-cjwWR89R_4fphlwUC0-D4L1dnpTYCcoK9mi2NE9AEQjVSpGPBKCSDg4ILiAL2cXYI2ckoxOAKy33hIclOLOd7O1YkbX88UiPWVnAzSVjqQYr4Sw5XSDd1jWlcawb8HUvVDUYKG5tZqcR1SlyDeGxvnOHzL3yP5Y0AzcSMMR977uRAk1N0s0zs7V_0OUNBhjHv6np7ey2o2zP-94au6Jf-VlgJwShK6zV8AINCWX9nIfYdM958KumDjmRqWHfVKPGNltvdhFWdqZVF1wov7HBjBa1zX3S8nTe2zs4MCbxOsVslZW-bDCXXqm0BNAtibubXpHlPTuut1ybr4wRnhmMMF-Y-xxSmoLt0hRM-evi4Mv44m6CtSDXghJdDUil2JrQjJkIsGBOUEN_gvr0OKijec6myTSCbbssBB9C9Zgt2Wq3cXeEPzAgSGdIkUPHR83IdxrAHsmPpjTBJCHIP8_nOQ45WLCQfsUJ2zEw6RTSNj-ca2RBC3rWD7t6rF3RGxvhSpLex4865CLKpQ3t7FofmJcczcWqozTH7WW0YXErgnsOY-F7r6cnjj_xD43d7d8o21IwbDoPCODzOi6No4E8ilyBMh3gWrd2c5uzS6zdGoMDiKnsupzpdCZoBIVIVhg==",
+              "format": "openai-responses-v1",
+              "id": "rs_050fa3806c156e1a016a18c6b5e3288190b865491cbdc51053",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1278,
+      "completion_tokens": 608,
+      "total_tokens": 1886,
+      "cost": 0.02463,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.02463,
+        "upstream_inference_prompt_cost": 0.00639,
+        "upstream_inference_completions_cost": 0.01824
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 516,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 1278,
+    "completion_tokens": 608,
+    "total_tokens": 1886,
+    "cost": 0.02463,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.02463,
+      "upstream_inference_prompt_cost": 0.00639,
+      "upstream_inference_completions_cost": 0.01824
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 516,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 516,
+  "cost_usd": 0.02463,
+  "parsed_summary": "parsed 3/3 constructs",
+  "request_payload": {
+    "model": "openai/gpt-5.5",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 11 anonymous responses to the same brief. They are labeled E1 through E11.\n\n**E1:** **Recommendation: Option B – Encrypted cloud with no training**\n\nFor a health app with 2 million active users, **Option B** strikes the optimal balance between capability, privacy, and regulatory compliance while maintaining user trust. Here’s why it should be the primary choice:\n\nFirst, **privacy and security are non-negotiable in health tech**. Users entrust the app with sensitive data, and any perception of misuse—even if legally defensible—could erode trust and invite regulatory scrutiny.\n\n**E10:** ## Recommendation\n\nI strongly recommend **Option D: Cloud with opt-in training only** as the primary data policy for the health app's AI-powered health coaching feature. This option strikes a balance between capability, privacy, and regulatory compliance, making it the most suitable choice for the app with ~2M monthly active users. ### Rationale\n\n1.\n\n**E11:** The most appropriate policy is **Option B: Encrypted cloud with no training**. Health coaching demands both impeccable privacy and full AI capability, and this option uniquely delivers both without exposing the company to the regulatory and trust risks that can cripple a consumer health platform. Health data is among the most sensitive personal information.\n\n**E2:** **Recommendation: Option A – Local-only processing.**\n\nThe company should adopt a local-only AI architecture as its primary data policy. With 2 million monthly active users and a product that handles highly sensitive health data, privacy must be the non-negotiable foundation rather than a feature that can be traded for marginal gains in model performance. Structurally maximal privacy is the only position that aligns with both ethical responsibility and long-term business viability.\n\n**E3:** # Recommendation: Option B — Encrypted Cloud with No Training\n\nFor a direct-to-consumer health app at 2M MAU launching an AI coaching feature, I recommend **Option B: encrypted cloud processing in a confidential-computing enclave with no training on user data.**\n\nThe decisive consideration is the asymmetric risk profile of health data. Unlike browsing history or shopping behavior, health data is durably sensitive — a leak or misuse incident can produce regulatory action (HIPAA-adjacent scrutiny in the US, GDPR Article 9 special-category rules in the EU), litigation, and irreversible trust dama...\n\n**E4:** ## Recommendation: Option B — Encrypted Cloud with No Training\n\nFor a 2M-user health app launching AI coaching, **Option B is the right primary policy.** It resolves the central tension of this product better than any alternative: it delivers full clinical-grade capability while making a structurally credible privacy promise. In health, both halves of that sentence are non-negotiable. **Why capability matters here.** A health coach that is 30-40% weaker (Option A's local-only ceiling) is not a privacy-respecting product — it's a worse product that happens to be private.\n\n**E5:** I recommend **Option B: encrypted cloud processing with no training on user health data** as the primary policy. For a direct-to-consumer health app, the central asset is trust. Users may tolerate cloud processing if it produces materially better coaching, but they are unlikely to forgive ambiguous or expansive use of sensitive health data.\n\n**E6:** The recommended primary data policy for the AI-powered health coaching feature is **Option B: Encrypted Cloud with No Training**. This option strikes the optimal balance among privacy, capability, regulatory compliance, and user trust—critical factors for a direct-to-consumer health app with 2 million monthly active users. **Privacy and Trust**: Option B ensures maximal privacy by encrypting user health data in transit and decrypting it only within a confidential-computing enclave at inference time.\n\n**E7:** I strongly recommend **Option D (Cloud with opt-in training only)** for the new AI health coaching feature. For a direct-to-consumer health app with 2 million monthly active users, the success of an AI product hinges on balancing advanced capability with sustainable unit economics and unimpeachable user trust. Option D is the only policy that successfully optimizes across all these competing axes.\n\n**E8:** I recommend **Option D (Cloud with opt-in training only)** as the primary data policy. This approach optimally balances AI capability, regulatory compliance, user trust, and operational cost for a 2M MAU health app. Health coaching requires high-fidelity reasoning; providing degraded or unreliable advice poses a direct safety risk.\n\n**E9:** I recommend **Option B: encrypted cloud processing with confidential-computing enclaves and a strict prohibition on training**. For a direct-to-consumer health app with two million monthly active users, trust is the core commercial asset. Health data is not interchangeable with shopping or social data; it is heavily regulated, emotionally sensitive, and subject to zero-tolerance user expectations.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E5, E7, E10\nTriad 2: E1, E8, E11\nTriad 3: E3, E4, E8\n\nFor each triad, output EXACTLY this format with no markdown, no bold, no bullets, no numbered lists:\nTriad 1:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 2:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 3:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'. Use plain text labels (Triad N, Left pole, Right pole) without any markdown formatting."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 2500
+  }
+}

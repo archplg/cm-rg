@@ -1,0 +1,115 @@
+{
+  "cell_id": "C_N_run6",
+  "task": "C",
+  "condition": "N",
+  "run_idx": 6,
+  "phase": "phase3_constructs",
+  "model_short_name": "M2",
+  "persona_or_neutral": "neutral",
+  "system_prompt": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation.",
+  "user_prompt": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** The strongest recommendation is **Option B: Encrypted cloud with no training**. It strikes the most defensible balance between delivering a competitive AI feature and maintaining the structural trust a health app demands. Health data is uniquely sensitive, and regulatory scrutiny is intensifying globally.\n\n**E2:** I recommend **Option B: encrypted cloud processing with no training on user health data** as the primary policy. For a consumer health app, the default posture should be that sensitive health data is processed only to provide the service the user asked for, not to improve the company’s models. This is the cleanest balance between product quality and trust.\n\n**E3:** I strongly recommend **Option B: Encrypted cloud with no training**. For a direct-to-consumer health app with 2 million active users, user trust is an existential asset. Option B is the only approach that guarantees absolute data privacy while delivering the uncompromised AI capability necessary for a successful product launch.\n\n**E4:** # Recommendation: Option B — Encrypted Cloud with No Training\n\nFor a direct-to-consumer health app at 2M MAU launching AI coaching, I recommend **Option B: encrypted cloud processing in a confidential-computing enclave with no training on user data**. The decisive consideration is that health data sits in a category where trust is the entire product. Users tolerate a health app reading their symptoms, cycles, lab values, or mental health notes only because they believe that data won't be repurposed.\n\n**E5:** **I recommend Option B: Encrypted cloud inference within confidential-computing enclaves with a strict prohibition on training.**\n\nFor a direct-to-consumer health app with two million monthly active users, trust is the core product. Health data occupies a unique legal and psychological category; users do not forgive its misuse, and regulators worldwide classify it as sensitive personal information requiring heightened protection. Option B is the only choice that delivers full AI capability—the non-negotiable standard for safe, high-quality health coaching—while structurally preventing data exp...\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E2, E3, E4\nTriad 2: E1, E2, E5\nTriad 3: E1, E2, E3\n\nFor each triad, output EXACTLY this format with no markdown, no bold, no bullets, no numbered lists:\nTriad 1:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 2:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 3:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'. Use plain text labels (Triad N, Left pole, Right pole) without any markdown formatting.",
+  "model_id_requested": "openai/gpt-5.5",
+  "model_id_used": "openai/gpt-5.5",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 15392,
+  "timestamp_iso": "2026-05-24T21:13:09.529431",
+  "raw_response_content": "Triad 1:\nLeft pole: Purpose-limitation trust rationale\nRight pole: Absolutist privacy and capability guarantees\n\nTriad 2:\nLeft pole: Regulatory and sensitive-data risk framing\nRight pole: User-purpose limitation framing\n\nTriad 3:\nLeft pole: Measured balance of AI utility and trust\nRight pole: Absolutist claims of guaranteed privacy and uncompromised capability",
+  "raw_response_full": {
+    "id": "gen-1779653589-qxylryq6kzKpLPbQEqPw",
+    "object": "chat.completion",
+    "created": 1779653589,
+    "model": "openai/gpt-5.5-20260423",
+    "provider": "OpenAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "Triad 1:\nLeft pole: Purpose-limitation trust rationale\nRight pole: Absolutist privacy and capability guarantees\n\nTriad 2:\nLeft pole: Regulatory and sensitive-data risk framing\nRight pole: User-purpose limitation framing\n\nTriad 3:\nLeft pole: Measured balance of AI utility and trust\nRight pole: Absolutist claims of guaranteed privacy and uncompromised capability",
+          "refusal": null,
+          "reasoning": null,
+          "reasoning_details": [
+            {
+              "type": "reasoning.encrypted",
+              "data": "gAAAAABqE1vj_lvX9PIvebbOBtZ1Jr4R61nO-9hQ8sEM8Js61KJHGKkEecxbIMz9kLSXprF4oJadyoz5DpVHAbXlbl_kN87MZ6ic6t0X2KDqEZcNTrphtmzw_nJ7aDNOK58aW5Ib7fy9eex1_uERhQO3iBEYwEqSxxeqdtvZq3YIF8ATQbUwY8xScbEH-SyaRzeLM7kS1H_J63-U8vLZ1TFbZBHQAv0w-AvqJSvlp5prdyBklvcvElZFq3cxLcGp0WH6K4nFDHwwiL1IULI3FjJ2tEJwOpAGFRGrWGutnedsOqvsn0ZhNBsm1Y6PzgGvW5HUT4DUvs1MV6Qi6DJz-_AV91s8_PMjRNaMbQV_8zBmpoNhP-tcgrPXV8Tldfl7C89OP4sdCpqJPeyYAFSO6CLNx40owMhSKf3W8FRxRZ-0LyVCP1hB4ni4XLTzhMC_OeIJglMsvhgzDzigmYcK60uT3Ltiw7PmFjNj86Mow9wQzsV8ZxVUNKF4z7iZzGnLz9UKy1DJeCNqjDwC0_r5J6oUcsqulwVEewo3nIx2J4zLvJfBgOAN2Aof_Sq1sufrvQCAxnVy7YRWOmCq63qobDJogUy5ROnq9cl_AtN47MKIetukC3zV8rLRoej4bOjTpvJ_PuYO7P5f6gV0rhetmJE98U3xLZZRL5eLVQthfytHAeJCSwcQysaSA-OGLbtJ2AJ4PqKIpZAYKk8pLHdRrkxP4fkxrSEecsqCj5TNMzF8AcZ_vbC8ygiHtl0-JhlyL2bknGFzswjSfIKhmtvi7d148OS5-YPAmHP90y3lp45RGfj8OfPqIgBYMAr2bMrxgiqbDVH1HAdUcLiMF_ZaYcxXOOcR0rO3rNymo0kbF2WVYHHpcG5c_stzc78GSD0oAlT1ulboC_Sx-UpwvZNC0vhxvZtB44kLt0C_y3HF19Ww1ZGLyFzRs-Kp5DF3lqizGmpShEUI0fLyYtbkTelko3mIZUIKDANxBDv2lGO1Clm26MHC-itizRPzPqNV1kDGPQxVkR_WjzZePmcA-wGw4T1LlvYHUA3V1ll86HJfzTgMZWMX6k8e-8LJwMtCRFiMCm8Ssk_GtJiuFNeCjhjw6kQ_lJlaro4_rN2a8dqwZ8wcmR7t_tRGCQgVgRnX4OcP3GYEQezi9OViK_4RuaxtxU5raGHWz1xnqbvcwfLA_Ukg_UJ22EydPVNcaFYKSePKtuf0D_Qq3Zam4UR1FoGCV0h-Kzo9HqPIRfiZoCEOnzyvRvbypmMSbAVxfZ-u5qJrdE0jCW7ZM-oioKbh1yNFX4oYdtvSZ6ZPqLwd0FrNGcWfqYwZHI8TuZJpX8qcypEL0N-dQ2omxQ-riBwQFn8Hwz7d4r55r33ZBB4AViirYVeUIn4VcWaxUerPV-Cayny1j6Gr55g39Lk8MR74rmrpYERnRIyCD1J1a9552gHMJ_WMPtG9hkdeXB3zyzg8507grkMYvacf4ckYqCAzvKQBDe2VxZ9tdbtALRy6bPm0vtgqLuXkrqI4fFF-v0JehJUsuqg018P0i72W7awR7S_QT_l3Gqc2husP4D4FvsxTIZOF-zhjBJ2kGOuZtaMkD59O_hWNJG4lsaq-tciw8hcmM1VEqvAyWmIgAS9mxTec57JYe7GTkF977ufwR-AbNxGfriJDNB_IeAaDz-Czg7W7r0kIhhkL0nSh_UZcPe4G-5uY5v_3z4L2p53xLi_BddwsmAwi6z2ndfv6X0nI5_9hllvqbdpHpLAnaluvQwCqh0O8kjm7rmviGnuPCDi6qmPav_14P7x-Psf9FD2smV99SpnnYfoS-Vz3EHsd7554ryeUN0xfnWU5TaURWQTMiHDBje428GqnmEatmWG1J4EvBMKL-3PG5k4bETX0ftdjPAjzBxRp-socOC2ZuUx_kBMnG7b9hWO3BIc0JbEB8qxpgYrSR2D7WqXJDCUY23RtF7heCmEjBaGx8ftRgsMshPFONjk5vgE7pkzdGiFHScRRo87Y2gGcjpy07RmGguR4mPqu3LwAsZZRFqJTInfHdMId1LBhE5MhwsbuJ55XUV0JmoakOej5K_09vyzP0DlDMJ0X0scHGQxkEIvEdh86IYM33qj3IgIx4jVG11SKDeKpICmcnZH-I_xVFTiTRPJnydhSHifpw6snUmCecc_rafTNNzyNmxbpKq8oXsO7OPDx4agwyjcUXluRjjUTBZPEevvMfKOh3fNlttDgki28oDS10CWR5n5G41UOVymjzBRYmQ9iAgYZ5KY2zwnOC5fQpigPDV55rDh8qBxeWHaYL07LntInY5-dwqKTz-mK42aRHmW9eMjIdQlZcfpcUJfRCS0xIWSZeDxQkhkXr-K8CX1gpsFY08Gq83wgKRAuhOYXbGNLgGhDwPF6RiwbarnXHa3wz0D_iRc3DGrdh3PFhHdmpKQq_2qZq0iU-jqZHdVX-XRnvuvQc_9T57ahgmtoEArLPnsC8eLD7RSl4Rucm2aQsc0nFR7LfqQhXjwUUZSA3R_dijfg7mYuJJkmzwgO_EuEIkpFLTcIrEAvEMIJCyMvycmNPiGuqH7_314fJtlfXtEpdzA2NxFd3wEtD1sMiP1_jN98sci1X4zkx5g9xuJbYQZPsh0YE90aIa8x2htjAfn9RTNNuIxeygHNQZjFySnZn989aWoBsO2NrDzc6nlbWD1eTxfvkI1pf3OlVAxGj_KVDF3OxaQXb1aJlmXKM9uKoIRCaM5x1gJgJpwFi_UXM170yEIRa-BjyCp4ef9V3clidVa7wMLqPv8pZ9mwjCTe3G5YInOyzpOHie86g-IRj4Sb6Yw6iNH9Gv2rmsF3Hve9wGsTnOjNYTa_D0NF8KdEyKRtXgPbpmaBp_WCCMWCyj15kEVz6Rr7F5_h1EGmwlVhLovnz00-Fl2Pe6XUJhpxACu7UzFB__X0Kr7tksUQLXSIL8tuwQxW_58nF5xGPGAf8-PX6bgpOIYurVz1lyUlSsUcKHdigZwpDYm1vPBPWni7g1dqRO4yIId5B1tuHPCGaKZYEsOM_uIMhMa_6lMuDI7MmNx6c58QVlAt46bL4Ckij9b2qao56XmAAmWlxBB94-MarvTRv-i21Df4IWnwigMTdE0xuhhNSWdggxS7bVfXumPajNI5C5tlXZOSh_K1TMedbtmtV0iqRpbpYgSSo00cT-RTRoXMWW1qyzEY25jixR0Sc4K357zcCbRlnJ5aLRoIXcmDOj_Ry_bDSvzEJ6NZ8h24XriO_V8IoznkhW5BZ6ZBH0D8VMJHM9IkWFB2M8Xhs9KEVR-KMeiH7fYrp7umsa64YGeCZNDUUzHxBiqe2ClUya42-FiOkKZEIlGBON1vbJCoL2HGmcqHkPl8zRpwb1nkRikHlesJ4WzbDQ2HVsI2W2yp2CXBS5NZn6E__pVc8223XuFw6QHYYtpxt6GG_76tj4zugMJ8leC4eohtHCXwN4q_EFUWZtsNy9QVTGE_jpXZAxhrvoeN3zWNWFh0XvRNNbTRp_UZSrhSNsuZzohRfSKjnxIEaJYvlgx6DQAYbgkrssIsGrOU9fIb9zBMtM8zuJBqHRi4yR8amOWf4KftFJ5Df92e-7DJqmwvkYfRODV4mz5raLi2L91bOz2AKrZ_62mEisizcNloSzMrq3C9RMsg1PGZT7zyYH9SpERGd27bX4gR6xy80v8-Zx78n9IVDT73wc4LVtkAyD1tHYgVeJ8nAjkhXEv7un-6C91p44lLo6WVLU6tp-WOoBS6RKZYlgtnvY0-1TkhabX2wKQGO4u8jk3TqorAa164-v2eklRA2kF9TxNwV53ggyLnQFA_cHgxQykixmv9b3t4s5_Y32ROxGHCP0hW6JKqMRxMh28LRvSKf5i_oSsMAH3nmO9Ujd7aV3xHNCNfUfXNecCUo0g8yw4cBugJ7o7mIe3Yp1u8crfJaWaorRETKjB8h2I92HUzwNk2C4iwWyxEBq_MMOvN3dSX64TqwHyiyOUeV9RlgverZm0QZBEpkiD7-_uHodzvjmsmcSBAJa92H1rMypxzXoCjTtClkfSAs0UNAqeQvaAGP0XJZ1g2LNxyGoqn89e1shRbjm8GLeWkKEKkUYfbhzgAM5mGZnhWWupdX-hNePERZDjY-1uOVOAcmsjxi7MRFky4a64z6gdpB57bit95NqE2Wxsxv0y5IPdL9LNR4Hp649K4_OKOb_ommzdtCLIJkTAieqgYe155QaXGltApFTXuQVMfxk6wJ-atExasMZRk-iUWUG_mMRNHYwr6A34dQ4DnXlymo6oPzkAM9tkevwMpGm71RZOrvnJ-PnAKBHdnFXQrUetvYd4IHfSBpVKK4izzf4UB2cOZuA47_u8SN1wYT0Ss_U4Ned5coP2zpCvwEt0QgaBbHuq1LODSOWzQ7HUxMZcA1ag-2zYF1FIKhmcmAEaD-l7AY011JjqfisReWUJfSdfiFCaDjCURuWPLTOEhmmEQeTPchY96mCyc4JKu3rjOeoTYGjAHlSMtZw1-Ev0WqWbtP5G9291Vk69p7dudU5SWA-rd8e-4KA1Qz6o5Z1NSDGRVE3BKKMLbr7ZvxPx3S9Ue1HR84d-V8F_J9xxpvlxACbfrMnsdeCcOVXd42sMgF95-TUJJrmvcmGoeO8H5K0koYxavnVKZJLqMFnReAV4kIfOHYwOxa07wrxH_szpuZU9rZJDj_S8mg91bYdcDUs_Q09q9rFbrfCbduAddX-n6exPqqZZkIYWhAiIPTRCnD22SbgUWqYglrQIscteNmLmJz2NEbRIEE33B-c8ib5z8bfIxnuOF7c1QPXh8fYQVLkftzZ0y583upZZ29z17HuPQn2EXi0tGY2Dj0JY2M24pzl5nFNmfHVtX-FCxta4nPkgtR4X7RJe6TAQbrKm07YL8RnkuaAlwCwUXudtj4BEUY_X-14UnqntQGJZjO5N-1nv87lsniV36tA1IicBWlQv3xuH0AU1Byrg1nBDwkpu9FTbGCqQuv-N-Lato7egY6SGkIaUl585dacNJODS25wrzTIKJFwn63HnK7B7F5oKfK2EeFU5080Wc4zlsXfSbNrQtmgBea2Yr7hH1E3fT_8YMpjFXqp5BIfr2DvahsnospqJvHQJ8KHLsLkxavEKMQXKCZA0nU-_yICGZtTdB55jmUwjaO8ad9a6cz21b1tQxps7RGpcQJHGIm45YxNsYq9sWSM8Jo8WuRyUhuQTHfNpwI7woL0hoTZiE9-kbV43pKlYJ34ywX3FNOhP5WRX8LtruBET5Wng88kOBq6O0msf61CLvOWW0kvybl54IwCMrX624LX8Fv1msoj7_5380wV4s4EXuNCGfAzRziwXkvjXAD5ep03B1DGAaUcDjQgGzwMYChWieydYmBTVPg-f2JmHmr6PMh5IY8h3Qn4EfIH12ye60bwYSyutodflO_mz7P-pgfXQjtKFHmMHTA92WWHCgSY-gZEOsFuDumSNh0-xlvFnx8OPGb_k404JNzCaAV7u5KtWvZICXt7NJoebWsUxZtDeNAajnCP9ILidWM8YtB2m3Sz_4zO2l9vdT9QUhAJVIWBUx-CHsXviUDTIF_dhtPYB0y1W-XRC5B8Y8PLHQ1tOreDdFZei-SGhgTACqjGPvPbKMHR17dbPriBvVwLNUmyTYG3Zuh6PLgpzHSPtiVILE3E6CGEoXi_h0JQS69Dr4Dx_q9nFONeo8dXOMl6ttHJLof9CK_YdEZ0ApK_fefPJza2Cp-YZpNxXAUXOpLY6kWRG92isXJWBfTEe8HHN_3wAo6YFPAAuMZD0d54ABVMM5GRppkCrQgZFvhOnYKB446uUaID0A_NjTVETh5aAHb_vOBCFVx83mYlbg4OS4bX6QhgY_jFg77X5QTruAzuzkNrTFNsbYc5v4n5Mn_-NG2J6sDcKKiO0z1V6MOxZ-Qt8Udl1ZQeWr0At6oxPcAl9kIsN4vdb-u3EeST1KDaSaaDUolik47KCWzrny7lbU2Qt7cPR9nKZp1IBUy4EMlnQ8XRCRBFMVYES7HV9EnNAgm5nwxa1gb0dJdmIrtVNWfz3DpeL4tETmymy2PEdLTX1ZnXUyd3M8900BdakELmxfDhVM1Z7DkMBGc7mJTV9PhEHtn5BZgy6ozrUh9Bdj2LAb3HsTmJtrayyDqbLCOpiKXhSpzUl0MS-R3_vBCG0PYNI7l8lJSspZ-GIn0hRnAOY9IzX0AEkOn72RjRWoX7bOVKH_m7Uno7SOC_v48EutWH5wm3kCg3QGEjr5Ayez3aMiFAcUfoJ4PfYhbFQgs3wNKbfgpUSUQ3UXprD81tyRErDwcMoDA4bmh_cX6vPHP3z-XHUCSkEX_FIf_wX3Nm9p3VDA4XD3yoI_tRz0sovJHp6nZE308NoCQGoKperB3znZNhVHikMDQ4Yr8I8p73LDLkPEqk4acw==",
+              "format": "openai-responses-v1",
+              "id": "rs_0f074a8a6420c14f016a135bd59fdc819389ab185ca94179ed",
+              "index": 0
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 713,
+      "completion_tokens": 974,
+      "total_tokens": 1687,
+      "cost": 0.032785,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.032785,
+        "upstream_inference_prompt_cost": 0.003565,
+        "upstream_inference_completions_cost": 0.02922
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 887,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 713,
+    "completion_tokens": 974,
+    "total_tokens": 1687,
+    "cost": 0.032785,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.032785,
+      "upstream_inference_prompt_cost": 0.003565,
+      "upstream_inference_completions_cost": 0.02922
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 887,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 887,
+  "cost_usd": 0.032785,
+  "parsed_summary": "parsed 3/3 constructs",
+  "request_payload": {
+    "model": "openai/gpt-5.5",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** The strongest recommendation is **Option B: Encrypted cloud with no training**. It strikes the most defensible balance between delivering a competitive AI feature and maintaining the structural trust a health app demands. Health data is uniquely sensitive, and regulatory scrutiny is intensifying globally.\n\n**E2:** I recommend **Option B: encrypted cloud processing with no training on user health data** as the primary policy. For a consumer health app, the default posture should be that sensitive health data is processed only to provide the service the user asked for, not to improve the company’s models. This is the cleanest balance between product quality and trust.\n\n**E3:** I strongly recommend **Option B: Encrypted cloud with no training**. For a direct-to-consumer health app with 2 million active users, user trust is an existential asset. Option B is the only approach that guarantees absolute data privacy while delivering the uncompromised AI capability necessary for a successful product launch.\n\n**E4:** # Recommendation: Option B — Encrypted Cloud with No Training\n\nFor a direct-to-consumer health app at 2M MAU launching AI coaching, I recommend **Option B: encrypted cloud processing in a confidential-computing enclave with no training on user data**. The decisive consideration is that health data sits in a category where trust is the entire product. Users tolerate a health app reading their symptoms, cycles, lab values, or mental health notes only because they believe that data won't be repurposed.\n\n**E5:** **I recommend Option B: Encrypted cloud inference within confidential-computing enclaves with a strict prohibition on training.**\n\nFor a direct-to-consumer health app with two million monthly active users, trust is the core product. Health data occupies a unique legal and psychological category; users do not forgive its misuse, and regulators worldwide classify it as sensitive personal information requiring heightened protection. Option B is the only choice that delivers full AI capability—the non-negotiable standard for safe, high-quality health coaching—while structurally preventing data exp...\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E2, E3, E4\nTriad 2: E1, E2, E5\nTriad 3: E1, E2, E3\n\nFor each triad, output EXACTLY this format with no markdown, no bold, no bullets, no numbered lists:\nTriad 1:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 2:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 3:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'. Use plain text labels (Triad N, Left pole, Right pole) without any markdown formatting."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 2000
+  }
+}

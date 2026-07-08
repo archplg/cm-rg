@@ -1,0 +1,106 @@
+{
+  "cell_id": "G_N_run1",
+  "task": "G",
+  "condition": "N",
+  "run_idx": 1,
+  "phase": "phase3_constructs",
+  "model_short_name": "M1",
+  "persona_or_neutral": "neutral",
+  "system_prompt": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation.",
+  "user_prompt": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** The system should adopt **Option C**: first-come-first-served with a defined medical floor and no withdrawal except for standard futility. After six weeks of sustained overflow, exhausted staff need a protocol they can execute flawlessly at 2 a.m. without calculators, prognostic models, or ethics consultations.\n\n**E2:** I strongly recommend adopting **Option A (Predicted short-term survival)**. Under sustained capacity overflow, the health system’s primary operational and ethical mandate must be minimizing total preventable mortality. Option A relies on SOFA scoring—an objective, deeply familiar clinical tool that can be rapidly standardized and operationalized across all five hospitals within the 7-day deadline.\n\n**E3:** # Recommendation: Option A — Predicted Short-Term Survival (SOFA-based)\n\nAdopt Option A. Under sustained overflow with eight net admissions per day exceeding discharges, every bed-day allocated to a patient unlikely to survive is a bed-day denied to someone who would have. A protocol's first obligation in acute scarcity is to convert scarce capacity into survivors, and SOFA-based triage does this using a tool clinicians already know, document, and defend.\n\n**E4:** I recommend adopting **Option A: predicted short-term survival**. In a sustained ICU overflow, the ethically hardest fact is that every occupied bed has an opportunity cost. A protocol that does not account for likely near-term survival will still ration care, but it will do so by arrival time, transfer luck, hospital crowding, and bedside improvisation.\n\n**E5:** We recommend adopting **Option C: first-come-first-served with a medical floor**. In a prolonged crisis of sustained overflow, the most urgent threats are not just clinical but institutional: staff moral injury, public distrust, and legal vulnerability born of opaque, bias-prone decision-making. Option C directly answers these threats by replacing informal case-by-case rationing with a transparent, procedurally fair rule that treats every patient who meets objective ICU-need criteria as equally worthy of life.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E4, E5\nTriad 2: E2, E3, E4\nTriad 3: E1, E2, E5\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'.",
+  "model_id_requested": "anthropic/claude-opus-4.7",
+  "model_id_used": "anthropic/claude-opus-4.7",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 3766,
+  "timestamp_iso": "2026-05-22T00:15:09.521469",
+  "raw_response_content": "Triad 1:\nLeft pole: Prioritizes procedural simplicity and institutional legitimacy (E1, E5)\nRight pole: Prioritizes maximizing survival through clinical prognostication (E4)\n\nTriad 2:\nLeft pole: Justifies triage via SOFA-based clinical scoring (E2, E3)\nRight pole: Justifies triage via opportunity-cost reasoning (E4)\n\nTriad 3:\nLeft pole: Emphasizes operational executability under staff exhaustion (E1, E2)\nRight pole: Emphasizes fairness, transparency, and equal moral worth (E5)",
+  "raw_response_full": {
+    "id": "gen-1779405308-2gSRV50tL9l1iTIuXJlP",
+    "object": "chat.completion",
+    "created": 1779405308,
+    "model": "anthropic/claude-4.7-opus-20260416",
+    "provider": "Anthropic",
+    "system_fingerprint": null,
+    "service_tier": "standard",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "Triad 1:\nLeft pole: Prioritizes procedural simplicity and institutional legitimacy (E1, E5)\nRight pole: Prioritizes maximizing survival through clinical prognostication (E4)\n\nTriad 2:\nLeft pole: Justifies triage via SOFA-based clinical scoring (E2, E3)\nRight pole: Justifies triage via opportunity-cost reasoning (E4)\n\nTriad 3:\nLeft pole: Emphasizes operational executability under staff exhaustion (E1, E2)\nRight pole: Emphasizes fairness, transparency, and equal moral worth (E5)",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 997,
+      "completion_tokens": 211,
+      "total_tokens": 1208,
+      "cost": 0.01026,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.01026,
+        "upstream_inference_prompt_cost": 0.004985,
+        "upstream_inference_completions_cost": 0.005275
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 997,
+    "completion_tokens": 211,
+    "total_tokens": 1208,
+    "cost": 0.01026,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.01026,
+      "upstream_inference_prompt_cost": 0.004985,
+      "upstream_inference_completions_cost": 0.005275
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 0,
+  "cost_usd": 0.010260000000000002,
+  "parsed_summary": "parsed 3/3 constructs",
+  "request_payload": {
+    "model": "anthropic/claude-opus-4.7",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** The system should adopt **Option C**: first-come-first-served with a defined medical floor and no withdrawal except for standard futility. After six weeks of sustained overflow, exhausted staff need a protocol they can execute flawlessly at 2 a.m. without calculators, prognostic models, or ethics consultations.\n\n**E2:** I strongly recommend adopting **Option A (Predicted short-term survival)**. Under sustained capacity overflow, the health system’s primary operational and ethical mandate must be minimizing total preventable mortality. Option A relies on SOFA scoring—an objective, deeply familiar clinical tool that can be rapidly standardized and operationalized across all five hospitals within the 7-day deadline.\n\n**E3:** # Recommendation: Option A — Predicted Short-Term Survival (SOFA-based)\n\nAdopt Option A. Under sustained overflow with eight net admissions per day exceeding discharges, every bed-day allocated to a patient unlikely to survive is a bed-day denied to someone who would have. A protocol's first obligation in acute scarcity is to convert scarce capacity into survivors, and SOFA-based triage does this using a tool clinicians already know, document, and defend.\n\n**E4:** I recommend adopting **Option A: predicted short-term survival**. In a sustained ICU overflow, the ethically hardest fact is that every occupied bed has an opportunity cost. A protocol that does not account for likely near-term survival will still ration care, but it will do so by arrival time, transfer luck, hospital crowding, and bedside improvisation.\n\n**E5:** We recommend adopting **Option C: first-come-first-served with a medical floor**. In a prolonged crisis of sustained overflow, the most urgent threats are not just clinical but institutional: staff moral injury, public distrust, and legal vulnerability born of opaque, bias-prone decision-making. Option C directly answers these threats by replacing informal case-by-case rationing with a transparent, procedurally fair rule that treats every patient who meets objective ICU-need criteria as equally worthy of life.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E4, E5\nTriad 2: E2, E3, E4\nTriad 3: E1, E2, E5\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 2000
+  }
+}

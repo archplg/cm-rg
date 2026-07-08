@@ -1,0 +1,106 @@
+{
+  "cell_id": "B_N_run2",
+  "task": "B",
+  "condition": "N",
+  "run_idx": 2,
+  "phase": "phase3_constructs",
+  "model_short_name": "M3",
+  "persona_or_neutral": "neutral",
+  "system_prompt": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation.",
+  "user_prompt": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** # Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff\n\nThe temporal evidence is the strongest signal here, and it points squarely at the layoff four months ago. The team was high-performing *before* that event. Decline began *after*.\n\n**E2:** # Primary Diagnosis: Option C — Loss of Psychological Safety Following the Layoff\n\nThe temporal evidence is the strongest signal here. A layoff occurred 4 months ago; the decline has been visible over 6 months but the retro shift from \"what to ship\" to \"process and communication\" is the classic linguistic signature of a team that no longer feels safe taking risks. When engineers stop talking about the work and start talking about *how* they talk about the work, they are usually negotiating invisible threat — protecting themselves, building paper trails, hedging commitments.\n\n**E3:** # Primary Diagnosis: Option C — Loss of Psychological Safety\n\nThe temporal evidence is the strongest signal here, and it points decisively at C. The decline began roughly 6 months ago; a layoff occurred 4 months ago. That sequencing matters: the layoff sits squarely inside the decline window and is the most discrete, high-impact event in the team's recent history.\n\n**E4:** # Primary Diagnosis: Option C — Loss of Psychological Safety\n\nThe temporal evidence is the strongest signal here, and it points decisively at C. A layoff occurred four months ago. The decline manifested over six months but accelerated in the last two quarters.\n\n**E5:** # Primary Diagnosis: Option C — Loss of Psychological Safety\n\nThe temporal evidence is the strongest signal here. A layoff occurred four months ago; the decline has unfolded over six months but the *acute* symptoms — senior departures, retro themes shifting to \"process and communication\" — cluster tightly around and after that event. When high performers leave voluntarily and remaining engineers start litigating process instead of debating what to build, the underlying issue is almost always trust, not throughput.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E2, E4, E5\nTriad 2: E2, E4, E5\nTriad 3: E1, E4, E5\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'.",
+  "model_id_requested": "anthropic/claude-opus-4.7",
+  "model_id_used": "anthropic/claude-opus-4.7",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 3987,
+  "timestamp_iso": "2026-05-22T11:31:35.991489",
+  "raw_response_content": "Triad 1:\nLeft pole: Interprets behavioral/linguistic signals as evidence (E2, E5)\nRight pole: Relies on temporal sequencing alone (E4)\n\nTriad 2:\nLeft pole: Offers mechanism explaining why safety eroded (E2, E5)\nRight pole: Merely asserts timeline correlation (E4)\n\nTriad 3:\nLeft pole: Cites specific symptoms like retro themes or departures (E4, E5)\nRight pole: Argues purely from before/after framing (E1)",
+  "raw_response_full": {
+    "id": "gen-1779445892-SJYaNMoTMYBeWXCDsosS",
+    "object": "chat.completion",
+    "created": 1779445892,
+    "model": "anthropic/claude-4.7-opus-20260416",
+    "provider": "Anthropic",
+    "system_fingerprint": null,
+    "service_tier": "standard",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "Triad 1:\nLeft pole: Interprets behavioral/linguistic signals as evidence (E2, E5)\nRight pole: Relies on temporal sequencing alone (E4)\n\nTriad 2:\nLeft pole: Offers mechanism explaining why safety eroded (E2, E5)\nRight pole: Merely asserts timeline correlation (E4)\n\nTriad 3:\nLeft pole: Cites specific symptoms like retro themes or departures (E4, E5)\nRight pole: Argues purely from before/after framing (E1)",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 967,
+      "completion_tokens": 181,
+      "total_tokens": 1148,
+      "cost": 0.00936,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00936,
+        "upstream_inference_prompt_cost": 0.004835,
+        "upstream_inference_completions_cost": 0.004525
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 967,
+    "completion_tokens": 181,
+    "total_tokens": 1148,
+    "cost": 0.00936,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00936,
+      "upstream_inference_prompt_cost": 0.004835,
+      "upstream_inference_completions_cost": 0.004525
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 0,
+  "cost_usd": 0.00936,
+  "parsed_summary": "parsed 3/3 constructs",
+  "request_payload": {
+    "model": "anthropic/claude-opus-4.7",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** # Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff\n\nThe temporal evidence is the strongest signal here, and it points squarely at the layoff four months ago. The team was high-performing *before* that event. Decline began *after*.\n\n**E2:** # Primary Diagnosis: Option C — Loss of Psychological Safety Following the Layoff\n\nThe temporal evidence is the strongest signal here. A layoff occurred 4 months ago; the decline has been visible over 6 months but the retro shift from \"what to ship\" to \"process and communication\" is the classic linguistic signature of a team that no longer feels safe taking risks. When engineers stop talking about the work and start talking about *how* they talk about the work, they are usually negotiating invisible threat — protecting themselves, building paper trails, hedging commitments.\n\n**E3:** # Primary Diagnosis: Option C — Loss of Psychological Safety\n\nThe temporal evidence is the strongest signal here, and it points decisively at C. The decline began roughly 6 months ago; a layoff occurred 4 months ago. That sequencing matters: the layoff sits squarely inside the decline window and is the most discrete, high-impact event in the team's recent history.\n\n**E4:** # Primary Diagnosis: Option C — Loss of Psychological Safety\n\nThe temporal evidence is the strongest signal here, and it points decisively at C. A layoff occurred four months ago. The decline manifested over six months but accelerated in the last two quarters.\n\n**E5:** # Primary Diagnosis: Option C — Loss of Psychological Safety\n\nThe temporal evidence is the strongest signal here. A layoff occurred four months ago; the decline has unfolded over six months but the *acute* symptoms — senior departures, retro themes shifting to \"process and communication\" — cluster tightly around and after that event. When high performers leave voluntarily and remaining engineers start litigating process instead of debating what to build, the underlying issue is almost always trust, not throughput.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E2, E4, E5\nTriad 2: E2, E4, E5\nTriad 3: E1, E4, E5\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 2000
+  }
+}

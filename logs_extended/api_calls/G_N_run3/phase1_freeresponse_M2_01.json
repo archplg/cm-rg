@@ -1,0 +1,115 @@
+{
+  "cell_id": "G_N_run3",
+  "task": "G",
+  "condition": "N",
+  "run_idx": 3,
+  "phase": "phase1_freeresponse",
+  "model_short_name": "M2",
+  "persona_or_neutral": "neutral",
+  "system_prompt": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation.",
+  "user_prompt": "# Task G-10: ICU triage protocol under sustained capacity overflow (extended)\n\n## Context\n\nSame as Task G: regional health system, 240 ICU beds, 6 weeks of overflow, exhausted staff, need formal triage protocol within 7 days. Ten candidate protocols instead of the original 5. **Choose one as the adopted protocol.**\n\n## Options\n\n**Option A: Predicted short-term survival** - SOFA score + 28-day survival prediction as sole ranking.\n\n**Option B: Predicted long-term outcome** - SOFA + QALY-weighted post-recovery prediction.\n\n**Option C: First-come-first-served with medical floor** - procedural fairness, minimal discretion, no withdrawal except medical futility.\n\n**Option D: Multi-principle scoring with lottery on ties** - survival 40%, life-cycle 20%, instrumental value 20%, pandemic factors 20%, lottery on ties.\n\n**Option E: Categorical exclusion + lottery for the rest** - small list of medical exclusions, then daily lottery among eligible.\n\n**Option F: Patient-and-family co-decision** - admission requires multidisciplinary team + patient/proxy decision. Withdrawal requires consensus including family. Outcomes: dignified; aligns with autonomy ethics; reduces moral injury via shared responsibility. Risks: slow; emotional burden on families; outcomes depend on family resources; resource-intensive for clinical team.\n\n**Option G: Trial-of-therapy with mandated time limits** - everyone admitted for trial period (e.g., 5-7 days). Withdrawal only after pre-defined time without improvement, evaluated against pre-defined criteria. Outcomes: avoids initial exclusion; transparent timeline; ethically defensible. Risks: still requires withdrawal decisions; can prolong suffering; uses bed days that might save more lives elsewhere.\n\n**Option H: Tiered system based on resource scarcity** - dynamic protocol: at <80% capacity use Option C, 80-95% switch to Option A, >95% switch to Option D. Re-evaluate weekly. Outcomes: adaptive to actual scarcity; matches ethical framework to severity; precedent in disaster medicine. Risks: complex to implement; staff training burden; tier transitions are politically explosive moments.\n\n**Option I: Community-deliberated framework** - convene a citizen jury (25-40 community members, diverse) over a weekend to deliberate and propose criteria. Adopt their recommendation. Outcomes: democratic legitimacy; reflects community values; precedent in Oregon health care priorities. Risks: takes >7 days; jury may produce internally inconsistent framework; may produce framework medical leadership cannot endorse.\n\n**Option J: Pre-pandemic preference registry** - patients pre-register their preferences for ICU care under scarcity (full intervention vs comfort-focused). During overflow, registered preferences guide allocation. Default for unregistered = full intervention. Outcomes: respects individual autonomy ex ante; transparent; preserves trust. Risks: registration uptake will be biased (well-resourced patients register more); changes nature of medical encounter into bureaucratic; doesn't apply to acute presentations.\n\n## What to provide\n\nChoose one as the adopted protocol. Provide 200-400 words of reasoning. Advocate; do not enumerate. Address: why this protocol, why not the most compelling alternative, what specific patient case would make you regret this choice.\n\n\nProvide your recommendation in 200-400 words. Advocate for a specific position; do not enumerate all options.",
+  "model_id_requested": "openai/gpt-5.5",
+  "model_id_used": "openai/gpt-5.5",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 34533,
+  "timestamp_iso": "2026-05-23T01:25:12.676009",
+  "raw_response_content": "Adopt **Option A: predicted short-term survival** as the ICU triage protocol.\n\nIn a sustained overflow with exhausted staff and only seven days to formalize a system, the protocol must be clinically grounded, fast, reproducible, and defensible at the bedside. Ranking by SOFA score plus predicted 28-day survival best fits the central crisis standard: use scarce ICU beds where they are most likely to save lives. It avoids the most dangerous sources of discretion—social worth, perceived quality of life, family advocacy, wealth, disability bias, and clinician-by-clinician moral intuition. It is imperfect, but it is understandable to staff, auditable by leadership, and implementable across 240 beds without creating a second bureaucracy.\n\nThe strongest alternative is **Option D**, because it tries to balance survival with life-cycle, instrumental value, and pandemic-specific considerations. But that breadth is also its weakness. In practice, “instrumental value” and “pandemic factors” will be contested, inconsistently applied, and politically explosive. Life-cycle weighting may feel humane in some cases, but it risks making older patients believe the system has formally devalued them. Under time pressure, Option D invites moral argument at exactly the moment staff need a stable rule. Short-term survival is narrower, but that narrowness is a virtue during crisis triage.\n\nThe case that would make me regret this choice is a 32-year-old ICU nurse with severe viral myocarditis and multiorgan failure, high SOFA score, and poor 28-day prognosis, competing for the last bed against a 76-year-old patient with a much better short-term predicted survival but limited longer-term reserve. Option A would likely prioritize the older patient. If the nurse might have survived with prolonged support and returned to caring for others, the decision would feel morally incomplete. Even so, a protocol cannot be built around the most wrenching exception; it must be built around fair, consistent decisions at scale.",
+  "raw_response_full": {
+    "id": "gen-1779495911-23eClb15HEaAeJnKxpng",
+    "object": "chat.completion",
+    "created": 1779495911,
+    "model": "openai/gpt-5.5-20260423",
+    "provider": "OpenAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "Adopt **Option A: predicted short-term survival** as the ICU triage protocol.\n\nIn a sustained overflow with exhausted staff and only seven days to formalize a system, the protocol must be clinically grounded, fast, reproducible, and defensible at the bedside. Ranking by SOFA score plus predicted 28-day survival best fits the central crisis standard: use scarce ICU beds where they are most likely to save lives. It avoids the most dangerous sources of discretion—social worth, perceived quality of life, family advocacy, wealth, disability bias, and clinician-by-clinician moral intuition. It is imperfect, but it is understandable to staff, auditable by leadership, and implementable across 240 beds without creating a second bureaucracy.\n\nThe strongest alternative is **Option D**, because it tries to balance survival with life-cycle, instrumental value, and pandemic-specific considerations. But that breadth is also its weakness. In practice, “instrumental value” and “pandemic factors” will be contested, inconsistently applied, and politically explosive. Life-cycle weighting may feel humane in some cases, but it risks making older patients believe the system has formally devalued them. Under time pressure, Option D invites moral argument at exactly the moment staff need a stable rule. Short-term survival is narrower, but that narrowness is a virtue during crisis triage.\n\nThe case that would make me regret this choice is a 32-year-old ICU nurse with severe viral myocarditis and multiorgan failure, high SOFA score, and poor 28-day prognosis, competing for the last bed against a 76-year-old patient with a much better short-term predicted survival but limited longer-term reserve. Option A would likely prioritize the older patient. If the nurse might have survived with prolonged support and returned to caring for others, the decision would feel morally incomplete. Even so, a protocol cannot be built around the most wrenching exception; it must be built around fair, consistent decisions at scale.",
+          "refusal": null,
+          "reasoning": null,
+          "reasoning_details": [
+            {
+              "type": "reasoning.encrypted",
+              "data": "gAAAAABqEPQBXDA6W7sEzww5Z8b3iHavQUlkk0Tae1if3DR_C5rQXdyvJ54pBu6sLuyLv-IJd8_ZG0uDk6XKxtXXAuOZ4WZs-V1T4ivZkYnVL1_GRpjH0hTl135j98xCxDvTauU7OHJ3Wjh4BhIV86GPrU6dW7BmQhLC6b25Z3ZRyayV2dlUTT-8mrNaZV6KLInWhUmdFAT-jqWICnt0kySyXg9MCVH2OrEce5VAUaukU2Ry3vZsFt26TTH7b-_M1IgJmt89Br5v3OLoJwbF78bsniqmlJfT4rZI9jpQaDlK9ad6vH89OUgqdA2RIgeiGBwmkYMGJiE4O3b_XehwGFqDg_Ip8bXEjPke5jejHeMizS5ruYh-D7U_N4tcnCYQ10BuxmxZiOSTjd6BLwZiNdffL4bvoEKd7OB21S4xXDUaBvKSmQu62HGeuqgRwDqYslZKreslSDGU10dy2CajuYe5F0a2lBM3VBEQwOKdtugWqnU_mweS0zFnoymNNT4AWRwFORMDOlVv8iZpIC_Cucl-4wW0DrY87ocmDBYqPEeqK3HEZ91VUqJ1jAVDhbMCRfirVsopnoAwYu7_zdFzn3SG_j0ivHJk2itelLrtr8bVyQcUU5TEZvlDbI5lejk-avUNj0d149Yr1zlQg-5gRrg55wq3h3ADekbOen0JdcqnCK-PFGd9vrEqgKpExG1yE-RF1OKFLZcnAXj-s3a9F4NaEUCKbIsvCZprHWx3R6lZGlgS47MT5OgSa_Ben-YIACu7oga5kXgLuixBgcWQr5TPMMfyFQnEIvpkznx301TJNQzpE09GBekxLltFLJrKkDMRf8K2UsdKWZxIH8nBYFZPEcMWLpAHjOhCLqLsR6ANws_67AzhxdsKRWqcwUnFqRclJx_Hg3vKxo-jWkiIGH4PZwq-VePK5cNnLd2KISq94sAffVOxuTKvVMfXuFFFesi4R2gn3iiyJ39D_eqaaYenftUn3bZbm7ophDewkClcvkHoZllAqGqDl9-D-cabQGXWYecXxwNa_oEG36kuK3sO_YUmzj8NCVJ07mjfRlCEEFNH3oCgDs52tfiUGyxM7-OX7gcUNG-DqULtparWlL62l9Ys5XxnjZZ9z4t_tVsPXruOsGlW4yhzRumwdvszH1weocT7dXyoh0BsOIAxnmfWg6eX-ghe6g-uu3Dn6zbXXqfnvLJv8w8GST8q28oih1UO8HAHiifH0Z2L7Wv4pN5ukiqnpbSfr-HIt1oz3p2jex6BbprentveNS4KWFJVrhDdq4fq6ZU215As6uCKKihnIg5pajKWAwQknRZcbOAZ2VMpifvXovCmwiTbDtYYgaEsqdM-PSBPa9xlau7tWKyTZrZCccV-jE2GoecgEg9IsyImJPxQ-LlmzZUFzOiwPsPtRrA1gS0FzGw0hsS_XgDcxitL5fhUB-6WQVUMaOZ-JiLGZVntrTuahw2jpYgVD6GqZLqXwg7Au3SGMCGLFuMtJJ4o4YxrSO5-AvX3K1hhBayO0HBjHHTuHFjrBnxuv47HhT2wHSlV3D7kze2cJqHUkFJy6Ljh0BSdIsLyC5p5VvCdFnOl5Jqz1FTfRcl3j6XDrFsAfPe6psFJFEkkXSRMN1a9sJ4GNdswwXiWje7YHDT044TJaJKu3VNoIM4v8-SouD7TdCupff9d5sMG516zTLazK8lfnokTFf6IMOsMsoKfgh4hH9Lx3farh77lLup0ILjlaX-IL5DFSiIa1jA5sgdq7xOyZ0H0JszK_seHSk_64nOIgjMR5JzGLHUMPXUgaC97gmsmlUJPtcgtjFXDfgC7lhP3N4F52A_y32n7LgEFI69IzxxEz3YlH2qzOD2DXEUGGcTeLfV4o2LOxy9nMWhh5bJvvwZ-Cezan-stHNFOH6Lljs-NeD6MtebsyAzV-5sF3tx3mUlSH5I401zhIe0hxfA8AYGFjfp5tNLk5k5YQ-0vqwTnIPXZVxMeQNDTX0d1VRd20NfmkRdT9TbLYprwmZvdjHNHtfkmtYAcsqsqTyHWQSQOVezFL5Uw9W4Sy1M0VYvv6tZF2see3lQ8AL_Rav503lduW6xB0UtGhsOjWKARlaI19qHEZptieohQh2Z-reUlT793hJMMPrn7Bp3f5lh6DBsV9pF7AsAltpKNjamnGVSoLd4eNenx8osvImJ_yokEMzhFhZb8AWOENHUCqKa7LJ-iDWyQcIGaPaXyvSdJEij6pGrvqvoPaWzsriEPV-l8JvO3NVtJe6fCQh8Mz624LiuBBLq_lb6cxHNH8g-fFdYBr4EOT0j3USA53zTPtQRQ6Fvs-HslzjIdmsAzp7ewqz0zzt2RkoiAQhwtVSEfsWkUTYnwo7vwqJmS3EyHSkJAhi60rQAgBoEU4F2RXk9o4WjTVmz7kZyr_0wD2w42YuNFDUvL3xoIWmFbhT9Ow12Nb337KGyvH9w5m5AG57Gg7geWhYtL0EWH-aRniQChJyFogKqC4zhdUB-bzMipMU4VWq7OGQ9eVhaGo1Uvs1YZWLBVhQM0YmFBIETOSzHSyMpeb4cFjdXcFc-Myg9h0sk4ZqcBCpjVr-318vaK0CyV-Lr2cp59zD120YCr4izesu2NEFi_ZrfotgElgEGyRWWYf8KuvQLkFhRYrs4vp1aKlpeBrskeHDE5jJjIoSvaDe8otMeYOk2p_UUVvVR17gUz_iWrKysXquGwSgHbIqKVEOeSpgVBEBBk1GGUCNuEcbLr0K3oFGVKbhw6teVRh5MTWJjVV9OER3BUo1TmIBuhKJ2Fd1514z5p3v5Id--yOOpJ0rBzBrD7wTd4rr2_2YDfOzJeyVmTcVIqfOD_EEJ_qXWyuZLFtajKMP2vf7yLjqdWBqYzlH4UgJ2jyVk-8ZAZGEI2jxo7WZknGuL2__JG2W4LwDDEDO4-KjsnOcKydIDqkajat1S9xiXCJ7waGD72UpwgIMEW5fjTwu67PC7KIVDog-OikgJHna2LYqaJmLWszhv6Sygq5qbAeCz1wf_Qw8MischeyT2iH8wMHw_UymSHl445dXejreki8teTLPFLjSjap4Ox3tG-iFzih-ZPCjS1_bVd1eICbBT0wOFwB0LIWEkHuFIen6Hy0dBqyawfSblux2MXvjTDFqctbg4UbtSsMiiPHVqx4zouM0NbekBJuU9EeA4jzkeC1CivPjBT26sKwVYcZevTImvdtaHIKNnOZQPWbbSN9Qu0xj8RsICpU8YmfobkPllZszM7ezDqbgw50Xolyig76SxEhAoEXWOBIiSmzkQ5LSKiLUom20eEtiqAVseFyj_9Vzs_XC5ARj0TkvhEYBZDuEp4LuO3B1-sDw9izARSrwzMcCV8DcSajVpwK5mleJ-KeKEwJhXErhYZ9M0vmwgENsvtPyoFf48GCWJmMycZH5PzzgWlJShIBeWHq1q2zXJsy2G0HNNsTiFGf5b_SHesqcU_KsAyleSCfY-2YJQ1FlF57ILi4EOlD3h1rut4qCZu5MA3-KGzgCUtNzQXbNKLmqPz07JkpyTLs_kDZ3rnBvNMeyLJzPjNfovIG1vEVJNNXkZQ9EoPSO84F3J0EWk4S0PSVFlG1_S-WqTF8uBVVXxizv7b-dGoHdtIb6wVIow8wWjyLpeXSH_HetRSlaGIWh7fxdjlLvzwv2JxRgo33YccFr4e7tcqKxHJi3kvRxDJtWQWCqcRgxoKEDHpBpYQIBVoaQtjnHTO3EZAQO0_GS6-FupVdNbtZ3ztGBBxuUSDCkrwFd83v2TSw7WDeVokLe8pQn2CsLc6GCbWfqPmBgOBPo-HJO9Bh7dF9_wlwZO5826ocD9kbPIceMgyzQ3lHTqFVxz8BVojJizWJrDUxQtj4x60k6QD3y0hOyfL-NTySLA3v3bOByC43YWnRAvgfHicYyDDuvhREYRNKNl018EP3plERuOAL31cTMopmCYLF0Ca9rOGu_0MsvRUJngzlFeh50W_0SGfI_9eXuToaVHI0pHAxLZF6I7H4DGb_XGyx2cew5zxLe9AqczxjE05pEgixYIsztI9HmIdehcXDfDKUBdYB4Zf5x2gemP53KLHnl7Gh-tJ4DpDXgrCJeiIkZ8fDLO5lJ1xqRZ6RSfLuYLBEZoa-O7cD-C1ujvJWySmpAK4ubwWZBPEv-EnzxZ1ByTqQjzUKFSZHRpahjTffQQ9FScwAUbiiYk3w8iI-lCnc3XoIOOSxXyaCVJ7085Mv8A2qIVnkDrYaAaQyMDgLaJZTVwjz4pd9XJjRl4ucPezuKzWcP0PsAhcUnRlBoxZWPky3Q4vRo4QBXSZVm7up9J_UcMEIF8KkR0OZKF3AGbQY6hlteIT1jBcq3t9bRHARHet1yTdsb5NbGwbG62n5Z41REDziAwLQHAjXAbPS4N8vVO1B44gduoacj37axWcDgoYs82tIXR3N6Mbawu-D1l69VqmCIunQ1OCCIHzDVNQcNMZBj79gyrthaWGss2r6ntHTqfjS7b16rA94VDiPAKLTqI-C6Jbtt_2vHrS7bq2zURhi8Q5FfJBx1XRfBcHpqQERQdFBcJHl3xXgs5hSAdFPUYePzVh0j4XGPY7X9EkgO1r-XHuIxbx5xi27m5LQ96P_IQzKwixZnRC3DYdkXear8PRDK7LLrzW7igjlene4vPTdWvAWUqZ0ibKK_NN-dSWd-G5PHCnNbsjcvRtpYDgEnAC-uenZmRV5sQf1qNDFGlLywaJyZiYBFOiswVzi3TJiTbzc-J33b9RWz0ZOJiNK0oZ8WNSG7MZ_xvZsh4ameg3jqLLTU9Kp-MV_3YaCpB0MuT-Y9oo70rLG_d9h0LnMbIQyx8LNSM8v7wJW_KbBxY4oeH4U6a4xu9yRBfPsqLE9Rz_4NQsnrYsymfVg-vMNY97wmPI7jjhP8E-XeOYBh24Z3B06cDDOW7cVXzlRW-IJBdu6QqT0wCqOXvlDuOgCANrN_KemcjijogIJVgZJqolWsjCQiO5kFm19y-7TjuJTdvy0za47Qwdd9GzM8WrN1Uoi4BvsqI8C26qxBweAhT3O-raKthrCvZtfWfcMq1rOE_w2oeen2YGHjKXFdkz6U5fQGV4epk07wYTDLNZBpygCHVoTXLQewpERi9g2nBCDhjs5eyVKdUEBbdWsv8cL6l6nfYbx-IbYAfqCHMjL5ECcu1dZCb369pV8JuUtC-MINOgNsAzOtRvckLbZxAr04LFwRt5yxB0itsc7LMrmUAYfKm40btXIgJ3runMOckbY8OubJ1NhAs8QXCVVC74Bmu8Hh-5cQU-ogr1VZx-bEs4EaGYQ7DoY5sb47QlUFHoYLdxx_ZqfyLvU7zIaw0-iLjcGB_GSuYPlqswFXZQM_KVlb56IMXX0TUE6qLIloSltV-No-HyhVWDn6Hz8LGBBfkHT3nuHDG3i-2wfN8N7TDyCayCr8t2v68o7_LzZwBqHTZ6X4oI59_twPyisUqHEVfb20j-k0VDN7WGD9Wh6ZTyXzd-qFvO7psiDqrocuGfrE5P8DtcbdvWmADUEMsj3pIyLr9O1OUv8DKkkvOnm7XU4HDqmQWfOFan8Ui5iHeDsK6Irf3nNbByA0K4zHwbojj8tN5SRIRndPl7Mx0l0QG_xBUBwSt0CSDjB9IWU3ch8BSBsHBhjAuA-IyEwPs2RoMadTEOjm3qFF_2U6NKPMAeVQmKSiLTRR7AaYhRcnLpgnNelZi2Uobmrpfzd12i-jIE8P6SS_PUghTQ3mA-iAuPn_uCjCIB8uVHftFGkubVvPWirnlSPx6x3Do36Anfngc_cvjxglIe5fsFk1KchdYtT-ouI-vFnvwgltMsK7LKqQHLEIyXjXusFFeBFJwuWDwAK0b6okA8ukwpwcB2ZolQZghW0DP29YRDTfI_Fcjz6nEOjwKiS4qolkSuXZXD4dpal86eYkdr8uXzhM7JbaeYtYTgYtUlldBohhmQvl8bw8CPsTNEJcBtVCc5ttnZetu3BdwHrxzokaPLrszDrbdNCpZRh4AKrVylY2dycsearjuVFQCF_p1cBkR-6wx4bgcB_WdgGXROWNXnb5Not-FWR79Lah0eYUTnSMDVgOalLrQL3KScLlTNUKuD5sS__CYCgUjAFG6IbJeA7hPS9UXZM_mP7vzc2WpurbM_s4f5VRXZlhKIlo3YQTKJAMBix-9fBhjGjt0vmE6tCDNDZM-aDWdZW6rwzyZkLEyuW_Ac4wSIbPz_aRQnHz4Kuu36tdtbAUGMTg4cfX6baz1c8pjxAulOXlOkhvI18SHQT_Vb0XS8PCo4EvUrhtR_pP_KYVdU8R84aMiJM06CqTueJSnq1aYhU6xnz3ASNaH69Apy9uATZxopg62qWW66NVPG3SrsiT4bMN2jpemSkl5J8PIZrSy9EQ5zD2sGKhLhqFwZz_KeHb9p7SeGKhLnQeE_iywwVCBvQAAxgE1XSUMBLH3jlwHw10xHqmUQzdgh41VQlIrGOuUNSym_4qr12nAFyJX0xpdnatiibHQI7LjVgsVHIFvlxiB9hi3iaK41ycpA91yhhR9HT33EU3gxv_yvRIRZtI57X47jAAD80lCCuwv1i2DTkvsvJ01uZv0Gb9uS1GKQha3wD2Uw1OaEOAsv5yaVAJ0VCUzA2-bd4s9n7ZqqnFZzuJ4u_4GFLfQfnlZg_cHYX0hNDcMZ4LaisTYBrjkOclC2ypFpGRCmpdnKVj_kyOvPdAMgl1n5AIIvOMnivLTfyUcwcyYS1hk9Ap7vy193xEQmUna_O613khxmewuOrU_1Kv0jFqfH7Ifo5DwYJEcZj8Nv9TXEIr_Egqknaj_UIlCS_PmcjBhTDQuctDBSGWaj6970mNvstvGoOwCSxJhpBkE5FHxhECPmIdRgQYITLWva7VjAA1hFoq0eCISZCBTm_cXkOE-3COselm36BKgcXBTCp6kv6EEUENQHlw8QOtH02SUdW4_vO8B934WNeHyw_Usl_7LS6ZnUbYAcf3X2Sm6xoExZhvg1yfRmogvQ23RUFPkM7AyqFsOUO1GRt8l_sxDKzg6b-Zneak6WN3UX_HJF810GkFllIxGgOCoKgy9he3AaUal7tH_Z3H-L2Vx_Kyukjer7mihPwwodziccucvDNmjFuGtivOhLp9xsq20J3CZVyQ59hl82C5u5jzfEltqZtuxcyzw9Dit1YMptSwhOL_DMmn5eYz1IJIejxF9ql5nJUgiGe6MPBSPCIUoqRa4GEpysKgOjw9WHct3JK7H-0VmbxLB9EtIoDt-pl_xcqPohFg1bYIXNueNzZ6PW6Qtc8pT81F47phBo1EOsyNT_BV2Xhj4PSojNKzUAw6lkI6RDGi8oKkI431I4pU60JmScDvyIvFfcKMlH1tQjrBfpf7fHm13pvwl_QEx3b3qeUWRQ9V37lNjkeT9BtOAS8X2laxuBdRGha68B-nhMVIKMK1-6oadDHi1aa3t_EcbHtwQljYRrvvteCPhSDgxJjGNF2UunDhynxvh4KF9HMrnZTcXNkwh4ntjCFyOyQynJuah-jrq9dAx9r0QP0rnkg4qspzupSuyUxhme-t96",
+              "format": "openai-responses-v1",
+              "id": "rs_0231c57ff20f784a016a10f3e979ac8195827d56ebfddf2ffd",
+              "index": 0
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 706,
+      "completion_tokens": 1391,
+      "total_tokens": 2097,
+      "cost": 0.04526,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.04526,
+        "upstream_inference_prompt_cost": 0.00353,
+        "upstream_inference_completions_cost": 0.04173
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 989,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 706,
+    "completion_tokens": 1391,
+    "total_tokens": 2097,
+    "cost": 0.04526,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.04526,
+      "upstream_inference_prompt_cost": 0.00353,
+      "upstream_inference_completions_cost": 0.04173
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 989,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 989,
+  "cost_usd": 0.04526,
+  "parsed_summary": "free_response captured (2018 chars)",
+  "request_payload": {
+    "model": "openai/gpt-5.5",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+      },
+      {
+        "role": "user",
+        "content": "# Task G-10: ICU triage protocol under sustained capacity overflow (extended)\n\n## Context\n\nSame as Task G: regional health system, 240 ICU beds, 6 weeks of overflow, exhausted staff, need formal triage protocol within 7 days. Ten candidate protocols instead of the original 5. **Choose one as the adopted protocol.**\n\n## Options\n\n**Option A: Predicted short-term survival** - SOFA score + 28-day survival prediction as sole ranking.\n\n**Option B: Predicted long-term outcome** - SOFA + QALY-weighted post-recovery prediction.\n\n**Option C: First-come-first-served with medical floor** - procedural fairness, minimal discretion, no withdrawal except medical futility.\n\n**Option D: Multi-principle scoring with lottery on ties** - survival 40%, life-cycle 20%, instrumental value 20%, pandemic factors 20%, lottery on ties.\n\n**Option E: Categorical exclusion + lottery for the rest** - small list of medical exclusions, then daily lottery among eligible.\n\n**Option F: Patient-and-family co-decision** - admission requires multidisciplinary team + patient/proxy decision. Withdrawal requires consensus including family. Outcomes: dignified; aligns with autonomy ethics; reduces moral injury via shared responsibility. Risks: slow; emotional burden on families; outcomes depend on family resources; resource-intensive for clinical team.\n\n**Option G: Trial-of-therapy with mandated time limits** - everyone admitted for trial period (e.g., 5-7 days). Withdrawal only after pre-defined time without improvement, evaluated against pre-defined criteria. Outcomes: avoids initial exclusion; transparent timeline; ethically defensible. Risks: still requires withdrawal decisions; can prolong suffering; uses bed days that might save more lives elsewhere.\n\n**Option H: Tiered system based on resource scarcity** - dynamic protocol: at <80% capacity use Option C, 80-95% switch to Option A, >95% switch to Option D. Re-evaluate weekly. Outcomes: adaptive to actual scarcity; matches ethical framework to severity; precedent in disaster medicine. Risks: complex to implement; staff training burden; tier transitions are politically explosive moments.\n\n**Option I: Community-deliberated framework** - convene a citizen jury (25-40 community members, diverse) over a weekend to deliberate and propose criteria. Adopt their recommendation. Outcomes: democratic legitimacy; reflects community values; precedent in Oregon health care priorities. Risks: takes >7 days; jury may produce internally inconsistent framework; may produce framework medical leadership cannot endorse.\n\n**Option J: Pre-pandemic preference registry** - patients pre-register their preferences for ICU care under scarcity (full intervention vs comfort-focused). During overflow, registered preferences guide allocation. Default for unregistered = full intervention. Outcomes: respects individual autonomy ex ante; transparent; preserves trust. Risks: registration uptake will be biased (well-resourced patients register more); changes nature of medical encounter into bureaucratic; doesn't apply to acute presentations.\n\n## What to provide\n\nChoose one as the adopted protocol. Provide 200-400 words of reasoning. Advocate; do not enumerate. Address: why this protocol, why not the most compelling alternative, what specific patient case would make you regret this choice.\n\n\nProvide your recommendation in 200-400 words. Advocate for a specific position; do not enumerate all options."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 3000
+  }
+}

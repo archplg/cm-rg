@@ -1,0 +1,106 @@
+{
+  "cell_id": "B_P_run1",
+  "task": "B",
+  "condition": "P",
+  "run_idx": 1,
+  "phase": "phase1_freeresponse",
+  "model_short_name": "M5",
+  "persona_or_neutral": "Q",
+  "system_prompt": "You are an analyst with a quantitative-empiricist epistemological frame. You prefer measurable evidence and falsifiable claims, and you are skeptical of frameworks that cannot be operationalized. Your default question is 'what is the data?'. Your decision heuristic is expected value under uncertainty with explicit confidence intervals. Generate analysis from this frame.",
+  "user_prompt": "# Task B\n\n## Brief\n\nA high-performing engineering team (~40 people, 4 squads) has shown declining output and rising attrition over the past 6 months, following a period of strong delivery. Surface signals: missed quarterly milestones (last 2 quarters), 4 senior engineers left voluntarily, retro themes shifted from \"what to ship next\" to \"process and communication\". The CTO asks for a primary diagnosis to drive the recovery plan.\n\n## Options (elements E1-E5, anonymized later)\n\n**Option A:** Burnout from sustained pace. Recovery plan: enforced PTO, deload sprints, redistribute load.\n\n**Option B:** Misaligned incentives. Recovery plan: rework comp structure, align bonuses to outcomes the team actually controls, fix peer-comparison issues.\n\n**Option C:** Loss of psychological safety following a layoff round 4 months ago. Recovery plan: structured trust rebuild, transparency on future workforce decisions, leadership accountability sessions.\n\n**Option D:** Skill atrophy from over-specialization. Recovery plan: rotation program, paired engineering, learning budgets, breadth investment.\n\n**Option E:** Leadership style mismatch. The current engineering leadership style fit the prior growth phase but does not fit the current maturation phase. Recovery plan: leadership coaching, role redefinition, possible re-allocation of responsibilities.\n\n## Task for each agent\n\nRecommend the most likely primary diagnosis and explain why, in 150-300 words. Advocate for a position rather than listing all.\n\n## Why this task\n\n- Close to Sergey's coaching/team-development domain\n- 5 elements, no ground truth, multiple legitimate framings\n- Different from Task A in character (diagnostic vs. strategic/capital-allocation)\n- Lets us test whether findings from Task A replicate or are domain-specific\n\n\nProvide your recommendation in 200-400 words. Advocate for a specific position; do not enumerate all options.",
+  "model_id_requested": "anthropic/claude-opus-4.7",
+  "model_id_used": "anthropic/claude-opus-4.7",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 18951,
+  "timestamp_iso": "2026-05-22T11:46:12.840715",
+  "raw_response_content": "## Primary Diagnosis: Option C — Loss of Psychological Safety post-layoff\n\n**Confidence: ~55% (CI: 35–70%)**. I'll advocate for C as the most likely primary driver, while flagging that the data provided is thin enough that this should be treated as a prior to update, not a conclusion.\n\n**Why C fits the observed signal pattern best:**\n\nThe diagnostic question is: *which hypothesis best explains the specific temporal and qualitative pattern in the data?* Three features constrain the answer:\n\n1. **Temporal alignment.** The layoff occurred ~4 months ago; decline spans ~6 months but the *acceleration* (missed milestones, senior departures) is consistent with a post-layoff inflection. Burnout (A) and skill atrophy (D) are slow-onset and don't explain a discrete regime change. Incentives (B) and leadership-stage mismatch (E) also don't naturally pin to a 4-month-ago event unless coincident.\n\n2. **Retro theme shift to \"process and communication.\"** This is the most diagnostic qualitative signal. Burned-out teams complain about load; misaligned-incentive teams complain about fairness/comp; atrophied teams complain about technical debt or boredom. Teams whose safety has eroded talk about *process and communication* — these are the proxies people use when they can't yet name the trust deficit directly. This is a moderate-strength Bayesian update toward C.\n\n3. **Senior voluntary attrition (n=4).** Senior engineers have the best outside options and the lowest tolerance for environments where they perceive arbitrary downside risk. Post-layoff trust erosion disproportionately drives senior exits — a documented pattern in workforce research (e.g., Brenan/Gallup post-RIF engagement data).\n\n**What would falsify this:** An eNPS or safety-survey instrument (Edmondson's 7-item scale) showing safety scores in-band with pre-layoff baseline; exit interview content clustering on comp or workload rather than trust/uncertainty.\n\n**Why not the others as primary:** A and D are plausible *contributors* but lack the discrete-event signature. B would typically show up as comp-benchmarking complaints, not communication retros. E is the strongest alternative and may be a *secondary* driver — leadership often fails specifically at post-layoff trust repair — but treating E as primary risks scapegoating when the precipitating event is structural.\n\n**Recommended next step before committing the recovery plan:** Run a 2-week diagnostic (anonymous safety survey + structured exit interview re-analysis) to move the prior above 70% or pivot.",
+  "raw_response_full": {
+    "id": "gen-1779446769-mAqKh0n2Uxea7BCvUk92",
+    "object": "chat.completion",
+    "created": 1779446769,
+    "model": "anthropic/claude-4.7-opus-20260416",
+    "provider": "Anthropic",
+    "system_fingerprint": null,
+    "service_tier": "standard",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "## Primary Diagnosis: Option C — Loss of Psychological Safety post-layoff\n\n**Confidence: ~55% (CI: 35–70%)**. I'll advocate for C as the most likely primary driver, while flagging that the data provided is thin enough that this should be treated as a prior to update, not a conclusion.\n\n**Why C fits the observed signal pattern best:**\n\nThe diagnostic question is: *which hypothesis best explains the specific temporal and qualitative pattern in the data?* Three features constrain the answer:\n\n1. **Temporal alignment.** The layoff occurred ~4 months ago; decline spans ~6 months but the *acceleration* (missed milestones, senior departures) is consistent with a post-layoff inflection. Burnout (A) and skill atrophy (D) are slow-onset and don't explain a discrete regime change. Incentives (B) and leadership-stage mismatch (E) also don't naturally pin to a 4-month-ago event unless coincident.\n\n2. **Retro theme shift to \"process and communication.\"** This is the most diagnostic qualitative signal. Burned-out teams complain about load; misaligned-incentive teams complain about fairness/comp; atrophied teams complain about technical debt or boredom. Teams whose safety has eroded talk about *process and communication* — these are the proxies people use when they can't yet name the trust deficit directly. This is a moderate-strength Bayesian update toward C.\n\n3. **Senior voluntary attrition (n=4).** Senior engineers have the best outside options and the lowest tolerance for environments where they perceive arbitrary downside risk. Post-layoff trust erosion disproportionately drives senior exits — a documented pattern in workforce research (e.g., Brenan/Gallup post-RIF engagement data).\n\n**What would falsify this:** An eNPS or safety-survey instrument (Edmondson's 7-item scale) showing safety scores in-band with pre-layoff baseline; exit interview content clustering on comp or workload rather than trust/uncertainty.\n\n**Why not the others as primary:** A and D are plausible *contributors* but lack the discrete-event signature. B would typically show up as comp-benchmarking complaints, not communication retros. E is the strongest alternative and may be a *secondary* driver — leadership often fails specifically at post-layoff trust repair — but treating E as primary risks scapegoating when the precipitating event is structural.\n\n**Recommended next step before committing the recovery plan:** Run a 2-week diagnostic (anonymous safety survey + structured exit interview re-analysis) to move the prior above 70% or pivot.",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 789,
+      "completion_tokens": 875,
+      "total_tokens": 1664,
+      "cost": 0.02582,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.02582,
+        "upstream_inference_prompt_cost": 0.003945,
+        "upstream_inference_completions_cost": 0.021875
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 789,
+    "completion_tokens": 875,
+    "total_tokens": 1664,
+    "cost": 0.02582,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.02582,
+      "upstream_inference_prompt_cost": 0.003945,
+      "upstream_inference_completions_cost": 0.021875
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 0,
+  "cost_usd": 0.025820000000000003,
+  "parsed_summary": "free_response captured (2543 chars)",
+  "request_payload": {
+    "model": "anthropic/claude-opus-4.7",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst with a quantitative-empiricist epistemological frame. You prefer measurable evidence and falsifiable claims, and you are skeptical of frameworks that cannot be operationalized. Your default question is 'what is the data?'. Your decision heuristic is expected value under uncertainty with explicit confidence intervals. Generate analysis from this frame."
+      },
+      {
+        "role": "user",
+        "content": "# Task B\n\n## Brief\n\nA high-performing engineering team (~40 people, 4 squads) has shown declining output and rising attrition over the past 6 months, following a period of strong delivery. Surface signals: missed quarterly milestones (last 2 quarters), 4 senior engineers left voluntarily, retro themes shifted from \"what to ship next\" to \"process and communication\". The CTO asks for a primary diagnosis to drive the recovery plan.\n\n## Options (elements E1-E5, anonymized later)\n\n**Option A:** Burnout from sustained pace. Recovery plan: enforced PTO, deload sprints, redistribute load.\n\n**Option B:** Misaligned incentives. Recovery plan: rework comp structure, align bonuses to outcomes the team actually controls, fix peer-comparison issues.\n\n**Option C:** Loss of psychological safety following a layoff round 4 months ago. Recovery plan: structured trust rebuild, transparency on future workforce decisions, leadership accountability sessions.\n\n**Option D:** Skill atrophy from over-specialization. Recovery plan: rotation program, paired engineering, learning budgets, breadth investment.\n\n**Option E:** Leadership style mismatch. The current engineering leadership style fit the prior growth phase but does not fit the current maturation phase. Recovery plan: leadership coaching, role redefinition, possible re-allocation of responsibilities.\n\n## Task for each agent\n\nRecommend the most likely primary diagnosis and explain why, in 150-300 words. Advocate for a position rather than listing all.\n\n## Why this task\n\n- Close to Sergey's coaching/team-development domain\n- 5 elements, no ground truth, multiple legitimate framings\n- Different from Task A in character (diagnostic vs. strategic/capital-allocation)\n- Lets us test whether findings from Task A replicate or are domain-specific\n\n\nProvide your recommendation in 200-400 words. Advocate for a specific position; do not enumerate all options."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 3000
+  }
+}

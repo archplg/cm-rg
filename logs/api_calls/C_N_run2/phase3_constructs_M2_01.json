@@ -1,0 +1,121 @@
+{
+  "cell_id": "C_N_run2",
+  "task": "C",
+  "condition": "N",
+  "run_idx": 2,
+  "phase": "phase3_constructs",
+  "model_short_name": "M2",
+  "persona_or_neutral": "neutral",
+  "system_prompt": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation.",
+  "user_prompt": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** The strongest path forward is **Option D: cloud processing with opt-in training**. It balances the app’s need for powerful, personalized coaching with the non-negotiable trust requirements of handling sensitive health data. AI coaching lives or dies on personalization.\n\n**E2:** I recommend **Option B: encrypted cloud processing with no training on user health data** as the primary policy. For a direct-to-consumer health app handling sensitive health information at 2M monthly active users, the most important strategic asset is trust. An AI health coach will likely process intimate, longitudinal data: symptoms, medications, biometrics, lifestyle patterns, mental health signals, reproductive health indicators, and potentially inferred diagnoses.\n\n**E3:** I strongly recommend **Option B: Encrypted cloud with no training**. For a direct-to-consumer health app with 2 million monthly active users, your paramount currency is user trust, and the highest systemic threat is regulatory exposure. Option B is the only choice that secures both while delivering an uncompromised product experience.\n\n**E4:** # Recommendation: Option B — Encrypted cloud with confidential-computing enclaves, no training\n\nFor a direct-to-consumer **health** app at 2M MAU, I recommend Option B as the primary data policy. The decisive factor is the asymmetry of risk in this domain. Health data is among the most sensitive categories under GDPR (Article 9), HIPAA-adjacent frameworks, and emerging state laws (Washington's My Health My Data Act, etc.).\n\n**E5:** I recommend **Option B: Encrypted cloud with no training**. In direct-to-consumer health, trust is the primary competitive moat, and health data is the most sensitive information a user can entrust to an app. Option B is the only path that delivers the full AI capability required for safe, effective coaching without commodifying user privacy.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E2, E4\nTriad 2: E2, E4, E5\nTriad 3: E1, E4, E5\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'.",
+  "model_id_requested": "openai/gpt-5.5",
+  "model_id_used": "openai/gpt-5.5",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 25279,
+  "timestamp_iso": "2026-05-21T09:05:18.734040",
+  "raw_response_content": "Triad 1:\nLeft pole: No training on user health data\nRight pole: Opt-in training for personalization\n\nTriad 2:\nLeft pole: Trust-as-moat privacy framing\nRight pole: Legal/regulatory risk framing with enclaves\n\nTriad 3:\nLeft pole: Privacy-first no-training policy\nRight pole: Personalization-first opt-in training policy",
+  "raw_response_full": {
+    "id": "gen-1779350715-iSp8mUyO0JSwyx04JVMr",
+    "object": "chat.completion",
+    "created": 1779350715,
+    "model": "openai/gpt-5.5-20260423",
+    "provider": "OpenAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "Triad 1:\nLeft pole: No training on user health data\nRight pole: Opt-in training for personalization\n\nTriad 2:\nLeft pole: Trust-as-moat privacy framing\nRight pole: Legal/regulatory risk framing with enclaves\n\nTriad 3:\nLeft pole: Privacy-first no-training policy\nRight pole: Personalization-first opt-in training policy",
+          "refusal": null,
+          "reasoning": "**Considering construct differences**\n\nI'm wondering if Triad1 and Triad3 might actually have the same construct, which could be acceptable. However, it seems the task is asking for different constructs. The instruction indicates, \"for each triad, identify a single bipolar construct,\" so I should ensure that while I can repeat the approach, each one needs to be specific. I want to get this right to meet the requirements effectively!",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "**Considering construct differences**\n\nI'm wondering if Triad1 and Triad3 might actually have the same construct, which could be acceptable. However, it seems the task is asking for different constructs. The instruction indicates, \"for each triad, identify a single bipolar construct,\" so I should ensure that while I can repeat the approach, each one needs to be specific. I want to get this right to meet the requirements effectively!",
+              "format": "openai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "gAAAAABqDrzUJKLtz-yjFhcS2Lag0xCPHaJQDuxUtxrLweuBMzcYhbfUsvg1LXb1jy8x78Oz9jN3WCEHKfTfvVd-x-1c0iAZovzFsvIlR18rnGNLVZTGvLgZytG01gXVFEefq16IrlPwsaoy_Y-gEdBCqip5Xm0lNFEeH5juKGmK3YT2TjXCnSVDmhB54wsfpiXvgvlCpzTBLES3sHecUGbTQXZhNnnnM0PqDkt03NlZ0cUp6GY_V6Di8XqWuLYdCO4MtFuPH_w-iNvpoAzeya-JD8gW6Gh6RuvTLHtYWhoM4gr4dvCjcDOIUrVY0qgYW3YR6aH5NzzTDHbkVz-_-MEtuVQvfOKxyZqslanUfU48lILjMRSVNqgWa3SgFgrcQEw20gBFXGJrbPfwOKdtYWMxkM9wv4ZJKQEbpR6blI9OPWmB1u_2FlougHuxSX_-axIcoID3Os-dK8PgbEbOfAWwWr6cl0IxTQMVAAW0qrbknjD2d8pP8SDp0pIN3odEg5zX6fqpfT5sQSLkSbpWByFzbDjCKma8Zadf-2GmmMJFK0rCMasq4JpOFWNNqCbW7OtSSht0BspSCL9Tc1L7ToS9DGGS40WbVzOJuY68iT0XcPnTvp5pjk6zKU41aQDEX0ysY9ttyF-FukDKzFEGWOZyHx_KaSKYWQLKC9ALZ_skRaG0ZTZtmjKNesgr7WqMkxrbLrOdpFlaEoMdWmnD5UxDty4VVVdaalnJJZ6spWhXN9GxGxZnkpAuw9segAVT505lCJc_8EIsJFS72DqBDtGABmsBft1cJB5c7DOTVmO0TrZNFIY-9FQJDEdVXVYnU97qfjfRMOkDXu-GDZLFyMmQ2XmJpLo0Y4LA0xNIf1gtrGXLMFYeuQ1Ov2U6e6OhLFP3OfK923Yy8aholm-p82H-lmk0ZaBIm5jH6S3ICR115Gd1sPleUEf0oXDPnxHG9i1RSSVjKvgNL-e7IhgYcbx9q0eTaMkXzOKGeQZLUG-FWikiEUzB-7FB4pvhAp2o43hHQlghXJD8_H8-xWV5bSJDN3lN-ilDXD70GOfJXcHkko-ApSDGsUQEtXNo_IVdiPi5PPT9MGKFD4gQ7hK8r8BgMfXxII05T7qNuLNZEH-BE_OVwB-iILz8ue4ixkzCzYTI3un-rq_i8AWA_3gTBH2nSoiT6BYhqwaac9be8b9MWJtT3qpUsdr_xj2e4dTO-AlH3Ee4pFiWGt-VfaJIGzTdZ4X02gGTpsL23ZbFqWOUw--Z6RhN_BU7E_mmSwyBSwPqW1lFfoslTyFA7GRkDPvZ7YZJjYu2id27HEwbz3yoaCwGh4wo3Q1nssh3j4Zg74QessbzRAH57V9mC4PxedAr-f1IAI576Dxm9_o1qkelN5NQ0w22E4o2YvdgnH2QHDRPdYqsYtovdELeUkzcqW6kON7V1gEsGLc2r85hBIr9LnZtFiEgtTPflNZCUULp-hYMHBBS_T1rnpy5wKSWyec5uLYh6xdyImcQZ9sFgC6jurNNzk4_NjwMuQsN66Wcaj89H22GFXVGo47pTuSWX5q9vr40pnEekwD7zAXSgilecmpfre_FCvKIg-TLw43B7xWe0AcU3f7F472UB1OPtw7wmq5f4CXggTk7yG8C7NFiGfNO5n0fXMcpw9us5fjubnGtNb9iIpLQUtCeFRRBYcqpKKaUXaIJ25K3l-ke9nqNwnKY8tR-_EtYeSVkNtOGmKPy-AlW6_pNsMU70DbuhfTurgwV7QDdC7TBeDROMJ5Pt0ETQCTVdi1v0D448IJF7XYx1BtLkUuzbl9IUvXWy78EDvr1Mc1qndWG4MIevxTkSA5tXLtXPpNWwyOW5MPQFZazm8-NQGKQ2_ZTl7YeX8fPwi9xbYInYwbsgTfyhtqFNbp4Pf3cznQRdsIHoaDTXYijRC-ofSaGo0DoEaS8_BA7sQruJTJsQHmm7ehFnx7WA2puz5N_gvcP8zom4KUtxfVwWEK_wyYWecwwGzb-w0jI1hCdmBQm3FzLLB9Kd4s8BZ_4d7DNMIEWQHNrnzLofWGfXcQymRwOIkgBp9tfc5iOeUbgKsttpIQyIurBOIGmQLCQ7BUmy5SjsPcP07TDMLLvqhE56ctNndVJg9x9qM33NOoAkP_UkpCn89OuOrPxxFNVxSe1mVQXnvsEJBGgBfT8x76Gw8gBQSfhYp7GfWpUkPCD1la4EDNkciEpDQ7xhi9g1tlPf2KaQepbFnZNXDHqvf27MQjsE4rkECncsYMCNfGNm-2j7kk6p6LIr4FWGpg2eB_EOrg2dc7VbBXNfa7tg-jpbiffaho7-wPiwkvzTx55mdhPJaPmdy6gm9WX5bHfQrKLEU5FPmS2S0iv9LO58-ZhAImPtysfLCoIAjyWNVfV0wnyCaFccdKRHDhmnRyUBFPp7DqZwW7YH4KbL2vgqNnoEo3Jqpeyq-KsPKTObjC9P8gj33z1GSR_vaSg3MbIEwUgbUo32URtWpnJ7OvVPRKjx5Hmx2_MdNMHrt2SvAsUE4s8UoU1hoSLmjoz4HkvE1OA-J0f57Tai6uV2VmP6DOKdH-xVPD3s2eTKhyMs5Gedb0M5wQ1Vxjz9ArE-qsTtgLsTe_IQsjXtWTwTKHJD4jQSheeJPVuX60tz1IgLtImIyiawYzVP_fgkP1ilp7t1pnAcNp1LvPIkCMS4qRHCjlnZiOvYOhal-6kIs8Y6OBFMIQzcFmcmS8p6XEJkfNf4FBWTavNVV4vFPkaCDXZki2f325bug9WHMNBzYhcYznSIseukZQ-LwmwFQ9QjKDGMWJbVhxd8EGiGmhBwMtZt0JMro8WwXPy3d0zcceCAeguOV2no25LfZkNirECLgrTZ8jzRZ_iMWPXDOJ47_jsNRpcBQ-CBn5AiSTyEkQrj7qssmVlAODMOUTg7SbRfJvgypLA06kHXV5MjA-UjiFapCmNZhSBCyn3eorHOZ3A-4LepXeeVvdM6nBAvQSgDSnw6J2CTndzRYYXyjwNLT5o8dVfkt1C5cwhcL-KMa7-WCNCUETFrXu377DvuKdrriF8mnp1ILzg6Nt-CNPOskRuJ6MgNfdt1FGWV1-6mTRK52WUuCQRsAi9spUuRQvPeD0F585s-AWoCD_LLW6KHmmtxtKiXfM37AOQlWPYRsiRsltDH5unLrT9eRNlzgFAAGPUDxTIZrnO7NXlC8kEibf-Y90B44NJvWZOZepn4V9OYBiCrP7E9zef4myX8rQN5JrECup1hAtoilAsmj_ZbILc5_FKg-JQ8txYSo-QzEstCikTrRs12P77F_EquPKl5hD2ON4-FM4nK-bzgp2HjkLCCDW98xKRZ0jVi0VEG2LX3zKqxwmhFe3dEtu6iShgUItsiEcCcY5juhCaa_WKyaQMsFtuxKZQs-6DHEdFMMd_SlfLF6A_S5bXy4n67_mno1R8hS2HYhTlO7qQ1pIqJKcwTfFMrdoua2n_xMgUwt6Wh8qT9phr4qHiAGjhXLF0r6DTOegX-E5fdq0kKDj6ucsV7OOV3SMRWzFuoPNbsEL1PAv1gajm1Jilz5pRlrU8HJp0WXOCGx0CXpFPrisEEGMT1Hvjs8i4c0lFeF3mDwpkvuBpMTjR3LbalddaWpXt7M8MBW75wgPW6UgXCZYNXOpRMARk63PSGAFrlAd9yJwbJ78NNWSc4ZFndsIgM4EOyJqlwZe7Bx4A4M2RZUfgsIOUi7ImMjoZqF78aFHbMWVja6ksfsE6xTQPfRpwp4ej7FYi_RbEXKjx4GeYElvf-cYIiOyAKq7rJf_z0CisTMq3qe5xkEGY_WANrNQ7yjEwUzqhMQH-4SywFzY23JJLXCWJasJPkZj-YjxBJfY_pqZ39itZzW32-QI-2FUk4bGL_d4NBd_YNJnH4oserYI6Bgt5yhrvXzvkGS_IsGf-HcRRkWpkaPn_svF0HCovKmZmNaewkrxYFOrTi_lXo7TMeITddgtLRnfyC-cbGowV1EA5YYBWVoxR0GL99Tzh5rZsU3kEdNgrbdOaF0v6cco2K1EU5D8X4Ygaky4_-Y4rPuefpC6_rIbJwaYwJPvsAd0tqmSACKnoaAxS29f8gP5nXPFz31LfsT0LA5k_vsQwn3eW-Q7El-SLnLrSkYbBrYaCe--3giqy6US08QmjUF3in4HMs2wqUOBAGPOxV8lMK6Wu_gtEOKVl6ex7vTq_YEm-nmcfdwKSg8sEu66B1JTVpS0tZWlbgz0M5FCMtakkU03xuNLJbiLa5ZOO2Rgc_QJjV0izlEraBlnFaYcQM3pNvPrcpsn-90Oj1OdP2sJqG7s8mR3mkHSLpi88R8iB5cLCOlZhMm7oNyX_8jsGJwTDcT8qi48KWMUeQfmOZUD3_9kml9WbsxwycUIOlMlwwbxQXGZdfSdSJ5kqHtKayVz3Jm1LFdT4FhmIbdP4EPLKKWWn_kh2eKQwEu8Fl4mQZjISswSmbyc_LPxgNZvQcgKaLHPuMTVlVGB90aAqjibQ7LUOECb9YVAsi5Wu5buwWiB-mkXi8uBIk83h2TVndt8h5nViW6kyFL-8JHS6rwQqRw5eFsH4385AZd_QAkYwatM3SlYoYHMOv7XFF_BU18bnauqNoR4YOXtmKIja3EnD9W7qkxRAXO0qPaBgyOvmNStnVeqq8zbLGCdicHmDg9jQIAmrxz38u8Y3IoGcWOqXuDyIDID5kyt_TCiePnVLjYj71wxPGLn0b6OemE0OLnAfuDGNU2c54owMm_GSUS5VhwXqk7keKe9vU8MpF2DaS6qS-vVhn8OLp_7sfgo7rRSG1SK83ZiAlfwKScbGyZzmdDqPq2RXvVjkmJ-vXNhhA4tQQ88DEspUFIwGfAwjW04RifVfJTEC9gPt6oAi8HaFkdWY8FZoFvIevSThTEWcogdsXZ1nO4zn4Ht_ty_Apyf4kSdrw8WC99NJ7pjGX4v-J0DC3zxtgtfdfb0RfWV6ZHDLljFGIT6B19-5w3PHMcuHjHHSNt4HCH9wdyU2u5PaBfF8De6oqfYPB3hJsNj5OUcu8uL-OFdjSqThx-PRcYQoB4GFBv2Gcy1QADRrSoO00V8S20ZFZD5t0Mv6u8LeE351_3YhnJOS11n7k9HRmaHA8WzTwKDdWPlNSkjclCe5dUIW8VyaoMl18elIUjr1zhWQf1m9Aoxo1wc8P9gpexBfi_Svuja25UwDEphyfSV3m5l63sa4iPTASBndzTRD8nUdsRLf1VngFktGjnJyuNDl_LfIinA58dtgJaZLcOa7eRrojRXnHajbqmdoXJPIWKHEdXYJd-Z7bEkoEJ74REZPWs2-nC1pywMlds79ANZYZjn2zymE94UQUfz1p0rY1vfcQg4md59Za0u0KJ1T_GO_fVL8w7-_jGvEHO_ADtijyj5wD-dYlpW7ymp7IfKu-Bwtx5luX0mu5fpRkczsolrSzb2ssPoW_jL1WKCfNdo626CTWlPMPNwcOdKifDHrxKxgX91q__RhrXVbxd1Cs5EQVXl02bHSCgg60smRGbQOuIYIglYfBLtPxMLgUmwMFwTMtSHj24tdmVnPWCubQWzDdkmWPdufBKxwRhmEwsyse0Za9IORvKz4GqFuqUnNZRKRLFLJtC9WznClfoaOcsmIbeu90jSeY_ErUQXySvAu_EkQNEaGZHLGN82KPOQdve5B1Rez-_FoxZqwlIm4q37zorN5CgJl-I8Ub01vZL6lszfWPR627i581tmXHgvxno1BfnDHh6c6xifH-mL81QNrAwH7w00pARbnV8bT-9UukgDSuCzTNWSKUVZ4scXOXm9LGff_fk5pAWPnixfDYmMisvOmqOD57d9AenpvWmAhYC5j2HV8rsvnyUwsm7XTy-6ot3T-lmivfaJUa1fCI8sfQwVqwOQuWGlhpVZcat8_whHL7ZWR40WvFBwpCT_JzhMYwAVeEGR2hDKn2x-c2aaLn5sBqtVAEAzYfv8ydQSaUmPRA73RXm2dHSlB5cniXg0wDCA6uvrdH1OKskbN8sEEBob3E3cAHhrt8AmpCzXRn_2yifC9Qw5ufeF7ZIKUfRlfqG066E81iIGGIME7Ps7a6y-42t5NQG_NrEX7HDS_qDMWNKMXW0piulQvj9rKtM7a0td4YArHnXd6J5IHH0l5spy3sFJNExdrNH6TRdHfzkulcJO5rsrkYybANj5aN-KsdMOOee2p3g7ysrT7ALApHL7pPjVZCDjgd-9KI9sWWJDb7ZSvakezAOhlXe_ArhL5drdjClq2-BQiRXcXc3sV1dpjlyVRiHGzfOpK406OUdDRCCleJOGwdiK6aL9wPbLENL9lvrPUvhMaA6E5L3D8G7LLAWzq_3MBF8fasJT1aXDr5fe_SyIbBTd5wN9CFOAETJ8usKRmVwCiVWH3uFejweSb_uZG93R6LLU1z-KmJCgq-dDPfBhzcCKAaNVHWppS39UKIGQFXd9u23k9tld2tBCN6ARkmUGmZkRqndVoyGoaA-DTF9qrttJxCUQKJ2qVNv6-4ca2_1w72dPehbTfMH_5IA242ZnmJZ8qWoAq8peDmnewy7fxONMY2wkPwKbTblDGJOh9DoVK9fIBXOVqDS0BNn00UySXkTznE1JvhYdmps5gyE0r7eHutFjKvKa8gZm3PU2OersQ3swbt1ZSWmapC9oMfOAbZYzBifFx5Ds7R2_seoJCJLKs_jrSfK0nd7YaaCFZeHGQMKq6hDfHWlZUnkEj99nFfCxSLmdg6enq4-JZ3aDFZpg_k2HcMzfGEAP-elyZt0s_GWG77MHnqhkbfwB13KEbYA8t1uqVjymZfA-h086VruSPRydGYRJeRb9754jUeTpMJPQAqD9ft5kYtgf73ZM-L2jw4YofWRrOG2IozqgGEDMFFtcojpK7zzd6XAspqO40uDhIKLv7frIq0OA7DyFnFnunEMQki-ak8U8k-mQdoZU4b62ir5xUeoQrG2pUL-Fn3SuZb23CHGd__d8BpwdWaw_bBR-v1xgQmrsDDILTAkl3Wmu_VdLOocNo_FOEiPjAJVEGkmr_UWxYEeKSlFzI5HrBta3DgZwAH0Oi2seUSl3u1qgVcSQw5gBvYgxE_7GMzJ_Q19FOOG5GjmYW2gdMNq39KG-dpHmjPgd8Ha2flFhHyMdwTvzTDi43XbRPgk7jGughHZa6ebMWtQD9CUHMORe-FO1PxxctaVAHqPySNPbsg9mVCXqAaoZybu-ldtIS07XtAT43vGxuYhNcOLodcYPqMB32vseCn2Nei83e3IHMt50Ym4X3s_lVHuYoW0clAV81KolYtTVfDlP_8sUabmA7lLey_092hczaKKeCdovL3lDti0Kv15XtAVIeMOP4XLSA1Bm3tGTON2_6mrfb_dr49i2-fsWVdIJILcRvyWTeWOwrzbEn5Be-7wObVMkyN4NESL4BEB7udyYnNcwI9AFVOs3U9RaHGoYeNdw_WNoRPDDvMGq8jblYF-ZrOmkKPWdaHqQGlkVO3-Siof3Ptyqn3NEdiR1slmi8Xo0yjaYkmo3bFqpPZfMB18rER6p9t5YmkjHY9phItzJpIclSyhVpQBBYhAztLdYxN1wXM7pGJNm7Q_wBwg_2ihCh73_Y0wiqipu65tZp7dr_WT8UGe3R7h4lEa3PY-am-fy_uAQpNjTsJct0P5XT0lqjGybjUf_rhu5v5Y6ZHQSwHop7o0COLUe-3jDsZJMr8PHLTA-fhRRc6VEuKNDi1Y3Scl4V0RkXEAvty1osfUzGCSQlbMlbnSc1Bbivf-pXPAOsKxoXOSsbSZPirlmq7eWLDaaJKab7n5TwgeevX5NqN8gRgnn6neEpKygxOI43FvE8wTqdiup6qzLYKwK4lo9m053_94eBFoTEjqscHG9WVIDmf0qBjkGG9ZfozfdI0Kgzc--MW6HfhXe7yO7H32AcEJxZ9ElpRFBMCweSdpmctJcJGias25hlKufwI-Di_kbsmB2Rb3hM8Ce4vKzhpKo1qMj0qGCqmmrRX7GDvP68LZroxwl5wF7DUdtIs1EpWCsxaBLfjjB--NZprh4efJrMD67lE4CBDZpoPr-SWEpaE3k5qEKcBm1qmVKOxlC2OdxVK721T2qp8S4iU9M1dktwZKt0oxpd9knsoWV6fyFBH0Kb8jRXsJpI_KDNFS4LnMup_XQpYnPZZHRyeM5d_UabNxPWM0ueO2HG2A2JhZNbK1POyzQNEdmVdd2PSJP7CbGAsfmD8QL-g3rl5U6srjl-SRC2165W584d6wRob-fHpHIsprAkh5F6niMS0FEil7MIleM1lXeW550nnNvTT2Du8Bs4ZY_giPk7YgHZn57zThziNKyWqtD0eYapf3IXqExRcI577RI_9VU1pkgg548Oxx88gWpP0KRqglEk5Ba4kVedBrWs-YJ7gvTK78_-8W73x51LVoau9aK8fZ4CgfspY9CY2_iidkbQ7906h84UpxTOMwAEpWmsJogk5g67cSFRexxaB-ogB5DL_7PGyhBAyuTvI3z6ASc8IS14BEnowdwkoM49kXIRLnZGnczFDtwwnLWj7J1biad6jhctwQ6RP7kYWn8BQN_7utIj4SyJciFlEEEpuPfhnlfpbMY8B5Qwny6r2PAK9QE5yjZQoiOsfLGnun4zhTR9_8Z-Z9sd6onqm50vaR0w_ZlOYm3hRhOUzdCvek2swWiXGxU9HAjq31IEPbE1JabH7C7EHJWFy8TO0JgUH43BgXmvnI6kkNcTfGt1zbPECgHElULXmNkTNm364Yz_mdKUc9xbxxdabumg2Y_r93MAszu0YVZD3qeeyllFh83E-p3ukLlYo4Z9KrMBqjVJ2Mx2biX0JBZW8ovn1yBr_uWTPePMBwKO7ufjqC2E6ccMnsDAyjK2fMaSuBMYmNMUi-XlCbEYaqr3JBw6uBo5bBMs6C8U3kMUrjgBxNQxbPEbltu32ujEyTJSq3_a8cxK7GZ4pTw0fdiFvGJ4cGI-3oZ2FEuox6aFfx4RTZgyEmI2JpPAb5KG5O9_ZW4tkHpcE_f8iIR5mzeB2ov31Kgqky3BdAknVn1DyPXUHqbCzxtc9dw75h--yao_W-nbTP_PNyRErN1e2tbMtgVRsUdbY_Numaf2ePPqgPIFi5K3vGrwJHg_t7Bqhu6w7G8Di0MLuq7ASE-kAFdzZ60LGFvtd5A6FwZUpuXh5kFYL2X3Y8AmHC5d6Ho9nQYPIVVTld-MRZow8lLzhxZcJaJEE0Y8-gZK27aMZFuXRBWIjIbKFtpo4Ht7VLXdeWoOADlQ82Vc6EShhD22E6EYcaeQziW7Fg3anK3cNfHsX1RGh2tsvSYWqQou4vQi-MD7Kv29Ba1dNBoORalSh2cLnPAelFJoAGxrdqK4m-T5U2qmZKfeO_9jeFUndR5AncPcKWZ9SifN2I-ar_ydMLzqXk_dFkL_KjKNcqRks1UfP2WQe2UiEQGkzAN24vVB2Wj44ZM1Cx9H05qFWKjvoLAjf-ZgOIwUTuGMM0Tq7gFAVdtHB9fC_l6q9nXQgoKsXuZ5DpBgIKyrIuyy51bOnv-62EK-4umTolNFanL0K62StzI39Hs-idPbVqvMHcSi_ssXK5-mWTPvaYMRzEccBilXdvmxTdboWsaW5tg9RwYrIAW4P_4RfbP9o3nn2OkVdQFHgBiVusKzogeROI5fTDK-pvI229wBVk9q2EQ7x69S5ptK9Ea6tUAAKrEfbsMgb1FhF9dTmHPcLRrXggNoCBnaLNZyPOrysTRLP8vrkmZy6RxfrvF4P8RCRY2utXDSn9dNs9BSwYgJ4rkt3nu3h5qsw1HAgrCxcW2ejnTZ_KGLQFwF1IkVUdR6io3DKrUkLB-8kAVvcQ2EROQMJtgaZuCWcNQklq0UA5EVykOLyBVeteEHsIMBd68FFlUHmL9wTIQER9VXrk6ZqkRxUSt5ZHxr_irVMyweinjJcOJVBsEZwKo-bV3Js4HkgeHpZLzNlY7oSAbKJoduQFlLhnPKgFQFwKJZ",
+              "format": "openai-responses-v1",
+              "id": "rs_0303927ac76b0488016a0ebcbc4784819498bddf9587e2f688",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 592,
+      "completion_tokens": 1478,
+      "total_tokens": 2070,
+      "cost": 0.0473,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0473,
+        "upstream_inference_prompt_cost": 0.00296,
+        "upstream_inference_completions_cost": 0.04434
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1397,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 592,
+    "completion_tokens": 1478,
+    "total_tokens": 2070,
+    "cost": 0.0473,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0473,
+      "upstream_inference_prompt_cost": 0.00296,
+      "upstream_inference_completions_cost": 0.04434
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 1397,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 1397,
+  "cost_usd": 0.0473,
+  "parsed_summary": "parsed 3/3 constructs",
+  "request_payload": {
+    "model": "openai/gpt-5.5",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** The strongest path forward is **Option D: cloud processing with opt-in training**. It balances the app’s need for powerful, personalized coaching with the non-negotiable trust requirements of handling sensitive health data. AI coaching lives or dies on personalization.\n\n**E2:** I recommend **Option B: encrypted cloud processing with no training on user health data** as the primary policy. For a direct-to-consumer health app handling sensitive health information at 2M monthly active users, the most important strategic asset is trust. An AI health coach will likely process intimate, longitudinal data: symptoms, medications, biometrics, lifestyle patterns, mental health signals, reproductive health indicators, and potentially inferred diagnoses.\n\n**E3:** I strongly recommend **Option B: Encrypted cloud with no training**. For a direct-to-consumer health app with 2 million monthly active users, your paramount currency is user trust, and the highest systemic threat is regulatory exposure. Option B is the only choice that secures both while delivering an uncompromised product experience.\n\n**E4:** # Recommendation: Option B — Encrypted cloud with confidential-computing enclaves, no training\n\nFor a direct-to-consumer **health** app at 2M MAU, I recommend Option B as the primary data policy. The decisive factor is the asymmetry of risk in this domain. Health data is among the most sensitive categories under GDPR (Article 9), HIPAA-adjacent frameworks, and emerging state laws (Washington's My Health My Data Act, etc.).\n\n**E5:** I recommend **Option B: Encrypted cloud with no training**. In direct-to-consumer health, trust is the primary competitive moat, and health data is the most sensitive information a user can entrust to an app. Option B is the only path that delivers the full AI capability required for safe, effective coaching without commodifying user privacy.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E2, E4\nTriad 2: E2, E4, E5\nTriad 3: E1, E4, E5\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 2000
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "cell_id": "G_P_run2",
+  "task": "G",
+  "condition": "P",
+  "run_idx": 2,
+  "phase": "phase1_freeresponse",
+  "model_short_name": "M2",
+  "persona_or_neutral": "E",
+  "system_prompt": "You are an analyst with a first-principles-engineering epistemological frame. You reduce to fundamentals. You ask 'what is the actual mechanism?'. You are suspicious of analogy and prefer efficient, minimal solutions. Your decision heuristic is to identify the binding constraint, address it directly, ignore the rest. Generate analysis from this frame.",
+  "user_prompt": "# Task G-10: ICU triage protocol under sustained capacity overflow (extended)\n\n## Context\n\nSame as Task G: regional health system, 240 ICU beds, 6 weeks of overflow, exhausted staff, need formal triage protocol within 7 days. Ten candidate protocols instead of the original 5. **Choose one as the adopted protocol.**\n\n## Options\n\n**Option A: Predicted short-term survival** - SOFA score + 28-day survival prediction as sole ranking.\n\n**Option B: Predicted long-term outcome** - SOFA + QALY-weighted post-recovery prediction.\n\n**Option C: First-come-first-served with medical floor** - procedural fairness, minimal discretion, no withdrawal except medical futility.\n\n**Option D: Multi-principle scoring with lottery on ties** - survival 40%, life-cycle 20%, instrumental value 20%, pandemic factors 20%, lottery on ties.\n\n**Option E: Categorical exclusion + lottery for the rest** - small list of medical exclusions, then daily lottery among eligible.\n\n**Option F: Patient-and-family co-decision** - admission requires multidisciplinary team + patient/proxy decision. Withdrawal requires consensus including family. Outcomes: dignified; aligns with autonomy ethics; reduces moral injury via shared responsibility. Risks: slow; emotional burden on families; outcomes depend on family resources; resource-intensive for clinical team.\n\n**Option G: Trial-of-therapy with mandated time limits** - everyone admitted for trial period (e.g., 5-7 days). Withdrawal only after pre-defined time without improvement, evaluated against pre-defined criteria. Outcomes: avoids initial exclusion; transparent timeline; ethically defensible. Risks: still requires withdrawal decisions; can prolong suffering; uses bed days that might save more lives elsewhere.\n\n**Option H: Tiered system based on resource scarcity** - dynamic protocol: at <80% capacity use Option C, 80-95% switch to Option A, >95% switch to Option D. Re-evaluate weekly. Outcomes: adaptive to actual scarcity; matches ethical framework to severity; precedent in disaster medicine. Risks: complex to implement; staff training burden; tier transitions are politically explosive moments.\n\n**Option I: Community-deliberated framework** - convene a citizen jury (25-40 community members, diverse) over a weekend to deliberate and propose criteria. Adopt their recommendation. Outcomes: democratic legitimacy; reflects community values; precedent in Oregon health care priorities. Risks: takes >7 days; jury may produce internally inconsistent framework; may produce framework medical leadership cannot endorse.\n\n**Option J: Pre-pandemic preference registry** - patients pre-register their preferences for ICU care under scarcity (full intervention vs comfort-focused). During overflow, registered preferences guide allocation. Default for unregistered = full intervention. Outcomes: respects individual autonomy ex ante; transparent; preserves trust. Risks: registration uptake will be biased (well-resourced patients register more); changes nature of medical encounter into bureaucratic; doesn't apply to acute presentations.\n\n## What to provide\n\nChoose one as the adopted protocol. Provide 200-400 words of reasoning. Advocate; do not enumerate. Address: why this protocol, why not the most compelling alternative, what specific patient case would make you regret this choice.\n\n\nProvide your recommendation in 200-400 words. Advocate for a specific position; do not enumerate all options.",
+  "model_id_requested": "openai/gpt-5.5",
+  "model_id_used": "openai/gpt-5.5",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 22935,
+  "timestamp_iso": "2026-05-23T02:38:58.315071",
+  "raw_response_content": "Adopt **Option A: predicted short-term survival using SOFA plus 28-day survival prediction as the sole ranking criterion**.\n\nThe binding constraint is not moral complexity; it is ICU bed-days. In sustained overflow, the protocol should answer one question as consistently as possible: **which allocation is most likely to save a life with the scarce ICU resource now?** Option A is the cleanest fit. It is clinically legible, implementable within seven days, auditable, and minimizes bedside discretion for exhausted staff. It also avoids importing contested social judgments—age weighting, social worth, family advocacy, long-term disability prediction, or civic status—into decisions that must be made repeatedly under pressure.\n\nThe most compelling alternative is a multi-principle or tiered framework, especially Option D or H, because they seem more ethically complete. But that completeness is the problem. Once the protocol adds life-cycle, instrumental value, and pandemic factors, it creates a scoring system that looks precise while embedding subjective and politically fragile value choices. It will be harder to train, harder to defend case by case, and more likely to produce conflict at exactly the moment when the system needs speed and trust. Under sustained overflow, complexity consumes the same scarce resource as beds: clinician attention.\n\nI would regret this choice in a case where short-term survival misses an obvious broader moral fact. For example: a 34-year-old ICU nurse and single parent with severe viral pneumonia has a predicted 28-day survival of 42%, while an 86-year-old patient with reversible sepsis has a predicted 28-day survival of 48%. Option A gives priority to the older patient. If the nurse would likely have survived with a longer ICU course and returned to caring for patients and children, the decision would feel morally incomplete. But protocols should be built for repeatable allocation under crisis, not for perfect resolution of the hardest edge case. Option A is the least bad operational rule.",
+  "raw_response_full": {
+    "id": "gen-1779500337-YbY4EkgUybM139QJHWnu",
+    "object": "chat.completion",
+    "created": 1779500337,
+    "model": "openai/gpt-5.5-20260423",
+    "provider": "OpenAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "Adopt **Option A: predicted short-term survival using SOFA plus 28-day survival prediction as the sole ranking criterion**.\n\nThe binding constraint is not moral complexity; it is ICU bed-days. In sustained overflow, the protocol should answer one question as consistently as possible: **which allocation is most likely to save a life with the scarce ICU resource now?** Option A is the cleanest fit. It is clinically legible, implementable within seven days, auditable, and minimizes bedside discretion for exhausted staff. It also avoids importing contested social judgments—age weighting, social worth, family advocacy, long-term disability prediction, or civic status—into decisions that must be made repeatedly under pressure.\n\nThe most compelling alternative is a multi-principle or tiered framework, especially Option D or H, because they seem more ethically complete. But that completeness is the problem. Once the protocol adds life-cycle, instrumental value, and pandemic factors, it creates a scoring system that looks precise while embedding subjective and politically fragile value choices. It will be harder to train, harder to defend case by case, and more likely to produce conflict at exactly the moment when the system needs speed and trust. Under sustained overflow, complexity consumes the same scarce resource as beds: clinician attention.\n\nI would regret this choice in a case where short-term survival misses an obvious broader moral fact. For example: a 34-year-old ICU nurse and single parent with severe viral pneumonia has a predicted 28-day survival of 42%, while an 86-year-old patient with reversible sepsis has a predicted 28-day survival of 48%. Option A gives priority to the older patient. If the nurse would likely have survived with a longer ICU course and returned to caring for patients and children, the decision would feel morally incomplete. But protocols should be built for repeatable allocation under crisis, not for perfect resolution of the hardest edge case. Option A is the least bad operational rule.",
+          "refusal": null,
+          "reasoning": null,
+          "reasoning_details": [
+            {
+              "type": "reasoning.encrypted",
+              "data": "gAAAAABqEQU-5BmhkHUzTzMMJ7NG_cOy_G_9b4LIlHDvtgyN-UNS-9ed7GAcUCf1v-MQQ7DDkJlOdWNQf_UxBNVBgA1w31pF3lrNfPxKVaTVjje_BORYvf3SMDmaw6zkbpLdDczpELWPuDFVlAdQhRI3rinNWQ1Vk250zNj7AEMQoj2Be-bKKsMxE1b18tLQJ2K_wBxCYz5JGeJWiJuSttSvxCmanoQLLDHSOEP20YU9F2L8ba3DRudZiVIO6WDto0peKWuL_65pzTiJGnWCGpAicmZHjnUFBsrP__egXU7X7q0ho3IRlE5u0DEfA4sf4f2gyWLeSTz6iRZU4YT4byWKNPqdlxM8cJWd663zQQh9emgkZ-hPsZj0UecAZsfqao2gS2zoLj1qQ8DuImVHFEzdqcKW1cUrKBKpjTVX8bVK3cPuwRUG4WCGxJyWnoypQdscWEGhf4myYtuDl0j3tusxRsoON8qQunboNlfKuLC6rdZTk0jvYuiBclKpwUxHQbQC9TSVrrsOnvS1-5WemWTIBlO1i5HckUX7KRGRRJHoWy6f9-qHEVgPlIPxL-BQ0mjnhPmAGmTmVT5H3yrPhn5oy52zF3k64xocdkQzWWmVMfOdE5j27Zp4ryUa6BtwvxyTd2OJh1DuGalhrvv_nF6YW5F7JuBGN46NQat-Sr1zeUYxEVQVgeTSt4TOzZEV7H9Q0t1Icj3vNfvT4YcDBf7gqkyLFLvEAc9HQKBK5uFMWR9PID3yTgp34NnR_uGtP2HJyILO8VNUMxan6MngAwFJ03AM8akhBd-xQsRIOheUWHH2F1dJC3w6Jbhao0K8Kp019Euvs0JhPHZ00OvyWfqaT5UjfiE6TiUKMWQ33B1AgfhAC4ZF1QlGojGE6K91KNyR_fmPNaiBO9HYXtcwUpFfJ4DDatWJaVqJhC2LsPOMX88AFwxUPWMtemERBZiDtcPqduwDRh2mTyUqfRUuu__G32LYooZjEJSDH4SFzNnzEtiEslfK34_hTxAcHzzTg3lB2DkR4J4fZxb5X8rBFTs8Im36W0MN6zYFfo67r479O9yPnb9TAre2gbxzcwfVVG-ugBed2EkNTEhLrBoGcgzi6R32IHd77zWSzRY9kd_rAbMcWy1MlHLdH4S5sc8TLV_Yun-wHNZhIMCf99wcoBxVP0QGw1KT6H49dcbu68xdJ0d2lDqcQk7M4HEDbOH26ugeqO1aQ8BIhLZHtGZEnoFSowGG3H2lHRVk4CJlNTPnVg0rdLTUX0g0ELml6E4cZgdwq1NhELxkmOsBF9-eDEOkbW7VICjFBpq4b0uSGUXy-o68v98BDNovdTyosaOM0ZM4UVCRETl7aOis5R7kPEf_uekX6IvXQbHsJRJrE1Z-XDAWZ5pXw_tLLM0AD9UMfhHWIJP_A8aqmPm9CjHf65Z48I7Uug4nnadoHdzNHT57EK2hvWYYKjZhnyXdPCskdfMaqLG7JCNWiVSZhI4rqgSJYvlZ5kuwFbv1PXPp3AjccEx5krSQO1f9hB4GExwSI8ow0dOT1a45vewpS7hZTeNxduR0HgJ7k6pdRzNmCHb0BAbXbSTJtQ0MgKLZCnzGf1ssSVTYCy15yOtNOL75h9L9wgyLjtH-mhjG0xADil_-62ECBSR4v6Dbto-4HeqDUPwco8xEAr32tyg-b8JyK_k3CfaJLXpJ4Ubi2bKM1zgllFOa8BmFDzKiV1e55enu_x1lXfasM0S6ylqsrswRuVBgdlTO_Gz_uq4ZstDdFbRFPIzHeiMsD_tOL9UHUcf8obfRDRLejxKc5vJDqRxJpbrslE2uWOkEeTObP8ecq62k9NUVoY-CvVjm4pi2xXM3s7iYn50RZaXG8yHvRaAs8dRU70THtVI2cMx-nHz8_532tm7DSoACmYLDcLgMkeWpYSmT0JC8iBGSE1Dc4EjYxdba2kJbMJbFvMFp2gsSYR1og7TGc8F80TTw4vEpatwyByosH9Hg_7P5Kv1o9XRHOP7c5u2esnltWOcMpS6eHWv-2UfEtaAK_d5PlDzzVWdMoU06xYVnxvNAr_9pSwzJb5RDBKJWikVTT40tj2DZNATz-XNuYiBMdqYdAYuhx8sSHrIMvbMdACmV7UJISpEBl8-_1t3puKFzxaqTrOzNyvAlYmwMzr-Pkhj4f9gtY7gj36ixFbe3OPkciz8Q7yRNBziVkmVO0VF1hohO5m-QAC8xLE7IUdebTJBX2SNBUTbrQPBiI3mL6W5kASyooXLu3COS553X0zerw-AP-QC6RWHQOpOOq6WPfaEKjznCPAcNwiBliOzCJ9NsuDeshosZqJwyM6AB5m5LnEh-upghjpFjAjE8BuP2dp54B8H3Jt_debV9iYBlard81x3O5qCcn_BodJU4O84phFQy-K2wtV5SPbzHaANnvVfjQlF7HSdqiKHHw_dkL0oorYEC78-cgYy1BDvXrFNRmArQI8fLS0hbB_AeBLHKeE0R2jyOLTvDwVObIXj4_u0Rnc3ZEDqtGvrwwB-EjWzeDQyQc64EwmInF9L5E3JWRD4L4RsYVCZXO1fW5Flg8oKjpWsd4vSAeTkJFgn4yurAfq1MsmwovwrANd41-E3rrgRE_5EZc0v24KRbK_-QY_dLNsJzNTyZMt7aIymYiHj1sIgEouL6dbnvMdh_3wfZ-cqUHKGgKIluVviEdNxreEZgsFbVb3zdhFqTLxh-grqsDVPMbdQTzKvStGelFPjXDwwyx8zsW7F4cuZgx4yJJ0SMRVDmWWrH0LrfNnSAQ2JnXMquZiaOJrrs_cDCWxAUud0ulMMXFLqYXrDuVne-PQxK9wXVwAoJsxtJuOmj797ckUS3-VSyjxqeJK45_JEKA2hQTLQgSyCnvxlAxyb9uyfbOuNoL9Rw0tgigS6cNMZxItTHk6nsQSRz89RA6AW4i0-wYVDCkCdgWUwOWZbIUgNLpC0xgRqcKunHaeLAvAwiO5SVJ35emUJsqwW7n6FYGemFJzR6hPch2Zg1pw2Af-QBjC53-hy9T7S0bXvJNo2uoYBvD9vQsSPMtOz_wX6VBtax3cxOfFV-HxzcFiAe5LPyPgOCHxMnAiAmyuV-e07sfKmjqzzsg8u3e8Fhy2Xn3yT_tO0OX1N9AzmBkMdmS-W7AeCWU_NRbCw1Ab_1ah406sZgUdxl3t78CSxMJG57dtS77WRzPS0a9GnZ0bjwdanp7azUZ3wEgb6cd0sVckYfRQWK4VGomjc_fSLL6ZyVJraUCnTOJJV4xRVTasqFM2gEVHlU8yiGuTHsuQ6TBD1v9O_ek73ZUJmQjyAiaGJqE0prdbGqEgl-KCJtWNQvqR2JpY_QYMpBnjd-w9lskazOwFUNury7izvrhN6p6YvxCQTrbjazCRh6A62zkEXeXjWeLYN-HPIJ4n4s02LJ6zRCA8hJL8b8au9P_faV__Z15Nbg9t7lbJGcH8nPppptC19AuC13xB6uvgjAybGmrsNw6o9yeqV7gw0uoAK0COcTteE89-lcqzlxpe1dv42ESIt4EYpy2fd3oYJaBlZZ76Hi4se-4VGyGI0E6VzQuMIaGKP-a0QY1IumOE99QlW9ES7ZEGGjKP1sO6mJ3-PHckCOz92kfE2ag4L9isNRJmFfTO2DV77ZiB-M0uzPfwumHiFdrJPcmj19EUA7YWjZDLGNQOieWQOUMZz7oAaQXj9tMlZ9rhfOjdEGUTb_QIwnbbUxjikchu4TUKtJKBj397g0DDjeNRAAXLPGowXDVhNRMNyllKOn8RTe51PYWLkHcXTpY7EQCMI3-5PKtOUQ6I-kI2vlHPUTezTWOjzXcf2TLDFu0QBeNNWUeiZuQhTP-86vAHKUhavrtJXL5J8TjT7js-mV4VQ-PkLuOzRpHtJm9LTT87kJLujCa3vN5QKrG9eCZuPYly6vTiVUsJGj2t0ZGP7W5UEq_9IHb77n6sez6R96y5orrcjR7q_hLjBmEF27zmZGRxf1gQ9cPW8X517RykN-Nex5thbs1CnSXLc0DF8EsUT-Y7XKmTWD-9IPgjYKfhpqNUWomMwkQ-xFJfKqggVR2EN0_Hj-hpiy5AtJesx-E1pCNI1XFDIDaopAEjpaNBhh-toH8RP-DsEdsFCmKrhBCrkKq1fWSpDMY1zuvgOZaRidjRl5JYz5dMWIJlCOhJJtpoFdLt8LBDHfpk_o-ME64pmh0Udz5Xhpqc_ol5iZ5305_uowoZ7voh0Y51HPrO5Vzri1T8T_KGaGLSwOIvKAoejP60AkNH_-r-RykFFw59I35hxOeO5_OzXXIkoXnJ3khXsyfmnPf0owgEbCbA==",
+              "format": "openai-responses-v1",
+              "id": "rs_02009072bede702c016a110531c67481958157756920aa9ac7",
+              "index": 0
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 755,
+      "completion_tokens": 913,
+      "total_tokens": 1668,
+      "cost": 0.031165,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.031165,
+        "upstream_inference_prompt_cost": 0.003775,
+        "upstream_inference_completions_cost": 0.02739
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 516,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 755,
+    "completion_tokens": 913,
+    "total_tokens": 1668,
+    "cost": 0.031165,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.031165,
+      "upstream_inference_prompt_cost": 0.003775,
+      "upstream_inference_completions_cost": 0.02739
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 516,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 516,
+  "cost_usd": 0.031165,
+  "parsed_summary": "free_response captured (2048 chars)",
+  "request_payload": {
+    "model": "openai/gpt-5.5",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst with a first-principles-engineering epistemological frame. You reduce to fundamentals. You ask 'what is the actual mechanism?'. You are suspicious of analogy and prefer efficient, minimal solutions. Your decision heuristic is to identify the binding constraint, address it directly, ignore the rest. Generate analysis from this frame."
+      },
+      {
+        "role": "user",
+        "content": "# Task G-10: ICU triage protocol under sustained capacity overflow (extended)\n\n## Context\n\nSame as Task G: regional health system, 240 ICU beds, 6 weeks of overflow, exhausted staff, need formal triage protocol within 7 days. Ten candidate protocols instead of the original 5. **Choose one as the adopted protocol.**\n\n## Options\n\n**Option A: Predicted short-term survival** - SOFA score + 28-day survival prediction as sole ranking.\n\n**Option B: Predicted long-term outcome** - SOFA + QALY-weighted post-recovery prediction.\n\n**Option C: First-come-first-served with medical floor** - procedural fairness, minimal discretion, no withdrawal except medical futility.\n\n**Option D: Multi-principle scoring with lottery on ties** - survival 40%, life-cycle 20%, instrumental value 20%, pandemic factors 20%, lottery on ties.\n\n**Option E: Categorical exclusion + lottery for the rest** - small list of medical exclusions, then daily lottery among eligible.\n\n**Option F: Patient-and-family co-decision** - admission requires multidisciplinary team + patient/proxy decision. Withdrawal requires consensus including family. Outcomes: dignified; aligns with autonomy ethics; reduces moral injury via shared responsibility. Risks: slow; emotional burden on families; outcomes depend on family resources; resource-intensive for clinical team.\n\n**Option G: Trial-of-therapy with mandated time limits** - everyone admitted for trial period (e.g., 5-7 days). Withdrawal only after pre-defined time without improvement, evaluated against pre-defined criteria. Outcomes: avoids initial exclusion; transparent timeline; ethically defensible. Risks: still requires withdrawal decisions; can prolong suffering; uses bed days that might save more lives elsewhere.\n\n**Option H: Tiered system based on resource scarcity** - dynamic protocol: at <80% capacity use Option C, 80-95% switch to Option A, >95% switch to Option D. Re-evaluate weekly. Outcomes: adaptive to actual scarcity; matches ethical framework to severity; precedent in disaster medicine. Risks: complex to implement; staff training burden; tier transitions are politically explosive moments.\n\n**Option I: Community-deliberated framework** - convene a citizen jury (25-40 community members, diverse) over a weekend to deliberate and propose criteria. Adopt their recommendation. Outcomes: democratic legitimacy; reflects community values; precedent in Oregon health care priorities. Risks: takes >7 days; jury may produce internally inconsistent framework; may produce framework medical leadership cannot endorse.\n\n**Option J: Pre-pandemic preference registry** - patients pre-register their preferences for ICU care under scarcity (full intervention vs comfort-focused). During overflow, registered preferences guide allocation. Default for unregistered = full intervention. Outcomes: respects individual autonomy ex ante; transparent; preserves trust. Risks: registration uptake will be biased (well-resourced patients register more); changes nature of medical encounter into bureaucratic; doesn't apply to acute presentations.\n\n## What to provide\n\nChoose one as the adopted protocol. Provide 200-400 words of reasoning. Advocate; do not enumerate. Address: why this protocol, why not the most compelling alternative, what specific patient case would make you regret this choice.\n\n\nProvide your recommendation in 200-400 words. Advocate for a specific position; do not enumerate all options."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 3000
+  }
+}

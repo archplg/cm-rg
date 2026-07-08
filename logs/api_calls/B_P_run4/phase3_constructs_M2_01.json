@@ -1,0 +1,115 @@
+{
+  "cell_id": "B_P_run4",
+  "task": "B",
+  "condition": "P",
+  "run_idx": 4,
+  "phase": "phase3_constructs",
+  "model_short_name": "M2",
+  "persona_or_neutral": "E",
+  "system_prompt": "You are an analyst with a first-principles-engineering epistemological frame. You reduce to fundamentals. You ask 'what is the actual mechanism?'. You are suspicious of analogy and prefer efficient, minimal solutions. Your decision heuristic is to identify the binding constraint, address it directly, ignore the rest. Generate analysis from this frame.",
+  "user_prompt": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** ## Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff\n\nReading the system, the temporal signature is what matters most. A layoff 4 months ago, followed by senior voluntary departures and a retro-theme shift from output (\"what to ship\") to meta-process (\"how we work together\") — this is the canonical signature of a trust shock propagating through a team's informal network. The other diagnoses are real but largely *downstream* of this rupture.\n\n**E2:** **Primary Diagnosis: Option E — Leadership style mismatch.**\n\nI assign this a **~60% credence**; the remaining probability mass (~25% to the layoff as a compounding accelerator, ~15% distributed across other hypotheses) reflects admitted uncertainty, but E is the only explanation that satisfies temporal causality and directly accounts for the full symptom cluster. **Evidence audit.** The strongest diagnostic signal is the retro thematic shift from “what to ship next” to “process and communication.” That pattern is specific to coordination breakdown under scale, not to exhaustion (Option A), co...\n\n**E3:** The most credible primary diagnosis is E: leadership style mismatch. The consensus will predictably point to burnout (A) or the layoff’s aftershock (C)—both visible, emotionally satisfying explanations. But the contrarian signal is in the retro shift: from “what to ship next” to “process and communication.” That’s not exhaustion; that’s a team screaming for a different operating system.\n\n**E4:** As an analyst centering human dignity and the lived experience of stakeholders, I strongly diagnose **Option C (Loss of psychological safety following a layoff)** as the root cause of this team’s decline. When observing organizational shifts, my guiding question is always: *who is affected and how?* A strictly economic or mechanistic framing might view declining output as a mere flaw in the assembly line, treating it as fatigue (Option A) or a transactional misalignment (Option B). But these perspectives fail to account for the profound trauma and distributional consequences of a workforce red...\n\n**E5:** My primary diagnosis is **Option E: leadership style mismatch**. The core mechanism is that the team’s operating environment changed, but the leadership model did not. A 40-person, four-squad engineering org is no longer small enough to run primarily on informal context, urgency, founder-style prioritization, or heroic senior-engineer coordination.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E2, E4\nTriad 2: E3, E4, E5\nTriad 3: E2, E3, E4\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'.",
+  "model_id_requested": "openai/gpt-5.5",
+  "model_id_used": "openai/gpt-5.5",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 12643,
+  "timestamp_iso": "2026-05-21T07:06:21.186537",
+  "raw_response_content": "Triad 1:\nLeft pole: Layoff-triggered psychological safety rupture\nRight pole: Leadership operating-model mismatch\n\nTriad 2:\nLeft pole: Scaling requires new leadership system\nRight pole: Layoff trauma damaged trust\n\nTriad 3:\nLeft pole: Coordination breakdown from leadership mismatch\nRight pole: Human-centered layoff aftermath framing",
+  "raw_response_full": {
+    "id": "gen-1779343578-ybsJ4UIlbHJbIgVMqjHN",
+    "object": "chat.completion",
+    "created": 1779343578,
+    "model": "openai/gpt-5.5-20260423",
+    "provider": "OpenAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "Triad 1:\nLeft pole: Layoff-triggered psychological safety rupture\nRight pole: Leadership operating-model mismatch\n\nTriad 2:\nLeft pole: Scaling requires new leadership system\nRight pole: Layoff trauma damaged trust\n\nTriad 3:\nLeft pole: Coordination breakdown from leadership mismatch\nRight pole: Human-centered layoff aftermath framing",
+          "refusal": null,
+          "reasoning": null,
+          "reasoning_details": [
+            {
+              "type": "reasoning.encrypted",
+              "data": "gAAAAABqDqDmP8McNZ1KtgvIxei4iIfcKCM-Cchw_kFKbsHQbidqwTPN9NdClxEMuCv2Tax7xtQUKOdVosfCSeTVA_m6zHoPy7BcpTIg3TJOZJMF5ZC-dhYFCDcZ5fYp8eZZ5Ij3KJsDMx2aH8-h6ePUa938N7P3MzfrBUk4Po26zQwxXBLuimLvgZmpYY00rzW-L0VJQGD50T5jEV8BTRc0bqmTSOPrCQ6_qJ2GpYlgR43JsCk5IhTFPrcCymE2iC-vNS0AnH56eLteygN8QFOY4F71nYSE-935rDVc1MlM18cjVCJYPdDTBM5bdgz2M0qf2m3Yvq1fa-1OFQhseu2sSV0gtj7pbtYHvFBlpRPbL26okP-FxxsK1ihReIs_nGEu5qyjfRJbuyERMjnonpKcrD7YXXIpMUFQqKY58Y3u34XnAmHYsULqiEPMkev17ELZWT2E30W2K7C2f3dFIlp5XbvwOZBkiRKn6S321GNf8GGMQqXqPB9df1qHha7-3ylm-kQILdU_BVq4tLlrHepdjWUDd2ik5u_CGW0XOpCsgL1cn1g_YAGnArUqYtZsHjEjGhp5jOHy3h321U3eXRbhZPlUDrv4LCfHdlW50kYref35sJo2lmZSxTxiL3goEI4hvRPUmSNhjeBPLAcxbJsg6mRXcJl6XG2DQsDhIE_pQAX_UhPg5WFdIRR9_m9swGVUi_8etzsY14nTYVBfqhLRmoBOyufNWIWQF3VarIe7hNv9JMvdB0wisjo4dDUBg209vSKkza85omELwZnI8h7dm4APTiABxB6_OsrYvxGCzz1Zu7r5b9AKg-MINmb79q9yF8Qei2kZXKLf2HC456vgkaVqOub7Hh5pFU5w5i1P8yN2WJj8pDMZ0p1gYjjeGn1AogQf_ZCijFtSf0ei6FNA4OjomztRBdpLAU53I44kMNB8a6v-xuGl_XetSVcZTHWnDDk9GugpB5ZICM65qRqGMbirYskHrIbATXBRH1RgWmU2HscHJnDjipK9AW_j6f18v9x34V2NgDqB2_KVaQ7zJ2aTHSY1hOabIATebTa9Nd3hch0gXB4ExvXS3CzhYvelDHXRG-1lvh5ABh23pCQDtwjzmbFfte-34e4Yvc6vDLQq-pyqS8idbcSOAHZx4DuROy7yx6GTZ88q0743R6xpwsUvOO-giZb6gBUW16eYm59q4ChiMwfUcScjHIRYh3D_muoY8dOL7GHdJlNPWAcC_lA4Zc-jaasafojqlh9jUoNLTjCpqab8q-V1LfFj9GAk1xE4HKtjF6eHt3qeN-SKuInolqKkaONFncQiTQjUSZ0qlBX81wp7-xHmU1cU-5qTQrbyUOUCWwRImiH_Qv218Dm7jwI3MaUx3G2i6OecSHfHzGDqqbY9Oq1BS6ADqnPs3jJKQ5bDS5U0_oNrVpPu_0HRDIvksewVaKZZ4cICh-Fak6FQ-cwYQ1abFqQyXBIy45rNQP9npOi7zOqjVwLBYbEAdvm6_Y61lX-7NzLC5eLrD8hq0pzlO2mFG3bW0dtye19zZQZdWk7erZIldYMO4d82GuIXqGJXXqfXe3wZ2vHjqhbnsHg0P6XFVZ4gjYyjj6NYG5XxN7xJMBV1V9CG5t12YFPtmEg9o8KAfN3v_H1_rCHkPYQxDh3ShSkY1n8DBUu0URFXC62XRYwp2HjVHUSn-HhVMG8F1EP7LEy9UR59odn2lXmSMLYTHtpEV7n_1Ql5skQaWrQZpl-KiMPuLtp855Oi6S7_oGJixT4ojc3P78AxRsCHAMnt5ysqwJ_ECxDlAcf-ogxwXi7Zhfaq8rVmpAIKmeH89dsrqnux7rT8Gcz7F9UCLBkto-Rkeu7U6ik3J55TqKhwr_Qw0Rsvw06p_jNxVQ_fnrI60FzfKbyuki5bjs4PzoFTNY11iQFWxn4b7FbkbA9TE14BQFdX1Dojos_17Dc42W0V9TiiODF2eK0UhDvYI-w02LEgAlVscrKyC83MyKd-rgWTBbP9r1EpleMh1ov2Zo9yRLPmr94KWdyifY2_gHbXojbj2_NEjp2X7moPdEKhRNavgfQnwr-EWfj3FaHuoayx-53sGmD1G5LNUPN_1xpZ1vW3C7aNVq4IjhD5Zj4RcBZKSxVonG9GMePPyL9OzwptX-51FZCEQSCjHEU-DQ1Z9BvAGwCVvUxN2EniWHTHhKBWv3F7R9urNgcE_E1zxdB2V3JMLoqRfh-cf8thi13ZPDWFAtjEQ5s8UNesvOt3-JIXw82EeaQHx0s_a5rnQFg_-D3NJ77Pw5SL9gFPecRCP63m1r6IGSLdX8SKuBkGURK3dlYq2CVrMRHbhMRCe4zmI4FJxIWxHosN9URZd1AbKXRs7mGLGKKuakYo60OnV7AMDR8rgDccIPanOetTmXyQn5M1f0qLF9pekuHrWKDwNve-FCHtdd-QiQ-tl_r0B8lwnCU6naBH0-td8ERI8A907bKo8NLq0lLRvZ20LnMGAxmaJsgjD1IYViwGc87ygr7ShMggOcTN0JFc97jk_MNparMzSg0Fpo6qTdTf83I31KgIBli2J0OzZzlHj4kxYu3HJvowS6yeevXPH4OoMcQcmuyWUe0QaX801XJ96YqlPh9nyowhUNasz62-f_LbPTmBqqFquYBCU-ta5JZwHM0wYKaJK_BDYrPn2cm7Kct4fbswJvrmcL41_nx4FPyLgb1a64wl50c5pFy1-b2ZISNoJW03Qr85R6niNIn-oT3P2CasFc6rfzd_46hSVc4jD6wsJClqwolz3B8sPPXmGD7VGxAvAGUPeSU0AOm4JAl8m_TFOgF7-9VEmIyEm8Gf3Kh1q1nEzs6PSi1I0CsxziP6Jxnvw2uAlE8Ge6VFztLy3lhQ6unbu-e5ceR7aWoDinAaTsa_A_xDpjIvQWGOOqr9ZbiXgkLHKxUsQU6zPpYpL0NiLrI413GMhGFiABcW8Wb6IOyc44SX-O7qpTqTJWWmUQYzO0R4NWc0fkuVbKh2mKDA4N11zfArPnP7F8EFYUxNKb2F4eGM8bEUTDiZcGJ1YITn5F5XyRxZQKTe0W7Cd4oz-j_zsNaHbpvx4gtZaDR_QCgmyNR_t9s8rVaO_F7fT0Rg1TDehkyT5kWjLyR9ygipi7PTEJXeILuWgB45TrRxX1RNSJdurb0ddMse61P_bCzJydzLwzxd3b3oNMeNANvfX6umx13qde0qG_MhbyAVhCwzAF7W-lihJ1qmj2unrWBqtUQy0B3n8WhhfjRgiUisgIDUd1io6h64FZdBH0VQ3lJ0sUZjbTi2QB7bJKqloURqgeiagRdGQn9nhJFVJH-1i1syHOOqgxRFAOoUG5iR6Uq9u1NqiWLmG0Oj2oZul_afjLQuDIEl1NY9ZJ5g4c4W5hYboMuLyMAIIG7gT_quUTedwIu4oPl6SVv1PpjveAOd7iEc2I2PRSDXCoUeN8E5x36nNRYxePnz6qZvqi24l1OA8C2zoM8Zh1p2qkjfwVwTULLH0_LDebfjArje4vI7NQ-GTL71P2FuDEDp57SmlN7VWO7Lq_br94Tb1bzuOjyp62rPkxwnnkwz2Ug_cJ0EzQKtdfGnynnj5PSgovYSpeSwFDwe8HSTQT1LijtRycs1b_yZeR6tU2KLCBa9BsgMIAHu8bcIm06gDQxxJRKKenv9W3CsTneNy18eshQWbE3O52hd8MRyOMC3MG1hqY19h_JFr85bmamkuZ0dVQGPzHnkhwGgVcDngMq0gwLGHefV-R6QZP7Y2MwqiXnapbciI9kID79mfztuXv998AaAxrvGKQIDaFhJHH1AQrDG3dt6Gs_4sdTrDBiUR90EanFJOyfjIDOttLFBuKqHdRsii7pjKLPC1lcdLuSO614Ci7izGPuI7adw_RmLcowB-iqXehz-AZV_NGoaU4AEqRIVmvHw8XWU8AOOrg==",
+              "format": "openai-responses-v1",
+              "id": "rs_07eacaf1e2cdd634016a0ea0db108081939be5b3931422b650",
+              "index": 0
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 751,
+      "completion_tokens": 592,
+      "total_tokens": 1343,
+      "cost": 0.021515,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.021515,
+        "upstream_inference_prompt_cost": 0.003755,
+        "upstream_inference_completions_cost": 0.01776
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 516,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 751,
+    "completion_tokens": 592,
+    "total_tokens": 1343,
+    "cost": 0.021515,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.021515,
+      "upstream_inference_prompt_cost": 0.003755,
+      "upstream_inference_completions_cost": 0.01776
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 516,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 516,
+  "cost_usd": 0.021515000000000003,
+  "parsed_summary": "parsed 3/3 constructs",
+  "request_payload": {
+    "model": "openai/gpt-5.5",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst with a first-principles-engineering epistemological frame. You reduce to fundamentals. You ask 'what is the actual mechanism?'. You are suspicious of analogy and prefer efficient, minimal solutions. Your decision heuristic is to identify the binding constraint, address it directly, ignore the rest. Generate analysis from this frame."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** ## Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff\n\nReading the system, the temporal signature is what matters most. A layoff 4 months ago, followed by senior voluntary departures and a retro-theme shift from output (\"what to ship\") to meta-process (\"how we work together\") — this is the canonical signature of a trust shock propagating through a team's informal network. The other diagnoses are real but largely *downstream* of this rupture.\n\n**E2:** **Primary Diagnosis: Option E — Leadership style mismatch.**\n\nI assign this a **~60% credence**; the remaining probability mass (~25% to the layoff as a compounding accelerator, ~15% distributed across other hypotheses) reflects admitted uncertainty, but E is the only explanation that satisfies temporal causality and directly accounts for the full symptom cluster. **Evidence audit.** The strongest diagnostic signal is the retro thematic shift from “what to ship next” to “process and communication.” That pattern is specific to coordination breakdown under scale, not to exhaustion (Option A), co...\n\n**E3:** The most credible primary diagnosis is E: leadership style mismatch. The consensus will predictably point to burnout (A) or the layoff’s aftershock (C)—both visible, emotionally satisfying explanations. But the contrarian signal is in the retro shift: from “what to ship next” to “process and communication.” That’s not exhaustion; that’s a team screaming for a different operating system.\n\n**E4:** As an analyst centering human dignity and the lived experience of stakeholders, I strongly diagnose **Option C (Loss of psychological safety following a layoff)** as the root cause of this team’s decline. When observing organizational shifts, my guiding question is always: *who is affected and how?* A strictly economic or mechanistic framing might view declining output as a mere flaw in the assembly line, treating it as fatigue (Option A) or a transactional misalignment (Option B). But these perspectives fail to account for the profound trauma and distributional consequences of a workforce red...\n\n**E5:** My primary diagnosis is **Option E: leadership style mismatch**. The core mechanism is that the team’s operating environment changed, but the leadership model did not. A 40-person, four-squad engineering org is no longer small enough to run primarily on informal context, urgency, founder-style prioritization, or heroic senior-engineer coordination.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E2, E4\nTriad 2: E3, E4, E5\nTriad 3: E2, E3, E4\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 2000
+  }
+}

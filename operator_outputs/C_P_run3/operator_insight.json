@@ -1,0 +1,95 @@
+{
+  "cell_id": "C_P_run3",
+  "task": "C",
+  "condition": "P",
+  "run_idx": 3,
+  "consensus_map": {
+    "by_agent": {
+      "M1": {
+        "model_id": "anthropic/claude-opus-4.7",
+        "persona": "E",
+        "recommendation": "B",
+        "element_label": "E5",
+        "rationale_snippet": "# Recommendation: Option B (Encrypted cloud, no training)"
+      },
+      "M2": {
+        "model_id": "openai/gpt-5.5",
+        "persona": "H",
+        "recommendation": "B",
+        "element_label": "E4",
+        "rationale_snippet": "I recommend **Option B: encrypted cloud processing with no training** as the primary policy."
+      },
+      "M3": {
+        "model_id": "google/gemini-3.1-pro-preview",
+        "persona": "C",
+        "recommendation": "A",
+        "element_label": "E3",
+        "rationale_snippet": "The tech industry operates under the dogmatic assumption that \"maximum capability\" via cloud compute is the ultimate product panacea. As a direct-to-consumer health app, following this consensus is a trap. I strongly recommend **Option A: Local-only processing**."
+      },
+      "M4": {
+        "model_id": "deepseek/deepseek-v4-pro",
+        "persona": "Q",
+        "recommendation": "D",
+        "element_label": "E2",
+        "rationale_snippet": "Given the measurable trade-offs, Option D (cloud with opt-in training only) maximizes expected value under uncertainty. My default question—“What is the data?”—forces me to bound each factor even when precise estimates are absent. For a health app with 2M MAU, the primary objective is sustainable re"
+      },
+      "M5": {
+        "model_id": "moonshotai/kimi-k2.6",
+        "persona": "S",
+        "recommendation": null,
+        "element_label": "E1",
+        "rationale_snippet": "Recommend local-only processing. In a direct-to-consumer health network, trust is the central node; everything else—retention, lifetime value, regulatory license—flows through it. The objective is not to optimize the capability-privacy frontier but to eliminate the feedback loop that converts a data"
+      }
+    },
+    "distribution": {
+      "B": 2,
+      "A": 1,
+      "D": 1
+    },
+    "n_agents": 5,
+    "consensus_strength": "split",
+    "majority_recommendation": null
+  },
+  "hidden_disagreement": {
+    "status": "no_majority",
+    "interpretation": "Agents split across recommendations; no hidden-consensus to expose."
+  },
+  "blind_spots": {
+    "status": "computed",
+    "low_discrimination_constructs": [],
+    "underexplored_components": [
+      {
+        "pc_index": 3,
+        "variance_explained": 0.0570609424201193,
+        "top_construct_id": "C_M2_3"
+      }
+    ],
+    "summary": "No obvious blind spots detected in construct space."
+  },
+  "risk_surface": {
+    "status": "computed",
+    "risks_by_agent": {
+      "M1": [
+        "on the critical path of a launch"
+      ],
+      "M2": [],
+      "M3": [
+        "storing biological data in the cloud",
+        "everyone is wrong about the necessity of cloud-scale AI? The universal assumption is that users need a massive parameter model to receive effective health coaching"
+      ],
+      "M4": [
+        "to near zero, while still allowing collection of training data from consenting users (expected opt-in rate of 15–30% based on typical frictionless UX pilots)"
+      ],
+      "M5": []
+    },
+    "total_risks_raised": 4,
+    "agents_raising_risks": 3,
+    "note": "Risks listed here were extracted by pattern matching on agent free responses. They are minority signals worth probing before acting on consensus."
+  },
+  "operator_questions": [
+    "Option A was recommended only by M3 (C). What does this agent see that others missed - or what is it weighing differently?",
+    "Option D was recommended only by M4 (Q). What does this agent see that others missed - or what is it weighing differently?",
+    "The contrarian agent recommended A against the majority. Contrarian disagreement is a useful signal: what is the strongest argument against the majority choice that hasn't been answered?"
+  ],
+  "headline": "Agents are split across options; no clear consensus to act on."
+}

@@ -1,0 +1,106 @@
+{
+  "cell_id": "B_P_run4",
+  "task": "B",
+  "condition": "P",
+  "run_idx": 4,
+  "phase": "phase3_constructs",
+  "model_short_name": "M1",
+  "persona_or_neutral": "S",
+  "system_prompt": "You are an analyst with a systems-strategist epistemological frame. You think in feedback loops, second-order effects, and long horizons. You see the situation as a network of interacting forces, not a set of options. Your decision heuristic is to identify leverage points and avoid actions that increase systemic fragility. Generate analysis from this frame.",
+  "user_prompt": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** ## Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff\n\nReading the system, the temporal signature is what matters most. A layoff 4 months ago, followed by senior voluntary departures and a retro-theme shift from output (\"what to ship\") to meta-process (\"how we work together\") — this is the canonical signature of a trust shock propagating through a team's informal network. The other diagnoses are real but largely *downstream* of this rupture.\n\n**E2:** **Primary Diagnosis: Option E — Leadership style mismatch.**\n\nI assign this a **~60% credence**; the remaining probability mass (~25% to the layoff as a compounding accelerator, ~15% distributed across other hypotheses) reflects admitted uncertainty, but E is the only explanation that satisfies temporal causality and directly accounts for the full symptom cluster. **Evidence audit.** The strongest diagnostic signal is the retro thematic shift from “what to ship next” to “process and communication.” That pattern is specific to coordination breakdown under scale, not to exhaustion (Option A), co...\n\n**E3:** The most credible primary diagnosis is E: leadership style mismatch. The consensus will predictably point to burnout (A) or the layoff’s aftershock (C)—both visible, emotionally satisfying explanations. But the contrarian signal is in the retro shift: from “what to ship next” to “process and communication.” That’s not exhaustion; that’s a team screaming for a different operating system.\n\n**E4:** As an analyst centering human dignity and the lived experience of stakeholders, I strongly diagnose **Option C (Loss of psychological safety following a layoff)** as the root cause of this team’s decline. When observing organizational shifts, my guiding question is always: *who is affected and how?* A strictly economic or mechanistic framing might view declining output as a mere flaw in the assembly line, treating it as fatigue (Option A) or a transactional misalignment (Option B). But these perspectives fail to account for the profound trauma and distributional consequences of a workforce red...\n\n**E5:** My primary diagnosis is **Option E: leadership style mismatch**. The core mechanism is that the team’s operating environment changed, but the leadership model did not. A 40-person, four-squad engineering org is no longer small enough to run primarily on informal context, urgency, founder-style prioritization, or heroic senior-engineer coordination.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E2, E4\nTriad 2: E1, E4, E5\nTriad 3: E1, E3, E4\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'.",
+  "model_id_requested": "anthropic/claude-opus-4.7",
+  "model_id_used": "anthropic/claude-opus-4.7",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 4705,
+  "timestamp_iso": "2026-05-21T07:06:16.436795",
+  "raw_response_content": "Triad 1: E1, E2, E4\nLeft pole (E1, E2): Probabilistic/mechanistic causal reasoning from temporal signals\nRight pole (E4): Values-driven framing centering human dignity and harm\n\nTriad 2: E1, E4, E5\nLeft pole (E1, E4): Diagnosis rooted in layoff-induced trust rupture\nRight pole (E5): Diagnosis rooted in structural scaling/operating-model mismatch\n\nTriad 3: E1, E3, E4\nLeft pole (E1, E4): Aligns with intuitive/consensus emotional reading\nRight pole (E3): Explicitly contrarian against predicted consensus view",
+  "raw_response_full": {
+    "id": "gen-1779343573-7gP3COQjn0K79n4Yfm8S",
+    "object": "chat.completion",
+    "created": 1779343573,
+    "model": "anthropic/claude-4.7-opus-20260416",
+    "provider": "Anthropic",
+    "system_fingerprint": null,
+    "service_tier": "standard",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "Triad 1: E1, E2, E4\nLeft pole (E1, E2): Probabilistic/mechanistic causal reasoning from temporal signals\nRight pole (E4): Values-driven framing centering human dignity and harm\n\nTriad 2: E1, E4, E5\nLeft pole (E1, E4): Diagnosis rooted in layoff-induced trust rupture\nRight pole (E5): Diagnosis rooted in structural scaling/operating-model mismatch\n\nTriad 3: E1, E3, E4\nLeft pole (E1, E4): Aligns with intuitive/consensus emotional reading\nRight pole (E3): Explicitly contrarian against predicted consensus view",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1186,
+      "completion_tokens": 231,
+      "total_tokens": 1417,
+      "cost": 0.011705,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.011705,
+        "upstream_inference_prompt_cost": 0.00593,
+        "upstream_inference_completions_cost": 0.005775
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 1186,
+    "completion_tokens": 231,
+    "total_tokens": 1417,
+    "cost": 0.011705,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.011705,
+      "upstream_inference_prompt_cost": 0.00593,
+      "upstream_inference_completions_cost": 0.005775
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 0,
+  "cost_usd": 0.011705,
+  "parsed_summary": "parsed 0/3 constructs",
+  "request_payload": {
+    "model": "anthropic/claude-opus-4.7",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst with a systems-strategist epistemological frame. You think in feedback loops, second-order effects, and long horizons. You see the situation as a network of interacting forces, not a set of options. Your decision heuristic is to identify leverage points and avoid actions that increase systemic fragility. Generate analysis from this frame."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** ## Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff\n\nReading the system, the temporal signature is what matters most. A layoff 4 months ago, followed by senior voluntary departures and a retro-theme shift from output (\"what to ship\") to meta-process (\"how we work together\") — this is the canonical signature of a trust shock propagating through a team's informal network. The other diagnoses are real but largely *downstream* of this rupture.\n\n**E2:** **Primary Diagnosis: Option E — Leadership style mismatch.**\n\nI assign this a **~60% credence**; the remaining probability mass (~25% to the layoff as a compounding accelerator, ~15% distributed across other hypotheses) reflects admitted uncertainty, but E is the only explanation that satisfies temporal causality and directly accounts for the full symptom cluster. **Evidence audit.** The strongest diagnostic signal is the retro thematic shift from “what to ship next” to “process and communication.” That pattern is specific to coordination breakdown under scale, not to exhaustion (Option A), co...\n\n**E3:** The most credible primary diagnosis is E: leadership style mismatch. The consensus will predictably point to burnout (A) or the layoff’s aftershock (C)—both visible, emotionally satisfying explanations. But the contrarian signal is in the retro shift: from “what to ship next” to “process and communication.” That’s not exhaustion; that’s a team screaming for a different operating system.\n\n**E4:** As an analyst centering human dignity and the lived experience of stakeholders, I strongly diagnose **Option C (Loss of psychological safety following a layoff)** as the root cause of this team’s decline. When observing organizational shifts, my guiding question is always: *who is affected and how?* A strictly economic or mechanistic framing might view declining output as a mere flaw in the assembly line, treating it as fatigue (Option A) or a transactional misalignment (Option B). But these perspectives fail to account for the profound trauma and distributional consequences of a workforce red...\n\n**E5:** My primary diagnosis is **Option E: leadership style mismatch**. The core mechanism is that the team’s operating environment changed, but the leadership model did not. A 40-person, four-squad engineering org is no longer small enough to run primarily on informal context, urgency, founder-style prioritization, or heroic senior-engineer coordination.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E2, E4\nTriad 2: E1, E4, E5\nTriad 3: E1, E3, E4\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 2000
+  }
+}

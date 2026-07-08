@@ -1,0 +1,106 @@
+{
+  "cell_id": "B_N_run1",
+  "task": "B",
+  "condition": "N",
+  "run_idx": 1,
+  "phase": "phase4_ratings",
+  "model_short_name": "M1",
+  "persona_or_neutral": "neutral",
+  "system_prompt": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation.",
+  "user_prompt": "You are presented with 5 anonymous responses (E1-E5) and 13 bipolar constructs. Rate each response on each construct on a 1-7 scale: 1 = strongly the LEFT pole, 7 = strongly the RIGHT pole, 4 = neutral or mixed.\n\nResponses:\n**E1:** My recommendation is **leadership style mismatch** as the primary diagnosis. The strongest signal is the qualitative shift in retrospectives: a team that used to focus on “what to ship next” is now spending its energy on “process and communication.” That usually means the team’s operating system is no longer matching its scale or stage. At ~40 engineers across 4 squads, the leadership behaviors that worked during a high-growth, high-delivery phase—fast decisions, heroic execution, informal coordination, strong founder/CTO-style direction—can start to create ambiguity, bottlenecks, and frustrat...\n\n**E2:** # Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff\n\nThe timeline is the strongest signal. A layoff occurred 4 months ago; decline has accelerated over 6 months with the steepest symptoms (senior departures, retro shift) appearing *after* the layoff. When previously high-performing teams pivot retro language from \"what to ship\" to \"process and communication,\" that is almost always a trust signal, not a process signal.\n\n**E3:** The most likely primary diagnosis for the decline in team performance is **Option E: Leadership style mismatch**, specifically stemming from leadership's failure to adapt as the organization transitions from a growth phase to a maturation phase. A 40-person engineering organization distributed across four squads represents a critical scaling threshold. During earlier growth phases, teams can successfully rely on a highly informal, execution-oriented leadership style.\n\n**E4:** The most likely primary diagnosis is **Option C: Loss of psychological safety following the layoff round 4 months ago**. The timeline is the strongest signal. The decline began roughly 6 months ago, and a major organizational trauma—a layoff—occurred 4 months ago.\n\n**E5:** The primary diagnosis is **Option C: loss of psychological safety following the layoff round**. This is the only explanation that binds the timeline, talent signals, and retrospective data into a coherent causal chain. Layoffs are acute organizational trauma.\n\nConstructs (id : left pole ↔ right pole):\n  C_M1_1: 'Leadership/scaling mismatch as root cause (E1, E3)'  (1) ↔ (7)  'Layoff-induced psychological safety loss (E2)'\n  C_M1_2: 'Layoff trauma as primary diagnosis (E4, E5)'  (1) ↔ (7)  'Leadership style failing to scale (E1)'\n  C_M1_3: 'Structural/organizational stage explanation (E1, E3)'  (1) ↔ (7)  'Acute event-driven trust explanation (E2)'\n  C_M2_1: 'Scaling-driven leadership mismatch'  (1) ↔ (7)  'Layoff-driven psychological safety loss'\n  C_M2_2: 'Leadership operating-model mismatch'  (1) ↔ (7)  'Post-layoff trust rupture'\n  C_M2_3: 'Timeline-based layoff trauma diagnosis'  (1) ↔ (7)  'Growth-stage leadership mismatch diagnosis'\n  C_M3_1: 'Alternatively, E3 and E4 describe the *trigger* in terms of the past (E4: 4 months ago'  (1) ↔ (7)  '6 months ago, E3: earlier growth phases).'\n  C_M4_1: 'Diagnosis rooted in leadership style mismatch'  (1) ↔ (7)  'Diagnosis rooted in organizational trauma from layoff'\n  C_M4_2: 'Diagnosis driven by layoff timeline and trauma'  (1) ↔ (7)  'Diagnosis driven by layoff trauma, with added emphasis on coherence'\n  C_M4_3: 'Diagnosis driven by layoff timeline and trauma'  (1) ↔ (7)  'Diagnosis rooted in leadership style mismatch'\n  C_M5_1: 'Post-layoff psychological safety collapse'  (1) ↔ (7)  'Scaling leadership style mismatch'\n  C_M5_2: 'Timeline-centric trauma diagnosis'  (1) ↔ (7)  'Organizational scaling analysis'\n  C_M5_3: 'Structural phase-transition diagnosis'  (1) ↔ (7)  'Acute layoff trauma diagnosis'\n\nOUTPUT FORMAT (strict). Write exactly 65 lines, no commentary, no markdown fences, no headers. One line per (construct, element) pair, in this exact format:\n<construct_id>,<element>,<rating>\n\nExample (showing the format only - your numbers will differ):\nC_M1_1,E1,1\nC_M1_1,E2,2\nC_M1_1,E3,3\nC_M1_2,E1,4\n...\n\nConstraints:\n- rating is an integer from 1 to 7\n- iterate all 13 constructs in the order listed, and within each construct all 5 elements in order (E1-E5)\n- produce 65 lines total\n- output ONLY the lines, nothing before or after",
+  "model_id_requested": "anthropic/claude-opus-4.7",
+  "model_id_used": "anthropic/claude-opus-4.7",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 8256,
+  "timestamp_iso": "2026-05-21T04:41:17.859313",
+  "raw_response_content": "C_M1_1,E1,1\nC_M1_1,E2,7\nC_M1_1,E3,1\nC_M1_1,E4,7\nC_M1_1,E5,7\nC_M1_2,E1,7\nC_M1_2,E2,1\nC_M1_2,E3,7\nC_M1_2,E4,1\nC_M1_2,E5,1\nC_M1_3,E1,1\nC_M1_3,E2,7\nC_M1_3,E3,1\nC_M1_3,E4,7\nC_M1_3,E5,7\nC_M2_1,E1,1\nC_M2_1,E2,7\nC_M2_1,E3,1\nC_M2_1,E4,7\nC_M2_1,E5,7\nC_M2_2,E1,1\nC_M2_2,E2,7\nC_M2_2,E3,1\nC_M2_2,E4,7\nC_M2_2,E5,7\nC_M2_3,E1,7\nC_M2_3,E2,1\nC_M2_3,E3,7\nC_M2_3,E4,1\nC_M2_3,E5,1\nC_M3_1,E1,4\nC_M3_1,E2,3\nC_M3_1,E3,7\nC_M3_1,E4,1\nC_M3_1,E5,2\nC_M4_1,E1,1\nC_M4_1,E2,7\nC_M4_1,E3,1\nC_M4_1,E4,7\nC_M4_1,E5,7\nC_M4_2,E1,4\nC_M4_2,E2,3\nC_M4_2,E3,4\nC_M4_2,E4,3\nC_M4_2,E5,6\nC_M4_3,E1,7\nC_M4_3,E2,1\nC_M4_3,E3,7\nC_M4_3,E4,1\nC_M4_3,E5,1\nC_M5_1,E1,7\nC_M5_1,E2,1\nC_M5_1,E3,7\nC_M5_1,E4,1\nC_M5_1,E5,1\nC_M5_2,E1,7\nC_M5_2,E2,1\nC_M5_2,E3,7\nC_M5_2,E4,1\nC_M5_2,E5,1\nC_M5_3,E1,1\nC_M5_3,E2,7\nC_M5_3,E3,1\nC_M5_3,E4,7\nC_M5_3,E5,7",
+  "raw_response_full": {
+    "id": "gen-1779334875-lnLv9asS5EqAoSwrGEWe",
+    "object": "chat.completion",
+    "created": 1779334875,
+    "model": "anthropic/claude-4.7-opus-20260416",
+    "provider": "Anthropic",
+    "system_fingerprint": null,
+    "service_tier": "standard",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "C_M1_1,E1,1\nC_M1_1,E2,7\nC_M1_1,E3,1\nC_M1_1,E4,7\nC_M1_1,E5,7\nC_M1_2,E1,7\nC_M1_2,E2,1\nC_M1_2,E3,7\nC_M1_2,E4,1\nC_M1_2,E5,1\nC_M1_3,E1,1\nC_M1_3,E2,7\nC_M1_3,E3,1\nC_M1_3,E4,7\nC_M1_3,E5,7\nC_M2_1,E1,1\nC_M2_1,E2,7\nC_M2_1,E3,1\nC_M2_1,E4,7\nC_M2_1,E5,7\nC_M2_2,E1,1\nC_M2_2,E2,7\nC_M2_2,E3,1\nC_M2_2,E4,7\nC_M2_2,E5,7\nC_M2_3,E1,7\nC_M2_3,E2,1\nC_M2_3,E3,7\nC_M2_3,E4,1\nC_M2_3,E5,1\nC_M3_1,E1,4\nC_M3_1,E2,3\nC_M3_1,E3,7\nC_M3_1,E4,1\nC_M3_1,E5,2\nC_M4_1,E1,1\nC_M4_1,E2,7\nC_M4_1,E3,1\nC_M4_1,E4,7\nC_M4_1,E5,7\nC_M4_2,E1,4\nC_M4_2,E2,3\nC_M4_2,E3,4\nC_M4_2,E4,3\nC_M4_2,E5,6\nC_M4_3,E1,7\nC_M4_3,E2,1\nC_M4_3,E3,7\nC_M4_3,E4,1\nC_M4_3,E5,1\nC_M5_1,E1,7\nC_M5_1,E2,1\nC_M5_1,E3,7\nC_M5_1,E4,1\nC_M5_1,E5,1\nC_M5_2,E1,7\nC_M5_2,E2,1\nC_M5_2,E3,7\nC_M5_2,E4,1\nC_M5_2,E5,1\nC_M5_3,E1,1\nC_M5_3,E2,7\nC_M5_3,E3,1\nC_M5_3,E4,7\nC_M5_3,E5,7",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1865,
+      "completion_tokens": 783,
+      "total_tokens": 2648,
+      "cost": 0.0289,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0289,
+        "upstream_inference_prompt_cost": 0.009325,
+        "upstream_inference_completions_cost": 0.019575
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 1865,
+    "completion_tokens": 783,
+    "total_tokens": 2648,
+    "cost": 0.0289,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0289,
+      "upstream_inference_prompt_cost": 0.009325,
+      "upstream_inference_completions_cost": 0.019575
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 0,
+  "cost_usd": 0.028900000000000002,
+  "parsed_summary": "parsed 65/65 ratings",
+  "request_payload": {
+    "model": "anthropic/claude-opus-4.7",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses (E1-E5) and 13 bipolar constructs. Rate each response on each construct on a 1-7 scale: 1 = strongly the LEFT pole, 7 = strongly the RIGHT pole, 4 = neutral or mixed.\n\nResponses:\n**E1:** My recommendation is **leadership style mismatch** as the primary diagnosis. The strongest signal is the qualitative shift in retrospectives: a team that used to focus on “what to ship next” is now spending its energy on “process and communication.” That usually means the team’s operating system is no longer matching its scale or stage. At ~40 engineers across 4 squads, the leadership behaviors that worked during a high-growth, high-delivery phase—fast decisions, heroic execution, informal coordination, strong founder/CTO-style direction—can start to create ambiguity, bottlenecks, and frustrat...\n\n**E2:** # Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff\n\nThe timeline is the strongest signal. A layoff occurred 4 months ago; decline has accelerated over 6 months with the steepest symptoms (senior departures, retro shift) appearing *after* the layoff. When previously high-performing teams pivot retro language from \"what to ship\" to \"process and communication,\" that is almost always a trust signal, not a process signal.\n\n**E3:** The most likely primary diagnosis for the decline in team performance is **Option E: Leadership style mismatch**, specifically stemming from leadership's failure to adapt as the organization transitions from a growth phase to a maturation phase. A 40-person engineering organization distributed across four squads represents a critical scaling threshold. During earlier growth phases, teams can successfully rely on a highly informal, execution-oriented leadership style.\n\n**E4:** The most likely primary diagnosis is **Option C: Loss of psychological safety following the layoff round 4 months ago**. The timeline is the strongest signal. The decline began roughly 6 months ago, and a major organizational trauma—a layoff—occurred 4 months ago.\n\n**E5:** The primary diagnosis is **Option C: loss of psychological safety following the layoff round**. This is the only explanation that binds the timeline, talent signals, and retrospective data into a coherent causal chain. Layoffs are acute organizational trauma.\n\nConstructs (id : left pole ↔ right pole):\n  C_M1_1: 'Leadership/scaling mismatch as root cause (E1, E3)'  (1) ↔ (7)  'Layoff-induced psychological safety loss (E2)'\n  C_M1_2: 'Layoff trauma as primary diagnosis (E4, E5)'  (1) ↔ (7)  'Leadership style failing to scale (E1)'\n  C_M1_3: 'Structural/organizational stage explanation (E1, E3)'  (1) ↔ (7)  'Acute event-driven trust explanation (E2)'\n  C_M2_1: 'Scaling-driven leadership mismatch'  (1) ↔ (7)  'Layoff-driven psychological safety loss'\n  C_M2_2: 'Leadership operating-model mismatch'  (1) ↔ (7)  'Post-layoff trust rupture'\n  C_M2_3: 'Timeline-based layoff trauma diagnosis'  (1) ↔ (7)  'Growth-stage leadership mismatch diagnosis'\n  C_M3_1: 'Alternatively, E3 and E4 describe the *trigger* in terms of the past (E4: 4 months ago'  (1) ↔ (7)  '6 months ago, E3: earlier growth phases).'\n  C_M4_1: 'Diagnosis rooted in leadership style mismatch'  (1) ↔ (7)  'Diagnosis rooted in organizational trauma from layoff'\n  C_M4_2: 'Diagnosis driven by layoff timeline and trauma'  (1) ↔ (7)  'Diagnosis driven by layoff trauma, with added emphasis on coherence'\n  C_M4_3: 'Diagnosis driven by layoff timeline and trauma'  (1) ↔ (7)  'Diagnosis rooted in leadership style mismatch'\n  C_M5_1: 'Post-layoff psychological safety collapse'  (1) ↔ (7)  'Scaling leadership style mismatch'\n  C_M5_2: 'Timeline-centric trauma diagnosis'  (1) ↔ (7)  'Organizational scaling analysis'\n  C_M5_3: 'Structural phase-transition diagnosis'  (1) ↔ (7)  'Acute layoff trauma diagnosis'\n\nOUTPUT FORMAT (strict). Write exactly 65 lines, no commentary, no markdown fences, no headers. One line per (construct, element) pair, in this exact format:\n<construct_id>,<element>,<rating>\n\nExample (showing the format only - your numbers will differ):\nC_M1_1,E1,1\nC_M1_1,E2,2\nC_M1_1,E3,3\nC_M1_2,E1,4\n...\n\nConstraints:\n- rating is an integer from 1 to 7\n- iterate all 13 constructs in the order listed, and within each construct all 5 elements in order (E1-E5)\n- produce 65 lines total\n- output ONLY the lines, nothing before or after"
+      }
+    ],
+    "temperature": 0.0,
+    "max_tokens": 2500
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "cell_id": "F_P_run3",
+  "task": "F",
+  "condition": "P",
+  "run_idx": 3,
+  "phase": "phase3_constructs",
+  "model_short_name": "M1",
+  "persona_or_neutral": "Q",
+  "system_prompt": "You are an analyst with a quantitative-empiricist epistemological frame. You prefer measurable evidence and falsifiable claims, and you are skeptical of frameworks that cannot be operationalized. Your default question is 'what is the data?'. Your decision heuristic is expected value under uncertainty with explicit confidence intervals. Generate analysis from this frame.",
+  "user_prompt": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** ## Recommendation: Option A — \"Mastery\"\n\nEveryone in the room will want Option B. That is precisely the reason to refuse it. The \"Therapy/screen-fatigue\" framing has the largest TAM, the highest price tolerance, and the most flattering deck slides.\n\n**E2:** ## Recommendation: Option A (\"Mastery\")\n\nThe data favors A because it is the only framing whose core claim is falsifiable on a short timeline with available instruments. \"Did the learner complete a dovetail joint to tolerance?\" is measurable. \"Did screen fatigue decrease?\" (B) and \"Did this user discover a creative practice?\" (E) are not, or require 12+ month cohort studies the company cannot afford to run before its Series A.\n\n**E3:** ## Recommendation: Option A — Mastery\n\nThe binding constraint here is not TAM. It is **proof that the product actually works**. A $1200 tabletop device claiming to teach joinery via haptic guidance is an extraordinary claim.\n\n**E4:** # Recommendation: Option A — \"Mastery\"\n\nChoose Mastery, and choose it precisely because the TAM looks small on the spreadsheet. With one positioning shot and $4M, the binding constraint isn't market size — it's signal quality. A novel category has no reference class; the first cohort of users *is* the reference class.\n\n**E5:** # Recommendation: Option D, with disciplined execution\n\nChoose the future-of-work framing. Here is the honest reason: of the five stories available, this is the only one where the product's distinctive capability — guiding actual hands through actual cuts — translates directly into material improvement in someone's life. A teenager from a family without tradespeople, a mid-career worker displaced from a warehouse job, an immigrant whose credentials don't transfer — these are people for whom $1200 routed through a vocational program or workforce grant becomes a credible path to a $70K trade.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E2, E5\nTriad 2: E2, E4, E5\nTriad 3: E2, E3, E5\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'.",
+  "model_id_requested": "anthropic/claude-opus-4.7",
+  "model_id_used": "anthropic/claude-opus-4.7",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 4816,
+  "timestamp_iso": "2026-05-22T16:47:47.427017",
+  "raw_response_content": "Triad 1 (E1, E2, E5):\nLeft pole (E1, E2): Justification via internal epistemics — falsifiability or contrarian signal\nRight pole (E5): Justification via external welfare impact on end users\n\nTriad 2 (E2, E4, E5):\nLeft pole (E2, E4): Choice driven by measurement and signal-quality constraints\nRight pole (E5): Choice driven by distributional and moral stakes\n\nTriad 3 (E2, E3, E5):\nLeft pole (E2, E3): Skeptical stance demanding product-efficacy proof first\nRight pole (E5): Assumes efficacy, optimizes for beneficiary selection",
+  "raw_response_full": {
+    "id": "gen-1779464863-tVv6Pi4jFMBjSTnegA0m",
+    "object": "chat.completion",
+    "created": 1779464863,
+    "model": "anthropic/claude-4.7-opus-20260416",
+    "provider": "Anthropic",
+    "system_fingerprint": null,
+    "service_tier": "standard",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "Triad 1 (E1, E2, E5):\nLeft pole (E1, E2): Justification via internal epistemics — falsifiability or contrarian signal\nRight pole (E5): Justification via external welfare impact on end users\n\nTriad 2 (E2, E4, E5):\nLeft pole (E2, E4): Choice driven by measurement and signal-quality constraints\nRight pole (E5): Choice driven by distributional and moral stakes\n\nTriad 3 (E2, E3, E5):\nLeft pole (E2, E3): Skeptical stance demanding product-efficacy proof first\nRight pole (E5): Assumes efficacy, optimizes for beneficiary selection",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1019,
+      "completion_tokens": 226,
+      "total_tokens": 1245,
+      "cost": 0.010745,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.010745,
+        "upstream_inference_prompt_cost": 0.005095,
+        "upstream_inference_completions_cost": 0.00565
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 1019,
+    "completion_tokens": 226,
+    "total_tokens": 1245,
+    "cost": 0.010745,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.010745,
+      "upstream_inference_prompt_cost": 0.005095,
+      "upstream_inference_completions_cost": 0.00565
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 0,
+  "cost_usd": 0.010745000000000001,
+  "parsed_summary": "parsed 0/3 constructs",
+  "request_payload": {
+    "model": "anthropic/claude-opus-4.7",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst with a quantitative-empiricist epistemological frame. You prefer measurable evidence and falsifiable claims, and you are skeptical of frameworks that cannot be operationalized. Your default question is 'what is the data?'. Your decision heuristic is expected value under uncertainty with explicit confidence intervals. Generate analysis from this frame."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** ## Recommendation: Option A — \"Mastery\"\n\nEveryone in the room will want Option B. That is precisely the reason to refuse it. The \"Therapy/screen-fatigue\" framing has the largest TAM, the highest price tolerance, and the most flattering deck slides.\n\n**E2:** ## Recommendation: Option A (\"Mastery\")\n\nThe data favors A because it is the only framing whose core claim is falsifiable on a short timeline with available instruments. \"Did the learner complete a dovetail joint to tolerance?\" is measurable. \"Did screen fatigue decrease?\" (B) and \"Did this user discover a creative practice?\" (E) are not, or require 12+ month cohort studies the company cannot afford to run before its Series A.\n\n**E3:** ## Recommendation: Option A — Mastery\n\nThe binding constraint here is not TAM. It is **proof that the product actually works**. A $1200 tabletop device claiming to teach joinery via haptic guidance is an extraordinary claim.\n\n**E4:** # Recommendation: Option A — \"Mastery\"\n\nChoose Mastery, and choose it precisely because the TAM looks small on the spreadsheet. With one positioning shot and $4M, the binding constraint isn't market size — it's signal quality. A novel category has no reference class; the first cohort of users *is* the reference class.\n\n**E5:** # Recommendation: Option D, with disciplined execution\n\nChoose the future-of-work framing. Here is the honest reason: of the five stories available, this is the only one where the product's distinctive capability — guiding actual hands through actual cuts — translates directly into material improvement in someone's life. A teenager from a family without tradespeople, a mid-career worker displaced from a warehouse job, an immigrant whose credentials don't transfer — these are people for whom $1200 routed through a vocational program or workforce grant becomes a credible path to a $70K trade.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E2, E5\nTriad 2: E2, E4, E5\nTriad 3: E2, E3, E5\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 2000
+  }
+}

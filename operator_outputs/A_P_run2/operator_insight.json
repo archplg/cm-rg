@@ -1,0 +1,90 @@
+{
+  "cell_id": "A_P_run2",
+  "task": "A",
+  "condition": "P",
+  "run_idx": 2,
+  "consensus_map": {
+    "by_agent": {
+      "M1": {
+        "model_id": "anthropic/claude-opus-4.7",
+        "persona": "Q",
+        "recommendation": "C",
+        "element_label": "E5",
+        "rationale_snippet": "**Recommendation: Option C (operational efficiency), with a carve-out for C+E hybrid.**"
+      },
+      "M2": {
+        "model_id": "openai/gpt-5.5",
+        "persona": "S",
+        "recommendation": null,
+        "element_label": "E1",
+        "rationale_snippet": "Invest primarily in **deep AI integration into the existing flagship product**."
+      },
+      "M3": {
+        "model_id": "google/gemini-3.1-pro-preview",
+        "persona": "E",
+        "recommendation": null,
+        "element_label": "E4",
+        "rationale_snippet": "To determine the correct capital allocation, we must isolate the binding constraint. A $50M ARR B2B SaaS company facing disruption does not have a margin problem or a PR problem; it has an existential product-obsolescence problem. "
+      },
+      "M4": {
+        "model_id": "deepseek/deepseek-v4-pro",
+        "persona": "H",
+        "recommendation": null,
+        "element_label": "E3",
+        "rationale_snippet": "As a company built on serving people through productivity tools, you must recognize that AI disruption isn't merely a technical or financial challenge—it's a profound human transition affecting your 300 employees, the end-users who depend on your software, and the broader community of stakeholders w"
+      },
+      "M5": {
+        "model_id": "moonshotai/kimi-k2.6",
+        "persona": "C",
+        "recommendation": null,
+        "element_label": "E2",
+        "rationale_snippet": "The unanimous consensus in boardrooms today is that AI demands an external, customer-facing product revolution—integrate, build, partner, or hire your way into the future. That consensus is your warning signal. It rests on a hidden assumption: that a $50M B2B productivity SaaS can out-innovate well-"
+      }
+    },
+    "distribution": {
+      "C": 1
+    },
+    "n_agents": 5,
+    "consensus_strength": "split",
+    "majority_recommendation": null
+  },
+  "hidden_disagreement": {
+    "status": "no_majority",
+    "interpretation": "Agents split across recommendations; no hidden-consensus to expose."
+  },
+  "blind_spots": {
+    "status": "computed",
+    "low_discrimination_constructs": [],
+    "underexplored_components": [
+      {
+        "pc_index": 3,
+        "variance_explained": 0.05640321518773914,
+        "top_construct_id": "C_M2_3"
+      }
+    ],
+    "summary": "No obvious blind spots detected in construct space."
+  },
+  "risk_surface": {
+    "status": "computed",
+    "risks_by_agent": {
+      "M1": [],
+      "M2": [
+        "splitting scarce attention and creating an internal competitor before the company has defended its revenue base"
+      ],
+      "M3": [
+        "churning to zero"
+      ],
+      "M4": [],
+      "M5": [
+        "everyone is wrong and the “disruption” narrative is mostly venture-funded theater? B2B buyers are risk-averse; they do not want core workflows rewritten by a mid-sized vendor chasing hype"
+      ]
+    },
+    "total_risks_raised": 3,
+    "agents_raising_risks": 3,
+    "note": "Risks listed here were extracted by pattern matching on agent free responses. They are minority signals worth probing before acting on consensus."
+  },
+  "operator_questions": [
+    "Option C was recommended only by M1 (Q). What does this agent see that others missed - or what is it weighing differently?"
+  ],
+  "headline": "Agents are split across options; no clear consensus to act on."
+}

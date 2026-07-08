@@ -1,0 +1,343 @@
+# Phase 2L - Tier-aware CM-RG experiment (v2 after catalog search)
+# 12 providers x 3 tiers = 36 models (was 39 with IBM; IBM Granite dropped - only 2 slugs in catalog, no tier separation)
+# 7 new tier-sensitive tasks (K through Q)
+# All pre-flight checks enabled
+#
+# v2 changes after Check 1 + catalog search (2026-06-07):
+#   - Anthropic / OpenAI / Meta: unchanged (passed Check 1 with fallbacks)
+#   - Google: switched to gen 2.5 for in-generation consistency
+#   - Mistral: ministral-3b-2512 / mistral-small-2603 / mistral-medium-3-5
+#   - xAI: grok-build-0.1 / grok-4.3 / grok-4.20-multi-agent
+#   - Qwen: qwen-2.5-7b-instruct / qwen-plus / qwen3.7-max
+#   - DeepSeek: deepseek-v4-flash / deepseek-chat-v3.1 / deepseek-v4-pro
+#   - z-ai/Zhipu: glm-4-32b / glm-4.5-air / glm-5.1
+#   - NVIDIA: nemotron-nano-9b-v2 / llama-3.3-nemotron-super-49b-v1.5 / nemotron-3-ultra-550b-a55b
+#   - Moonshot: kimi-k2.5 / kimi-k2-thinking / kimi-k2.6
+#   - Cohere: command-r7b-12-2024 / command-r-08-2024 / command-a
+#   - IBM Granite: DROPPED (only 2 slugs, no tier separation)
+#
+# IMPORTANT: rerun verify_phase2l_slugs.py before any real spend to confirm all 36 slugs.
+
+experiment:
+  name: archipelago_phase2l
+  description: Phase 2L v2 - 36 models across 3 tiers, 7 tier-sensitive advisory tasks
+  total_budget_usd: 120
+  estimated_budget_usd: 90
+  output_dir: ./results_phase2l
+  log_dir: ./logs_phase2l
+  state_file: ./results_phase2l/state.json
+  spend_cap_per_provider_usd: 15
+
+openrouter:
+  base_url: https://openrouter.ai/api/v1
+  api_key_env: OPENROUTER_API_KEY
+  retries_per_call: 3
+  retry_backoff_seconds: [10, 30, 90]
+  request_timeout_seconds: 240
+  parser_validation: strict
+
+# 36 candidate models, 3-tier matrix.
+models:
+  # === Anthropic ===
+  - id: anthropic/claude-haiku-4.5
+    fallback_id: anthropic/claude-haiku-4.0
+    family: anthropic
+    tier: cheap
+    short_name: A_C
+  - id: anthropic/claude-sonnet-4.6
+    fallback_id: anthropic/claude-sonnet-4.5
+    family: anthropic
+    tier: mid
+    short_name: A_M
+  - id: anthropic/claude-opus-4.8
+    fallback_id: anthropic/claude-opus-4.7
+    family: anthropic
+    tier: flagship
+    short_name: A_F
+  # Fable removed 2026-06: anthropic/claude-fable-5 in catalog but returns HTTP 400 on chat completions
+  # Possibly requires beta access or specific routing parameter.
+
+  # === OpenAI ===
+  - id: openai/gpt-5-mini
+    fallback_id: openai/gpt-5-nano
+    family: openai
+    tier: cheap
+    short_name: O_C
+  - id: openai/gpt-5.4
+    fallback_id: openai/gpt-5
+    family: openai
+    tier: mid
+    short_name: O_M
+  - id: openai/gpt-5.5
+    fallback_id: openai/gpt-5.4
+    family: openai
+    tier: flagship
+    short_name: O_F
+
+  # === Google (real flagship: 3.1-pro-preview; cross-gen tier градация $0.40 -> $3.00 -> $12.00) ===
+  - id: google/gemini-2.5-flash-lite
+    fallback_id: google/gemini-3.1-flash-lite
+    family: google
+    tier: cheap
+    short_name: G_C
+  - id: google/gemini-3-flash-preview
+    fallback_id: google/gemini-2.5-flash
+    family: google
+    tier: mid
+    short_name: G_M
+  - id: google/gemini-3.1-pro-preview
+    fallback_id: google/gemini-2.5-pro
+    family: google
+    tier: flagship
+    short_name: G_F
+
+  # === Mistral (catalog-verified, picks from 19 available models) ===
+  - id: mistralai/ministral-3b-2512
+    fallback_id: mistralai/ministral-8b-2512
+    family: mistral
+    tier: cheap
+    short_name: M_C
+  - id: mistralai/mistral-small-2603
+    fallback_id: mistralai/mistral-small-3.2-24b-instruct
+    family: mistral
+    tier: mid
+    short_name: M_M
+  - id: mistralai/mistral-medium-3-5
+    fallback_id: mistralai/mistral-medium-3.1
+    family: mistral
+    tier: flagship
+    short_name: M_F
+
+  # === DeepSeek (catalog-verified, picks from 12 available models) ===
+  - id: deepseek/deepseek-v4-flash
+    fallback_id: deepseek/deepseek-v3.2
+    family: deepseek
+    tier: cheap
+    short_name: D_C
+  - id: deepseek/deepseek-chat-v3.1
+    fallback_id: deepseek/deepseek-chat
+    family: deepseek
+    tier: mid
+    short_name: D_M
+  - id: deepseek/deepseek-r1
+    fallback_id: deepseek/deepseek-v4-pro
+    family: deepseek
+    tier: flagship
+    short_name: D_F
+
+  # === xAI (catalog has only 4 grok variants) ===
+  - id: x-ai/grok-build-0.1
+    fallback_id: x-ai/grok-4.3
+    family: xai
+    tier: cheap
+    short_name: X_C
+  - id: x-ai/grok-4.3
+    fallback_id: x-ai/grok-4.20
+    family: xai
+    tier: mid
+    short_name: X_M
+  - id: x-ai/grok-4.20-multi-agent
+    fallback_id: x-ai/grok-4.20
+    family: xai
+    tier: flagship
+    short_name: X_F
+
+  # === Qwen (catalog-verified, picks from 49 available models) ===
+  - id: qwen/qwen-2.5-7b-instruct
+    fallback_id: qwen/qwen3-8b
+    family: qwen
+    tier: cheap
+    short_name: Q_C
+  - id: qwen/qwen-plus
+    fallback_id: qwen/qwen-plus-2025-07-28
+    family: qwen
+    tier: mid
+    short_name: Q_M
+  - id: qwen/qwen3.7-max
+    fallback_id: qwen/qwen3-max
+    family: qwen
+    tier: flagship
+    short_name: Q_F
+
+  # === Moonshot/Kimi (catalog-verified, picks from 6 available models) ===
+  - id: moonshotai/kimi-k2.5
+    fallback_id: moonshotai/kimi-k2
+    family: moonshot
+    tier: cheap
+    short_name: K_C
+  - id: moonshotai/kimi-k2-thinking
+    fallback_id: moonshotai/kimi-k2-0905
+    family: moonshot
+    tier: mid
+    short_name: K_M
+  - id: moonshotai/kimi-k2.6
+    fallback_id: moonshotai/kimi-k2-thinking
+    family: moonshot
+    tier: flagship
+    short_name: K_F
+
+  # === Zhipu/GLM (catalog-verified as z-ai/*) ===
+  # 2026-06-XX: glm-4-32b deprecated by OpenRouter (HTTP 404). Switched primary to glm-4.7-flash.
+  - id: z-ai/glm-4.7-flash
+    fallback_id: z-ai/glm-4.5-air
+    family: zhipu
+    tier: cheap
+    short_name: Z_C
+  - id: z-ai/glm-4.5-air
+    fallback_id: z-ai/glm-4.7
+    family: zhipu
+    tier: mid
+    short_name: Z_M
+  - id: z-ai/glm-5.1
+    fallback_id: z-ai/glm-5
+    family: zhipu
+    tier: flagship
+    short_name: Z_F
+
+  # === NVIDIA (catalog-verified, picks from 12 available models) ===
+  - id: nvidia/nemotron-nano-9b-v2
+    fallback_id: nvidia/nemotron-3-nano-30b-a3b
+    family: nvidia
+    tier: cheap
+    short_name: N_C
+  - id: nvidia/llama-3.3-nemotron-super-49b-v1.5
+    fallback_id: nvidia/nemotron-3-super-120b-a12b
+    family: nvidia
+    tier: mid
+    short_name: N_M
+  - id: nvidia/nemotron-3-ultra-550b-a55b
+    fallback_id: nvidia/nemotron-3-super-120b-a12b
+    family: nvidia
+    tier: flagship
+    short_name: N_F
+
+  # === Meta/Llama (unchanged - Check 1 passed) ===
+  - id: meta-llama/llama-4-scout
+    fallback_id: meta-llama/llama-3.3-70b-instruct
+    family: meta
+    tier: cheap
+    short_name: L_C
+  - id: meta-llama/llama-3.3-70b-instruct
+    fallback_id: meta-llama/llama-4-scout
+    family: meta
+    tier: mid
+    short_name: L_M
+  - id: meta-llama/llama-4-maverick
+    fallback_id: meta-llama/llama-4
+    family: meta
+    tier: flagship
+    short_name: L_F
+
+  # === Cohere (catalog-verified, picks from 4 available models) ===
+  - id: cohere/command-r7b-12-2024
+    fallback_id: cohere/command-r-08-2024
+    family: cohere
+    tier: cheap
+    short_name: C_C
+  - id: cohere/command-r-08-2024
+    fallback_id: cohere/command-r7b-12-2024
+    family: cohere
+    tier: mid
+    short_name: C_M
+  - id: cohere/command-a
+    fallback_id: cohere/command-r-plus-08-2024
+    family: cohere
+    tier: flagship
+    short_name: C_F
+
+  # === IBM Granite ===
+  # DROPPED 2026-06-07: catalog returned only 2 small models (granite-4.1-8b $0.10, granite-4.0-h-micro $0.11),
+  # both small parameter count, no real tier separation possible. Including would corrupt tier analysis.
+
+parameters:
+  free_response:
+    temperature: 1.0
+    max_tokens: 3000
+  constructs:
+    temperature: 1.0
+    max_tokens: 2500
+  ratings:
+    temperature: 0.0
+    max_tokens: 12000
+
+# 7 NEW tier-sensitive tasks
+tasks:
+  - id: K
+    brief_file: tasks/task_K_brief.md
+    domain: ma_under_regulatory_uncertainty
+    tier_sensitive: high
+    is_repeat_task: false
+  - id: L
+    brief_file: tasks/task_L_brief.md
+    domain: family_business_succession
+    tier_sensitive: high
+    is_repeat_task: false
+  - id: M
+    brief_file: tasks/task_M_brief.md
+    domain: pandemic_response_strategy
+    tier_sensitive: medium
+    is_repeat_task: false
+  - id: N_task
+    brief_file: tasks/task_N_brief.md
+    domain: rd_portfolio_allocation
+    tier_sensitive: high
+    is_repeat_task: false
+  - id: O
+    brief_file: tasks/task_O_brief.md
+    domain: crisis_communication_post_breach
+    tier_sensitive: low_medium
+    is_repeat_task: false
+  - id: P
+    brief_file: tasks/task_P_brief.md
+    domain: constitutional_reform_proposal
+    tier_sensitive: high
+    is_repeat_task: false
+  - id: Q
+    brief_file: tasks/task_Q_brief.md
+    domain: cross_jurisdiction_ai_regulation
+    tier_sensitive: very_high
+    is_repeat_task: false
+
+conditions:
+  - id: N
+    name: neutral
+    system_prompt: "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+    use_personas: false
+  - id: P
+    name: persona
+    use_personas: true
+    persona_assignment: auto_latin_square
+
+repetitions:
+  default: 1
+  paired_phase_2k_subset:
+    enabled: true
+    n_per_cell: 2
+
+pre_flight:
+  check_1_verify_slugs: required
+  check_2_dry_run_single_task: required
+  check_3_parser_test: required
+  check_4_atomic_writes: required
+  check_5_monitor_dashboard: optional_but_recommended
+  check_6_auto_retry: required
+  check_7_post_run_verify: required
+
+io:
+  atomic_writes: true
+  verify_size_after_write: true
+  keep_backup_versions: 3
+  min_cell_json_size_bytes: 5000
+
+cost:
+  primary_source: usage.cost
+  fallback_source: manual_pricing_calculation
+  alert_if_zero_cost: true
+  reconcile_with_activity_csv: true
+
+monitoring:
+  dashboard_html: ./monitor_dashboard.html
+  refresh_interval_seconds: 5
+  state_file: ./results_phase2l/state.json
+  alert_on_provider_overspend: true
+  daily_spend_check: true

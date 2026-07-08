@@ -1,0 +1,108 @@
+{
+  "cell_id": "C_N_run3",
+  "task": "C",
+  "condition": "N",
+  "run_idx": 3,
+  "consensus_map": {
+    "by_agent": {
+      "M1": {
+        "model_id": "anthropic/claude-opus-4.7",
+        "persona": "neutral",
+        "recommendation": "B",
+        "element_label": "E5",
+        "rationale_snippet": "# Recommendation: Option B — Encrypted Cloud with No Training"
+      },
+      "M2": {
+        "model_id": "openai/gpt-5.5",
+        "persona": "neutral",
+        "recommendation": "B",
+        "element_label": "E4",
+        "rationale_snippet": "I recommend **Option B: encrypted cloud processing with no training on user health data** as the primary policy."
+      },
+      "M3": {
+        "model_id": "google/gemini-3.1-pro-preview",
+        "persona": "neutral",
+        "recommendation": "B",
+        "element_label": "E3",
+        "rationale_snippet": "I strongly recommend **Option B (Encrypted cloud with no training)** as the optimal data privacy policy for the new AI health coach. For a direct-to-consumer health app with 2 million users, the fundamental currency is trust. Health data is uniquely intimate, and the slightest perception of exploita"
+      },
+      "M4": {
+        "model_id": "deepseek/deepseek-v4-pro",
+        "persona": "neutral",
+        "recommendation": "D",
+        "element_label": "E1",
+        "rationale_snippet": "I recommend **Option D: Cloud with opt-in training only**. This policy strikes the optimal balance for a health app that must deliver high-quality AI coaching while building user trust and navigating stringent privacy regulations."
+      },
+      "M5": {
+        "model_id": "moonshotai/kimi-k2.6",
+        "persona": "neutral",
+        "recommendation": "D",
+        "element_label": "E2",
+        "rationale_snippet": "I recommend **Option D: Cloud with opt-in training only**. For a direct-to-consumer health app handling sensitive data at two million monthly active users, this policy strikes the essential balance between delivering a high-quality AI coaching experience and maintaining the trust and regulatory defe"
+      }
+    },
+    "distribution": {
+      "B": 3,
+      "D": 2
+    },
+    "n_agents": 5,
+    "consensus_strength": "partial",
+    "majority_recommendation": "B"
+  },
+  "hidden_disagreement": {
+    "status": "computed",
+    "majority_option": "B",
+    "agents_in_consensus": [
+      "M1",
+      "M2",
+      "M3"
+    ],
+    "n_in_consensus": 3,
+    "pairwise_distances": {
+      "M1_vs_M2": 1.0,
+      "M1_vs_M3": 0.7905694150420949,
+      "M2_vs_M3": 0.5
+    },
+    "max_distance": 1.0,
+    "mean_distance": 0.763523138347365,
+    "reasoning_diversity_score": 0.763523138347365,
+    "interpretation": "Moderate hidden disagreement: 3 agents recommended option B but differ on framing (mean RMSE = 0.76). Worth probing what each is emphasizing."
+  },
+  "blind_spots": {
+    "status": "computed",
+    "low_discrimination_constructs": [],
+    "underexplored_components": [
+      {
+        "pc_index": 3,
+        "variance_explained": 0.06363550248921962,
+        "top_construct_id": "C_M3_2"
+      }
+    ],
+    "summary": "No obvious blind spots detected in construct space."
+  },
+  "risk_surface": {
+    "status": "computed",
+    "risks_by_agent": {
+      "M1": [
+        "for a consumer health product at this scale"
+      ],
+      "M2": [],
+      "M3": [],
+      "M4": [
+        "mediocre advice that could harm user retention or even lead to liability if coaching is inadequate",
+        "and inconsistent reliability could erode the user experience"
+      ],
+      "M5": [
+        "user abandonment and erodes the product’s core value proposition",
+        "immature federated architectures"
+      ]
+    },
+    "total_risks_raised": 5,
+    "agents_raising_risks": 3,
+    "note": "Risks listed here were extracted by pattern matching on agent free responses. They are minority signals worth probing before acting on consensus."
+  },
+  "operator_questions": [
+    "Agents M1 (neutral), M2 (neutral), M3 (neutral) agreed on option B - but their reasoning differs (diversity=0.76). Which framing will drive execution? Different framings will produce different execution paths."
+  ],
+  "headline": "Partial consensus on option B (3/5); remaining agents split. Worth probing the dissent before acting."
+}

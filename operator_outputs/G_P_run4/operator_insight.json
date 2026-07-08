@@ -1,0 +1,97 @@
+{
+  "cell_id": "G_P_run4",
+  "task": "G",
+  "condition": "P",
+  "run_idx": 4,
+  "consensus_map": {
+    "by_agent": {
+      "M1": {
+        "model_id": "anthropic/claude-opus-4.7",
+        "persona": "S",
+        "recommendation": "C",
+        "element_label": "E4",
+        "rationale_snippet": "## Recommendation: Option C (First-come-first-served with medical floor)"
+      },
+      "M2": {
+        "model_id": "openai/gpt-5.5",
+        "persona": "E",
+        "recommendation": "A",
+        "element_label": "E2",
+        "rationale_snippet": "Adopt **Option A: predicted short-term survival**."
+      },
+      "M3": {
+        "model_id": "google/gemini-3.1-pro-preview",
+        "persona": "H",
+        "recommendation": "E",
+        "element_label": "E1",
+        "rationale_snippet": "I recommend **Option E (Categorical exclusion + lottery)**. When a health system is forced to ration care, our paramount ethical duty is to protect the most vulnerable from being systematically discarded under the guise of \"optimization.\" Every scoring mechanism inevitably encodes societal inequitie"
+      },
+      "M4": {
+        "model_id": "deepseek/deepseek-v4-pro",
+        "persona": "C",
+        "recommendation": "A",
+        "element_label": "E5",
+        "rationale_snippet": "The unanimous consensus among medical leaders will be to adopt Option A—it feels objective, it maximizes lives saved, and it’s what critical care societies whisper about. That consensus is a siren. The hidden assumption is that a predictive protocol will be implemented fairly and withstand the psych"
+      },
+      "M5": {
+        "model_id": "moonshotai/kimi-k2.6",
+        "persona": "Q",
+        "recommendation": "A",
+        "element_label": "E3",
+        "rationale_snippet": "I recommend **Option A: Predicted short-term survival**."
+      }
+    },
+    "distribution": {
+      "C": 1,
+      "A": 3,
+      "E": 1
+    },
+    "n_agents": 5,
+    "consensus_strength": "partial",
+    "majority_recommendation": "A"
+  },
+  "hidden_disagreement": {
+    "status": "computed",
+    "majority_option": "A",
+    "agents_in_consensus": [
+      "M2",
+      "M4",
+      "M5"
+    ],
+    "n_in_consensus": 3,
+    "pairwise_distances": {
+      "M2_vs_M4": 0.408248290463863,
+      "M2_vs_M5": 0.5477225575051661,
+      "M4_vs_M5": 0.5477225575051661
+    },
+    "max_distance": 0.5477225575051661,
+    "mean_distance": 0.501231135158065,
+    "reasoning_diversity_score": 0.501231135158065,
+    "interpretation": "Moderate hidden disagreement: 3 agents recommended option A but differ on framing (mean RMSE = 0.50). Worth probing what each is emphasizing."
+  },
+  "blind_spots": {
+    "status": "computed",
+    "low_discrimination_constructs": [],
+    "underexplored_components": [],
+    "summary": "No obvious blind spots detected in construct space."
+  },
+  "risk_surface": {
+    "status": "computed",
+    "risks_by_agent": {
+      "M1": [],
+      "M2": [],
+      "M3": [],
+      "M4": [],
+      "M5": []
+    },
+    "total_risks_raised": 0,
+    "agents_raising_risks": 0,
+    "note": "Risks listed here were extracted by pattern matching on agent free responses. They are minority signals worth probing before acting on consensus."
+  },
+  "operator_questions": [
+    "Agents M2 (E), M4 (C), M5 (Q) agreed on option A - but their reasoning differs (diversity=0.50). Which framing will drive execution? Different framings will produce different execution paths.",
+    "Option C was recommended only by M1 (S). What does this agent see that others missed - or what is it weighing differently?",
+    "Option E was recommended only by M3 (H). What does this agent see that others missed - or what is it weighing differently?"
+  ],
+  "headline": "Partial consensus on option A (3/5); remaining agents split. Worth probing the dissent before acting."
+}

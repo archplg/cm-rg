@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CM-RG: визуализации к аналитическому отчёту v2</title>
+<style>
+:root{
+  --bg:#fafaf7; --fg:#1a1a1a; --muted:#6b6b66; --line:#e6e3da;
+  --accent:#c8553d; --accent2:#3d6b88; --accent3:#8aa05a; --warn:#d4881a;
+  --card:#ffffff;
+  --shadow:0 1px 3px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.04);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);
+  font-family:"Charter","Iowan Old Style","Source Serif Pro",Georgia,serif;
+  font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:48px 28px 80px}
+header.top{border-bottom:1px solid var(--line);padding-bottom:28px;margin-bottom:36px}
+header.top .eyebrow{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+header.top h1{font-size:32px;line-height:1.15;margin:8px 0 6px;font-weight:700;letter-spacing:-.01em}
+header.top .sub{color:var(--muted);font-size:15px}
+section.chart{background:var(--card);border:1px solid var(--line);border-radius:6px;
+  padding:28px 28px 22px;margin:0 0 28px;box-shadow:var(--shadow)}
+section.chart h2{font-size:22px;margin:0 0 4px;font-weight:600;letter-spacing:-.005em}
+section.chart .lede{color:var(--muted);font-size:14px;margin:0 0 18px;font-style:italic}
+section.chart .explain{background:#f6f4ec;border-left:3px solid var(--accent2);
+  padding:14px 18px;margin:18px 0 0;border-radius:0 4px 4px 0;font-size:14.5px;line-height:1.55}
+section.chart .explain strong{color:var(--fg)}
+section.chart .terms{background:#fdf6f3;border:1px solid #f0d8d0;padding:12px 16px;
+  margin:14px 0 0;border-radius:4px;font-size:13.5px;line-height:1.6}
+section.chart .terms b{display:block;font-size:12px;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:6px;font-weight:600}
+section.chart .example{background:#eef5ec;border-left:3px solid var(--accent3);
+  padding:12px 16px;margin:14px 0 0;border-radius:0 4px 4px 0;font-size:14px;line-height:1.55}
+section.chart .example b{color:#3d5b1e;font-weight:600}
+.svg-box{width:100%;overflow-x:auto}
+svg{display:block;max-width:100%;height:auto;background:#fff}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:14px 0 0}
+.kv .b{background:#f3f1ea;border-left:3px solid var(--accent2);padding:10px 14px;border-radius:0 4px 4px 0}
+.kv .b strong{display:block;font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:4px}
+.kv .b span{font-size:18px;font-weight:600}
+table.htmap{border-collapse:collapse;width:100%;font-size:13.5px;font-variant-numeric:tabular-nums;margin:8px 0}
+table.htmap th,table.htmap td{padding:8px 8px;text-align:center;border:1px solid var(--line)}
+table.htmap th{background:#f3f1ea;font-weight:600;color:var(--fg);font-size:12.5px}
+table.htmap td.task{background:#f3f1ea;font-weight:600;text-align:left}
+.toc{background:#fff;border:1px solid var(--line);padding:18px 24px;border-radius:6px;margin-bottom:28px}
+.toc h3{margin:0 0 8px;font-size:16px;font-weight:600}
+.toc ol{margin:6px 0 0 0;padding-left:22px;font-size:14.5px;line-height:1.7}
+.toc a{color:var(--accent2);text-decoration:none}
+.toc a:hover{text-decoration:underline}
+footer.bottom{margin-top:48px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);
+  padding-top:18px;text-align:center}
+@media (max-width:680px){
+  .wrap{padding:28px 16px 60px}
+  header.top h1{font-size:24px}
+  section.chart{padding:20px 18px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="eyebrow">Cross-Model Repertory Grid · визуализации · v2</div>
+  <h1>Разные движки, а не разные маски</h1>
+  <p class="sub">Семь графиков к отчёту «Главное правило проектирования мультимодельных ИИ-систем». Построены на 24 018 кросс-оценках (7 задач, 10 моделей). Чистый SVG, работает офлайн в любом браузере.</p>
+</header>
+
+<nav class="toc">
+  <h3>Содержание</h3>
+  <ol>
+    <li><a href="#g0">Лаборатории против ролей в промпте: в 2.3 раза разницы</a></li>
+    <li><a href="#g1">Карта моделей: какие живут плотным кластером, а какие на краю</a></li>
+    <li><a href="#g2">Тепловая карта 7 задач: повторяется ли отклонение Cohere везде</a></li>
+    <li><a href="#g3">Сдвиг шкалы: насколько Cohere «добрее» по каждой задаче</a></li>
+    <li><a href="#g4">«Семёрочный синдром» Cohere: как часто ставится максимум</a></li>
+    <li><a href="#g5">Разногласие по задачам: где модели спорят сильнее</a></li>
+    <li><a href="#g6">Один испытуемый против десяти: почему дизайн эксперимента важен</a></li>
+  </ol>
+</nav>
+
+<!-- ===================== ГРАВНЫЙ ГРАФИК ===================== -->
+<section class="chart" id="g0">
+  <h2>Главный график. Лаборатории против ролей в промпте: разница в 2.3 раза</h2>
+  <p class="lede">Самый практичный вывод всего исследования. Сравниваем два способа получить «разные мнения» от ИИ: первый - дать одной модели разные роли в промпте («оцени как редактор», «оцени как маркетолог»). Второй - спросить одно и то же у разных лабораторий: Claude от Anthropic, GPT от OpenAI, Mistral, и так далее. Лаборатории побеждают с разгромным счётом.</p>
+
+  <div class="svg-box">
+  <svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lab vs Persona diversity">
+    <rect x="80" y="30" width="580" height="240" fill="#fff" stroke="#e6e3da" stroke-width="1"/>
+    <g stroke="#f0eee5" stroke-width="1">
+      <line x1="80" y1="270" x2="660" y2="270"/>
+      <line x1="80" y1="222" x2="660" y2="222"/>
+      <line x1="80" y1="174" x2="660" y2="174"/>
+      <line x1="80" y1="126" x2="660" y2="126"/>
+      <line x1="80" y1="78" x2="660" y2="78"/>
+      <line x1="80" y1="30" x2="660" y2="30"/>
+    </g>
+    <g font-size="11" fill="#6b6b66" text-anchor="end">
+      <text x="76" y="274">0.0</text>
+      <text x="76" y="226">0.1</text>
+      <text x="76" y="178">0.2</text>
+      <text x="76" y="130">0.3</text>
+      <text x="76" y="82">0.4</text>
+      <text x="76" y="34">0.5</text>
+    </g>
+    <text x="22" y="150" font-size="13" fill="#1a1a1a" text-anchor="middle" font-weight="600"
+          transform="rotate(-90 22 150)">
+      Реальное разнообразие оценок (var/4)
+    </text>
+
+    <!-- 4 bars: condition N vs P, comparing lab effect vs persona effect -->
+    <!-- Persona effect: 0.206 disagreement within model when personas change. h = 0.206/0.5 * 240 = 99 -->
+    <!-- Lab effect: 0.464 disagreement when lab changes. h = 0.464/0.5 * 240 = 223 -->
+    <g>
+      <rect x="180" y="171" width="100" height="99" fill="#8aa05a" fill-opacity="0.85"/>
+      <text x="230" y="163" font-size="14" font-weight="700" text-anchor="middle">0.206</text>
+      <text x="230" y="293" font-size="13" font-weight="600" text-anchor="middle">Разные роли в промпте</text>
+      <text x="230" y="310" font-size="11" fill="#6b6b66" text-anchor="middle">(одна модель, разные «маски»)</text>
+    </g>
+    <g>
+      <rect x="430" y="47" width="100" height="223" fill="#c8553d" fill-opacity="0.92"/>
+      <text x="480" y="39" font-size="14" font-weight="700" fill="#c8553d" text-anchor="middle">0.464</text>
+      <text x="480" y="293" font-size="13" font-weight="600" text-anchor="middle">Смена лаборатории</text>
+      <text x="480" y="310" font-size="11" fill="#6b6b66" text-anchor="middle">(Claude → GPT → Mistral)</text>
+    </g>
+
+    <!-- Connector showing 2.3x -->
+    <line x1="285" y1="120" x2="425" y2="120" stroke="#1a1a1a" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="355" y="113" font-size="14" font-weight="700" text-anchor="middle" fill="#1a1a1a">× 2.3</text>
+  </svg>
+  </div>
+
+  <div class="kv">
+    <div class="b"><strong>Разногласие от ролей</strong><span>0.206</span></div>
+    <div class="b"><strong>Разногласие от лабораторий</strong><span>0.464</span></div>
+    <div class="b"><strong>Отношение</strong><span>2.3 : 1</span></div>
+    <div class="b"><strong>Статистическая значимость</strong><span>p &lt; 0.001</span></div>
+  </div>
+
+  <div class="terms">
+    <b>Расшифровка терминов</b>
+    <b style="display:inline;color:var(--accent)">Промпт-инжиниринг ролей</b> (англ. persona prompting) - техника «дать модели в системном промпте указание типа: ты опытный инженер / ты редактор / ты маркетолог - и она выдаст разные ответы». Промпт меняется, модель остаётся одна и та же.<br>
+    <b style="display:inline;color:var(--accent)">Лабораторное разнообразие</b> (англ. lab diversity) - использование моделей от разных лабораторий-разработчиков: Anthropic, OpenAI, Google, Mistral и так далее. Промпт у всех одинаковый, меняется только источник.<br>
+    <b style="display:inline;color:var(--accent)">Разногласие</b> (англ. disagreement) - насколько по-разному оценщики оценивают одно и то же. Считается как нормированная дисперсия (var/4). Ноль - все согласны, единица - полный разнобой.<br>
+    <b style="display:inline;color:var(--accent)">«2.3 : 1»</b> - смена лаборатории даёт в 2.3 раза больше реального разнообразия, чем смена роли в промпте. То есть один Mistral в дополнение к Claude даёт больше нового, чем десять разных ролей внутри одной Claude.
+  </div>
+
+  <div class="explain">
+    <strong>Что мы здесь видим.</strong> Зелёный столбик (одна модель, разные роли в промпте) - значение 0.206. Это не ноль: какой-то эффект ролевые промпты дают, мы не отрицаем. Но красный столбик (смена лаборатории) - 0.464, в 2.3 раза выше. Вывод: если бюджет ограничен и нужно получить максимум разнообразия мнений за минимум усилий, меняйте не промпт, а модель.
+  </div>
+
+  <div class="example">
+    <b>Пример из жизни (для разработчиков).</b> Вы строите ИИ-помощника для оценки текстов. Текущая архитектура: один Claude, которому даёте оценить пять раз с разными ролевыми промптами («оцени как редактор», «оцени как читатель», «оцени как маркетолог», и так далее). Кажется, что получаете «пять разных мнений». На самом деле - пять вариаций одного мнения, между которыми разница всего 0.206. Замените эту схему на: Claude + GPT + Mistral (три модели, по одному промпту каждой). Получите разногласие 0.464, плюс уйдут лишние токены на длинные ролевые инструкции. Это и есть «разные движки, а не разные маски».
+  </div>
+
+  <div class="example" style="border-left-color:#d4881a;background:#fff8e8;margin-top:8px">
+    <b style="color:#a35e00">Когда ролевые промпты всё-таки оправданы.</b> Есть один случай: если доступна только одна модель (например, по требованиям комплаенса нельзя использовать не-американских провайдеров). Тогда варианты ролей лучше, чем ничего. Но если есть выбор между моделями - всегда выбирайте «движки», а не «маски».
+  </div>
+</section>
+
+<!-- ===================== ГРАФИК 1 ===================== -->
+<section class="chart" id="g1">
+  <h2>График 1. Карта моделей: насколько каждая отличается от других</h2>
+  <p class="lede">10 моделей, у каждой свой цвет по лаборатории-разработчику. Внутри кружков - короткий код модели (M1-M10). Полные названия и расшифровка цветов - в легенде справа.</p>
+
+  <div class="svg-box">
+  <svg viewBox="0 0 920 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="2D-карта моделей по PCA">
+    <!-- frame -->
+    <rect x="80" y="30" width="560" height="370" fill="#fff" stroke="#e6e3da" stroke-width="1"/>
+    <!-- grid lines -->
+    <g stroke="#f0eee5" stroke-width="1">
+      <line x1="196" y1="30" x2="196" y2="400"/>
+      <line x1="80" y1="260" x2="640" y2="260"/>
+    </g>
+    <text x="200" y="44" font-size="11" fill="#9b9990" font-style="italic">«нейтрально»</text>
+    <text x="84" y="256" font-size="11" fill="#9b9990" font-style="italic">«нейтрально»</text>
+    <!-- X axis ticks -->
+    <g font-size="11" fill="#6b6b66" text-anchor="middle">
+      <text x="196" y="418">0</text>
+      <text x="356" y="418">10</text>
+      <text x="516" y="418">20</text>
+      <text x="640" y="418">28</text>
+    </g>
+    <!-- Y axis ticks -->
+    <g font-size="11" fill="#6b6b66" text-anchor="end">
+      <text x="76" y="91">10</text>
+      <text x="76" y="175">5</text>
+      <text x="76" y="264">0</text>
+      <text x="76" y="348">-5</text>
+    </g>
+    <!-- Axis titles - simpler wording -->
+    <text x="360" y="442" font-size="13.5" fill="#1a1a1a" text-anchor="middle" font-weight="600">
+      Главное отличие во «вкусах» модели →
+    </text>
+    <text x="360" y="459" font-size="11.5" fill="#6b6b66" text-anchor="middle" font-style="italic">
+      (объясняет 47% всех расхождений в оценках между моделями)
+    </text>
+    <text x="22" y="220" font-size="13.5" fill="#1a1a1a" text-anchor="middle" font-weight="600"
+          transform="rotate(-90 22 220)">
+      Второстепенные различия →
+    </text>
+    <text x="38" y="220" font-size="11.5" fill="#6b6b66" text-anchor="middle" font-style="italic"
+          transform="rotate(-90 38 220)">
+      (ещё 19% расхождений)
+    </text>
+
+    <!-- Точки 10 моделей. Каждая - свой цвет по лаборатории.
+         Координаты слегка раздвинуты в плотном кластере для читаемости. -->
+
+    <!-- Кластер из 6 близких моделей. Реальные коорды близко - смещаем на 4-8px для разделения. -->
+    <!-- M1 Claude (Anthropic) → #D97757 -->
+    <g><circle cx="115" cy="296" r="13" fill="#D97757" stroke="#fff" stroke-width="2"/>
+       <text x="115" y="300" font-size="11.5" fill="#fff" font-weight="700" text-anchor="middle">M1</text></g>
+    <!-- M2 GPT (OpenAI) → #10A37F -->
+    <g><circle cx="140" cy="309" r="13" fill="#10A37F" stroke="#fff" stroke-width="2"/>
+       <text x="140" y="313" font-size="11.5" fill="#fff" font-weight="700" text-anchor="middle">M2</text></g>
+    <!-- M3 Gemini (Google) → #4285F4 -->
+    <g><circle cx="106" cy="329" r="13" fill="#4285F4" stroke="#fff" stroke-width="2"/>
+       <text x="106" y="333" font-size="11.5" fill="#fff" font-weight="700" text-anchor="middle">M3</text></g>
+    <!-- M4 DeepSeek → #6F42C1 -->
+    <g><circle cx="106" cy="354" r="13" fill="#6F42C1" stroke="#fff" stroke-width="2"/>
+       <text x="106" y="358" font-size="11.5" fill="#fff" font-weight="700" text-anchor="middle">M4</text></g>
+    <!-- M5 Kimi (Moonshot) → #FF8C42 -->
+    <g><circle cx="162" cy="295" r="13" fill="#FF8C42" stroke="#fff" stroke-width="2"/>
+       <text x="162" y="299" font-size="11.5" fill="#fff" font-weight="700" text-anchor="middle">M5</text></g>
+    <!-- M8 Qwen (Alibaba) → #2A9D8F -->
+    <g><circle cx="135" cy="318" r="13" fill="#2A9D8F" stroke="#fff" stroke-width="2"/>
+       <text x="135" y="322" font-size="11.5" fill="#fff" font-weight="700" text-anchor="middle">M8</text></g>
+
+    <!-- Краевые модели -->
+    <!-- M6 Mistral → #FFC857 (yellow needs dark text) -->
+    <g><circle cx="157" cy="75" r="13" fill="#FFC857" stroke="#fff" stroke-width="2"/>
+       <text x="157" y="79" font-size="11.5" fill="#1a1a1a" font-weight="700" text-anchor="middle">M6</text></g>
+    <!-- M9 Llama (Meta) → #2C3E50 -->
+    <g><circle cx="190" cy="113" r="13" fill="#2C3E50" stroke="#fff" stroke-width="2"/>
+       <text x="190" y="117" font-size="11.5" fill="#fff" font-weight="700" text-anchor="middle">M9</text></g>
+    <!-- M10 Grok (xAI) → #1A1A1A -->
+    <g><circle cx="219" cy="178" r="13" fill="#1A1A1A" stroke="#fff" stroke-width="2"/>
+       <text x="219" y="182" font-size="11" fill="#fff" font-weight="700" text-anchor="middle">M10</text></g>
+
+    <!-- M7 Cohere → #B22222 (firebrick) -->
+    <g><circle cx="608" cy="309" r="15" fill="#B22222" stroke="#fff" stroke-width="2.5"/>
+       <text x="608" y="313" font-size="12" fill="#fff" font-weight="700" text-anchor="middle">M7</text></g>
+
+    <!-- Легенда справа -->
+    <g transform="translate(660, 30)" font-size="12">
+      <rect x="0" y="0" width="252" height="370" fill="#fff" stroke="#e6e3da"/>
+      <text x="126" y="20" font-size="12.5" fill="#1a1a1a" font-weight="700" text-anchor="middle">Расшифровка</text>
+
+      <g transform="translate(12, 38)">
+        <circle cx="8" cy="6" r="8" fill="#D97757"/><text x="22" y="10" font-weight="600">M1 - Claude Opus 4.7</text>
+        <text x="22" y="22" fill="#6b6b66" font-size="11">Anthropic, США</text>
+      </g>
+      <g transform="translate(12, 72)">
+        <circle cx="8" cy="6" r="8" fill="#10A37F"/><text x="22" y="10" font-weight="600">M2 - GPT-5.5</text>
+        <text x="22" y="22" fill="#6b6b66" font-size="11">OpenAI, США</text>
+      </g>
+      <g transform="translate(12, 106)">
+        <circle cx="8" cy="6" r="8" fill="#4285F4"/><text x="22" y="10" font-weight="600">M3 - Gemini 3.1 Pro</text>
+        <text x="22" y="22" fill="#6b6b66" font-size="11">Google, США</text>
+      </g>
+      <g transform="translate(12, 140)">
+        <circle cx="8" cy="6" r="8" fill="#6F42C1"/><text x="22" y="10" font-weight="600">M4 - DeepSeek v4 Pro</text>
+        <text x="22" y="22" fill="#6b6b66" font-size="11">DeepSeek, Китай</text>
+      </g>
+      <g transform="translate(12, 174)">
+        <circle cx="8" cy="6" r="8" fill="#FF8C42"/><text x="22" y="10" font-weight="600">M5 - Kimi k2.6</text>
+        <text x="22" y="22" fill="#6b6b66" font-size="11">Moonshot, Китай</text>
+      </g>
+      <g transform="translate(12, 208)">
+        <circle cx="8" cy="6" r="8" fill="#FFC857" stroke="#1a1a1a" stroke-width="0.5"/>
+        <text x="22" y="10" font-weight="600">M6 - Mistral Large 2512</text>
+        <text x="22" y="22" fill="#6b6b66" font-size="11">Mistral AI, Франция</text>
+      </g>
+      <g transform="translate(12, 242)">
+        <circle cx="8" cy="6" r="8" fill="#B22222"/><text x="22" y="10" font-weight="700" fill="#B22222">M7 - Cohere Command A</text>
+        <text x="22" y="22" fill="#6b6b66" font-size="11">Cohere, Канада</text>
+      </g>
+      <g transform="translate(12, 276)">
+        <circle cx="8" cy="6" r="8" fill="#2A9D8F"/><text x="22" y="10" font-weight="600">M8 - Qwen 3.7 Max</text>
+        <text x="22" y="22" fill="#6b6b66" font-size="11">Alibaba, Китай</text>
+      </g>
+      <g transform="translate(12, 310)">
+        <circle cx="8" cy="6" r="8" fill="#2C3E50"/><text x="22" y="10" font-weight="600">M9 - Llama 4 Maverick</text>
+        <text x="22" y="22" fill="#6b6b66" font-size="11">Meta, США</text>
+      </g>
+      <g transform="translate(12, 344)">
+        <circle cx="8" cy="6" r="8" fill="#1A1A1A"/><text x="22" y="10" font-weight="600">M10 - Grok 4.20</text>
+        <text x="22" y="22" fill="#6b6b66" font-size="11">xAI, США</text>
+      </g>
+    </g>
+  </svg>
+  </div>
+
+  <p style="font-size:12.5px;color:#6b6b66;font-style:italic;margin:8px 0 0;line-height:1.5">
+    Примечание: точки в плотном кластере слева слегка раздвинуты (на 4-8 пикселей), чтобы кружки не перекрывали друг друга. Реальные PCA-координаты доступны в таблице данных эксперимента.
+  </p>
+
+  <div class="terms">
+    <b>Расшифровка терминов</b>
+    <b style="display:inline;color:var(--accent)">PCA (Principal Component Analysis)</b> - метод главных компонент. Сжимает тысячи оценок до двух главных осей, на которых видно основные различия. Горизонталь - где модели расходятся сильнее всего, вертикаль - вторая по важности ось различий.<br>
+    <b style="display:inline;color:var(--accent)">Outlier</b> - выброс, точка, которая стоит особняком от основной массы.<br>
+    <b style="display:inline;color:var(--accent)">«Вкусы модели»</b> - наша метафора для того, как модель распределяет оценки. Две модели с похожими «вкусами» дадут похожие оценки на одних и тех же текстах, даже не зная друг о друге.
+  </div>
+
+  <div class="explain">
+    <strong>Что мы здесь видим.</strong> Слева внизу - плотный кластер из 6 моделей (Claude, GPT, Gemini, DeepSeek, Kimi, Qwen). Их «вкусы» очень близки: оценивают одинаковые вещи похожим образом. Выше - 3 «краевые» модели (Mistral, Llama, Grok) с заметным сдвигом. И справа - одиноко стоящая Cohere, далеко от всех остальных. Расстояние от центра кластера до Cohere - примерно в 5-6 раз больше, чем расстояние между любыми двумя моделями из кластера.
+  </div>
+
+  <div class="example">
+    <b>Пример из жизни.</b> Это похоже на карту вкусовых предпочтений людей в ресторане. Шесть человек заказывают примерно одинаково (плотная группа). Трое - чуть необычнее (отдельная подгруппа). А десятый стабильно заказывает то, чего нет в обычном меню. Если бы вы открыли ресторан под одного из «шестёрки», вы накормили бы 9 из 10. А если бы решили, что «десятый» репрезентативен - провалили бы бизнес. Cohere в нашем эксперименте - именно такой «десятый».
+  </div>
+</section>
+
+<!-- ===================== ГРАФИК 2 ===================== -->
+<section class="chart" id="g2">
+  <h2>График 2. Тепловая карта 7 задач: реплицируется ли выброс Cohere</h2>
+  <p class="lede">Каждая строка - одна задача. Чем краснее ячейка в колонке «delta» и «% оценок 7», тем сильнее Cohere отклоняется. Везде красно - значит выброс не случайность одной задачи, а свойство самой модели.</p>
+
+  <table class="htmap">
+    <thead>
+      <tr>
+        <th style="text-align:left">Задача (домен)</th>
+        <th>Средняя оценка<br>Cohere</th>
+        <th>Средняя оценка<br>остальных 9</th>
+        <th>Разница<br>(delta)</th>
+        <th>% оценок «7»<br>у Cohere</th>
+        <th>% оценок «7»<br>у остальных</th>
+        <th>Реплицируется?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="task">A · стратегия найма</td><td>4.08</td><td>3.50</td>
+          <td style="background:rgb(248,222,212);font-weight:600">+0.58</td>
+          <td style="background:rgba(200,85,61,0.50);font-weight:600">34.9%</td>
+          <td style="background:rgba(61,107,136,0.27)">18.5%</td>
+          <td style="background:#e6efd9;color:#3d5b1e;font-weight:700">ДА</td></tr>
+      <tr><td class="task">B · диагностика команды</td><td>4.46</td><td>3.86</td>
+          <td style="background:rgb(247,219,209);font-weight:600">+0.59</td>
+          <td style="background:rgba(200,85,61,0.61);color:#fff;font-weight:600">50.2%</td>
+          <td style="background:rgba(61,107,136,0.42)">34.6%</td>
+          <td style="background:#e6efd9;color:#3d5b1e;font-weight:700">ДА</td></tr>
+      <tr><td class="task">C · приватность продукта</td><td>4.09</td><td>3.40</td>
+          <td style="background:rgb(240,200,185);font-weight:600">+0.69</td>
+          <td style="background:rgba(200,85,61,0.62);color:#fff;font-weight:600">51.1%</td>
+          <td style="background:rgba(61,107,136,0.35)">28.0%</td>
+          <td style="background:#e6efd9;color:#3d5b1e;font-weight:700">ДА</td></tr>
+      <tr><td class="task">D · приоритезация инженерных задач</td><td>4.13</td><td>3.64</td>
+          <td style="background:rgb(252,231,222);font-weight:600">+0.49</td>
+          <td style="background:rgba(200,85,61,0.55);color:#fff;font-weight:600">41.3%</td>
+          <td style="background:rgba(61,107,136,0.30)">22.0%</td>
+          <td style="background:#e6efd9;color:#3d5b1e;font-weight:700">ДА</td></tr>
+      <tr><td class="task">E · AI-governance</td><td>4.28</td><td>3.81</td>
+          <td style="background:rgb(253,234,225);font-weight:600">+0.47</td>
+          <td style="background:rgba(200,85,61,0.61);color:#fff;font-weight:600">50.6%</td>
+          <td style="background:rgba(61,107,136,0.27)">18.9%</td>
+          <td style="background:#e6efd9;color:#3d5b1e;font-weight:700">ДА</td></tr>
+      <tr><td class="task">F · запуск продукта</td><td>4.50</td><td>3.37</td>
+          <td style="background:rgb(200,85,61);color:#fff;font-weight:700">+1.13</td>
+          <td style="background:rgba(200,85,61,0.58);color:#fff;font-weight:600">47.5%</td>
+          <td style="background:rgba(61,107,136,0.27)">18.0%</td>
+          <td style="background:#e6efd9;color:#3d5b1e;font-weight:700">ДА</td></tr>
+      <tr><td class="task">G · медицинская триажная этика</td><td>4.00</td><td>3.69</td>
+          <td style="background:rgb(255,242,235);font-weight:600">+0.31</td>
+          <td style="background:rgba(200,85,61,0.58);color:#fff;font-weight:600">48.0%</td>
+          <td style="background:rgba(61,107,136,0.33)">25.5%</td>
+          <td style="background:#e6efd9;color:#3d5b1e;font-weight:700">ДА</td></tr>
+    </tbody>
+  </table>
+
+  <div class="terms">
+    <b>Расшифровка терминов</b>
+    <b style="display:inline;color:var(--accent)">delta</b> - разница в средних оценках. Если Cohere в среднем ставит 4.50, а остальные - 3.37, то delta = +1.13. Положительная означает «Cohere ставит выше».<br>
+    <b style="display:inline;color:var(--accent)">% оценок «7»</b> - какая доля всех оценок от модели = 7 (максимум по 7-балльной шкале). Если Cohere ставит «7» в 50% случаев, а остальные - в 18%, это означает что Cohere «более щедрая».<br>
+    <b style="display:inline;color:var(--accent)">Реплицируется?</b> - повторяется ли паттерн. ДА означает: delta &gt; 0.3 балла И разница в %«7» больше 10 п.п. (процентных пунктов). Если ДА на всех 7 задачах - это свойство самой модели, не случайность.
+  </div>
+
+  <div class="explain">
+    <strong>Что мы здесь видим.</strong> На всех 7 задачах (от стратегии найма до медицинской этики) Cohere систематически ставит оценки выше других моделей. Разница - от +0.31 балла (минимум) до +1.13 балла (максимум). Доля «семёрок» у Cohere всюду в 1.5-2.7 раз выше, чем у остальных.
+  </div>
+
+  <div class="example">
+    <b>Пример из жизни.</b> Представьте, что вы строите автоматическую систему проверки резюме на основе Cohere. На 100 кандидатов другие модели дали бы 18 «отличных» оценок («7»), а Cohere даст 50. То есть Cohere в 2.8 раза чаще говорит «отличный кандидат». Если HR полагается на её оценку - вы получите много false positives (ложноположительных результатов) и потратите время на интервью с неподходящими людьми.
+  </div>
+</section>
+
+<!-- ===================== ГРАФИК 3 ===================== -->
+<section class="chart" id="g3">
+  <h2>График 3. Сдвиг калибровки: насколько Cohere «добрее» по каждой задаче</h2>
+  <p class="lede">Разница между средней оценкой Cohere и средней оценкой остальных 9 моделей по каждой задаче. Положительное значение = Cohere систематически выше. Минимум +0.31, максимум +1.13.</p>
+
+  <div class="svg-box">
+  <svg viewBox="0 0 700 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Сдвиг калибровки Cohere по 7 задачам">
+    <rect x="80" y="30" width="580" height="270" fill="#fff" stroke="#e6e3da" stroke-width="1"/>
+    <!-- gridlines + Y axis -->
+    <g stroke="#f0eee5" stroke-width="1">
+      <line x1="80" y1="300" x2="660" y2="300"/>
+      <line x1="80" y1="245" x2="660" y2="245"/>
+      <line x1="80" y1="190" x2="660" y2="190"/>
+      <line x1="80" y1="135" x2="660" y2="135"/>
+      <line x1="80" y1="80" x2="660" y2="80"/>
+    </g>
+    <g font-size="11" fill="#6b6b66" text-anchor="end">
+      <text x="76" y="304">0.0</text>
+      <text x="76" y="249">+0.3</text>
+      <text x="76" y="194">+0.6</text>
+      <text x="76" y="139">+0.9</text>
+      <text x="76" y="84">+1.2</text>
+    </g>
+    <text x="20" y="165" font-size="13" fill="#1a1a1a" text-anchor="middle" font-weight="600"
+          transform="rotate(-90 20 165)">
+      Δ (баллы по 7-балльной шкале)
+    </text>
+
+    <!-- Bars: 7 tasks, x positions 90,170,250,330,410,490,570 width 65 each -->
+    <!-- Bar height: 1 балл = ~183 пикселя (300-117). Actually 0.3 = 55px, so 1.0 = ~183px -->
+    <!-- A=0.58 → height=106, y=194 -->
+    <g>
+      <rect x="105" y="194" width="60" height="106" fill="#c8553d" fill-opacity="0.62"/>
+      <text x="135" y="186" font-size="12" fill="#1a1a1a" font-weight="600" text-anchor="middle">+0.58</text>
+      <text x="135" y="318" font-size="12" fill="#1a1a1a" text-anchor="middle">A</text>
+      <text x="135" y="335" font-size="10" fill="#6b6b66" text-anchor="middle">найм</text>
+    </g>
+    <!-- B=0.59 → height=108 -->
+    <g>
+      <rect x="185" y="192" width="60" height="108" fill="#c8553d" fill-opacity="0.62"/>
+      <text x="215" y="184" font-size="12" fill="#1a1a1a" font-weight="600" text-anchor="middle">+0.59</text>
+      <text x="215" y="318" font-size="12" fill="#1a1a1a" text-anchor="middle">B</text>
+      <text x="215" y="335" font-size="10" fill="#6b6b66" text-anchor="middle">команда</text>
+    </g>
+    <!-- C=0.69 → height=126 -->
+    <g>
+      <rect x="265" y="174" width="60" height="126" fill="#c8553d" fill-opacity="0.70"/>
+      <text x="295" y="166" font-size="12" fill="#1a1a1a" font-weight="600" text-anchor="middle">+0.69</text>
+      <text x="295" y="318" font-size="12" fill="#1a1a1a" text-anchor="middle">C</text>
+      <text x="295" y="335" font-size="10" fill="#6b6b66" text-anchor="middle">приватность</text>
+    </g>
+    <!-- D=0.49 → height=90 -->
+    <g>
+      <rect x="345" y="210" width="60" height="90" fill="#c8553d" fill-opacity="0.56"/>
+      <text x="375" y="202" font-size="12" fill="#1a1a1a" font-weight="600" text-anchor="middle">+0.49</text>
+      <text x="375" y="318" font-size="12" fill="#1a1a1a" text-anchor="middle">D</text>
+      <text x="375" y="335" font-size="10" fill="#6b6b66" text-anchor="middle">инженерия</text>
+    </g>
+    <!-- E=0.47 → height=86 -->
+    <g>
+      <rect x="425" y="214" width="60" height="86" fill="#c8553d" fill-opacity="0.55"/>
+      <text x="455" y="206" font-size="12" fill="#1a1a1a" font-weight="600" text-anchor="middle">+0.47</text>
+      <text x="455" y="318" font-size="12" fill="#1a1a1a" text-anchor="middle">E</text>
+      <text x="455" y="335" font-size="10" fill="#6b6b66" text-anchor="middle">governance</text>
+    </g>
+    <!-- F=1.13 → height=207 -->
+    <g>
+      <rect x="505" y="93" width="60" height="207" fill="#c8553d" fill-opacity="0.92"/>
+      <text x="535" y="85" font-size="13" fill="#c8553d" font-weight="700" text-anchor="middle">+1.13 ← макс</text>
+      <text x="535" y="318" font-size="12" fill="#1a1a1a" text-anchor="middle">F</text>
+      <text x="535" y="335" font-size="10" fill="#6b6b66" text-anchor="middle">запуск</text>
+    </g>
+    <!-- G=0.31 → height=57 -->
+    <g>
+      <rect x="585" y="243" width="60" height="57" fill="#c8553d" fill-opacity="0.48"/>
+      <text x="615" y="235" font-size="12" fill="#1a1a1a" font-weight="600" text-anchor="middle">+0.31</text>
+      <text x="615" y="318" font-size="12" fill="#1a1a1a" text-anchor="middle">G</text>
+      <text x="615" y="335" font-size="10" fill="#6b6b66" text-anchor="middle">медицина</text>
+    </g>
+
+    <!-- горизонтальная линия среднего -->
+    <line x1="80" y1="188" x2="660" y2="188" stroke="#c8553d" stroke-dasharray="4 3" stroke-width="1.5"/>
+    <text x="666" y="192" font-size="11" fill="#c8553d" font-style="italic">среднее +0.61</text>
+  </svg>
+  </div>
+
+  <div class="kv">
+    <div class="b"><strong>Минимум delta</strong><span>+0.31 (G)</span></div>
+    <div class="b"><strong>Максимум delta</strong><span>+1.13 (F)</span></div>
+    <div class="b"><strong>Среднее delta</strong><span>+0.61</span></div>
+    <div class="b"><strong>delta &gt; 0 на</strong><span>7 из 7</span></div>
+  </div>
+
+  <div class="terms">
+    <b>Расшифровка терминов</b>
+    <b style="display:inline;color:var(--accent)">Калибровка (calibration)</b> - в данном контексте это «откалиброванность шкалы оценок». У хорошо откалиброванной модели если она ставит «4», то это действительно «средне», а не «отлично».<br>
+    <b style="display:inline;color:var(--accent)">Calibration drift</b> - сдвиг калибровки. Систематическое смещение шкалы оценок модели в одну сторону. Cohere - сдвинут в плюс (ставит выше).<br>
+    <b style="display:inline;color:var(--accent)">7-балльная шкала</b> - модели оценивали ответы по шкале от 1 до 7. Поэтому delta измеряется в «баллах» этой шкалы. +0.6 баллов - это серьёзный сдвиг, эквивалентный примерно 8.5% от полной шкалы.
+  </div>
+
+  <div class="explain">
+    <strong>Что мы здесь видим.</strong> Если бы Cohere был «случайным шумом», знак delta скакал бы туда-сюда (где-то +0.5, где-то −0.3). А здесь знак везде положительный, и магнитуда от 0.31 до 1.13. Это означает: Cohere стабильно «более добрая» модель, причём сильнее всего - в задачах про business launch (запуск продукта) и privacy (приватность).
+  </div>
+
+  <div class="example">
+    <b>Пример из жизни.</b> Если вы используете Cohere для оценки маркетинговых текстов на «запуск продукта», она в среднем оценит их на 1.13 балла выше, чем если бы вы использовали Claude или GPT. На 7-балльной шкале это значит: тексты, которые объективно «средние» (4 балла), Cohere назовёт «хорошими» (5 баллов). Если ваш порог «годно/не годно» = 4.5, разница в выборе модели меняет долю «годных» с 30% до 60%.
+  </div>
+</section>
+
+<!-- ===================== ГРАФИК 4 ===================== -->
+<section class="chart" id="g4">
+  <h2>График 4. «Семёрочный синдром» Cohere: как часто ставится максимальная оценка</h2>
+  <p class="lede">Доля оценок «7 из 7» (максимум по шкале) у Cohere в сравнении с остальными 9 моделями. Везде Cohere ставит «семёрку» в 1.5-2.7 раз чаще.</p>
+
+  <div class="svg-box">
+  <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Доля оценок 7 у Cohere vs остальных">
+    <rect x="80" y="30" width="580" height="290" fill="#fff" stroke="#e6e3da" stroke-width="1"/>
+    <!-- gridlines Y 0,10,20,30,40,50,60 -->
+    <g stroke="#f0eee5" stroke-width="1">
+      <line x1="80" y1="320" x2="660" y2="320"/>
+      <line x1="80" y1="272" x2="660" y2="272"/>
+      <line x1="80" y1="224" x2="660" y2="224"/>
+      <line x1="80" y1="176" x2="660" y2="176"/>
+      <line x1="80" y1="128" x2="660" y2="128"/>
+      <line x1="80" y1="80" x2="660" y2="80"/>
+      <line x1="80" y1="32" x2="660" y2="32"/>
+    </g>
+    <g font-size="11" fill="#6b6b66" text-anchor="end">
+      <text x="76" y="324">0%</text>
+      <text x="76" y="276">10%</text>
+      <text x="76" y="228">20%</text>
+      <text x="76" y="180">30%</text>
+      <text x="76" y="132">40%</text>
+      <text x="76" y="84">50%</text>
+      <text x="76" y="36">60%</text>
+    </g>
+    <text x="20" y="175" font-size="13" fill="#1a1a1a" text-anchor="middle" font-weight="600"
+          transform="rotate(-90 20 175)">
+      Доля максимальных оценок «7 из 7», %
+    </text>
+
+    <!-- 7 tasks × 2 bars (Cohere + Others). Width per pair: 75px (35+35+5gap) -->
+    <!-- Scale: 1% = 4.8px. height = % × 4.8 -->
+    <!-- A: C=34.9 (167), O=18.5 (89) -->
+    <g><rect x="100" y="153" width="30" height="167" fill="#c8553d"/><text x="115" y="146" font-size="11" font-weight="600" text-anchor="middle">35</text>
+       <rect x="132" y="231" width="30" height="89" fill="#3d6b88"/><text x="147" y="224" font-size="11" font-weight="600" text-anchor="middle">19</text>
+       <text x="131" y="340" font-size="11" text-anchor="middle">A</text></g>
+    <!-- B: C=50.2 (241), O=34.6 (166) -->
+    <g><rect x="180" y="79" width="30" height="241" fill="#c8553d"/><text x="195" y="72" font-size="11" font-weight="600" text-anchor="middle">50</text>
+       <rect x="212" y="154" width="30" height="166" fill="#3d6b88"/><text x="227" y="147" font-size="11" font-weight="600" text-anchor="middle">35</text>
+       <text x="211" y="340" font-size="11" text-anchor="middle">B</text></g>
+    <!-- C: C=51.1 (245), O=28.0 (134) -->
+    <g><rect x="260" y="75" width="30" height="245" fill="#c8553d"/><text x="275" y="68" font-size="11" font-weight="600" text-anchor="middle">51</text>
+       <rect x="292" y="186" width="30" height="134" fill="#3d6b88"/><text x="307" y="179" font-size="11" font-weight="600" text-anchor="middle">28</text>
+       <text x="291" y="340" font-size="11" text-anchor="middle">C</text></g>
+    <!-- D: C=41.3 (198), O=22.0 (106) -->
+    <g><rect x="340" y="122" width="30" height="198" fill="#c8553d"/><text x="355" y="115" font-size="11" font-weight="600" text-anchor="middle">41</text>
+       <rect x="372" y="214" width="30" height="106" fill="#3d6b88"/><text x="387" y="207" font-size="11" font-weight="600" text-anchor="middle">22</text>
+       <text x="371" y="340" font-size="11" text-anchor="middle">D</text></g>
+    <!-- E: C=50.6 (243), O=18.9 (91) -->
+    <g><rect x="420" y="77" width="30" height="243" fill="#c8553d"/><text x="435" y="70" font-size="11" font-weight="600" text-anchor="middle">51</text>
+       <rect x="452" y="229" width="30" height="91" fill="#3d6b88"/><text x="467" y="222" font-size="11" font-weight="600" text-anchor="middle">19</text>
+       <text x="451" y="340" font-size="11" text-anchor="middle">E</text></g>
+    <!-- F: C=47.5 (228), O=18.0 (86) -->
+    <g><rect x="500" y="92" width="30" height="228" fill="#c8553d"/><text x="515" y="85" font-size="11" font-weight="600" text-anchor="middle">48</text>
+       <rect x="532" y="234" width="30" height="86" fill="#3d6b88"/><text x="547" y="227" font-size="11" font-weight="600" text-anchor="middle">18</text>
+       <text x="531" y="340" font-size="11" text-anchor="middle">F</text></g>
+    <!-- G: C=48.0 (230), O=25.5 (122) -->
+    <g><rect x="580" y="90" width="30" height="230" fill="#c8553d"/><text x="595" y="83" font-size="11" font-weight="600" text-anchor="middle">48</text>
+       <rect x="612" y="198" width="30" height="122" fill="#3d6b88"/><text x="627" y="191" font-size="11" font-weight="600" text-anchor="middle">26</text>
+       <text x="611" y="340" font-size="11" text-anchor="middle">G</text></g>
+
+    <text x="370" y="364" font-size="12" fill="#1a1a1a" text-anchor="middle">Задача</text>
+
+    <!-- Legend -->
+    <g transform="translate(490, 38)">
+      <rect x="0" y="0" width="170" height="36" fill="#fff" stroke="#e6e3da"/>
+      <rect x="8" y="6" width="14" height="10" fill="#c8553d"/><text x="28" y="15" font-size="11.5">Cohere (M7)</text>
+      <rect x="8" y="20" width="14" height="10" fill="#3d6b88"/><text x="28" y="29" font-size="11.5">Остальные 9 моделей</text>
+    </g>
+  </svg>
+  </div>
+
+  <div class="terms">
+    <b>Расшифровка</b>
+    <b style="display:inline;color:var(--accent)">«Семёрочный синдром»</b> - наш разговорный термин: модель чересчур часто ставит максимум по шкале. Это форма sycophancy (льстивости) - когда модель «нравится» оценивать всё высоко.<br>
+    <b style="display:inline;color:var(--accent)">LLM-as-judge / auto-evaluator / RM (Reward Model)</b> - это всё названия одного использования модели: она оценивает другой контент (тексты, ответы, кандидатов).
+  </div>
+
+  <div class="explain">
+    <strong>Что мы здесь видим.</strong> На задаче C (приватность) Cohere ставит «7» в 51% случаев, остальные - только в 28%. То есть Cohere в 1.8 раза чаще выдаёт топовую оценку. На задаче E (governance) - 51% vs 19%, разница в 2.7 раза. Если бы это была случайность, разница не была бы такой большой на всех задачах.
+  </div>
+
+  <div class="example">
+    <b>Пример из жизни (RLHF, обучение модели с подкреплением).</b> Многие лаборатории обучают свои модели методом RLHF: одна модель (Reward Model, «RM») оценивает ответы другой по шкале от 1 до 7, и эти оценки используются как сигнал для обучения. Если вы используете Cohere как RM, она будет в 2 раза чаще давать «семёрку» на средние ответы. Ваша обучаемая модель «выучит», что средние ответы - это хорошо. Через 10 000 шагов обучения вы получите модель, которая стала по факту хуже, но «думает», что молодец. Это типичный сценарий reward hacking из-за плохо откалиброванной reward-модели.
+  </div>
+</section>
+
+<!-- ===================== ГРАФИК 5 ===================== -->
+<section class="chart" id="g5">
+  <h2>График 5. Разногласие по задачам: где модели спорят сильнее</h2>
+  <p class="lede">Сравниваем два типа разногласия: «сам с собой» (одна модель оценивает одно и то же дважды) и «между моделями» (разные модели оценивают одно и то же). Чем выше столбец, тем сильнее модели расходятся.</p>
+
+  <div class="svg-box">
+  <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Disagreement по задачам">
+    <rect x="80" y="30" width="580" height="290" fill="#fff" stroke="#e6e3da" stroke-width="1"/>
+    <g stroke="#f0eee5" stroke-width="1">
+      <line x1="80" y1="320" x2="660" y2="320"/>
+      <line x1="80" y1="248" x2="660" y2="248"/>
+      <line x1="80" y1="176" x2="660" y2="176"/>
+      <line x1="80" y1="104" x2="660" y2="104"/>
+      <line x1="80" y1="32" x2="660" y2="32"/>
+    </g>
+    <g font-size="11" fill="#6b6b66" text-anchor="end">
+      <text x="76" y="324">0.0</text>
+      <text x="76" y="252">0.2</text>
+      <text x="76" y="180">0.4</text>
+      <text x="76" y="108">0.6</text>
+      <text x="76" y="36">0.8</text>
+    </g>
+    <text x="20" y="175" font-size="13" fill="#1a1a1a" text-anchor="middle" font-weight="600"
+          transform="rotate(-90 20 175)">
+      Disagreement (var/4) - 0 = согласие, 1 = максимум
+    </text>
+
+    <!-- Scale: 1.0 = 360 px, so 0.1 = 36px -->
+    <!-- A: within=0.18 (h=65), cross=0.66 (h=238) -->
+    <g><rect x="100" y="255" width="30" height="65" fill="#8aa05a"/><text x="115" y="248" font-size="11" font-weight="600" text-anchor="middle">.18</text>
+       <rect x="132" y="82" width="30" height="238" fill="#c8553d"/><text x="147" y="75" font-size="11" font-weight="600" text-anchor="middle">.66</text>
+       <text x="131" y="340" font-size="11" text-anchor="middle">A</text></g>
+    <!-- B: within=0.22, cross=0.68 -->
+    <g><rect x="180" y="241" width="30" height="79" fill="#8aa05a"/><text x="195" y="234" font-size="11" font-weight="600" text-anchor="middle">.22</text>
+       <rect x="212" y="75" width="30" height="245" fill="#c8553d"/><text x="227" y="68" font-size="11" font-weight="600" text-anchor="middle">.68</text>
+       <text x="211" y="340" font-size="11" text-anchor="middle">B</text></g>
+    <!-- C: within=0.20, cross=0.58 -->
+    <g><rect x="260" y="248" width="30" height="72" fill="#8aa05a"/><text x="275" y="241" font-size="11" font-weight="600" text-anchor="middle">.20</text>
+       <rect x="292" y="111" width="30" height="209" fill="#c8553d"/><text x="307" y="104" font-size="11" font-weight="600" text-anchor="middle">.58</text>
+       <text x="291" y="340" font-size="11" text-anchor="middle">C</text></g>
+    <!-- D: within=0.19, cross=0.51 -->
+    <g><rect x="340" y="252" width="30" height="68" fill="#8aa05a"/><text x="355" y="245" font-size="11" font-weight="600" text-anchor="middle">.19</text>
+       <rect x="372" y="136" width="30" height="184" fill="#c8553d"/><text x="387" y="129" font-size="11" font-weight="600" text-anchor="middle">.51</text>
+       <text x="371" y="340" font-size="11" text-anchor="middle">D</text></g>
+    <!-- E: within=0.21, cross=0.54 -->
+    <g><rect x="420" y="245" width="30" height="75" fill="#8aa05a"/><text x="435" y="238" font-size="11" font-weight="600" text-anchor="middle">.21</text>
+       <rect x="452" y="125" width="30" height="195" fill="#c8553d"/><text x="467" y="118" font-size="11" font-weight="600" text-anchor="middle">.54</text>
+       <text x="451" y="340" font-size="11" text-anchor="middle">E</text></g>
+    <!-- F: within=0.20, cross=0.49 -->
+    <g><rect x="500" y="248" width="30" height="72" fill="#8aa05a"/><text x="515" y="241" font-size="11" font-weight="600" text-anchor="middle">.20</text>
+       <rect x="532" y="144" width="30" height="176" fill="#c8553d"/><text x="547" y="137" font-size="11" font-weight="600" text-anchor="middle">.49</text>
+       <text x="531" y="340" font-size="11" text-anchor="middle">F</text></g>
+    <!-- G: within=0.17, cross=0.34 -->
+    <g><rect x="580" y="259" width="30" height="61" fill="#8aa05a"/><text x="595" y="252" font-size="11" font-weight="600" text-anchor="middle">.17</text>
+       <rect x="612" y="198" width="30" height="122" fill="#c8553d"/><text x="627" y="191" font-size="11" font-weight="600" text-anchor="middle">.34</text>
+       <text x="611" y="340" font-size="11" text-anchor="middle">G</text></g>
+
+    <text x="370" y="364" font-size="12" fill="#1a1a1a" text-anchor="middle">Задача</text>
+
+    <!-- Legend -->
+    <g transform="translate(380, 36)">
+      <rect x="0" y="0" width="280" height="36" fill="#fff" stroke="#e6e3da"/>
+      <rect x="8" y="6" width="14" height="10" fill="#8aa05a"/><text x="28" y="15" font-size="11.5">Внутри-моделевое (та же модель повторно)</text>
+      <rect x="8" y="20" width="14" height="10" fill="#c8553d"/><text x="28" y="29" font-size="11.5">Кросс-модельное (10 разных моделей)</text>
+    </g>
+  </svg>
+  </div>
+
+  <div class="terms">
+    <b>Расшифровка терминов</b>
+    <b style="display:inline;color:var(--accent)">Disagreement</b> - несогласие, разброс оценок. Считается как variance (дисперсия), нормированная делением на 4 (поэтому она в диапазоне 0-1). 0 = все оценщики согласны, 1 = максимальный разброс.<br>
+    <b style="display:inline;color:var(--accent)">Within-model (внутри-моделевое)</b> - одна и та же модель оценивает один и тот же контент два раза. Этот разброс показывает «случайность» самой модели.<br>
+    <b style="display:inline;color:var(--accent)">Cross-model (кросс-модельное)</b> - 10 разных моделей оценивают один и тот же контент. Этот разброс показывает реальное «несогласие в индустрии».
+  </div>
+
+  <div class="explain">
+    <strong>Что мы здесь видим.</strong> Внутри-моделевое (зелёные столбики) - стабильно низкое: 0.17-0.22 на всех задачах. Это значит, что отдельная модель относительно последовательна сама с собой. Кросс-модельное (красные столбики) - сильно зависит от задачи: от 0.34 (медицинская этика, чёткие протоколы) до 0.68 (диагностика команды, требует субъективной интерпретации). На задачах с высоким cross-model disagreement модели реально расходятся - это сигнал, что задача неоднозначная.
+  </div>
+
+  <div class="example">
+    <b>Пример из жизни.</b> Если вы спрашиваете AI «правильно ли уволить сотрудника, который опоздал на 5 минут?» - это задача типа B (диагностика команды), cross-model disagreement = 0.68. Разные модели дадут СИЛЬНО разные ответы. Если же вы спрашиваете «надо ли вызвать скорую при потере сознания?» - это задача типа G (медицина), disagreement = 0.34. Модели в основном согласны. <b>Правило:</b> если вы получаете противоречивые ответы от 2-3 моделей, это сигнал, что задача субъективная, и стоит подключить человека-эксперта, а не верить одному ответу.
+  </div>
+</section>
+
+<!-- ===================== ГРАФИК 6 ===================== -->
+<section class="chart" id="g6">
+  <h2>График 6. Pilot vs Cross-Model: почему дизайн эксперимента важен</h2>
+  <p class="lede">Стандартный pilot (модель сама оценивает свои же ответы) даёт ниже disagreement, чем cross-model (модели оценивают друг друга). Разница - 0.20-0.45 единиц. Это и есть «слепое пятно» pilot-дизайна.</p>
+
+  <div class="svg-box">
+  <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pilot vs Cross-Model сравнение">
+    <rect x="80" y="30" width="580" height="290" fill="#fff" stroke="#e6e3da" stroke-width="1"/>
+    <g stroke="#f0eee5" stroke-width="1">
+      <line x1="80" y1="320" x2="660" y2="320"/>
+      <line x1="80" y1="248" x2="660" y2="248"/>
+      <line x1="80" y1="176" x2="660" y2="176"/>
+      <line x1="80" y1="104" x2="660" y2="104"/>
+      <line x1="80" y1="32" x2="660" y2="32"/>
+    </g>
+    <g font-size="11" fill="#6b6b66" text-anchor="end">
+      <text x="76" y="324">0.0</text>
+      <text x="76" y="252">0.2</text>
+      <text x="76" y="180">0.4</text>
+      <text x="76" y="108">0.6</text>
+      <text x="76" y="36">0.8</text>
+    </g>
+    <text x="20" y="175" font-size="13" fill="#1a1a1a" text-anchor="middle" font-weight="600"
+          transform="rotate(-90 20 175)">
+      Disagreement (var/4)
+    </text>
+
+    <!-- A: pilot=0.31 (112), cm=0.66 (238) -->
+    <g><rect x="100" y="208" width="30" height="112" fill="#3d6b88"/><text x="115" y="201" font-size="11" font-weight="600" text-anchor="middle">.31</text>
+       <rect x="132" y="82" width="30" height="238" fill="#c8553d"/><text x="147" y="75" font-size="11" font-weight="600" text-anchor="middle">.66</text>
+       <text x="131" y="340" font-size="11" text-anchor="middle">A</text></g>
+    <!-- B: pilot=0.32, cm=0.68 -->
+    <g><rect x="180" y="205" width="30" height="115" fill="#3d6b88"/><text x="195" y="198" font-size="11" font-weight="600" text-anchor="middle">.32</text>
+       <rect x="212" y="75" width="30" height="245" fill="#c8553d"/><text x="227" y="68" font-size="11" font-weight="600" text-anchor="middle">.68</text>
+       <text x="211" y="340" font-size="11" text-anchor="middle">B</text></g>
+    <!-- C: pilot=0.28, cm=0.58 -->
+    <g><rect x="260" y="219" width="30" height="101" fill="#3d6b88"/><text x="275" y="212" font-size="11" font-weight="600" text-anchor="middle">.28</text>
+       <rect x="292" y="111" width="30" height="209" fill="#c8553d"/><text x="307" y="104" font-size="11" font-weight="600" text-anchor="middle">.58</text>
+       <text x="291" y="340" font-size="11" text-anchor="middle">C</text></g>
+    <!-- D: pilot=0.24, cm=0.51 -->
+    <g><rect x="340" y="234" width="30" height="86" fill="#3d6b88"/><text x="355" y="227" font-size="11" font-weight="600" text-anchor="middle">.24</text>
+       <rect x="372" y="136" width="30" height="184" fill="#c8553d"/><text x="387" y="129" font-size="11" font-weight="600" text-anchor="middle">.51</text>
+       <text x="371" y="340" font-size="11" text-anchor="middle">D</text></g>
+    <!-- E: pilot=0.27, cm=0.54 -->
+    <g><rect x="420" y="223" width="30" height="97" fill="#3d6b88"/><text x="435" y="216" font-size="11" font-weight="600" text-anchor="middle">.27</text>
+       <rect x="452" y="125" width="30" height="195" fill="#c8553d"/><text x="467" y="118" font-size="11" font-weight="600" text-anchor="middle">.54</text>
+       <text x="451" y="340" font-size="11" text-anchor="middle">E</text></g>
+    <!-- F: pilot=0.22, cm=0.49 -->
+    <g><rect x="500" y="241" width="30" height="79" fill="#3d6b88"/><text x="515" y="234" font-size="11" font-weight="600" text-anchor="middle">.22</text>
+       <rect x="532" y="144" width="30" height="176" fill="#c8553d"/><text x="547" y="137" font-size="11" font-weight="600" text-anchor="middle">.49</text>
+       <text x="531" y="340" font-size="11" text-anchor="middle">F</text></g>
+    <!-- G: pilot=0.18, cm=0.34 -->
+    <g><rect x="580" y="255" width="30" height="65" fill="#3d6b88"/><text x="595" y="248" font-size="11" font-weight="600" text-anchor="middle">.18</text>
+       <rect x="612" y="198" width="30" height="122" fill="#c8553d"/><text x="627" y="191" font-size="11" font-weight="600" text-anchor="middle">.34</text>
+       <text x="611" y="340" font-size="11" text-anchor="middle">G</text></g>
+
+    <text x="370" y="364" font-size="12" fill="#1a1a1a" text-anchor="middle">Задача</text>
+
+    <!-- Legend -->
+    <g transform="translate(360, 36)">
+      <rect x="0" y="0" width="300" height="36" fill="#fff" stroke="#e6e3da"/>
+      <rect x="8" y="6" width="14" height="10" fill="#3d6b88"/><text x="28" y="15" font-size="11.5">Pilot (модель оценивает свои же ответы)</text>
+      <rect x="8" y="20" width="14" height="10" fill="#c8553d"/><text x="28" y="29" font-size="11.5">CM-RG (10 разных моделей оценивают)</text>
+    </g>
+  </svg>
+  </div>
+
+  <div class="terms">
+    <b>Расшифровка терминов</b>
+    <b style="display:inline;color:var(--accent)">Pilot study</b> - пилотное исследование. В классической репертуарной решётке Келли это когда испытуемый сам же оценивает по своим же конструктам (категориям). Все участники - один человек. В нашем эксперименте это аналог: одна модель = один «участник».<br>
+    <b style="display:inline;color:var(--accent)">Cross-model (CM-RG)</b> - наш новый дизайн, где модели «интервьюируют» друг друга: одна порождает критерии, другие по ним оценивают чужие ответы. Это аналог настоящего социального исследования с несколькими испытуемыми.
+  </div>
+
+  <div class="explain">
+    <strong>Что мы здесь видим.</strong> Pilot-дизайн (синие столбики) всюду ниже cross-model (красные). Это означает: если бы мы оценивали разнообразие моделей старым методом (pilot), мы бы недооценили его примерно в 2 раза. Реальное disagreement становится видно только когда оценщики - это другие модели, а не та же самая.
+  </div>
+
+  <div class="example">
+    <b>Пример из жизни.</b> Это аналог классической ошибки в HR: если попросить одного менеджера оценить «насколько ясно я ставлю задачи команде», он скажет «7 из 7». А если попросить его команду - в среднем будет 4.5. Pilot-метод = опросить только менеджера. Cross-model = опросить команду. Без cross-method вы не видите реальной картины. Поэтому корпоративные оценки эффективности используют 360-градусные обзоры (несколько источников оценок), а не самоотчёты - это та же логика.
+  </div>
+</section>
+
+<footer class="bottom">
+  CM-RG · Archipelago Research Group · 2026<br>
+  Все графики построены на сырых данных эксперимента (24 018 ratings, 7 задач, 10 моделей).<br>
+  Чистый SVG - никаких внешних библиотек, работает офлайн в любом браузере.
+</footer>
+
+</div>
+</body>
+</html>

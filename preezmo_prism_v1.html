@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preezmo - How 11 frontier LLMs split on a SaaS investment call</title>
+<meta name="description" content="A live Prism showing how 11 frontier large language models structurally diverge in evaluating the same hard judgment. Methodology: Cross-Model Repertory Grid (Kelly 1955).">
+<meta property="og:title" content="Preezmo - The shape of disagreement between 11 frontier LLMs">
+<meta property="og:description" content="Cohere lives in a different city. Claude 4.7 and 4.8 share a street. See the full Prism.">
+<meta property="og:type" content="website">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.35.2/plotly.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 100%; min-height: 100vh; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #FDFBF7;
+    color: #1A1A2E;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #E8E2D5;
+    margin-bottom: 32px;
+  }
+  .brand {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #1A1A2E;
+  }
+  .brand .sub {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: #6B6760;
+    margin-top: 2px;
+    letter-spacing: 0;
+  }
+  .nav {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+  }
+  .nav a {
+    color: #6B6760;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav a:hover { color: #1A1A2E; }
+
+  .hero {
+    margin-bottom: 32px;
+  }
+  .hero h1 {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    max-width: 880px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: #C44536;
+    font-weight: 500;
+  }
+  .hero p.lead {
+    font-size: 17px;
+    color: #4A4640;
+    max-width: 760px;
+    line-height: 1.6;
+  }
+
+  .question-card {
+    background: #F5F0E5;
+    border: 1px solid #E8E2D5;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+  }
+  .question-card .label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8B6F3E;
+    margin-bottom: 6px;
+  }
+  .question-card .q {
+    font-size: 18px;
+    font-weight: 500;
+    color: #1A1A2E;
+    margin-bottom: 4px;
+  }
+  .question-card .meta {
+    font-size: 13px;
+    color: #6B6760;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 24px;
+  }
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+
+  .chart-wrap {
+    background: #FFFFFF;
+    border: 1px solid #E8E2D5;
+    border-radius: 12px;
+    padding: 20px;
+    min-height: 560px;
+  }
+  #prism {
+    width: 100%;
+    height: 540px;
+  }
+
+  .side {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #E8E2D5;
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .di-card {
+    background: linear-gradient(180deg, #F5F0E5 0%, #FFFFFF 100%);
+  }
+  .di-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #8B6F3E;
+    margin-bottom: 4px;
+  }
+  .di-value {
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: #1A1A2E;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .di-explain {
+    font-size: 12px;
+    color: #6B6760;
+    line-height: 1.5;
+  }
+
+  .insight-card h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1A1A2E;
+    margin-bottom: 12px;
+    letter-spacing: -0.005em;
+  }
+  .insight {
+    font-size: 13px;
+    color: #4A4640;
+    line-height: 1.55;
+    padding: 8px 0;
+    border-bottom: 1px solid #F0EBE0;
+  }
+  .insight:last-child { border-bottom: none; padding-bottom: 0; }
+  .insight strong { color: #1A1A2E; font-weight: 600; }
+  .insight .tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 6px;
+  }
+  .tag-outlier { background: #FDEBE7; color: #A32D2D; }
+  .tag-cluster { background: #E6F1FB; color: #185FA5; }
+  .tag-null    { background: #EAF3DE; color: #3B6D11; }
+
+  .legend-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .legend-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: #4A4640;
+  }
+  .swatch {
+    width: 12px; height: 12px; border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .legend-row .name { font-weight: 500; color: #1A1A2E; }
+  .legend-row .count { color: #6B6760; margin-left: auto; font-size: 11px; }
+
+  .cta-card {
+    background: #1A1A2E;
+    color: #FDFBF7;
+    border: none;
+    text-align: left;
+  }
+  .cta-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #FDFBF7;
+  }
+  .cta-card p {
+    font-size: 13px;
+    color: #C5C0B8;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: #D4915C;
+    color: #1A1A2E;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .cta-btn:hover { background: #E0A372; }
+  .cta-price {
+    display: inline-block;
+    background: rgba(212, 145, 92, 0.15);
+    color: #D4915C;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 8px;
+  }
+
+  .methods {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid #E8E2D5;
+  }
+  .methods h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .method-item {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .method-item .h {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8B6F3E;
+    margin-bottom: 4px;
+  }
+  .method-item .v {
+    color: #1A1A2E;
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+  .method-item .d {
+    color: #6B6760;
+    font-size: 12px;
+  }
+
+  .footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid #E8E2D5;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #6B6760;
+  }
+  .footer a { color: #6B6760; }
+  .footer a:hover { color: #1A1A2E; }
+
+  .pill {
+    display: inline-block;
+    background: #F5F0E5;
+    color: #8B6F3E;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.02em;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="header">
+    <div class="brand">
+      preezmo
+      <span class="sub">by Archipelago Research</span>
+    </div>
+    <nav class="nav">
+      <a href="#methodology">Method</a>
+      <a href="#data">Data</a>
+      <a href="#run">Run yours</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>How 11 frontier LLMs split when there's <em>no right answer</em></h1>
+    <p class="lead">One real strategic decision, eleven models from ten labs, two anonymized rating passes. The map below shows where each model sits in the latent space of evaluative judgment, computed from 3,987 cross-ratings per model on the same task. This is the Cross-Model Repertory Grid (Kelly 1955) - measuring structural disagreement, not preferences.</p>
+  </section>
+
+  <div class="question-card">
+    <div class="label">Q1 2026 - SaaS strategy domain</div>
+    <div class="q">Where should a $50M ARR SaaS company invest $8M? (5 strategic options, no objectively correct answer)</div>
+    <div class="meta">Phase 2J · 14 cells · 3,987 ratings per model · May 2026 snapshot · <a href="#methodology" style="color: #8B6F3E;">methodology</a></div>
+  </div>
+
+  <div class="grid">
+
+    <div class="chart-wrap">
+      <div id="prism" role="img" aria-label="2D PCA scatter plot of 11 frontier large language models. Cohere Command A sits as a far outlier at PC1 plus 25 units, while seven frontier models cluster tightly between minus 5 and 0 on PC1. Llama 4 Maverick sits below at PC2 minus 18. Claude Opus 4.7 and 4.8 share nearly identical coordinates.">
+        Loading the Prism...
+      </div>
+    </div>
+
+    <aside class="side">
+
+      <div class="card di-card">
+        <div class="di-label">Divergence Index</div>
+        <div class="di-value" id="di-value">0.34</div>
+        <div class="di-explain">
+          Mean pairwise distance across 11 models, normalized to dataset max. 0 = perfect consensus, 1 = maximum observed spread. Driven primarily by Cohere outlier (+25 PC1).
+        </div>
+      </div>
+
+      <div class="card insight-card">
+        <h3>What the Prism is showing</h3>
+        <div class="insight">
+          <span class="tag tag-outlier">Outlier</span>
+          <strong>Cohere Command A</strong> sits 25 PCA units east of the cluster - structurally different evaluative profile, replicated across 7 of 7 tasks.
+        </div>
+        <div class="insight">
+          <span class="tag tag-null">Null</span>
+          <strong>Claude Opus 4.7 vs 4.8</strong>: 0.24 units apart. The "more honesty" upgrade did not move the model in this space (p = 0.92, n = 3,987).
+        </div>
+        <div class="insight">
+          <span class="tag tag-cluster">Cluster</span>
+          <strong>Frontier 7</strong> (Claude × 2, GPT-5.5, Gemini 3.1, DeepSeek v4, Kimi k2.6, Qwen 3.7) live within 5 PCA units of each other. Interchangeable for most judgment tasks.
+        </div>
+      </div>
+
+      <div class="card insight-card">
+        <h3>Cluster legend</h3>
+        <div class="legend-list" id="legend">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <div class="card cta-card">
+        <h3>Run your own decision through Preezmo</h3>
+        <p>Bring a real strategic call you're wrestling with. We anonymize it, run the same Repertory Grid on 11-30 frontier models, and ship you a custom Prism + 1-page interpretation in 48 hours.</p>
+        <a href="mailto:sergey@archplg.co.uk?subject=Preezmo%20run%20-%20my%20decision" class="cta-btn">Start a run<span class="cta-price">€39</span></a>
+      </div>
+
+    </aside>
+  </div>
+
+  <section class="methods" id="methodology">
+    <h2>How this Prism is built</h2>
+    <div class="methods-grid">
+      <div class="method-item">
+        <div class="h">Method</div>
+        <div class="v">Cross-Model Repertory Grid</div>
+        <div class="d">Triadic construct elicitation + cross-rating. Adapted from George Kelly's Personal Construct Psychology (1955).</div>
+      </div>
+      <div class="method-item">
+        <div class="h">Pipeline</div>
+        <div class="v">4-phase, fully automated</div>
+        <div class="d">Free response → anonymization (E1-E11 labels) → triadic interrogation → cross-rating on 1-7 scale.</div>
+      </div>
+      <div class="method-item">
+        <div class="h">Anonymization</div>
+        <div class="v">Yes, blind cross-rating</div>
+        <div class="d">No model sees the authorship of any response it rates. Eliminates brand-based bias (Sun et al., 2026).</div>
+      </div>
+      <div class="method-item">
+        <div class="h">Variance explained</div>
+        <div class="v">PC1 + PC2 = 55.6%</div>
+        <div class="d">PC1 captures 34.8% of variance, PC2 captures 20.8%. Remaining 44.4% in higher dimensions, not shown.</div>
+      </div>
+      <div class="method-item">
+        <div class="h">Sample</div>
+        <div class="v">3,987 ratings per model</div>
+        <div class="d">14 cells (7 advisory tasks × 2 conditions), 11 frontier LLMs, ~443 constructs. Snapshot: May 2026.</div>
+      </div>
+      <div class="method-item">
+        <div class="h">Contamination resistance</div>
+        <div class="v">No gold answer</div>
+        <div class="d">Unlike SWE-Bench or MMLU, there is no "correct" rating a model could memorize or extract from the environment.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="data">
+    <div>
+      <span class="pill">Phase 2J</span> · 110,882 ratings combined · CC-BY 4.0 ·
+      <a href="https://huggingface.co/datasets/sergeydolgov/cross-model-repertory-grid">HuggingFace</a> ·
+      <a href="https://github.com/archplg/cm-rg">GitHub</a>
+    </div>
+    <div>
+      © 2026 Archipelago Research · <a href="mailto:sergey@archplg.co.uk">sergey@archplg.co.uk</a>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  if (typeof Plotly === 'undefined') {
+    document.getElementById('prism').innerHTML =
+      '<div style="padding: 40px; text-align: center; color: #A32D2D; font-size: 14px;">' +
+      '<strong>Plotly failed to load.</strong><br><br>' +
+      'Check internet connection (CDN: cdnjs.cloudflare.com) or open browser console (F12) for errors.<br><br>' +
+      'If you opened this file directly from disk, some browsers (Brave, hardened Firefox) may block CDN scripts. Try Chrome or open via http://localhost.' +
+      '</div>';
+    return;
+  }
+
+  // Phase 2J real PCA coordinates from metrics.json
+  const MODELS = [
+    {id: 'M1',  name: 'Claude Opus 4.7',     lab: 'Anthropic',    country: 'US', x: -4.85, y: 2.78,   cluster: 'frontier', persona_sd: 0.60, ratings: 3987},
+    {id: 'M11', name: 'Claude Opus 4.8',     lab: 'Anthropic',    country: 'US', x: -4.78, y: 2.55,   cluster: 'frontier', persona_sd: 0.51, ratings: 3987},
+    {id: 'M2',  name: 'GPT-5.5',             lab: 'OpenAI',       country: 'US', x: -5.24, y: 4.18,   cluster: 'frontier', persona_sd: 0.45, ratings: 3987},
+    {id: 'M3',  name: 'Gemini 3.1 Pro',      lab: 'Google DM',    country: 'US/UK', x: -1.62, y: 2.80, cluster: 'frontier', persona_sd: 0.54, ratings: 2019},
+    {id: 'M4',  name: 'DeepSeek v4 Pro',     lab: 'DeepSeek',     country: 'CN', x: -5.38, y: 0.98,   cluster: 'frontier', persona_sd: 1.79, ratings: 3178},
+    {id: 'M5',  name: 'Kimi k2.6',           lab: 'Moonshot',     country: 'CN', x: -3.47, y: 3.25,   cluster: 'frontier', persona_sd: 0.39, ratings: 2866},
+    {id: 'M8',  name: 'Qwen 3.7 Max',        lab: 'Alibaba',      country: 'CN', x: -5.43, y: 5.01,   cluster: 'frontier', persona_sd: 0.80, ratings: 3987},
+    {id: 'M6',  name: 'Mistral Large 2512',  lab: 'Mistral',      country: 'FR', x: 4.33,  y: -6.15,  cluster: 'openw',    persona_sd: 2.00, ratings: 3987},
+    {id: 'M10', name: 'Grok 4.20',           lab: 'xAI',          country: 'US', x: 0.47,  y: -2.46,  cluster: 'openw',    persona_sd: 1.47, ratings: 3987},
+    {id: 'M9',  name: 'Llama 4 Maverick',    lab: 'Meta',         country: 'US', x: 0.65,  y: -18.30, cluster: 'edge',     persona_sd: 2.05, ratings: 3987},
+    {id: 'M7',  name: 'Cohere Command A',    lab: 'Cohere',       country: 'CA', x: 25.32, y: 5.35,   cluster: 'outlier',  persona_sd: 3.20, ratings: 3987},
+  ];
+
+  const COLORS = {
+    frontier: '#185FA5',
+    openw:    '#3B6D11',
+    edge:     '#854F0B',
+    outlier:  '#A32D2D',
+  };
+  const CLUSTER_NAMES = {
+    frontier: 'Frontier 7',
+    openw:    'Open-weight / Alt',
+    edge:     'Edge case',
+    outlier:  'Structural outlier',
+  };
+
+  // Group models by cluster for trace per cluster (better legend)
+  const clusters = ['frontier', 'openw', 'edge', 'outlier'];
+  const traces = clusters.map(cl => {
+    const ms = MODELS.filter(m => m.cluster === cl);
+    return {
+      x: ms.map(m => m.x),
+      y: ms.map(m => m.y),
+      text: ms.map(m => m.name),
+      customdata: ms.map(m => [m.lab, m.country, m.persona_sd, m.ratings]),
+      hovertemplate:
+        '<b>%{text}</b><br>' +
+        'Lab: %{customdata[0]} (%{customdata[1]})<br>' +
+        'PC1: %{x:.2f} · PC2: %{y:.2f}<br>' +
+        'Persona volatility (SD): %{customdata[2]:.2f}<br>' +
+        'n ratings: %{customdata[3]:,}' +
+        '<extra></extra>',
+      mode: 'markers+text',
+      type: 'scatter',
+      name: CLUSTER_NAMES[cl],
+      marker: {
+        size: 22,
+        color: COLORS[cl],
+        line: { color: '#FFFFFF', width: 2 },
+        opacity: 0.92,
+      },
+      textposition: 'top center',
+      textfont: { size: 11, color: '#1A1A2E', family: 'Inter, sans-serif' },
+    };
+  });
+
+  const layout = {
+    paper_bgcolor: '#FFFFFF',
+    plot_bgcolor:  '#FFFFFF',
+    font: { family: 'Inter, sans-serif', color: '#1A1A2E', size: 12 },
+    margin: { l: 60, r: 40, t: 24, b: 60 },
+    xaxis: {
+      title: { text: 'PC1 (34.8% variance) - left-right structural axis', font: { size: 12, color: '#6B6760' } },
+      zeroline: true,
+      zerolinecolor: '#E8E2D5',
+      gridcolor: '#F5F0E5',
+      tickfont: { color: '#8B8780', size: 11 },
+      range: [-10, 30],
+    },
+    yaxis: {
+      title: { text: 'PC2 (20.8% variance) - up-down structural axis', font: { size: 12, color: '#6B6760' } },
+      zeroline: true,
+      zerolinecolor: '#E8E2D5',
+      gridcolor: '#F5F0E5',
+      tickfont: { color: '#8B8780', size: 11 },
+      range: [-22, 10],
+    },
+    showlegend: true,
+    legend: {
+      x: 0.02, y: 0.98,
+      bgcolor: 'rgba(245, 240, 229, 0.85)',
+      bordercolor: '#E8E2D5',
+      borderwidth: 1,
+      font: { size: 11 },
+    },
+    shapes: [
+      // Annotation for Cohere outlier zone
+      {
+        type: 'circle',
+        xref: 'x', yref: 'y',
+        x0: 21, y0: 1.5, x1: 29.5, y1: 9,
+        line: { color: '#A32D2D', width: 1, dash: 'dot' },
+        fillcolor: 'rgba(163, 45, 45, 0.05)',
+      },
+      // Frontier cluster zone
+      {
+        type: 'circle',
+        xref: 'x', yref: 'y',
+        x0: -7.5, y0: -0.5, x1: -0.5, y1: 6,
+        line: { color: '#185FA5', width: 1, dash: 'dot' },
+        fillcolor: 'rgba(24, 95, 165, 0.04)',
+      },
+    ],
+    annotations: [
+      {
+        x: 25.3, y: 8.5,
+        text: 'Cohere outlier zone',
+        showarrow: false,
+        font: { size: 10, color: '#A32D2D', family: 'Inter' },
+      },
+      {
+        x: -4, y: 6.2,
+        text: 'Frontier 7 cluster',
+        showarrow: false,
+        font: { size: 10, color: '#185FA5', family: 'Inter' },
+      },
+      {
+        x: 0.65, y: -19.5,
+        text: 'Llama edge',
+        showarrow: false,
+        font: { size: 10, color: '#854F0B', family: 'Inter' },
+      },
+    ],
+  };
+
+  const config = {
+    displayModeBar: true,
+    displaylogo: false,
+    modeBarButtonsToRemove: ['lasso2d', 'select2d', 'autoScale2d'],
+    responsive: true,
+  };
+
+  Plotly.newPlot('prism', traces, layout, config);
+
+  // Compute Divergence Index = mean pairwise distance / max observed
+  let sumD = 0, n = 0, maxD = 0;
+  for (let i = 0; i < MODELS.length; i++) {
+    for (let j = i + 1; j < MODELS.length; j++) {
+      const dx = MODELS[i].x - MODELS[j].x;
+      const dy = MODELS[i].y - MODELS[j].y;
+      const d = Math.sqrt(dx * dx + dy * dy);
+      sumD += d;
+      n += 1;
+      if (d > maxD) maxD = d;
+    }
+  }
+  const meanD = sumD / n;
+  const DI = meanD / maxD;
+  document.getElementById('di-value').textContent = DI.toFixed(2);
+
+  // Build legend
+  const legendEl = document.getElementById('legend');
+  clusters.forEach(cl => {
+    const ms = MODELS.filter(m => m.cluster === cl);
+    if (!ms.length) return;
+    ms.forEach(m => {
+      const row = document.createElement('div');
+      row.className = 'legend-row';
+      row.innerHTML =
+        '<span class="swatch" style="background:' + COLORS[cl] + '"></span>' +
+        '<span class="name">' + m.name + '</span>' +
+        '<span class="count">SD ' + m.persona_sd.toFixed(2) + '</span>';
+      legendEl.appendChild(row);
+    });
+  });
+}); // end DOMContentLoaded
+</script>
+</body>
+</html>

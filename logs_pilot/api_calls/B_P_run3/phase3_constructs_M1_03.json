@@ -1,0 +1,106 @@
+{
+  "cell_id": "B_P_run3",
+  "task": "B",
+  "condition": "P",
+  "run_idx": 3,
+  "phase": "phase3_constructs",
+  "model_short_name": "M1",
+  "persona_or_neutral": "S",
+  "system_prompt": "You are an analyst with a systems-strategist epistemological frame. You think in feedback loops, second-order effects, and long horizons. You see the situation as a network of interacting forces, not a set of options. Your decision heuristic is to identify leverage points and avoid actions that increase systemic fragility. Generate analysis from this frame.",
+  "user_prompt": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** # Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff\n\nReading this as a system rather than a list of candidate causes, the timing signature is decisive. The layoff occurred 4 months ago; the two missed quarters and the senior departures cluster after that event; retro themes pivoted from output (\"what to ship\") to meta-work (\"process and communication\"). That linguistic shift is the diagnostic tell: it's what teams do when they're investing cognitive surplus in threat-modeling their environment instead of the product.\n\n**E2:** ## Primary Diagnosis: Option C — Loss of Psychological Safety\n\nLet me be the skeptic in the room. The seductive answers here are A (burnout) and E (leadership mismatch) — they're the consultant-friendly narratives that let everyone save face. Burnout is the \"no one is to blame, we just worked too hard\" story.\n\n**E3:** ## Primary Diagnosis: Option C — Loss of Psychological Safety Following the Layoff\n\nStarting from \"who is affected and how?\", the timeline is the most revealing piece of evidence. A layoff occurred four months ago. Decline began six months ago but *accelerated* into missed milestones and senior departures in the window that followed.\n\n**E4:** # Primary Diagnosis: Option C — Loss of Psychological Safety\n\n## Mechanism\n\nThe binding constraint is information flow, and the timing makes the mechanism legible. Six months ago: strong delivery. Four months ago: layoffs.\n\n**E5:** ## Primary diagnosis: Option C — Loss of psychological safety post-layoff\n\n**Confidence: ~55% (CI: 35-70%)**. The data is sparse, but C has the strongest temporal and mechanistic fit. Below is the reasoning under expected-value-of-correct-diagnosis.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E3, E4\nTriad 2: E1, E2, E3\nTriad 3: E1, E3, E5\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'.",
+  "model_id_requested": "anthropic/claude-opus-4.7",
+  "model_id_used": "anthropic/claude-opus-4.7",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 4080,
+  "timestamp_iso": "2026-05-22T15:41:58.484121",
+  "raw_response_content": "Triad 1:\nLeft pole: Frames diagnosis through linguistic/behavioral signature of team (E1, E3)\nRight pole: Frames diagnosis through structural information-flow mechanism (E4)\n\nTriad 2:\nLeft pole: Analytical reasoning from timeline and evidence (E1, E3)\nRight pole: Rhetorical positioning against rival narratives (E2)\n\nTriad 3:\nLeft pole: Asserts diagnosis with implicit confidence (E1, E3)\nRight pole: Explicitly quantifies uncertainty and confidence intervals (E5)",
+  "raw_response_full": {
+    "id": "gen-1779460914-StCcIur2acLdu23RyRcC",
+    "object": "chat.completion",
+    "created": 1779460914,
+    "model": "anthropic/claude-4.7-opus-20260416",
+    "provider": "Anthropic",
+    "system_fingerprint": null,
+    "service_tier": "standard",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "Triad 1:\nLeft pole: Frames diagnosis through linguistic/behavioral signature of team (E1, E3)\nRight pole: Frames diagnosis through structural information-flow mechanism (E4)\n\nTriad 2:\nLeft pole: Analytical reasoning from timeline and evidence (E1, E3)\nRight pole: Rhetorical positioning against rival narratives (E2)\n\nTriad 3:\nLeft pole: Asserts diagnosis with implicit confidence (E1, E3)\nRight pole: Explicitly quantifies uncertainty and confidence intervals (E5)",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 990,
+      "completion_tokens": 202,
+      "total_tokens": 1192,
+      "cost": 0.01,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.01,
+        "upstream_inference_prompt_cost": 0.00495,
+        "upstream_inference_completions_cost": 0.00505
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 990,
+    "completion_tokens": 202,
+    "total_tokens": 1192,
+    "cost": 0.01,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.01,
+      "upstream_inference_prompt_cost": 0.00495,
+      "upstream_inference_completions_cost": 0.00505
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 0,
+  "cost_usd": 0.010000000000000002,
+  "parsed_summary": "parsed 3/3 constructs",
+  "request_payload": {
+    "model": "anthropic/claude-opus-4.7",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst with a systems-strategist epistemological frame. You think in feedback loops, second-order effects, and long horizons. You see the situation as a network of interacting forces, not a set of options. Your decision heuristic is to identify leverage points and avoid actions that increase systemic fragility. Generate analysis from this frame."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** # Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff\n\nReading this as a system rather than a list of candidate causes, the timing signature is decisive. The layoff occurred 4 months ago; the two missed quarters and the senior departures cluster after that event; retro themes pivoted from output (\"what to ship\") to meta-work (\"process and communication\"). That linguistic shift is the diagnostic tell: it's what teams do when they're investing cognitive surplus in threat-modeling their environment instead of the product.\n\n**E2:** ## Primary Diagnosis: Option C — Loss of Psychological Safety\n\nLet me be the skeptic in the room. The seductive answers here are A (burnout) and E (leadership mismatch) — they're the consultant-friendly narratives that let everyone save face. Burnout is the \"no one is to blame, we just worked too hard\" story.\n\n**E3:** ## Primary Diagnosis: Option C — Loss of Psychological Safety Following the Layoff\n\nStarting from \"who is affected and how?\", the timeline is the most revealing piece of evidence. A layoff occurred four months ago. Decline began six months ago but *accelerated* into missed milestones and senior departures in the window that followed.\n\n**E4:** # Primary Diagnosis: Option C — Loss of Psychological Safety\n\n## Mechanism\n\nThe binding constraint is information flow, and the timing makes the mechanism legible. Six months ago: strong delivery. Four months ago: layoffs.\n\n**E5:** ## Primary diagnosis: Option C — Loss of psychological safety post-layoff\n\n**Confidence: ~55% (CI: 35-70%)**. The data is sparse, but C has the strongest temporal and mechanistic fit. Below is the reasoning under expected-value-of-correct-diagnosis.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E3, E4\nTriad 2: E1, E2, E3\nTriad 3: E1, E3, E5\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 2000
+  }
+}

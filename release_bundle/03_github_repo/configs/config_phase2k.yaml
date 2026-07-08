@@ -1,0 +1,191 @@
+# Phase 2K - paired N-P design для replication 2.3x Lab>Persona finding
+# на 11 моделях (вместо 5 в Phase 1).
+#
+# Стратегия: переиспользовать Phase 2J N cells (free_responses, constructs,
+# element_mapping) и добавить ТОЛЬКО ratings под persona-промптом.
+# Это даёт прямое сравнение: одна и та же модель оценивает ОДНО И ТО ЖЕ
+# (тот же конструкт, тот же элемент) под N и под P. Чистая paired comparison.
+#
+# Цель измерения:
+#   - rating_N[model, construct, element] - уже есть в Phase 2J N cells
+#   - rating_P[model, construct, element] - НОВЫЕ ratings из Phase 2K
+#   - Persona effect = within-model variance of (rating_N - rating_P)
+#   - Lab variance = across-model variance of rating_N (уже было)
+#   - Ratio = Lab / Persona, целевое значение ≈ 2.3 (replication Phase 1)
+#
+# Стоимость: 7 задач × 11 моделей × 1 API call = 77 calls
+#            ~$0.10/call avg = ~$8-10 total. Безопасно в бюджете.
+# Время:     ~30-45 минут wall clock.
+
+experiment:
+  name: archipelago_phase2k_paired
+  description: Phase 2K - paired N-P replication of Lab>Persona finding on 11 models
+  total_budget_usd: 20         # буфер - реальный спенд ожидаем $8-10
+  estimated_budget_usd: 10
+  output_dir: ./results_phase2k
+  log_dir: ./logs_phase2k
+  # Указываем, где брать N data для reuse
+  input_phase: results_phase2j  # читаем эти cells как fixed input
+
+openrouter:
+  base_url: https://openrouter.ai/api/v1
+  api_key_env: OPENROUTER_API_KEY
+  retries_per_call: 3
+  retry_backoff_seconds: [2, 5, 15]
+  request_timeout_seconds: 180
+
+# 11 моделей - те же, что Phase 2J
+models:
+  - id: anthropic/claude-opus-4.7
+    fallback_id: anthropic/claude-sonnet-4.6
+    family: anthropic
+    short_name: M1
+  - id: openai/gpt-5.5
+    fallback_id: openai/gpt-5.4
+    family: openai
+    short_name: M2
+  - id: google/gemini-3.1-pro-preview
+    fallback_id: google/gemini-2.5-pro
+    family: google
+    short_name: M3
+  - id: deepseek/deepseek-v4-pro
+    fallback_id: deepseek/deepseek-v4-flash
+    family: deepseek
+    short_name: M4
+  - id: moonshotai/kimi-k2.6
+    fallback_id: moonshotai/kimi-k2.5
+    family: moonshot
+    short_name: M5
+  - id: mistralai/mistral-large-2512
+    fallback_id: mistralai/mistral-large-2411
+    family: mistral
+    short_name: M6
+  - id: cohere/command-a
+    fallback_id: cohere/command-r-plus-08-2024
+    family: cohere
+    short_name: M7
+  - id: qwen/qwen3.7-max
+    fallback_id: qwen/qwen3.6-max-preview
+    family: qwen
+    short_name: M8
+  - id: meta-llama/llama-4-maverick
+    fallback_id: meta-llama/llama-3.3-70b-instruct
+    family: meta
+    short_name: M9
+  - id: x-ai/grok-4.20
+    fallback_id: x-ai/grok-4.3
+    family: xai
+    short_name: M10
+  - id: anthropic/claude-opus-4.8        # canonical slug - FIX из Phase 2J
+    fallback_id: anthropic/claude-opus-4.7
+    family: anthropic
+    short_name: M11
+
+parameters:
+  ratings:
+    temperature: 0.0
+    max_tokens: 12000
+
+# 7 задач (использовать ALL constructs and elements из Phase 2J N cells)
+tasks:
+  - A
+  - B
+  - C
+  - D
+  - E
+  - F
+  - G
+
+# Latin square: каждая (task, model) пара получает одну персону.
+# Используем те же assignments, что Phase 2J P cells - чтобы было сравнимо
+# с уже существующими Phase 2J P ratings (вторичная sanity check).
+persona_assignment:
+  A:
+    M1: Q
+    M2: S
+    M3: E
+    M4: H
+    M5: C
+    M6: E
+    M7: Q
+    M8: C
+    M9: H
+    M10: S
+    M11: H
+  B:
+    M1: S
+    M2: E
+    M3: H
+    M4: C
+    M5: Q
+    M6: H
+    M7: S
+    M8: Q
+    M9: E
+    M10: C
+    M11: E
+  C:
+    M1: E
+    M2: H
+    M3: C
+    M4: Q
+    M5: S
+    M6: C
+    M7: E
+    M8: S
+    M9: H
+    M10: Q
+    M11: H
+  D:
+    M1: H
+    M2: C
+    M3: Q
+    M4: S
+    M5: E
+    M6: Q
+    M7: H
+    M8: E
+    M9: C
+    M10: S
+    M11: C
+  E:
+    M1: C
+    M2: Q
+    M3: S
+    M4: E
+    M5: H
+    M6: Q
+    M7: C
+    M8: H
+    M9: S
+    M10: E
+    M11: Q
+  F:
+    M1: Q
+    M2: S
+    M3: E
+    M4: H
+    M5: C
+    M6: E
+    M7: Q
+    M8: C
+    M9: H
+    M10: S
+    M11: S
+  G:
+    M1: S
+    M2: E
+    M3: H
+    M4: C
+    M5: Q
+    M6: H
+    M7: S
+    M8: Q
+    M9: E
+    M10: C
+    M11: E
+
+preflight:
+  verify_api_key: true
+  verify_model_ids: true
+  estimate_cost: true

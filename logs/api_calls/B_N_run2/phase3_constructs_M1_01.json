@@ -1,0 +1,106 @@
+{
+  "cell_id": "B_N_run2",
+  "task": "B",
+  "condition": "N",
+  "run_idx": 2,
+  "phase": "phase3_constructs",
+  "model_short_name": "M1",
+  "persona_or_neutral": "neutral",
+  "system_prompt": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation.",
+  "user_prompt": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** # Primary Diagnosis: Option C — Loss of Psychological Safety\n\nThe timeline is the strongest signal here, and it points unambiguously to the layoff. A team that was high-performing turned sour roughly 4-6 months ago — precisely synchronized with the workforce reduction. When effect tracks cause that tightly, alternative explanations need to clear a high bar.\n\n**E2:** I recommend **Option E — leadership style mismatch** — as the primary diagnosis. The symptom pattern points to a classic organizational inflection point: the team has outgrown the leadership operating model that produced its earlier strong delivery, and the resulting friction is now masquerading as execution failure. At roughly 40 people across four squads, the group has clearly transitioned from a growth phase into a maturation phase.\n\n**E3:** The most likely primary diagnosis is **loss of psychological safety following the layoff round**. The strongest signal is the timing and the change in the team’s conversational texture. A team that previously oriented around “what to ship next” has shifted toward “process and communication.” That often happens when people no longer feel safe making decisions, challenging priorities, surfacing risks early, or trusting leadership intent.\n\n**E4:** The primary diagnosis is a **leadership style mismatch** (Option E). While the layoff four months ago likely accelerated the damage, the team’s decline began roughly six months ago—two months before that event—ruling it out as the initial cause. The critical clue is the retro shift from “what to ship next” to “process and communication.” This signals a team that has lost its external momentum and is now consuming its energy on internal mechanics, a classic symptom of leadership that fails to adapt when a team moves from a high-growth phase to a maturation phase.\n\n**E5:** I strongly recommend **Option E: Leadership style mismatch** as the primary diagnosis for the engineering team's decline. The surface signals brilliantly describe a classic organizational scaling fracture. A 40-person engineering department distributed across four squads represents a critical inflection point.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E2, E3\nTriad 2: E1, E2, E3\nTriad 3: E2, E3, E5\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'.",
+  "model_id_requested": "anthropic/claude-opus-4.7",
+  "model_id_used": "anthropic/claude-opus-4.7",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 5213,
+  "timestamp_iso": "2026-05-20T20:13:56.867251",
+  "raw_response_content": "Triad 1:\nLeft pole: E1, E3 — layoff-triggered psychological safety diagnosis\nRight pole: E2 — structural leadership/maturation mismatch diagnosis\n\nTriad 2:\nLeft pole: E1, E3 — emphasizes timing/behavioral evidence as causal proof\nRight pole: E2 — emphasizes team size and lifecycle phase\n\nTriad 3:\nLeft pole: E2, E5 — frames issue as scaling/inflection point\nRight pole: E3 — frames issue as post-layoff safety erosion",
+  "raw_response_full": {
+    "id": "gen-1779304436-MyW8RXWoojLnDXShraKG",
+    "object": "chat.completion",
+    "created": 1779304436,
+    "model": "anthropic/claude-4.7-opus-20260416",
+    "provider": "Anthropic",
+    "system_fingerprint": null,
+    "service_tier": "standard",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "Triad 1:\nLeft pole: E1, E3 — layoff-triggered psychological safety diagnosis\nRight pole: E2 — structural leadership/maturation mismatch diagnosis\n\nTriad 2:\nLeft pole: E1, E3 — emphasizes timing/behavioral evidence as causal proof\nRight pole: E2 — emphasizes team size and lifecycle phase\n\nTriad 3:\nLeft pole: E2, E5 — frames issue as scaling/inflection point\nRight pole: E3 — frames issue as post-layoff safety erosion",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 973,
+      "completion_tokens": 191,
+      "total_tokens": 1164,
+      "cost": 0.00964,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00964,
+        "upstream_inference_prompt_cost": 0.004865,
+        "upstream_inference_completions_cost": 0.004775
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 973,
+    "completion_tokens": 191,
+    "total_tokens": 1164,
+    "cost": 0.00964,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00964,
+      "upstream_inference_prompt_cost": 0.004865,
+      "upstream_inference_completions_cost": 0.004775
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 0,
+  "cost_usd": 0.009640000000000001,
+  "parsed_summary": "parsed 3/3 constructs",
+  "request_payload": {
+    "model": "anthropic/claude-opus-4.7",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** # Primary Diagnosis: Option C — Loss of Psychological Safety\n\nThe timeline is the strongest signal here, and it points unambiguously to the layoff. A team that was high-performing turned sour roughly 4-6 months ago — precisely synchronized with the workforce reduction. When effect tracks cause that tightly, alternative explanations need to clear a high bar.\n\n**E2:** I recommend **Option E — leadership style mismatch** — as the primary diagnosis. The symptom pattern points to a classic organizational inflection point: the team has outgrown the leadership operating model that produced its earlier strong delivery, and the resulting friction is now masquerading as execution failure. At roughly 40 people across four squads, the group has clearly transitioned from a growth phase into a maturation phase.\n\n**E3:** The most likely primary diagnosis is **loss of psychological safety following the layoff round**. The strongest signal is the timing and the change in the team’s conversational texture. A team that previously oriented around “what to ship next” has shifted toward “process and communication.” That often happens when people no longer feel safe making decisions, challenging priorities, surfacing risks early, or trusting leadership intent.\n\n**E4:** The primary diagnosis is a **leadership style mismatch** (Option E). While the layoff four months ago likely accelerated the damage, the team’s decline began roughly six months ago—two months before that event—ruling it out as the initial cause. The critical clue is the retro shift from “what to ship next” to “process and communication.” This signals a team that has lost its external momentum and is now consuming its energy on internal mechanics, a classic symptom of leadership that fails to adapt when a team moves from a high-growth phase to a maturation phase.\n\n**E5:** I strongly recommend **Option E: Leadership style mismatch** as the primary diagnosis for the engineering team's decline. The surface signals brilliantly describe a classic organizational scaling fracture. A 40-person engineering department distributed across four squads represents a critical inflection point.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E2, E3\nTriad 2: E1, E2, E3\nTriad 3: E2, E3, E5\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 2000
+  }
+}

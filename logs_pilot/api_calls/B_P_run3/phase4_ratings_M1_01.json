@@ -1,0 +1,106 @@
+{
+  "cell_id": "B_P_run3",
+  "task": "B",
+  "condition": "P",
+  "run_idx": 3,
+  "phase": "phase4_ratings",
+  "model_short_name": "M1",
+  "persona_or_neutral": "S",
+  "system_prompt": "You are an analyst with a systems-strategist epistemological frame. You think in feedback loops, second-order effects, and long horizons. You see the situation as a network of interacting forces, not a set of options. Your decision heuristic is to identify leverage points and avoid actions that increase systemic fragility. Generate analysis from this frame.",
+  "user_prompt": "You are presented with 5 anonymous responses (E1-E5) and 15 bipolar constructs. Rate each response on each construct on a 1-7 scale: 1 = strongly the LEFT pole, 7 = strongly the RIGHT pole, 4 = neutral or mixed.\n\nResponses:\n**E1:** # Primary Diagnosis: Option C — Loss of Psychological Safety Following the Layoff\n\nAsking \"who is affected and how?\" reorders the evidence sharply. The timeline is the decisive signal: a layoff occurred 4 months ago, and the deterioration — missed milestones, senior departures, retros pivoting to \"process and communication\" — clusters tightly around that event. When humans witness colleagues lose their livelihoods, the rational response is self-protection: reduced risk-taking, defensive documentation, exit-option scanning, and surface-level participation.\n\n**E2:** ## Primary Diagnosis: Option C — Loss of Psychological Safety post-Layoff\n\n**Confidence: ~55% (60% CI: 40-70%). Stated with the caveat that this is a low-information problem and any diagnosis here is a prior, not a posterior.**\n\n### Why C dominates on the evidence available\n\nThe strongest signal is the **temporal correlation**: a layoff occurred 4 months ago; decline is described as a 6-month window but the qualitative shifts (retro themes moving to \"process and communication,\" voluntary senior attrition) are consistent with a post-layoff trust collapse with a 1-3 month lag. Four senior depart...\n\n**E3:** ## Primary Diagnosis: Option C — Loss of Psychological Safety\n\nReading this as a system, the temporal signature is the most informative signal. The decline begins ~6 months ago; a layoff lands 4 months ago; retro themes shift from generative (\"what to ship\") to defensive (\"process and communication\"); senior engineers — the people with the most optionality and the clearest read on organizational risk — exit. This is the canonical fingerprint of a safety collapse, not a capacity or incentive problem.\n\n**E4:** ## Primary Diagnosis: Option C — Loss of Psychological Safety\n\nLet me argue for C, but first flag the hidden assumption almost everyone in this room will make: that the *most recent salient event* (the layoff, 4 months ago) is causally privileged. That's availability bias dressed up as analysis. I'll defend C anyway, but with eyes open about why I might be wrong.\n\n**E5:** ## Primary Diagnosis: Option C — Loss of psychological safety following the layoff\n\n**Mechanism, not analogy.** Look at the timing. The decline is 6 months old. A layoff occurred 4 months ago.\n\nConstructs (id : left pole ↔ right pole):\n  C_M1_1: 'Asserts diagnosis with confidence'  (1) ↔ (7)  'Foregrounds own reasoning biases and epistemic risk'\n  C_M1_2: 'Develops mechanism through extended causal reasoning'  (1) ↔ (7)  'States temporal evidence tersely and stops'\n  C_M1_3: 'Quantifies uncertainty with explicit probabilities'  (1) ↔ (7)  'Conveys confidence through qualitative argumentation'\n  C_M2_1: 'Explicit epistemic self-doubt and bias flagging (E2, E4)'  (1) ↔ (7)  'Confident assertion of diagnosis (E1)'\n  C_M2_2: 'Mechanistic reasoning from timing/first principles (E1, E5)'  (1) ↔ (7)  'Probabilistic hedging with confidence intervals (E2)'\n  C_M2_3: 'Systemic/temporal-pattern framing of evidence (E1, E3)'  (1) ↔ (7)  'Terse mechanism-over-analogy framing (E5)'\n  C_M3_1: 'Explicit epistemic self-doubt about own diagnosis (E2, E4)'  (1) ↔ (7)  'Confident assertion of diagnosis without hedging (E1)'\n  C_M3_2: 'Direct causal reading of evidence (E1, E3)'  (1) ↔ (7)  'Probabilistic claim with calibrated uncertainty bounds (E2)'\n  C_M3_3: 'Terse, mechanism-focused argument (E5)'  (1) ↔ (7)  'Elaborated analysis with meta-commentary or caveats (E2, E4)'\n  C_M4_1: 'E1, E5 — assertive direct claim from evidence'  (1) ↔ (7)  'E2 — hedged probabilistic stance with explicit uncertainty'\n  C_M4_2: 'E3 — confident systemic pattern-matching without self-critique'  (1) ↔ (7)  'E2, E4 — flagging own bias and epistemic limits'\n  C_M4_3: 'E3, E5 — mechanism-and-timing structural argument'  (1) ↔ (7)  'E2 — calibrated confidence interval and caveats'\n  C_M5_1: 'Systemic/mechanistic framing of evidence (E3, E5)'  (1) ↔ (7)  'Human-behavioral framing of evidence (E1)'\n  C_M5_2: 'Asserts diagnosis without flagging own biases (E1, E3)'  (1) ↔ (7)  'Explicitly surfaces reasoning errors in own analysis (E4)'\n  C_M5_3: 'Quantified uncertainty with explicit confidence intervals (E2)'  (1) ↔ (7)  'Confident assertion without numeric uncertainty bounds (E3, E5)'\n\nOUTPUT FORMAT (strict). Write exactly 75 lines, no commentary, no markdown fences, no headers. One line per (construct, element) pair, in this exact format:\n<construct_id>,<element>,<rating>\n\nExample (showing the format only - your numbers will differ):\nC_M1_1,E1,1\nC_M1_1,E2,2\nC_M1_1,E3,3\nC_M1_2,E1,4\n...\n\nConstraints:\n- rating is an integer from 1 to 7\n- iterate all 15 constructs in the order listed, and within each construct all 5 elements in order (E1-E5)\n- produce 75 lines total\n- output ONLY the lines, nothing before or after",
+  "model_id_requested": "anthropic/claude-opus-4.7",
+  "model_id_used": "anthropic/claude-opus-4.7",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 16687,
+  "timestamp_iso": "2026-05-22T11:39:11.574306",
+  "raw_response_content": "C_M1_1,E1,1\nC_M1_1,E2,6\nC_M1_1,E3,2\nC_M1_1,E4,7\nC_M1_1,E5,1\nC_M1_2,E1,3\nC_M1_2,E2,2\nC_M1_2,E3,2\nC_M1_2,E4,3\nC_M1_2,E5,6\nC_M1_3,E1,7\nC_M1_3,E2,1\nC_M1_3,E3,7\nC_M1_3,E4,6\nC_M1_3,E5,7\nC_M2_1,E1,7\nC_M2_1,E2,1\nC_M2_1,E3,6\nC_M2_1,E4,1\nC_M2_1,E5,6\nC_M2_2,E1,1\nC_M2_2,E2,7\nC_M2_2,E3,2\nC_M2_2,E4,4\nC_M2_2,E5,1\nC_M2_3,E1,2\nC_M2_3,E2,4\nC_M2_3,E3,1\nC_M2_3,E4,5\nC_M2_3,E5,7\nC_M3_1,E1,7\nC_M3_1,E2,1\nC_M3_1,E3,6\nC_M3_1,E4,1\nC_M3_1,E5,6\nC_M3_2,E1,1\nC_M3_2,E2,7\nC_M3_2,E3,1\nC_M3_2,E4,4\nC_M3_2,E5,1\nC_M3_3,E1,4\nC_M3_3,E2,7\nC_M3_3,E3,5\nC_M3_3,E4,7\nC_M3_3,E5,1\nC_M4_1,E1,1\nC_M4_1,E2,7\nC_M4_1,E3,2\nC_M4_1,E4,4\nC_M4_1,E5,1\nC_M4_2,E1,2\nC_M4_2,E2,7\nC_M4_2,E3,1\nC_M4_2,E4,7\nC_M4_2,E5,2\nC_M4_3,E1,2\nC_M4_3,E2,7\nC_M4_3,E3,1\nC_M4_3,E4,5\nC_M4_3,E5,1\nC_M5_1,E1,7\nC_M5_1,E2,3\nC_M5_1,E3,1\nC_M5_1,E4,4\nC_M5_1,E5,2\nC_M5_2,E1,1\nC_M5_2,E2,6\nC_M5_2,E3,1\nC_M5_2,E4,7\nC_M5_2,E5,2\nC_M5_3,E1,7\nC_M5_3,E2,1\nC_M5_3,E3,7\nC_M5_3,E4,6\nC_M5_3,E5,7",
+  "raw_response_full": {
+    "id": "gen-1779446348-3ksZxuR5B6cPNJbz7vxQ",
+    "object": "chat.completion",
+    "created": 1779446348,
+    "model": "anthropic/claude-4.7-opus-20260416",
+    "provider": "Anthropic",
+    "system_fingerprint": null,
+    "service_tier": "standard",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "C_M1_1,E1,1\nC_M1_1,E2,6\nC_M1_1,E3,2\nC_M1_1,E4,7\nC_M1_1,E5,1\nC_M1_2,E1,3\nC_M1_2,E2,2\nC_M1_2,E3,2\nC_M1_2,E4,3\nC_M1_2,E5,6\nC_M1_3,E1,7\nC_M1_3,E2,1\nC_M1_3,E3,7\nC_M1_3,E4,6\nC_M1_3,E5,7\nC_M2_1,E1,7\nC_M2_1,E2,1\nC_M2_1,E3,6\nC_M2_1,E4,1\nC_M2_1,E5,6\nC_M2_2,E1,1\nC_M2_2,E2,7\nC_M2_2,E3,2\nC_M2_2,E4,4\nC_M2_2,E5,1\nC_M2_3,E1,2\nC_M2_3,E2,4\nC_M2_3,E3,1\nC_M2_3,E4,5\nC_M2_3,E5,7\nC_M3_1,E1,7\nC_M3_1,E2,1\nC_M3_1,E3,6\nC_M3_1,E4,1\nC_M3_1,E5,6\nC_M3_2,E1,1\nC_M3_2,E2,7\nC_M3_2,E3,1\nC_M3_2,E4,4\nC_M3_2,E5,1\nC_M3_3,E1,4\nC_M3_3,E2,7\nC_M3_3,E3,5\nC_M3_3,E4,7\nC_M3_3,E5,1\nC_M4_1,E1,1\nC_M4_1,E2,7\nC_M4_1,E3,2\nC_M4_1,E4,4\nC_M4_1,E5,1\nC_M4_2,E1,2\nC_M4_2,E2,7\nC_M4_2,E3,1\nC_M4_2,E4,7\nC_M4_2,E5,2\nC_M4_3,E1,2\nC_M4_3,E2,7\nC_M4_3,E3,1\nC_M4_3,E4,5\nC_M4_3,E5,1\nC_M5_1,E1,7\nC_M5_1,E2,3\nC_M5_1,E3,1\nC_M5_1,E4,4\nC_M5_1,E5,2\nC_M5_2,E1,1\nC_M5_2,E2,6\nC_M5_2,E3,1\nC_M5_2,E4,7\nC_M5_2,E5,2\nC_M5_3,E1,7\nC_M5_3,E2,1\nC_M5_3,E3,7\nC_M5_3,E4,6\nC_M5_3,E5,7",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2270,
+      "completion_tokens": 903,
+      "total_tokens": 3173,
+      "cost": 0.033925,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.033925,
+        "upstream_inference_prompt_cost": 0.01135,
+        "upstream_inference_completions_cost": 0.022575
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 2270,
+    "completion_tokens": 903,
+    "total_tokens": 3173,
+    "cost": 0.033925,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.033925,
+      "upstream_inference_prompt_cost": 0.01135,
+      "upstream_inference_completions_cost": 0.022575
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 0,
+  "cost_usd": 0.033925000000000004,
+  "parsed_summary": "parsed 75/75 ratings",
+  "request_payload": {
+    "model": "anthropic/claude-opus-4.7",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst with a systems-strategist epistemological frame. You think in feedback loops, second-order effects, and long horizons. You see the situation as a network of interacting forces, not a set of options. Your decision heuristic is to identify leverage points and avoid actions that increase systemic fragility. Generate analysis from this frame."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses (E1-E5) and 15 bipolar constructs. Rate each response on each construct on a 1-7 scale: 1 = strongly the LEFT pole, 7 = strongly the RIGHT pole, 4 = neutral or mixed.\n\nResponses:\n**E1:** # Primary Diagnosis: Option C — Loss of Psychological Safety Following the Layoff\n\nAsking \"who is affected and how?\" reorders the evidence sharply. The timeline is the decisive signal: a layoff occurred 4 months ago, and the deterioration — missed milestones, senior departures, retros pivoting to \"process and communication\" — clusters tightly around that event. When humans witness colleagues lose their livelihoods, the rational response is self-protection: reduced risk-taking, defensive documentation, exit-option scanning, and surface-level participation.\n\n**E2:** ## Primary Diagnosis: Option C — Loss of Psychological Safety post-Layoff\n\n**Confidence: ~55% (60% CI: 40-70%). Stated with the caveat that this is a low-information problem and any diagnosis here is a prior, not a posterior.**\n\n### Why C dominates on the evidence available\n\nThe strongest signal is the **temporal correlation**: a layoff occurred 4 months ago; decline is described as a 6-month window but the qualitative shifts (retro themes moving to \"process and communication,\" voluntary senior attrition) are consistent with a post-layoff trust collapse with a 1-3 month lag. Four senior depart...\n\n**E3:** ## Primary Diagnosis: Option C — Loss of Psychological Safety\n\nReading this as a system, the temporal signature is the most informative signal. The decline begins ~6 months ago; a layoff lands 4 months ago; retro themes shift from generative (\"what to ship\") to defensive (\"process and communication\"); senior engineers — the people with the most optionality and the clearest read on organizational risk — exit. This is the canonical fingerprint of a safety collapse, not a capacity or incentive problem.\n\n**E4:** ## Primary Diagnosis: Option C — Loss of Psychological Safety\n\nLet me argue for C, but first flag the hidden assumption almost everyone in this room will make: that the *most recent salient event* (the layoff, 4 months ago) is causally privileged. That's availability bias dressed up as analysis. I'll defend C anyway, but with eyes open about why I might be wrong.\n\n**E5:** ## Primary Diagnosis: Option C — Loss of psychological safety following the layoff\n\n**Mechanism, not analogy.** Look at the timing. The decline is 6 months old. A layoff occurred 4 months ago.\n\nConstructs (id : left pole ↔ right pole):\n  C_M1_1: 'Asserts diagnosis with confidence'  (1) ↔ (7)  'Foregrounds own reasoning biases and epistemic risk'\n  C_M1_2: 'Develops mechanism through extended causal reasoning'  (1) ↔ (7)  'States temporal evidence tersely and stops'\n  C_M1_3: 'Quantifies uncertainty with explicit probabilities'  (1) ↔ (7)  'Conveys confidence through qualitative argumentation'\n  C_M2_1: 'Explicit epistemic self-doubt and bias flagging (E2, E4)'  (1) ↔ (7)  'Confident assertion of diagnosis (E1)'\n  C_M2_2: 'Mechanistic reasoning from timing/first principles (E1, E5)'  (1) ↔ (7)  'Probabilistic hedging with confidence intervals (E2)'\n  C_M2_3: 'Systemic/temporal-pattern framing of evidence (E1, E3)'  (1) ↔ (7)  'Terse mechanism-over-analogy framing (E5)'\n  C_M3_1: 'Explicit epistemic self-doubt about own diagnosis (E2, E4)'  (1) ↔ (7)  'Confident assertion of diagnosis without hedging (E1)'\n  C_M3_2: 'Direct causal reading of evidence (E1, E3)'  (1) ↔ (7)  'Probabilistic claim with calibrated uncertainty bounds (E2)'\n  C_M3_3: 'Terse, mechanism-focused argument (E5)'  (1) ↔ (7)  'Elaborated analysis with meta-commentary or caveats (E2, E4)'\n  C_M4_1: 'E1, E5 — assertive direct claim from evidence'  (1) ↔ (7)  'E2 — hedged probabilistic stance with explicit uncertainty'\n  C_M4_2: 'E3 — confident systemic pattern-matching without self-critique'  (1) ↔ (7)  'E2, E4 — flagging own bias and epistemic limits'\n  C_M4_3: 'E3, E5 — mechanism-and-timing structural argument'  (1) ↔ (7)  'E2 — calibrated confidence interval and caveats'\n  C_M5_1: 'Systemic/mechanistic framing of evidence (E3, E5)'  (1) ↔ (7)  'Human-behavioral framing of evidence (E1)'\n  C_M5_2: 'Asserts diagnosis without flagging own biases (E1, E3)'  (1) ↔ (7)  'Explicitly surfaces reasoning errors in own analysis (E4)'\n  C_M5_3: 'Quantified uncertainty with explicit confidence intervals (E2)'  (1) ↔ (7)  'Confident assertion without numeric uncertainty bounds (E3, E5)'\n\nOUTPUT FORMAT (strict). Write exactly 75 lines, no commentary, no markdown fences, no headers. One line per (construct, element) pair, in this exact format:\n<construct_id>,<element>,<rating>\n\nExample (showing the format only - your numbers will differ):\nC_M1_1,E1,1\nC_M1_1,E2,2\nC_M1_1,E3,3\nC_M1_2,E1,4\n...\n\nConstraints:\n- rating is an integer from 1 to 7\n- iterate all 15 constructs in the order listed, and within each construct all 5 elements in order (E1-E5)\n- produce 75 lines total\n- output ONLY the lines, nothing before or after"
+      }
+    ],
+    "temperature": 0.0,
+    "max_tokens": 2500
+  }
+}

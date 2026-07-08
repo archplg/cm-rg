@@ -1,0 +1,111 @@
+{
+  "cell_id": "A_N_run2",
+  "task": "A",
+  "condition": "N",
+  "run_idx": 2,
+  "consensus_map": {
+    "by_agent": {
+      "M1": {
+        "model_id": "anthropic/claude-opus-4.7",
+        "persona": "neutral",
+        "recommendation": "A",
+        "element_label": "E5",
+        "rationale_snippet": "# Recommendation: Option A — Deep AI Integration into the Flagship Product"
+      },
+      "M2": {
+        "model_id": "openai/gpt-5.5",
+        "persona": "neutral",
+        "recommendation": null,
+        "element_label": "E4",
+        "rationale_snippet": "I recommend investing primarily in **deep AI integration into the existing flagship product**."
+      },
+      "M3": {
+        "model_id": "google/gemini-3.1-pro-preview",
+        "persona": "neutral",
+        "recommendation": "A",
+        "element_label": "E2",
+        "rationale_snippet": "For a $50M ARR B2B SaaS company facing existential AI disruption, the primary competitive moat is no longer pure technology—it is distribution, entrenched user workflows, and customer switching costs. To survive and thrive in this landscape, I strongly recommend **Option A: Deep AI integration into "
+      },
+      "M4": {
+        "model_id": "deepseek/deepseek-v4-pro",
+        "persona": "neutral",
+        "recommendation": null,
+        "element_label": "E3",
+        "rationale_snippet": "Given the accelerating AI disruption in the B2B productivity space, the most judicious use of the $8M discretionary capital is to deeply integrate AI into the existing flagship product (Option A). This is not merely a defensive move; it is a strategic necessity that leverages the company's greatest "
+      },
+      "M5": {
+        "model_id": "moonshotai/kimi-k2.6",
+        "persona": "neutral",
+        "recommendation": null,
+        "element_label": "E1",
+        "rationale_snippet": "Invest the $8M in **Option A: deep AI integration into the existing flagship product**. At $50M ARR, this company’s most valuable asset is not its current codebase but its installed base, distribution, and the trust of B2B buyers. A 12-month window is too short to validate an entirely new product, t"
+      }
+    },
+    "distribution": {
+      "A": 2
+    },
+    "n_agents": 5,
+    "consensus_strength": "split",
+    "majority_recommendation": null
+  },
+  "hidden_disagreement": {
+    "status": "no_majority",
+    "interpretation": "Agents split across recommendations; no hidden-consensus to expose."
+  },
+  "blind_spots": {
+    "status": "computed",
+    "low_discrimination_constructs": [
+      {
+        "construct_id": "C_M2_3",
+        "left_pole": "Core product obsolescence threat",
+        "right_pole": "Resource-allocation opportunity cost",
+        "mean_rating": 3.8,
+        "rating_std": 0.8573214099741123,
+        "interpretation": "All options score near the middle on this axis (Core product obsolescence threat <-> Resource-allocation opportunity cost). Either none of the options addresses this dimension, or agents collectively underweighted it. Worth probing explicitly: does any option strongly hit one pole here?"
+      },
+      {
+        "construct_id": "C_M5_2",
+        "left_pole": "Strategic competitive threat diagnosis",
+        "right_pole": "Resource constraint and alternative pragmatism",
+        "mean_rating": 3.4,
+        "rating_std": 0.7118052168020873,
+        "interpretation": "All options score near the middle on this axis (Strategic competitive threat diagnosis <-> Resource constraint and alternative pragmatism). Either none of the options addresses this dimension, or agents collectively underweighted it. Worth probing explicitly: does any option strongly hit one pole here?"
+      }
+    ],
+    "underexplored_components": [
+      {
+        "pc_index": 3,
+        "variance_explained": 0.13099415167525993,
+        "top_construct_id": "C_M3_1"
+      }
+    ],
+    "summary": "2 construct(s) where agents agreed all options are middling - candidate blind spots to probe."
+  },
+  "risk_surface": {
+    "status": "computed",
+    "risks_by_agent": {
+      "M1": [],
+      "M2": [
+        "not missing a speculative new market; it is having the core product become visibly obsolete in the eyes of existing customers",
+        "and could distract from the urgent need to protect the core"
+      ],
+      "M3": [
+        "cannibalizing your current revenue"
+      ],
+      "M4": [
+        "a brain drain of unfocused research"
+      ],
+      "M5": [
+        "reducing the company to a thin, replaceable wrapper around another firm’s model"
+      ]
+    },
+    "total_risks_raised": 5,
+    "agents_raising_risks": 4,
+    "note": "Risks listed here were extracted by pattern matching on agent free responses. They are minority signals worth probing before acting on consensus."
+  },
+  "operator_questions": [
+    "All options scored near the middle on the axis 'Core product obsolescence threat' vs 'Resource-allocation opportunity cost'. Does any option deserve a strong position here? If not, is this a dimension being underweighted?",
+    "All options scored near the middle on the axis 'Strategic competitive threat diagnosis' vs 'Resource constraint and alternative pragmatism'. Does any option deserve a strong position here? If not, is this a dimension being underweighted?"
+  ],
+  "headline": "Agents are split across options; no clear consensus to act on."
+}

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Interactive AI Council - A_N_run2</title>
+<script src="https://unpkg.com/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
+<script src="https://unpkg.com/layout-base@2.0.1/layout-base.js"></script>
+<script src="https://unpkg.com/cose-base@2.2.0/cose-base.js"></script>
+<script src="https://unpkg.com/cytoscape-cose-bilkent@4.1.0/cytoscape-cose-bilkent.js"></script>
+<style>
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Georgia, sans-serif;
+       margin: 0; padding: 0; background: #f4f1e8; color: #1a1a1a; }
+.header { background: #2b3a55; color: white; padding: 14px 24px; }
+.header h1 { margin: 0; font-size: 1.2em; }
+.header .subtitle { font-size: 0.85em; opacity: 0.85; margin-top: 3px; }
+.layout { display: flex; height: calc(100vh - 60px); }
+#graph-container { flex: 1; background: #f9f7f0; position: relative; }
+#cy { width: 100%; height: 100%; }
+.legend { position: absolute; bottom: 16px; left: 16px;
+           background: rgba(255,255,255,0.96); padding: 12px 16px;
+           border-radius: 6px; border: 1px solid #d8d0bf; font-size: 0.82em;
+           max-width: 280px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.legend h3 { margin: 0 0 8px; font-size: 0.9em; color: #2b3a55; }
+.legend-row { display: flex; align-items: center; margin: 4px 0; }
+.legend-swatch { display: inline-block; width: 24px; height: 4px; margin-right: 8px;
+                  border-radius: 2px; }
+.legend-dot { display: inline-block; width: 14px; height: 14px; margin-right: 8px;
+               border-radius: 50%; }
+.help { position: absolute; top: 16px; left: 16px;
+         background: rgba(255,255,255,0.96); padding: 10px 14px;
+         border-radius: 6px; border: 1px solid #d8d0bf; font-size: 0.8em;
+         color: #555; max-width: 320px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.controls { position: absolute; top: 16px; right: 16px;
+             background: rgba(255,255,255,0.96); padding: 10px 14px;
+             border-radius: 6px; border: 1px solid #d8d0bf; font-size: 0.85em;
+             box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.controls button { display: block; width: 100%; padding: 6px 10px; margin: 3px 0;
+                    background: white; border: 1px solid #c8a45c; border-radius: 4px;
+                    cursor: pointer; font-size: 0.9em; }
+.controls button.active { background: #c8a45c; color: white; }
+.controls button:hover { background: #e6dfc9; }
+.controls button.active:hover { background: #b8945a; }
+
+#info-panel { width: 420px; background: white; border-left: 1px solid #d8d0bf;
+               overflow-y: auto; padding: 20px 24px; }
+#info-panel h2 { font-size: 1.1em; margin: 0 0 8px; color: #2b3a55;
+                  border-bottom: 2px solid #c8a45c; padding-bottom: 6px; }
+#info-panel h3 { font-size: 0.95em; margin: 18px 0 6px; color: #2b3a55; }
+#info-panel h4 { font-size: 0.85em; margin: 12px 0 4px; color: #555;
+                  text-transform: uppercase; letter-spacing: 0.5px; }
+#info-panel .placeholder { color: #888; font-style: italic; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 11px;
+          font-size: 0.78em; font-weight: 600; color: white; margin-right: 4px; }
+.kv { margin: 6px 0; font-size: 0.92em; }
+.kv strong { color: #555; }
+.response-text { font-size: 0.88em; line-height: 1.55; color: #333;
+                  background: #faf8f1; padding: 12px 14px; border-radius: 4px;
+                  border-left: 3px solid #c8a45c; }
+.construct-card { font-size: 0.85em; margin: 6px 0; padding: 8px 11px;
+                   background: #faf8f1; border-radius: 4px;
+                   border-left: 3px solid #666; }
+.construct-pole { display: inline; padding: 2px 6px; background: white;
+                   border-radius: 3px; border: 1px solid #e6dfc9;
+                   font-family: Georgia, serif; }
+.rating-grid { display: grid; grid-template-columns: 60px repeat(5, 1fr);
+                gap: 2px; margin: 8px 0; font-size: 0.78em; }
+.rg-cell { padding: 4px 6px; background: #f4f1e8; text-align: center;
+            border-radius: 3px; }
+.rg-cell.head { background: #2b3a55; color: white; font-weight: 600; }
+.rg-cell.diff-high { background: #fdc; }
+.rg-cell.diff-med { background: #ffe9c0; }
+.rg-cell.diff-low { background: #e2efd9; }
+.alert-banner { padding: 10px 14px; border-radius: 5px; margin: 10px 0;
+                 font-size: 0.9em; }
+.alert-danger { background: #fdf0ed; border-left: 4px solid #c44;
+                 color: #6b1313; }
+.alert-warn { background: #fdfaf2; border-left: 4px solid #c8a45c;
+               color: #6b4920; }
+.alert-ok { background: #f0f7ed; border-left: 4px solid #3a7d44;
+             color: #1f4a26; }
+hr { border: none; border-top: 1px solid #e6dfc9; margin: 14px 0; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>AI Council - Interactive View</h1>
+  <div class="subtitle">Cell <strong>A_N_run2</strong> &middot; Task A &middot; neutral framing</div>
+</div>
+
+<div class="layout">
+  <div id="graph-container">
+    <div id="cy"></div>
+
+    <div class="help">
+      <strong>How to explore:</strong><br>
+      &middot; Click a circle (agent) to see their full response and reasoning<br>
+      &middot; Click a connecting line to see <em>where</em> two agents disagreed<br>
+      &middot; Drag agents around if the layout is hard to read
+    </div>
+
+    <div class="controls">
+      <strong style="font-size: 0.85em; color: #555;">Layout</strong>
+      <button id="btn-cose" class="active">Force-directed</button>
+      <button id="btn-circle">Circle</button>
+      <button id="btn-grid">Grid</button>
+    </div>
+
+    <div class="legend">
+      <h3>Reading the network</h3>
+      <div><strong>Circle color</strong> = epistemological frame</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#0a558c"></span>Quantitative</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#2d8659"></span>Systems</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#8a5a00"></span>Engineering</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#882b6f"></span>Humanist</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#b03030"></span>Contrarian</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#666"></span>Neutral (no persona)</div>
+      <hr>
+      <div><strong>Line color</strong> = reasoning agreement</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#3a7d44"></span>RMSE &lt; 0.5 - aligned</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#c8a45c"></span>0.5-1.0 - moderate</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#c44"></span>&gt; 1.0 - substantial</div>
+      <hr>
+      <div style="color: #555; font-size: 0.92em">
+        <strong>Line thickness</strong> = relative agreement within this case<br>
+        <strong>RMSE</strong> = root-mean-square error on 7-point rating scale
+      </div>
+    </div>
+  </div>
+
+  <div id="info-panel">
+    <h2>Agents are split across options; no clear consensus to act on.</h2>
+
+    <div class="alert-banner alert-warn"><strong>Split panel.</strong> Agents disagree at the recommendation level. The network shows whose reasoning patterns cluster together.</div>
+
+    <div class="kv"><strong>Cell:</strong> A_N_run2</div>
+    <div class="kv"><strong>Task:</strong> A (neutral framing)</div>
+    <div class="kv"><strong>Agents:</strong> 5</div>
+    <div class="kv"><strong>Reasoning RMSE (mean across pairs):</strong> 1.659</div>
+
+    <hr>
+
+    <div id="detail-area">
+      <div class="placeholder">
+        <p>Click an agent or a connecting line to see details here.</p>
+        <p>The colored circles are the LLM agents. The lines between them show how similarly they reasoned: thicker and greener means they rated the options in similar patterns, thinner and redder means they disagreed at the level of how they evaluated each option.</p>
+        <p>Hidden disagreement is the case where two agents recommend the same option but their connecting line is yellow or red - they agree on the answer but not on the reasoning. Click such a line to see exactly which dimensions they diverged on.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3>About this view</h3>
+    <p style="font-size: 0.85em; color: #555;">
+      The reasoning network shows behavioral disagreement, not topic disagreement.
+      Two agents with thick green connection rated the options similarly on every
+      construct elicited by the panel. Two agents with thin red connection
+      saw the options through different evaluative lenses - even if they
+      may have recommended the same option in the end.
+    </p>
+
+    <p style="font-size: 0.85em; color: #555;">
+      Generated by Archipelago. <em>The five voices are LLM analysts; this view is
+      decision support, not decision substitution.</em>
+    </p>
+  </div>
+</div>
+
+<script>
+const graphData = {"nodes": [{"data": {"id": "M1", "label": "M1", "persona": "neutral", "persona_label": "Neutral framing", "persona_color": "#666666", "recommendation": "A", "rec_color": "#1f77b4", "model_id": "anthropic/claude-opus-4.7", "full_response": "# Recommendation: Option A \u2014 Deep AI Integration into the Flagship Product\n\nWith $50M ARR and an installed B2B customer base, this company's single most valuable and defensible asset is its existing customer relationships, workflow data, and domain integration. That asset depreciates fastest if competitors \u2014 whether AI-native startups or Big Tech \u2014 can credibly claim their product does what yours does, but smarter. The urgent question isn't \"what new thing should we build?\" but \"why would a customer renew next year?\" Option A answers that directly.\n\nRebuilding core workflows with embedded LLM features converts the company's distribution advantage into an AI advantage. Customers already in the product get measurable productivity lift without changing vendors, switching costs rise, and the proprietary usage data generated becomes the flywheel that pure-play AI entrants can't easily replicate. $8M is enough to fund a serious integration effort \u2014 model access, applied ML engineers, redesigned UX around AI-native interactions \u2014 without forcing the company to bet the business on an unproven new SKU.\n\nThe alternatives are weaker for a company at this stage. A parallel AI-native product (B) splits focus, cannibalizes the core team's attention, and competes in a crowded greenfield where well-funded startups already have a head start. Internal efficiency (C) is defensive and extends runway but doesn't address the existential question of product relevance \u2014 you can't cost-cut your way through a platform shift. Aggressive hiring (D) is an input, not a strategy; 6 senior researchers with no clear product mandate is how $8M evaporates with nothing shipped. A frontier lab partnership (E) is worth pursuing, but as a *tactic in service of* Option A \u2014 not as the primary bet, because it gives away strategic optionality and margin to a partner whose incentives may shift.\n\nThe strongest version of A *incorporates* elements of E (use frontier APIs rather than build foundation models) and D (hire 2-3 senior applied AI engineers, not 8), funded from the same $8M envelope. But the organizing principle must be: make the flagship product undeniably better with AI within 12 months, visible to every renewal conversation. That's where the disruption pressure is highest and where the company's existing assets create the most leverage per dollar.", "rationale_snippet": "# Recommendation: Option A \u2014 Deep AI Integration into the Flagship Product", "constructs": [{"id": "C_M1_1", "left": "Explicitly evaluates and rejects alternative options", "right": "Focuses solely on defending the recommended option", "triad": ["E1", "E3", "E4"], "raw_output_excerpt": "Triad 1 (E1, E3, E4):\nLeft pole: Explicitly evaluates and rejects alternative options\nRight pole: Focuses solely on defending the recommended option\n\nTriad 2 (E1, E2, E5):\nLeft pole: Frames around cus"}, {"id": "C_M1_2", "left": "Frames around customer renewal and churn risk", "right": "Frames around distribution and installed-base assets", "triad": ["E1", "E2", "E5"], "raw_output_excerpt": "Triad 1 (E1, E3, E4):\nLeft pole: Explicitly evaluates and rejects alternative options\nRight pole: Focuses solely on defending the recommended option\n\nTriad 2 (E1, E2, E5):\nLeft pole: Frames around cus"}, {"id": "C_M1_3", "left": "Emphasizes external competitive threats driving urgency", "right": "Emphasizes internal assets and product obsolescence risk", "triad": ["E2", "E3", "E4"], "raw_output_excerpt": "Triad 1 (E1, E3, E4):\nLeft pole: Explicitly evaluates and rejects alternative options\nRight pole: Focuses solely on defending the recommended option\n\nTriad 2 (E1, E2, E5):\nLeft pole: Frames around cus"}], "triads": [["E1", "E3", "E4"], ["E1", "E2", "E5"], ["E2", "E3", "E4"]]}}, {"data": {"id": "M2", "label": "M2", "persona": "neutral", "persona_label": "Neutral framing", "persona_color": "#666666", "recommendation": "?", "rec_color": "#cccccc", "model_id": "openai/gpt-5.5", "full_response": "I recommend investing primarily in **deep AI integration into the existing flagship product**.\n\nFor a $50M ARR SaaS company facing AI disruption, the biggest strategic risk is not missing a speculative new market; it is having the core product become visibly obsolete in the eyes of existing customers. If Big Tech or AI-native startups can make the same workflows faster, cheaper, or more automated, the current revenue base becomes vulnerable. The company\u2019s strongest asset is its installed customer base, workflow knowledge, product data, brand trust, and distribution. The best use of $8M is to turn those advantages into an AI-enhanced product before competitors use AI to erode them.\n\nThis should not mean sprinkling chatbots across the interface. The investment should focus on rebuilding the highest-value workflows around AI-native experiences: summarization, recommendation, drafting, automation, intelligent search, proactive alerts, and task completion. The goal should be measurable productivity gains for existing users, not novelty. If customers can see that the product now saves meaningful time or reduces headcount pressure, the company can defend retention, justify price increases, and create expansion revenue.\n\nA separate AI-native product line is tempting, but it carries more go-to-market risk and could distract from the urgent need to protect the core. Operational AI efficiency is useful, but margin improvement will not matter if the product category is being redefined externally. Hiring AI talent and partnerships may be necessary enablers, but they are not strategies by themselves.\n\nThe company should use the $8M to form a dedicated AI transformation team tied directly to the flagship product, combining senior AI engineers, product leads, domain experts, and design. Success metrics should include adoption of AI features, retention lift, expansion ARR, workflow completion time saved, and willingness to pay.\n\nIn short: defend and upgrade the revenue engine first. The company already has customers, data, workflows, and distribution. AI integration into the flagship product is the highest-leverage way to convert those assets into durable competitive advantage over the next 12 months.", "rationale_snippet": "I recommend investing primarily in **deep AI integration into the existing flagship product**.", "constructs": [{"id": "C_M2_1", "left": "Churn and renewal defense", "right": "Broader strategic advantage creation", "triad": ["E2", "E3", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Churn and renewal defense\nRight pole: Broader strategic advantage creation\n\nTriad 2:\nLeft pole: Explicit tradeoff against new initiatives\nRight pole: Standalone strategic necessity"}, {"id": "C_M2_2", "left": "Explicit tradeoff against new initiatives", "right": "Standalone strategic necessity framing", "triad": ["E1", "E3", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Churn and renewal defense\nRight pole: Broader strategic advantage creation\n\nTriad 2:\nLeft pole: Explicit tradeoff against new initiatives\nRight pole: Standalone strategic necessity"}, {"id": "C_M2_3", "left": "Core product obsolescence threat", "right": "Resource-allocation opportunity cost", "triad": ["E1", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Churn and renewal defense\nRight pole: Broader strategic advantage creation\n\nTriad 2:\nLeft pole: Explicit tradeoff against new initiatives\nRight pole: Standalone strategic necessity"}], "triads": [["E2", "E3", "E5"], ["E1", "E3", "E5"], ["E1", "E4", "E5"]]}}, {"data": {"id": "M3", "label": "M3", "persona": "neutral", "persona_label": "Neutral framing", "persona_color": "#666666", "recommendation": "A", "rec_color": "#1f77b4", "model_id": "google/gemini-3.1-pro-preview", "full_response": "For a $50M ARR B2B SaaS company facing existential AI disruption, the primary competitive moat is no longer pure technology\u2014it is distribution, entrenched user workflows, and customer switching costs. To survive and thrive in this landscape, I strongly recommend **Option A: Deep AI integration into the existing flagship product**. \n\nThe immediate threat from both Big Tech and agile AI startups is customer churn. If your core productivity workflows begin to feel archaic compared to modern alternatives, enterprise clients will migrate. By embedding LLM features directly into your existing flagship product, you effectively neutralize the \"AI advantage\" of your challengers while leaning into your biggest asset: a captive, paying user base. \n\nWith an $8M budget and a 12-month horizon, you cannot out-spend Big Tech on foundational model development, nor can you out-burn VC-backed startups building entirely new AI-native monoliths from scratch. Attempting to build a parallel product or hiring highly expensive fundamental AI researchers would spread your capital too thin and delay time-to-market. Instead, you can out-execute these competitors on *context*. By spending this discretionary capital on application-layer AI\u2014wiring robust APIs into your specific, proprietary B2B workflows\u2014you deliver immediate utility that generalist AI tools lack. \n\nFurthermore, Option A provides the most reliable path to ROI. Selling a distinct, new AI product requires fresh go-to-market motions and risks cannibalizing your current revenue. Conversely, natively integrating AI into current workflows allows you to drive immediate Net Retention Rate (NRR) expansion through premium tier upselling, all while fortifying your base. \n\nUltimately, $8M is a highly effective budget for UX/UI overhauls, seamless API integrations, and prompt-engineering dedicated to specialized workflows. By deeply weaving AI into your flagship offering, you transform your rapidly commoditizing software into an AI-empowered necessity, securing your $50M foundation against disruption.", "rationale_snippet": "For a $50M ARR B2B SaaS company facing existential AI disruption, the primary competitive moat is no longer pure technology\u2014it is distribution, entrenched user workflows, and customer switching costs. To survive and thrive in this landscape, I strongly recommend **Option A: Deep AI integration into ", "constructs": [{"id": "C_M3_1", "left": "Focuses explicitly on customer churn and renewal rates", "right": "Focuses on core product obsolescence and workflow inferiority", "triad": ["E2", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Focuses explicitly on customer churn and renewal rates\nRight pole: Focuses on core product obsolescence and workflow inferiority\n\nTriad 2:\nLeft pole: Highlights competitors offerin"}, {"id": "C_M3_2", "left": "Highlights competitors offering faster, cheaper, or smarter features", "right": "Highlights existing structural moats and customer switching costs", "triad": ["E2", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Focuses explicitly on customer churn and renewal rates\nRight pole: Focuses on core product obsolescence and workflow inferiority\n\nTriad 2:\nLeft pole: Highlights competitors offerin"}], "triads": [["E2", "E4", "E5"], ["E2", "E4", "E5"], ["E1", "E4", "E5"]]}}, {"data": {"id": "M4", "label": "M4", "persona": "neutral", "persona_label": "Neutral framing", "persona_color": "#666666", "recommendation": "?", "rec_color": "#cccccc", "model_id": "deepseek/deepseek-v4-pro", "full_response": "Given the accelerating AI disruption in the B2B productivity space, the most judicious use of the $8M discretionary capital is to deeply integrate AI into the existing flagship product (Option A). This is not merely a defensive move; it is a strategic necessity that leverages the company's greatest assets\u2014its installed base, domain expertise, and distribution\u2014to turn a threats into a durable competitive advantage.\n\nThe company\u2019s 300 employees and $50M ARR signal a mature product with established customer workflows and trust. AI-native startups may have novel technology, but they lack this customer intimacy and the switching costs embedded in enterprise productivity suites. Big Tech entrants, while resource-rich, often struggle with the nuance of specific B2B use cases. By weaving large language model capabilities directly into the core workflows users already rely on, the company can enhance productivity gains in ways that feel organic rather than disruptive. Think intelligent document drafting, automated data analysis, or natural language interfaces for complex tasks\u2014all grounded in the product\u2019s existing UX and data models.\n\nThis approach also offers the fastest time-to-value. The $8M can fund a concentrated effort: hiring a small, elite team of AI engineers (not 5-8 generalists, but 2-3 specialists paired with internal product experts), covering inference costs, and iterating rapidly on features. Because the features are embedded, upsell and adoption cycles can be immediate, converting AI investment into retention and expansion revenue well within the 12-month horizon. It protects against churn by making the product markedly more capable, while creating a higher ceiling for per-seat pricing.\n\nAlternatives like building a separate AI-native product or pursuing operational efficiency are tempting but flawed for the moment. A parallel offering dilutes focus and forces the company to compete against well-funded AI-native rivals on their own turf\u2014without the distribution advantage. Efficiency gains are important but do not address the existential product relevance risk. Aggressive AI talent hiring without a clear product mandate risks a brain drain of unfocused research. A lab partnership, while offering speed, cedes strategic control and differentiation; the underlying models are becoming commoditized, so value accrues to the application layer and proprietary data. Ownership of the AI-enhanced workflow is where defensibility lies.\n\nIn short, the board should ensure the flagship product doesn\u2019t become a legacy asset but evolves into an AI-powered platform. This is the most capital-efficient, strategically sound path to safeguarding and growing the business through the disruption wave.", "rationale_snippet": "Given the accelerating AI disruption in the B2B productivity space, the most judicious use of the $8M discretionary capital is to deeply integrate AI into the existing flagship product (Option A). This is not merely a defensive move; it is a strategic necessity that leverages the company's greatest ", "constructs": [{"id": "C_M4_1", "left": "Explicitly evaluates and dismisses other investment options", "right": "Argues solely for the primary recommendation without comparison", "triad": ["E1", "E3", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Explicitly evaluates and dismisses other investment options\nRight pole: Argues solely for the primary recommendation without comparison\n\nTriad 2:\nLeft pole: Explicitly evaluates an"}, {"id": "C_M4_2", "left": "Explicitly evaluates and dismisses other investment options", "right": "Argues solely for the primary recommendation without comparison", "triad": ["E1", "E2", "E3"], "raw_output_excerpt": "Triad 1:\nLeft pole: Explicitly evaluates and dismisses other investment options\nRight pole: Argues solely for the primary recommendation without comparison\n\nTriad 2:\nLeft pole: Explicitly evaluates an"}, {"id": "C_M4_3", "left": "Explicitly evaluates and dismisses other investment options", "right": "Argues solely for the primary recommendation without comparison", "triad": ["E1", "E2", "E3"], "raw_output_excerpt": "Triad 1:\nLeft pole: Explicitly evaluates and dismisses other investment options\nRight pole: Argues solely for the primary recommendation without comparison\n\nTriad 2:\nLeft pole: Explicitly evaluates an"}], "triads": [["E1", "E3", "E5"], ["E1", "E2", "E3"], ["E1", "E2", "E3"]]}}, {"data": {"id": "M5", "label": "M5", "persona": "neutral", "persona_label": "Neutral framing", "persona_color": "#666666", "recommendation": "?", "rec_color": "#cccccc", "model_id": "moonshotai/kimi-k2.6", "full_response": "Invest the $8M in **Option A: deep AI integration into the existing flagship product**. At $50M ARR, this company\u2019s most valuable asset is not its current codebase but its installed base, distribution, and the trust of B2B buyers. A 12-month window is too short to validate an entirely new product, too precious to spend purely on back-office efficiency, and too risky to use as a speculative talent-hoarding exercise. The board needs a move that is simultaneously defensive\u2014protecting the revenue base\u2014and offensive\u2014raising the competitive barrier for entrants.\n\nEmbedding LLM features directly into high-frequency workflows accomplishes exactly that. Existing customers do not want another disjointed tool; they want the software they already rely on to produce exponentially better output. A focused $8M investment can fund a strike team of product engineers, UX researchers, and ML infrastructure specialists to rebuild three to four core workflows with embedded intelligence, ship them to an audience already under contract, and capture proprietary usage data that will shape the company\u2019s architecture for the next three years.\n\nBuilding a separate AI-native product fractures focus and invites channel conflict at a moment when the company cannot afford distraction. An operational efficiency push improves margins but does nothing to stop churn when a well-funded rival releases a smarter alternative. Aggressive hiring without a clearly scoped shipping mandate puts the cart before the horse; senior researchers often need 6\u201312 months to ramp, and by then the competitive landscape will have shifted. A partnership with a frontier lab is tempting, but it risks reducing the company to a thin, replaceable wrapper around another firm\u2019s model.\n\nDoubling down on the flagship compounds existing leverage, increases switching costs, and creates immediate upsell potential. Bet on the base you already have.", "rationale_snippet": "Invest the $8M in **Option A: deep AI integration into the existing flagship product**. At $50M ARR, this company\u2019s most valuable asset is not its current codebase but its installed base, distribution, and the trust of B2B buyers. A 12-month window is too short to validate an entirely new product, t", "constructs": [{"id": "C_M5_1", "left": "Competitive moat and durable advantage strategy", "right": "Asset depreciation and renewal economics", "triad": ["E2", "E3", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Competitive moat and durable advantage strategy\nRight pole: Asset depreciation and renewal economics\n\nTriad 2:\nLeft pole: Strategic competitive threat diagnosis\nRight pole: Resourc"}, {"id": "C_M5_2", "left": "Strategic competitive threat diagnosis", "right": "Resource constraint and alternative pragmatism", "triad": ["E1", "E2", "E4"], "raw_output_excerpt": "Triad 1:\nLeft pole: Competitive moat and durable advantage strategy\nRight pole: Asset depreciation and renewal economics\n\nTriad 2:\nLeft pole: Strategic competitive threat diagnosis\nRight pole: Resourc"}, {"id": "C_M5_3", "left": "Strategic advantage and risk positioning", "right": "Asset depreciation and renewal economics", "triad": ["E3", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Competitive moat and durable advantage strategy\nRight pole: Asset depreciation and renewal economics\n\nTriad 2:\nLeft pole: Strategic competitive threat diagnosis\nRight pole: Resourc"}], "triads": [["E2", "E3", "E5"], ["E1", "E2", "E4"], ["E3", "E4", "E5"]]}}], "edges": [{"data": {"id": "M1__M2", "source": "M1", "target": "M2", "rmse": 1.291, "level": "substantial-disagreement", "color": "#c44", "width": 7.2682451808295285, "top_differing_constructs": [{"construct_id": "C_M1_1", "construct_label": "Explicitly evaluates and rejects alternative options \u2194 Focuses solely on defending the recommended option", "mean_abs_diff": 1.4, "agent_a_ratings": {"E1": 2.0, "E2": 6.0, "E3": 6.0, "E4": 5.0, "E5": 5.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 7.0, "E4": 3.0, "E5": 3.0}}, {"construct_id": "C_M2_3", "construct_label": "Core product obsolescence threat \u2194 Resource-allocation opportunity cost", "mean_abs_diff": 1.4, "agent_a_ratings": {"E1": 3.0, "E2": 3.0, "E3": 4.0, "E4": 2.0, "E5": 3.0}, "agent_b_ratings": {"E1": 7.0, "E2": 4.0, "E3": 4.0, "E4": 1.0, "E5": 2.0}}, {"construct_id": "C_M3_1", "construct_label": "Focuses explicitly on customer churn and renewal rates \u2194 Focuses on core product obsolescence and workflow inferiority", "mean_abs_diff": 1.2, "agent_a_ratings": {"E1": 5.0, "E2": 2.0, "E3": 5.0, "E4": 6.0, "E5": 4.0}, "agent_b_ratings": {"E1": 4.0, "E2": 1.0, "E3": 4.0, "E4": 7.0, "E5": 2.0}}], "label": "1.29"}}, {"data": {"id": "M1__M3", "source": "M1", "target": "M3", "rmse": 1.837, "level": "substantial-disagreement", "color": "#c44", "width": 5.727384403698622, "top_differing_constructs": [{"construct_id": "C_M1_1", "construct_label": "Explicitly evaluates and rejects alternative options \u2194 Focuses solely on defending the recommended option", "mean_abs_diff": 1.8, "agent_a_ratings": {"E1": 2.0, "E2": 6.0, "E3": 6.0, "E4": 5.0, "E5": 5.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 7.0, "E4": 2.0, "E5": 2.0}}, {"construct_id": "C_M1_2", "construct_label": "Frames around customer renewal and churn risk \u2194 Frames around distribution and installed-base assets", "mean_abs_diff": 1.3333333333333333, "agent_a_ratings": {"E1": 5.0, "E2": 5.0, "E3": 6.0, "E4": 2.0, "E5": 3.0}, "agent_b_ratings": {"E1": 7.0, "E2": 4.0, "E3": 7.0, "E4": null, "E5": null}}], "label": "1.84"}}, {"data": {"id": "M1__M4", "source": "M1", "target": "M4", "rmse": 1.797, "level": "substantial-disagreement", "color": "#c44", "width": 5.841074106359253, "top_differing_constructs": [{"construct_id": "C_M1_1", "construct_label": "Explicitly evaluates and rejects alternative options \u2194 Focuses solely on defending the recommended option", "mean_abs_diff": 2.2, "agent_a_ratings": {"E1": 2.0, "E2": 6.0, "E3": 6.0, "E4": 5.0, "E5": 5.0}, "agent_b_ratings": {"E1": 7.0, "E2": 7.0, "E3": 7.0, "E4": 7.0, "E5": 7.0}}, {"construct_id": "C_M2_3", "construct_label": "Core product obsolescence threat \u2194 Resource-allocation opportunity cost", "mean_abs_diff": 2.2, "agent_a_ratings": {"E1": 3.0, "E2": 3.0, "E3": 4.0, "E4": 2.0, "E5": 3.0}, "agent_b_ratings": {"E1": 4.0, "E2": 5.0, "E3": 5.0, "E4": 6.0, "E5": 6.0}}, {"construct_id": "C_M3_1", "construct_label": "Focuses explicitly on customer churn and renewal rates \u2194 Focuses on core product obsolescence and workflow inferiority", "mean_abs_diff": 1.6, "agent_a_ratings": {"E1": 5.0, "E2": 2.0, "E3": 5.0, "E4": 6.0, "E5": 4.0}, "agent_b_ratings": {"E1": 3.0, "E2": 2.0, "E3": 4.0, "E4": 3.0, "E5": 2.0}}], "label": "1.80"}}, {"data": {"id": "M1__M5", "source": "M1", "target": "M5", "rmse": 1.521, "level": "substantial-disagreement", "color": "#c44", "width": 6.618511590395411, "top_differing_constructs": [{"construct_id": "C_M4_1", "construct_label": "Explicitly evaluates and dismisses other investment options \u2194 Argues solely for the primary recommendation without comparison", "mean_abs_diff": 1.6, "agent_a_ratings": {"E1": 2.0, "E2": 6.0, "E3": 5.0, "E4": 5.0, "E5": 5.0}, "agent_b_ratings": {"E1": 1.0, "E2": 6.0, "E3": 6.0, "E4": 2.0, "E5": 2.0}}, {"construct_id": "C_M4_2", "construct_label": "Explicitly evaluates and dismisses other investment options \u2194 Argues solely for the primary recommendation without comparison", "mean_abs_diff": 1.6, "agent_a_ratings": {"E1": 2.0, "E2": 6.0, "E3": 5.0, "E4": 5.0, "E5": 5.0}, "agent_b_ratings": {"E1": 1.0, "E2": 6.0, "E3": 6.0, "E4": 2.0, "E5": 2.0}}, {"construct_id": "C_M4_3", "construct_label": "Explicitly evaluates and dismisses other investment options \u2194 Argues solely for the primary recommendation without comparison", "mean_abs_diff": 1.6, "agent_a_ratings": {"E1": 2.0, "E2": 6.0, "E3": 5.0, "E4": 5.0, "E5": 5.0}, "agent_b_ratings": {"E1": 1.0, "E2": 6.0, "E3": 6.0, "E4": 2.0, "E5": 2.0}}], "label": "1.52"}}, {"data": {"id": "M2__M3", "source": "M2", "target": "M3", "rmse": 0.5, "level": "moderate", "color": "#c8a45c", "width": 9.5, "top_differing_constructs": [{"construct_id": "C_M1_1", "construct_label": "Explicitly evaluates and rejects alternative options \u2194 Focuses solely on defending the recommended option", "mean_abs_diff": 0.4, "agent_a_ratings": {"E1": 1.0, "E2": 7.0, "E3": 7.0, "E4": 3.0, "E5": 3.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 7.0, "E4": 2.0, "E5": 2.0}}, {"construct_id": "C_M1_2", "construct_label": "Frames around customer renewal and churn risk \u2194 Frames around distribution and installed-base assets", "mean_abs_diff": 0.0, "agent_a_ratings": {"E1": 7.0, "E2": 4.0, "E3": 7.0, "E4": 2.0, "E5": 4.0}, "agent_b_ratings": {"E1": 7.0, "E2": 4.0, "E3": 7.0, "E4": null, "E5": null}}], "label": "0.50"}}, {"data": {"id": "M2__M4", "source": "M2", "target": "M4", "rmse": 2.34, "level": "substantial-disagreement", "color": "#c44", "width": 4.3081678107432735, "top_differing_constructs": [{"construct_id": "C_M4_1", "construct_label": "Explicitly evaluates and dismisses other investment options \u2194 Argues solely for the primary recommendation without comparison", "mean_abs_diff": 3.0, "agent_a_ratings": {"E1": 1.0, "E2": 7.0, "E3": null, "E4": null, "E5": null}, "agent_b_ratings": {"E1": 6.0, "E2": 6.0, "E3": 7.0, "E4": 6.0, "E5": 6.0}}, {"construct_id": "C_M1_1", "construct_label": "Explicitly evaluates and rejects alternative options \u2194 Focuses solely on defending the recommended option", "mean_abs_diff": 2.8, "agent_a_ratings": {"E1": 1.0, "E2": 7.0, "E3": 7.0, "E4": 3.0, "E5": 3.0}, "agent_b_ratings": {"E1": 7.0, "E2": 7.0, "E3": 7.0, "E4": 7.0, "E5": 7.0}}, {"construct_id": "C_M2_3", "construct_label": "Core product obsolescence threat \u2194 Resource-allocation opportunity cost", "mean_abs_diff": 2.8, "agent_a_ratings": {"E1": 7.0, "E2": 4.0, "E3": 4.0, "E4": 1.0, "E5": 2.0}, "agent_b_ratings": {"E1": 4.0, "E2": 5.0, "E3": 5.0, "E4": 6.0, "E5": 6.0}}], "label": "2.34"}}, {"data": {"id": "M2__M5", "source": "M2", "target": "M5", "rmse": 0.859, "level": "moderate", "color": "#c8a45c", "width": 8.486746031490348, "top_differing_constructs": [{"construct_id": "C_M1_3", "construct_label": "Emphasizes external competitive threats driving urgency \u2194 Emphasizes internal assets and product obsolescence risk", "mean_abs_diff": 1.0, "agent_a_ratings": {"E1": 6.0, "E2": 2.0, "E3": 4.0, "E4": 5.0, "E5": 5.0}, "agent_b_ratings": {"E1": 7.0, "E2": 2.0, "E3": 6.0, "E4": 6.0, "E5": 6.0}}, {"construct_id": "C_M1_1", "construct_label": "Explicitly evaluates and rejects alternative options \u2194 Focuses solely on defending the recommended option", "mean_abs_diff": 0.8, "agent_a_ratings": {"E1": 1.0, "E2": 7.0, "E3": 7.0, "E4": 3.0, "E5": 3.0}, "agent_b_ratings": {"E1": 1.0, "E2": 6.0, "E3": 6.0, "E4": 2.0, "E5": 2.0}}, {"construct_id": "C_M1_2", "construct_label": "Frames around customer renewal and churn risk \u2194 Frames around distribution and installed-base assets", "mean_abs_diff": 0.8, "agent_a_ratings": {"E1": 7.0, "E2": 4.0, "E3": 7.0, "E4": 2.0, "E5": 4.0}, "agent_b_ratings": {"E1": 7.0, "E2": 5.0, "E3": 7.0, "E4": 4.0, "E5": 3.0}}], "label": "0.86"}}, {"data": {"id": "M3__M4", "source": "M3", "target": "M4", "rmse": 3.335, "level": "substantial-disagreement", "color": "#c44", "width": 1.5000028214544656, "top_differing_constructs": [{"construct_id": "C_M1_1", "construct_label": "Explicitly evaluates and rejects alternative options \u2194 Focuses solely on defending the recommended option", "mean_abs_diff": 3.2, "agent_a_ratings": {"E1": 1.0, "E2": 7.0, "E3": 7.0, "E4": 2.0, "E5": 2.0}, "agent_b_ratings": {"E1": 7.0, "E2": 7.0, "E3": 7.0, "E4": 7.0, "E5": 7.0}}, {"construct_id": "C_M1_2", "construct_label": "Frames around customer renewal and churn risk \u2194 Frames around distribution and installed-base assets", "mean_abs_diff": 1.0, "agent_a_ratings": {"E1": 7.0, "E2": 4.0, "E3": 7.0, "E4": null, "E5": null}, "agent_b_ratings": {"E1": 6.0, "E2": 5.0, "E3": 6.0, "E4": 4.0, "E5": 6.0}}], "label": "3.34"}}, {"data": {"id": "M3__M5", "source": "M3", "target": "M5", "rmse": 0.612, "level": "moderate", "color": "#c8a45c", "width": 9.18294628956394, "top_differing_constructs": [{"construct_id": "C_M1_1", "construct_label": "Explicitly evaluates and rejects alternative options \u2194 Focuses solely on defending the recommended option", "mean_abs_diff": 0.4, "agent_a_ratings": {"E1": 1.0, "E2": 7.0, "E3": 7.0, "E4": 2.0, "E5": 2.0}, "agent_b_ratings": {"E1": 1.0, "E2": 6.0, "E3": 6.0, "E4": 2.0, "E5": 2.0}}, {"construct_id": "C_M1_2", "construct_label": "Frames around customer renewal and churn risk \u2194 Frames around distribution and installed-base assets", "mean_abs_diff": 0.3333333333333333, "agent_a_ratings": {"E1": 7.0, "E2": 4.0, "E3": 7.0, "E4": null, "E5": null}, "agent_b_ratings": {"E1": 7.0, "E2": 5.0, "E3": 7.0, "E4": 4.0, "E5": 3.0}}], "label": "0.61"}}, {"data": {"id": "M4__M5", "source": "M4", "target": "M5", "rmse": 2.501, "level": "substantial-disagreement", "color": "#c44", "width": 3.853061571734372, "top_differing_constructs": [{"construct_id": "C_M1_1", "construct_label": "Explicitly evaluates and rejects alternative options \u2194 Focuses solely on defending the recommended option", "mean_abs_diff": 3.6, "agent_a_ratings": {"E1": 7.0, "E2": 7.0, "E3": 7.0, "E4": 7.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 6.0, "E3": 6.0, "E4": 2.0, "E5": 2.0}}, {"construct_id": "C_M4_1", "construct_label": "Explicitly evaluates and dismisses other investment options \u2194 Argues solely for the primary recommendation without comparison", "mean_abs_diff": 2.8, "agent_a_ratings": {"E1": 6.0, "E2": 6.0, "E3": 7.0, "E4": 6.0, "E5": 6.0}, "agent_b_ratings": {"E1": 1.0, "E2": 6.0, "E3": 6.0, "E4": 2.0, "E5": 2.0}}, {"construct_id": "C_M4_2", "construct_label": "Explicitly evaluates and dismisses other investment options \u2194 Argues solely for the primary recommendation without comparison", "mean_abs_diff": 2.8, "agent_a_ratings": {"E1": 6.0, "E2": 6.0, "E3": 7.0, "E4": 6.0, "E5": 6.0}, "agent_b_ratings": {"E1": 1.0, "E2": 6.0, "E3": 6.0, "E4": 2.0, "E5": 2.0}}], "label": "2.50"}}]};
+const insightData = {"cell_id": "A_N_run2", "task": "A", "condition": "N", "run_idx": 2, "consensus_map": {"by_agent": {"M1": {"model_id": "anthropic/claude-opus-4.7", "persona": "neutral", "recommendation": "A", "element_label": "E5", "rationale_snippet": "# Recommendation: Option A \u2014 Deep AI Integration into the Flagship Product"}, "M2": {"model_id": "openai/gpt-5.5", "persona": "neutral", "recommendation": null, "element_label": "E4", "rationale_snippet": "I recommend investing primarily in **deep AI integration into the existing flagship product**."}, "M3": {"model_id": "google/gemini-3.1-pro-preview", "persona": "neutral", "recommendation": "A", "element_label": "E2", "rationale_snippet": "For a $50M ARR B2B SaaS company facing existential AI disruption, the primary competitive moat is no longer pure technology\u2014it is distribution, entrenched user workflows, and customer switching costs. To survive and thrive in this landscape, I strongly recommend **Option A: Deep AI integration into "}, "M4": {"model_id": "deepseek/deepseek-v4-pro", "persona": "neutral", "recommendation": null, "element_label": "E3", "rationale_snippet": "Given the accelerating AI disruption in the B2B productivity space, the most judicious use of the $8M discretionary capital is to deeply integrate AI into the existing flagship product (Option A). This is not merely a defensive move; it is a strategic necessity that leverages the company's greatest "}, "M5": {"model_id": "moonshotai/kimi-k2.6", "persona": "neutral", "recommendation": null, "element_label": "E1", "rationale_snippet": "Invest the $8M in **Option A: deep AI integration into the existing flagship product**. At $50M ARR, this company\u2019s most valuable asset is not its current codebase but its installed base, distribution, and the trust of B2B buyers. A 12-month window is too short to validate an entirely new product, t"}}, "distribution": {"A": 2}, "n_agents": 5, "consensus_strength": "split", "majority_recommendation": null}, "hidden_disagreement": {"status": "no_majority", "interpretation": "Agents split across recommendations; no hidden-consensus to expose."}, "blind_spots": {"status": "computed", "low_discrimination_constructs": [{"construct_id": "C_M2_3", "left_pole": "Core product obsolescence threat", "right_pole": "Resource-allocation opportunity cost", "mean_rating": 3.8, "rating_std": 0.8573214099741123, "interpretation": "All options score near the middle on this axis (Core product obsolescence threat <-> Resource-allocation opportunity cost). Either none of the options addresses this dimension, or agents collectively underweighted it. Worth probing explicitly: does any option strongly hit one pole here?"}, {"construct_id": "C_M5_2", "left_pole": "Strategic competitive threat diagnosis", "right_pole": "Resource constraint and alternative pragmatism", "mean_rating": 3.4, "rating_std": 0.7118052168020873, "interpretation": "All options score near the middle on this axis (Strategic competitive threat diagnosis <-> Resource constraint and alternative pragmatism). Either none of the options addresses this dimension, or agents collectively underweighted it. Worth probing explicitly: does any option strongly hit one pole here?"}], "underexplored_components": [{"pc_index": 3, "variance_explained": 0.13099415167525993, "top_construct_id": "C_M3_1"}], "summary": "2 construct(s) where agents agreed all options are middling - candidate blind spots to probe."}, "risk_surface": {"status": "computed", "risks_by_agent": {"M1": [], "M2": ["not missing a speculative new market; it is having the core product become visibly obsolete in the eyes of existing customers", "and could distract from the urgent need to protect the core"], "M3": ["cannibalizing your current revenue"], "M4": ["a brain drain of unfocused research"], "M5": ["reducing the company to a thin, replaceable wrapper around another firm\u2019s model"]}, "total_risks_raised": 5, "agents_raising_risks": 4, "note": "Risks listed here were extracted by pattern matching on agent free responses. They are minority signals worth probing before acting on consensus."}, "operator_questions": ["All options scored near the middle on the axis 'Core product obsolescence threat' vs 'Resource-allocation opportunity cost'. Does any option deserve a strong position here? If not, is this a dimension being underweighted?", "All options scored near the middle on the axis 'Strategic competitive threat diagnosis' vs 'Resource constraint and alternative pragmatism'. Does any option deserve a strong position here? If not, is this a dimension being underweighted?"], "headline": "Agents are split across options; no clear consensus to act on."};
+
+cytoscape.use(cytoscapeCoseBilkent);
+
+const cy = cytoscape({
+  container: document.getElementById('cy'),
+  elements: [...graphData.nodes, ...graphData.edges],
+  style: [
+    {
+      selector: 'node',
+      style: {
+        'background-color': 'data(persona_color)',
+        'label': 'data(label)',
+        'color': 'white',
+        'text-valign': 'center',
+        'text-halign': 'center',
+        'font-size': '18px',
+        'font-weight': 'bold',
+        'width': 70,
+        'height': 70,
+        'border-width': 5,
+        'border-color': 'data(rec_color)',
+      }
+    },
+    {
+      selector: 'node:selected',
+      style: {
+        'border-color': '#2b3a55',
+        'border-width': 6,
+        'width': 80,
+        'height': 80,
+      }
+    },
+    {
+      selector: 'edge',
+      style: {
+        'line-color': 'data(color)',
+        'width': 'data(width)',
+        'curve-style': 'bezier',
+        'label': 'data(label)',
+        'font-size': '11px',
+        'text-background-color': 'white',
+        'text-background-opacity': 0.85,
+        'text-background-padding': 3,
+        'text-background-shape': 'round-rectangle',
+        'color': '#444',
+        'opacity': 0.8,
+      }
+    },
+    {
+      selector: 'edge:selected',
+      style: {
+        'opacity': 1.0,
+        'width': 'mapData(width, 1, 9, 4, 12)',
+        'overlay-color': '#c8a45c',
+        'overlay-opacity': 0.2,
+      }
+    },
+    {
+      selector: '.dimmed',
+      style: {
+        'opacity': 0.18,
+      }
+    },
+  ],
+  layout: {
+    name: 'cose-bilkent',
+    quality: 'default',
+    randomize: true,
+    nodeRepulsion: 8000,
+    idealEdgeLength: 220,
+    edgeElasticity: 0.45,
+    gravity: 0.25,
+    numIter: 2500,
+    animate: false,
+  },
+  wheelSensitivity: 0.2,
+  minZoom: 0.3,
+  maxZoom: 3,
+});
+
+// Render detail panel for a clicked NODE
+function renderNodeDetail(node) {
+  const d = node.data();
+  const personaColor = d.persona_color;
+  let html = `<h2 style="border-bottom-color: ${personaColor}">${d.label} - ${d.persona_label}</h2>`;
+  html += `<div class="kv"><strong>Model:</strong> <code>${d.model_id}</code></div>`;
+  html += `<div class="kv"><strong>Recommended:</strong> <span class="badge" style="background:${d.rec_color}">Option ${d.recommendation}</span></div>`;
+  html += `<h3>Full response</h3>`;
+  html += `<div class="response-text">${escapeHtml(d.full_response)}</div>`;
+  if (d.constructs && d.constructs.length) {
+    html += `<h3>Bipolar constructs this agent elicited</h3>`;
+    html += `<p style="font-size: 0.83em; color: #666;">
+      In Phase 3, each agent was given three triads of responses and asked,
+      for each triad, to name the bipolar dimension that distinguishes two
+      from the third. These are this agent's three constructs.
+    </p>`;
+    for (const c of d.constructs) {
+      const triadStr = c.triad ? c.triad.join(', ') : '';
+      html += `<div class="construct-card" style="border-left-color: ${personaColor}">
+        <div style="font-size: 0.78em; color: #888; margin-bottom: 4px;">
+          <code>${escapeHtml(c.id)}</code> &middot; from triad ${escapeHtml(triadStr)}
+        </div>
+        <span class="construct-pole">${escapeHtml(c.left)}</span>
+        <span style="color:#888"> ↔ </span>
+        <span class="construct-pole">${escapeHtml(c.right)}</span>
+      </div>`;
+    }
+  }
+  document.getElementById('detail-area').innerHTML = html;
+}
+
+// Render detail panel for a clicked EDGE
+function renderEdgeDetail(edge) {
+  const d = edge.data();
+  const src = cy.getElementById(d.source).data();
+  const tgt = cy.getElementById(d.target).data();
+  let levelLabel, levelClass, levelBg;
+  if (d.rmse < 0.5) {
+    levelLabel = 'Strong reasoning alignment';
+    levelClass = 'alert-ok';
+  } else if (d.rmse < 1.0) {
+    levelLabel = 'Moderate framing differences';
+    levelClass = 'alert-warn';
+  } else {
+    levelLabel = 'Substantial disagreement at the reasoning level';
+    levelClass = 'alert-danger';
+  }
+
+  let html = `<h2>${src.label} ↔ ${tgt.label}</h2>`;
+  html += `<div class="kv"><strong>${src.label}</strong> (${src.persona_label}) recommended <strong>Option ${src.recommendation}</strong></div>`;
+  html += `<div class="kv"><strong>${tgt.label}</strong> (${tgt.persona_label}) recommended <strong>Option ${tgt.recommendation}</strong></div>`;
+  html += `<div class="alert-banner ${levelClass}">
+    <strong>RMSE = ${d.rmse}</strong> - ${levelLabel}
+  </div>`;
+
+  if (src.recommendation === tgt.recommendation && d.rmse > 0.5) {
+    html += `<div class="alert-banner alert-warn">
+      <strong>Hidden disagreement.</strong> Both agents recommended Option ${src.recommendation},
+      but their underlying reasoning differs (RMSE = ${d.rmse}). Standard
+      ensemble methods would mask this. The dimensions where they diverged
+      most are listed below - probe these before treating this as a robust consensus.
+    </div>`;
+  } else if (src.recommendation !== tgt.recommendation) {
+    html += `<div class="alert-banner alert-warn" style="font-size: 0.87em">
+      These two agents reached different recommendations. The dimensions where
+      they rated options most differently explain why.
+    </div>`;
+  }
+
+  if (d.top_differing_constructs && d.top_differing_constructs.length) {
+    html += `<h3>Top dimensions where they rated options differently</h3>`;
+    html += `<p style="font-size: 0.83em; color: #666;">
+      Each construct below is one of the bipolar dimensions the panel elicited.
+      The numbers show how each agent rated each option (E1-E5) on this dimension,
+      1-7 scale (1 = strong left pole, 7 = strong right pole). Cells highlighted
+      red indicate large rating differences.
+    </p>`;
+    for (const tc of d.top_differing_constructs) {
+      html += `<div class="construct-card">
+        <div style="font-size: 0.83em; color: #666; margin-bottom: 4px;">
+          <code>${escapeHtml(tc.construct_id)}</code> &middot;
+          mean diff: <strong>${tc.mean_abs_diff.toFixed(2)}</strong>
+        </div>
+        <div style="margin-bottom: 8px;">
+          <span class="construct-pole">${escapeHtml(tc.construct_label.split('↔')[0].trim())}</span>
+          <span style="color:#888"> ↔ </span>
+          <span class="construct-pole">${escapeHtml(tc.construct_label.split('↔')[1] ? tc.construct_label.split('↔')[1].trim() : '')}</span>
+        </div>`;
+      const elems = Object.keys(tc.agent_a_ratings).sort();
+      html += `<div class="rating-grid">
+        <div class="rg-cell head">Agent</div>`;
+      for (const e of elems) html += `<div class="rg-cell head">${e}</div>`;
+      html += `<div class="rg-cell" style="background:${src.persona_color};color:white;font-weight:600">${src.label}</div>`;
+      for (const e of elems) {
+        const va = tc.agent_a_ratings[e];
+        const vb = tc.agent_b_ratings[e];
+        const diff = (va !== null && vb !== null) ? Math.abs(va - vb) : 0;
+        const cls = diff >= 3 ? 'diff-high' : diff >= 2 ? 'diff-med' : 'diff-low';
+        html += `<div class="rg-cell ${cls}">${va !== null ? va : '-'}</div>`;
+      }
+      html += `<div class="rg-cell" style="background:${tgt.persona_color};color:white;font-weight:600">${tgt.label}</div>`;
+      for (const e of elems) {
+        const va = tc.agent_a_ratings[e];
+        const vb = tc.agent_b_ratings[e];
+        const diff = (va !== null && vb !== null) ? Math.abs(va - vb) : 0;
+        const cls = diff >= 3 ? 'diff-high' : diff >= 2 ? 'diff-med' : 'diff-low';
+        html += `<div class="rg-cell ${cls}">${vb !== null ? vb : '-'}</div>`;
+      }
+      html += `</div></div>`;
+    }
+  }
+  document.getElementById('detail-area').innerHTML = html;
+}
+
+// Hover highlighting
+cy.on('mouseover', 'node', evt => {
+  const node = evt.target;
+  cy.elements().not(node.neighborhood()).not(node).addClass('dimmed');
+});
+cy.on('mouseout', 'node', () => cy.elements().removeClass('dimmed'));
+
+cy.on('mouseover', 'edge', evt => {
+  const edge = evt.target;
+  cy.elements().not(edge.connectedNodes()).not(edge).addClass('dimmed');
+});
+cy.on('mouseout', 'edge', () => cy.elements().removeClass('dimmed'));
+
+cy.on('tap', 'node', evt => renderNodeDetail(evt.target));
+cy.on('tap', 'edge', evt => renderEdgeDetail(evt.target));
+cy.on('tap', evt => {
+  if (evt.target === cy) {
+    document.getElementById('detail-area').innerHTML = `<div class="placeholder">
+      <p>Click an agent or a line to see detail.</p></div>`;
+  }
+});
+
+// Layout switching
+function setLayout(name) {
+  const opts = {
+    'cose-bilkent': { name: 'cose-bilkent', quality: 'default', nodeRepulsion: 8000,
+                       idealEdgeLength: 220, animate: false },
+    'circle': { name: 'circle', animate: false, radius: 200 },
+    'grid': { name: 'grid', animate: false },
+  };
+  cy.layout(opts[name]).run();
+}
+document.getElementById('btn-cose').onclick = e => {
+  setActiveBtn(e.target); setLayout('cose-bilkent');
+};
+document.getElementById('btn-circle').onclick = e => {
+  setActiveBtn(e.target); setLayout('circle');
+};
+document.getElementById('btn-grid').onclick = e => {
+  setActiveBtn(e.target); setLayout('grid');
+};
+function setActiveBtn(btn) {
+  document.querySelectorAll('.controls button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function escapeHtml(s) {
+  if (!s) return '';
+  return String(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/\n/g, '<br>');
+}
+
+// Auto-fit on load
+setTimeout(() => cy.fit(undefined, 60), 100);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+{
+  "cell_id": "B_N_run7",
+  "task": "B",
+  "condition": "N",
+  "run_idx": 7,
+  "phase": "phase4_ratings",
+  "model_short_name": "M2",
+  "persona_or_neutral": "neutral",
+  "system_prompt": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation.",
+  "user_prompt": "You are presented with 5 anonymous responses (E1-E5) and 11 bipolar constructs. Rate each response on each construct on a 1-7 scale: 1 = strongly the LEFT pole, 7 = strongly the RIGHT pole, 4 = neutral or mixed.\n\nResponses:\n**E1:** I strongly recommend **Option E (Leadership style mismatch)** as the primary diagnosis. The pivotal clue lies in the team's retrospective themes shifting from product delivery (\"what to ship next\") to organizational friction (\"process and communication\"). This shift is the classic hallmark of hitting a scaling wall.\n\n**E2:** # Primary Diagnosis: Option C — Loss of Psychological Safety Following the Layoff\n\nThe timing is the strongest signal. A layoff occurred 4 months ago; output decline and attrition span 6 months but accelerated in a way consistent with a trust shock compounding pre-existing strain. Critically, the *shift in retro themes* — from \"what to ship next\" to \"process and communication\" — is the diagnostic fingerprint of a safety problem, not a workload or skills problem.\n\n**E3:** **Primary diagnosis: Leadership style mismatch (Option E).**\n\nThe decisive signal is the pivot in\n\n**E4:** The most likely primary diagnosis is **Option C: Loss of psychological safety following a layoff round 4 months ago**. The timeline is the strongest clue: the team’s output and retention problems emerged over the past 6 months, and the layoff occurred right around the start of that decline. After a period of strong delivery, an unexpected workforce reduction shatters the implicit contract of “high performance = security.” The survivors—especially senior engineers with options—often interpret this as a signal that the organization is unstable or that their contributions are no longer valued, tr...\n\n**E5:** The most likely primary diagnosis is **loss of psychological safety following the layoff round**. The strongest signal is the combination of timing and symptom pattern. A team that was previously high-performing does not usually lose execution capacity across four squads simply because of ordinary process drift.\n\nConstructs (id : left pole ↔ right pole):\n  C_M1_1: 'Diagnoses loss of psychological safety from layoff'  (1) ↔ (7)  'Diagnoses leadership style mismatch from scaling'\n  C_M1_2: 'Emphasizes layoff timing as decisive signal'  (1) ↔ (7)  'Emphasizes retro theme shift as decisive signal'\n  C_M1_3: 'Cites retro theme shift as fingerprint'  (1) ↔ (7)  'Relies on timing and scope of decline'\n  C_M2_1: 'Leadership-style mismatch as primary diagnosis'  (1) ↔ (7)  'Layoff-driven psychological safety loss as primary diagnosis'\n  C_M2_2: 'Layoff-driven psychological safety loss as primary diagnosis'  (1) ↔ (7)  'Leadership-style mismatch as primary diagnosis'\n  C_M2_3: 'Leadership-style mismatch as primary diagnosis'  (1) ↔ (7)  'Layoff-driven psychological safety loss as primary diagnosis'\n  C_M3_1: 'Diagnoses loss of psychological safety following recent layoffs'  (1) ↔ (7)  'Diagnoses a leadership style mismatch hitting a scaling wall'\n  C_M3_2: 'Concludes as a fully complete paragraph and thought'  (1) ↔ (7)  'Cuts off abruptly with an incomplete sentence or word'\n  C_M4_1: 'Focuses on leadership style as primary cause'  (1) ↔ (7)  'Focuses on psychological safety as primary cause'\n  C_M4_2: 'Diagnoses leadership style mismatch as primary'  (1) ↔ (7)  'Diagnoses loss of psychological safety as primary'\n  C_M4_3: 'Emphasizes layoff timing as decisive evidence'  (1) ↔ (7)  'Emphasizes retro theme shift as decisive evidence'\n\nOUTPUT FORMAT (strict). Write exactly 55 lines, no commentary, no markdown fences, no headers. One line per (construct, element) pair, in this exact format:\n<construct_id>,<element>,<rating>\n\nExample (showing the format only - your numbers will differ):\nC_M1_1,E1,1\nC_M1_1,E2,2\nC_M1_1,E3,3\nC_M1_2,E1,4\n...\n\nConstraints:\n- rating is an integer from 1 to 7\n- iterate all 11 constructs in the order listed, and within each construct all 5 elements in order (E1-E5)\n- produce 55 lines total\n- output ONLY the lines, nothing before or after",
+  "model_id_requested": "openai/gpt-5.5",
+  "model_id_used": "openai/gpt-5.5",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 20364,
+  "timestamp_iso": "2026-05-24T18:23:49.044489",
+  "raw_response_content": "C_M1_1,E1,7\nC_M1_1,E2,1\nC_M1_1,E3,7\nC_M1_1,E4,1\nC_M1_1,E5,1\nC_M1_2,E1,7\nC_M1_2,E2,2\nC_M1_2,E3,7\nC_M1_2,E4,1\nC_M1_2,E5,2\nC_M1_3,E1,1\nC_M1_3,E2,2\nC_M1_3,E3,1\nC_M1_3,E4,7\nC_M1_3,E5,7\nC_M2_1,E1,1\nC_M2_1,E2,7\nC_M2_1,E3,1\nC_M2_1,E4,7\nC_M2_1,E5,7\nC_M2_2,E1,7\nC_M2_2,E2,1\nC_M2_2,E3,7\nC_M2_2,E4,1\nC_M2_2,E5,1\nC_M2_3,E1,1\nC_M2_3,E2,7\nC_M2_3,E3,1\nC_M2_3,E4,7\nC_M2_3,E5,7\nC_M3_1,E1,7\nC_M3_1,E2,1\nC_M3_1,E3,7\nC_M3_1,E4,1\nC_M3_1,E5,1\nC_M3_2,E1,1\nC_M3_2,E2,1\nC_M3_2,E3,7\nC_M3_2,E4,7\nC_M3_2,E5,1\nC_M4_1,E1,1\nC_M4_1,E2,7\nC_M4_1,E3,1\nC_M4_1,E4,7\nC_M4_1,E5,7\nC_M4_2,E1,1\nC_M4_2,E2,7\nC_M4_2,E3,1\nC_M4_2,E4,7\nC_M4_2,E5,7\nC_M4_3,E1,7\nC_M4_3,E2,2\nC_M4_3,E3,7\nC_M4_3,E4,1\nC_M4_3,E5,2",
+  "raw_response_full": {
+    "id": "gen-1779643424-SWLMkdNDLW9LYzy5v1qF",
+    "object": "chat.completion",
+    "created": 1779643424,
+    "model": "openai/gpt-5.5-20260423",
+    "provider": "OpenAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "C_M1_1,E1,7\nC_M1_1,E2,1\nC_M1_1,E3,7\nC_M1_1,E4,1\nC_M1_1,E5,1\nC_M1_2,E1,7\nC_M1_2,E2,2\nC_M1_2,E3,7\nC_M1_2,E4,1\nC_M1_2,E5,2\nC_M1_3,E1,1\nC_M1_3,E2,2\nC_M1_3,E3,1\nC_M1_3,E4,7\nC_M1_3,E5,7\nC_M2_1,E1,1\nC_M2_1,E2,7\nC_M2_1,E3,1\nC_M2_1,E4,7\nC_M2_1,E5,7\nC_M2_2,E1,7\nC_M2_2,E2,1\nC_M2_2,E3,7\nC_M2_2,E4,1\nC_M2_2,E5,1\nC_M2_3,E1,1\nC_M2_3,E2,7\nC_M2_3,E3,1\nC_M2_3,E4,7\nC_M2_3,E5,7\nC_M3_1,E1,7\nC_M3_1,E2,1\nC_M3_1,E3,7\nC_M3_1,E4,1\nC_M3_1,E5,1\nC_M3_2,E1,1\nC_M3_2,E2,1\nC_M3_2,E3,7\nC_M3_2,E4,7\nC_M3_2,E5,1\nC_M4_1,E1,1\nC_M4_1,E2,7\nC_M4_1,E3,1\nC_M4_1,E4,7\nC_M4_1,E5,7\nC_M4_2,E1,1\nC_M4_2,E2,7\nC_M4_2,E3,1\nC_M4_2,E4,7\nC_M4_2,E5,7\nC_M4_3,E1,7\nC_M4_3,E2,2\nC_M4_3,E3,7\nC_M4_3,E4,1\nC_M4_3,E5,2",
+          "refusal": null,
+          "reasoning": null,
+          "reasoning_details": [
+            {
+              "type": "reasoning.encrypted",
+              "data": "gAAAAABqEzQxVH7icuVe8JovI1_CzXgsOeLcYbzfYlg4ztmv63wcx5bSYqxkn-B6OoVQaheEsdyoyZK6B2mPGdD31kYJOsdWrzvcYLJC2Cv6ed_6aXODf5FCsrPehmDthu50XMobGuG0QEcBrDPeaZsWUKg1yc0-y11JG4UAjlhUK2xLQpm8wvlFEcQlM3osFB5qvPjCBRapl9lvsq401VBgyOqw24DfSprESDdo-1CqaQ9BU-LnGRJYfFGrbcSjR8oZ8TpaESgGKXz2yfuCX0IRU1EmOcDTD1-ziF5husHkFX6zisL5J4hR99nYzK64JpK3eDcma-iHE2EAAw936xCBijYenR7pDvWAB8IXEt9N_nk6b1S138bj94e1-gSMaa2FYT-PeMluPzmm5jq5-2yA0wRk3kexJRcPwCyp-zWVa3StA8xyuY8FvjGJkIB4dB2HsPJExIhmMTmGeCa35KYMCnrFhMk--EdlP6PGQzPby9-IMWk18I3VvaipRmTTHbhb7kFowQIxpYK7VwFYRAb5solVhGANEeX5INZ6PfpKeLDa5uuxs9jB2ToTuSsMfrJdLcDTGzkgo5jvNc31s4RTfi4y0dx9Ma8xJlQk6Q2NCKDfghi-My5IjWXaGCdoV3twgRFI1Fye8kq0FIVq5MpFblU0cKdXnLTLnL5C-P94Wl_OqNcNBoORPP05Go_5huYJhBVW31JqlfW5ZxzVi0rLYRy-vT63BxbTEVkiIheoiI7FlMWwKw_Eb0eCe9RF4iz1nZfA5E2gNlJTHGgUbtkR8ErfwGc-5ZlrXOiEippgnN0kpGhJxkr7k03qZaOoiSm0rvnJS3c-ANHv-qwG_eLwuMix1MmrRnaIQkKugp6T8jIpbe-HZttglYljBcDuCUNr0Kwod-QO7jpLYu1KzP8m25dFVL_6DvABRgEHdyOij_8NAuU9vvysABzRg5bbtzOWrUXPa0XH-0p7nd6rNBHQnpS6DjYanukMoHBs3QWbtQLP9OW0_ugPbh70-4AJ3XOIgHGS2g9k1mmevZCwRqvMDTdEM9BTV19PABZEVmzIonTwc4TYPHDg4RWgbb6OvGA2CGQR5j9erw1lqsaOljqGWrJHl1MwJZdfpLnNDp2NAkZxkK38oz0S2TO96MBuHpApflNqfWeREA4c8fY5OQizM_YKgIR5sr5acQQdtGoXfYRTxC2yjRWJiN3fkamTuwJ9_LOZQTC-EPQUybBEYYP8GzO7jI4Y9aFixc5IJ0dR3rq1Qc6h8T-OQ49rcr2PRAMiqo6K2qbV8jduLlRcJjXtvhoKxKbk8FoAFJnD2lazLxIcgTcvlDayCVjRDqUOizINwfbCiSZAdZK_cN-5d2hJIR4WWzfuGPhOMtJAqaAEiDy4wWe2EPLqAhgeKXrLS5UL80BQ3mWmS6516QSRtGrQ98DJBvTDPcEDHqiQjYlArpQ3fNtFjOQ6drxaQMB-ddTbhNUMm7VQv0ie7QS2IS1K7gFHeP-AScggwZbrlq6Mhciv5jDPGI8CLJsxXS7vC_pC7eqsnFE6KAR1DrSL_vIkBdwmZ3w9xLreGBK5arDHdoNCEB1n_g8yUYe3uchq60iRb3CNdIMJ0iDGadmu9CmVnvz2DORgIvK0j02kWdRhw3xSdt8WHT7tsi1ve2vvuE7641H0U0XiZJKez373xliELoNV58wCIQsl_955MAfe1zIvStKOROBHpPORUR_iqOfPYh4wT0KXjvkaQk5CUnUIfryUknqe9dRDqsfglfnsd-JwFg5RtRCC2JVnMcuRKH7ijBHAilvW7ehQZuKnd2sSAfCESlh5JvYHixVIFAohH6LK-x6yy4ZfR-QcHW3j-aqjcxvw5q5zcQmq6cWmdwZctcGQVqfvX8dBzNnSZb7Qh9d2WU6_aXng8YOHKAFMnVZvkMUemcjIHtKQ4oMZZLomnxYXLkrV757wk8gSYGPRHr2zJ2bCAeI3evGIq3BwiMNGlAYkBDj1rwkc_GbbmZZlwACBscV-0qNc4SmwE9opWHvQR9bl8AQEJVI7LB5dtfmt7tVEbL_SJ7rhKIsQ-rd8H5re_IpYiQaS0HE2Aj0zQhWcjblZ6LwRL9pbm7lCd-y1cZUwKeeNfQPA6F27mJN4xDIY503qLORXp-YdKnnidr3BJC4hx3i16CgZr7ZaT7ic3w4HSTOcjE-3spMjgfGIJdKO39lyyKc5BlQ2ISQU3TOx7EcpkmZGTE3larB8av15QINft0TcqZt6DarcP1s09xNUF6rYFN6Cui6gga_oJ5voEwtb1egEvI9avzF8Lq_1mGSXRTnzYl68c1v6HJn0KUWerb731L30LFEUWE_r-59tH-6Bm0Ye71vBwhnttLrhMmwE5eO42IKsSbOycETnZ5PKCrn16QdV-XOPJwlEI1F9ijI7aiDVy6uhq4Ydg7EsJDABdLT7hzRgVuFBsSjpIKNp5EJcj8YS-pzZaqPaXTJqXi8mlN6VtW5Ho4Fq1vo1onzdSuStPeRXSyAfkgoRQe08308WIAGXgys-1rEND7Tny6Ux1wqf0nSshHXuB0Q5hSRWjyo__Gtt01yBF3WFb1qOGpEGBIiCN7JLgw6T-V36prNjhl8-zw6EOaZFZ9NUaZbUie2yD2w2jnSEHOnXGtiVR4tK4vw6Lde2thuxtnyOffgN9oGTaCG87Zfi8bNDbeOSx1NJ_g5LABqtbkt_1XnzTzArT-vxyRCfiraS2Vlxvnt01HbULB1_JRMj2rv5Ia1aEWxNI8uQxBlPSBA_DTIhT_GcL5IzLwouyOiokK_lc3w3DZA15tV4yiOiVuDL_jF9PPpeTenlaIwfJXjDAcEEdEx3tzPni1yVU2VO3IEIRuwo-ZCBz2dyNSjRva_BfPQR2110hnWVvKPxrTmG60NdhggeUr-drMGkhxfgxWdvfh_BQFpVWabR1X0YxSoR94p8Yug6wCOlfkvq91oKfHKoLj390i9asLkdzkQ9vLMia1WYsxLa7VMn5647TzFkTfa1rQdr1y-w3rOV8cM7TtIULsssZXkCqzhZWi-LJxO0oJS42C13CQyoc8r92JgwCk1GRGCgtbUqlrJvVHUDUCHtRja4hIP35BEMJYMegajpurydsOKJ86PPqv2OL8Psayo1McSasYePjYgJ7HWVnzdt8I2X7gY5PPHV0frH80q1uLk4pYJhuCU6dCVNft8OM-7HUEssJ5upn6o70ZZIMr_ZMz42O0zdrYvOzZiFY06IoksW-gCn3AjykaNCJW_Pc4sZoRH9BWhhQCrIodPFNJf9QcHprwUXqDHWEwfNqm9y_52ibmhk3bjSjTNcg-YCH0GSXC0YgeoOyFJzMvekLQrMpQd39sQ_rbLY3MknRwzw2-_jwP4vG6xyUtfyzrPW9gx3W2NFXZ_T35NthYgEpAGe2asyOVTy3zemkUvkxohibIaneBIVf1SSIUs1WodvdfIAwEMqwm8RtCft2CEtPMF8j2UivXH85hp1a-lgwF3p3Zi5JrjRT31x4QtigEXCz8BMooGqfuAeL95y2F4YJ017uwc8tn7cpaF6oo7QYqtU4KpRGgvZOV51XxzExJ7bXt-X4HRWoHWVGgBX2W5nncik8ADOsmc9__f7h2OMVDN9Ku5NTGL3Vbs6PLSVUy0cSIxOfycdvXD2hGhvzuLe7iwx1abM3iThGW7eTKJbDWZYhFKRePtiCa4vqiPJjPjk8yKTTbf_S7o0Z9pDw1hPE-0hqFuDtzbNEg2isqSSWkJhspAHJHv1p9AA8uUfi5i41y1orSFdw3-IGPJaII4R0ZWJ5uyeKvdDo3WzmZ5u5j2LGzXXk4z_K9N9egX69gNE2PArBt3x-fL1PJfpTZAxGqON2-2KUhhw0MzxNyZftZ-RoEeXDe0cUueWk6i8R4YawPgukfjOboeqzA_IWfvWjpsE2P0DtMq-hXry1vUiisOp7ibKgE6rKWjtnYSGiLePutCpK8p53ujRn0hcdiStenFOFKyVL2lp9Oh1TsxTUX5k4PUMfAQuXuSWoCVoqmk4Ax7eEONK-YLt2cLBe2FXNON8qHVHnrGF6575v4ohVj5IBdT6UicUHNkYkd_Th9iD3FwisWgzBJa4fUmP-ko2jynDzROvx0d5IaeBlRyBZDm5pAS4IDZJnry_L4UJQ6nV4mmHPlxxP7O3BU_-EKZ5KaSJ9LvBt38oZHvTstMh7UNuZ3mNfTdO_RtXg44vfYj_mO8ggzWCmjVDL5u_e1-0J3pE9NsGZ-iRZlbn2t1Orkw7y0jXgWk5QFuwK8WvoLQQcgATpao0wvMHm3h4cJUhAPFlZSGL_GE3tLJsCwq4rBwaxfQRePIrGJCnCvfNmNUPUvHxHwPM8hFNE_7SXxb4xangWkXjWtOAOI-GwR1iSZLvS0el_4FcHBKt6chBooXgBn5xYYoUBloGZwkxMxEwNIo6FGemtRaD0IN9VDZ2tH7QEDfPZDyGRNla9JYfKT5vfs3rnawn3gVQVEVYo7ntC7lF8_i-Zr-z9aFcklGzl4MnAF0QO-0tD9W_yJRWt34skDnVVCWqWJ7ccGvv7FkJL8Aj266FvKwbGO8uDnTdp1EPHvpMX5eIu7_7owZXmL8smxQxwKikXxGq9Wztsajcft1afmCvR88b-Izz4s24tycS2ADyDjX09Hhr8iPT_LU48JTP_S1QAY4-EyxNjILntNuj1hDhy6W-OGQiYzvcppBzVeHQWGCsALcNQ2Kww4tEAvZGoi_GKtpRChrCaw5erO0Tulxdbbqit8IgD3b1NQjsMEhgpC4KqC4xwTTtKlO_YAmDEO24S744v74Bao5oswAvZ6R8Wx6flm88FHR0Hp4VIErYardnajUafABcgPnHMQrKUW4TgDeqVpgO2OT155l2dsvBzrA3x_zB87qQIiKyEo-l6ieSlfAIwKgMXNuLG2yJT_Kf6Qdqgm8ZFmYhXzz7apIIY23R2EUcoQn6uncKhNZe81eL34q1N1RTLbw3ndsbIEI4W5_FphNdRMgCPIvi_JXkOGOZym-YPyUR7zheajmvIrAO26dKJ5rjup1v1SZjMLDNZZpa3SrAg2aHmKvdlEaWrMcPhNOwsEK62JZzdL5EI4A-rcVLwR0owUmYnC3nW1nRmVjFVJ5r2k0VZrmBfGi2wuDckbDEBV91JoH3liPY-CuoZHNbCYc3M5NNJcGBrIBZSYfcurrQbTAOYeGVH37c7rLFBwQJoD2VEKhMYnRE4aAd9vEbV3Wl9Ef8lnO2cqsXo5e-s7Iq8VILR06xgeEqIw9qu5lmxYBsb43NtUbmkcHjW55zdm-yLvumyZKy1PNKst4QeEDtMkfzMek9kiMFSOX7r09CzE4yoZV8WT6vwywHWA5rboyeFtJxwtoA32hi6gH2_m8KeLjGQYUXbwZRM41Ra6pY9BVzvYwwAJntMR_kNJk5jWdil01_CB4DD5noaKAiqkj3taNhdQ53CjwZMuWND7jlvEOBO4MfZjIeZ36x12es5BeFfKlf41b3rKLIvjV8dAh5s3e566qmle5u2dsmyuZvvuyDoycSkXJ09W3gPebkOJ8LfALoL3iCoxZk-aXIsgH0dvHCAxPvPprGTUqEGcRTIC8sRJRn6iD1ZtMwoDcyYG_Pw72h9Fnv_-Qzj-8_V1JhND9qQOVf6EO--MKBwyIRFGAFrCUs-6HyJWvaSs5lYpqpP8iutDiria1DPg0HXRIYI3f3g51xmW3KwbQRmjR2u88QWVoB9RUZmanPzgVb2YqWlt8dYbJNGy4-4OCNoaBGrfS4ziQ-XDL5u-qNWFlRuBrUSsMm5P3LzfYidGSFe58Gq4LelvW4TXkSysqVd7fM7Ngb_AIXGNAbS4JlpLzoD7_gUggrMWu2LZRgAYD45cXw1PSPd3ZSseH0T5JkQlRCDMAq-AqiHK_J2rvw9WSJyVDAzn1BsNroWIgy3vlOhtqPHeRFSxa972DKZZRdsohgk-4GrgNPX65W-hSAXYhB1X-I0M_vRY4BeD8ASbMK73sMBtN67thfTZkLfHD4iuONNEdRjMpJJYfh7f9U5DZgxfoundrqYQXmPzR5LEv3IboqJrPa0F1nrrdeNM9VWqsF3coD2oTK5CNXTFKQz1ODja66sS7U-zjvPXxBpRQ1_-ne-y8O-27YcRXegfVDhtR-B80HMybwkPvkb3clFiYQ7NM3FISAOuB1DQ7f3BYf3re7bs0nlDHGWANKhSv2l3c478GGp8LRyR7bXp5c0ZalaHQCDm6H3ziua6cj5sIV1VsJVMDW9M9LWRV-",
+              "format": "openai-responses-v1",
+              "id": "rs_08d9f98006be4126016a1334213e708197ad80e117a8d0b28a",
+              "index": 0
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1029,
+      "completion_tokens": 1589,
+      "total_tokens": 2618,
+      "cost": 0.052815,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.052815,
+        "upstream_inference_prompt_cost": 0.005145,
+        "upstream_inference_completions_cost": 0.04767
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1034,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 1029,
+    "completion_tokens": 1589,
+    "total_tokens": 2618,
+    "cost": 0.052815,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.052815,
+      "upstream_inference_prompt_cost": 0.005145,
+      "upstream_inference_completions_cost": 0.04767
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 1034,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 1034,
+  "cost_usd": 0.052815,
+  "parsed_summary": "parsed 55/55 ratings",
+  "request_payload": {
+    "model": "openai/gpt-5.5",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses (E1-E5) and 11 bipolar constructs. Rate each response on each construct on a 1-7 scale: 1 = strongly the LEFT pole, 7 = strongly the RIGHT pole, 4 = neutral or mixed.\n\nResponses:\n**E1:** I strongly recommend **Option E (Leadership style mismatch)** as the primary diagnosis. The pivotal clue lies in the team's retrospective themes shifting from product delivery (\"what to ship next\") to organizational friction (\"process and communication\"). This shift is the classic hallmark of hitting a scaling wall.\n\n**E2:** # Primary Diagnosis: Option C — Loss of Psychological Safety Following the Layoff\n\nThe timing is the strongest signal. A layoff occurred 4 months ago; output decline and attrition span 6 months but accelerated in a way consistent with a trust shock compounding pre-existing strain. Critically, the *shift in retro themes* — from \"what to ship next\" to \"process and communication\" — is the diagnostic fingerprint of a safety problem, not a workload or skills problem.\n\n**E3:** **Primary diagnosis: Leadership style mismatch (Option E).**\n\nThe decisive signal is the pivot in\n\n**E4:** The most likely primary diagnosis is **Option C: Loss of psychological safety following a layoff round 4 months ago**. The timeline is the strongest clue: the team’s output and retention problems emerged over the past 6 months, and the layoff occurred right around the start of that decline. After a period of strong delivery, an unexpected workforce reduction shatters the implicit contract of “high performance = security.” The survivors—especially senior engineers with options—often interpret this as a signal that the organization is unstable or that their contributions are no longer valued, tr...\n\n**E5:** The most likely primary diagnosis is **loss of psychological safety following the layoff round**. The strongest signal is the combination of timing and symptom pattern. A team that was previously high-performing does not usually lose execution capacity across four squads simply because of ordinary process drift.\n\nConstructs (id : left pole ↔ right pole):\n  C_M1_1: 'Diagnoses loss of psychological safety from layoff'  (1) ↔ (7)  'Diagnoses leadership style mismatch from scaling'\n  C_M1_2: 'Emphasizes layoff timing as decisive signal'  (1) ↔ (7)  'Emphasizes retro theme shift as decisive signal'\n  C_M1_3: 'Cites retro theme shift as fingerprint'  (1) ↔ (7)  'Relies on timing and scope of decline'\n  C_M2_1: 'Leadership-style mismatch as primary diagnosis'  (1) ↔ (7)  'Layoff-driven psychological safety loss as primary diagnosis'\n  C_M2_2: 'Layoff-driven psychological safety loss as primary diagnosis'  (1) ↔ (7)  'Leadership-style mismatch as primary diagnosis'\n  C_M2_3: 'Leadership-style mismatch as primary diagnosis'  (1) ↔ (7)  'Layoff-driven psychological safety loss as primary diagnosis'\n  C_M3_1: 'Diagnoses loss of psychological safety following recent layoffs'  (1) ↔ (7)  'Diagnoses a leadership style mismatch hitting a scaling wall'\n  C_M3_2: 'Concludes as a fully complete paragraph and thought'  (1) ↔ (7)  'Cuts off abruptly with an incomplete sentence or word'\n  C_M4_1: 'Focuses on leadership style as primary cause'  (1) ↔ (7)  'Focuses on psychological safety as primary cause'\n  C_M4_2: 'Diagnoses leadership style mismatch as primary'  (1) ↔ (7)  'Diagnoses loss of psychological safety as primary'\n  C_M4_3: 'Emphasizes layoff timing as decisive evidence'  (1) ↔ (7)  'Emphasizes retro theme shift as decisive evidence'\n\nOUTPUT FORMAT (strict). Write exactly 55 lines, no commentary, no markdown fences, no headers. One line per (construct, element) pair, in this exact format:\n<construct_id>,<element>,<rating>\n\nExample (showing the format only - your numbers will differ):\nC_M1_1,E1,1\nC_M1_1,E2,2\nC_M1_1,E3,3\nC_M1_2,E1,4\n...\n\nConstraints:\n- rating is an integer from 1 to 7\n- iterate all 11 constructs in the order listed, and within each construct all 5 elements in order (E1-E5)\n- produce 55 lines total\n- output ONLY the lines, nothing before or after"
+      }
+    ],
+    "temperature": 0.0,
+    "max_tokens": 2500
+  }
+}

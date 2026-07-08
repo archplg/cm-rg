@@ -1,0 +1,133 @@
+# Phase 2 configuration - 7 tasks, 5 runs per (task, condition)
+# Estimated cost: ~$25-30 for full Phase 2A (60 new cells beyond Phase 1's 10)
+# Total cells planned: 70 (5 runs x 7 tasks x 2 conditions)
+
+experiment:
+  name: archipelago_cross_model_phase2
+  description: Phase 2 expansion - 7 tasks for paper-quality stats
+  total_budget_usd: 100    # hard stop if exceeded
+  estimated_budget_usd: 30
+  output_dir: ./results
+  log_dir: ./logs
+
+openrouter:
+  base_url: https://openrouter.ai/api/v1
+  api_key_env: OPENROUTER_API_KEY
+  retries_per_call: 3
+  retry_backoff_seconds: [2, 5, 15]
+  request_timeout_seconds: 120
+
+models:
+  - id: anthropic/claude-opus-4.7
+    fallback_id: anthropic/claude-sonnet-4.6
+    family: anthropic
+    short_name: M1
+    notes: Anthropic frontier
+
+  - id: openai/gpt-5.5
+    fallback_id: openai/gpt-5.4
+    family: openai
+    short_name: M2
+    notes: OpenAI frontier
+
+  - id: google/gemini-3.1-pro-preview
+    fallback_id: google/gemini-2.5-pro
+    family: google
+    short_name: M3
+    notes: Google frontier - Procrustes outlier in Phase 1; monitor in Phase 2
+
+  - id: deepseek/deepseek-v4-pro
+    fallback_id: deepseek/deepseek-v4-flash
+    family: deepseek
+    short_name: M4
+    notes: Chinese frontier
+
+  - id: moonshotai/kimi-k2.6
+    fallback_id: moonshotai/kimi-k2.5
+    family: moonshot
+    short_name: M5
+    notes: Chinese frontier thinking-model
+
+parameters:
+  free_response:
+    temperature: 1.0
+    max_tokens: 3000
+  constructs:
+    temperature: 1.0
+    max_tokens: 2000
+  ratings:
+    temperature: 0.0
+    max_tokens: 2500
+
+# 7 tasks - 3 from Phase 1 + 4 new
+tasks:
+  - id: A
+    brief_file: tasks/task_A_brief.md
+    domain: strategic_capital_allocation
+    is_repeat_task: true     # need 5 runs total per condition
+  - id: B
+    brief_file: tasks/task_B_brief.md
+    domain: team_diagnostic
+    is_repeat_task: true
+  - id: C
+    brief_file: tasks/task_C_brief.md
+    domain: product_ethics
+    is_repeat_task: true
+  - id: D
+    brief_file: tasks/task_D_brief.md
+    domain: climate_adaptation
+    is_repeat_task: true
+  - id: E
+    brief_file: tasks/task_E_brief.md
+    domain: ai_governance
+    is_repeat_task: true
+  - id: F
+    brief_file: tasks/task_F_brief.md
+    domain: product_launch_strategy
+    is_repeat_task: true
+  - id: G
+    brief_file: tasks/task_G_brief.md
+    domain: medical_triage_ethics
+    is_repeat_task: true
+
+# Conditions
+conditions:
+  - id: N
+    name: neutral
+    system_prompt: "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+    use_personas: false
+
+  - id: P
+    name: persona
+    use_personas: true
+    # Extended Latin square: 5 personas (Q,S,E,H,C) cycled across 7 tasks
+    # Each model gets each persona at least once across the 5-task cycle
+    # Tasks F,G repeat the A,B cycle (acceptable for 5+ runs each)
+    persona_assignment:
+      A: {M1: Q, M2: S, M3: E, M4: H, M5: C}
+      B: {M1: S, M2: E, M3: H, M4: C, M5: Q}
+      C: {M1: E, M2: H, M3: C, M4: Q, M5: S}
+      D: {M1: H, M2: C, M3: Q, M4: S, M5: E}
+      E: {M1: C, M2: Q, M3: S, M4: E, M5: H}
+      F: {M1: Q, M2: S, M3: E, M4: H, M5: C}   # cycles back to Task A
+      G: {M1: S, M2: E, M3: H, M4: C, M5: Q}   # cycles back to Task B
+
+# Repetitions - 5 runs per (task, condition) for variance estimation
+repetitions:
+  base_runs_per_cell: 1
+  extra_runs_for_repeat_task: 4    # 1 base + 4 extra = 5 runs per (task, cond)
+
+# Pipeline parameters
+pipeline:
+  n_triads_per_agent: 3
+  n_elements: 5
+  rating_scale: [1, 7]
+  triad_assignment_strategy: balanced_random
+
+# Pre-flight checks
+preflight:
+  verify_api_key: true
+  verify_model_ids: true
+  estimate_cost: true
+  require_user_confirmation: true
+  dry_run_mode: false

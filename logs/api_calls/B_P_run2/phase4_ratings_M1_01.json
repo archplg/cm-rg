@@ -1,0 +1,104 @@
+{
+  "cell_id": "B_P_run2",
+  "task": "B",
+  "condition": "P",
+  "run_idx": 2,
+  "phase": "phase4_ratings",
+  "model_short_name": "M1",
+  "persona_or_neutral": "S",
+  "system_prompt": "You are an analyst with a systems-strategist epistemological frame. You think in feedback loops, second-order effects, and long horizons. You see the situation as a network of interacting forces, not a set of options. Your decision heuristic is to identify leverage points and avoid actions that increase systemic fragility. Generate analysis from this frame.",
+  "user_prompt": "You are presented with 3 anonymous responses (E1-E3) and a set of bipolar constructs. Rate each response on each construct on a 1-7 scale, where 1 = strongly the LEFT pole and 7 = strongly the RIGHT pole. 4 = neutral or mixed.\n\nResponses:\n**E1:** The most likely primary diagnosis is **E: leadership style mismatch**. While burnout (A) is the intuitive consensus—high output, then a crash—it conflates symptoms with cause. The contrarian move is to ask: what if the pace itself was sustainable, and the real fracture is that the engineering leadership model hasn’t evolved with the team’s growth?\n\n**E2:** When we ask \"who is affected and how?\" in this scenario, the most compelling diagnosis is **Option C: Loss of psychological safety following recent layoffs\n\n**E3:** ## Primary Diagnosis: Option C — Loss of Psychological Safety Following the Layoff\n\nReading this as a system rather than a list of symptoms, the timing dominates the signal. A layoff occurred 4 months ago; output decline and senior attrition accelerated in the same window. The retro shift from \"what to ship\" to \"process and communication\" is the tell — it's the linguistic signature of a team that has stopped optimizing for the external game and started hedging against internal risk.\n\nConstructs to rate (id : left pole ↔ right pole):\n  C_M1_1: 'Reasoned systemic diagnosis with explicit causal mechanism'  (1) ↔ (7)  'Asserted diagnosis without supporting analytical chain'\n  C_M1_2: 'Contrarian reframe rejecting consensus reading'  (1) ↔ (7)  'Accepts timing/layoff as dominant signal'\n  C_M1_3: 'Treats symptoms as linguistic/behavioral evidence'  (1) ↔ (7)  'Treats symptoms as structural-fit problem'\n  C_M2_1: 'Leadership-model root cause'  (1) ↔ (7)  'Layoff-induced psychological safety loss'\n  C_M2_2: 'Mechanistic causal narrative'  (1) ↔ (7)  'Bare diagnostic label'\n  C_M2_3: 'Contrarian diagnosis against burnout'  (1) ↔ (7)  'Conventional post-layoff safety diagnosis'\n  C_M4_1: 'Internal leadership dynamics'  (1) ↔ (7)  'External systemic shock'\n  C_M4_2: 'Internal leadership dynamics'  (1) ↔ (7)  'External systemic shock'\n  C_M4_3: 'Internal leadership dynamics'  (1) ↔ (7)  'External systemic shock'\n  C_M5_1: 'Psychological Safety Collapse'  (1) ↔ (7)  'Leadership Structure Mismatch'\n  C_M5_2: 'Contrarian Counterfactual Reasoning'  (1) ↔ (7)  'Evidence-Based Diagnostic Logic'\n  C_M5_3: 'Stakeholder Impact Analysis'  (1) ↔ (7)  'Causal Mechanism Focus'\n\nOutput ONE line per (construct, element) pair, in this exact format:\n<construct_id>,<element>,<rating>\n\nExample:\nC_M1_1,E1,5\nC_M1_1,E2,3\n...\n\nProduce 36 lines total. No commentary, only the lines.",
+  "model_id_requested": "anthropic/claude-opus-4.7",
+  "model_id_used": "anthropic/claude-opus-4.7",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 5135,
+  "timestamp_iso": "2026-05-20T00:44:57.731089",
+  "raw_response_content": "C_M1_1,E1,2\nC_M1_1,E2,6\nC_M1_1,E3,1\nC_M1_2,E1,1\nC_M1_2,E2,7\nC_M1_2,E3,7\nC_M1_3,E1,6\nC_M1_3,E2,4\nC_M1_3,E3,2\nC_M2_1,E1,1\nC_M2_1,E2,7\nC_M2_1,E3,7\nC_M2_2,E1,2\nC_M2_2,E2,7\nC_M2_2,E3,1\nC_M2_3,E1,1\nC_M2_3,E2,7\nC_M2_3,E3,7\nC_M4_1,E1,1\nC_M4_1,E2,6\nC_M4_1,E3,6\nC_M4_2,E1,1\nC_M4_2,E2,6\nC_M4_2,E3,6\nC_M4_3,E1,1\nC_M4_3,E2,6\nC_M4_3,E3,6\nC_M5_1,E1,7\nC_M5_1,E2,1\nC_M5_1,E3,1\nC_M5_2,E1,1\nC_M5_2,E2,5\nC_M5_2,E3,5\nC_M5",
+  "raw_response_full": {
+    "id": "gen-1779234296-F3BZkE0vfgZGZIVF6gA5",
+    "object": "chat.completion",
+    "created": 1779234296,
+    "model": "anthropic/claude-4.7-opus-20260416",
+    "provider": "Anthropic",
+    "system_fingerprint": null,
+    "service_tier": "standard",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "length",
+        "native_finish_reason": "max_tokens",
+        "message": {
+          "role": "assistant",
+          "content": "C_M1_1,E1,2\nC_M1_1,E2,6\nC_M1_1,E3,1\nC_M1_2,E1,1\nC_M1_2,E2,7\nC_M1_2,E3,7\nC_M1_3,E1,6\nC_M1_3,E2,4\nC_M1_3,E3,2\nC_M2_1,E1,1\nC_M2_1,E2,7\nC_M2_1,E3,7\nC_M2_2,E1,2\nC_M2_2,E2,7\nC_M2_2,E3,1\nC_M2_3,E1,1\nC_M2_3,E2,7\nC_M2_3,E3,7\nC_M4_1,E1,1\nC_M4_1,E2,6\nC_M4_1,E3,6\nC_M4_2,E1,1\nC_M4_2,E2,6\nC_M4_2,E3,6\nC_M4_3,E1,1\nC_M4_3,E2,6\nC_M4_3,E3,6\nC_M5_1,E1,7\nC_M5_1,E2,1\nC_M5_1,E3,1\nC_M5_2,E1,1\nC_M5_2,E2,5\nC_M5_2,E3,5\nC_M5",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1294,
+      "completion_tokens": 400,
+      "total_tokens": 1694,
+      "cost": 0.01647,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.01647,
+        "upstream_inference_prompt_cost": 0.00647,
+        "upstream_inference_completions_cost": 0.01
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 1294,
+    "completion_tokens": 400,
+    "total_tokens": 1694,
+    "cost": 0.01647,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.01647,
+      "upstream_inference_prompt_cost": 0.00647,
+      "upstream_inference_completions_cost": 0.01
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "cost_usd": 0.016470000000000002,
+  "parsed_summary": "parsed 33/36 ratings",
+  "request_payload": {
+    "model": "anthropic/claude-opus-4.7",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst with a systems-strategist epistemological frame. You think in feedback loops, second-order effects, and long horizons. You see the situation as a network of interacting forces, not a set of options. Your decision heuristic is to identify leverage points and avoid actions that increase systemic fragility. Generate analysis from this frame."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 3 anonymous responses (E1-E3) and a set of bipolar constructs. Rate each response on each construct on a 1-7 scale, where 1 = strongly the LEFT pole and 7 = strongly the RIGHT pole. 4 = neutral or mixed.\n\nResponses:\n**E1:** The most likely primary diagnosis is **E: leadership style mismatch**. While burnout (A) is the intuitive consensus—high output, then a crash—it conflates symptoms with cause. The contrarian move is to ask: what if the pace itself was sustainable, and the real fracture is that the engineering leadership model hasn’t evolved with the team’s growth?\n\n**E2:** When we ask \"who is affected and how?\" in this scenario, the most compelling diagnosis is **Option C: Loss of psychological safety following recent layoffs\n\n**E3:** ## Primary Diagnosis: Option C — Loss of Psychological Safety Following the Layoff\n\nReading this as a system rather than a list of symptoms, the timing dominates the signal. A layoff occurred 4 months ago; output decline and senior attrition accelerated in the same window. The retro shift from \"what to ship\" to \"process and communication\" is the tell — it's the linguistic signature of a team that has stopped optimizing for the external game and started hedging against internal risk.\n\nConstructs to rate (id : left pole ↔ right pole):\n  C_M1_1: 'Reasoned systemic diagnosis with explicit causal mechanism'  (1) ↔ (7)  'Asserted diagnosis without supporting analytical chain'\n  C_M1_2: 'Contrarian reframe rejecting consensus reading'  (1) ↔ (7)  'Accepts timing/layoff as dominant signal'\n  C_M1_3: 'Treats symptoms as linguistic/behavioral evidence'  (1) ↔ (7)  'Treats symptoms as structural-fit problem'\n  C_M2_1: 'Leadership-model root cause'  (1) ↔ (7)  'Layoff-induced psychological safety loss'\n  C_M2_2: 'Mechanistic causal narrative'  (1) ↔ (7)  'Bare diagnostic label'\n  C_M2_3: 'Contrarian diagnosis against burnout'  (1) ↔ (7)  'Conventional post-layoff safety diagnosis'\n  C_M4_1: 'Internal leadership dynamics'  (1) ↔ (7)  'External systemic shock'\n  C_M4_2: 'Internal leadership dynamics'  (1) ↔ (7)  'External systemic shock'\n  C_M4_3: 'Internal leadership dynamics'  (1) ↔ (7)  'External systemic shock'\n  C_M5_1: 'Psychological Safety Collapse'  (1) ↔ (7)  'Leadership Structure Mismatch'\n  C_M5_2: 'Contrarian Counterfactual Reasoning'  (1) ↔ (7)  'Evidence-Based Diagnostic Logic'\n  C_M5_3: 'Stakeholder Impact Analysis'  (1) ↔ (7)  'Causal Mechanism Focus'\n\nOutput ONE line per (construct, element) pair, in this exact format:\n<construct_id>,<element>,<rating>\n\nExample:\nC_M1_1,E1,5\nC_M1_1,E2,3\n...\n\nProduce 36 lines total. No commentary, only the lines."
+      }
+    ],
+    "temperature": 0.0,
+    "max_tokens": 400
+  }
+}

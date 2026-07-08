@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cross-Model Repertory Grid - Project Flow</title>
+<style>
+:root {
+  --bg: #fafaf7;
+  --card: #ffffff;
+  --ink: #1a1a1a;
+  --muted: #6b6b6b;
+  --line: #d4d4d0;
+  --accent: #2563eb;
+  --done: #10b981;
+  --doing: #f59e0b;
+  --plan: #94a3b8;
+  --defer: #cbd5e1;
+  --warn: #ef4444;
+  --hover: #eef2ff;
+  --radius: 6px;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --sans: -apple-system, "Segoe UI", "Helvetica Neue", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+  font-size: 14px;
+}
+.wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px 32px 80px;
+}
+header {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 16px;
+  margin-bottom: 32px;
+}
+h1 {
+  font-size: 22px;
+  margin: 0 0 4px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.subtitle {
+  color: var(--muted);
+  font-size: 13px;
+  font-family: var(--mono);
+}
+h2 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-weight: 600;
+  margin: 32px 0 16px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+}
+.legend {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot.done { background: var(--done); }
+.dot.doing { background: var(--doing); }
+.dot.plan { background: var(--plan); }
+.dot.defer { background: var(--defer); }
+
+/* Phase row */
+.row {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+.card {
+  flex: 0 0 220px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+  min-height: 120px;
+}
+.card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08);
+  transform: translateY(-1px);
+}
+.card.active {
+  border-color: var(--accent);
+  background: var(--hover);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.12);
+}
+.card-tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.card-title {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.card-meta {
+  font-size: 12px;
+  color: var(--muted);
+  font-family: var(--mono);
+  line-height: 1.4;
+}
+.card-progress {
+  margin-top: 10px;
+  height: 4px;
+  background: #f0f0ed;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.bar {
+  height: 100%;
+  background: var(--done);
+  transition: width 0.3s;
+}
+.bar.doing { background: var(--doing); }
+.bar.plan { background: var(--plan); }
+.arrow {
+  flex: 0 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--line);
+  font-size: 18px;
+  user-select: none;
+}
+
+/* Detail panel */
+.detail {
+  margin-top: 16px;
+  background: var(--card);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  display: none;
+}
+.detail.open { display: block; }
+.detail h3 {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.detail .role {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+@media (max-width: 720px) {
+  .detail-grid { grid-template-columns: 1fr; }
+}
+.kv {
+  font-size: 13px;
+}
+.kv strong {
+  display: block;
+  color: var(--muted);
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.kv-body {
+  font-family: var(--mono);
+  font-size: 12px;
+  background: #f5f5f1;
+  padding: 8px 10px;
+  border-radius: 4px;
+  white-space: pre-wrap;
+  line-height: 1.55;
+}
+.findings {
+  background: #fef9e7;
+  border: 1px solid #f5d76e;
+  padding: 12px 14px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+.findings strong { display: block; margin-bottom: 6px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #92590f; }
+.next {
+  background: #ecfdf5;
+  border: 1px solid #6ee7b7;
+  padding: 12px 14px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+.next strong { display: block; margin-bottom: 6px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #047857; }
+code {
+  font-family: var(--mono);
+  background: #f5f5f1;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+/* Per-cell pipeline */
+.pipeline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+}
+.step {
+  flex: 1 1 200px;
+  padding: 10px 14px;
+  background: #f9f9f6;
+  border-left: 3px solid var(--accent);
+  border-radius: 3px;
+  font-size: 13px;
+}
+.step-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 4px;
+}
+.step-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.step-body {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.pipeline-arrow {
+  color: var(--line);
+  font-size: 16px;
+}
+
+/* Analysis grid */
+.analyses {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+.an {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  font-size: 13px;
+}
+.an-name { font-weight: 600; margin-bottom: 4px; font-family: var(--mono); font-size: 13px; }
+.an-desc { color: var(--muted); font-size: 12px; line-height: 1.45; }
+.an-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-family: var(--mono);
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* Publication */
+.pub-chain {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.pub-node {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 140px;
+}
+.pub-arrow { color: var(--line); font-size: 14px; }
+.pub-label { font-weight: 600; font-size: 12px; }
+.pub-target { font-size: 11px; color: var(--muted); font-family: var(--mono); }
+
+/* Budget bar */
+.budget {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-top: 16px;
+}
+.budget-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+.budget-bar {
+  display: flex;
+  height: 24px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.budget-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: white;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.budget-legend {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  color: var(--muted);
+}
+.budget-legend-item { display: inline-flex; align-items: center; gap: 6px; }
+.budget-legend-color { width: 12px; height: 12px; border-radius: 2px; }
+
+footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--muted);
+  font-family: var(--mono);
+}
+.hint {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 6px;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Cross-Model Repertory Grid (CM-RG) - Project Flow</h1>
+  <div class="subtitle">archipelago/ &middot; 5 frontier LLMs &middot; Kelly 1955 methodology &middot; status as of 22 May 2026</div>
+  <div class="legend">
+    <span class="legend-item"><span class="dot done"></span> Complete</span>
+    <span class="legend-item"><span class="dot doing"></span> In progress</span>
+    <span class="legend-item"><span class="dot plan"></span> Planned</span>
+    <span class="legend-item"><span class="dot defer"></span> Deferred to v2</span>
+  </div>
+</header>
+
+<!-- DATA COLLECTION PHASES -->
+<h2>Data collection phases (click each card)</h2>
+<div class="hint">Each phase is a separate run of the 4-stage pipeline on a specific (models x tasks x conditions x runs) factorial.</div>
+
+<div class="row" id="phaseRow"></div>
+
+<div id="detail" class="detail"></div>
+
+<!-- PER-CELL PIPELINE -->
+<h2>Per-cell pipeline (what happens inside one cell)</h2>
+<div class="hint">All phases run this same 4-stage pipeline. A "cell" is one (task, condition, run) tuple.</div>
+<div class="pipeline" id="pipeline"></div>
+
+<!-- ANALYSES -->
+<h2>Analyses run on collected data</h2>
+<div class="hint">Most analyses run on the raw cells (no API cost). Only construct_validation uses OpenRouter.</div>
+<div class="analyses" id="analyses"></div>
+
+<!-- PUBLICATION -->
+<h2>Publication chain</h2>
+<div class="hint">After all phases collected, data + paper are released across multiple platforms simultaneously.</div>
+<div class="pub-chain" id="pubchain"></div>
+
+<!-- BUDGET -->
+<h2>Budget usage</h2>
+<div class="budget" id="budget"></div>
+
+<footer>
+  Generated for Sergey Dolgov. Reload to refresh status. Click any phase card to expand. Built with vanilla HTML/CSS/JS, no external deps.
+</footer>
+
+</div>
+
+<script>
+const PHASES = [
+  {
+    id: "p1",
+    tag: "Phase 1",
+    title: "Cross-model main experiment",
+    status: "done",
+    cells_done: 70,
+    cells_total: 70,
+    meta: "5 models x 7 tasks x 2 conditions x 5 runs",
+    output_dir: "results/",
+    cost: "$21.34",
+    walltime: "~16 hours",
+    purpose: "Headline dataset. Tests whether 5 frontier LLMs from independent labs produce diverse evaluations on the same advisory tasks.",
+    models: "M1 Claude Opus 4.7, M2 GPT-5.5, M3 Gemini 3.1 Pro, M4 DeepSeek v4 Pro, M5 Kimi k2.6",
+    tasks: "A SaaS investment, B engineering team, C health-app privacy, D climate adaptation, E AI governance, F product launch, G medical triage",
+    findings: "Overall pairwise disagreement: 0.476 (95% CI 0.42-0.54).\nTask range: 0.342 (Task B engineering) to 0.662 (Task A SaaS).\nProcrustes disparity 0.352: rejects Platonic Representation Hypothesis at evaluation layer.\nPersona effect at average: null (paired t-test p=0.855), but task-conditional reshaping exists.\nM5 partial dropout 30% mitigated via reasoning-budget patch and validated as robust (delta +0.1%).",
+    next: "No new collection needed. Used as baseline for all comparisons."
+  },
+  {
+    id: "p2b",
+    tag: "Phase 2B",
+    title: "Pilot replication (single-Claude in 5 roles)",
+    status: "done",
+    cells_done: 42,
+    cells_total: 42,
+    meta: "1 Claude playing 5 personas x 7 tasks x 2 conditions x 3 runs",
+    output_dir: "results_pilot/",
+    cost: "~$15 (estimated $15-20)",
+    walltime: "1h 34m",
+    purpose: "Methodological confound check. If pilot shows similar disagreement to Phase 1 cross-model, then lab diversity reduces to persona diversity. If cross-model exceeds pilot, lab diversity is irreducible.",
+    models: "M1 Claude Opus 4.7 only, playing Q/S/E/H/C personas across cells",
+    tasks: "Same 7 tasks as Phase 1",
+    findings: "All 42 cells completed (20 status=complete, 22 complete_with_errors due to expected M-equivalent-self truncation).\nReady for head-to-head against Phase 1 via pilot_vs_crossmodel_comparison.py (free, ~1 min).",
+    next: "Run pilot_vs_crossmodel_comparison.py to get bootstrap CI on delta."
+  },
+  {
+    id: "p2c",
+    tag: "Phase 2C",
+    title: "Extended elements (10-option tasks)",
+    status: "doing",
+    cells_done: 10,
+    cells_total: 20,
+    meta: "5 models x 2 tasks (D10, G10) x 2 conditions x 5 runs",
+    output_dir: "results_extended/",
+    cost: "~$10-15 estimated",
+    walltime: "~8 hours (resumed from reboot)",
+    purpose: "Originally intended to resolve PCA dimensionality artifact. Reframed: tests whether option-richness (5 vs 10 options) changes cross-model disagreement profile. (See METHODOLOGY_NOTE in PHASE2_EXTENDED_PLAN.md - 'elements' in our methodology are model responses, not brief options.)",
+    models: "Same 5 as Phase 1",
+    tasks: "D10 (climate, 10 options A-J), G10 (medical triage, 10 options A-J)",
+    findings: "Task D complete: 10/10 cells, all complete_with_errors.\nTask G in progress (G_N_run2 actively running at last check).\nWARN 'Only 5 elements (config wants 10)' is informational: methodology produces 5 elements (one per model) regardless of brief option count.",
+    next: "Will finish in ~3 hours. Then either: (a) accept as option-richness test for paper, or (b) skip ahead to Phase 2H for true elements expansion via more models."
+  },
+  {
+    id: "p2h",
+    tag: "Phase 2H",
+    title: "10-model expansion (true elements scaling)",
+    status: "plan",
+    cells_done: 0,
+    cells_total: 12,
+    meta: "10 models x 2 tasks (A10, D10) x 2 conditions x 3 runs",
+    output_dir: "results_phase2h/",
+    cost: "$50-55 estimated",
+    walltime: "~6-8 hours",
+    purpose: "Genuine resolution of PCA dimensionality artifact via more models. 10 models = 10 elements per cell, enough for PCA variance to spread across multiple components.",
+    models: "M1-M5 (existing) + M6 Mistral Large 3, M7 Cohere Command A, M8 Qwen 3.7 Max, M9 Llama 4 Maverick, M10 Grok 4",
+    tasks: "A10 SaaS investment (10 options), D10 climate adaptation (10 options)",
+    findings: "Not started. Config written: config_phase2h.yaml. Task brief written: tasks/task_A10_brief.md.",
+    next: "Verify exact OpenRouter model IDs for M6-M10 before launch. Apply config_phase2h.yaml, run python run_experiment.py."
+  },
+  {
+    id: "p2g",
+    tag: "Phase 2G",
+    title: "More runs per cell (variance tightening)",
+    status: "plan",
+    cells_done: 0,
+    cells_total: 70,
+    meta: "5 models x 7 tasks x 2 conditions x 5 NEW runs (runs 6-10)",
+    output_dir: "results/ (extends existing)",
+    cost: "$25-30 estimated",
+    walltime: "~25 hours",
+    purpose: "Tighten run-to-run variance estimates. Phase 1 has CV up to 74% on some cells (Task B). With n>=10 runs per (task, condition), bootstrap CIs become reliable.",
+    models: "Same 5 as Phase 1",
+    tasks: "Same 7 as Phase 1",
+    findings: "Not started.",
+    next: "Edit config.yaml: change extra_runs_for_repeat_task: 4 to 9. Run python run_experiment.py --resume."
+  },
+  {
+    id: "p2f",
+    tag: "Phase 2F",
+    title: "New tasks (external validity)",
+    status: "defer",
+    cells_done: 0,
+    cells_total: 30,
+    meta: "5 models x 3 NEW tasks x 2 conditions x 5 runs",
+    output_dir: "results_phase2f/",
+    cost: "$10-15 estimated",
+    walltime: "~12 hours",
+    purpose: "External validity test. Confirms findings generalise beyond Phase 1's 7 tasks (which were all business/policy advisory).",
+    models: "Same 5 as Phase 1",
+    tasks: "H sentencing reform, I science funding, J urban planning",
+    findings: "Not started. Briefs written: tasks/task_H_brief.md, _I_, _J_.",
+    next: "Deferred to dataset v2 (post initial publication). Lower priority than dimensionality resolution."
+  }
+];
+
+const PIPELINE_STEPS = [
+  {
+    n: 1,
+    title: "Free response",
+    body: "Each of N models reads the task brief independently and produces a 200-400 word recommendation. No persona awareness of other models. Cost dominates total spend."
+  },
+  {
+    n: 2,
+    title: "Anonymise",
+    body: "Strip authorship. Responses shuffled and relabelled E1..EN. Done locally, no API call. Prevents quality-attribution anchoring (Sun et al. 2026)."
+  },
+  {
+    n: 3,
+    title: "Triadic constructs",
+    body: "Each model sees random triples of anonymised responses and articulates a bipolar construct that distinguishes 2 from the 1. Yields ~3 constructs per model per cell."
+  },
+  {
+    n: 4,
+    title: "Cross-rating",
+    body: "Each model rates every (element, construct) pair on 1-7 scale. Yields the per-cell rating tensor (~N x N x ~3N entries) that feeds all downstream analyses."
+  }
+];
+
+const ANALYSES = [
+  { name: "bootstrap_analysis.py", desc: "1000-resample CIs on every headline metric: overall disagreement, per-task, persona effect, Procrustes disparity, variance decomposition.", status: "done" },
+  { name: "m5_sensitivity.py", desc: "Robustness check excluding M5 Kimi (30% partial dropout). Found +0.1% impact - confirms findings robust.", status: "done" },
+  { name: "mixed_effects_analysis.py", desc: "Variance components via statsmodels MixedLM. 3 task contrasts significant p<0.01 (Task C, E, F).", status: "done" },
+  { name: "construct_decomposition.py", desc: "7 sub-analyses: semantic clusters (KMeans), model fingerprint chi2=242.58 p<0.0001, variance decomp, Procrustes, recommendation prediction, novelty, dendrogram.", status: "done" },
+  { name: "construct_validation.py (Claude)", desc: "LLM-as-rater inter-rater kappa with Claude. Result: 0.510 moderate agreement.", status: "done" },
+  { name: "construct_validation.py (GPT-5.5)", desc: "Independent second rater (non-Anthropic). First attempt: 1/200 successful due to thinking-model token budget. Patched (max_tokens 50 to 2000), ready to rerun.", status: "doing" },
+  { name: "multi_run_pca_analysis.py", desc: "Bonus PCA on runs-as-elements (up to 25 elements per task/condition). Resolves dimensionality artifact for free, no API cost.", status: "plan" },
+  { name: "pilot_vs_crossmodel_comparison.py", desc: "Head-to-head: Phase 1 cross-model vs Phase 2B pilot. Bootstrap CI on delta determines if lab diversity > persona diversity.", status: "plan" },
+  { name: "build_dataset.py", desc: "Produces 5 Parquet tables + dataset_card.md + Croissant metadata + LICENSE. Run after all collection phases finalised.", status: "plan" }
+];
+
+const PUB_CHAIN = [
+  { label: "Parquet dataset", target: "data/*.parquet", icon: "▦" },
+  { label: "Zenodo upload", target: "DOI 10.5281/...", icon: "◆" },
+  { label: "HuggingFace push", target: "cross-model-rg/archipelago", icon: "♢" },
+  { label: "arxiv preprint", target: "2606.NNNNN", icon: "📄" },
+  { label: "GitHub release", target: "v1.0.0", icon: "★" },
+  { label: "Show HN / r/ML", target: "launch day", icon: "✦" }
+];
+
+// Render phase row
+const phaseRow = document.getElementById("phaseRow");
+PHASES.forEach((p, i) => {
+  const card = document.createElement("div");
+  card.className = "card";
+  card.dataset.id = p.id;
+  const pct = Math.round(100 * p.cells_done / p.cells_total);
+  card.innerHTML = `
+    <div class="card-tag"><span class="dot ${p.status}"></span> ${p.tag}</div>
+    <div class="card-title">${p.title}</div>
+    <div class="card-meta">${p.meta}<br><b>${p.cells_done} / ${p.cells_total}</b> cells (${pct}%)</div>
+    <div class="card-progress"><div class="bar ${p.status === 'done' ? '' : p.status}" style="width: ${pct}%"></div></div>
+  `;
+  card.addEventListener("click", () => openDetail(p.id));
+  phaseRow.appendChild(card);
+  if (i < PHASES.length - 1) {
+    const ar = document.createElement("div");
+    ar.className = "arrow";
+    ar.textContent = "→";
+    phaseRow.appendChild(ar);
+  }
+});
+
+const detailEl = document.getElementById("detail");
+function openDetail(id) {
+  const p = PHASES.find(x => x.id === id);
+  if (!p) return;
+  document.querySelectorAll(".card").forEach(c => c.classList.toggle("active", c.dataset.id === id));
+  detailEl.classList.add("open");
+  detailEl.innerHTML = `
+    <h3>${p.tag}: ${p.title}</h3>
+    <div class="role">status: ${p.status.toUpperCase()} &middot; ${p.cells_done} / ${p.cells_total} cells &middot; cost ${p.cost} &middot; wall ${p.walltime}</div>
+    <div class="detail-grid">
+      <div class="kv"><strong>Purpose</strong><div class="kv-body">${p.purpose}</div></div>
+      <div class="kv"><strong>Output</strong><div class="kv-body">${p.output_dir}</div></div>
+      <div class="kv"><strong>Models</strong><div class="kv-body">${p.models}</div></div>
+      <div class="kv"><strong>Tasks</strong><div class="kv-body">${p.tasks}</div></div>
+    </div>
+    <div class="findings"><strong>Findings so far</strong>${p.findings.replace(/\n/g, "<br>")}</div>
+    <div style="height: 12px"></div>
+    <div class="next"><strong>Next action</strong>${p.next}</div>
+  `;
+  detailEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+// Render pipeline
+const pipelineEl = document.getElementById("pipeline");
+PIPELINE_STEPS.forEach((s, i) => {
+  const step = document.createElement("div");
+  step.className = "step";
+  step.innerHTML = `
+    <span class="step-num">PHASE ${s.n}</span>
+    <div class="step-title">${s.title}</div>
+    <div class="step-body">${s.body}</div>
+  `;
+  pipelineEl.appendChild(step);
+  if (i < PIPELINE_STEPS.length - 1) {
+    const ar = document.createElement("div");
+    ar.className = "pipeline-arrow";
+    ar.textContent = "→";
+    pipelineEl.appendChild(ar);
+  }
+});
+
+// Render analyses
+const anEl = document.getElementById("analyses");
+ANALYSES.forEach(a => {
+  const div = document.createElement("div");
+  div.className = "an";
+  const statusText = { done: "complete", doing: "in progress", plan: "ready to run", defer: "deferred" }[a.status];
+  div.innerHTML = `
+    <div class="an-name">${a.name}</div>
+    <div class="an-desc">${a.desc}</div>
+    <div class="an-status"><span class="dot ${a.status}"></span> ${statusText}</div>
+  `;
+  anEl.appendChild(div);
+});
+
+// Render publication chain
+const pubEl = document.getElementById("pubchain");
+PUB_CHAIN.forEach((node, i) => {
+  const n = document.createElement("div");
+  n.className = "pub-node";
+  n.innerHTML = `
+    <div class="pub-label">${node.icon} ${node.label}</div>
+    <div class="pub-target">${node.target}</div>
+  `;
+  pubEl.appendChild(n);
+  if (i < PUB_CHAIN.length - 1) {
+    const ar = document.createElement("div");
+    ar.className = "pub-arrow";
+    ar.textContent = "→";
+    pubEl.appendChild(ar);
+  }
+});
+
+// Budget visualisation
+const BUDGET = {
+  spent_phase1: 21.34,
+  spent_phase2b: 15,
+  spent_phase2c_partial: 8,
+  remaining_phase2c: 5,
+  validation_gpt: 1,
+  phase2h: 55,
+  phase2g: 30,
+  phase2f: 15,
+  buffer: 0
+};
+const budget_total = 118;
+const spent_so_far = BUDGET.spent_phase1 + BUDGET.spent_phase2b + BUDGET.spent_phase2c_partial;
+const remaining = budget_total - spent_so_far;
+
+const segments = [
+  { label: `Phase 1 ($${BUDGET.spent_phase1})`, val: BUDGET.spent_phase1, color: "#10b981" },
+  { label: `Phase 2B ($${BUDGET.spent_phase2b})`, val: BUDGET.spent_phase2b, color: "#34d399" },
+  { label: `Phase 2C ($${BUDGET.spent_phase2c_partial}+${BUDGET.remaining_phase2c})`, val: BUDGET.spent_phase2c_partial + BUDGET.remaining_phase2c, color: "#f59e0b" },
+  { label: `GPT validation ($${BUDGET.validation_gpt})`, val: BUDGET.validation_gpt, color: "#a78bfa" },
+  { label: `Phase 2H ($${BUDGET.phase2h})`, val: BUDGET.phase2h, color: "#94a3b8" },
+  { label: `Phase 2G ($${BUDGET.phase2g})`, val: BUDGET.phase2g, color: "#cbd5e1" },
+  { label: `Phase 2F ($${BUDGET.phase2f})`, val: BUDGET.phase2f, color: "#e2e8f0" }
+];
+const total_planned = segments.reduce((a, b) => a + b.val, 0);
+BUDGET.buffer = Math.max(0, budget_total - total_planned);
+if (BUDGET.buffer > 0) {
+  segments.push({ label: `Buffer ($${BUDGET.buffer})`, val: BUDGET.buffer, color: "#f0f0ed", textColor: "#1a1a1a" });
+}
+
+const budgetEl = document.getElementById("budget");
+budgetEl.innerHTML = `
+  <div class="budget-total">
+    <span><b>Total available:</b> $${budget_total.toFixed(2)}</span>
+    <span><b>Spent so far:</b> $${spent_so_far.toFixed(2)} &middot; <b>Remaining for plan:</b> $${remaining.toFixed(2)}</span>
+  </div>
+  <div class="budget-bar"></div>
+  <div class="budget-legend"></div>
+`;
+const bar = budgetEl.querySelector(".budget-bar");
+const leg = budgetEl.querySelector(".budget-legend");
+segments.forEach(s => {
+  const seg = document.createElement("div");
+  seg.className = "budget-segment";
+  seg.style.flexBasis = (100 * s.val / total_planned) + "%";
+  seg.style.background = s.color;
+  if (s.textColor) seg.style.color = s.textColor;
+  seg.textContent = `$${s.val}`;
+  seg.title = s.label;
+  bar.appendChild(seg);
+
+  const li = document.createElement("div");
+  li.className = "budget-legend-item";
+  li.innerHTML = `<span class="budget-legend-color" style="background:${s.color}"></span> ${s.label}`;
+  leg.appendChild(li);
+});
+
+// Auto-open Phase 2C (currently in progress)
+openDetail("p2c");
+</script>
+</body>
+</html>

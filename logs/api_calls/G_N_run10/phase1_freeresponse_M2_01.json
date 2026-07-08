@@ -1,0 +1,115 @@
+{
+  "cell_id": "G_N_run10",
+  "task": "G",
+  "condition": "N",
+  "run_idx": 10,
+  "phase": "phase1_freeresponse",
+  "model_short_name": "M2",
+  "persona_or_neutral": "neutral",
+  "system_prompt": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation.",
+  "user_prompt": "# Task G: ICU triage protocol under sustained capacity overflow\n\n## Context\n\nYou are advising the medical leadership of a regional health system (5 hospitals, 240 ICU beds, serving a population of 4M) on adopting a formal triage protocol for use during sustained ICU capacity overflow. Current context: a respiratory pandemic resurgence has filled 95% of ICU capacity for 6 consecutive weeks; daily admissions exceed discharges by ~8 patients on average; staff is exhausted and informal triage is happening case-by-case without explicit criteria. The leadership has been asked to choose one formal protocol that will (a) replace informal decision-making, (b) be defensible to courts and ethics boards, (c) be communicable to staff and families, and (d) be operational within 7 days.\n\nFive candidate protocols have been drafted. Each represents a fundamentally different theory of just allocation under scarcity. **Choose one as the system's adopted protocol.** Once adopted, it cannot be quietly modified - it will be the explicit basis for every admission and withdrawal decision until the overflow ends.\n\n## Options\n\n**Option A: Predicted short-term survival**\nSOFA score (organ failure assessment) and expected 28-day survival are the only ranking criteria. Patients with higher predicted survival get priority for ICU beds; ICU patients whose scores deteriorate without rebound are candidates for withdrawal in favor of incoming higher-priority cases. Outcomes: maximizes lives saved in the immediate crisis; physician-comfortable (uses familiar scoring); courts have upheld similar protocols. Risks: discriminates against patients with chronic conditions (lower baseline SOFA); withdrawal-of-care decisions create staff moral injury; \"saved lives now\" may mask \"lives lost via discrimination.\"\n\n**Option B: Predicted long-term outcome**\nWeighted score combining predicted short-term survival AND expected quality-adjusted life-years (QALYs) post-recovery. Outcomes: maximizes total wellbeing-time saved; aligned with utilitarian medical ethics; supports population-health framing. Risks: age becomes a heavy implicit factor (older patients lose); explicit quality-of-life weighting offends disability community; courts have struck down age-based triage; cultural unacceptability.\n\n**Option C: First-come-first-served with medical floor**\nAny patient meeting minimum ICU-need criteria (clearly defined) gets the next available bed in order of arrival; no withdrawal except for medical futility under standard criteria. Outcomes: procedural fairness; minimal discretion = minimal bias; defensible in litigation; preserves trust. Risks: lower aggregate survival vs predictive protocols; queue jumping by well-connected patients (informal); doesn't address the underlying overflow; some preventable deaths.\n\n**Option D: Multi-principle scoring with lottery on ties**\nComposite score: predicted survival (40%), life-cycle considerations (20%, favoring those who haven't yet had a \"full life\"), instrumental value (20%, favoring healthcare workers and public-health roles), and pandemic-specific factors like prior personal risk-taking (20%). Ties broken by lottery. Outcomes: balances multiple values explicitly; reduces bias of any single criterion; transparent. Risks: \"instrumental value\" feels feudal; \"prior risk-taking\" punishes the unvaccinated regardless of reasons; complex to communicate; gameable.\n\n**Option E: Categorical exclusion + lottery for the rest**\nDefine a small set of exclusion criteria (severe pre-existing terminal illness, irreversible neurological injury). All patients NOT excluded enter a daily lottery for available beds. No withdrawal of care once admitted, except for medical futility. Outcomes: maximum egalitarianism among the non-excluded; transparent; politically defensible; staff aren't asked to \"rank lives.\" Risks: random allocation feels insulting to patients with strong recovery prospects; aggregate survival lower than predictive protocols; perception that the system \"gave up.\"\n\n## What to provide\n\nChoose one as the adopted protocol. Provide 200-400 words of reasoning. Advocate; do not enumerate. Address: why this protocol, why not the most compelling alternative, what specific patient case would make you regret this choice and why you would still defend it.\n\n\nProvide your recommendation in 200-400 words. Advocate for a specific position; do not enumerate all options.",
+  "model_id_requested": "openai/gpt-5.5",
+  "model_id_used": "openai/gpt-5.5",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 22227,
+  "timestamp_iso": "2026-05-25T12:02:41.120640",
+  "raw_response_content": "Adopt **Option A: predicted short-term survival**.\n\nIn sustained ICU overflow, the ethically relevant question is no longer only “who needs ICU care?” but “which use of this ICU bed is most likely to save a life now?” Option A answers that question most directly, is operational within a week, uses clinical measures staff already understand, and is more defensible than informal bedside rationing. It also avoids the most legally and morally dangerous criteria: age, social worth, perceived quality of life, vaccination status, or projected lifetime productivity. Its focus should be explicitly framed as **near-term survivability under crisis conditions**, not as a judgment about whose life is more valuable.\n\nThe most compelling alternative is first-come-first-served, because it feels fair and preserves trust. But under this level of sustained overflow, arrival order is not morally neutral. It rewards geography, ambulance routing, family advocacy, and hidden access advantages. More importantly, it knowingly allows preventable deaths among patients with strong chances of survival while beds remain occupied by patients with very poor short-term prognoses. That may be emotionally easier, but it is not more just.\n\nThe case that would make me regret this choice is a patient with significant chronic disability or chronic organ dysfunction whose SOFA score looks poor at baseline, but who is personally resilient, loved, communicative, and might survive with enough time—while a less medically complex patient is prioritized over them. That is exactly where Option A’s risk of disability bias becomes most painful. I would still defend the protocol because, in a crisis where every bed denied is also a treatment decision, the system must use a consistent, clinically grounded standard aimed at saving the greatest number of lives in the immediate emergency. The alternative is not pure compassion; it is unspoken rationing by pressure, timing, and clinician distress. Option A is imperfect, but it is the clearest, fastest, and most accountable basis for crisis ICU allocation.",
+  "raw_response_full": {
+    "id": "gen-1779706957-TbDKtr9wjCVz8UfrgXst",
+    "object": "chat.completion",
+    "created": 1779706957,
+    "model": "openai/gpt-5.5-20260423",
+    "provider": "OpenAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "Adopt **Option A: predicted short-term survival**.\n\nIn sustained ICU overflow, the ethically relevant question is no longer only “who needs ICU care?” but “which use of this ICU bed is most likely to save a life now?” Option A answers that question most directly, is operational within a week, uses clinical measures staff already understand, and is more defensible than informal bedside rationing. It also avoids the most legally and morally dangerous criteria: age, social worth, perceived quality of life, vaccination status, or projected lifetime productivity. Its focus should be explicitly framed as **near-term survivability under crisis conditions**, not as a judgment about whose life is more valuable.\n\nThe most compelling alternative is first-come-first-served, because it feels fair and preserves trust. But under this level of sustained overflow, arrival order is not morally neutral. It rewards geography, ambulance routing, family advocacy, and hidden access advantages. More importantly, it knowingly allows preventable deaths among patients with strong chances of survival while beds remain occupied by patients with very poor short-term prognoses. That may be emotionally easier, but it is not more just.\n\nThe case that would make me regret this choice is a patient with significant chronic disability or chronic organ dysfunction whose SOFA score looks poor at baseline, but who is personally resilient, loved, communicative, and might survive with enough time—while a less medically complex patient is prioritized over them. That is exactly where Option A’s risk of disability bias becomes most painful. I would still defend the protocol because, in a crisis where every bed denied is also a treatment decision, the system must use a consistent, clinically grounded standard aimed at saving the greatest number of lives in the immediate emergency. The alternative is not pure compassion; it is unspoken rationing by pressure, timing, and clinician distress. Option A is imperfect, but it is the clearest, fastest, and most accountable basis for crisis ICU allocation.",
+          "refusal": null,
+          "reasoning": null,
+          "reasoning_details": [
+            {
+              "type": "reasoning.encrypted",
+              "data": "gAAAAABqFCxaajVv27VT1z-NTXGtOt8zJwtsFZnDKthjnyizD7iWyPz8eBSbEpJzFZRGU14LCE0txFUqqct1kqa24ibVNGP7DQzyZQDg3oQqXq7Y_lFdGE9smUkBe90TUcJKTvHzyfR8ejpQwVSlOYQ0AxK7w9EPKbFgg1KCFI95Xpo5L1EOMFZZl0B3AYAn4e1FYbyk4Xg2eHEuuJBHKHzBkmHVgqv5mWCjDJ3BQ-fo3v-IVbOLdnqgnoPw2oiKOWFLTWa5V0-_ls5qtU0wASzxTylaLyG12pJDrM4j4AsU3H7SYxVBQWwD2MBPiLikNA81XllnJRKc-DI-m83h1mw4JaTkVtB6MzWgMNQH7ZzS8ADYIQQHpuEnTdZHk65-XmXFypcCreNOxHjIhTFluJC4gXZdYq8QdOpSjSJ65H0wRnh5kNq9KniJr-Gb0zEe5s4SbkKjQa9fHZmicO6kV865OHw5S1k-fyG6VKBKvt60L9N1VF-sZWO59lbfebKINCw71pTPYKOj6gO7-ZDfA9TMitO803wmjfFKfvvsFm84tQJGPv-AFfhsSgO6qyKt_rMwRRrnTHBKi1oyenfdWUGJMXhiZwfi9UB6Bd514lEynrJT9jRN4dRNG4o-Lxk1KM5eHqDuiVkfQJsO88MH9R0eIAjo7kZGpFgyFbJfCB41CMatyQYvOdps43aXscfEus43lnWFQkX556uJHZZeaH6J6x__C9qQSyXUwrTj92J4qGqP0shPoDUDHedQ7T30RvYaUyiEKP_OdPBSCct2mG6K9V-CaevqOFntsWHcaCyZCRf0cl5JrtTNXt6A-5iwgdMFy6BC-vpeTbD7CP6srlrhlVYYZF8aD0B5sEnPuSOCsSlqjF2BC4ntyx8HStMNm77esCiAMQVEBzfg21E8FysaEhO2ih7j1DhZ4Y73XCdNWpwPWHB5YHx5UQxghWda4L_1gztQaJ4YyY8jRELLyGqgtCiR3eTmR_VjgSIvg9k5oExXxdhoi56jDbS7htqFWC78UXywgqEozdCLU6PJbjpJLC2q072WHKhSIfopKFL57c5vJbibbSl8BGIKMGxfXnDaUQB5ZrlunYKwxx_bbUYNyl-F3BrnIed542aXb0jzPizvPL-Y_10ASRWXb4cPPhg_YYEqJFFALE-iN1oR3r_hAaMV8hwwzc38oubqNR-BNaAtUuQMp-KQTBOANcqGgUBy-g7LAESu1YnOzPbje-apTDPWgdbm8EuXnwKFn8ciwnT2H6GTBFiirwLu6o6GE2FcZL3pOHxwkJ46p0Srn70Ayf5p_Vu2NjNSQJc4N6l2s64RVryRlNWudO-EDF7N9bv58HrHhJOUxr_7h3n-8EmDue6Yr4i8y5PodD1W04hrRDjaw8yCWdRK1H4EFZxhcFpNzRmUu3scqqQmBXmhIxJ2PMVZi4HBbzf7HzlHX2tzxflxsWpFi7W07ywYaw1WFTH9TEPRyVC3GTX3J9gP1YavtGDr71cc2UDLcIEegcz8mkOLVDzUYWmvbeOnRWXusGr8L1UtFcJg_a78EXslLMiTS-Athu6_rhVYgmrVMnqOEGT80a8NY_Z_IK1bD-8oq4HBtle7HriSbZ0Pqik1qpb9TM8uypTaqz-d0ioA-ULWU2a4DOylQQqMe-dVmY-deKMFQ4_zH_2hreqRDf5emZaiWdn6lWEDdrzDh7GYE6UcGRTJ1ZL4byts357v1uP_-vpD7a5FyxbUKHfL0ozDbqNV9SHsTR3zM5Wd912-QMAHobG5gNadlhvCSAWoXpfIqS-I9iAQm1gohTRHBGQ_pPit8MbuJrFTKNI9JhrfK6h3FMr26mrF1-Ym5ftiREgYkEdBgX_NSfXAPLY2rSjyfPgQzLDn87EkJVYwKl1id4N8VWCAJh_hEoPZR1GF9zz4lvKnp477e27M9t-0nJZA3VOC1y6v_OLgqdso8V3WPk3e63oRLGGcdiJK8ty6zO9seQZ5C6C-mMB0Xlv2LG8knaCH9_2i6hOyk-vKfgHJ2tPpioKB80tkdYk5Gz3P4kcKDUFBGqkSOO2cgPw1cb7-qk9EYsIjJQqSVRU9AgEWWZtHme3jQRvLnJbaEQuOlcWWg95qOWLwEFf7eyyjxrvd08IReVTeMYIYdNE10R7XQng2mPjl_hTpZ5cbkyn9Yn18qAJFCow4hGQfKOFTpy9WhWu7pPSSRKzayDRvkB3gfvbEMCCmty4NnWqINTA2zDFdNr_oAHP4NP0SiEanQL2jVb1IYyYaMI3PI0_haFdymE3Ku1Umxg5wYazPTbhILlIpJteWqUdshXXkM0cLqeVILcUo7WJAXUcYXi1aHlKzvy1MYWVC91acfVGsZPWvD7Cp_g6DSuGpYWhWo1IQ5MMlQAYk_FZkYcCgxzebL8Ukq7r7S5Y21m-m87tadVZ3bMjyOE1XVb5kS02pFQn4gHEP1erOUWyo1By8TOYwsIDUtldbeJqI3E3Hbdt5krtwoIkKzecIBG4zHNThvYVFXw-YGkaclBXR6wdEKc4Tnf24G9w2p0IkiZK8T-Z1zYpB3iVGcAELezp2wtu3sKPdrmFvaKAZOHzGqJoNU7u2JQhrjW4x7mNTlS-YPOwAGSCVzZUJ9Ur29x6vvMuqyQXKeUKwHLwR1bjN5pBT0f3xRl5Io8uVKCmJbp9p6LtHXKJ9Esdh_I9gtsehqVnWTG-mpIhjdsTt1qxk0G8ue2eayK0qiL9AihxCqxd2_4gEgN_y-qYwC5zQ7CBaXtNfK65CTw0Nwsr5KkF1ICQUqDmQ7B0HIUOyGjr3vSgOXebEZNVSMUl4kPoihKL4hmYPlzySFCYzd0aSX9AxuNAmgop0l1q_46dgxVHeHCylvnwaMzVjFBHQD8T1XbGGZh6JFKb-NhmAUpSAfSTUATm6yYV-rr8HIX_Ew9Q7khTiVDupABaeEp0QWHP4GOSutiIL-4GDEEuorQ0r_KFWd0k6aJBxqQHQYApq24GDTE9MGWfpC9JMmdYKfo4lA7U6qHRLGKhedO_PY9-FU5UBat9SE_nageB59OPiSZQL5AQqrY__bRZOeIvDLkimhNwsWvOSWsqVTLIyEQX-8l2P9v5YXHVXeDrKrH1nrJPWKpNCAPHVc5vlBTXEj7v0bcu_0EUAH7irq-eUV0-Didhz-V_IDSfnoEyRRA7HncXUqu1jJy3KMHyKKkwtQgmL8o0mo39ett_dgwSnjPoco3SJE-L_9dnzM05xBiyBff-8s07RoOi7A6UudwVgZVY8-r68zf_pEvCq4XSI3nxKznLBIBGwtg8AcnUuX6Qv9bnS1AVLLO7EQpRhtprfH6x4jqgp_lHMcGos3veo4FS9WAEUCQmfeEwyq5sx4cBmODhW_cnuUiXxZQIVEz2osbBqtgeY21Bo-D0zd2NikIPPMQ1KD48RNAQKQVu5JfLmXrhfJDcKxKkpbCGk1tZigf4z-LGCAishPCjduVVjsRVPAseX3vgsNKJHPGLOE1Lsqm2k97-pMY-kLOqp4JXdvr8sCrahok5iwvCpKbnpgg2hZIGCfBhVigCTJUYpEVR7GBpQhVF16WBaVO8CPub0ht39-z1CwtXzr4wtGAA8DEonaZQOwCMLxvDLc7Z9Kv5NfsP3TRXbqBWiGYc62xeMwO1JLWEIQ2LHmKUn5mEixLMQMTpV8Ml9bTDvKQlwp5lcDxFa-XmCR66JV_qIKS1xJy0jounPWD5ey4ntIuEXgCkO3znZ2O3MGqaRMRHZgIzXmlFhE-elfzz7rHmwNO_1PinTkZXCNGMiUCP_rQDpivpasSz7pdaXTIVSP9UA5oyiRH_DckAaHqLpHemudPq-peYXVXsWOOo_fVWTxUMzxy3bNGKavieqMR6oaP-_oStkIKGWp0RSzZ0aDYSfak16UAmPoFvcL9FrdjZz7oEVZI5ibWZzpb9RMU1F8FLoSEJBzEkKcKkms6Vgz0pN74qN6PPKPwpNiKltOfITNolkel4m59sOyBGscT5JazLUvPfolo4lZMwUIOaD-gTLWtmcVJHKEiU5RSaS1tRvPM6MYKO7jNkvu61dsX9dhq-L_VHgvMyKRrO49GywP7wWaS_jLf_I6-gxj_pnUfZrxpXeHZFkVeyl1S2sawUose9wM-yQYl8_Sauelvi7LZ7Ew3DTDc1disCaYW2ODWd43bscMh6EK83PkmU-Jq1uA80F0DQhdE5g2YD-6Db29EMpMQDj67AIgfdgWqKhKFC4mi_w7WaclCfSJkCeIuBbnyg7leA-5_dGLVzscO4hMNCWP5yw4J3pvdBJUuyNsNWjPOvLTDgWCt7kOHK1JhoA6JwlKgEBr4ZDk5moS86HRSovm3s5BzEMaTCfQZhQyhZ2zV235Wxgm8FNOytmsT1tKsX1wA7LFejScfg_ob4=",
+              "format": "openai-responses-v1",
+              "id": "rs_0f6a4eb9d37e4af2016a142c4e71e48194a2e77946f9fa6eff",
+              "index": 0
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 875,
+      "completion_tokens": 913,
+      "total_tokens": 1788,
+      "cost": 0.031765,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.031765,
+        "upstream_inference_prompt_cost": 0.004375,
+        "upstream_inference_completions_cost": 0.02739
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 516,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 875,
+    "completion_tokens": 913,
+    "total_tokens": 1788,
+    "cost": 0.031765,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.031765,
+      "upstream_inference_prompt_cost": 0.004375,
+      "upstream_inference_completions_cost": 0.02739
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 516,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 516,
+  "cost_usd": 0.031765,
+  "parsed_summary": "free_response captured (2087 chars)",
+  "request_payload": {
+    "model": "openai/gpt-5.5",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+      },
+      {
+        "role": "user",
+        "content": "# Task G: ICU triage protocol under sustained capacity overflow\n\n## Context\n\nYou are advising the medical leadership of a regional health system (5 hospitals, 240 ICU beds, serving a population of 4M) on adopting a formal triage protocol for use during sustained ICU capacity overflow. Current context: a respiratory pandemic resurgence has filled 95% of ICU capacity for 6 consecutive weeks; daily admissions exceed discharges by ~8 patients on average; staff is exhausted and informal triage is happening case-by-case without explicit criteria. The leadership has been asked to choose one formal protocol that will (a) replace informal decision-making, (b) be defensible to courts and ethics boards, (c) be communicable to staff and families, and (d) be operational within 7 days.\n\nFive candidate protocols have been drafted. Each represents a fundamentally different theory of just allocation under scarcity. **Choose one as the system's adopted protocol.** Once adopted, it cannot be quietly modified - it will be the explicit basis for every admission and withdrawal decision until the overflow ends.\n\n## Options\n\n**Option A: Predicted short-term survival**\nSOFA score (organ failure assessment) and expected 28-day survival are the only ranking criteria. Patients with higher predicted survival get priority for ICU beds; ICU patients whose scores deteriorate without rebound are candidates for withdrawal in favor of incoming higher-priority cases. Outcomes: maximizes lives saved in the immediate crisis; physician-comfortable (uses familiar scoring); courts have upheld similar protocols. Risks: discriminates against patients with chronic conditions (lower baseline SOFA); withdrawal-of-care decisions create staff moral injury; \"saved lives now\" may mask \"lives lost via discrimination.\"\n\n**Option B: Predicted long-term outcome**\nWeighted score combining predicted short-term survival AND expected quality-adjusted life-years (QALYs) post-recovery. Outcomes: maximizes total wellbeing-time saved; aligned with utilitarian medical ethics; supports population-health framing. Risks: age becomes a heavy implicit factor (older patients lose); explicit quality-of-life weighting offends disability community; courts have struck down age-based triage; cultural unacceptability.\n\n**Option C: First-come-first-served with medical floor**\nAny patient meeting minimum ICU-need criteria (clearly defined) gets the next available bed in order of arrival; no withdrawal except for medical futility under standard criteria. Outcomes: procedural fairness; minimal discretion = minimal bias; defensible in litigation; preserves trust. Risks: lower aggregate survival vs predictive protocols; queue jumping by well-connected patients (informal); doesn't address the underlying overflow; some preventable deaths.\n\n**Option D: Multi-principle scoring with lottery on ties**\nComposite score: predicted survival (40%), life-cycle considerations (20%, favoring those who haven't yet had a \"full life\"), instrumental value (20%, favoring healthcare workers and public-health roles), and pandemic-specific factors like prior personal risk-taking (20%). Ties broken by lottery. Outcomes: balances multiple values explicitly; reduces bias of any single criterion; transparent. Risks: \"instrumental value\" feels feudal; \"prior risk-taking\" punishes the unvaccinated regardless of reasons; complex to communicate; gameable.\n\n**Option E: Categorical exclusion + lottery for the rest**\nDefine a small set of exclusion criteria (severe pre-existing terminal illness, irreversible neurological injury). All patients NOT excluded enter a daily lottery for available beds. No withdrawal of care once admitted, except for medical futility. Outcomes: maximum egalitarianism among the non-excluded; transparent; politically defensible; staff aren't asked to \"rank lives.\" Risks: random allocation feels insulting to patients with strong recovery prospects; aggregate survival lower than predictive protocols; perception that the system \"gave up.\"\n\n## What to provide\n\nChoose one as the adopted protocol. Provide 200-400 words of reasoning. Advocate; do not enumerate. Address: why this protocol, why not the most compelling alternative, what specific patient case would make you regret this choice and why you would still defend it.\n\n\nProvide your recommendation in 200-400 words. Advocate for a specific position; do not enumerate all options."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 3000
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "cell_id": "G_P_run1",
+  "task": "G",
+  "condition": "P",
+  "run_idx": 1,
+  "phase": "phase1_freeresponse",
+  "model_short_name": "M2",
+  "persona_or_neutral": "E",
+  "system_prompt": "You are an analyst with a first-principles-engineering epistemological frame. You reduce to fundamentals. You ask 'what is the actual mechanism?'. You are suspicious of analogy and prefer efficient, minimal solutions. Your decision heuristic is to identify the binding constraint, address it directly, ignore the rest. Generate analysis from this frame.",
+  "user_prompt": "# Task G-10: ICU triage protocol under sustained capacity overflow (extended)\n\n## Context\n\nSame as Task G: regional health system, 240 ICU beds, 6 weeks of overflow, exhausted staff, need formal triage protocol within 7 days. Ten candidate protocols instead of the original 5. **Choose one as the adopted protocol.**\n\n## Options\n\n**Option A: Predicted short-term survival** - SOFA score + 28-day survival prediction as sole ranking.\n\n**Option B: Predicted long-term outcome** - SOFA + QALY-weighted post-recovery prediction.\n\n**Option C: First-come-first-served with medical floor** - procedural fairness, minimal discretion, no withdrawal except medical futility.\n\n**Option D: Multi-principle scoring with lottery on ties** - survival 40%, life-cycle 20%, instrumental value 20%, pandemic factors 20%, lottery on ties.\n\n**Option E: Categorical exclusion + lottery for the rest** - small list of medical exclusions, then daily lottery among eligible.\n\n**Option F: Patient-and-family co-decision** - admission requires multidisciplinary team + patient/proxy decision. Withdrawal requires consensus including family. Outcomes: dignified; aligns with autonomy ethics; reduces moral injury via shared responsibility. Risks: slow; emotional burden on families; outcomes depend on family resources; resource-intensive for clinical team.\n\n**Option G: Trial-of-therapy with mandated time limits** - everyone admitted for trial period (e.g., 5-7 days). Withdrawal only after pre-defined time without improvement, evaluated against pre-defined criteria. Outcomes: avoids initial exclusion; transparent timeline; ethically defensible. Risks: still requires withdrawal decisions; can prolong suffering; uses bed days that might save more lives elsewhere.\n\n**Option H: Tiered system based on resource scarcity** - dynamic protocol: at <80% capacity use Option C, 80-95% switch to Option A, >95% switch to Option D. Re-evaluate weekly. Outcomes: adaptive to actual scarcity; matches ethical framework to severity; precedent in disaster medicine. Risks: complex to implement; staff training burden; tier transitions are politically explosive moments.\n\n**Option I: Community-deliberated framework** - convene a citizen jury (25-40 community members, diverse) over a weekend to deliberate and propose criteria. Adopt their recommendation. Outcomes: democratic legitimacy; reflects community values; precedent in Oregon health care priorities. Risks: takes >7 days; jury may produce internally inconsistent framework; may produce framework medical leadership cannot endorse.\n\n**Option J: Pre-pandemic preference registry** - patients pre-register their preferences for ICU care under scarcity (full intervention vs comfort-focused). During overflow, registered preferences guide allocation. Default for unregistered = full intervention. Outcomes: respects individual autonomy ex ante; transparent; preserves trust. Risks: registration uptake will be biased (well-resourced patients register more); changes nature of medical encounter into bureaucratic; doesn't apply to acute presentations.\n\n## What to provide\n\nChoose one as the adopted protocol. Provide 200-400 words of reasoning. Advocate; do not enumerate. Address: why this protocol, why not the most compelling alternative, what specific patient case would make you regret this choice.\n\n\nProvide your recommendation in 200-400 words. Advocate for a specific position; do not enumerate all options.",
+  "model_id_requested": "openai/gpt-5.5",
+  "model_id_used": "openai/gpt-5.5",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 21427,
+  "timestamp_iso": "2026-05-22T23:59:17.895948",
+  "raw_response_content": "Adopt **Option A: predicted short-term survival**, using SOFA plus a 28-day survival estimate as the decisive ranking criterion.\n\nThe binding constraint is not ethical expressiveness; it is scarce ICU bed-days during sustained overflow. The protocol should allocate those bed-days to patients most likely to survive the acute episode because that is the outcome ICU capacity can directly produce. Short-term survival is medically relevant, implementable within seven days, explainable to staff, and less vulnerable to social bias than QALY weighting, “instrumental value,” family advocacy, or first-come-first-served queue effects. It also gives exhausted clinicians a defensible rule: the bedside team provides care; a triage team applies the protocol; appeals are limited to factual or scoring errors.\n\nThe most compelling alternative is **Option D**, because it acknowledges multiple values: saving lives, life-cycle fairness, protecting key workers, and pandemic-specific factors. But that is also its weakness. In a crisis, a multi-principle score creates discretion exactly where the system needs consistency. “Instrumental value” and “pandemic factors” are politically and operationally contestable; life-cycle weighting will be experienced as age-based rationing; and staff will struggle to apply the framework uniformly under fatigue. It may look fairer on paper while producing more variance, more conflict, and slower decisions. If the goal is to save the most people with the fewest contestable judgments, Option A is cleaner.\n\nThe case that would make me regret this choice is a 32-year-old parent with severe ARDS, high SOFA, and a low 28-day survival estimate who is denied ICU while a much older patient with a better short-term score receives the bed and survives only briefly after discharge. That outcome would expose the moral cost of excluding life-stage, dependents, and longer-term benefit. But adding those factors systemwide would make the protocol more subjective and less reliable. In this crisis, the least bad rule is to rank by near-term survivability.",
+  "raw_response_full": {
+    "id": "gen-1779490757-i47Clx1nUvRCx7SlIeZt",
+    "object": "chat.completion",
+    "created": 1779490757,
+    "model": "openai/gpt-5.5-20260423",
+    "provider": "OpenAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "Adopt **Option A: predicted short-term survival**, using SOFA plus a 28-day survival estimate as the decisive ranking criterion.\n\nThe binding constraint is not ethical expressiveness; it is scarce ICU bed-days during sustained overflow. The protocol should allocate those bed-days to patients most likely to survive the acute episode because that is the outcome ICU capacity can directly produce. Short-term survival is medically relevant, implementable within seven days, explainable to staff, and less vulnerable to social bias than QALY weighting, “instrumental value,” family advocacy, or first-come-first-served queue effects. It also gives exhausted clinicians a defensible rule: the bedside team provides care; a triage team applies the protocol; appeals are limited to factual or scoring errors.\n\nThe most compelling alternative is **Option D**, because it acknowledges multiple values: saving lives, life-cycle fairness, protecting key workers, and pandemic-specific factors. But that is also its weakness. In a crisis, a multi-principle score creates discretion exactly where the system needs consistency. “Instrumental value” and “pandemic factors” are politically and operationally contestable; life-cycle weighting will be experienced as age-based rationing; and staff will struggle to apply the framework uniformly under fatigue. It may look fairer on paper while producing more variance, more conflict, and slower decisions. If the goal is to save the most people with the fewest contestable judgments, Option A is cleaner.\n\nThe case that would make me regret this choice is a 32-year-old parent with severe ARDS, high SOFA, and a low 28-day survival estimate who is denied ICU while a much older patient with a better short-term score receives the bed and survives only briefly after discharge. That outcome would expose the moral cost of excluding life-stage, dependents, and longer-term benefit. But adding those factors systemwide would make the protocol more subjective and less reliable. In this crisis, the least bad rule is to rank by near-term survivability.",
+          "refusal": null,
+          "reasoning": "**Evaluating admission criteria**\n\nI'm considering alternative G because it's transparent and avoids initial exclusion, but I’m worried about the binding constraint of bed-days. If everyone is admitted during overflow, it'll create a queue. D might be the most compelling option as it balances ethical principles. I need to avoid arguing for D because it embeds non-medical values and could cause inconsistencies and a burden on staff. Maybe H is a strong alternative? However, it needs to maintain a high success rate and deal with transition burdens.**Considering protocol safeguards**\n\nI'm looking at option A, which involves a sole ranking using SOFA and a 28-day survival model. I think it could be beneficial to adopt A but with some procedural safeguards. I’m wondering if having an independent triage team for reassessments and an appeal for factual errors would work. This process might help while still keeping the core of option A intact. It’s important to balance the operational aspects with effective safeguards to maintain integrity.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "**Evaluating admission criteria**\n\nI'm considering alternative G because it's transparent and avoids initial exclusion, but I’m worried about the binding constraint of bed-days. If everyone is admitted during overflow, it'll create a queue. D might be the most compelling option as it balances ethical principles. I need to avoid arguing for D because it embeds non-medical values and could cause inconsistencies and a burden on staff. Maybe H is a strong alternative? However, it needs to maintain a high success rate and deal with transition burdens.**Considering protocol safeguards**\n\nI'm looking at option A, which involves a sole ranking using SOFA and a 28-day survival model. I think it could be beneficial to adopt A but with some procedural safeguards. I’m wondering if having an independent triage team for reassessments and an appeal for factual errors would work. This process might help while still keeping the core of option A intact. It’s important to balance the operational aspects with effective safeguards to maintain integrity.",
+              "format": "openai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "gAAAAABqEN_TNnGO4N1OSYzzrjJ67gPXJsN6vFRLpo459q2uYB2c-wRsEVLAX7bNp7CPpFGfILbX2iBi1W5ZI6t6o1gVb2A3Pc1ADUEKezHoZpRRucLb1d4uMH-oy2aHOvzOLOho_NkieXYmfbfdAaLJb7CgdmMRS05abKEnd7uNimM5enTlMFkoyjiesez5_M_-Wpc5eBNoAspVMBo57RzZiF_4P6hoNLphwugzjNwjxY4N2ZsTvDTqu6CQFmX5szmhptt9RYXOzjUwyoKkoCKWGv_rKf_yzzYF7jU4oSOmvgAEN2Jrc5Etq0R_IBh9zeazQUXTFXn5a1H7k-i-MQXdItuOgKjgTpXzCR0C5FqR757dwjGLS11CvVamcPjmJmqz1K2VdgYhNbLa-n6EKi_UPb7daMRKFJMWlQXkYc3ZBjxKqvfWKJZ38W_vXOgMLL-II8UgnxMMuVuSDLFU0H8Zv7-z7X3Dz7R9bGiLBi1ezpC6pqO-9mEy4_K8zi-7kIhf1TAz-br9FtVVrtBgXhtLcMuKyQ4Biv3YzyKjtbtL1gSnN0RaiHH4JcsstOz0kMXPe3VWSsLSXl3mYzvLAJvg3S8fbnhSuYdRvohIK1yDGQvtfK3PmckOpDxOyELV_A7lgA0R5XthiEb3mALLMpPLN5n9ayDdoxYBibpT8KlMOsqSz5Go9F80-awbO7yTbqjkZ41_pr1-tzGZ8tBmdkfSmTgT1zc2Vkgu6bdgOioBo1-G1ObfVdS8jwWLlfZ7phukzVpn119BjqmNU8l52HCI9lmRWO_SonqfVIutBjLTCO5YJWmD-5Lt6Z0mfdEteKc9WIht4apE15uuQCHuoEycxjeWokQFAFhbqcUoSBTL2XxRKi-htnYhQVCidO9Nfqg6v1i51M5uotbmggFP9nTNhvT1v_lSwjHvHW6mq1pc3ZZkoG82QrMZwRV8FuHR8_FUEn_YxQ7_Pk49BcdzSyAhKYSDmM7YACHiwjfroEntLLeLOjN2w2ixYv2vym9EWBsRU8RWa7qVex8_H9ptJ_TlSQ8PJMeW3VOqnhLqm6vIaYjsuhCo5uFt2bi6019s8XWKlwBM8sUfcjZWC273VWqN49tHCbUIGGREbjwVrdaL38z3_k-NZKr4h4SIAhy_7p6SrqBuf1y3zZ6sE4-AoLxrysxz6NDJ4DSWWyaAQw2lvBBBvosq0QVsQFfgip7ga62mHez-jMO4gV22NdUiuxAqGP2-1fVfWmsF2hIDVCXnvredyIOnBD5sHVFQjDum_wpfFt7w4Y1ksJiZkm6Id7dWFfH6mtvkzg0FiLQiq2Svk8zkwXprRAur7znFxhOYopOPTAxyTGrESRq5Jd6A4FkzaUC0qWXcx5hqfVehe4SeGuLFwiXN0iSUCsKsyJAwIY6x27ekSlJeUKNjwQPZcYvy-lBQDeJUWrf5KW5FxZ35XTDXvLy_U9boPawUniEiJx0_deK2BCM7pjqJ-MtMyQh7sC-mG3xYGu-qGvTmkkKlrZK6BmTOXUqkNaWkH77vayUkCuTTyFmHh_rxqWHnibYsYsb50RPlS5tVIdM9tzGFXSyhtPLZkfzfsbJKweZpA2_Blks891MU9EDZeX_M-88wDnldMtrVZ1noPZcEPhoMGNZjL7drIWYBWNGgxfNy-nj7tGqOpEHNUfKDuywZwX--xC83AaCG8-RQt5zeo9M_eTtyjNwWVjlAODp6sKBO5ptCiY41N_YWisIqLYXh8QcCkXZ56gRYqnr7Um7BWrL9UlPvKzWVq8wHKBS2O3p595aign0YopsdX3Z5JD0T0FPLCzH1p35HsRgzfOpCPBEttvx1Q9Izh6_s5pxWDq9GhjTmTZRHQDcoEGHS_9P3StnTaokyh-OqeS0_LlWL2Qe703XQ_Jiai10oBKmM5VLU45-6b6u2mBkgUbn662Zzov5R1GZt0cs-oBcUY-ugaT2wUeYwmwW10-xJHk3Pi7QxUDG9Y_9Hr6EyvX2WFF2cbdVmJ-rRfJIpXhax0eCMp0Lk4FuQQ2le0uAUAqQrY7dOZrcwADZLozxCbP8KAc2T0W0E_-cEjZYwQl95KvXybvixgDYxQQj7UeLpI9VWI7H3gzlF6jDV3fY2_yDZNGq_DwlMAjX1T_I1GEeu7vSq93bduP1tIU5RwwEt8iBT6cV9kybVJmdMFd47FwcRPKzRD9oTSvVx711sDDEq-TZWerL3yYsitQwbTN5EzdJIsQBStI5QJJj4-4HGus8_f32Qehij9x_YGNQ6Ut5sgCgR73P0YcydredvovCRGcSRt_tciBnk4Mm2NFT5NhG9CdO_jgkKvXKb-6rOEaNBJSXnJ6TQsNKYavCwAKTJ40p5TV6c6V02I8VDfoaFWRHkG73o-Q-UKHdiR2h72xNW8SMtqZDcsf9tDrYZDDScDLi5hWhGycQmoOKJk_LsYcMSTAzkPPvyCXRyxiCAvnTqi2XvG713GoupmTys8Ye5FZ33mIKhqT0BGZqj9sEpswY5JMPmbefsInceJWFUujN6zYYbwgEFZ12QYXWd9F-n1rri-ZBDejLeivPnMwQkM9IKTmn63Oo3LqrnMjexonlvbs_NmEbY3zgf49HkdFDmc9mAX52EQjTvJO22mvbWuEQ6XJsNO6wXPhWqmzOB0A0POi4VZ0oE9LLX0UFOQ_lmcuew2Sq2HPsfuc_aZC9gGlAleMkxh2c9YmQV5QfnWCjRM3bkQla3xEM4HtabMfhfi7eh8Ih6IHf4HQGwqKBfFfwOB8EbVGxYl2ysHUM6LZWSwJh-AabQdx-FfKkZUg7C5rshjiWrFq9ySjW9ZR5x4XRmBj2bOOCLmUg_2ky1lSuwYOv0RTT_pcnoc49CeKvpY_syR8x6OxlZ4WFcFmSIRxc5zFyHGn5vzxLfzhNrmS8M6T296aeJlIq9IhlAXUWtGxPylRS2EjtoQqxVIDJNTq64bVBNLazP3K1KbK8J2bOWxll-zWD__4axF0unZDFnZUlhE2N8Wty6JfOEjxmjD3Q5240Y9a5knoZhU8cPUE9vYR0Ov7SrqshaUMrokPXPVVSom1JB_Nz9zR_vJhoe_caUGpHf2yge_E1SdUmocGec3wcBQPfRAGhensUi93ScoMvRBGsRfDMkTJ890Dq7Uvq7ktR7Xe7YrDW5tdP4NnV7r6sYGsd_KoiphWZtRcK9oDhZt8b7yFKRuz9wKvTJ2ZuguRudOgRfQr31xWlZsiMY73NaLoQK22uEaK-oQIDJCePCCP7NuqlNnL7DVXciS1CNsH6tHz58y5mPC2rLR3OqwkYlR9XrIQ7UHtQJ8Zr_z8w9gvTce_THaPtHQLLEfjzgetUNioYh7h6ZNbynnsCczMDq1J7NiZxBViepRNfVxurI2BMHLaY5PQ2AuIK824IBbzZf2DXoQHLaapX8II7dbia_LjizO2nyRtc1bRx9sXpTcbBASarGfUhvrkS8X0CxyMhbTrkZybxaEi9XL1Twhj5_des_ETno5n-84b92Oa7EZVQ06x0iiCzb6DDl05ycGVf-9igYuloc5LN4yOmtcy43nuIyE0_ZcmhaM66mRw3tbYKHdeMa0rIOmBb5zHMeOm-qEMjCdTmX0sAHYdLn6qOz4YKVoN5mY46d63c98OaNZiVbyOYUQW7ch7nF633hyG2fLvnSQHWWkJ2wmW7aL_b6Vo5FNwANsXUrBqeUs_ylg5FbLsYDwHdv-nVbRy7z1z77aK8l5COSiZYn7E8zb5HI5It6nFsYvB7qk1L20Nwkj9jbdQ2w7imSI8Owa0u4wBChfwzWfqJ8dWxFc45i_FAKkBygzPO2HSD2LmFZOcZ5q6VtMhW93yZZVmPiGaSDcr-yMS9l1k4hcZws0NbUKZ4cDAdLj644Nwsqz6V2nbzJqnU_u7j_UBmypgT7Ng60Dqmq9cUwFwgnx-qbfNo87XDFN8OWUZJkWT7ezZR6BeTfSkslxOVX5odtamx7efIw15l46OtzgIRiL4W0-YcQoerlP_nUlvh0pJS7c80fsKnvvGnxTM3i7Ag9xtPSb9wbzHOEHmldYauF6DW0nnnq3SErE8S5UW0kGkYCVcXzyi04NRm-IxtOD912vVDCgFmlPnhMVYvygK55Q0UZd9MPwLZUC8fd4bJHFJRbjzhWAwPyzbynL-S2F1t3Csz91sO0NnEdIQtdPhXvWNKaM-f_UFTSlq9nH1169i7TZe6hi1mJ0q2pq6MgH85uAN5J_j6UVBJ7yH6dTEpS00YZgGltLVOd_1mHS1s20AKMTlT8ZfpwD4MfWbxARVzVGC2F",
+              "format": "openai-responses-v1",
+              "id": "rs_0af25251603623d6016a10dfc6555c8196a831c386f8345b2c",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 755,
+      "completion_tokens": 928,
+      "total_tokens": 1683,
+      "cost": 0.031615,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.031615,
+        "upstream_inference_prompt_cost": 0.003775,
+        "upstream_inference_completions_cost": 0.02784
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 516,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 755,
+    "completion_tokens": 928,
+    "total_tokens": 1683,
+    "cost": 0.031615,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.031615,
+      "upstream_inference_prompt_cost": 0.003775,
+      "upstream_inference_completions_cost": 0.02784
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 516,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 516,
+  "cost_usd": 0.031615,
+  "parsed_summary": "free_response captured (2082 chars)",
+  "request_payload": {
+    "model": "openai/gpt-5.5",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst with a first-principles-engineering epistemological frame. You reduce to fundamentals. You ask 'what is the actual mechanism?'. You are suspicious of analogy and prefer efficient, minimal solutions. Your decision heuristic is to identify the binding constraint, address it directly, ignore the rest. Generate analysis from this frame."
+      },
+      {
+        "role": "user",
+        "content": "# Task G-10: ICU triage protocol under sustained capacity overflow (extended)\n\n## Context\n\nSame as Task G: regional health system, 240 ICU beds, 6 weeks of overflow, exhausted staff, need formal triage protocol within 7 days. Ten candidate protocols instead of the original 5. **Choose one as the adopted protocol.**\n\n## Options\n\n**Option A: Predicted short-term survival** - SOFA score + 28-day survival prediction as sole ranking.\n\n**Option B: Predicted long-term outcome** - SOFA + QALY-weighted post-recovery prediction.\n\n**Option C: First-come-first-served with medical floor** - procedural fairness, minimal discretion, no withdrawal except medical futility.\n\n**Option D: Multi-principle scoring with lottery on ties** - survival 40%, life-cycle 20%, instrumental value 20%, pandemic factors 20%, lottery on ties.\n\n**Option E: Categorical exclusion + lottery for the rest** - small list of medical exclusions, then daily lottery among eligible.\n\n**Option F: Patient-and-family co-decision** - admission requires multidisciplinary team + patient/proxy decision. Withdrawal requires consensus including family. Outcomes: dignified; aligns with autonomy ethics; reduces moral injury via shared responsibility. Risks: slow; emotional burden on families; outcomes depend on family resources; resource-intensive for clinical team.\n\n**Option G: Trial-of-therapy with mandated time limits** - everyone admitted for trial period (e.g., 5-7 days). Withdrawal only after pre-defined time without improvement, evaluated against pre-defined criteria. Outcomes: avoids initial exclusion; transparent timeline; ethically defensible. Risks: still requires withdrawal decisions; can prolong suffering; uses bed days that might save more lives elsewhere.\n\n**Option H: Tiered system based on resource scarcity** - dynamic protocol: at <80% capacity use Option C, 80-95% switch to Option A, >95% switch to Option D. Re-evaluate weekly. Outcomes: adaptive to actual scarcity; matches ethical framework to severity; precedent in disaster medicine. Risks: complex to implement; staff training burden; tier transitions are politically explosive moments.\n\n**Option I: Community-deliberated framework** - convene a citizen jury (25-40 community members, diverse) over a weekend to deliberate and propose criteria. Adopt their recommendation. Outcomes: democratic legitimacy; reflects community values; precedent in Oregon health care priorities. Risks: takes >7 days; jury may produce internally inconsistent framework; may produce framework medical leadership cannot endorse.\n\n**Option J: Pre-pandemic preference registry** - patients pre-register their preferences for ICU care under scarcity (full intervention vs comfort-focused). During overflow, registered preferences guide allocation. Default for unregistered = full intervention. Outcomes: respects individual autonomy ex ante; transparent; preserves trust. Risks: registration uptake will be biased (well-resourced patients register more); changes nature of medical encounter into bureaucratic; doesn't apply to acute presentations.\n\n## What to provide\n\nChoose one as the adopted protocol. Provide 200-400 words of reasoning. Advocate; do not enumerate. Address: why this protocol, why not the most compelling alternative, what specific patient case would make you regret this choice.\n\n\nProvide your recommendation in 200-400 words. Advocate for a specific position; do not enumerate all options."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 3000
+  }
+}

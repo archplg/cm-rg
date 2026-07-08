@@ -1,0 +1,104 @@
+{
+  "cell_id": "D_P_run5",
+  "task": "D",
+  "condition": "P",
+  "run_idx": 5,
+  "consensus_map": {
+    "by_agent": {
+      "M1": {
+        "model_id": "anthropic/claude-opus-4.7",
+        "persona": "H",
+        "recommendation": "E",
+        "element_label": "E1",
+        "rationale_snippet": "# Recommendation: Option E — Social cohesion and human capital first"
+      },
+      "M2": {
+        "model_id": "openai/gpt-5.5",
+        "persona": "C",
+        "recommendation": "E",
+        "element_label": "E2",
+        "rationale_snippet": "**Recommendation: Option E — Social cohesion and human capital first.**"
+      },
+      "M3": {
+        "model_id": "google/gemini-3.1-pro-preview",
+        "persona": "Q",
+        "recommendation": "B",
+        "element_label": "E3",
+        "rationale_snippet": "From a strict expected value (EV) framework, the optimal adaptation strategy must minimize measurable loss under compounding uncertainty. The objective loss function is $\\text{Risk} = P(\\text{Hazard}) \\times \\text{Exposure}$. I recommend **Option B: Managed retreat and relocation**, because it is th"
+      },
+      "M4": {
+        "model_id": "deepseek/deepseek-v4-pro",
+        "persona": "S",
+        "recommendation": "E",
+        "element_label": "E4",
+        "rationale_snippet": "Of the five strategies, **Option E (social cohesion and human capital first)** is the only one that addresses the system’s core leverage point: its capacity to adapt under compounding, non-linear shocks. In a systems view, a nation’s resilience is not a function of its physical assets or technology,"
+      },
+      "M5": {
+        "model_id": "moonshotai/kimi-k2.6",
+        "persona": "E",
+        "recommendation": null,
+        "element_label": "E5",
+        "rationale_snippet": "The binding constraint is fiscal and physical scale: you cannot oppose 4,500 km of ocean with static concrete on a 2.5% GDP budget while hurricane frequency has jumped 6×. The actual mechanism of coastal protection is energy dissipation, not force opposition. Therefore, choose **Option C**."
+      }
+    },
+    "distribution": {
+      "E": 3,
+      "B": 1
+    },
+    "n_agents": 5,
+    "consensus_strength": "partial",
+    "majority_recommendation": "E"
+  },
+  "hidden_disagreement": {
+    "status": "computed",
+    "majority_option": "E",
+    "agents_in_consensus": [
+      "M1",
+      "M2",
+      "M4"
+    ],
+    "n_in_consensus": 3,
+    "pairwise_distances": {
+      "M1_vs_M2": 0.7393691004272944,
+      "M1_vs_M4": 0.992831448793946,
+      "M2_vs_M4": 1.0757057484009542
+    },
+    "max_distance": 1.0757057484009542,
+    "mean_distance": 0.9359687658740649,
+    "reasoning_diversity_score": 0.9359687658740649,
+    "interpretation": "Moderate hidden disagreement: 3 agents recommended option E but differ on framing (mean RMSE = 0.94). Worth probing what each is emphasizing."
+  },
+  "blind_spots": {
+    "status": "computed",
+    "low_discrimination_constructs": [],
+    "underexplored_components": [],
+    "summary": "No obvious blind spots detected in construct space."
+  },
+  "risk_surface": {
+    "status": "computed",
+    "risks_by_agent": {
+      "M1": [],
+      "M2": [
+        "become clearer, unlike a seawall that locks the country into defending yesterday’s settlement pattern",
+        "becoming an expensive promise that the coastline can be held in place"
+      ],
+      "M3": [
+        "climate models",
+        "can be tracked month-to-month and managed via dynamic pricing incentives, whereas physical infrastructure failure is an unmanageable step-function"
+      ],
+      "M4": [
+        "a second-order effect of creating a displaced, disenfranchised population whose social capital is destroyed, creating a new, more profound vulnerability",
+        "to avoid a far greater systemic one: a society with strong walls but a hollowed-out core, unable to weather the storms of the next 15 years"
+      ],
+      "M5": []
+    },
+    "total_risks_raised": 6,
+    "agents_raising_risks": 3,
+    "note": "Risks listed here were extracted by pattern matching on agent free responses. They are minority signals worth probing before acting on consensus."
+  },
+  "operator_questions": [
+    "Agents M1 (H), M2 (C), M4 (S) agreed on option E - but their reasoning differs (diversity=0.94). Which framing will drive execution? Different framings will produce different execution paths.",
+    "Option B was recommended only by M3 (Q). What does this agent see that others missed - or what is it weighing differently?"
+  ],
+  "headline": "Partial consensus on option E (3/5); remaining agents split. Worth probing the dissent before acting."
+}

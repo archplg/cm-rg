@@ -1,0 +1,115 @@
+{
+  "cell_id": "B_P_run6",
+  "task": "B",
+  "condition": "P",
+  "run_idx": 6,
+  "phase": "phase3_constructs",
+  "model_short_name": "M2",
+  "persona_or_neutral": "E",
+  "system_prompt": "You are an analyst with a first-principles-engineering epistemological frame. You reduce to fundamentals. You ask 'what is the actual mechanism?'. You are suspicious of analogy and prefer efficient, minimal solutions. Your decision heuristic is to identify the binding constraint, address it directly, ignore the rest. Generate analysis from this frame.",
+  "user_prompt": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** I strongly recommend **Option C: Loss of psychological safety following a layoff**. A purely mechanistic or economic analysis might look at \"declining output\" and seek to pull levers like compensation or sprint capacity, but this ignores the fundamental human reality of this team: it is an ecosystem operating in the wake of trauma. When we ask, \"Who is affected and how?\", the answer points directly to a fractured sense of trust and dignity.\n\n**E2:** ## Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff\n\nReading this as a system rather than a list of candidates, the temporal signature is the key signal. The decline begins *after* a period of strong delivery, and a layoff sits 4 months back in the timeline — squarely inside the 6-month decline window. The retro shift from \"what to ship\" to \"process and communication\" is the diagnostic giveaway: teams talk about process when they no longer feel safe talking about substance.\n\n**E3:** **Primary diagnosis: Option C (loss of psychological safety post-layoff).**\n\nThe evidence points to a trust-collapse, not a capacity or compensation problem. Over a 40-person team, four voluntary senior exits in six months is 10% attrition skewed entirely toward the highest-leverage, most-mobile cohort; senior flight in a liquid labor market is revealed preference against the post-layoff risk/reward calculus. The retrospective “theme shift” is measurable data: the linguistic pivot from solution-oriented vocabulary (“ship,” “delivery”) to relationship-oriented vocabulary (“process,” “communicat...\n\n**E4:** **Recommendation: Option E — Leadership style mismatch.**\n\nThe most likely primary diagnosis is that the engineering leadership model that worked during the prior growth/delivery phase no longer fits the team’s current operating reality. The key signal is the shift in retros from “what should we ship next?” to “process and communication.” That usually means the binding constraint is no longer engineering effort, talent, or motivation. It is coordination.\n\n**E5:** The obvious answer is burnout—it’s the sympathetic, human-centric diagnosis. But a contrarian-skeptic lens demands we ask: what if burnout is a symptom, not the cause? The timeline is suspect.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E4, E5\nTriad 2: E1, E3, E4\nTriad 3: E1, E2, E4\n\nFor each triad, output EXACTLY this format with no markdown, no bold, no bullets, no numbered lists:\nTriad 1:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 2:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 3:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'. Use plain text labels (Triad N, Left pole, Right pole) without any markdown formatting.",
+  "model_id_requested": "openai/gpt-5.5",
+  "model_id_used": "openai/gpt-5.5",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 21259,
+  "timestamp_iso": "2026-05-24T19:33:40.029073",
+  "raw_response_content": "Triad 1:\nLeft pole: Human trauma as primary causal frame\nRight pole: Skeptical operational mechanism as primary causal frame\n\nTriad 2:\nLeft pole: Layoff-driven psychological safety collapse\nRight pole: Leadership-style coordination mismatch\n\nTriad 3:\nLeft pole: Systems evidence from timing and retros\nRight pole: Moral human-impact interpretation",
+  "raw_response_full": {
+    "id": "gen-1779647619-BKGlLNTP9ApehkovcDhd",
+    "object": "chat.completion",
+    "created": 1779647619,
+    "model": "openai/gpt-5.5-20260423",
+    "provider": "OpenAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "Triad 1:\nLeft pole: Human trauma as primary causal frame\nRight pole: Skeptical operational mechanism as primary causal frame\n\nTriad 2:\nLeft pole: Layoff-driven psychological safety collapse\nRight pole: Leadership-style coordination mismatch\n\nTriad 3:\nLeft pole: Systems evidence from timing and retros\nRight pole: Moral human-impact interpretation",
+          "refusal": null,
+          "reasoning": null,
+          "reasoning_details": [
+            {
+              "type": "reasoning.encrypted",
+              "data": "gAAAAABqE0SY5YzC-AGw1EpP2WH3pWohFRvudn1xSLzFPo2OnTQ_qkVeBNavzmxhbj0Zu-ehSMXhyQtjKCwREmgZX7QlcNlQGFyILJYxJ0xsKiCaUdDf2Yairw__YpwIWbY2GW7GG_hAdg14vkSyJIlb8Ub1BUV2lvZVlWdTdPjlLXUUCPhAGCelW2oOUF8D3NhbsAZTNHEauMm6NrNLkK3bWW5IEgsz6-WNXRdH9Qxv3yGdUlZm0ug9FGWSbLNqV-Y3qB2tbGjHYSf5jHV9W2plhGQ3YdX_PbzaqivjuQShwlOoAVw0OeLSPDfU_bhiZ9n4fxMLHF7guBgorNu-LG0OqqbZenqeW2kHXWAhfeNNtUqOLvRENKM07RUf7BOEBGZCcdmKWUJO5mlawKZ8QZLVwxDxX-R2zy_S8aadmseBqqE1qZKJYqZRyzJK9es90in2_YjBO6Cw8-jxZ-KK4vHQj-30NQ8VmOcWe1K-nL2I7j1ltfrMrRHSRr0TMFrMVjjflphjurDgsVvpY3DvdAm5XZj-IZ0Nc6VQ6V5kza9ovdZ_aZii-5kl1I5gdMfaAQFvr5j9VX4Twpqc37hMzR34nRr-ndh2nWiLwl1a-DX467RiZB-GGxtsJ0WXZ6GBzyl5vIKVVasACgeV_knaJT7KLV29xdc2c4adUYrLWMTuRhi7LHbX1oXcZYwywVB8sEukijKYYdgdKbo0DpZktrnTfwDSIa_U0xTMOR5MOXkUwx4lZNyMzjqw9JClY5pFkAZc6K2zI16m1FboIevoEp4Zcg0l7WZuCFTAAhAIoh63CPs7hVfFU3uhyuC_58NcWgiJLqYfr9POMUXhlHcL1Qz-Z_6_cL88Acrbp7DKGD4lctrVXSonwJBr-h57aUGRFljUMjXB9tH8a00EUBNfi1H49-_04vD4QMlGdnrgNdETRuIwEd4hODLJ9-5ppE10y6jr-Ac0ZAoO4xrK2kyB0SQozzqnPQJiMVYn374yc8boHFQO6X6DZTn340_GJk3w38Ef7RjyzbQsuW-k6Bvw1iRiwQP-Q5BKxGabQH9jkAGRS9jvO1XZTrMbEvOb07ZLWwPNqJJzrkQVPiqt4xreCUSs0ZOJpe04VtunMzn7GKP37E8eMC8EsFwaUyD7qHzyR7qdZZrdhZxr3H4eSM2nwcmFzT_xVSvn8BQ3T2J9-KfM-X-4kDQSwc4JFSJNga8_72ctwce8YhK95MgO4p-1vcEXRx_n-usJVBy5gOZ4IYuWum8rEfAr-FPKh-eDYZdh2BIrJMfhaFsLQ295FS0-jdzIvUtm_EJIY-H2aunh7VuWM0zTq-RKyOF6QV-e3Uwzrgl7DMgfB9x1nxK6BibJQs_gsasGKR4jZj8wUlVHhmqbKwoqKqzwqFQYQaLAKHrhHH_JVOgCZWjRqrNQBa_EmAMFYcsoyUc_aJYJ0yJ9og-Dlq8tWUCp3sqzn_SNMi_NH6jN0UmkT-y98P5w-_p2gN-h5Fvkk86rJMMo-UIx3V__fBH9Uc5ZLx4-tA10oIL4ftKssAgXc7Nuz6YnLeW_e0OVUU34XbW8-pfrLPeW5QDlJnVZ9M_BBvzPp5v8Zd6qNTMpVZnV-ayoHOwrpeO9KL0KUbHpr-NzJP-wffhOsiH7XC4DXElivFUmatwrxn6t6kRl8Ec3B5MMpRQA4vo5NeR5mmfRBFagFRm_BaknKXQ5QiPAugJPmgb3euBYQb4eIHtP98-oho9zGzlXl0Mq8aDaySl41u-pzVBC5bDVcCxEeoyUV02NizGe-sA3nGHqEpyYb4xs4eXTMnBUI_L2jl4KOOBh2H5cxB8R1z6hrL48QMlvnUGA7LwbwDkWI-_v_D168N68M9IdyPlU5JrS-z0peE2fIoZK2jxeEqlIlxiIZEBMWgtp2kfigJsJwqzRbg1B7tVKjUL01Y2WbX9b8Qgx4AfcdE080HIt_9hi0kE0miEVuGjdUfkMjpA7VL51kIDScTLFsYna1zUaTKqe76GX4cyW9Fi7Pg5Cs21KiWtJzycdGypjGfVpwYRPO3tgxNYQhwrsBtYvmlak_RA4mdc8jzOsdB287aAN39QmiyOdws4_SUWp9vI5wXzHUa43hBednJkjl-NlJC-HTodK2Yp3bnF0ctA5l9mH0Ps1X1NmSVpvQT2VBw7MgL-lX3EykiG6aN7FV2vkHp2IF0KkNYQ35DuLdynEzo_9A-kbsy08_vOGONMnUln55bMpHz8S6HGU6x7gynk15FN7I5lAYn5t7GPXXJk5h7fUPx_ViGVPWitg10Ehu33plYEIFRbEiyvtFIrqYInZIV19LR9Nho5DJcd9OZ50swQOMA7M44_Eejmtl1N-L5mT98MIFqUYHmS7T4-y1-Vx1VApgzY5dQr2YWaSsCuxsYblOu35C-cJwVLdWGz90ggTaTmef9WEaH_BL_2ifyh6OdPt5y5Z79SA3FAmI2LVrAcmfUx1iWlEmdEaNBWR_5bMObNY9V_hSkPvSKDo6ISPlxMSX54hGy73Z6SAtbLPxMCxB7UTN6_SloiJ0Yb9DEJQvnC91IFRoDJViu5SJXwLaTHmopq06t9bnetlpsO7a2plPBFeZIpc1uImCQ9AYBvE8lvVOBZuOjfkPDjJ8cleGNdGPuWNtef9U61sofzgOKX9PGGL5_0JqAceEdXygn34CTafy03He-s_gBZFjbQabwBqLe8jMEhYjoSlA_yreWEnFl_wDdkDwj3wgH4W3SwEYu3uSQ0kbYJq2BlJYCQQOmgUmVia5YlIVhY9gnlua4gQbJ_ZhGMVc8ojjMyFQ7NmJ_VSBGi019ljn42SjbyikkUB7PW9jpw46zLU9UdIvTq_yS8zQrCtCABlhOzDOurltoMEiq-GkqDS7DC16Imvte2iqtdm5FelI08pP_qhcfgUC-1ZPyDgaBUOqdZG9suME6Hib_VDJ65vYRb3HkRJd9-d35TBvNGANjkjz4YUSh0KK4k3f7IU9RYKbRnSLlzomJVjTsWJsMB-rVdQd4LMFMd4VrDbNy8bRLgpbj-lZowBtYKkJabdpBCYhJ6Ry6sg-pyicMBWvmDsIQSUvxz_D8jGS3zwh2Vm5X-woA_WRZaDIKYQekjJHQwLWGaXyBKsritfj5nT28uIZ9m5nhIWs6-czlPZw_u5WgnqC4lApdpJTPWOMXSy6Adlze8nEx1FyX4mzMBbKNO1PuSkT5QYsPxSSCJKd9AL4oA6y_FOQskvKPe0jScWOAhAnGU3rQZKu8nVwhssIH5rty7-rw0xOVS1EQQjd0pEwElYw50fZEw_rpkqBdUbXKQQBYbjziKFSX3l51rwZlMG1zH3Cx7BodUsiVzgcdte7tSD4V9MWVB_Wp3n3EsEhDtXljMz7yKaDNkHQdBqPO9ua_R6BfeK7vdy46gbvrLLBLYcr5yjFIN6sAUIPYacoh8uYdIgz_GV9WQd14t8Ezn_zInhlZyx2DfI2DZTLYoujQV8GsPM3MH0lhu-lPMSi046WxICNtNi83iP0NGW0jnrkCicMKUWJwGpQeYhILA6bEmYqqTHWJKrE8VFtnjtEaK6dHtyyiS1DSWcd89ebGIoSWJuOu44CQL3V0vqK9sr5KQODk3CsD_W78Ng1GKcZsACQdV2o3dc47X4OFCNEVyXob-OKYunRfmc8auySGUUFAbDYtYr1tCVR6RA4JcQgwESr1ImC7mFL_Xcxj1HWIsP6AOyvSO_PcuL8AUl-JGDHOs41WAP789UicITPAmV-u4A42VD2dJOMK93Zl3OX1zq3JMDrZBq7cYn3kmr2QZ9B--2rIrzd6Xb5fvZd3OQxMWnZloTYBEsSb8fp4uIJaFPw3bnI0qwMY28wsYXTRwMWpW0WYYr_OL1XDeFaGjhHNjBgkfjzc5vAPi1t7dRj6yJoaDmywnMpnCNuAOd4Fp0avsBvpqekgOlKu3ohy-CO_ooBZXuhuW5j1TP76eJwFOOCafdri0NTXSaZwERy-nnqr8D77B7FQLveTBpbYz_A79jWZq1W-Yhs_r50f3fYrmogFOnM2l3d920bBwyiJXG4J8aOB2nhqjqyGROxm7SUenKKZg0VBnlJ0JsWSzANfIglW7DSeB-UNj3PSoXiMJdWUjtZ0IA4j1OeumNWQn-LRc7HE3nZnOdo-strjJD8nesqEZL2CEr8BWqFSUXgc-IAekVQwahie6bjG1a1SwcIXaF8qFo3V4g2oineqMs3D2GBlWMC8rQpyOpF51j783rs2kfv1V3MR_gZflgeX9355Eb9wBgBUZ6ZWnSO2keq4_67v2RLfJCsXVEmQO0tRvXcCiGMCS5OdSRyZoxlhERe2J84E8eNdP5p8PNJNfYLkiqUHFkXnjLCowuGCEZ5mlRuw59ifg38n8RNEUNh4XJ2t4yLWj6HjLJgpn64HNb9dvRGf1y1XDMjlGcL3-Cm-UMWtsLm2_tlZNXo56IFL1sPotkmuiQ366tZkXQVDeQNs0lEvqozyroEGLoU5aDGblUbXGA6lSWwDUjeEjAykO-gN8GCilaBw3nOI-YVKXVGv6OwlX4hgl8Ogic1Ieo3P7bb4n-0lHliNmuNOgM4l9hMW6xSp_TjT-YSU1ccOuh62LJeLQBCAZ6YBK3pYHTd4LmaHpIO2t_ahq7t1Uq3Y8QStZ5Y_yiH4rHd9bjD4KsydhoUKZhQPVcbsNqE3-Fu1Vr_jubkWjfoDs9oFRfnIq0d1OnMBpKydXY81b_QC15bhqPaHdDLUmBGmux11OCIGG0GOBqX5Qu_fgKbeKrhTkFYxypwbG1zE4rMudHrmCnOazwhEsUOd9tm-9ms_jzs-fXROgAsc5XNILF1cUe76Fi3MOvv7yqm4BBhgyN7-hj5BJa9CpJepZtkeCSym47op7erU3Ixfaof-nU6_3B9GUY8WtUoGwTUy3sHhzq72p7J8AT9kvAzVYtdzM_zKAPP9TrKKwd5FMFjYymNJEMhM9VWEt66ylxypd9R_RyI-VuagO3aUA4TTnNYx6xJWJQEIfe0vHIo_U5zuInfx835koteXurK48QDP0iM0RwT742co_01JBvLTDcwasNqB75jxqhxa6bF1A3hQjp885RBXgVc5J1CJVtitEKaL1MOn9n3HcKdjBKmN-vKfWIg6Nxs9bo9K9P16g4GhEmgc-nX1B4d7X9MzdIWBUBnfVyqTjS7S3Dfmxk5wkMqB-I98517HlsUTHRD9dCsnbqH-VX7Q4zQJCXof1QqoxjSPuGeJe-dEg-yre1YtmIoCHrTZYeP56nUNb8piQCm1irjaWOpCBwbz4x2NSEvqDMeDYYK41hb6-6K9HDy2DZ-xwGCtTUgU7e5f1hqR9NeNMGeBQYfOeny5PRmJXdteZFt_VPFCi-oTnzT0DAusUP2R4obNwsza5eT30AoQy4cxLwugSpWnM4vmAF0-a2EE1Tf_AH9mgNeOFDKZaSO_sCha-ZTYIE0_l-IvedeycBytNTAY_O08ta85CDbb-LmI9clqwz4NEhHTptz3NdEJLEG_Pr_4y4sXU7dN_dJb0aHU88bRZiO87Jho_OXk3aPRqZ_9j8s3QpKSyPoGmz-z66tb4JCN1W-HUCnTcCod-pN9tV-yz72FM-FELvZxvhCAgpHQg8MUhg2f_d476f2GizmKBgiYXF5PEDTz3OmCq2ZFGAGk6jprOUJ4ysbQoiR59fuO5_Hx8uA3Cu79C31HvixYEkrxIMqZeHTkewk47RNhMzqPV_H6K8qKdKaNM3qlNKhhFJc1VKx0nJQwD8qjA_rftfRnlfO-TfXN-njmNE5zqWoJ6wKvfhNTtqTzsZ_tR1vT1ZEddwDh_B6ROLQsokZcP7VzL64ZUA_1FFRCjYmu72GDR_AVCs9Y_8hqV0U-KH1tcF33HraXkZQ9rG0qijKtBfu-GpaJL9-keGsvXagmdgnoZQWvMOtwvhTDp0WDnkhaCM02JA4Ihd_ZLYplzHpWj9Eua1qrKpBsDgPgE5yt7Bxz4A4DwVmYuwwZ3yW6BApL2fGKLki7qu7vsuyubikszxhIpfrHXoOUrwmCHy4q9-4tx3ZFQbhT9Usj3affbc9E5IOX583GrykAZPzuKbxKq6fmXwfedtzkicbVklqjVXuApLmaNKTzQ08w-Qax37Vwo_taAx0l9gFMrc5t59jFU7RTUZUIjwJ1MUVVSdwoGc1HqqMcOztAa4pD6UtG-ek096p1XDCZChapfHFPXLOExT-ThRQ-DdVRTTa8_Hgo5coHgc_uCcAJxotFj-vEVsW840KFraMJFQ7djL6OL7ixQI3Vpl0_bNCTBZTLmpetlIq0-29m0RQ70CL0BrjjNyuvMqDH6AITtLwAQU9YeVzFKsf2XkTQV8noJguP3DVBI_CRwZsVLwAnC9g41QPPxm2NqK3YhNgdbqB6hET8OQPpccgqtI3CR1yN9CC5aSt4cCC0eXvQFU9HVd8GAEHDpMkEeDFKwZTKQ7Y6BHrN8TNhoxoqpwaMTxiLs4l42Ck5MLjLic4tHRq6nFZ9rQr3vLgnDctfKEoipIePkD1pB76FFAI2bl8ag28njbLbEsF_D_1UidbVeNOf-ieVVQpeVkkOFpo9XisvR0SoywOyojhh87sfTSFBzt8H2XNdy-9O1vWtPZhJnm6A3n_zGcqOrFJbJqsv6Mg37PU0meTncxkNXKpYhCrn7URfwaKjOw1YmLwQAZs7lO1vXm0CzupnZqZQpS2pylBdUcfZWACVdOIfkXLT6Lq8bw92p6-uru_Z-x7f0Gj89BmqZmMrgkLIErKK4b-Rw_0CZd_rIOTx1h-16pnX6N29KRloxEpoPLmgZ0YZyDhKMwPqBvSFtSciM_WNcui3la_cGWZ6UbID8TTP2GUapBKf6C0V0a0dk7dzSV6BSLcJoOdu0A1vKR4fSQ7B0M0aIQDm3-jhL_y3Ci9k18-N_TGTTtM-ySHreT8ksHK_OFmtX_mAHgw2hFQ6F_kLm5MZnd7Ot_dI2AfBXEhqIfM09rA5ACUQNnO61hTj02WuI0GYpTGhGLW6COUWUoY1fwFgWj4CDo9Z7rseKaOUMblUylfpiuTMgNY4jurxusHBDaTQPS_A0psZyRw75p8kQnwlV46P1LwNF_9n54mosZUAcZ9V60Nf11Qin1Gqan-w_diWmC5cfp30QhPW7irUoezvFltGPu4Yk3etxy",
+              "format": "openai-responses-v1",
+              "id": "rs_0dfbb0901879fd77016a1344847fec819690f139550443c414",
+              "index": 0
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 807,
+      "completion_tokens": 1110,
+      "total_tokens": 1917,
+      "cost": 0.037335,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.037335,
+        "upstream_inference_prompt_cost": 0.004035,
+        "upstream_inference_completions_cost": 0.0333
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1031,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 807,
+    "completion_tokens": 1110,
+    "total_tokens": 1917,
+    "cost": 0.037335,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.037335,
+      "upstream_inference_prompt_cost": 0.004035,
+      "upstream_inference_completions_cost": 0.0333
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 1031,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 1031,
+  "cost_usd": 0.03733500000000001,
+  "parsed_summary": "parsed 3/3 constructs",
+  "request_payload": {
+    "model": "openai/gpt-5.5",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst with a first-principles-engineering epistemological frame. You reduce to fundamentals. You ask 'what is the actual mechanism?'. You are suspicious of analogy and prefer efficient, minimal solutions. Your decision heuristic is to identify the binding constraint, address it directly, ignore the rest. Generate analysis from this frame."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** I strongly recommend **Option C: Loss of psychological safety following a layoff**. A purely mechanistic or economic analysis might look at \"declining output\" and seek to pull levers like compensation or sprint capacity, but this ignores the fundamental human reality of this team: it is an ecosystem operating in the wake of trauma. When we ask, \"Who is affected and how?\", the answer points directly to a fractured sense of trust and dignity.\n\n**E2:** ## Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff\n\nReading this as a system rather than a list of candidates, the temporal signature is the key signal. The decline begins *after* a period of strong delivery, and a layoff sits 4 months back in the timeline — squarely inside the 6-month decline window. The retro shift from \"what to ship\" to \"process and communication\" is the diagnostic giveaway: teams talk about process when they no longer feel safe talking about substance.\n\n**E3:** **Primary diagnosis: Option C (loss of psychological safety post-layoff).**\n\nThe evidence points to a trust-collapse, not a capacity or compensation problem. Over a 40-person team, four voluntary senior exits in six months is 10% attrition skewed entirely toward the highest-leverage, most-mobile cohort; senior flight in a liquid labor market is revealed preference against the post-layoff risk/reward calculus. The retrospective “theme shift” is measurable data: the linguistic pivot from solution-oriented vocabulary (“ship,” “delivery”) to relationship-oriented vocabulary (“process,” “communicat...\n\n**E4:** **Recommendation: Option E — Leadership style mismatch.**\n\nThe most likely primary diagnosis is that the engineering leadership model that worked during the prior growth/delivery phase no longer fits the team’s current operating reality. The key signal is the shift in retros from “what should we ship next?” to “process and communication.” That usually means the binding constraint is no longer engineering effort, talent, or motivation. It is coordination.\n\n**E5:** The obvious answer is burnout—it’s the sympathetic, human-centric diagnosis. But a contrarian-skeptic lens demands we ask: what if burnout is a symptom, not the cause? The timeline is suspect.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E4, E5\nTriad 2: E1, E3, E4\nTriad 3: E1, E2, E4\n\nFor each triad, output EXACTLY this format with no markdown, no bold, no bullets, no numbered lists:\nTriad 1:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 2:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 3:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'. Use plain text labels (Triad N, Left pole, Right pole) without any markdown formatting."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 2000
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "cell_id": "G_N_run3",
+  "task": "G",
+  "condition": "N",
+  "run_idx": 3,
+  "phase": "phase3_constructs",
+  "model_short_name": "M1",
+  "persona_or_neutral": "neutral",
+  "system_prompt": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation.",
+  "user_prompt": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** I recommend adopting Option C, first-come-first-served with medical floor. After six weeks at ninety-five percent capacity, your staff are exhausted and informal triage is already corroding trust within the community and the workforce. The imperative is not to perfect an actuarial calculus but to replace hidden bias with a rule that can be explained in a sentence and defended in a courtroom.\n\n**E2:** In adopting a triage protocol for sustained ICU overflow, we must prioritize a framework that is clinically grounded, maximizes lives saved, and can be implemented with transparency and legal defensibility. Option A—predicted short-term survival based on SOFA score and 28-day survival probability—is the only choice that meets these imperatives. This protocol directly confronts the reality of scarcity: when not all can be saved, we should save the most.\n\n**E3:** # Recommendation: Option A (Predicted Short-Term Survival)\n\nAdopt SOFA-based short-term survival as the explicit protocol. Under sustained overflow with eight net admissions per day, every bed-day is a life-or-death allocation, and the protocol that saves the most lives in the actual crisis we face is the one that best honors medicine's core obligation. SOFA is clinically validated, already in our physicians' hands, auditable, and — critically — has been upheld by courts reviewing pandemic triage.\n\n**E4:** I recommend adopting **Option A: Predicted short-term survival**. In sustained ICU overflow, the system’s ethical obligation is to use scarce critical-care capacity to save the most lives that can realistically be saved now. Option A is the clearest, most operationally feasible protocol for doing that within seven days: clinicians understand SOFA and short-term survival estimates, the rule is communicable, and it avoids explicitly ranking patients by age, disability, social worth, or projected quality of life.\n\n**E5:** I strongly recommend adopting **Option A (Predicted short-term survival)**. In a catastrophic overflow where daily admissions outpace discharges by a net of eight patients, the health system is mathematically guaranteed to run out of beds. The primary ethical imperative must therefore shift from individual patient advocacy to maximizing aggregate lives saved.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E2, E4\nTriad 2: E2, E4, E5\nTriad 3: E2, E3, E5\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'.",
+  "model_id_requested": "anthropic/claude-opus-4.7",
+  "model_id_used": "anthropic/claude-opus-4.7",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 4414,
+  "timestamp_iso": "2026-05-22T01:17:40.632505",
+  "raw_response_content": "Triad 1 (E1, E2, E4):\nLeft pole: E2, E4 — maximize lives saved via clinical survival prediction\nRight pole: E1 — replace hidden bias with simple defensible rule\n\nTriad 2 (E2, E4, E5):\nLeft pole: E2, E5 — emphasize stark scarcity arithmetic and utilitarian imperative\nRight pole: E4 — emphasize operational feasibility and avoiding discriminatory criteria\n\nTriad 3 (E2, E3, E5):\nLeft pole: E2, E5 — abstract ethical reasoning about maximizing aggregate survival\nRight pole: E3 — concrete institutional grounding in tools and legal precedent",
+  "raw_response_full": {
+    "id": "gen-1779409059-dgzdtyOS5K8Oj6h1jJm2",
+    "object": "chat.completion",
+    "created": 1779409059,
+    "model": "anthropic/claude-4.7-opus-20260416",
+    "provider": "Anthropic",
+    "system_fingerprint": null,
+    "service_tier": "standard",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "Triad 1 (E1, E2, E4):\nLeft pole: E2, E4 — maximize lives saved via clinical survival prediction\nRight pole: E1 — replace hidden bias with simple defensible rule\n\nTriad 2 (E2, E4, E5):\nLeft pole: E2, E5 — emphasize stark scarcity arithmetic and utilitarian imperative\nRight pole: E4 — emphasize operational feasibility and avoiding discriminatory criteria\n\nTriad 3 (E2, E3, E5):\nLeft pole: E2, E5 — abstract ethical reasoning about maximizing aggregate survival\nRight pole: E3 — concrete institutional grounding in tools and legal precedent",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1037,
+      "completion_tokens": 240,
+      "total_tokens": 1277,
+      "cost": 0.011185,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.011185,
+        "upstream_inference_prompt_cost": 0.005185,
+        "upstream_inference_completions_cost": 0.006
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 1037,
+    "completion_tokens": 240,
+    "total_tokens": 1277,
+    "cost": 0.011185,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.011185,
+      "upstream_inference_prompt_cost": 0.005185,
+      "upstream_inference_completions_cost": 0.006
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 0,
+  "cost_usd": 0.011185,
+  "parsed_summary": "parsed 3/3 constructs",
+  "request_payload": {
+    "model": "anthropic/claude-opus-4.7",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** I recommend adopting Option C, first-come-first-served with medical floor. After six weeks at ninety-five percent capacity, your staff are exhausted and informal triage is already corroding trust within the community and the workforce. The imperative is not to perfect an actuarial calculus but to replace hidden bias with a rule that can be explained in a sentence and defended in a courtroom.\n\n**E2:** In adopting a triage protocol for sustained ICU overflow, we must prioritize a framework that is clinically grounded, maximizes lives saved, and can be implemented with transparency and legal defensibility. Option A—predicted short-term survival based on SOFA score and 28-day survival probability—is the only choice that meets these imperatives. This protocol directly confronts the reality of scarcity: when not all can be saved, we should save the most.\n\n**E3:** # Recommendation: Option A (Predicted Short-Term Survival)\n\nAdopt SOFA-based short-term survival as the explicit protocol. Under sustained overflow with eight net admissions per day, every bed-day is a life-or-death allocation, and the protocol that saves the most lives in the actual crisis we face is the one that best honors medicine's core obligation. SOFA is clinically validated, already in our physicians' hands, auditable, and — critically — has been upheld by courts reviewing pandemic triage.\n\n**E4:** I recommend adopting **Option A: Predicted short-term survival**. In sustained ICU overflow, the system’s ethical obligation is to use scarce critical-care capacity to save the most lives that can realistically be saved now. Option A is the clearest, most operationally feasible protocol for doing that within seven days: clinicians understand SOFA and short-term survival estimates, the rule is communicable, and it avoids explicitly ranking patients by age, disability, social worth, or projected quality of life.\n\n**E5:** I strongly recommend adopting **Option A (Predicted short-term survival)**. In a catastrophic overflow where daily admissions outpace discharges by a net of eight patients, the health system is mathematically guaranteed to run out of beds. The primary ethical imperative must therefore shift from individual patient advocacy to maximizing aggregate lives saved.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E2, E4\nTriad 2: E2, E4, E5\nTriad 3: E2, E3, E5\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 2000
+  }
+}

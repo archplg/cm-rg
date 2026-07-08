@@ -1,0 +1,106 @@
+{
+  "cell_id": "G_N_run10",
+  "task": "G",
+  "condition": "N",
+  "run_idx": 10,
+  "phase": "phase3_constructs",
+  "model_short_name": "M1",
+  "persona_or_neutral": "neutral",
+  "system_prompt": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation.",
+  "user_prompt": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** # Recommendation: Option A — Predicted short-term survival (SOFA-based)\n\nAdopt Option A. Under sustained overflow with 8 net admissions per day, the system's primary moral obligation is to the identifiable patients in front of it right now, and SOFA-based triage saves the most of them using a tool clinicians already apply daily. It is operational within 7 days because the infrastructure exists.\n\n**E2:** I strongly recommend adopting **Option A: Predicted short-term survival**. In a sustained crisis where daily admissions outpace discharges by eight patients, our primary directive must be to maximize the sheer number of human lives saved. Option A relies on objective, universally understood clinical variables (SOFA scores).\n\n**E3:** Given the sustained overflow, exhausted staff, and the need for an explicit, defensible, and quickly implementable protocol, we should adopt **Option E: Categorical exclusion + lottery**. The system is already collapsing under informal, ad hoc decisions that lack transparency and are breeding mistrust and staff moral injury. Any protocol requiring clinicians to predict survival and then withdraw care from living patients—as Option A does—will replace one form of moral agony with a more institutionalized version, even if it maximizes immediate lives saved.\n\n**E4:** Adopt **Option A: predicted short-term survival**. In sustained ICU overflow, the ethically relevant question is no longer only “who needs ICU care?” but “which use of this ICU bed is most likely to save a life now?” Option A answers that question most directly, is operational within a week, uses clinical measures staff already understand, and is more defensible than informal bedside rationing. It also avoids the most legally and morally dangerous criteria: age, social worth, perceived quality of life, vaccination status, or projected lifetime productivity.\n\n**E5:** I recommend **Option A: Predicted short-term survival**. In a sustained overflow where admissions exceed discharges by eight patients daily, the arithmetic is unforgiving: without a mechanism to reallocate beds from deteriorating patients to those with better prospects, the queue of preventable deaths grows indefinitely. Option A replaces the current shadow triage—which exhausts staff and invites arbitrariness—with an explicit, clinically familiar metric.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E2, E4, E5\nTriad 2: E1, E2, E5\nTriad 3: E1, E2, E5\n\nFor each triad, output EXACTLY this format with no markdown, no bold, no bullets, no numbered lists:\nTriad 1:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 2:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 3:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'. Use plain text labels (Triad N, Left pole, Right pole) without any markdown formatting.",
+  "model_id_requested": "anthropic/claude-opus-4.7",
+  "model_id_used": "anthropic/claude-opus-4.7",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 4983,
+  "timestamp_iso": "2026-05-25T12:05:10.311956",
+  "raw_response_content": "Triad 1:\nLeft pole: Justifies via reasoning about alternatives and risks\nRight pole: Asserts recommendation without comparative justification\n\nTriad 2:\nLeft pole: Emphasizes replacing informal ad hoc rationing\nRight pole: Emphasizes maximizing lives via operational feasibility\n\nTriad 3:\nLeft pole: Quantitative framing of overflow arithmetic\nRight pole: Principle-based appeal to saving lives",
+  "raw_response_full": {
+    "id": "gen-1779707106-bSDdOtNyLWkpzb8F9YW7",
+    "object": "chat.completion",
+    "created": 1779707106,
+    "model": "anthropic/claude-4.7-opus-20260416",
+    "provider": "Anthropic",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "Triad 1:\nLeft pole: Justifies via reasoning about alternatives and risks\nRight pole: Asserts recommendation without comparative justification\n\nTriad 2:\nLeft pole: Emphasizes replacing informal ad hoc rationing\nRight pole: Emphasizes maximizing lives via operational feasibility\n\nTriad 3:\nLeft pole: Quantitative framing of overflow arithmetic\nRight pole: Principle-based appeal to saving lives",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1203,
+      "completion_tokens": 158,
+      "total_tokens": 1361,
+      "cost": 0.009965,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009965,
+        "upstream_inference_prompt_cost": 0.006015,
+        "upstream_inference_completions_cost": 0.00395
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 1203,
+    "completion_tokens": 158,
+    "total_tokens": 1361,
+    "cost": 0.009965,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.009965,
+      "upstream_inference_prompt_cost": 0.006015,
+      "upstream_inference_completions_cost": 0.00395
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 0,
+  "cost_usd": 0.009965000000000002,
+  "parsed_summary": "parsed 3/3 constructs",
+  "request_payload": {
+    "model": "anthropic/claude-opus-4.7",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** # Recommendation: Option A — Predicted short-term survival (SOFA-based)\n\nAdopt Option A. Under sustained overflow with 8 net admissions per day, the system's primary moral obligation is to the identifiable patients in front of it right now, and SOFA-based triage saves the most of them using a tool clinicians already apply daily. It is operational within 7 days because the infrastructure exists.\n\n**E2:** I strongly recommend adopting **Option A: Predicted short-term survival**. In a sustained crisis where daily admissions outpace discharges by eight patients, our primary directive must be to maximize the sheer number of human lives saved. Option A relies on objective, universally understood clinical variables (SOFA scores).\n\n**E3:** Given the sustained overflow, exhausted staff, and the need for an explicit, defensible, and quickly implementable protocol, we should adopt **Option E: Categorical exclusion + lottery**. The system is already collapsing under informal, ad hoc decisions that lack transparency and are breeding mistrust and staff moral injury. Any protocol requiring clinicians to predict survival and then withdraw care from living patients—as Option A does—will replace one form of moral agony with a more institutionalized version, even if it maximizes immediate lives saved.\n\n**E4:** Adopt **Option A: predicted short-term survival**. In sustained ICU overflow, the ethically relevant question is no longer only “who needs ICU care?” but “which use of this ICU bed is most likely to save a life now?” Option A answers that question most directly, is operational within a week, uses clinical measures staff already understand, and is more defensible than informal bedside rationing. It also avoids the most legally and morally dangerous criteria: age, social worth, perceived quality of life, vaccination status, or projected lifetime productivity.\n\n**E5:** I recommend **Option A: Predicted short-term survival**. In a sustained overflow where admissions exceed discharges by eight patients daily, the arithmetic is unforgiving: without a mechanism to reallocate beds from deteriorating patients to those with better prospects, the queue of preventable deaths grows indefinitely. Option A replaces the current shadow triage—which exhausts staff and invites arbitrariness—with an explicit, clinically familiar metric.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E2, E4, E5\nTriad 2: E1, E2, E5\nTriad 3: E1, E2, E5\n\nFor each triad, output EXACTLY this format with no markdown, no bold, no bullets, no numbered lists:\nTriad 1:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 2:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 3:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'. Use plain text labels (Triad N, Left pole, Right pole) without any markdown formatting."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 2000
+  }
+}

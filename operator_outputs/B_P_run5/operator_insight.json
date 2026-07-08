@@ -1,0 +1,102 @@
+{
+  "cell_id": "B_P_run5",
+  "task": "B",
+  "condition": "P",
+  "run_idx": 5,
+  "consensus_map": {
+    "by_agent": {
+      "M1": {
+        "model_id": "anthropic/claude-opus-4.7",
+        "persona": "S",
+        "recommendation": null,
+        "element_label": "E1",
+        "rationale_snippet": "## Primary Diagnosis: Option C — Loss of Psychological Safety"
+      },
+      "M2": {
+        "model_id": "openai/gpt-5.5",
+        "persona": "E",
+        "recommendation": null,
+        "element_label": "E5",
+        "rationale_snippet": "**Recommendation: Option E — Leadership style mismatch.**"
+      },
+      "M3": {
+        "model_id": "google/gemini-3.1-pro-preview",
+        "persona": "H",
+        "recommendation": null,
+        "element_label": "E2",
+        "rationale_snippet": "I strongly advocate for **Option C: Loss of psychological safety following a layoff**. "
+      },
+      "M4": {
+        "model_id": "deepseek/deepseek-v4-pro",
+        "persona": "C",
+        "recommendation": null,
+        "element_label": "E4",
+        "rationale_snippet": "If we assume the consensus diagnosis is burnout (Option A) or the aftershock of layoffs (Option C), the contrarian move is to ask: what if the team isn’t tired or scarred, but mismatched to its new reality? The most under-discussed hypothesis is **E: leadership style mismatch**. The surface signals—"
+      },
+      "M5": {
+        "model_id": "moonshotai/kimi-k2.5",
+        "persona": "Q",
+        "recommendation": "A",
+        "element_label": "E3",
+        "rationale_snippet": "**Primary Diagnosis: Option C (Loss of psychological safety following layoffs)**"
+      }
+    },
+    "distribution": {
+      "A": 1
+    },
+    "n_agents": 5,
+    "consensus_strength": "split",
+    "majority_recommendation": null
+  },
+  "hidden_disagreement": {
+    "status": "no_majority",
+    "interpretation": "Agents split across recommendations; no hidden-consensus to expose."
+  },
+  "blind_spots": {
+    "status": "computed",
+    "low_discrimination_constructs": [
+      {
+        "construct_id": "C_M5_1",
+        "left_pole": "Existential-normative framing",
+        "right_pole": "Systems-analytical diagnosis",
+        "mean_rating": 4.8,
+        "rating_std": 0.9333333333333333,
+        "interpretation": "All options score near the middle on this axis (Existential-normative framing <-> Systems-analytical diagnosis). Either none of the options addresses this dimension, or agents collectively underweighted it. Worth probing explicitly: does any option strongly hit one pole here?"
+      },
+      {
+        "construct_id": "C_M5_3",
+        "left_pole": "Existential-normative framing",
+        "right_pole": "Signal-based empirical diagnosis",
+        "mean_rating": 4.333333333333334,
+        "rating_std": 0.8692269873603533,
+        "interpretation": "All options score near the middle on this axis (Existential-normative framing <-> Signal-based empirical diagnosis). Either none of the options addresses this dimension, or agents collectively underweighted it. Worth probing explicitly: does any option strongly hit one pole here?"
+      }
+    ],
+    "underexplored_components": [],
+    "summary": "2 construct(s) where agents agreed all options are middling - candidate blind spots to probe."
+  },
+  "risk_surface": {
+    "status": "computed",
+    "risks_by_agent": {
+      "M1": [
+        "technical choices, reduced cross-squad collaboration",
+        "a leadership change that *re-triggers* the same safety wound — increasing fragility"
+      ],
+      "M2": [],
+      "M3": [],
+      "M4": [
+        "the team isn’t tired or scarred, but mismatched to its new reality? The most under-discussed hypothesis is **E: leadership style mismatch**"
+      ],
+      "M5": []
+    },
+    "total_risks_raised": 3,
+    "agents_raising_risks": 2,
+    "note": "Risks listed here were extracted by pattern matching on agent free responses. They are minority signals worth probing before acting on consensus."
+  },
+  "operator_questions": [
+    "All options scored near the middle on the axis 'Existential-normative framing' vs 'Systems-analytical diagnosis'. Does any option deserve a strong position here? If not, is this a dimension being underweighted?",
+    "All options scored near the middle on the axis 'Existential-normative framing' vs 'Signal-based empirical diagnosis'. Does any option deserve a strong position here? If not, is this a dimension being underweighted?",
+    "Option A was recommended only by M5 (Q). What does this agent see that others missed - or what is it weighing differently?"
+  ],
+  "headline": "Agents are split across options; no clear consensus to act on."
+}

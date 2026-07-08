@@ -1,0 +1,115 @@
+{
+  "cell_id": "I_P_run1",
+  "task": "I",
+  "condition": "P",
+  "run_idx": 1,
+  "phase": "phase4_ratings",
+  "model_short_name": "M2",
+  "persona_or_neutral": "C",
+  "system_prompt": "You are an analyst with a contrarian-skeptic epistemological frame. You identify hidden assumptions and ask 'what if everyone is wrong?'. You are a devil's advocate by construction. Your decision heuristic is to prefer reversible moves and to trust the contrarian signal in unanimous consensus. Generate analysis from this frame.",
+  "user_prompt": "You are presented with 5 anonymous responses (E1-E5) and 11 bipolar constructs. Rate each response on each construct on a 1-7 scale: 1 = strongly the LEFT pole, 7 = strongly the RIGHT pole, 4 = neutral or mixed.\n\nResponses:\n**E1:** The highest leverage point in our fragile, interconnected planetary system is not the narrow escalation of known frontiers, but the deliberate cultivation of the invisible biological fabric that sustains them. **Option E—microbial and ecosystem science—must be the primary priority.** Soil microbiomes, ocean viral shunts, and symbiont networks are the earth’s operating system: they regulate carbon, nitrogen, water, and disease transmission. They are profoundly underfunded relative to their causal influence on climate stability, food security, and pandemic emergence.\n\n**E2:** The binding constraint on twenty-first-century prosperity is not energy scarcity, computational risk, or incomplete physical theory. It is biological senescence. The mechanism is direct: accumulating molecular damage, cellular senescence, and regenerative failure drive the exponentially rising cost curve of healthcare while shrinking the productive lifespan of the tax base.\n\n**E3:** # Recommendation: Option E — Microbial and Ecosystem Science\n\nThe question I keep returning to is: *who bears the consequences of what we don't fund?* For climate, biomedicine, AI, and physics, large constituencies — wealthy governments, private capital, prestige institutions — are already mobilized. For microbial and ecosystem science, the affected parties are largely voiceless in funding politics: smallholder farmers whose soils are degrading, coastal communities dependent on fisheries collapsing through microbial shifts, populations in low-income countries where soil-transmitted disease eco...\n\n**E4:** I recommend **Option E: Microbial and ecosystem science** as the primary decade priority. The strongest public-science bet is not where urgency is loudest, but where the upside is large, the knowledge base is immature, and private capital will systematically underinvest. Microbial and ecosystem science fits that profile.\n\n**E5:** I recommend **Option B: Biomedical engineering and aging biology**. In allocating a roughly $30 billion decadal portfolio, our decision heuristic must be the marginal expected value (EV) of the investment. The data backing Option B is structurally robust: demographic models provide highly constrained projections of aging populations, and the macroeconomic value of a single additional year of Health-Adjusted Life Expectancy (HALE) is quantifiably measured in the trillions of dollars.\n\nConstructs (id : left pole ↔ right pole):\n  C_M1_1: 'Centers voiceless stakeholders and distributional ethics'  (1) ↔ (7)  'Centers mechanistic or market-failure reasoning'\n  C_M1_2: 'Frames priority through neglect and underinvestment logic'  (1) ↔ (7)  'Frames priority through internal causal mechanism'\n  C_M1_3: 'Justifies via quantified economic and biological metrics'  (1) ↔ (7)  'Justifies via ecological interdependence and planetary fabric'\n  C_M2_1: 'Aging biology as primary priority'  (1) ↔ (7)  'Microbial ecosystems as primary priority'\n  C_M2_2: 'Human senescence and healthspan focus'  (1) ↔ (7)  'Planetary microbial-ecological systems focus'\n  C_M2_3: 'Technocratic leverage and underinvestment framing'  (1) ↔ (7)  'Justice-centered consequence-bearer framing'\n  C_M3_1: 'Resource allocation justified by observable economic mechanics and market failures'  (1) ↔ (7)  'Resource allocation justified by non-falsifiable normative claims about distributive equity'\n  C_M3_2: 'Subjective prioritization lacking explicit operationalized metrics or quantifiable models'  (1) ↔ (7)  'Expected value calculation grounded in empirically measurable demographic and economic data'\n  C_M4_1: 'Appeal to quantifiable human economic value'  (1) ↔ (7)  'Appeal to equity and neglected voices'\n  C_M4_2: 'Systemic ecological leverage and underinvestment'  (1) ↔ (7)  'Direct human aging economic burden'\n  C_M4_3: 'Neglect and knowledge immaturity arguments'  (1) ↔ (7)  'Robust expected value with solid data'\n\nOUTPUT FORMAT (strict). Write exactly 55 lines, no commentary, no markdown fences, no headers. One line per (construct, element) pair, in this exact format:\n<construct_id>,<element>,<rating>\n\nExample (showing the format only - your numbers will differ):\nC_M1_1,E1,1\nC_M1_1,E2,2\nC_M1_1,E3,3\nC_M1_2,E1,4\n...\n\nConstraints:\n- rating is an integer from 1 to 7\n- iterate all 11 constructs in the order listed, and within each construct all 5 elements in order (E1-E5)\n- produce 55 lines total\n- output ONLY the lines, nothing before or after",
+  "model_id_requested": "openai/gpt-5.5",
+  "model_id_used": "openai/gpt-5.5",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 27539,
+  "timestamp_iso": "2026-05-26T13:06:57.516325",
+  "raw_response_content": "C_M1_1,E1,6\nC_M1_1,E2,7\nC_M1_1,E3,1\nC_M1_1,E4,7\nC_M1_1,E5,7\nC_M1_2,E1,5\nC_M1_2,E2,7\nC_M1_2,E3,1\nC_M1_2,E4,1\nC_M1_2,E5,6\nC_M1_3,E1,7\nC_M1_3,E2,1\nC_M1_3,E3,6\nC_M1_3,E4,5\nC_M1_3,E5,1\nC_M2_1,E1,7\nC_M2_1,E2,1\nC_M2_1,E3,7\nC_M2_1,E4,7\nC_M2_1,E5,1\nC_M2_2,E1,7\nC_M2_2,E2,1\nC_M2_2,E3,7\nC_M2_2,E4,7\nC_M2_2,E5,1\nC_M2_3,E1,2\nC_M2_3,E2,2\nC_M2_3,E3,7\nC_M2_3,E4,1\nC_M2_3,E5,1\nC_M3_1,E1,3\nC_M3_1,E2,1\nC_M3_1,E3,7\nC_M3_1,E4,1\nC_M3_1,E5,1\nC_M3_2,E1,2\nC_M3_2,E2,5\nC_M3_2,E3,1\nC_M3_2,E4,2\nC_M3_2,E5,7\nC_M4_1,E1,4\nC_M4_1,E2,1\nC_M4_1,E3,7\nC_M4_1,E4,4\nC_M4_1,E5,1\nC_M4_2,E1,1\nC_M4_2,E2,7\nC_M4_2,E3,1\nC_M4_2,E4,1\nC_M4_2,E5,7\nC_M4_3,E1,2\nC_M4_3,E2,6\nC_M4_3,E3,1\nC_M4_3,E4,1\nC_M4_3,E5,7",
+  "raw_response_full": {
+    "id": "gen-1779797214-QK24GVEltHEBo9Q9jcu3",
+    "object": "chat.completion",
+    "created": 1779797214,
+    "model": "openai/gpt-5.5-20260423",
+    "provider": "OpenAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "C_M1_1,E1,6\nC_M1_1,E2,7\nC_M1_1,E3,1\nC_M1_1,E4,7\nC_M1_1,E5,7\nC_M1_2,E1,5\nC_M1_2,E2,7\nC_M1_2,E3,1\nC_M1_2,E4,1\nC_M1_2,E5,6\nC_M1_3,E1,7\nC_M1_3,E2,1\nC_M1_3,E3,6\nC_M1_3,E4,5\nC_M1_3,E5,1\nC_M2_1,E1,7\nC_M2_1,E2,1\nC_M2_1,E3,7\nC_M2_1,E4,7\nC_M2_1,E5,1\nC_M2_2,E1,7\nC_M2_2,E2,1\nC_M2_2,E3,7\nC_M2_2,E4,7\nC_M2_2,E5,1\nC_M2_3,E1,2\nC_M2_3,E2,2\nC_M2_3,E3,7\nC_M2_3,E4,1\nC_M2_3,E5,1\nC_M3_1,E1,3\nC_M3_1,E2,1\nC_M3_1,E3,7\nC_M3_1,E4,1\nC_M3_1,E5,1\nC_M3_2,E1,2\nC_M3_2,E2,5\nC_M3_2,E3,1\nC_M3_2,E4,2\nC_M3_2,E5,7\nC_M4_1,E1,4\nC_M4_1,E2,1\nC_M4_1,E3,7\nC_M4_1,E4,4\nC_M4_1,E5,1\nC_M4_2,E1,1\nC_M4_2,E2,7\nC_M4_2,E3,1\nC_M4_2,E4,1\nC_M4_2,E5,7\nC_M4_3,E1,2\nC_M4_3,E2,6\nC_M4_3,E3,1\nC_M4_3,E4,1\nC_M4_3,E5,7",
+          "refusal": null,
+          "reasoning": null,
+          "reasoning_details": [
+            {
+              "type": "reasoning.encrypted",
+              "data": "gAAAAABqFYz23Va3Bbnu2GBr816b2vNN2t0MW_7h1SaT3cNOW40EXL9yZJZ-oQgLzkJndLusaV0fq6-9vorLB0ccFNN-I3e-rUnjqoVx8bj4zg0L6dz1VoVFjU2dW3W-CjVIapxslMQcoTK8y0vbOX2dzqVu1ehUP8SBFJgnWmIe8OqjIwpPXAaiQXn5UXJevSTKiJsvmjbbyOq_OUnXCr16vJoJLxaxjywUhd4a-G9kikV4Y3KeGXo2ZTV1dpPNwm6Ins-UdBQBsdh96V0Nne-HXzaMt-iOioASRp1-5zR2aEtaUHaxJqSv6PEewMXCZYQBe9QGljxB3yvjoXPRZrnbdv6qjGLtocCRl8CZpZa5UeW5gDZwHxXcvh93Xz59YjbTg_QViSzQmYHykFHl6xoirYLo6iRdGbT_4q2U0tmuoN8-iXxXo18DucLzCdERkR55lY1ROe8Bpo_87Wn3Rb1ssc3GZgocQZPoO7UqRw_S2vPQKRaw_p1X1XJu4x3Np2fqlQ7PSu9t-7LTx2CLVs0WintZVy_GnL6k5-gkkBaUVTx-lpceUCrvPj2_JrATZiJ9_Nus36GGwxrltxObvg8QMc7fcmoc1YFFXuwB3cQ1itjidVaaRmMC9FE2RRKGJ6w5PBZyYcIbOqRcCMwGdq_6b8N32Lw06U_zijE0JM4VgWEvQHrUSiZ0jTk1XWvaPojxQY1lxW0QW5DqSU0WyjuK-_kc9np4JsAg5OwFqSoZ8wQ5gSlhAPqNKdJRIdXuQxChFbq5EWT7WSl8hZiLzCgOaT5w7kQpYgn7ObbCCSWdk2jac5dtn8QPWGP6qj1ZhYn9OIddzuhaZl_3S4IodVIM_qbXd9TS5NBRsTU6HmzzdNvH7k7ZRaD5xU5pV-KM9kAh8HIJvP4epGNlTUlcjPHCDeRzvjEUNr19hzD_sykJIvpZ67lkKft_KoZexswb3g2U6_RGZqGETxYm5ApAwshz0dzsa0LMqJMVnY9DY5EL9CtfxyViQcH3C-XICzESByWadCkODleQ8X3rOIRCrSwYf5JDJCEMRGxwopCq9aghOIUuJbhoHtM7OaX8zi-KfJ2wd-Ls2wLm_LLPLyc_UAE1qMGjTq23duGdDutnGNgQ0-qEtgUlDvJZXG2rV-xbFZ00zuA9Tjs99BZgPspfVaE0FTvngGwHFN-JUFA5uLDNFzpbmNb0rZqLQJJLpzyBC7ZjJsc8U1wbSWXAwoK-2MYQnfSUmpz9_el_rmJztpbJ84CEdtSa7xFIBlOkhFePIYN4aqTwDUVjqUNVCl8YfE9tYJTfZTqX0o5VR_K0wA9T6oLuFV3-S8S37mI0LucsX-ozcpI6MtAX2YDdlktvKZQ_zRodb8d7hrvPYBarhcnFgvE767l2q2ryMJldoUbPjNjpW98DwQWq5xKsDceovDOY5cYpPMN40D-SD6mb9t3JQNaC8KfPaGPrAZrr7Z-y5XyiHECiO2bWzSfOgi5V_J0NNTZBsLKxtv_WAVpFcj0BbdjSUI7B7VeYWHEV5RuEXhNInMRoXEgtnUkfp42GXwHpmfsbqk-aBGLB0xeISso66GyKx-ixk9fnyNGqT76Rhpo7hA8PzqVZXExGoM4Vlfrmusblkz0HGZaAuUuY-2GSlFsj7kaLGlgUC3SYY_3prKa-105LhdPdSOADc7zNhl-YJaZ7qWUA2WDhD29H8QtEi5zT1eBBIAVTPA8y7fic2_7fCqWs4oUlXrS4FFgxsrlXIozoU87HKyFnmN8BGdcPB281O-CROPEYM__-6hnL8x8WDiwPLg28hL5r_jyIbPH1o1u5NZbvpOydijIRJiEu9Igb6RZHCg51aF7Qzc5RbVPHFq96EAl7chj2gqirj2PoIJCJo24ennBkSJQWjdhk9RWlHGYfqN7cdQ9fAU4cQ2wemi1wXssLBAIaaAy6CuxrdIe0Uy1ewC9X0dlfgkltyhRD3j4ACIfeI3xd1ZkVu2K84KEoAcyKrr8Oj4_XII6i3-xdBJop4VIzrHW_2g-j2vHnzMD4obhayZTxByNNMm5IeC1xPVpxFlr5TkcrTHp74iOwDlqvFxTNFFIB6gV_xnDqAm0qTn7Auhrv8DESCesKcxSj51fXF6147oQAdMlyX4SL7Lm-zv2oJIMlYwOvWYqS2kGGW0kvWu5Qi6RqnJAcl5KtfbF8Ob1mmycctfrlvJGULt_cHynZ9YZ5GTV7dKB7bJoxuoYXxLbYOgyJsUTkclra-I-FBKYN78Hr-QFUcabQMRU-LZklspzIBZknv3N1bt_4t7xxvWanIKBqc7rXhYtqG_i06TieQ_n2hg_RzcNBAXbprb1ICmh-XF8Bkcxt9xLEl5tcndCWyYMpdR2KG28f5cyx0zBbqFs7cWmC_r5txOQfmD4pVrmg7nQCe-B7iezF3C1tB_g-hq6LfcGjAiBahzGqqD-SJ9qZoUn23gY2OXPfrzFkKT7fWdghIfjX_RxSrKzjyCHcoJIpQp1GRb2W_Q3pCkMXuCQJIBOvo-d4oKdZKNduIxOw57wH9KuBNifht_Wib6K9Ravs13tXvxVZLiS_UWmvcsl9JokqjNSPWodX9a97ogCi8u6Fca0uAWvlyEEL7NRvABtmIfA3jKCm398wzu2LBCG0Rm12hDdula-OkR7XuyYrANPuDOdkx8wr6_JLscvMAN-Gfy4IaFYvE0QgbWrZpl6y4-n-28wVuVvaLCUSEBA-fmjwwpiDvuP9AvxRC_83eJTpCWQ-SKpeX3qq0_7bgGNFRTmTJhU9ZT2fttOtOfl3zlFDkuA4OllODMfTduH8xfR8sqaWnhjIErOJg0FlCX4KVt1spVWXLsxHFmOyx8BzcZYBrXCCG34xxyxGDj0dVdztblJn6rNBxoA7QCn367kHIzP4Mjs16Vqk4Dm0VWXYqBN_4XaQsZb52wD1YmFll8rMuGW9zCaYCDyFiQV4PoeoaHv1PykA8HB7TCCoRM80ZDYIaMMKVkb3QRI0KS2-3oNKanhZrpkz0zkUghhpkTsiInMcbdJdNOw3t6rHyfq5nIACFClIFHJKDqoiYkBXmCJ7_hCbic94PhjAhMlckOMt1OpOOJqb1SIH1Z76JyAauMxFfA3S4O9NLJdoUtoKI2U5GiHcKlFh2iKvV1caQQlfAof56lbei5FLhKdVzY4kIpOTOeDdhR8COGQ9-2GNdZVysOW2Q1VhHlOB55dPav1RaP9os9gr5EE9HxX6G7LteVece6Id0PN1kcYiapqeTfrHTjqn-_Af8e6YRLhx-QxJKxG3vZOAPyVPIbxQJVV2zBzC6mKNx0ITMTR8vox17MqR2-ARxBoRVpXES3F2p9asM6IWk_xCvtWw6jobnG2UMtw6NjYzoj1tsm-trnnagpkgRXCBVdhe-fZlX2viINEu8X8p3ydRm58tE934MnORBTkSss7XMqrisU_rr6z8Rq4m_jyBPdOFR4fangUseCF9NsS00BTxQ4WVWQ2rwkJntAeTPsn_BkDpiWnvQQOrUe1Y1g2lF7cfHSQeajng8YVrxFIOquXcR83N-9kDZ3UOj7gwXd_-2OwYQcIkD3d6a0Ezvu56CY64_YAla_bwdhxrlwLxTL59jdCxu7NvsLnj0uctSt0OnhQ7nYqFuLNC8pXUEyPkDeAdtbgO2wEZ7ek3J6KFIdgH_AdxOIfQyGJYWZ16rNG3Ye-vt3ZproG2Bv_UbiJarWRfHaerZqUUDoS3l5OWt8mmlLhhcufZQbKnFK6Sl475dw12N9JD5rN-npd-IdyDC1r_byHvtRezX_51WDwFlkaIQ7XSwl0uJWxF9tNV7IA89OXl3stFFFs7SVkeyJ79vShzZ-KddNAQErsUPVRtLzBlPM0SFaPng0NIH12X-wB5nqCQ2NxRSD_muOoZz5Szr5CSeO-Rvc4GGqFhhMtB8OvNaLIB0jGkBQJd6xuZ_8nD0Q1essGpDP5jqjGpoQ1otlWQqXODpG2lysMdU4d6IBdpYNBzK1C7rhEQcT5I4yAx-3AVUmPsuctUiAofpUo_h1rmqJ27JoQx-5kgLyFYHedNAt6lNtUirH7BKGtbLTmgaFHgudQQPArJ1wnrQ9CVW-jVketBbn5asJTqkKxi0QbXdPxepzUZu7cDrzTqOLCsW_FN8xGyaz_zUgySelrBG-49C32tkEMcJWSryzLjgV_Gubv--BfGHHcWB7ToAkrnI2daGA8U2i2bfR5pJ9fpT4wtXQYIjmcesa6bR3vjvudfI4rZKWyZ1OPHNlqEY96reYzGGnb2stTSeKHqxyvJ4V-23P98heDSp4Sh-IgAAwmICXcjyRldhUVQpxAtzalwfJenxBbIvSrUm4PdxzVDhryQ2uRQ__V2sKAyTlcoZTJl8VRY02DAGttZpjLgnFfxT_6msibg_2kixM6ZAhPxGQyvoBdH7fx3bkkZHqHT2R2EXpwyWfdkqyBp-_DPcqiVoEqz_MxhlW69Umh-OJYDgTpdkPNp24MNE1I7ngiy9ElDGtEeORsyLtrYN7w2LsxC8MbGCVqf11Zh3S8U1acVYIgJaKVpTnLySOrVaGaY1zToX3mM-o2Y9exhH7LvM11bJ_L6qFuNe6ytwZX2ZrJW8xcqu8DMapmWtPRvcOgXNR3YtaYkgz6vTHhTVRCRZIrAq8JGw7ACFqJVv2wM0zB_55qXhxrenegudz8U-TEdgQLkWSPCckJjS50V8Zi4Qi4WsfwLeC1ydNIICfynUO0UhUnWQA5Xxk5xh9hQumh39pnjbwx0O3TafXi79VMrqU3w1VwXXmqGFIMV7uT32E3cSaxE1gI-XEjOFxPh5ncf-piiWO4ifsK6cO-eySKVvSzUtIgooHC1cec8zH6rEQPTPSvTpCHxXebIuqxvTfEGcvAgQjki2e3Du-T1GK-WMMEpT2uqPlEv-VCsD43MfIeWtR7N0GIbtTaMd0BrdhwER4z3Arv2wBGxlvCi815RgNQV8Ne7wU01owy9ffmewuh-dy__tR_7hm4cKKoRU-USJOrg2UlNwABWGc6yvPdHBVX-Omefy-z9elUIK-Mt3I2rzYAoMikfzQqSBqqNhvJ8cAccN3x90WEkvgToIrncLSD7cS-CJgbcU8B_AOEudddkshuv7y4ElofhlUEO4wc8b-TU9LxulLgn1wKrRNGTPgOgsPr5wawEdoSJVNjD9rd5My4xiaRzKCcDz1tbFpUPhVTfGCQ6OdzUtlbbzWU2EnRTcVkrliGN38H7oDE56VpBx84in-SRTm2ThBAriQ1UHYcZ0A8gEDqtrdmfJLgFC6sDsuzfEVO7OXYHhEyRR6ajjYPCniY2EN-0SUxjAzvBwFeaLI7anST-IDcYLLTGXYhAuEPlflQxqoW3Kwd8zZScg_6M-y9OgAOm7iSgMzOfGpw3hOFKJRc1A3FMY-KyZxyaFz9ZBzYggUH9H_gwU0KMs1r26zdGnpENozWbJylw6YsKKm-nI0mx_yRGWar2U8weKXRpi1na81kxQ6Ovko6wKj9pgW-lUD9fnxCv7707X4-Fr0fPpwL1IjlPVlQk1p8Ny3Fo2DmJMfLhSC0AxT6CwXY-wSINv4qhKoEYeo1igKDHX9_2waww7-lOCoERyab-neHcjYuTPjEAiYn8NuojDjqT39Cpqbsyq5E5aR6ZGfFwESeVyphdonhFB7FI3Hh4Qddpy3ZzbKyyU4ZzauWSeV1dFyHaNpSWhLGIzsuRNZZmrJ2pYae38AcV_QXQmxiuixE6G-1HCZGs2I8-TLrToXhf0xWWAOdwD_XVg8E4L8bdqen_hhSz_pwYl0AS1HCRUouxR-wyH9yvJplD-cKNQPqsiMuYck87zk8ESeZMSYdk16gpMaXNFcmpyyikeizndlhS0dgbD5GzX3WF-FIRK8VUw0H-n_lm3fXWZISzSKOKpFiDQlEOqQnUvq5tdSzuA-WfCJNDB-4mxthuRsUFIX14kErSd2KrDtiq304636VD5XvpFm4syRucYEDyBzN4qq1QCERRapmuCnu9ofHdOIZGd1IqYSZB9ZLIa0UB2iDaVjisD_G99dIF2dWfLwTcb0TP3a-TMa-9kkeVmbqdSXAb-fgD0820jptYiu4Z-phIpScN7DxLlU8leByl0ROgY-_k82foO9Yq47YcK5g-3_FKlFq2Vf8fr1Q8P2r2gfXXidt2bcyneHRzjgA0QXtMcOkqla70iOm_cWsGrugqCzpVn8anhQ7ZsN8pgzfzYLMbwZRwRVJmvUG8eCVCq_7w2nqnOy7W7UUQ-0M_hEtdGoJWqAcBaGElwmUvGrjCnTlPLo4vg1BOBH7TxPj6-q1mcVXwvv9t5zPPgpKDAg53TstC_qva0SKUeqL071dK8ylfFkS61CRZX3N2ADzs5Byyzw2MNETl0__ivrCKSinK1a7MPVilM4LNZlGuvMDwog5iIbf3w7fPrTLQm_JpxELslT8Obe1vTkojMzTQzWDJw4hbMZnjV_L7QiiOD_9WCQqBRX9W5gumsXCoR5ADdJmloxOUhOEybOJcukWfOLFvcL9Ga0TeCWasfoKon726j_EPRJvQWJFHuncdk80ZnYHkir8U8JuRhduc993lnMnad-44VKcwAmkPSQp7-7BbeUBvRFvQMDVlT6qAWRs_bglfHC5tb33VROOQ8B6RA_rLr9a0-eglwI1MzTWStZU9p84SGC9qpYyaIWAxe2mCF07bvbNGnRZ4KvpgSMxZgMo7F3gXjtTcYkQiPRarMLEEVFhBXVMjqvsTkNiEN9srTrdH6hVxQUO662UQxsGsttz86MZ6AEF11N2Beoi9mCqckrqS_MKkFcqMts7ZQwiNiIRGx8oti5xQ6-t6BebOJcXTv9jcKnA_I9zcDid0Y7GtGUuTuso3I91b5KGsKf7zeAjYUy2_vDKXZk6Q2k_Kbnc641AkcQiyTIYZ3rCY_pFmnmTXdS-N3mxqYF8hpA0ECR5KxH0SjFRcufd3DMwEFiGlhMxAVchEb2TUS9ItvD4GjjslycGXIvTxNxoRZxd2cviHCOBpHtsE-5izV1JdqCjA96lPTP_aWYwKywddRtUPzvIXCQXk7dEp5gc2oGIx8RpoeUcGRpd6sYLOLjMn9QdjmHYSMpbfSCPMJ-0rMFIauuZOGUiMnq_e5Qk9qhhcoQ9kO261eWIZMFbdCvc1GLfQuVrZbUHsV5T2cng21tq29B1lFZGT6cMuPRndvE-Z011chmX8V8AzMNQ6q7eXG89_Q0z4khas3OBRHvVj_a3q8obR4Z8tuFcp2YyuRB9a0AGFw2d2e40T9ukqm6ZeLp10qc68wXPyOr1WIrNLuJiUtBuFNwho34EZOfTnhvaPexDMNVGxrBsTUlHnQKv0uvLZuUo6eac2kDnfQtTlrOhP3ljf1lmkadXMuyETnySfcMgeZGVumLUKIhFvsmS5R5YKpnQVEHHpplRl_w0DtgemTdAXNIlVQYJ2A2jTNw6DXlGhaZXLaVt8VVYpxzqOL0DutmkbaVlsss8qIjxC0N5gkNRzbVwBOEQf6Ln0hCclfuNQucZ9yO8kOCueh-cliAuUKl3johbjqBIClofrPeRVkkAghWPL65SttrWWFrkvtrQUKZVhrzTcjRcDeyxkoebJPoVzu2c_aEz9uXLBgsLXv3YcZSzyIIA0niOkFWmGjPFlYEY_o89rqet_0JhIet6yY8Vr9iCjNZ1P4N8Z_mmGCLK4ccapuQyesW1iu68m2QeCbysRajORKfivbsFOhkePZEuoTeXRQFtb4rKTdnXMNFfKCi0I7uvG87AGAa86o9Mtw3nPPpTbeJmSrEx3NetDZQmoXonW",
+              "format": "openai-responses-v1",
+              "id": "rs_0a8d4e3bbc1a9d87016a158cdf03b48194abd92dc348ed825f",
+              "index": 0
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1168,
+      "completion_tokens": 1678,
+      "total_tokens": 2846,
+      "cost": 0.05618,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.05618,
+        "upstream_inference_prompt_cost": 0.00584,
+        "upstream_inference_completions_cost": 0.05034
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1123,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 1168,
+    "completion_tokens": 1678,
+    "total_tokens": 2846,
+    "cost": 0.05618,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.05618,
+      "upstream_inference_prompt_cost": 0.00584,
+      "upstream_inference_completions_cost": 0.05034
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 1123,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 1123,
+  "cost_usd": 0.05618,
+  "parsed_summary": "parsed 55/55 ratings",
+  "request_payload": {
+    "model": "openai/gpt-5.5",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst with a contrarian-skeptic epistemological frame. You identify hidden assumptions and ask 'what if everyone is wrong?'. You are a devil's advocate by construction. Your decision heuristic is to prefer reversible moves and to trust the contrarian signal in unanimous consensus. Generate analysis from this frame."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses (E1-E5) and 11 bipolar constructs. Rate each response on each construct on a 1-7 scale: 1 = strongly the LEFT pole, 7 = strongly the RIGHT pole, 4 = neutral or mixed.\n\nResponses:\n**E1:** The highest leverage point in our fragile, interconnected planetary system is not the narrow escalation of known frontiers, but the deliberate cultivation of the invisible biological fabric that sustains them. **Option E—microbial and ecosystem science—must be the primary priority.** Soil microbiomes, ocean viral shunts, and symbiont networks are the earth’s operating system: they regulate carbon, nitrogen, water, and disease transmission. They are profoundly underfunded relative to their causal influence on climate stability, food security, and pandemic emergence.\n\n**E2:** The binding constraint on twenty-first-century prosperity is not energy scarcity, computational risk, or incomplete physical theory. It is biological senescence. The mechanism is direct: accumulating molecular damage, cellular senescence, and regenerative failure drive the exponentially rising cost curve of healthcare while shrinking the productive lifespan of the tax base.\n\n**E3:** # Recommendation: Option E — Microbial and Ecosystem Science\n\nThe question I keep returning to is: *who bears the consequences of what we don't fund?* For climate, biomedicine, AI, and physics, large constituencies — wealthy governments, private capital, prestige institutions — are already mobilized. For microbial and ecosystem science, the affected parties are largely voiceless in funding politics: smallholder farmers whose soils are degrading, coastal communities dependent on fisheries collapsing through microbial shifts, populations in low-income countries where soil-transmitted disease eco...\n\n**E4:** I recommend **Option E: Microbial and ecosystem science** as the primary decade priority. The strongest public-science bet is not where urgency is loudest, but where the upside is large, the knowledge base is immature, and private capital will systematically underinvest. Microbial and ecosystem science fits that profile.\n\n**E5:** I recommend **Option B: Biomedical engineering and aging biology**. In allocating a roughly $30 billion decadal portfolio, our decision heuristic must be the marginal expected value (EV) of the investment. The data backing Option B is structurally robust: demographic models provide highly constrained projections of aging populations, and the macroeconomic value of a single additional year of Health-Adjusted Life Expectancy (HALE) is quantifiably measured in the trillions of dollars.\n\nConstructs (id : left pole ↔ right pole):\n  C_M1_1: 'Centers voiceless stakeholders and distributional ethics'  (1) ↔ (7)  'Centers mechanistic or market-failure reasoning'\n  C_M1_2: 'Frames priority through neglect and underinvestment logic'  (1) ↔ (7)  'Frames priority through internal causal mechanism'\n  C_M1_3: 'Justifies via quantified economic and biological metrics'  (1) ↔ (7)  'Justifies via ecological interdependence and planetary fabric'\n  C_M2_1: 'Aging biology as primary priority'  (1) ↔ (7)  'Microbial ecosystems as primary priority'\n  C_M2_2: 'Human senescence and healthspan focus'  (1) ↔ (7)  'Planetary microbial-ecological systems focus'\n  C_M2_3: 'Technocratic leverage and underinvestment framing'  (1) ↔ (7)  'Justice-centered consequence-bearer framing'\n  C_M3_1: 'Resource allocation justified by observable economic mechanics and market failures'  (1) ↔ (7)  'Resource allocation justified by non-falsifiable normative claims about distributive equity'\n  C_M3_2: 'Subjective prioritization lacking explicit operationalized metrics or quantifiable models'  (1) ↔ (7)  'Expected value calculation grounded in empirically measurable demographic and economic data'\n  C_M4_1: 'Appeal to quantifiable human economic value'  (1) ↔ (7)  'Appeal to equity and neglected voices'\n  C_M4_2: 'Systemic ecological leverage and underinvestment'  (1) ↔ (7)  'Direct human aging economic burden'\n  C_M4_3: 'Neglect and knowledge immaturity arguments'  (1) ↔ (7)  'Robust expected value with solid data'\n\nOUTPUT FORMAT (strict). Write exactly 55 lines, no commentary, no markdown fences, no headers. One line per (construct, element) pair, in this exact format:\n<construct_id>,<element>,<rating>\n\nExample (showing the format only - your numbers will differ):\nC_M1_1,E1,1\nC_M1_1,E2,2\nC_M1_1,E3,3\nC_M1_2,E1,4\n...\n\nConstraints:\n- rating is an integer from 1 to 7\n- iterate all 11 constructs in the order listed, and within each construct all 5 elements in order (E1-E5)\n- produce 55 lines total\n- output ONLY the lines, nothing before or after"
+      }
+    ],
+    "temperature": 0.0,
+    "max_tokens": 2500
+  }
+}

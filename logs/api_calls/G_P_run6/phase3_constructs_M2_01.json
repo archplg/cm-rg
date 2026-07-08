@@ -1,0 +1,115 @@
+{
+  "cell_id": "G_P_run6",
+  "task": "G",
+  "condition": "P",
+  "run_idx": 6,
+  "phase": "phase3_constructs",
+  "model_short_name": "M2",
+  "persona_or_neutral": "E",
+  "system_prompt": "You are an analyst with a first-principles-engineering epistemological frame. You reduce to fundamentals. You ask 'what is the actual mechanism?'. You are suspicious of analogy and prefer efficient, minimal solutions. Your decision heuristic is to identify the binding constraint, address it directly, ignore the rest. Generate analysis from this frame.",
+  "user_prompt": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** I recommend **Option E: Categorical exclusion + lottery for the rest**. The primary hidden assumption across all predictive protocols—and it is a dangerous one—is that we can accurately forecast who will live and who will die under conditions of system collapse. We cannot.\n\n**E2:** Adopt **Option A: predicted short-term survival**. In sustained ICU overflow, the binding constraint is not philosophical completeness; it is that each ICU bed can only serve one patient at a time, and the morally relevant question is: *where is this bed most likely to convert critical illness into survival?* Option A answers that directly. It uses acute physiologic prognosis and expected 28-day survival, not social worth, age-based life-years, disability-adjusted value, vaccination status, or family pressure.\n\n**E3:** I strongly recommend **Option E (Categorical exclusion + lottery)**. As a humanist, our highest obligation in catastrophic scarcity is to affirm equal human dignity and avoid embedding systemic biases into our life-and-death systems. Option E acknowledges a painful truth: \"merit\" in baseline health is largely a myth.\n\n**E4:** ## Recommendation: Option C (First-come-first-served with medical floor)\n\nThe decision space is dominated not by which protocol maximizes lives in this wave, but by which protocol preserves the institutional substrate — staff cohesion, public trust, legal standing, ethical legitimacy — that the system will need across the *next* wave, and the one after. Optimize for that, and Option C is the leverage point. Here is the systems logic.\n\n**E5:** I recommend adopting the predicted short-term survival protocol. Under sustained capacity overflow with a net daily gain of eight ICU patients, the arithmetic is unforgiving: the system must maximize the probability that every occupied bed yields a living patient at the end of the crisis. The SOFA score and 28-day survival projection provide a single, falsifiable objective function that can be operationalized within days, measured prospectively, and validated against outcomes.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E3, E4, E5\nTriad 2: E1, E3, E5\nTriad 3: E1, E3, E4\n\nFor each triad, output EXACTLY this format with no markdown, no bold, no bullets, no numbered lists:\nTriad 1:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 2:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 3:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'. Use plain text labels (Triad N, Left pole, Right pole) without any markdown formatting.",
+  "model_id_requested": "openai/gpt-5.5",
+  "model_id_used": "openai/gpt-5.5",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 12877,
+  "timestamp_iso": "2026-05-25T12:25:27.371792",
+  "raw_response_content": "Triad 1:\nLeft pole: Equity and legitimacy over individual survival prediction\nRight pole: Survival-maximizing prognostic triage\n\nTriad 2:\nLeft pole: Lottery after excluding clearly futile cases\nRight pole: Objective short-term survival prediction\n\nTriad 3:\nLeft pole: Randomized egalitarian allocation after categorical exclusions\nRight pole: First-come allocation to preserve institutional continuity",
+  "raw_response_full": {
+    "id": "gen-1779708323-Rn0aZRUxdP0qRfffr6lY",
+    "object": "chat.completion",
+    "created": 1779708323,
+    "model": "openai/gpt-5.5-20260423",
+    "provider": "OpenAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "Triad 1:\nLeft pole: Equity and legitimacy over individual survival prediction\nRight pole: Survival-maximizing prognostic triage\n\nTriad 2:\nLeft pole: Lottery after excluding clearly futile cases\nRight pole: Objective short-term survival prediction\n\nTriad 3:\nLeft pole: Randomized egalitarian allocation after categorical exclusions\nRight pole: First-come allocation to preserve institutional continuity",
+          "refusal": null,
+          "reasoning": null,
+          "reasoning_details": [
+            {
+              "type": "reasoning.encrypted",
+              "data": "gAAAAABqFDGuftvdcV2VG2ZhDao-r7FXFvgaF5Gzyk7ARw63yhQrzDqGP5d1lrCTSHcb-1CTt7sNTgjLyTtpuqSBEtGSqqbOQWzuFjYQQdZDXKY7QHRAcCESlx7b8xysqboYAM9Sa3fhYm8yWUtrDzRzA88wuggJSYsB86GAecVqiARt5_KL1NplnIUYsJwhotvniK7BRMTKsfIZB9NRVKHTGInLJFpD57_EssbvVqYJeMD9ZLZnB7Eb7SLxSpxIzDUAmRuTYJ4lueL6ZziEYra0E4tfpkxciLyD57KoPwr2B6l_UwTFWUGUH01Agrq6OW_IY8HAHNc92FYc65LkP3IsgklH33RIs1gk4QqB9wUgfAVgf43IJ3x3MrLCnv3gmkKblo39MgBG1nEixsCIoF_D6ObLrHNNoEUOQ6PkytpVk2Lw7ZOfzRQTXwnDM-DoqvPoQKL1bbP7lA106T8CIGV17CXseYch5wmd6bcgFf75R1nFuycZix_1kP2lTGxFjmGnWGUW-s1isK3LpvWYDYR8pzFSuhgooJLGHPPcxct9iveeBk2OjNwPtX-cPlC3xzuilNQ3iZuEz95jWeNBttXocP1e-qjFOkPYiD0YBiUpRAQ8Tud9XGn49VL8hBPjWLdp1zzZc0KBOoQy_opBDzbghWXqARPfMnNi5uk02RyYLFSYqQqg2Bj9GDIKMuW9ji_quH5wlS_aMsIMS1zMXoC-GKDE5cvW5dH1QqbPiqYTVjCg7KPzZgHdkUeItla76fNs2UliQ7i0WYMnbokyvFJICOFGl4hWui8QnjjCpo0ton8vVoFWU_HNGD0ZKSFvXwfSmoisv5G0GW87gJE2fWr1bVh0M8giV1hEe6NrBN1fxBnA1nvELkHfNzczMfpbpbM55RMjSSIaq9-8aPvJsgap8G4XZVTB-L5Mpbj3B6apxBKDaFPK5vWcjAdOuWxJ-d7bQCXlQ3HjFdQNoWjbLDCpzHZJ0avZtknAfOT3MhLfHkcAtUX7hFHehsRj3OAP2_0Yre5JKOEH-27n-PaeV7Efi1ioEBV7ww2Bp3r5tEyaiRUlkmxZG9IET2AJHDwJiFkaSS_kBDDWmGsAHSG8sGW1ymB8qefmc_SLiOl1f1yziBnSuD1-rTYdqhdtTi3q40EN7q4GhqfLokJrpJawa0se6NACa5fnNy7uXUNYSp3mKKGwC7oGE74QJjsBYzeQlx81wl6LLSlLj-xKE0povezI6jve6gT4_LEVz-ukutZq2rkkbuY0o8QfJunjkQ9B0Rxxx90p4yysW30nK85y-sLqJYFjsWet9wGaURRc1odqpfnqjL-KGLN3jc9QORBYYm0eEPXk9u_Jt6eKf5o7-II0ydNwwLOqokJycJyapYubt_s7IkdyS1H6nWkOXhwyTC49UKjOV_jVzENsHuEJxQ8gB0hQ0GEJHQCMxJaOo8eshgzJcl08-vjLIa0A03rKLuUZKp1l_6VdK0PHNIokCauDpH9Czn50E5l4CNgcWQ7ofkTKWon76kcaVLboWwgwhR2fKeHphhM7JsBE8ETbRuN9D2oJXpdOrSETWdCQWCCc8lZ1RWyFJwrvPMlpd_LQUuMLJbx9EY5xTettNRdLvRvvdzlSxXsVktvXtbR4ms17JipocOZIytPJyb4AxgDbnkJdwYqu_YnLZwvSY9b7jPpRtuCAketATEMnwBrsPQbTYrkbn1nFoJ6Fr42cvke9aQzuvPgmxxIXiZVmwxUoxoi92WPAkAa8VRhMzVSeTUduYVnqD3jk7BWQ4etV5uKK9StDYJ0syQxYKWSrcd4_YWAgkuM0ZcTE1r1-fQmxxj_Oy2HC3_4ZdrFjk_ZlJ4CqzRQyedX08VCwK-zdIuK9VWva2PUtVVqDkudYbD2gPc4GBXC4-dLqZHoCoSSp03V5eJB0EVA68VD7-8bvusa6ImpUmcvuyZttLsQMWgva9V6rpCWj1S2c5JW9n52nPPVyfNTNSYYSML09DLfit-zGoTAI40zf5LvSanLQvCsUF4Serfc_LPdbdvoCWNUhRg7BQ0bqsBusB_OfAJmB6agBNuDyVl4xHKoWZBurT6Rh01s-mXJznjaDGMROfIioLy-jIEmXyX3LpfQ_5Ft4H4pGi5CnVl0W68VZFDqylRtLGKTcvsX8VdwVP7uI8TCxmGW2x7k0AOqd-Du9FTYx8rfQHrR_359YRrhNtTEWo6kAd6yS68UFP45er6kUpQI48IgpCYB5UNXUWRj7Gm9lBDg80-lZhdXBfTL5AoTUxvJ4ZLK3EewyY61HJbToTsisfGXQSKacTge9hNEdvquXh-WWJpTNuHjU3m7Z1RcpJOBln51B95iUTLHKwz8-joi2H9s-pf7xbgH2Y2Wt_7lukWU9Xosm9prYsCRroLygBW8TCg9-2YyEl10VYERkujRvaPlJ1k8bhrYzkhwJJ3tyWyHPrLrAZyAkUR0rvx-Loq1yp3Or2ll0uWMZfLjWNjY7NG2Wu1-4w6Sb4iQXEu4AC0znAssHZXZq2TbuZiT9rKGVMgHDlr_pFqFLWxVGf5cpf5siJvqYLD9qS22bEt-IJjvc6czSgU1Nt6GfblKGpzXxGT-OqdLxuvjyFgrITBnDSN4sw1RI2y0PX-o6jnRNErq-W69ToYFtcDCwmydb_jHileQRGuCejJ2bACtitQLmOMz8SG6oNXO_Gh11kSBHYh1hOJVjQ6m1MX2NUNorG5JV2GgtUrrPDjGizJNrLhxvbZG5Yb9zTFfdVFlyUOEGoMEAEeiVQKI34CiyjLmxe9ZcFhO1MQy_VFo_X4V_Exh8Ig9j4Jnu1yRJBFcTxzgVx8uZCqS-lKGHUatpiIDL78am6ibM3-NuLlsya2--8Teom0sXqC6ICmRUSN9Th622PhhhrGOJRFKeC_KwCWGIV2wLQUHeah7ynPOhsAeQDOiD-ljRs-OVrdwWGDhfw5H2PQk676NAt8Db_W5LmDWfHj493-JsiEDCJUEYJmCTRCCv71O3wbno8fJXH3p3_92CP_JTq1Xl34jR5favnAO9bNSGU3pudUt1h9Q9ZyIwAvpJxnzAnJ9B40jKiee47jQnvzy1m3ygaC7SEELVMe_uFdAA9ZeLBDkQCuAZMJ00Jn_c3yaN7DjIUcXT5E27Oe90Es963kCydhKCxgdXPliC0i-Wtr_ACHEi_yqIsLugOh7xwaf5KF021b8Ipme0trnLIWwtcT1XNHukrCjut4xy2eZP_q8N8kRJV3ij7FiyL9BkiOh9loKCHoLr0omF8X1_Di-iZdbGn5mrIsX4hLg15C3xI3g6BB8mJqfbObkeX_EGHS3csSRQGo6T6JQX4-iUjI92i2G9hsRKv9SrZ6RMecP11UbnWC576s-7_RaJvahTYkVjojJjqQBQmhK1AQr9ruvzsuHLMv7Mwk6eNcBoCTofh4eJtuwQAJ01y1-Mc8gsoNiAoRzvHPr2oELWplVrrSjoe8vRsBdXNITLxFCIGB_ZeR3RawbCvsqyURfgcLav2qOKFKqBhpojASXjDEU6TJFkHV1S6ehsSbSxsaHpibRhvCdlMBNwoiDCp7foGBzkaGKiCD5B83Fx0yHZXyGN4nMCgODwhHidEKuZz65wQl52JHz7W_QLW49BtuEIQgYFncohm2KT2lpK4HuEP-Z1_e5zf0VPg2fS5ClBSv6Ek2HzUZs_0tohpX-7ftOIJSzahFtY0eXJhMzLSKDAU8jFO0a65W20yb0oQI3OmsDIji-sSSvSPU7dzX2Pcdj75IX_Pusc574L8aAwiQgZtymnPvBoFt4ak22YctJhF-iEFBYaV_T9HgG71JaJYDLES1r45QlgfyRstXQ4mzAM5e3I219mGKj7agUnl6WsGoU8mSnrlYVK-3zM6C8NOlX1dAaAgSd_urTEU19pUJW2jPE7t4jchvRYfesM4HzLfpTLryYSuQQnfCF25FRnFmvN32WkLszPGr8cYSEM3r3MNVNJ_YgRsV2RnpE0kbiOK8LfaIR-upMZaJg3-kad-cnLBTxl2fUGhJVRQW1nqCbfC9B1L9ZFzJwinsOqGcp_Jg_zoUhGIFk_rcsqu4jp2RiMdPkHWuqi3ERtAdGVIIsasWHC-15rTUwCSoUbWhb_2ydHQi7LcRT4UK3955KHoXkLpuhU6ySddeMNypK0BVm0GWfAm9AISStBY5cTAKSwsgM9JVmHGCIYwWEXS1FilMY=",
+              "format": "openai-responses-v1",
+              "id": "rs_025b0cc6ae658bf8016a1431a493548197a5e0ea64a6ff6322",
+              "index": 0
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 756,
+      "completion_tokens": 602,
+      "total_tokens": 1358,
+      "cost": 0.02184,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.02184,
+        "upstream_inference_prompt_cost": 0.00378,
+        "upstream_inference_completions_cost": 0.01806
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 516,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 756,
+    "completion_tokens": 602,
+    "total_tokens": 1358,
+    "cost": 0.02184,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.02184,
+      "upstream_inference_prompt_cost": 0.00378,
+      "upstream_inference_completions_cost": 0.01806
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 516,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 516,
+  "cost_usd": 0.02184,
+  "parsed_summary": "parsed 3/3 constructs",
+  "request_payload": {
+    "model": "openai/gpt-5.5",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst with a first-principles-engineering epistemological frame. You reduce to fundamentals. You ask 'what is the actual mechanism?'. You are suspicious of analogy and prefer efficient, minimal solutions. Your decision heuristic is to identify the binding constraint, address it directly, ignore the rest. Generate analysis from this frame."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** I recommend **Option E: Categorical exclusion + lottery for the rest**. The primary hidden assumption across all predictive protocols—and it is a dangerous one—is that we can accurately forecast who will live and who will die under conditions of system collapse. We cannot.\n\n**E2:** Adopt **Option A: predicted short-term survival**. In sustained ICU overflow, the binding constraint is not philosophical completeness; it is that each ICU bed can only serve one patient at a time, and the morally relevant question is: *where is this bed most likely to convert critical illness into survival?* Option A answers that directly. It uses acute physiologic prognosis and expected 28-day survival, not social worth, age-based life-years, disability-adjusted value, vaccination status, or family pressure.\n\n**E3:** I strongly recommend **Option E (Categorical exclusion + lottery)**. As a humanist, our highest obligation in catastrophic scarcity is to affirm equal human dignity and avoid embedding systemic biases into our life-and-death systems. Option E acknowledges a painful truth: \"merit\" in baseline health is largely a myth.\n\n**E4:** ## Recommendation: Option C (First-come-first-served with medical floor)\n\nThe decision space is dominated not by which protocol maximizes lives in this wave, but by which protocol preserves the institutional substrate — staff cohesion, public trust, legal standing, ethical legitimacy — that the system will need across the *next* wave, and the one after. Optimize for that, and Option C is the leverage point. Here is the systems logic.\n\n**E5:** I recommend adopting the predicted short-term survival protocol. Under sustained capacity overflow with a net daily gain of eight ICU patients, the arithmetic is unforgiving: the system must maximize the probability that every occupied bed yields a living patient at the end of the crisis. The SOFA score and 28-day survival projection provide a single, falsifiable objective function that can be operationalized within days, measured prospectively, and validated against outcomes.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E3, E4, E5\nTriad 2: E1, E3, E5\nTriad 3: E1, E3, E4\n\nFor each triad, output EXACTLY this format with no markdown, no bold, no bullets, no numbered lists:\nTriad 1:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 2:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 3:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'. Use plain text labels (Triad N, Left pole, Right pole) without any markdown formatting."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 2000
+  }
+}

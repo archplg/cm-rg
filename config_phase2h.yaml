@@ -1,0 +1,146 @@
+# Phase 2H configuration - 10-model expansion for PCA dimensionality resolution
+# Adds 5 new models from independent labs (Mistral, Cohere, Qwen, Llama, xAI)
+# to existing 5-model lineup (Anthropic, OpenAI, Google, DeepSeek, Moonshot).
+# Tasks: A (SaaS investment, 10 options) and D (climate adaptation, 10 options).
+# Output: results_phase2h/ - separate from results/, results_pilot/, results_extended/.
+
+experiment:
+  name: archipelago_phase2h_10model
+  description: Phase 2H - 10-model cross-lab expansion for true elements-dimension PCA
+  total_budget_usd: 80     # conservative cap; expected spend $50-55
+  estimated_budget_usd: 55
+  output_dir: ./results_phase2h
+  log_dir: ./logs_phase2h
+
+openrouter:
+  base_url: https://openrouter.ai/api/v1
+  api_key_env: OPENROUTER_API_KEY
+  retries_per_call: 3
+  retry_backoff_seconds: [2, 5, 15]
+  request_timeout_seconds: 180   # bumped from 120 - new models may be slower
+
+models:
+  # === existing 5 models (M1-M5) ===
+  - id: anthropic/claude-opus-4.7
+    fallback_id: anthropic/claude-sonnet-4.6
+    family: anthropic
+    short_name: M1
+  - id: openai/gpt-5.5
+    fallback_id: openai/gpt-5.4
+    family: openai
+    short_name: M2
+  - id: google/gemini-3.1-pro-preview
+    fallback_id: google/gemini-2.5-pro
+    family: google
+    short_name: M3
+  - id: deepseek/deepseek-v4-pro
+    fallback_id: deepseek/deepseek-v4-flash
+    family: deepseek
+    short_name: M4
+  - id: moonshotai/kimi-k2.6
+    fallback_id: moonshotai/kimi-k2.5
+    family: moonshot
+    short_name: M5
+  # === new 5 models (M6-M10), to verify exact IDs on OpenRouter before launch ===
+  - id: mistralai/mistral-large-2512
+    fallback_id: mistralai/mistral-large-2411
+    family: mistral
+    short_name: M6
+  - id: cohere/command-a
+    fallback_id: cohere/command-r-plus-08-2024
+    family: cohere
+    short_name: M7
+  - id: qwen/qwen3.7-max
+    fallback_id: qwen/qwen3.6-max-preview
+    family: qwen
+    short_name: M8
+  - id: meta-llama/llama-4-maverick
+    fallback_id: meta-llama/llama-3.3-70b-instruct
+    family: meta
+    short_name: M9
+  - id: x-ai/grok-4.20
+    fallback_id: x-ai/grok-4.3
+    family: xai
+    short_name: M10
+
+# Same parameters as Phase 2C - 10 elements means larger prompts/outputs
+parameters:
+  free_response:
+    temperature: 1.0
+    max_tokens: 3000
+  constructs:
+    temperature: 1.0
+    max_tokens: 2500
+  ratings:
+    temperature: 0.0
+    max_tokens: 12000   # bumped from 5000 - Gemini reasoning_toks=4797 ate the budget on first cell
+
+tasks:
+  - id: A
+    brief_file: tasks/task_A10_brief.md
+    domain: saas_investment_extended
+    is_repeat_task: true
+  - id: D
+    brief_file: tasks/task_D10_brief.md
+    domain: climate_adaptation_extended
+    is_repeat_task: true
+
+conditions:
+  - id: N
+    name: neutral
+    system_prompt: "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+    use_personas: false
+
+  - id: P
+    name: persona
+    use_personas: true
+    # 10 models x 5 personas = each persona used by 2 models per task
+    # Latin square rotation between tasks A and D
+    persona_assignment:
+      A:
+        M1: S    # Claude - Stakeholder
+        M2: Q    # GPT - Quantitative
+        M3: E    # Gemini - Ethics
+        M4: C    # DeepSeek - Contrarian
+        M5: H    # Kimi - Historical
+        M6: E    # Mistral - Ethics (second)
+        M7: S    # Cohere - Stakeholder (second)
+        M8: C    # Qwen - Contrarian (second)
+        M9: Q    # Llama - Quantitative (second)
+        M10: H   # Grok - Historical (second)
+      D:
+        M1: H    # rotate one position
+        M2: C
+        M3: Q
+        M4: S
+        M5: E
+        M6: C
+        M7: H
+        M8: Q
+        M9: S
+        M10: E
+
+repetitions:
+  base_runs_per_cell: 1
+  extra_runs_for_repeat_task: 2   # 3 runs per (task, condition); 2 tasks x 2 conditions x 3 runs = 12 cells
+
+pipeline:
+  n_triads_per_agent: 3
+  n_elements: 10              # KEY: with 10 models we now genuinely have 10 elements
+  rating_scale: [1, 7]
+  triad_assignment_strategy: balanced_random
+
+preflight:
+  verify_api_key: true
+  verify_model_ids: true       # CRITICAL - will catch wrong model IDs before launch
+  estimate_cost: true
+  require_user_confirmation: false   # autonomous (per user preference)
+  dry_run_mode: false
+
+# === Notes for paper write-up ===
+# Lab diversity: 4 countries (US x6, China x3, France x1, Canada x1)
+# Training paradigms: dense (Claude, GPT, Gemini, Grok, Cohere), MoE (Mistral, DeepSeek, Qwen, Llama, Kimi)
+# Weight access: closed (M1, M2, M3, M5, M7, M10), open or open-weight (M4, M6, M8, M9)
+# Key science: at n_elements=10 with cross-lab diversity, does PC1+PC2 < 1.000?
+#              if yes -> dimensionality artifact resolved; PCA can be reported with confidence
+#              if no  -> deeper structural finding: cross-model variance compresses to 2D regardless of lab

@@ -1,0 +1,113 @@
+{
+  "cell_id": "C_N_run1",
+  "task": "C",
+  "condition": "N",
+  "run_idx": 1,
+  "phase": "phase3_constructs",
+  "model_short_name": "M2",
+  "persona_or_neutral": "neutral",
+  "system_prompt": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation.",
+  "user_prompt": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** # Recommendation: Option D — Cloud with Opt-In Training\n\nFor a direct-to-consumer health app at 2M MAU launching AI coaching, **Option D is the right primary policy.** It is the only choice that simultaneously delivers competitive capability, clean regulatory posture, and durable user trust without imposing structural constraints the product cannot afford. **Why not the privacy-maximal options.** Option A's 60-70% capability ceiling is disqualifying for an AI coaching feature whose value proposition *is* the quality of the AI. Shipping a visibly inferior coach to preserve a privacy property mo...\n\n**E2:** I strongly recommend **Option D (Cloud with opt-in training only)**. For a direct-to-consumer health app with 2 million active users,\n\n**E3:** Of the available options, **Option D represents the most strategically balanced choice**. It delivers the full AI capability users expect while establishing a defensible, trust-centric data architecture that avoids the regulatory and ethical landmines of default exploitation. The critical failure of Option C is that an opt-out model for model training, in today’s regulatory environment, is a phantom consent.\n\n**E4:** I recommend **Option B: encrypted cloud inference with no training on user health data** as the primary policy. For a consumer health app, the core asset is trust. Users may tolerate imperfect recommendations in many consumer categories, but health data is uniquely sensitive: symptoms, medications, diagnoses, reproductive health, mental health, and behavioral patterns can all create real harm if misused or perceived as misused.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E3, E4\nTriad 2: E1, E2, E4\nTriad 3: E2, E3, E4\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'.",
+  "model_id_requested": "openai/gpt-5.5",
+  "model_id_used": "openai/gpt-5.5",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 9621,
+  "timestamp_iso": "2026-05-20T01:04:58.626081",
+  "raw_response_content": "Triad 1:\nLeft pole: Opt-in cloud training for full AI capability\nRight pole: No-training cloud inference for maximum trust\n\nTriad 2:\nLeft pole: Recommends Option D opt-in training\nRight pole: Recommends Option B no training\n\nTriad 3:\nLeft pole: Trust-preserving consent via opt-in training\nRight pole: Trust protection through",
+  "raw_response_full": {
+    "id": "gen-1779235497-CztwY35iJCaDZTTyyWiz",
+    "object": "chat.completion",
+    "created": 1779235497,
+    "model": "openai/gpt-5.5-20260423",
+    "provider": "OpenAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "length",
+        "native_finish_reason": "max_output_tokens",
+        "message": {
+          "role": "assistant",
+          "content": "Triad 1:\nLeft pole: Opt-in cloud training for full AI capability\nRight pole: No-training cloud inference for maximum trust\n\nTriad 2:\nLeft pole: Recommends Option D opt-in training\nRight pole: Recommends Option B no training\n\nTriad 3:\nLeft pole: Trust-preserving consent via opt-in training\nRight pole: Trust protection through",
+          "refusal": null,
+          "reasoning": null,
+          "reasoning_details": [
+            {
+              "type": "reasoning.encrypted",
+              "data": "gAAAAABqDPqx5vwimwBwjQXrVPPLlXbtTBaGWUKhRgNV7OC3FREaliq9vL1ezidwOfx-enLF5CPihpTHG595GhofE-SFS4da-YE221zs4xvbo8ICBq0rF4p2LplXc8vx7yKDQSZaRgh8pSXygj_Nl9hpbqVpliVuByvhKyDV8s6m0dEZXrlHlfx9vBUkoJmouI8VTkTjtUG_BaneeXiSysdQ7rQ5x799d2DSSUI3Gw36o8CjWsFtDVssQBHd_K-BgsGnSnIeCM-yD0dYWUPDQ6iLmt_PSQ5OXkEgOBkhsi9h9RGA2Vlk_2iLd954nBKChneirBZTmT0KKrxTn1Gduej2E9tZXO_w6xX5dODqUYwDPSWKN_pzlaR3uGjbqpmzA7Yzvd3xBCt8tXH2PRnAxy6DOZ7hzzbl7k6TScfxv7JCOG-OTEWzGUL-zbOE4HTo0rxE2OyXK5n3z77aL125ucetZHw4fY_dDiAeR96zoc5tmL-Fmn24RCBUSQuxNhRgl_-It47IJ93GbAhqLK31a6dMhpFO8Q9pcPYGNTY4VcA8k9kRPBsRkItBhcW9_gE60kkgHdB0y-9xHJH0ISMZBEOO_tjlaInI7KEqd0ZrvsphP5W1UpdEFPxrHQHXaAjMbuIqxFaSEdwkqyP1axPxanVG20iDOJPHhvJV-URtTtkN29brgIpmTsiVgBwDqGdJuDBXOKy8G9NrISWd6jJ4EtDtja-IBXA53OfJ2xVTfLOuT5DsfxV-7d1576HZzKnUTbihAMqN-Glu4JII97-kJer_MvPUHjULTUgpd-bCdIHtcFJjJHNE7mjiNIxlEOq2mFHOTFJQTrz2E5HhxOK1XPWrtyczp2NwaSHoHmMd-9gAqRAgjZCdMkGJiaMFuZg7ZRl6T44dKLEVc4ci5nGEoetPS-B7-poZe3LRBnF4_CYe4UtNCqvtxardc6ALmT5xa8E5LjkuS_fxmTpOj0v7erEM-UVIgdlW1h0k_tEXB4V1FJykaSQcHCmgsNCSvglyHeYHzU_KY0Yq7kPy-oxdO0mZQ9EutwzPb7LVI8v2LabMPRfbyyjX5fdLT1k4d-EBEXNGUdyUqEaqCba5SNYacr7G0Z3n5pNy8c6D3FqEpji4oHGXsfCQnOTzjwZkSbXH28QuP0bmeTJ2OHEzxO-mY1ii5OlnZQv82NeAkH_aGt6wQkrHBjP6jMoI2P3DLPlvIlc_J-R-seRdDa-2oEepRXkAoy3EKb3-EAIV647WXdC4eOrgupqzID08Zmrg-vIBAt9DshW_SzETV8hbS1clWyK9qjIzcRKi4WLg5us1RlgZgJ9BCAIQMqeJGpWWCsl6do3QQwGho9fDNfRY2BYbDFatF6k4RRvfo5TVw-t5jocd2BKnJNHRwreeSK3xZYuML8CmH9JDYg4-w0CYF1Q7bCn-XWYMCKZ6FGzbOOIMy18UcZAjwAydnFJCmhDmls4Sdsi-9-B6QqTV5TwvpPJIIjZfp5yKbpJEtwtVw2-Gi7MmCUsRCyJE8HHuCmi4ehYROun8VOCjl5AP9U6juwxLHmnOAwgKYxRThMA-t2MBG1t5IGbmpaxHXQ_u734ebcz5liJRqMb7e4BjKrK72cy83EpqMrik7XnDnLatykQ8D8cfVVYofOrn3Hfvsn0gqon0rGcOaJaWJWBefU4hHNj6geNiQd1tj0kGIJO9FMXjCM07kn8c_jF_kRwgVLgLFmUqM_Vj2kL2LyefNU3Hd8AgU7-AtxxodFSq8UCPFkzUsYiECWEkI7Es2yWvw3ksXajj-ZRqX7m_xVj_ETT12-QE8nvTHUlaJz5pwM5A4H-9i6W1W-vYPh_zfQWmrKvXdMx3zGiPW_6-rhNvkItxEx7VlyjW28aj4B1EvJ2AgIeJ_qyVUVaHxr2j3AfYIABchf6uiVY38v64yaHEIufS7ZMOOTLGvAgtiDYSYzYzwpPc52A9BihkyRUDiyX8G9Tw70n_xTtTC7TCMyCVi25gbtdP2t6wDwjlMSOFDfCqR8UPte-q8dTL5xWUVjxwc_V8ON-cUIqGH7a-kt4ZVGW3rgBQrtCIVJgRWs9I_B5_nbOiNaDCP8zYCNZnhjGg5bXxDkHGNB6baoWQ3gzJrC1eJ9R1VklN8fgB57iZymIOPfrXZaKvigGfL8NRoYfQwsNfc3oa3wdx8fVig6pVLeK7gd1CsaXvU2o8bHCZxZ6USq75l6HmiExDhwxO8MX0gF1_FY63QOt082-3-Bslbtfx9dU1lHa-m9bzvxdMJykaDZqWXsZwQnT6g54t2lMPaBWopvVe9UpLs5JkLcDuh6WpTcZH8kyYQu2LwkdtrD3iXV3wSYl3ihAtQzCiAfBJg3RuEkM7T2zZcJMAZW5YcUvnvcf7WnT0NXcmSvwVeKLW7pVf9N6aazWE2NWt0n0AyBKVXthlfzYUV_sxl1IXHr6bg2b8J6NPra69cfrBaPfi2DGmxPHn2HwVSraGnDIEau6SRoyfZtJ7wyfA8pjsrLB3iJdfgCsE8dp0bQ1JPjGHaJevPuWgj06Odf4gGZLJJN8VYU98tlmTge5EDZZHwBvYWclQUINBsx56_hsxDpSk8ahC41lgtD45yecVcFqk96qnvFh8XpLihKfkevBhz9MXgR9Ai6Ecg2EXWYcEOdlO21g0qBn-R3BPQs8_4GhBVNN5vOsXzUieDNFfe8svB7huAa3g2g68FmmWiFRmztFFes3_Yylr-mB4Tthq9jUGkXZ8jlaOhhvsmgwJgKP0nj2ws86viMbp06lULvn-n_zGhVLotZcFwATTvSHcG_tdc75c0dHNhzKaodfr70OcP47RkG-norUOEaVcePcn7mq_trQq4FIhrE96vHNod7_tzZRnjfzcze3Gnf8BPierWI3dhUNPcfmUQuxkLB9RifrOc9UQXxiNbGQPIcYL6EV3S8NAQaRzOVTX6IjjsjrVCKqyOF2zPjFny5O5e4NZL4OFOThi41GnTDPSCJWshKMN5m5FizH4_vToLUAcGvfKDiaqNSvn8P8aAMtjC1pF3KMojllGdUZGCF58klBb7Ijj32IrTK1iFUD3wX1ZSX2YOCqot8VrUIdysmjbnNc61VCgq-O3HwKFpe7pcr8nHRN2ERQRj3BpV22Ny-LTbtDCn_-dGoPstH6IRyA1STo4sqL0OgBTDNTxqrtNjUaX5cW68oB2yobBk-XL2uDa2iQSmpAaIpUnRmgEhBWaENa0TLrK9cUOAB0Tb6ZIBfcSHkTs6inQ4WI0H7AAQb3ibgDIyYKai3-j-mcwcLHcJu0_v08BOUojrjmJ_tp24NVdg2TMXG9kIHe2CmVxTGJaJ8e5gaZMeIVJ7-JEBEzW1Sq01k_zGASi5o6bwAGcjVouJNHC3tmuhzTldMTv0-H5TaXQpm7eFr0dIvNBavDCRKcCLmgNHJxCu_z7n0L4jdkCGdXB-NciLAUgwY08Bte7Uct6aUIfuxCOGfQobRr2Tp8M7GFkKr_XBsZSs4GRnxtx39va9sXqPftx2NTEhSmyiYQ-oM-X9sRULtoQAF8UUHa6n3XEuYhPehtAqNk5rjtYoORjNpncb2U4uHZzKg8Lmm_y1ydL11XTgrvbQnOx0rERxKedhYS3ty_IFZr5dANTMBJ5VzlsbJvrQcprC2bAszkBeCxxMUhAquOiboDncocIP6Ps55HqivsE1H6qUpKrjvs=",
+              "format": "openai-responses-v1",
+              "id": "rs_0eb5e39ae94dc25f016a0cfaaa75108197bfb18d7b3bd6fc2d",
+              "index": 0
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 526,
+      "completion_tokens": 600,
+      "total_tokens": 1126,
+      "cost": 0.02063,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.02063,
+        "upstream_inference_prompt_cost": 0.00263,
+        "upstream_inference_completions_cost": 0.018
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 516,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 526,
+    "completion_tokens": 600,
+    "total_tokens": 1126,
+    "cost": 0.02063,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.02063,
+      "upstream_inference_prompt_cost": 0.00263,
+      "upstream_inference_completions_cost": 0.018
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 516,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "cost_usd": 0.020630000000000003,
+  "parsed_summary": "parsed 3/3 constructs",
+  "request_payload": {
+    "model": "openai/gpt-5.5",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** # Recommendation: Option D — Cloud with Opt-In Training\n\nFor a direct-to-consumer health app at 2M MAU launching AI coaching, **Option D is the right primary policy.** It is the only choice that simultaneously delivers competitive capability, clean regulatory posture, and durable user trust without imposing structural constraints the product cannot afford. **Why not the privacy-maximal options.** Option A's 60-70% capability ceiling is disqualifying for an AI coaching feature whose value proposition *is* the quality of the AI. Shipping a visibly inferior coach to preserve a privacy property mo...\n\n**E2:** I strongly recommend **Option D (Cloud with opt-in training only)**. For a direct-to-consumer health app with 2 million active users,\n\n**E3:** Of the available options, **Option D represents the most strategically balanced choice**. It delivers the full AI capability users expect while establishing a defensible, trust-centric data architecture that avoids the regulatory and ethical landmines of default exploitation. The critical failure of Option C is that an opt-out model for model training, in today’s regulatory environment, is a phantom consent.\n\n**E4:** I recommend **Option B: encrypted cloud inference with no training on user health data** as the primary policy. For a consumer health app, the core asset is trust. Users may tolerate imperfect recommendations in many consumer categories, but health data is uniquely sensitive: symptoms, medications, diagnoses, reproductive health, mental health, and behavioral patterns can all create real harm if misused or perceived as misused.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E3, E4\nTriad 2: E1, E2, E4\nTriad 3: E2, E3, E4\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 600
+  }
+}

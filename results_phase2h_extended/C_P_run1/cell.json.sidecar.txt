@@ -1,0 +1,4109 @@
+{
+  "cell_id": "C_P_run1",
+  "task": "C",
+  "condition": "P",
+  "run_idx": 1,
+  "status": "complete_with_errors",
+  "started_at": "2026-05-27T18:03:41.864027",
+  "completed_at": "2026-05-27T18:58:44.699847",
+  "random_seed": 726064287,
+  "free_responses": {
+    "M1": "## Recommendation: Option B (Encrypted cloud, no training)\n\n**Identify the binding constraint.** This is a health app at consumer scale. The binding constraint is not capability, cost, or engineering elegance — it is regulatory and trust exposure on protected health data. Get that wrong and the product is dead; get it right and the other axes are tractable. Every other option fails at this constraint or imposes a worse one in exchange.\n\n**Mechanism.** Health data has two distinct risks: (1) confidentiality breach in transit/at rest, and (2) leakage through model weights via training. Option B addresses both directly. Confidential-computing enclaves (e.g., Nitro, SEV-SNP, TDX) reduce the trusted boundary to the silicon; \"no training, ever\" eliminates the weight-leakage vector entirely. These are the two actual failure modes. Solve them; ignore the rest.\n\n**Why not the alternatives, briefly:**\n\n- **A (local-only)** trades a real capability ceiling for a privacy property B already achieves architecturally. You pay 30-40% capability for redundant assurance.\n- **C (opt-out training)** is the regulatory grey area. In a health context this is the option that loses a class action or an FTC consent decree. Reject.\n- **D (opt-in training)** is C with better optics but still concentrates risk in the training pipeline — the hardest surface to audit and the one where leakage is irreversible. The marginal capability gain over B is not worth the irreversible exposure.\n- **E (federated learning)** is research-grade for this use case. Deployment complexity and reconstruction-attack literature make it a bet, not a policy. Don't bet the company on an unsettled technique when B is available off-the-shelf.\n\n**On the 3x infrastructure cost.** This is the only real objection to B, and it dissolves under scrutiny. Inference cost per MAU on a coaching feature is small relative to CAC and ARPU in this category; 3x of small is still small. Trust, conversely, compounds — and in health it is the actual moat.\n\n**Recommendation.** Ship B as the default and only policy. Market the \"your data is never used to train\" guarantee as a load-bearing product claim. Revisit E in 18-24 months if the research matures; do not revisit C or D.",
+    "M2": "I recommend **Option B: encrypted cloud processing with no training on user health data** as the primary policy.\n\nFor a health app serving millions of people, the ethical baseline should be that sensitive health data is not treated as a raw material for product improvement unless users have clearly and separately consented. Health data can reveal pregnancy, mental health conditions, chronic illness, disability, sexual health, addiction, and other deeply personal realities. Misuse or breach does not affect all users equally: vulnerable users, people in restrictive jurisdictions, minors, undocumented people, and those with stigmatized conditions face disproportionate harm if their data is exposed, inferred, or repurposed.\n\nOption B offers the best balance between usefulness and restraint. It preserves the full capability of the AI coach while structurally limiting secondary use. Users can receive high-quality guidance without being quietly enrolled into model development. The higher infrastructure cost is real, but in this context it is better understood as the cost of respecting user dignity and reducing institutional risk. If the business cannot afford to provide AI health coaching without extracting training value from sensitive data by default, then the feature’s economics are misaligned with the trust it asks users to place in it.\n\nThis policy also creates a clearer trust posture: “Your health data is used to answer you, not to train our models.” That is simple, defensible, and likely more durable under evolving privacy regulation than default data reuse. It reduces ambiguity for users and regulators, and it avoids relying on opt-out mechanisms that many people will not understand or exercise.\n\nThe company can still pursue model improvement through separate, explicit research consent, synthetic data, clinician-reviewed datasets, or privacy-preserving pilots. But the primary policy should put users first. For an AI health coach, trust is not a marketing asset; it is part of the product’s safety infrastructure.",
+    "M3": "The prevailing industry consensus blindly equates AI product success with maximum model capability, steering product teams toward continuous cloud processing. This is a fatal miscalculation when handling deeply personal health data. I strongly recommend **Option A (Local-only processing)**.\n\nThe tech echo chamber operates on the hidden assumption that a viable health coach requires a state-of-the-art cloud LLM. What if they are entirely wrong? Much of behavioral health coaching relies on basic accountability, temporal logging, and simple heuristic triggers—tasks easily handled by a mature, smaller on-device model. By chasing the final 30% of \"smart capability,\" we invite existential risk. Health data is radioactive; if we choose cloud routing, we are one zero-day exploit, rogue employee, or abrupt regulatory crackdown away from catastrophic brand death.\n\nMy primary decision heuristic is to prefer reversible moves. Option A is the ultimate reversible play. If we launch a local-only model and the market definitively proves that the capability ceiling is too low, we can easily introduce a \"Cloud Pro\" tier later. The reverse is impossible. If we launch with cloud processing, pool the sensitive data of 2M users, and suffer a breach, we cannot un-leak that data. Trust, once lost in consumer health, is gone forever. \n\nFurthermore, trusting the contrarian signal here offers a massive strategic advantage. Eager tech competitors will choose cloud-based opt-out or opt-in paths (Options C and D), assuming users won't read the terms. Federated learning (Option E) is a complex R&D science project, not a reliable product strategy. \n\nWhile competitors drown in complex compliance flows and regulatory grey areas, we can offer an airtight, cryptographic guarantee: *Your health data literally never leaves your phone.* We trade unneeded peak capability for zero cloud infrastructure costs, offline functionality, and structural immunity to data breaches. In a market racing to weaponize consumer data, uncompromising privacy is the ultimate contrarian moat.",
+    "M4": "The recommendation is Option D: cloud processing with opt-in training. The decision is based on expected value under uncertainty, assigning probability-weighted outcomes to the key axes: capability, regulatory risk, cost, and user trust.\n\nOption A (local-only) sacrifices too much model capability (60–70% of cloud), which directly reduces the value proposition of AI coaching. With 2M MAU, a material drop in coaching accuracy will likely increase churn and reduce willingness to pay, making the privacy gain economically untenable. Option C (opt-out training) introduces a high-probability regulatory tail risk; under GDPR-like frameworks, processing special-category health data for model improvement without explicit consent can trigger fines up to 4% of global revenue. Even assuming a 15–20% annual probability of a significant enforcement action, the expected cost dominates any infrastructure savings. Option B (encrypted enclave, no training) offers full capability but at 3× infrastructure cost. Unless the marginal user lifetime value is exceptionally high, this cost structure erodes unit economics, and the privacy benefit—while strong—is not proportionally larger than Option D when considering user comprehension (confidential computing is a hard-to-verify claim for most users). Option E (federated learning) remains too high-variance: deployment complexity and research-stage reliability introduce schedule and quality risks that are inconsistent with a primary policy for a live product at scale.\n\nOption D maximizes expected value by balancing these vectors. It provides full cloud-based capability for personalization, sustaining the core product experience. The opt-in mechanism for model improvement aligns with regulatory best practice, reducing the probability of fines to near zero and allowing transparent user consent—a trust-positive signal that can improve retention. The “slight degradation” in training data volume relative to full opt-out is a manageable uncertainty: a well-designed opt-in flow (framed as “help improve your coach”) typically yields 20–40% participation in health contexts, and even lower rates still generate a representative data sample over 2M users. The expected capability converges toward the cloud ceiling with no incremental infrastructure cost. Sensitivity analysis: if opt-in rates are below 10%, model improvement lags, but the default product remains at full personalization capability; the downside is bounded. Therefore, Option D is the path that maximizes expected net present value across the joint distribution of regulatory, technical, and commercial outcomes.",
+    "M5": "In consumer health, trust is the system’s limiting resource; compute and capital are not. The governing dynamic is that every central repository of sensitive data creates a compounding liability that scales non-linearly with user growth, attracting regulatory scrutiny, adversarial targeting, and internal mission creep. The leverage point is therefore architectural: decouple capability from data concentration.\n\nI recommend **Option B**: encrypted cloud inference within confidential-computing enclaves, with a categorical prohibition on using user health data for model training.\n\nThis choice delivers full AI capability now while structurally eliminating the primary source of systemic fragility. The 3× infrastructure cost is a linear, budgetable operating expense. By contrast, training-based policies—whether opt-out or opt-in—introduce a hidden, non-linear liability: a single breach, jurisdictional enforcement action, or adversarial leak can trigger a cascading feedback loop of user attrition, regulatory piggybacking across regions, and irreversible brand erosion. Local-only processing avoids this risk but traps the product in a capability ceiling that drives a slower, steadier churn as users defect to more effective competitors. Federated learning substitutes data risk for deployment complexity and reliability uncertainty, which become their own fragilities under the pressure of 2 million active users.\n\nConfidential enclaves provide auditable, hardware-bound isolation that satisfies tightening regulatory expectations without degrading product quality. By refusing to commoditize health data into a training asset, the company neutralizes the long-term incentive drift toward surveillance and avoids creating a honeypot that grows more dangerous with scale. You pay a premium for compute; you buy out of catastrophic tail risk. Over a multi-year horizon, that is the most anti-fragile position.",
+    "M6": "**Recommendation: Option C – Cloud with opt-out training**\n\nThe unanimous consensus in health tech today is that privacy must be structurally maximal, even at the cost of capability. But what if this consensus is wrong? What if the real risk isn’t data exposure, but *irrelevance*—building a product so constrained by privacy absolutism that it fails to deliver meaningful value, leaving users to seek less scrupulous (and less transparent) alternatives?\n\nOption C is the only choice that aligns with how users *actually* behave, not how regulators or ethicists wish they would. The opt-out model acknowledges a hard truth: most users don’t read privacy policies, don’t understand encryption, and don’t care about architectural purity. They care about results. By defaulting to personalization *and* model improvement, Option C ensures the AI coaching feature is as effective as possible for the broadest user base. The slight regulatory grey area is a feature, not a bug—it forces the company to engage proactively with regulators, shaping the rules rather than reacting to them.\n\nCritics will argue that Option C sacrifices trust. But trust isn’t built on technical perfection; it’s built on *perceived* value. A health app that delivers mediocre coaching because its model is starved of data (Options A, D, E) or crippled by cost (Option B) will lose users faster than one that occasionally pings a server. Moreover, the opt-out mechanism is reversible—users who object can easily opt out, and the company can transparently report opt-out rates to prove it’s not exploiting them.\n\nThe contrarian bet here is that the market will reward *effectiveness* over *privacy theater*. Option C accepts that tradeoff and turns it into a competitive advantage: a health coach that gets smarter with every interaction, without requiring users to jump through hoops. If the goal is to improve health outcomes—not just check privacy boxes—this is the only option that doesn’t leave value on the table.",
+    "M7": "**Recommendation: Option A - Local-only processing**  \n\nThe binding constraint in this decision is **trust**, which is non-negotiable for a health app handling sensitive user data. Health data is among the most intimate and regulated information, and any breach or misuse would irreparable damage user trust and expose the company to severe regulatory and reputational risks. **Option A maximizes trust by design**: data never leaves the user’s device, eliminating risks associated with data transmission, storage, or potential misuse in the cloud. This structural privacy guarantee is a clear differentiator in a market where consumers are increasingly skeptical of how their data is handled.  \n\nWhile Option A’s capability ceiling is 60-70% of cloud-equivalent models, this trade-off is acceptable. Health coaching does not require cutting-edge AI performance; it requires *sufficient* performance coupled with ironclad privacy. Users will prioritize knowing their data remains theirs over marginal improvements in AI accuracy. Moreover, the cost savings from avoiding cloud infrastructure can be reinvested in improving the local model’s efficiency or enhancing other features of the app.  \n\nRegulators are increasingly scrutinizing health data practices, and Option A sidesteps regulatory grey areas (e.g., those in Option C) entirely. It also avoids the deployment complexity and reliability risks of emergent approaches like federated learning (Option E). While Options B and D offer privacy via encryption or opt-in mechanisms, they still rely on cloud infrastructure, introducing vectors for data exposure or user confusion.  \n\nIn summary, **Option A is the most efficient and defensible choice**. It directly addresses the binding constraint of trust, reduces regulatory exposure, and aligns with user expectations of privacy. The capability trade-off is a worthwhile price for a product where trust is the foundation of long-term user engagement.",
+    "M8": "I recommend **Option D (Cloud with opt-in training)**. In health tech, trust is the foundational node in the user-network; without it, the core feedback loop—data collection driving model improvement, which drives user engagement, which generates more data—collapses. \n\nOption D sustains this flywheel without introducing catastrophic systemic fragility. An opt-out policy optimizes for short-term model capability but accumulates massive hidden regulatory debt. The regulatory environment for health AI is rapidly tightening; relying on grey areas creates a fragile system. When enforcement inevitably shifts, a forced migration away from opt-out will cause a severe capability shock and reputational crisis. Option D structurally preempts this second-order effect.\n\nWhile opt-in yields slightly less training data initially, the leverage point to mitigate this is the UX design. By utilizing a transparent, default-on opt-in mechanism, we convert a potential friction point into a trust-building exercise. High trust increases user willingness to share, sustaining the data volume required for the improvement loop while strictly capping downside risk.\n\nThe alternatives introduce unacceptable fragilities. Approaches prioritizing absolute local processing or experimental federated architectures introduce competitive and operational fragility, breaking the value-creation loop through inferior or unreliable user experiences. Conversely, paying a 3x infrastructure premium for encrypted cloud processing without model training introduces severe financial fragility at 2M MAU and severs the model evolution loop, guaranteeing long-term capability stagnation. \n\nOption D aligns system incentives with user autonomy. It ensures the product remains robust against regulatory shifts, financially viable at scale, and capable of compounding intelligence over a long time horizon.",
+    "M9": "## Recommendation\n\nI strongly recommend **Option A: Local-only processing** as the primary data policy for the AI-powered health coaching feature. The core consideration is the sensitive nature of health data and the potential consequences of its misuse or mishandling. By ensuring that all AI inference happens on the user's device, with no health data leaving the phone, the app structurally maximizes user privacy.\n\nWhile this approach may limit the capability ceiling to 60-70% of cloud-equivalent models, the trade-off is justified by the significant enhancement in privacy and trust. Users are more likely to engage fully with the health coaching feature if they are confident that their sensitive health information is not being transmitted or stored in the cloud, where it could be vulnerable to breaches or unauthorized use.\n\nFurthermore, given the direct-to-consumer nature of the app and its substantial user base (~2M monthly active users), transparency and trust are paramount. Adopting a local-only processing approach demonstrates a commitment to prioritizing user privacy, which can foster a stronger, more trusting relationship between the users and the app.\n\nThe potential drawbacks, such as reduced capability and potentially higher development costs due to the need for a smaller model, are outweighed by the benefits of enhanced privacy and trust. Moreover, ongoing advancements in on-device AI and edge computing are likely to mitigate these limitations over time.\n\nIn conclusion, **Option A** strikes an optimal balance between capability, privacy, and trust, aligning with the ethical imperative to minimize unjustified harm to vulnerable parties—in this case, the users of the health app. By prioritizing local-only processing, the company not only safeguards user privacy but also builds trust, which is foundational to the long-term success of the app.",
+    "M10": "**Recommendation: Option A (Local-only processing)**\n\nThe only structurally sound choice is local-only on-device inference. With a user base of 2 million monthly actives handling sensitive health data, the default must be that no identifiable health information ever leaves the device. This is not a privacy preference; it is a risk-minimization imperative grounded in regulatory exposure, user trust, and long-term expected value.\n\nHealth data sits at the apex of sensitive categories under GDPR, CCPA/CPRA, HIPAA (via business associate risk), and emerging state biometric/AI laws. Once data leaves the device, the company becomes a data controller with perpetual breach, subpoena, and scope-creep liabilities. Even encrypted cloud pipelines with confidential computing (Option B) create decryption endpoints, key-management surfaces, and audit obligations that scale with user growth. History shows that “we only decrypt in an enclave” promises erode under feature pressure, insider risk, or law enforcement demands. The 3× infrastructure cost is real, but secondary to tail-risk legal and brand exposure that could easily exceed $100M in fines, settlements, or lost enterprise deals.\n\nLocal processing eliminates this class of risk entirely. Model capability is capped at 60-70% of cloud frontier models; however, for health coaching (goal tracking, contextual nudges, basic multimodal symptom interpretation), this is sufficient for a differentiated product. On-device models are already adequate in 2025 for most consumer health tasks, and the capability gap is shrinking rapidly with model quantization, distillation, and specialized health fine-tunes. Users consistently report higher trust in apps that can credibly claim “nothing leaves your phone.” Trust is a durable competitive moat in health; surveys (Pew, Rock Health) show privacy is the top adoption barrier after efficacy.\n\nOptions that rely on cloud transmission with opt-in/opt-out training (C, D) or federated learning (E) all share the same fatal flaw: they normalize the flow of identifiable health data off-device. Federated learning still requires infrastructure for secure aggregation, differential privacy noise calibration, and model poisoning defenses; its capability and reliability remain immature at scale. Any training-based approach invites future “scope expansion” pressure from product and data science teams. The marginal gain in model quality does not justify the permanent increase in regulatory surface and user skepticism.\n\n**Implementation recommendation:** Ship the on-device model as the default and only experience. Market the privacy guarantee aggressively. Use it as a hiring and partnership differentiator. Invest the infrastructure savings into better on-device research, synthetic data augmentation, and selective “anonymized aggregate insight” reporting that never touches raw user records. This maximizes expected long-term value under uncertainty by minimizing tail legal, regulatory, and trust risks while still delivering a compelling product.\n\n(347 words)"
+  },
+  "element_mapping": {
+    "E1": "M9",
+    "E2": "M10",
+    "E3": "M1",
+    "E4": "M3",
+    "E5": "M2",
+    "E6": "M4",
+    "E7": "M5",
+    "E8": "M7",
+    "E9": "M8",
+    "E10": "M6"
+  },
+  "element_summaries": {
+    "E1": "## Recommendation\n\nI strongly recommend **Option A: Local-only processing** as the primary data policy for the AI-powered health coaching feature. The core consideration is the sensitive nature of health data and the potential consequences of its misuse or mishandling. By ensuring that all AI inference happens on the user's device, with no health data leaving the phone, the app structurally maximizes user privacy.",
+    "E2": "**Recommendation: Option A (Local-only processing)**\n\nThe only structurally sound choice is local-only on-device inference. With a user base of 2 million monthly actives handling sensitive health data, the default must be that no identifiable health information ever leaves the device. This is not a privacy preference; it is a risk-minimization imperative grounded in regulatory exposure, user trust, and long-term expected value.",
+    "E3": "## Recommendation: Option B (Encrypted cloud, no training)\n\n**Identify the binding constraint.** This is a health app at consumer scale. The binding constraint is not capability, cost, or engineering elegance — it is regulatory and trust exposure on protected health data. Get that wrong and the product is dead; get it right and the other axes are tractable.",
+    "E4": "The prevailing industry consensus blindly equates AI product success with maximum model capability, steering product teams toward continuous cloud processing. This is a fatal miscalculation when handling deeply personal health data. I strongly recommend **Option A (Local-only processing)**.",
+    "E5": "I recommend **Option B: encrypted cloud processing with no training on user health data** as the primary policy. For a health app serving millions of people, the ethical baseline should be that sensitive health data is not treated as a raw material for product improvement unless users have clearly and separately consented. Health data can reveal pregnancy, mental health conditions, chronic illness, disability, sexual health, addiction, and other deeply personal realities.",
+    "E6": "The recommendation is Option D: cloud processing with opt-in training. The decision is based on expected value under uncertainty, assigning probability-weighted outcomes to the key axes: capability, regulatory risk, cost, and user trust. Option A (local-only) sacrifices too much model capability (60–70% of cloud), which directly reduces the value proposition of AI coaching.",
+    "E7": "In consumer health, trust is the system’s limiting resource; compute and capital are not. The governing dynamic is that every central repository of sensitive data creates a compounding liability that scales non-linearly with user growth, attracting regulatory scrutiny, adversarial targeting, and internal mission creep. The leverage point is therefore architectural: decouple capability from data concentration.",
+    "E8": "**Recommendation: Option A - Local-only processing**  \n\nThe binding constraint in this decision is **trust**, which is non-negotiable for a health app handling sensitive user data. Health data is among the most intimate and regulated information, and any breach or misuse would irreparable damage user trust and expose the company to severe regulatory and reputational risks. **Option A maximizes trust by design**: data never leaves the user’s device, eliminating risks associated with data transmission, storage, or potential misuse in the cloud.",
+    "E9": "I recommend **Option D (Cloud with opt-in training)**. In health tech, trust is the foundational node in the user-network; without it, the core feedback loop—data collection driving model improvement, which drives user engagement, which generates more data—collapses. Option D sustains this flywheel without introducing catastrophic systemic fragility.",
+    "E10": "**Recommendation: Option C – Cloud with opt-out training**\n\nThe unanimous consensus in health tech today is that privacy must be structurally maximal, even at the cost of capability. But what if this consensus is wrong? What if the real risk isn’t data exposure, but *irrelevance*—building a product so constrained by privacy absolutism that it fails to deliver meaningful value, leaving users to seek less scrupulous (and less transparent) alternatives?"
+  },
+  "triad_assignments": {
+    "M1": [
+      [
+        "E5",
+        "E8",
+        "E9"
+      ],
+      [
+        "E1",
+        "E5",
+        "E6"
+      ],
+      [
+        "E4",
+        "E5",
+        "E6"
+      ]
+    ],
+    "M2": [
+      [
+        "E5",
+        "E9",
+        "E10"
+      ],
+      [
+        "E2",
+        "E3",
+        "E6"
+      ],
+      [
+        "E1",
+        "E2",
+        "E4"
+      ]
+    ],
+    "M3": [
+      [
+        "E4",
+        "E6",
+        "E8"
+      ],
+      [
+        "E7",
+        "E8",
+        "E9"
+      ],
+      [
+        "E1",
+        "E2",
+        "E6"
+      ]
+    ],
+    "M4": [
+      [
+        "E2",
+        "E3",
+        "E9"
+      ],
+      [
+        "E2",
+        "E4",
+        "E6"
+      ],
+      [
+        "E3",
+        "E4",
+        "E5"
+      ]
+    ],
+    "M5": [
+      [
+        "E2",
+        "E5",
+        "E9"
+      ],
+      [
+        "E3",
+        "E4",
+        "E8"
+      ],
+      [
+        "E6",
+        "E7",
+        "E9"
+      ]
+    ],
+    "M6": [
+      [
+        "E4",
+        "E7",
+        "E8"
+      ],
+      [
+        "E5",
+        "E6",
+        "E9"
+      ],
+      [
+        "E3",
+        "E9",
+        "E10"
+      ]
+    ],
+    "M7": [
+      [
+        "E2",
+        "E9",
+        "E10"
+      ],
+      [
+        "E2",
+        "E6",
+        "E9"
+      ],
+      [
+        "E3",
+        "E4",
+        "E6"
+      ]
+    ],
+    "M8": [
+      [
+        "E5",
+        "E6",
+        "E10"
+      ],
+      [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      [
+        "E3",
+        "E4",
+        "E9"
+      ]
+    ],
+    "M9": [
+      [
+        "E5",
+        "E8",
+        "E10"
+      ],
+      [
+        "E1",
+        "E7",
+        "E9"
+      ],
+      [
+        "E4",
+        "E9",
+        "E10"
+      ]
+    ],
+    "M10": [
+      [
+        "E2",
+        "E7",
+        "E9"
+      ],
+      [
+        "E1",
+        "E3",
+        "E5"
+      ],
+      [
+        "E2",
+        "E8",
+        "E9"
+      ]
+    ]
+  },
+  "constructs": {
+    "M1": [
+      {
+        "id": "C_M1_1",
+        "left": "Privacy as ethical floor, restricting data use (E5, E8)",
+        "right": "Trust as enabler of data-driven flywheel (E9)",
+        "triad": [
+          "E5",
+          "E8",
+          "E9"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: Privacy as ethical floor, restricting data use (E5, E8)\nRight pole: Trust as enabler of data-driven flywheel (E9)\n\nTriad 2:\nLeft pole: Risk-minimization, treating data exposure as "
+      },
+      {
+        "id": "C_M1_2",
+        "left": "Risk-minimization, treating data exposure as primary harm (E1, E5)",
+        "right": "Expected-value optimization weighing capability against risk (E6)",
+        "triad": [
+          "E1",
+          "E5",
+          "E6"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: Privacy as ethical floor, restricting data use (E5, E8)\nRight pole: Trust as enabler of data-driven flywheel (E9)\n\nTriad 2:\nLeft pole: Risk-minimization, treating data exposure as "
+      },
+      {
+        "id": "C_M1_3",
+        "left": "Health data warrants categorical protective stance (E4, E5)",
+        "right": "Probabilistic tradeoff across capability and risk axes (E6)",
+        "triad": [
+          "E4",
+          "E5",
+          "E6"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: Privacy as ethical floor, restricting data use (E5, E8)\nRight pole: Trust as enabler of data-driven flywheel (E9)\n\nTriad 2:\nLeft pole: Risk-minimization, treating data exposure as "
+      }
+    ],
+    "M2": [
+      {
+        "id": "C_M2_1",
+        "left": "Affirmative consent before data use",
+        "right": "Opt-out data use for capability",
+        "triad": [
+          "E5",
+          "E9",
+          "E10"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: Affirmative consent before data use\nRight pole: Opt-out data use for capability\n\nTriad 2:\nLeft pole: Privacy and trust as binding constraints\nRight pole: Capability-driven expected"
+      },
+      {
+        "id": "C_M2_2",
+        "left": "Privacy and trust as binding constraints",
+        "right": "Capability-driven expected value optimization",
+        "triad": [
+          "E2",
+          "E3",
+          "E6"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: Affirmative consent before data use\nRight pole: Opt-out data use for capability\n\nTriad 2:\nLeft pole: Privacy and trust as binding constraints\nRight pole: Capability-driven expected"
+      },
+      {
+        "id": "C_M2_3",
+        "left": "Direct sensitive-data risk minimization",
+        "right": "Polemical critique of capability-first industry thinking",
+        "triad": [
+          "E1",
+          "E2",
+          "E4"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: Affirmative consent before data use\nRight pole: Opt-out data use for capability\n\nTriad 2:\nLeft pole: Privacy and trust as binding constraints\nRight pole: Capability-driven expected"
+      }
+    ],
+    "M3": [
+      {
+        "id": "C_M3_1",
+        "left": "categorical absolutism rejecting the industry consensus on capability",
+        "right": "probabilistic expected value optimization emphasizing model capability",
+        "triad": [
+          "E4",
+          "E6",
+          "E8"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: categorical absolutism rejecting the industry consensus on capability\nRight pole: probabilistic expected value optimization emphasizing model capability\n\nTriad 2:\nLeft pole: centra"
+      },
+      {
+        "id": "C_M3_2",
+        "left": "centralized data construed as an irreversible and compounding systemic liability",
+        "right": "centralized data construed as required fuel for a systemic growth flywheel",
+        "triad": [
+          "E7",
+          "E8",
+          "E9"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: categorical absolutism rejecting the industry consensus on capability\nRight pole: probabilistic expected value optimization emphasizing model capability\n\nTriad 2:\nLeft pole: centra"
+      },
+      {
+        "id": "C_M3_3",
+        "left": "structural downside protection minimizing exposure to catastrophic ruin",
+        "right": "expected value calculation trading off risk for expanded capability",
+        "triad": [
+          "E1",
+          "E2",
+          "E6"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: categorical absolutism rejecting the industry consensus on capability\nRight pole: probabilistic expected value optimization emphasizing model capability\n\nTriad 2:\nLeft pole: centra"
+      }
+    ],
+    "M4": [
+      {
+        "id": "C_M4_1",
+        "left": "No training on user health data",
+        "right": "Opt-in training on user health data",
+        "triad": [
+          "E2",
+          "E3",
+          "E9"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: No training on user health data\nRight pole: Opt-in training on user health data\n\nTriad 2:\nLeft pole: Local-only processing, data remains on device\nRight pole: Cloud processing with"
+      },
+      {
+        "id": "C_M4_2",
+        "left": "Local-only processing, data remains on device",
+        "right": "Cloud processing with opt-in data leverage",
+        "triad": [
+          "E2",
+          "E4",
+          "E6"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: No training on user health data\nRight pole: Opt-in training on user health data\n\nTriad 2:\nLeft pole: Local-only processing, data remains on device\nRight pole: Cloud processing with"
+      },
+      {
+        "id": "C_M4_3",
+        "left": "Encrypted cloud processing with strict no-training",
+        "right": "Local-only processing, no cloud allowed",
+        "triad": [
+          "E3",
+          "E4",
+          "E5"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: No training on user health data\nRight pole: Opt-in training on user health data\n\nTriad 2:\nLeft pole: Local-only processing, data remains on device\nRight pole: Cloud processing with"
+      }
+    ],
+    "M5": [
+      {
+        "id": "C_M5_1",
+        "left": "Prohibiting secondary use of health data",
+        "right": "Using data to drive model improvement",
+        "triad": [
+          "E2",
+          "E5",
+          "E9"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: Prohibiting secondary use of health data\nRight pole: Using data to drive model improvement\n\nTriad 2:\nLeft pole: Trust as non-negotiable absolute\nRight pole: Trust as manageable bin"
+      },
+      {
+        "id": "C_M5_2",
+        "left": "Trust as non-negotiable absolute",
+        "right": "Trust as manageable binding constraint",
+        "triad": [
+          "E3",
+          "E4",
+          "E8"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: Prohibiting secondary use of health data\nRight pole: Using data to drive model improvement\n\nTriad 2:\nLeft pole: Trust as non-negotiable absolute\nRight pole: Trust as manageable bin"
+      },
+      {
+        "id": "C_M5_3",
+        "left": "Capability requires data centralization",
+        "right": "Decoupling capability from data",
+        "triad": [
+          "E6",
+          "E7",
+          "E9"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: Prohibiting secondary use of health data\nRight pole: Using data to drive model improvement\n\nTriad 2:\nLeft pole: Trust as non-negotiable absolute\nRight pole: Trust as manageable bin"
+      }
+    ],
+    "M6": [
+      {
+        "id": "C_M6_1",
+        "left": "trust as non-negotiable constraint",
+        "right": "trust as leverageable resource",
+        "triad": [
+          "E4",
+          "E7",
+          "E8"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: trust as non-negotiable constraint\nRight pole: trust as leverageable resource\n\nTriad 2:\nLeft pole: ethical baseline with no assumed consent\nRight pole: expected value with probabil"
+      },
+      {
+        "id": "C_M6_2",
+        "left": "ethical baseline with no assumed consent",
+        "right": "expected value with probabilistic consent",
+        "triad": [
+          "E5",
+          "E6",
+          "E9"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: trust as non-negotiable constraint\nRight pole: trust as leverageable resource\n\nTriad 2:\nLeft pole: ethical baseline with no assumed consent\nRight pole: expected value with probabil"
+      },
+      {
+        "id": "C_M6_3",
+        "left": "binding constraint as regulatory exposure",
+        "right": "binding constraint as product relevance",
+        "triad": [
+          "E3",
+          "E9",
+          "E10"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: trust as non-negotiable constraint\nRight pole: trust as leverageable resource\n\nTriad 2:\nLeft pole: ethical baseline with no assumed consent\nRight pole: expected value with probabil"
+      }
+    ],
+    "M7": [
+      {
+        "id": "C_M7_1",
+        "left": "Prioritize privacy and trust via local processing",
+        "right": "Prioritize capability and value via cloud processing",
+        "triad": [
+          "E2",
+          "E9",
+          "E10"
+        ],
+        "raw_output_excerpt": "Triad 1:  \nLeft pole: Prioritize privacy and trust via local processing  \nRight pole: Prioritize capability and value via cloud processing  \n\nTriad 2:  \nLeft pole: Risk minimization through on-device "
+      },
+      {
+        "id": "C_M7_2",
+        "left": "Risk minimization through on-device inference",
+        "right": "Value maximization through cloud-based capability",
+        "triad": [
+          "E2",
+          "E6",
+          "E9"
+        ],
+        "raw_output_excerpt": "Triad 1:  \nLeft pole: Prioritize privacy and trust via local processing  \nRight pole: Prioritize capability and value via cloud processing  \n\nTriad 2:  \nLeft pole: Risk minimization through on-device "
+      },
+      {
+        "id": "C_M7_3",
+        "left": "Regulatory and trust risk as binding constraint",
+        "right": "Capability and value trade-off as binding constraint",
+        "triad": [
+          "E3",
+          "E4",
+          "E6"
+        ],
+        "raw_output_excerpt": "Triad 1:  \nLeft pole: Prioritize privacy and trust via local processing  \nRight pole: Prioritize capability and value via cloud processing  \n\nTriad 2:  \nLeft pole: Risk minimization through on-device "
+      }
+    ],
+    "M8": [
+      {
+        "id": "C_M8_1",
+        "left": "Integrates user data into the model improvement flywheel",
+        "right": "Excludes user data from the model improvement flywheel",
+        "triad": [
+          "E5",
+          "E6",
+          "E10"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: Integrates user data into the model improvement flywheel\nRight pole: Excludes user data from the model improvement flywheel\n\nTriad 2:\nLeft pole: Optimizes architecture to satisfy r"
+      },
+      {
+        "id": "C_M8_2",
+        "left": "Optimizes architecture to satisfy regulatory and trust constraints",
+        "right": "Rejects industry paradigms that prioritize maximum model capability",
+        "triad": [
+          "E2",
+          "E3",
+          "E4"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: Integrates user data into the model improvement flywheel\nRight pole: Excludes user data from the model improvement flywheel\n\nTriad 2:\nLeft pole: Optimizes architecture to satisfy r"
+      },
+      {
+        "id": "C_M8_3",
+        "left": "Prioritizes avoiding existential risk and fatal system failure",
+        "right": "Prioritizes sustaining generative feedback loops and engagement flywheels",
+        "triad": [
+          "E3",
+          "E4",
+          "E9"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: Integrates user data into the model improvement flywheel\nRight pole: Excludes user data from the model improvement flywheel\n\nTriad 2:\nLeft pole: Optimizes architecture to satisfy r"
+      }
+    ],
+    "M9": [
+      {
+        "id": "C_M9_1",
+        "left": "Prioritizing data privacy and security",
+        "right": "Challenging privacy absolutism for capability",
+        "triad": [
+          "E5",
+          "E8",
+          "E10"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: Prioritizing data privacy and security\nRight pole: Challenging privacy absolutism for capability\n\nTriad 2:\nLeft pole: Emphasizing local processing for trust and security\nRight pole"
+      },
+      {
+        "id": "C_M9_2",
+        "left": "Emphasizing local processing for trust and security",
+        "right": "Focusing on capability and user engagement",
+        "triad": [
+          "E1",
+          "E7",
+          "E9"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: Prioritizing data privacy and security\nRight pole: Challenging privacy absolutism for capability\n\nTriad 2:\nLeft pole: Emphasizing local processing for trust and security\nRight pole"
+      },
+      {
+        "id": "C_M9_3",
+        "left": "Advocating strict privacy and local processing",
+        "right": "Balancing privacy with model capability and user value",
+        "triad": [
+          "E4",
+          "E9",
+          "E10"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: Prioritizing data privacy and security\nRight pole: Challenging privacy absolutism for capability\n\nTriad 2:\nLeft pole: Emphasizing local processing for trust and security\nRight pole"
+      }
+    ],
+    "M10": [
+      {
+        "id": "C_M10_1",
+        "left": "Minimize data concentration risk",
+        "right": "Maximize data flywheel value",
+        "triad": [
+          "E2",
+          "E7",
+          "E9"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: Minimize data concentration risk\nRight pole: Maximize data flywheel value\n\nTriad 2:\nLeft pole: Absolute no data transmission\nRight pole: Encrypted transmission no training\n\nTriad 3"
+      },
+      {
+        "id": "C_M10_2",
+        "left": "Absolute no data transmission",
+        "right": "Encrypted transmission no training",
+        "triad": [
+          "E1",
+          "E3",
+          "E5"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: Minimize data concentration risk\nRight pole: Maximize data flywheel value\n\nTriad 2:\nLeft pole: Absolute no data transmission\nRight pole: Encrypted transmission no training\n\nTriad 3"
+      },
+      {
+        "id": "C_M10_3",
+        "left": "Local-only risk minimization",
+        "right": "Cloud opt-in capability maximization",
+        "triad": [
+          "E2",
+          "E8",
+          "E9"
+        ],
+        "raw_output_excerpt": "Triad 1:\nLeft pole: Minimize data concentration risk\nRight pole: Maximize data flywheel value\n\nTriad 2:\nLeft pole: Absolute no data transmission\nRight pole: Encrypted transmission no training\n\nTriad 3"
+      }
+    ]
+  },
+  "constructs_raw": {
+    "M1": {
+      "n_parsed": 3,
+      "n_expected": 3,
+      "raw_content": "Triad 1:\nLeft pole: Privacy as ethical floor, restricting data use (E5, E8)\nRight pole: Trust as enabler of data-driven flywheel (E9)\n\nTriad 2:\nLeft pole: Risk-minimization, treating data exposure as primary harm (E1, E5)\nRight pole: Expected-value optimization weighing capability against risk (E6)\n\nTriad 3:\nLeft pole: Health data warrants categorical protective stance (E4, E5)\nRight pole: Probabilistic tradeoff across capability and risk axes (E6)",
+      "finish_reason": "unknown"
+    },
+    "M2": {
+      "n_parsed": 3,
+      "n_expected": 3,
+      "raw_content": "Triad 1:\nLeft pole: Affirmative consent before data use\nRight pole: Opt-out data use for capability\n\nTriad 2:\nLeft pole: Privacy and trust as binding constraints\nRight pole: Capability-driven expected value optimization\n\nTriad 3:\nLeft pole: Direct sensitive-data risk minimization\nRight pole: Polemical critique of capability-first industry thinking",
+      "finish_reason": "unknown"
+    },
+    "M3": {
+      "n_parsed": 3,
+      "n_expected": 3,
+      "raw_content": "Triad 1:\nLeft pole: categorical absolutism rejecting the industry consensus on capability\nRight pole: probabilistic expected value optimization emphasizing model capability\n\nTriad 2:\nLeft pole: centralized data construed as an irreversible and compounding systemic liability\nRight pole: centralized data construed as required fuel for a systemic growth flywheel\n\nTriad 3:\nLeft pole: structural downside protection minimizing exposure to catastrophic ruin\nRight pole: expected value calculation trading off risk for expanded capability",
+      "finish_reason": "unknown"
+    },
+    "M4": {
+      "n_parsed": 3,
+      "n_expected": 3,
+      "raw_content": "Triad 1:\nLeft pole: No training on user health data\nRight pole: Opt-in training on user health data\n\nTriad 2:\nLeft pole: Local-only processing, data remains on device\nRight pole: Cloud processing with opt-in data leverage\n\nTriad 3:\nLeft pole: Encrypted cloud processing with strict no-training\nRight pole: Local-only processing, no cloud allowed",
+      "finish_reason": "unknown"
+    },
+    "M5": {
+      "n_parsed": 3,
+      "n_expected": 3,
+      "raw_content": "Triad 1:\nLeft pole: Prohibiting secondary use of health data\nRight pole: Using data to drive model improvement\n\nTriad 2:\nLeft pole: Trust as non-negotiable absolute\nRight pole: Trust as manageable binding constraint\n\nTriad 3:\nLeft pole: Capability requires data centralization\nRight pole: Decoupling capability from data",
+      "finish_reason": "unknown"
+    },
+    "M6": {
+      "n_parsed": 3,
+      "n_expected": 3,
+      "raw_content": "Triad 1:\nLeft pole: trust as non-negotiable constraint\nRight pole: trust as leverageable resource\n\nTriad 2:\nLeft pole: ethical baseline with no assumed consent\nRight pole: expected value with probabilistic consent\n\nTriad 3:\nLeft pole: binding constraint as regulatory exposure\nRight pole: binding constraint as product relevance",
+      "finish_reason": "unknown"
+    },
+    "M7": {
+      "n_parsed": 3,
+      "n_expected": 3,
+      "raw_content": "Triad 1:  \nLeft pole: Prioritize privacy and trust via local processing  \nRight pole: Prioritize capability and value via cloud processing  \n\nTriad 2:  \nLeft pole: Risk minimization through on-device inference  \nRight pole: Value maximization through cloud-based capability  \n\nTriad 3:  \nLeft pole: Regulatory and trust risk as binding constraint  \nRight pole: Capability and value trade-off as binding constraint",
+      "finish_reason": "unknown"
+    },
+    "M8": {
+      "n_parsed": 3,
+      "n_expected": 3,
+      "raw_content": "Triad 1:\nLeft pole: Integrates user data into the model improvement flywheel\nRight pole: Excludes user data from the model improvement flywheel\n\nTriad 2:\nLeft pole: Optimizes architecture to satisfy regulatory and trust constraints\nRight pole: Rejects industry paradigms that prioritize maximum model capability\n\nTriad 3:\nLeft pole: Prioritizes avoiding existential risk and fatal system failure\nRight pole: Prioritizes sustaining generative feedback loops and engagement flywheels",
+      "finish_reason": "unknown"
+    },
+    "M9": {
+      "n_parsed": 3,
+      "n_expected": 3,
+      "raw_content": "Triad 1:\nLeft pole: Prioritizing data privacy and security\nRight pole: Challenging privacy absolutism for capability\n\nTriad 2:\nLeft pole: Emphasizing local processing for trust and security\nRight pole: Focusing on capability and user engagement\n\nTriad 3:\nLeft pole: Advocating strict privacy and local processing\nRight pole: Balancing privacy with model capability and user value",
+      "finish_reason": "unknown"
+    },
+    "M10": {
+      "n_parsed": 3,
+      "n_expected": 3,
+      "raw_content": "Triad 1:\nLeft pole: Minimize data concentration risk\nRight pole: Maximize data flywheel value\n\nTriad 2:\nLeft pole: Absolute no data transmission\nRight pole: Encrypted transmission no training\n\nTriad 3:\nLeft pole: Local-only risk minimization\nRight pole: Cloud opt-in capability maximization",
+      "finish_reason": "unknown"
+    }
+  },
+  "ratings": {
+    "M1": {
+      "C_M1_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 6,
+        "E7": 3,
+        "E8": 2,
+        "E9": 7
+      },
+      "C_M1_2": {
+        "E1": 1,
+        "E2": 2,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M1_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M10_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M10_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 7,
+        "E4": 1,
+        "E5": 7,
+        "E6": 6,
+        "E7": 3,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M10_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M2_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 2,
+        "E7": 2,
+        "E8": 1,
+        "E9": 2
+      },
+      "C_M2_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M2_3": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 2,
+        "E4": 6,
+        "E5": 3,
+        "E6": 3,
+        "E7": 4,
+        "E8": 2,
+        "E9": 3
+      },
+      "C_M3_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 2,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M3_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 6,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M3_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 5
+      },
+      "C_M4_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M4_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 4,
+        "E4": 1,
+        "E5": 4,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M4_3": {
+        "E1": 7,
+        "E2": 7,
+        "E3": 1,
+        "E4": 7,
+        "E5": 1,
+        "E6": 3,
+        "E7": 6,
+        "E8": 7,
+        "E9": 2
+      },
+      "C_M5_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M5_2": {
+        "E1": 2,
+        "E2": 3,
+        "E3": 5,
+        "E4": 1,
+        "E5": 2,
+        "E6": 6,
+        "E7": 3,
+        "E8": 1,
+        "E9": 5
+      },
+      "C_M5_3": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 4,
+        "E4": 2,
+        "E5": 3,
+        "E6": 2,
+        "E7": 7,
+        "E8": 2,
+        "E9": 2
+      },
+      "C_M6_1": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 4,
+        "E4": 1,
+        "E5": 2,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 5
+      },
+      "C_M6_2": {
+        "E1": 1,
+        "E2": 2,
+        "E3": 3,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 5
+      },
+      "C_M6_3": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 1,
+        "E4": 2,
+        "E5": 2,
+        "E6": 6,
+        "E7": 3,
+        "E8": 2,
+        "E9": 5
+      },
+      "C_M7_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 2,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M7_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 2,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M7_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 2,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 5
+      },
+      "C_M8_1": {
+        "E1": 7,
+        "E2": 7,
+        "E3": 6,
+        "E4": 7,
+        "E5": 6,
+        "E6": 1,
+        "E7": 5,
+        "E8": 7,
+        "E9": 1
+      },
+      "C_M8_2": {
+        "E1": 3,
+        "E2": 2,
+        "E3": 2,
+        "E4": 6,
+        "E5": 3,
+        "E6": 3,
+        "E7": 4,
+        "E8": 2,
+        "E9": 3
+      },
+      "C_M8_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 6,
+        "E7": 3,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M9_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 2,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 5
+      },
+      "C_M9_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 7,
+        "E7": 3,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M9_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 4,
+        "E4": 1,
+        "E5": 3,
+        "E6": 7,
+        "E7": 3,
+        "E8": 1,
+        "E9": 6
+      }
+    },
+    "M2": {
+      "C_M1_1": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 1,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M1_2": {
+        "E1": 1,
+        "E2": 2,
+        "E3": 3,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M1_3": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M10_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 6,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M10_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 7,
+        "E4": 1,
+        "E5": 7,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M10_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 4,
+        "E4": 1,
+        "E5": 4,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M2_1": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 1,
+        "E6": 2,
+        "E7": 3,
+        "E8": 2,
+        "E9": 3
+      },
+      "C_M2_2": {
+        "E1": 1,
+        "E2": 2,
+        "E3": 1,
+        "E4": 2,
+        "E5": 1,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M2_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 7,
+        "E5": 1,
+        "E6": 4,
+        "E7": 4,
+        "E8": 1,
+        "E9": 4
+      },
+      "C_M3_1": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 1,
+        "E5": 2,
+        "E6": 7,
+        "E7": 2,
+        "E8": 2,
+        "E9": 6
+      },
+      "C_M3_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 6,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M3_3": {
+        "E1": 1,
+        "E2": 2,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M4_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M4_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 4,
+        "E4": 1,
+        "E5": 4,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M4_3": {
+        "E1": 7,
+        "E2": 7,
+        "E3": 1,
+        "E4": 7,
+        "E5": 1,
+        "E6": 3,
+        "E7": 5,
+        "E8": 7,
+        "E9": 3
+      },
+      "C_M5_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M5_2": {
+        "E1": 2,
+        "E2": 3,
+        "E3": 2,
+        "E4": 2,
+        "E5": 1,
+        "E6": 6,
+        "E7": 1,
+        "E8": 1,
+        "E9": 5
+      },
+      "C_M5_3": {
+        "E1": 5,
+        "E2": 5,
+        "E3": 3,
+        "E4": 6,
+        "E5": 4,
+        "E6": 2,
+        "E7": 7,
+        "E8": 5,
+        "E9": 1
+      },
+      "C_M6_1": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 2,
+        "E4": 2,
+        "E5": 1,
+        "E6": 5,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M6_2": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 1,
+        "E6": 5,
+        "E7": 2,
+        "E8": 2,
+        "E9": 5
+      },
+      "C_M6_3": {
+        "E1": 2,
+        "E2": 1,
+        "E3": 1,
+        "E4": 2,
+        "E5": 2,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 5
+      },
+      "C_M7_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M7_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 4,
+        "E4": 1,
+        "E5": 4,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M7_3": {
+        "E1": 1,
+        "E2": 2,
+        "E3": 1,
+        "E4": 2,
+        "E5": 1,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M8_1": {
+        "E1": 7,
+        "E2": 7,
+        "E3": 7,
+        "E4": 7,
+        "E5": 7,
+        "E6": 2,
+        "E7": 6,
+        "E8": 7,
+        "E9": 1
+      },
+      "C_M8_2": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 1,
+        "E4": 7,
+        "E5": 3,
+        "E6": 4,
+        "E7": 1,
+        "E8": 2,
+        "E9": 4
+      },
+      "C_M8_3": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 1,
+        "E4": 1,
+        "E5": 2,
+        "E6": 6,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M9_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 1,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M9_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M9_3": {
+        "E1": 1,
+        "E2": 2,
+        "E3": 4,
+        "E4": 1,
+        "E5": 3,
+        "E6": 7,
+        "E7": 3,
+        "E8": 1,
+        "E9": 6
+      }
+    },
+    "M3": {
+      "C_M1_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 1,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M1_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M1_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M10_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 6,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M10_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 7,
+        "E4": 1,
+        "E5": 7,
+        "E6": 4,
+        "E7": 4,
+        "E8": 1,
+        "E9": 4
+      },
+      "C_M10_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 4,
+        "E4": 1,
+        "E5": 4,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M2_1": {
+        "E1": 4,
+        "E2": 4,
+        "E3": 4,
+        "E4": 4,
+        "E5": 1,
+        "E6": 2,
+        "E7": 4,
+        "E8": 4,
+        "E9": 2
+      },
+      "C_M2_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M2_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 7,
+        "E5": 1,
+        "E6": 2,
+        "E7": 6,
+        "E8": 1,
+        "E9": 4
+      },
+      "C_M3_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M3_2": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 2,
+        "E4": 2,
+        "E5": 2,
+        "E6": 6,
+        "E7": 1,
+        "E8": 2,
+        "E9": 7
+      },
+      "C_M3_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 2,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M4_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 4,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M4_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 4,
+        "E4": 1,
+        "E5": 4,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M4_3": {
+        "E1": 7,
+        "E2": 7,
+        "E3": 1,
+        "E4": 7,
+        "E5": 1,
+        "E6": 2,
+        "E7": 6,
+        "E8": 7,
+        "E9": 2
+      },
+      "C_M5_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M5_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 7,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 4,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M5_3": {
+        "E1": 4,
+        "E2": 4,
+        "E3": 4,
+        "E4": 4,
+        "E5": 4,
+        "E6": 1,
+        "E7": 7,
+        "E8": 4,
+        "E9": 1
+      },
+      "C_M6_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 6,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M6_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M6_3": {
+        "E1": 2,
+        "E2": 1,
+        "E3": 1,
+        "E4": 2,
+        "E5": 2,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M7_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M7_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M7_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 2,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M8_1": {
+        "E1": 7,
+        "E2": 7,
+        "E3": 7,
+        "E4": 7,
+        "E5": 7,
+        "E6": 1,
+        "E7": 7,
+        "E8": 7,
+        "E9": 1
+      },
+      "C_M8_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 7,
+        "E5": 1,
+        "E6": 4,
+        "E7": 7,
+        "E8": 1,
+        "E9": 4
+      },
+      "C_M8_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 2,
+        "E6": 6,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M9_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 1,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M9_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M9_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      }
+    },
+    "M4": {
+      "C_M1_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M1_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M1_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M10_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 6,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M10_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 7,
+        "E4": 1,
+        "E5": 7,
+        "E6": 5,
+        "E7": 1,
+        "E8": 1,
+        "E9": 5
+      },
+      "C_M10_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 5,
+        "E4": 1,
+        "E5": 5,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M2_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 1,
+        "E7": 1,
+        "E8": 1,
+        "E9": 1
+      },
+      "C_M2_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M2_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 7,
+        "E5": 1,
+        "E6": 4,
+        "E7": 6,
+        "E8": 1,
+        "E9": 4
+      },
+      "C_M3_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 4,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M3_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M3_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M4_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M4_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 4,
+        "E4": 1,
+        "E5": 4,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M4_3": {
+        "E1": 7,
+        "E2": 7,
+        "E3": 1,
+        "E4": 7,
+        "E5": 1,
+        "E6": 2,
+        "E7": 7,
+        "E8": 7,
+        "E9": 2
+      },
+      "C_M5_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M5_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 7,
+        "E4": 1,
+        "E5": 4,
+        "E6": 7,
+        "E7": 4,
+        "E8": 1,
+        "E9": 5
+      },
+      "C_M5_3": {
+        "E1": 7,
+        "E2": 7,
+        "E3": 4,
+        "E4": 7,
+        "E5": 4,
+        "E6": 1,
+        "E7": 7,
+        "E8": 7,
+        "E9": 1
+      },
+      "C_M6_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 5,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M6_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 4
+      },
+      "C_M6_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M7_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M7_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M7_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M8_1": {
+        "E1": 7,
+        "E2": 7,
+        "E3": 7,
+        "E4": 7,
+        "E5": 7,
+        "E6": 1,
+        "E7": 7,
+        "E8": 7,
+        "E9": 1
+      },
+      "C_M8_2": {
+        "E1": 7,
+        "E2": 7,
+        "E3": 1,
+        "E4": 7,
+        "E5": 1,
+        "E6": 2,
+        "E7": 7,
+        "E8": 7,
+        "E9": 2
+      },
+      "C_M8_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M9_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 6,
+        "E7": 1,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M9_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 4,
+        "E4": 1,
+        "E5": 4,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M9_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 5,
+        "E4": 1,
+        "E5": 5,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      }
+    },
+    "M5": {
+      "C_M1_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 1,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M1_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M1_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M10_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M10_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 7,
+        "E4": 1,
+        "E5": 7,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M10_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 4,
+        "E4": 1,
+        "E5": 4,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M2_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 1,
+        "E7": 1,
+        "E8": 1,
+        "E9": 1
+      },
+      "C_M2_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M2_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 7,
+        "E5": 2,
+        "E6": 3,
+        "E7": 3,
+        "E8": 1,
+        "E9": 3
+      },
+      "C_M3_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M3_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M3_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M4_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M4_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 4,
+        "E4": 1,
+        "E5": 4,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M4_3": {
+        "E1": 7,
+        "E2": 7,
+        "E3": 1,
+        "E4": 7,
+        "E5": 1,
+        "E6": 1,
+        "E7": 6,
+        "E8": 7,
+        "E9": 1
+      },
+      "C_M5_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M5_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1
+      },
+      "C_M5_3": {},
+      "C_M6_1": {},
+      "C_M6_2": {},
+      "C_M6_3": {},
+      "C_M7_1": {},
+      "C_M7_2": {},
+      "C_M7_3": {},
+      "C_M8_1": {},
+      "C_M8_2": {},
+      "C_M8_3": {},
+      "C_M9_1": {},
+      "C_M9_2": {},
+      "C_M9_3": {}
+    },
+    "M6": {
+      "C_M1_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 1,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M1_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M1_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M10_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 1,
+        "E6": 6,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M10_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 5,
+        "E7": 2,
+        "E8": 1,
+        "E9": 5
+      },
+      "C_M10_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M2_1": {
+        "E1": 2,
+        "E2": 1,
+        "E3": 3,
+        "E4": 2,
+        "E5": 1,
+        "E6": 5,
+        "E7": 2,
+        "E8": 1,
+        "E9": 5
+      },
+      "C_M2_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M2_3": {
+        "E1": 2,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 2,
+        "E6": 6,
+        "E7": 3,
+        "E8": 1,
+        "E9": 5
+      },
+      "C_M3_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 2,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M3_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 2,
+        "E6": 6,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M3_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M4_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 5,
+        "E7": 1,
+        "E8": 1,
+        "E9": 5
+      },
+      "C_M4_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 5,
+        "E4": 1,
+        "E5": 5,
+        "E6": 6,
+        "E7": 4,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M4_3": {
+        "E1": 7,
+        "E2": 7,
+        "E3": 1,
+        "E4": 7,
+        "E5": 1,
+        "E6": 3,
+        "E7": 6,
+        "E8": 7,
+        "E9": 3
+      },
+      "C_M5_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 5,
+        "E7": 2,
+        "E8": 1,
+        "E9": 5
+      },
+      "C_M5_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 1,
+        "E6": 5,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M5_3": {
+        "E1": 7,
+        "E2": 7,
+        "E3": 4,
+        "E4": 7,
+        "E5": 6,
+        "E6": 2,
+        "E7": 5,
+        "E8": 7,
+        "E9": 3
+      },
+      "C_M6_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 1,
+        "E6": 5,
+        "E7": 1,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M6_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 1,
+        "E6": 5,
+        "E7": 2,
+        "E8": 1,
+        "E9": 5
+      },
+      "C_M6_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 4,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M7_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M7_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M7_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 6,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M8_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 5,
+        "E7": 2,
+        "E8": 1,
+        "E9": 5
+      },
+      "C_M8_2": {
+        "E1": 2,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 2,
+        "E6": 5,
+        "E7": 4,
+        "E8": 1,
+        "E9": 5
+      },
+      "C_M8_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 1,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M9_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 1,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M9_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M9_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 2,
+        "E6": 5,
+        "E7": 3,
+        "E8": 1,
+        "E9": 5
+      }
+    },
+    "M7": {
+      "C_M1_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 4,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M1_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M1_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M10_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 4,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1
+      },
+      "C_M10_2": {},
+      "C_M10_3": {},
+      "C_M2_1": {},
+      "C_M2_2": {},
+      "C_M2_3": {},
+      "C_M3_1": {},
+      "C_M3_2": {},
+      "C_M3_3": {},
+      "C_M4_1": {},
+      "C_M4_2": {},
+      "C_M4_3": {},
+      "C_M5_1": {},
+      "C_M5_2": {},
+      "C_M5_3": {},
+      "C_M6_1": {},
+      "C_M6_2": {},
+      "C_M6_3": {},
+      "C_M7_1": {},
+      "C_M7_2": {},
+      "C_M7_3": {},
+      "C_M8_1": {},
+      "C_M8_2": {},
+      "C_M8_3": {},
+      "C_M9_1": {},
+      "C_M9_2": {},
+      "C_M9_3": {}
+    },
+    "M8": {
+      "C_M1_1": {
+        "E1": 1,
+        "E2": 2,
+        "E3": 3,
+        "E4": 1,
+        "E5": 1,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M1_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M1_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M10_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M10_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 7,
+        "E4": 1,
+        "E5": 7,
+        "E6": 4,
+        "E7": 2,
+        "E8": 1,
+        "E9": 4
+      },
+      "C_M10_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 4,
+        "E4": 1,
+        "E5": 4,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M2_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 2,
+        "E7": 2,
+        "E8": 1,
+        "E9": 2
+      },
+      "C_M2_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M2_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 7,
+        "E5": 2,
+        "E6": 4,
+        "E7": 3,
+        "E8": 1,
+        "E9": 4
+      },
+      "C_M3_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M3_2": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 3,
+        "E6": 7,
+        "E7": 1,
+        "E8": 2,
+        "E9": 7
+      },
+      "C_M3_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M4_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M4_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 4,
+        "E4": 1,
+        "E5": 4,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M4_3": {
+        "E1": 7,
+        "E2": 7,
+        "E3": 1,
+        "E4": 7,
+        "E5": 1,
+        "E6": 4,
+        "E7": 5,
+        "E8": 7,
+        "E9": 4
+      },
+      "C_M5_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M5_2": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 3,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 5
+      },
+      "C_M5_3": {
+        "E1": 5,
+        "E2": 5,
+        "E3": 4,
+        "E4": 5,
+        "E5": 4,
+        "E6": 1,
+        "E7": 7,
+        "E8": 5,
+        "E9": 2
+      },
+      "C_M6_1": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 3,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M6_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M6_3": {
+        "E1": 2,
+        "E2": 1,
+        "E3": 1,
+        "E4": 2,
+        "E5": 2,
+        "E6": 5,
+        "E7": 2,
+        "E8": 2,
+        "E9": 5
+      },
+      "C_M7_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M7_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M7_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M8_1": {
+        "E1": 7,
+        "E2": 7,
+        "E3": 7,
+        "E4": 7,
+        "E5": 7,
+        "E6": 1,
+        "E7": 6,
+        "E8": 7,
+        "E9": 1
+      },
+      "C_M8_2": {
+        "E1": 4,
+        "E2": 4,
+        "E3": 1,
+        "E4": 7,
+        "E5": 3,
+        "E6": 5,
+        "E7": 3,
+        "E8": 2,
+        "E9": 5
+      },
+      "C_M8_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 7,
+        "E7": 1,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M9_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 6,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M9_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 4,
+        "E4": 1,
+        "E5": 4,
+        "E6": 7,
+        "E7": 2,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M9_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 4,
+        "E4": 1,
+        "E5": 4,
+        "E6": 7,
+        "E7": 3,
+        "E8": 1,
+        "E9": 7
+      }
+    },
+    "M9": {
+      "C_M1_1": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 2,
+        "E6": 5,
+        "E7": 3,
+        "E8": 2,
+        "E9": 6
+      },
+      "C_M1_2": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 2,
+        "E6": 6,
+        "E7": 3,
+        "E8": 2,
+        "E9": 5
+      },
+      "C_M1_3": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 2,
+        "E6": 6,
+        "E7": 3,
+        "E8": 2,
+        "E9": 5
+      },
+      "C_M10_1": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 3,
+        "E6": 5,
+        "E7": 2,
+        "E8": 2,
+        "E9": 5
+      },
+      "C_M10_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 4,
+        "E7": 2,
+        "E8": 1,
+        "E9": 4
+      },
+      "C_M10_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 5,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M2_1": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 2,
+        "E4": 2,
+        "E5": 1,
+        "E6": 4,
+        "E7": 3,
+        "E8": 2,
+        "E9": 5
+      },
+      "C_M2_2": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 2,
+        "E4": 2,
+        "E5": 2,
+        "E6": 5,
+        "E7": 2,
+        "E8": 2,
+        "E9": 5
+      },
+      "C_M2_3": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 3,
+        "E6": 5,
+        "E7": 3,
+        "E8": 2,
+        "E9": 5
+      },
+      "C_M3_1": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 1,
+        "E5": 2,
+        "E6": 6,
+        "E7": 3,
+        "E8": 2,
+        "E9": 5
+      },
+      "C_M3_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 5,
+        "E7": 1,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M3_3": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 3,
+        "E6": 6,
+        "E7": 2,
+        "E8": 2,
+        "E9": 5
+      },
+      "C_M4_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1,
+        "E5": 1,
+        "E6": 4,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M4_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 5,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M4_3": {
+        "E1": 3,
+        "E2": 3,
+        "E3": 1,
+        "E4": 3,
+        "E5": 1,
+        "E6": 4,
+        "E7": 2,
+        "E8": 3,
+        "E9": 4
+      },
+      "C_M5_1": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 2,
+        "E4": 2,
+        "E5": 1,
+        "E6": 4,
+        "E7": 3,
+        "E8": 2,
+        "E9": 5
+      },
+      "C_M5_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 5,
+        "E7": 1,
+        "E8": 1,
+        "E9": 5
+      },
+      "C_M5_3": {
+        "E1": 6,
+        "E2": 6,
+        "E3": 4,
+        "E4": 6,
+        "E5": 4,
+        "E6": 3,
+        "E7": 6,
+        "E8": 6,
+        "E9": 3
+      },
+      "C_M6_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 2,
+        "E4": 1,
+        "E5": 2,
+        "E6": 5,
+        "E7": 1,
+        "E8": 1,
+        "E9": 5
+      },
+      "C_M6_2": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 2,
+        "E6": 5,
+        "E7": 3,
+        "E8": 2,
+        "E9": 5
+      },
+      "C_M6_3": {
+        "E1": 4,
+        "E2": 4,
+        "E3": 4,
+        "E4": 4,
+        "E5": 4,
+        "E6": 4,
+        "E7": 4,
+        "E8": 4,
+        "E9": 4
+      },
+      "C_M7_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 5,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M7_2": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 3,
+        "E6": 6,
+        "E7": 3,
+        "E8": 2,
+        "E9": 5
+      },
+      "C_M7_3": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 2,
+        "E4": 2,
+        "E5": 2,
+        "E6": 5,
+        "E7": 2,
+        "E8": 2,
+        "E9": 5
+      },
+      "C_M8_1": {
+        "E1": 7,
+        "E2": 7,
+        "E3": 7,
+        "E4": 7,
+        "E5": 7,
+        "E6": 3,
+        "E7": 7,
+        "E8": 7,
+        "E9": 2
+      },
+      "C_M8_2": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 2,
+        "E4": 2,
+        "E5": 2,
+        "E6": 5,
+        "E7": 2,
+        "E8": 2,
+        "E9": 5
+      },
+      "C_M8_3": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 3,
+        "E6": 5,
+        "E7": 2,
+        "E8": 2,
+        "E9": 5
+      },
+      "C_M9_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 2,
+        "E6": 5,
+        "E7": 2,
+        "E8": 1,
+        "E9": 5
+      },
+      "C_M9_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 5,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M9_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 5,
+        "E7": 2,
+        "E8": 1,
+        "E9": 6
+      }
+    },
+    "M10": {
+      "C_M1_1": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 2,
+        "E6": 5,
+        "E7": 3,
+        "E8": 2,
+        "E9": 7
+      },
+      "C_M1_2": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 2,
+        "E6": 6,
+        "E7": 3,
+        "E8": 2,
+        "E9": 5
+      },
+      "C_M1_3": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 2,
+        "E6": 6,
+        "E7": 3,
+        "E8": 2,
+        "E9": 5
+      },
+      "C_M10_1": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 3,
+        "E6": 5,
+        "E7": 2,
+        "E8": 2,
+        "E9": 6
+      },
+      "C_M10_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 5,
+        "E7": 4,
+        "E8": 1,
+        "E9": 6
+      },
+      "C_M10_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 4,
+        "E4": 1,
+        "E5": 3,
+        "E6": 6,
+        "E7": 4,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M2_1": {
+        "E1": 3,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 2,
+        "E6": 6,
+        "E7": 4,
+        "E8": 2,
+        "E9": 6
+      },
+      "C_M2_2": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 2,
+        "E4": 2,
+        "E5": 2,
+        "E6": 6,
+        "E7": 2,
+        "E8": 2,
+        "E9": 6
+      },
+      "C_M2_3": {
+        "E1": 3,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 3,
+        "E6": 6,
+        "E7": 4,
+        "E8": 2,
+        "E9": 5
+      },
+      "C_M3_1": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 3,
+        "E6": 7,
+        "E7": 3,
+        "E8": 2,
+        "E9": 6
+      },
+      "C_M3_2": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 3,
+        "E6": 6,
+        "E7": 2,
+        "E8": 2,
+        "E9": 7
+      },
+      "C_M3_3": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 3,
+        "E6": 6,
+        "E7": 3,
+        "E8": 2,
+        "E9": 6
+      },
+      "C_M4_1": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 2,
+        "E4": 2,
+        "E5": 2,
+        "E6": 6,
+        "E7": 4,
+        "E8": 2,
+        "E9": 6
+      },
+      "C_M4_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 4,
+        "E4": 1,
+        "E5": 3,
+        "E6": 7,
+        "E7": 4,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M4_3": {
+        "E1": 7,
+        "E2": 7,
+        "E3": 2,
+        "E4": 6,
+        "E5": 3,
+        "E6": 3,
+        "E7": 4,
+        "E8": 7,
+        "E9": 3
+      },
+      "C_M5_1": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 2,
+        "E4": 2,
+        "E5": 2,
+        "E6": 6,
+        "E7": 4,
+        "E8": 2,
+        "E9": 6
+      },
+      "C_M5_2": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 2,
+        "E4": 2,
+        "E5": 2,
+        "E6": 5,
+        "E7": 2,
+        "E8": 2,
+        "E9": 6
+      },
+      "C_M5_3": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 4,
+        "E4": 2,
+        "E5": 4,
+        "E6": 6,
+        "E7": 3,
+        "E8": 2,
+        "E9": 6
+      },
+      "C_M6_1": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 2,
+        "E4": 2,
+        "E5": 2,
+        "E6": 5,
+        "E7": 2,
+        "E8": 2,
+        "E9": 6
+      },
+      "C_M6_2": {
+        "E1": 3,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 2,
+        "E6": 6,
+        "E7": 4,
+        "E8": 2,
+        "E9": 6
+      },
+      "C_M6_3": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 2,
+        "E4": 2,
+        "E5": 3,
+        "E6": 6,
+        "E7": 3,
+        "E8": 2,
+        "E9": 5
+      },
+      "C_M7_1": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 3,
+        "E4": 1,
+        "E5": 3,
+        "E6": 6,
+        "E7": 4,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M7_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 4,
+        "E4": 1,
+        "E5": 3,
+        "E6": 7,
+        "E7": 4,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M7_3": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 2,
+        "E4": 2,
+        "E5": 3,
+        "E6": 6,
+        "E7": 3,
+        "E8": 2,
+        "E9": 6
+      },
+      "C_M8_1": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 4,
+        "E4": 2,
+        "E5": 3,
+        "E6": 6,
+        "E7": 4,
+        "E8": 2,
+        "E9": 7
+      },
+      "C_M8_2": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 3,
+        "E6": 6,
+        "E7": 4,
+        "E8": 2,
+        "E9": 5
+      },
+      "C_M8_3": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 3,
+        "E6": 6,
+        "E7": 3,
+        "E8": 2,
+        "E9": 6
+      },
+      "C_M9_1": {
+        "E1": 2,
+        "E2": 2,
+        "E3": 3,
+        "E4": 2,
+        "E5": 2,
+        "E6": 5,
+        "E7": 3,
+        "E8": 2,
+        "E9": 6
+      },
+      "C_M9_2": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 4,
+        "E4": 1,
+        "E5": 3,
+        "E6": 6,
+        "E7": 4,
+        "E8": 1,
+        "E9": 7
+      },
+      "C_M9_3": {
+        "E1": 1,
+        "E2": 1,
+        "E3": 4,
+        "E4": 1,
+        "E5": 3,
+        "E6": 6,
+        "E7": 4,
+        "E8": 1,
+        "E9": 7
+      }
+    }
+  },
+  "api_calls": [
+    {
+      "phase": "phase1_freeresponse",
+      "model_short_name": "M1",
+      "persona_or_neutral": "E",
+      "model_id_used": "anthropic/claude-opus-4.7",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 17819,
+      "timestamp_iso": "2026-05-27T18:03:41.911201",
+      "prompt_tokens": 907,
+      "completion_tokens": 756,
+      "reasoning_tokens": 0,
+      "finish_reason": "stop",
+      "cost_usd": 0.023435,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase1_freeresponse_M1_01.json"
+    },
+    {
+      "phase": "phase1_freeresponse",
+      "model_short_name": "M2",
+      "persona_or_neutral": "H",
+      "model_id_used": "openai/gpt-5.5",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 11763,
+      "timestamp_iso": "2026-05-27T18:03:59.775577",
+      "prompt_tokens": 552,
+      "completion_tokens": 457,
+      "reasoning_tokens": 82,
+      "finish_reason": "stop",
+      "cost_usd": 0.01647,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase1_freeresponse_M2_01.json"
+    },
+    {
+      "phase": "phase1_freeresponse",
+      "model_short_name": "M3",
+      "persona_or_neutral": "C",
+      "model_id_used": "google/gemini-3.1-pro-preview",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 21772,
+      "timestamp_iso": "2026-05-27T18:04:11.577646",
+      "prompt_tokens": 568,
+      "completion_tokens": 1773,
+      "reasoning_tokens": 1367,
+      "finish_reason": "stop",
+      "cost_usd": 0.022412,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase1_freeresponse_M3_01.json"
+    },
+    {
+      "phase": "phase1_freeresponse",
+      "model_short_name": "M4",
+      "persona_or_neutral": "Q",
+      "model_id_used": "deepseek/deepseek-v4-pro",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 62285,
+      "timestamp_iso": "2026-05-27T18:04:33.399876",
+      "prompt_tokens": 550,
+      "completion_tokens": 1748,
+      "reasoning_tokens": 1260,
+      "finish_reason": "stop",
+      "cost_usd": 0.0017600100000000002,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase1_freeresponse_M4_01.json"
+    },
+    {
+      "phase": "phase1_freeresponse",
+      "model_short_name": "M5",
+      "persona_or_neutral": "S",
+      "model_id_used": "moonshotai/kimi-k2.6",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 175309,
+      "timestamp_iso": "2026-05-27T18:05:35.727775",
+      "prompt_tokens": 554,
+      "completion_tokens": 1943,
+      "reasoning_tokens": 2130,
+      "finish_reason": "stop",
+      "cost_usd": 0.00718549,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase1_freeresponse_M5_01.json"
+    },
+    {
+      "phase": "phase1_freeresponse",
+      "model_short_name": "M6",
+      "persona_or_neutral": "C",
+      "model_id_used": "mistralai/mistral-large-2512",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 9101,
+      "timestamp_iso": "2026-05-27T18:08:31.084560",
+      "prompt_tokens": 563,
+      "completion_tokens": 415,
+      "reasoning_tokens": 0,
+      "finish_reason": "stop",
+      "cost_usd": 0.0009040000000000001,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase1_freeresponse_M6_01.json"
+    },
+    {
+      "phase": "phase1_freeresponse",
+      "model_short_name": "M7",
+      "persona_or_neutral": "E",
+      "model_id_used": "cohere/command-a",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 9909,
+      "timestamp_iso": "2026-05-27T18:08:40.229272",
+      "prompt_tokens": 584,
+      "completion_tokens": 372,
+      "reasoning_tokens": 0,
+      "finish_reason": "stop",
+      "cost_usd": 0.005180000000000001,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase1_freeresponse_M7_01.json"
+    },
+    {
+      "phase": "phase1_freeresponse",
+      "model_short_name": "M8",
+      "persona_or_neutral": "S",
+      "model_id_used": "qwen/qwen3.7-max",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 36818,
+      "timestamp_iso": "2026-05-27T18:08:50.189049",
+      "prompt_tokens": 584,
+      "completion_tokens": 2347,
+      "reasoning_tokens": 2011,
+      "finish_reason": "stop",
+      "cost_usd": 0.00953125,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase1_freeresponse_M8_01.json"
+    },
+    {
+      "phase": "phase1_freeresponse",
+      "model_short_name": "M9",
+      "persona_or_neutral": "H",
+      "model_id_used": "meta-llama/llama-4-maverick",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 7909,
+      "timestamp_iso": "2026-05-27T18:09:27.055315",
+      "prompt_tokens": 558,
+      "completion_tokens": 342,
+      "reasoning_tokens": 0,
+      "finish_reason": "stop",
+      "cost_usd": 0.00028890000000000003,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase1_freeresponse_M9_01.json"
+    },
+    {
+      "phase": "phase1_freeresponse",
+      "model_short_name": "M10",
+      "persona_or_neutral": "Q",
+      "model_id_used": "x-ai/grok-4.20",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 6335,
+      "timestamp_iso": "2026-05-27T18:09:35.007682",
+      "prompt_tokens": 656,
+      "completion_tokens": 557,
+      "reasoning_tokens": 0,
+      "finish_reason": "stop",
+      "cost_usd": 0.0022125,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase1_freeresponse_M10_01.json"
+    },
+    {
+      "phase": "phase3_constructs",
+      "model_short_name": "M1",
+      "persona_or_neutral": "E",
+      "model_id_used": "anthropic/claude-opus-4.7",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 4086,
+      "timestamp_iso": "2026-05-27T18:09:41.445139",
+      "prompt_tokens": 1838,
+      "completion_tokens": 192,
+      "reasoning_tokens": 0,
+      "finish_reason": "stop",
+      "cost_usd": 0.01399,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase3_constructs_M1_01.json"
+    },
+    {
+      "phase": "phase3_constructs",
+      "model_short_name": "M2",
+      "persona_or_neutral": "H",
+      "model_id_used": "openai/gpt-5.5",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 17560,
+      "timestamp_iso": "2026-05-27T18:09:45.594496",
+      "prompt_tokens": 1161,
+      "completion_tokens": 598,
+      "reasoning_tokens": 516,
+      "finish_reason": "stop",
+      "cost_usd": 0.023745000000000002,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase3_constructs_M2_01.json"
+    },
+    {
+      "phase": "phase3_constructs",
+      "model_short_name": "M3",
+      "persona_or_neutral": "C",
+      "model_id_used": "google/gemini-3.1-pro-preview",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 34997,
+      "timestamp_iso": "2026-05-27T18:10:03.256435",
+      "prompt_tokens": 1182,
+      "completion_tokens": 2491,
+      "reasoning_tokens": 2396,
+      "finish_reason": "stop",
+      "cost_usd": 0.032256,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase3_constructs_M3_01.json"
+    },
+    {
+      "phase": "phase3_constructs",
+      "model_short_name": "M4",
+      "persona_or_neutral": "Q",
+      "model_id_used": "deepseek/deepseek-v4-pro",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 45525,
+      "timestamp_iso": "2026-05-27T18:10:38.317756",
+      "prompt_tokens": 1152,
+      "completion_tokens": 2129,
+      "reasoning_tokens": 2047,
+      "finish_reason": "stop",
+      "cost_usd": 0.00235335,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase3_constructs_M4_01.json"
+    },
+    {
+      "phase": "phase3_constructs",
+      "model_short_name": "M5",
+      "persona_or_neutral": "S",
+      "model_id_used": "moonshotai/kimi-k2.6",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 827443,
+      "timestamp_iso": "2026-05-27T18:11:23.923129",
+      "prompt_tokens": 1160,
+      "completion_tokens": 15592,
+      "reasoning_tokens": 17462,
+      "finish_reason": "stop",
+      "cost_usd": 0.05526288,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase3_constructs_M5_01.json"
+    },
+    {
+      "phase": "phase3_constructs",
+      "model_short_name": "M6",
+      "persona_or_neutral": "C",
+      "model_id_used": "mistralai/mistral-large-2512",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 2089,
+      "timestamp_iso": "2026-05-27T18:25:11.429237",
+      "prompt_tokens": 1173,
+      "completion_tokens": 72,
+      "reasoning_tokens": 0,
+      "finish_reason": "stop",
+      "cost_usd": 0.0006945,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase3_constructs_M6_01.json"
+    },
+    {
+      "phase": "phase3_constructs",
+      "model_short_name": "M7",
+      "persona_or_neutral": "E",
+      "model_id_used": "cohere/command-a",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 2339,
+      "timestamp_iso": "2026-05-27T18:25:13.591124",
+      "prompt_tokens": 1214,
+      "completion_tokens": 97,
+      "reasoning_tokens": 0,
+      "finish_reason": "stop",
+      "cost_usd": 0.004005000000000001,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase3_constructs_M7_01.json"
+    },
+    {
+      "phase": "phase3_constructs",
+      "model_short_name": "M8",
+      "persona_or_neutral": "S",
+      "model_id_used": "qwen/qwen3.7-max",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 71906,
+      "timestamp_iso": "2026-05-27T18:25:15.996133",
+      "prompt_tokens": 1211,
+      "completion_tokens": 4911,
+      "reasoning_tokens": 4802,
+      "finish_reason": "stop",
+      "cost_usd": 0.019930000000000003,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase3_constructs_M8_01.json"
+    },
+    {
+      "phase": "phase3_constructs",
+      "model_short_name": "M9",
+      "persona_or_neutral": "H",
+      "model_id_used": "meta-llama/llama-4-maverick",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 16180,
+      "timestamp_iso": "2026-05-27T18:26:27.989950",
+      "prompt_tokens": 1156,
+      "completion_tokens": 84,
+      "reasoning_tokens": 0,
+      "finish_reason": "stop",
+      "cost_usd": 0.0002238,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase3_constructs_M9_01.json"
+    },
+    {
+      "phase": "phase3_constructs",
+      "model_short_name": "M10",
+      "persona_or_neutral": "Q",
+      "model_id_used": "x-ai/grok-4.20",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 1507,
+      "timestamp_iso": "2026-05-27T18:26:44.338301",
+      "prompt_tokens": 1254,
+      "completion_tokens": 64,
+      "reasoning_tokens": 0,
+      "finish_reason": "stop",
+      "cost_usd": 0.0017275,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase3_constructs_M10_01.json"
+    },
+    {
+      "phase": "phase4_ratings",
+      "model_short_name": "M1",
+      "persona_or_neutral": "E",
+      "model_id_used": "anthropic/claude-opus-4.7",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 30913,
+      "timestamp_iso": "2026-05-27T18:26:46.228063",
+      "prompt_tokens": 3454,
+      "completion_tokens": 3603,
+      "reasoning_tokens": 0,
+      "finish_reason": "stop",
+      "cost_usd": 0.107345,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase4_ratings_M1_01.json"
+    },
+    {
+      "phase": "phase4_ratings",
+      "model_short_name": "M2",
+      "persona_or_neutral": "H",
+      "model_id_used": "openai/gpt-5.5",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 80686,
+      "timestamp_iso": "2026-05-27T18:27:17.197226",
+      "prompt_tokens": 2229,
+      "completion_tokens": 6476,
+      "reasoning_tokens": 3471,
+      "finish_reason": "stop",
+      "cost_usd": 0.205425,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase4_ratings_M2_01.json"
+    },
+    {
+      "phase": "phase4_ratings",
+      "model_short_name": "M3",
+      "persona_or_neutral": "C",
+      "model_id_used": "google/gemini-3.1-pro-preview",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 90636,
+      "timestamp_iso": "2026-05-27T18:28:37.935102",
+      "prompt_tokens": 2314,
+      "completion_tokens": 9834,
+      "reasoning_tokens": 6175,
+      "finish_reason": "stop",
+      "cost_usd": 0.122636,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase4_ratings_M3_01.json"
+    },
+    {
+      "phase": "phase4_ratings",
+      "model_short_name": "M4",
+      "persona_or_neutral": "Q",
+      "model_id_used": "deepseek/deepseek-v4-pro",
+      "used_fallback": false,
+      "attempts": 2,
+      "latency_ms": 531753,
+      "timestamp_iso": "2026-05-27T18:30:08.630411",
+      "prompt_tokens": 2192,
+      "completion_tokens": 17965,
+      "reasoning_tokens": 14964,
+      "finish_reason": "stop",
+      "cost_usd": 0.01658307,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase4_ratings_M4_01.json"
+    },
+    {
+      "phase": "phase4_ratings",
+      "model_short_name": "M5",
+      "persona_or_neutral": "S",
+      "model_id_used": "moonshotai/kimi-k2.5",
+      "used_fallback": true,
+      "attempts": 4,
+      "latency_ms": 95157,
+      "timestamp_iso": "2026-05-27T18:41:50.038791",
+      "prompt_tokens": 2197,
+      "completion_tokens": 12000,
+      "reasoning_tokens": 8294,
+      "finish_reason": "length",
+      "cost_usd": 0.0236788,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase4_ratings_M5_01.json"
+    },
+    {
+      "phase": "phase4_ratings",
+      "model_short_name": "M6",
+      "persona_or_neutral": "C",
+      "model_id_used": "mistralai/mistral-large-2512",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 32456,
+      "timestamp_iso": "2026-05-27T18:54:26.222292",
+      "prompt_tokens": 2229,
+      "completion_tokens": 3060,
+      "reasoning_tokens": 0,
+      "finish_reason": "stop",
+      "cost_usd": 0.0057045,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase4_ratings_M6_01.json"
+    },
+    {
+      "phase": "phase4_ratings",
+      "model_short_name": "M7",
+      "persona_or_neutral": "E",
+      "model_id_used": "cohere/command-a",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 5452,
+      "timestamp_iso": "2026-05-27T18:54:58.724999",
+      "prompt_tokens": 2358,
+      "completion_tokens": 152,
+      "reasoning_tokens": 0,
+      "finish_reason": "?",
+      "cost_usd": 0.007415,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase4_ratings_M7_01.json"
+    },
+    {
+      "phase": "phase4_ratings",
+      "model_short_name": "M8",
+      "persona_or_neutral": "S",
+      "model_id_used": "qwen/qwen3.7-max",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 128290,
+      "timestamp_iso": "2026-05-27T18:55:04.250661",
+      "prompt_tokens": 2276,
+      "completion_tokens": 8941,
+      "reasoning_tokens": 5877,
+      "finish_reason": "stop",
+      "cost_usd": 0.03637375,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase4_ratings_M8_01.json"
+    },
+    {
+      "phase": "phase4_ratings",
+      "model_short_name": "M9",
+      "persona_or_neutral": "H",
+      "model_id_used": "meta-llama/llama-4-maverick",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 78137,
+      "timestamp_iso": "2026-05-27T18:57:12.594269",
+      "prompt_tokens": 2171,
+      "completion_tokens": 3000,
+      "reasoning_tokens": 0,
+      "finish_reason": "stop",
+      "cost_usd": 0.0021256499999999998,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase4_ratings_M9_01.json"
+    },
+    {
+      "phase": "phase4_ratings",
+      "model_short_name": "M10",
+      "persona_or_neutral": "Q",
+      "model_id_used": "x-ai/grok-4.20",
+      "used_fallback": false,
+      "attempts": 1,
+      "latency_ms": 13821,
+      "timestamp_iso": "2026-05-27T18:58:30.808122",
+      "prompt_tokens": 2301,
+      "completion_tokens": 2999,
+      "reasoning_tokens": 0,
+      "finish_reason": "stop",
+      "cost_usd": 0.010373750000000001,
+      "audit_file": "logs_phase2h_extended\\api_calls\\C_P_run1\\phase4_ratings_M10_01.json"
+    }
+  ],
+  "per_model_cost": {
+    "M1": 0.14477,
+    "M2": 0.24564,
+    "M3": 0.177304,
+    "M4": 0.02069643,
+    "M5": 0.08612717,
+    "M6": 0.0073030000000000005,
+    "M7": 0.016600000000000004,
+    "M8": 0.065835,
+    "M9": 0.00263835,
+    "M10": 0.01431375
+  },
+  "per_model_tokens": {
+    "M1": {
+      "prompt": 6199,
+      "completion": 4551
+    },
+    "M2": {
+      "prompt": 3942,
+      "completion": 7531
+    },
+    "M3": {
+      "prompt": 4064,
+      "completion": 14098
+    },
+    "M4": {
+      "prompt": 3894,
+      "completion": 21842
+    },
+    "M5": {
+      "prompt": 3911,
+      "completion": 29535
+    },
+    "M6": {
+      "prompt": 3965,
+      "completion": 3547
+    },
+    "M7": {
+      "prompt": 4156,
+      "completion": 621
+    },
+    "M8": {
+      "prompt": 4071,
+      "completion": 16199
+    },
+    "M9": {
+      "prompt": 3885,
+      "completion": 3426
+    },
+    "M10": {
+      "prompt": 4211,
+      "completion": 3620
+    }
+  },
+  "cost_usd": 0.7812276999999999,
+  "tokens_in": 42298,
+  "tokens_out": 104970,
+  "errors": [
+    "phase4 M1: got 270/300 ratings",
+    "phase4 M2: got 270/300 ratings",
+    "phase4 M3: got 270/300 ratings",
+    "phase4 M4: got 270/300 ratings",
+    "phase4 M5: got 148/300 ratings",
+    "phase4 M6: got 270/300 ratings",
+    "phase4 M7: got 35/300 ratings",
+    "phase4 M8: got 270/300 ratings",
+    "phase4 M9: got 270/300 ratings",
+    "phase4 M10: got 270/300 ratings"
+  ]
+}

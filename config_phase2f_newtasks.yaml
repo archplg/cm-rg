@@ -1,0 +1,99 @@
+# Phase 2F configuration - 3 new tasks (H, I, J) for external validity
+# Tests whether findings generalize beyond original 7 tasks.
+# 3 tasks x 2 conditions x 5 runs = 30 cells. Cost ~$10-15.
+# Output: results_phase2f/ - separate from main results/.
+
+experiment:
+  name: archipelago_phase2f_newtasks
+  description: Phase 2F - 3 new tasks (sentencing, science funding, urban planning)
+  total_budget_usd: 80     # bumped from 25 - preflight conservative
+  estimated_budget_usd: 12
+  output_dir: ./results_phase2f
+  log_dir: ./logs_phase2f
+
+openrouter:
+  base_url: https://openrouter.ai/api/v1
+  api_key_env: OPENROUTER_API_KEY
+  retries_per_call: 3
+  retry_backoff_seconds: [2, 5, 15]
+  request_timeout_seconds: 120
+
+models:
+  - id: anthropic/claude-opus-4.7
+    fallback_id: anthropic/claude-sonnet-4.6
+    family: anthropic
+    short_name: M1
+  - id: openai/gpt-5.5
+    fallback_id: openai/gpt-5.4
+    family: openai
+    short_name: M2
+  - id: google/gemini-3.1-pro-preview
+    fallback_id: google/gemini-2.5-pro
+    family: google
+    short_name: M3
+  - id: deepseek/deepseek-v4-pro
+    fallback_id: deepseek/deepseek-v4-flash
+    family: deepseek
+    short_name: M4
+  - id: moonshotai/kimi-k2.6
+    fallback_id: moonshotai/kimi-k2.5
+    family: moonshot
+    short_name: M5
+
+parameters:
+  free_response:
+    temperature: 1.0
+    max_tokens: 3000
+  constructs:
+    temperature: 1.0
+    max_tokens: 2000
+  ratings:
+    temperature: 0.0
+    max_tokens: 2500
+
+tasks:
+  - id: H
+    brief_file: tasks/task_H_brief.md
+    domain: legal_sentencing_reform
+    is_repeat_task: true
+  - id: I
+    brief_file: tasks/task_I_brief.md
+    domain: scientific_funding_priority
+    is_repeat_task: true
+  - id: J
+    brief_file: tasks/task_J_brief.md
+    domain: urban_planning
+    is_repeat_task: true
+
+conditions:
+  - id: N
+    name: neutral
+    system_prompt: "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+    use_personas: false
+
+  - id: P
+    name: persona
+    use_personas: true
+    # Extend Latin square for 3 new tasks (cycle through personas continuing the pattern)
+    persona_assignment:
+      H: {M1: E, M2: H, M3: C, M4: Q, M5: S}   # = C cycle
+      I: {M1: H, M2: C, M3: Q, M4: S, M5: E}   # = D cycle
+      J: {M1: C, M2: Q, M3: S, M4: E, M5: H}   # = E cycle
+
+repetitions:
+  base_runs_per_cell: 1
+  extra_runs_for_repeat_task: 4
+
+pipeline:
+  n_triads_per_agent: 3
+  n_elements: 5
+  rating_scale: [1, 7]
+  triad_assignment_strategy: balanced_random
+
+# Pre-flight checks before running
+preflight:
+  verify_api_key: true
+  verify_model_ids: true
+  estimate_cost: true
+  require_user_confirmation: true
+  dry_run_mode: false

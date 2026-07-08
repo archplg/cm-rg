@@ -1,0 +1,245 @@
+# Phase 2J - добавляем Claude Opus 4.8 как M11 к существующим 10 моделям.
+# Цель: проверить, остаётся ли Opus 4.8 в кластере «ядра» рядом с Opus 4.7 (M1),
+#       или сдвигается в PCA-пространстве. Заявленное Anthropic "more honesty"
+#       должно проявиться как изменение калибровочного поведения, если оно реально.
+#
+# Запуск через 7 задач × 2 условия × 1 run = 14 ячеек × 11 моделей.
+# Ожидаемая стоимость: $12-15.
+
+experiment:
+  name: archipelago_phase2j
+  description: Phase 2J - Opus 4.8 cross-version comparison
+  total_budget_usd: 25     # буфер - реальный спенд ожидаем $12-15
+  estimated_budget_usd: 15
+  output_dir: ./results_phase2j
+  log_dir: ./logs_phase2j
+
+openrouter:
+  base_url: https://openrouter.ai/api/v1
+  api_key_env: OPENROUTER_API_KEY
+  retries_per_call: 3
+  retry_backoff_seconds: [2, 5, 15]
+  request_timeout_seconds: 180
+
+# 11 моделей: те же 10 что Phase 2H + новый Opus 4.8 как M11
+models:
+  - id: anthropic/claude-opus-4.7
+    fallback_id: anthropic/claude-sonnet-4.6
+    family: anthropic
+    short_name: M1
+  - id: openai/gpt-5.5
+    fallback_id: openai/gpt-5.4
+    family: openai
+    short_name: M2
+  - id: google/gemini-3.1-pro-preview
+    fallback_id: google/gemini-2.5-pro
+    family: google
+    short_name: M3
+  - id: deepseek/deepseek-v4-pro
+    fallback_id: deepseek/deepseek-v4-flash
+    family: deepseek
+    short_name: M4
+  - id: moonshotai/kimi-k2.6
+    fallback_id: moonshotai/kimi-k2.5
+    family: moonshot
+    short_name: M5
+  - id: mistralai/mistral-large-2512
+    fallback_id: mistralai/mistral-large-2411
+    family: mistral
+    short_name: M6
+  - id: cohere/command-a
+    fallback_id: cohere/command-r-plus-08-2024
+    family: cohere
+    short_name: M7
+  - id: qwen/qwen3.7-max
+    fallback_id: qwen/qwen3.6-max-preview
+    family: qwen
+    short_name: M8
+  - id: meta-llama/llama-4-maverick
+    fallback_id: meta-llama/llama-3.3-70b-instruct
+    family: meta
+    short_name: M9
+  - id: x-ai/grok-4.20
+    fallback_id: x-ai/grok-4.3
+    family: xai
+    short_name: M10
+  # НОВАЯ модель Phase 2J
+  # FIX 29.05.2026: canonical slug anthropic/claude-opus-4.8 (был ранее
+  # anthropic/claude-4.8-opus-20260528 - дата-версионированный alias, который
+  # OpenRouter принимал в /chat/completions, но НЕ возвращал в /models catalog.
+  # Из-за этого calculate_cost() видел пустой pricing и записывал $0 за все вызовы.
+  # Реальная стоимость M11 в Phase 2J ($2.62 по OpenRouter activity log)
+  # восстановлена в cost_audit_phase2j.md.
+  - id: anthropic/claude-opus-4.8
+    fallback_id: anthropic/claude-opus-4.7
+    family: anthropic
+    short_name: M11
+
+parameters:
+  free_response:
+    temperature: 1.0
+    max_tokens: 3000
+  constructs:
+    temperature: 1.0
+    max_tokens: 2500
+  ratings:
+    temperature: 0.0
+    max_tokens: 12000
+
+# Все 7 задач для полного PCA-сравнения с предыдущими фазами
+tasks:
+  - id: A
+    brief_file: tasks/task_A_brief.md
+    domain: hiring_strategy
+    is_repeat_task: true
+  - id: B
+    brief_file: tasks/task_B_brief.md
+    domain: team_diagnostic
+    is_repeat_task: true
+  - id: C
+    brief_file: tasks/task_C_brief.md
+    domain: product_ethics
+    is_repeat_task: true
+  - id: D
+    brief_file: tasks/task_D_brief.md
+    domain: engineering_prioritization
+    is_repeat_task: true
+  - id: E
+    brief_file: tasks/task_E_brief.md
+    domain: ai_governance
+    is_repeat_task: true
+  - id: F
+    brief_file: tasks/task_F_brief.md
+    domain: product_launch_strategy
+    is_repeat_task: true
+  - id: G
+    brief_file: tasks/task_G_brief.md
+    domain: medical_triage_ethics
+    is_repeat_task: true
+
+conditions:
+  - id: N
+    name: neutral
+    system_prompt: "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+    use_personas: false
+
+  - id: P
+    name: persona
+    use_personas: true
+    # Latin square расширен на 11 моделей.
+    # M11 получает persona, противоположную M1, чтобы максимально проверить
+    # независимость Opus 4.8 от Opus 4.7 (если они одинаковы под одной persona,
+    # это сильный signal что они дают одинаковые ответы; если разные - reality).
+    persona_assignment:
+      A:
+        M1: Q   # Opus 4.7
+        M2: S
+        M3: E
+        M4: H
+        M5: C
+        M6: E
+        M7: Q
+        M8: C
+        M9: H
+        M10: S
+        M11: H  # Opus 4.8 - другая persona чем M1
+      B:
+        M1: S
+        M2: E
+        M3: H
+        M4: C
+        M5: Q
+        M6: H
+        M7: S
+        M8: Q
+        M9: E
+        M10: C
+        M11: E  # Opus 4.8
+      C:
+        M1: E
+        M2: H
+        M3: C
+        M4: Q
+        M5: S
+        M6: C
+        M7: E
+        M8: S
+        M9: H
+        M10: Q
+        M11: H  # Opus 4.8
+      D:
+        M1: H
+        M2: C
+        M3: Q
+        M4: S
+        M5: E
+        M6: Q
+        M7: H
+        M8: E
+        M9: C
+        M10: S
+        M11: C  # Opus 4.8
+      E:
+        M1: C
+        M2: Q
+        M3: S
+        M4: E
+        M5: H
+        M6: Q
+        M7: C
+        M8: H
+        M9: S
+        M10: E
+        M11: Q  # Opus 4.8
+      F:
+        M1: Q
+        M2: S
+        M3: E
+        M4: H
+        M5: C
+        M6: E
+        M7: Q
+        M8: C
+        M9: H
+        M10: S
+        M11: S  # Opus 4.8
+      G:
+        M1: S
+        M2: E
+        M3: H
+        M4: C
+        M5: Q
+        M6: H
+        M7: S
+        M8: Q
+        M9: E
+        M10: C
+        M11: E  # Opus 4.8
+
+repetitions:
+  base_runs_per_cell: 1
+  extra_runs_for_repeat_task: 0   # 7 tasks × 2 conditions × 1 run = 14 cells
+
+pipeline:
+  n_triads_per_agent: 3
+  n_elements: 11               # все 11 моделей = 11 elements
+  rating_scale: [1, 7]
+  triad_assignment_strategy: balanced_random
+
+preflight:
+  verify_api_key: true
+  verify_model_ids: true
+  estimate_cost: true
+  require_user_confirmation: false
+  dry_run_mode: false
+
+# === Paper notes ===
+# Гипотеза H1: Opus 4.8 (M11) останется в плотном кластере "ядра" рядом с Opus 4.7 (M1)
+#              на расстоянии < 3 единиц по PC1.
+# Гипотеза H2: "more honesty" claim Anthropic проявится как смена calibration:
+#              средняя оценка M11 будет отличаться от средней M1 на > 0.2 балла.
+#              Direction неизвестна (более строгий или более «честный сдвиг» к нейтральному).
+# Если H1 не выполнится: серьёзное finding - "поколения внутри одного семейства
+#                        могут жить далеко друг от друга". Публикуемо.
+# Если H2 не выполнится: маркетинговое заявление Anthropic не воспроизводится в
+#                        нашем измерении. Тоже публикуемо, более осторожным языком.

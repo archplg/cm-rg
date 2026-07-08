@@ -1,0 +1,115 @@
+{
+  "cell_id": "B_N_run6",
+  "task": "B",
+  "condition": "N",
+  "run_idx": 6,
+  "phase": "phase4_ratings",
+  "model_short_name": "M2",
+  "persona_or_neutral": "neutral",
+  "system_prompt": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation.",
+  "user_prompt": "You are presented with 5 anonymous responses (E1-E5) and 14 bipolar constructs. Rate each response on each construct on a 1-7 scale: 1 = strongly the LEFT pole, 7 = strongly the RIGHT pole, 4 = neutral or mixed.\n\nResponses:\n**E1:** I recommend **Option E: Leadership style mismatch**. The shift in retrospective themes from product execution (\"what to ship next\") to organizational friction (\"process and communication\") is the smoking gun. This symptom points strongly to an engineering organization that has hit a critical scaling inflection point.\n\n**E2:** The most plausible primary diagnosis is **Option C: Loss of psychological safety following a layoff round 4 months ago**. The timeline is the strongest clue: the layoff occurred precisely when the team’s decline began. Survivor syndrome in high-performing teams often triggers a cascade of defensive behaviors—information hoarding, reluctance to raise risks, and a shift from collaboration to self-preservation.\n\n**E3:** **Primary Diagnosis: Leadership style mismatch (Option E).**\n\nThe decisive signal is the retro theme shift from “what to ship next” to “process and communication.” That is the classic fingerprint of a team that has outgrown its operating model. A 40-person, four-squad organization is well past the size where heroic, centralized, founder-style leadership can clear bottlenecks by sheer force of will. What worked during the prior high-growth delivery phase—rapid directional pivots, informal coordination, and leaders who personally own key technical decisions—has become a source of friction.\n\n**E4:** # Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff\n\nThe timing is the single most diagnostic signal here. A layoff occurred 4 months ago; output decline and attrition span 6 months but accelerated into missed milestones over the last two quarters. The retro shift — from \"what to ship next\" to \"process and communication\" — is the fingerprint of a team that no longer feels safe taking risks or owning ambiguity.\n\n**E5:** **Recommendation: Option C — loss of psychological safety following the layoff round.**\n\nThe strongest primary diagnosis is that the team’s operating system was destabilized by the layoff, producing a trust and safety problem that now shows up as delivery decline, senior attrition, and process friction. The key signal is not just that milestones were missed, but that retros shifted from forward-looking product energy — “what to ship next” — to “process and communication.” That often happens when people no longer believe the implicit contract is stable. After a layoff, even strong teams can bec...\n\nConstructs (id : left pole ↔ right pole):\n  C_M1_1: 'Diagnoses psychological safety loss from layoff (E2, E5)'  (1) ↔ (7)  'Diagnoses leadership/operating model mismatch at scale (E3)'\n  C_M1_2: 'Emphasizes trust contract and human/emotional dynamics (E4, E5)'  (1) ↔ (7)  'Emphasizes behavioral symptoms like hoarding and self-preservation (E2)'\n  C_M1_3: 'Anchors diagnosis primarily in post-layoff timing (E2, E4)'  (1) ↔ (7)  'Anchors diagnosis in organizational scaling inflection (E1)'\n  C_M2_1: 'Layoff-driven psychological safety collapse'  (1) ↔ (7)  'Scaling-driven leadership style mismatch'\n  C_M2_2: 'Scaling-driven leadership style mismatch'  (1) ↔ (7)  'Layoff-driven psychological safety collapse'\n  C_M2_3: 'Layoff-driven psychological safety collapse'  (1) ↔ (7)  'Scaling-driven leadership style mismatch'\n  C_M3_1: 'Diagnoses root cause as leadership style mismatch'  (1) ↔ (7)  'Diagnoses root cause as loss of psychological safety'\n  C_M3_2: 'Attributes decline to broken trust and fear of risk'  (1) ↔ (7)  'Attributes decline to organizational scaling bottlenecks'\n  C_M4_1: 'Blames leadership style mismatch'  (1) ↔ (7)  'Blames layoff-induced psychological safety loss'\n  C_M4_2: 'Focuses on leadership and scaling problems'  (1) ↔ (7)  'Focuses on layoff trauma and safety'\n  C_M4_3: 'Diagnosis: leadership mismatch'  (1) ↔ (7)  'Diagnosis: post-layoff trust collapse'\n  C_M5_1: 'Post layoff trust and safety erosion'  (1) ↔ (7)  'Leadership model outgrown by team scale'\n  C_M5_2: 'Scaling inflection in leadership capacity'  (1) ↔ (7)  'Survivor syndrome from workforce reduction'\n  C_M5_3: 'Structural mismatch of scaling leadership'  (1) ↔ (7)  'Psychological safety loss after layoffs'\n\nOUTPUT FORMAT (strict). Write exactly 70 lines, no commentary, no markdown fences, no headers. One line per (construct, element) pair, in this exact format:\n<construct_id>,<element>,<rating>\n\nExample (showing the format only - your numbers will differ):\nC_M1_1,E1,1\nC_M1_1,E2,2\nC_M1_1,E3,3\nC_M1_2,E1,4\n...\n\nConstraints:\n- rating is an integer from 1 to 7\n- iterate all 14 constructs in the order listed, and within each construct all 5 elements in order (E1-E5)\n- produce 70 lines total\n- output ONLY the lines, nothing before or after",
+  "model_id_requested": "openai/gpt-5.5",
+  "model_id_used": "openai/gpt-5.5",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 49487,
+  "timestamp_iso": "2026-05-24T17:57:18.954695",
+  "raw_response_content": "C_M1_1,E1,7\nC_M1_1,E2,1\nC_M1_1,E3,7\nC_M1_1,E4,1\nC_M1_1,E5,1\nC_M1_2,E1,4\nC_M1_2,E2,7\nC_M1_2,E3,4\nC_M1_2,E4,1\nC_M1_2,E5,1\nC_M1_3,E1,7\nC_M1_3,E2,1\nC_M1_3,E3,7\nC_M1_3,E4,1\nC_M1_3,E5,2\nC_M2_1,E1,7\nC_M2_1,E2,1\nC_M2_1,E3,7\nC_M2_1,E4,1\nC_M2_1,E5,1\nC_M2_2,E1,1\nC_M2_2,E2,7\nC_M2_2,E3,1\nC_M2_2,E4,7\nC_M2_2,E5,7\nC_M2_3,E1,7\nC_M2_3,E2,1\nC_M2_3,E3,7\nC_M2_3,E4,1\nC_M2_3,E5,1\nC_M3_1,E1,1\nC_M3_1,E2,7\nC_M3_1,E3,1\nC_M3_1,E4,7\nC_M3_1,E5,7\nC_M3_2,E1,7\nC_M3_2,E2,1\nC_M3_2,E3,7\nC_M3_2,E4,1\nC_M3_2,E5,1\nC_M4_1,E1,1\nC_M4_1,E2,7\nC_M4_1,E3,1\nC_M4_1,E4,7\nC_M4_1,E5,7\nC_M4_2,E1,1\nC_M4_2,E2,7\nC_M4_2,E3,1\nC_M4_2,E4,7\nC_M4_2,E5,7\nC_M4_3,E1,1\nC_M4_3,E2,7\nC_M4_3,E3,1\nC_M4_3,E4,7\nC_M4_3,E5,7\nC_M5_1,E1,7\nC_M5_1,E2,1\nC_M5_1,E3,7\nC_M5_1,E4,1\nC_M5_1,E5,1\nC_M5_2,E1,1\nC_M5_2,E2,7\nC_M5_2,E3,1\nC_M5_2,E4,6\nC_M5_2,E5,6\nC_M5_3,E1,1\nC_M5_3,E2,7\nC_M5_3,E3,1\nC_M5_3,E4,7\nC_M5_3,E5,7",
+  "raw_response_full": {
+    "id": "gen-1779641834-HEw7eKhu4TyksVNkSWJ8",
+    "object": "chat.completion",
+    "created": 1779641834,
+    "model": "openai/gpt-5.5-20260423",
+    "provider": "OpenAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "C_M1_1,E1,7\nC_M1_1,E2,1\nC_M1_1,E3,7\nC_M1_1,E4,1\nC_M1_1,E5,1\nC_M1_2,E1,4\nC_M1_2,E2,7\nC_M1_2,E3,4\nC_M1_2,E4,1\nC_M1_2,E5,1\nC_M1_3,E1,7\nC_M1_3,E2,1\nC_M1_3,E3,7\nC_M1_3,E4,1\nC_M1_3,E5,2\nC_M2_1,E1,7\nC_M2_1,E2,1\nC_M2_1,E3,7\nC_M2_1,E4,1\nC_M2_1,E5,1\nC_M2_2,E1,1\nC_M2_2,E2,7\nC_M2_2,E3,1\nC_M2_2,E4,7\nC_M2_2,E5,7\nC_M2_3,E1,7\nC_M2_3,E2,1\nC_M2_3,E3,7\nC_M2_3,E4,1\nC_M2_3,E5,1\nC_M3_1,E1,1\nC_M3_1,E2,7\nC_M3_1,E3,1\nC_M3_1,E4,7\nC_M3_1,E5,7\nC_M3_2,E1,7\nC_M3_2,E2,1\nC_M3_2,E3,7\nC_M3_2,E4,1\nC_M3_2,E5,1\nC_M4_1,E1,1\nC_M4_1,E2,7\nC_M4_1,E3,1\nC_M4_1,E4,7\nC_M4_1,E5,7\nC_M4_2,E1,1\nC_M4_2,E2,7\nC_M4_2,E3,1\nC_M4_2,E4,7\nC_M4_2,E5,7\nC_M4_3,E1,1\nC_M4_3,E2,7\nC_M4_3,E3,1\nC_M4_3,E4,7\nC_M4_3,E5,7\nC_M5_1,E1,7\nC_M5_1,E2,1\nC_M5_1,E3,7\nC_M5_1,E4,1\nC_M5_1,E5,1\nC_M5_2,E1,1\nC_M5_2,E2,7\nC_M5_2,E3,1\nC_M5_2,E4,6\nC_M5_2,E5,6\nC_M5_3,E1,1\nC_M5_3,E2,7\nC_M5_3,E3,1\nC_M5_3,E4,7\nC_M5_3,E5,7",
+          "refusal": null,
+          "reasoning": null,
+          "reasoning_details": [
+            {
+              "type": "reasoning.encrypted",
+              "data": "gAAAAABqEy34Ftaq6GSfbhf1QiT_ZBzVOJ-6U-dyPobxjqrqkMJfsbTVmXo_--bgfr5r8ICV6N1WbCNGRLPiIQjv8p2MngbFX3t2Z49ijUYdyETgj3P42AAX7rgz6cAANamRAP98xEEOwdxloDMfLRj-6M-_x5ee4LYQY6QP647kFfRW-aWcknDjJSUPyQ5O8sdXZKMTt4ACP2q4hk-3RCHLFQ6mpDuGQMaRhPHS4q3SC7enDLq8JhGom2RZ54mTB4TxJ57u89E2jfJ5py7lv4cb8vig_KI2dJKmvPSVH9tDH_fE8jgvQ9rZuxir285iAj0HbeMuvUGgZAC5lxPnqZvDmpUHpEsGJlChVoQDu66VVYJC_ZXNiXODzOqYN9CgQnku_-zizqYixxDj_jMHoRUVp57lT3TEYFtAnKyE_4oVQIKRx3sv6yIsmoiACZ8lB5BicOsTt4fFz7MUG5LxDcshKUhpHTD1wqw5fVrmSAmrkdleQR2Gy-HDe-7shQUAv77r734jGwJo085DOEfJgysBugDHnTvDn4FLuyYJeU0jJA_ODMoQoLmHhKQr3Oe-PBk35agbwKdSLyUuHKPcy6Qzmig0I4ljVw1MXYWaPDvUyiQCfF-L7y_P0Apw6ynFD6WVDjgndAx6L2l3CKJZ-DkpDJ3-s-TxMrlyaeBJHO9RsnxcEDaAOxG4p8T1J-MpCs5MmRFjdufQq3hTwbUSIlF0NAV6OuXkvH1yWnfHNUg1-oEBYQxOApeKgu0eFrIJZTQLUKzA17P2J54s_uRQJra9_v1NPXlSnV9BSwCWBbNne3D-Ej5WOcnGhZP2UvKO0FgEey15NP9dIGqjfG7bGi1_Rf4nwwR7hVBNIhKD8aEKAM6-EgzPU0t1nnd_8XEiQyzpm30pV1JlXfHOCYX3DBF-gvgLz82j3SjY1lqya1n2WsWYwrnUunW_-Xs1-vrluelM40NH5NApLpfDiSI1N3dLgmgBIjco_AWWCv5TofmDm3P2EMdp0n2Ri3VpNypil0gd-aJXRzS3qiMLODCE0sLbaxQdNvkK637FJaQMPiKzVdwNiQUPm2wCCKliqHzQ9R2sHhCnRKF4Nk8AvbZgWWNoVCyiER17eIhoiMlnTG02YG7DxuE_ZTaE4-fWH95xGyIqSaTMdBo58Ipgqg1OSGTNE0E5dNO4hgdfS-YtBSblnhgvjbGeV_5fNvuiPAAoIgSXrtALFI5jJcxp-WjaaGC4iFbTFrBLj9U0j9jTByIDF9G0JzNTDY1sifiLSb6yDffYDBXTCE8x43ENtG0r5egPafPskrZNv9_vMINihf-6-GvcwLj0kUVmOuocrOpRFrOXuSW5b4VLy-bfOT4X-3kvjyuyr8BnVnKRaMLxHwn5uBH4YUj3CkZbEj16-YR3zEr_WQ2Yzd7BchAkYyex2M_lGLKwHeSmeMiGGxLW3xQ7xNNotiOkequpP30pymK3G7YmKgS6Kx9ylHyX17D6qnmmW_zEyyL9YAFRlG0vgyokraV15udLpwG9BBhKfVYaj8064jQ3G8L7vyvfJaN1bc6cPzDE71izfAKsR5PBrLWKGSpRy_jVeTNdxeG4328begG93u6AatI5d02QEf6_MRzBv8TKLh7iikpLKJyrsk_kINaeNyt3ZzG65Sgsw-M4i2fMzdBX17uWPVLp2KpTFTJoNJhY74GDBudCFjLpe8QLJg-npB6plgL4NHg9GjSdVzt2dIKlUftzMYi_XMKkFIQufUecT6sUN7sFr21n1b_DY_WLhQc1JTtQb9fdwuD48WFz1Ih4S0ARv4IV23fdctXjZijmDMeRY5rgRRFHRJwaQKZ_CyEv9GisNRJMQfMayLXZolsvJgXvBK5NFkGor_M5NYvDTuezBJBDzu3S4enGz9TtX3cyEMLihky2gIXF1eT7APSSYc7bRSNx9WQgcRzk5ZanaNik2e6U8lmN-VJojxnbIGZ8gWw-ihi06mlqxni1GH4MFubCll4fnj54ZouxAc8b67x3rVwikFRDqr6VrkJzo_bay-iYED56DumUT7o2xYDTbYTHX_WX58OIEMVuHFNUV7UFOG6_3Ts92UT5LbH5qHrNZlKrnQ11iTYaMnKcqRA-VOzkgek4WazsFjnZPOGqClbLvtkJkaKytC3lg-F9_n6G0iddWuHo-ujsYzY0PeE1Neiz11MydikuMfp0i-RV-KUouA2lXBwjhnGXFRBL7u1W8YfmEyOv1HHdohdAkwPZk_ruNOfbgj-mIKkBtqoYWqDy9XBksgtwwgtkoAumEYNUb0449UCoAw9ZFQDC4nfDfnummygvGudvPPyG1zYVZZK1fhA_dp6Iz4z2AJI4CXXI4nE1Utst7gWw1esqNbw7188171o37hfdlNarkAsugpTcK8m_C7v_IUBkzweoby-3qwejPa7ayj1o51uY_qIO4fXkYKs2lW-Hk0O2psJfISAGwlwe6jaRqFX-7ccb7UMfB6W0duya8Dotw7xrIb6L1zTPwl8QcgRbCg_WpuH2wpATUxWyqEPkqDtVlXFCO3jhoNHeIhYjfNJxlGzXFJbuxpFgKYaK12F7QW5WTLoeQgCFRs_tpEeuiyfNvdGd74x2CtSR3osfqq62YnzGbwnamddWZlWOLBjAbnvVWnv-nK6QQg0on-i4_r8H3RsjIIUseakJmg9alTrL7YLTumuE1pEBRAudsCEgXC0uy9NBPPR3cuuUAiEG7YD675XyMUr46NMhsCBWzyUMLARofr7i3gPd4WHh2kll1ojMT0xsDVx7uwnUmRRZ6Ph7OIqQ6nH9niTSN5XH6bUb0joY_F0_JLCvnVODHO95j-F429H0KabgJy9zijiXC0UUdeyMlRaUqvsJ_piSMTLK8ojgL0qfvM4oGS9llujIBEqizkUui30YgVvNVisCTLwin5J2Yi4h3c3Ez70Rxr0IZGGkls4PZldKPhp3km5887LVOZFuDMIPSd78QjfecFYGfS_k4mC8QSVzQkugiTNwGQ39cckY29-4O-ieqjVu8h14AyTo1BMqoksE2YD6vKvXX23J3lJveBt9w1DqPGiUb3tyHzig-gfli967dlnUQ-k6n6FArmvapcdtWxrfu9yyP_RKfJHbIIlJ5OguFeqoWpRqMkykDjnhomMM3MUtbQuS_9vembKJri7jCOxLFg10HFyH8wqwl_lX39pYIHJk0Cyhq5O42QDpUdVjq7uIv0LInzQ9AV-ZoM_d2lEC0Un-4QMXjuSe6mh-3s3xfzwgNbm1v3UA7GoTfQcnWjhDkdLcpKdWGFa_wxINyMqZqiLXTubg6uykdgogGs4aaeyl4GYIA8QnCb8FnOqZ_N5wq_R-RN-R3hU4pCYeSiyyYKBKHJYIQZIa-XWp_Y83oCnA3agA5FJLWb5Uyx6nJOyh_m4DCSpx1V9XslA286KbrI4REgykdTpvFZlyPrtZE6f_K1KdMoBF47h6SKxV5jQqA4iRp_poBeDp96KIJQzd8W5W4cw-eGr4mG5gPoOABTK2vYrBxpM6JBI0DnXXjvmnGJVLOC7ci4jZBoQYrbwutefMToClUgEVCGiFl3qH5RfPnmFw6cj6BpWIDDkkp_bVW82Fh87C7f1JC3Z306T3YU3gs3tntXDY-m8YnCj4XMOU6zWGsZW79z06l2astpf4bqyv1B6zAetd6Al1CoiixPz3rFEvDRHsgeB1Syvjz6xu55ILy-G2eNQCAflcBOVOphY0-UVmxuxL16BFMQ67WFVKCbz0f1IZKV46HESvLRCS-E4m1KUhg0U8QR0m6f_78goOsqo-Yt2GkVfdekYaRBBtwAq8-npYnx7TIWM1JLGI7D8hjGLzrCuVym0zliASuddLlVcQASulSgJ1ZUwCTKKHQWPxzEvlxpO0RYjB-tuiAhEyKm_CfHEIEEJro9N45eTVwiVa_CFwhGcFTCFmMX9Zwui2d1cd2PJjG1wUytFGZp_nThwwmchAFlnJcOsWIO5-wj0ob92Sx_7lOhhg1hKPOLfqDsUjK0tED5wspCb9OyLHllGS7oXcEF7tvOOnwZzxbauGzb-50vX4_irXByS9akB1ha8hg1NJZ-iZD0ehILTZRh7LfgYqSTU7Ap6t3MFBrm2t8soVcxAK4u62jBdr_WaR07t7nHjlRwQFi7dmOlnImoGZHL5p-88VNp55SdDGf3OUo-ppdooVp6s-SB38CKbfEkzwW99E8gJdxJf0nJMfeBtmrsug-xzsjXyeRZk1DUe3fY_Pq-kYZTBNOCTWE50vfBii0_4jWaDpzMA7kXPMAYdnp91_wyYCRBbIJeUJ4EQzmtjraxzBngPOyRQD4doipCounOx9q7PTHUEgIasAvqMSjNW-AdTI1Kn8J9TnPl8Q8eoT0JzUhCN4BrhBTP1zeug6P3YTNzyYKi_GU0QNbJD84GcNsn9ilPUH-so9HYX093cKEA4f1tjxmZwLBSHzai760fB2mQKssMYd1mtwyT2wGf9qrRDPVDUxl3s8h5PIbrHM5zNZwwcqRep2Y9E6C5OmdYo5a5Uuy4HOc549uDKX9DyYDbtk2KuuVlPjwObZo21qNoQL6UeLO4T-j2BfDuET128WcecyCyBBaAANNEfHh0gBY72tLb_fO2OeOSZjPJPfOpm79WH4W3meDvIWS5X6SNMF487xMj-UOkePLzH4jiPX_Of0n6YfCHAwRVSHHPytkWT5f1KXx6eOoG2pDV4cQC3Nwo9AcTResYxbBGgEMndfrpMiEIDtSPSKPgoQahVMT-Eyb7cZ2obQk4hzEtFZTxniqpfYL2kTRzogvM6YssG--EJSnktQp32JA7jC7aAk-pnvBQAv3ULIfQ5SXonE5LMdk3UugeBfeALabgTwf9cAElGt1MRhIALVmWC6L70e1EP8jZAKHb7BB8mNoxKaSho9u6na3UgMVlvB7tqVONCi8vXC-IapkqAC_0uOXjMZLpjnBG0fPbaDcCRofdE05ShdjN-cTTXZIfBA0Bm2SjorBrP52pv3jeqUcHc6sSjjVtvzuRL2wfZtG_QvOf7Ea4q2MpafKOIXku_T10P2XcRjoRHEQyi0ZIf_ftFZLIGdqm-0fppX-YhBqUuW31Gnl-CmG1snd5shOcRqfDE_Fte4tQufThq6oK7XCKNdxt5Snidon7Wvk_KG2kEWglTvGQvl0HA7XREOcckNuHZAG-V0TH93WMDvdSRNbpOnODssUnYc3t01AtK9ZUnbly9WhaedZg_oCBU-iRIiS8AbVS5MgjkkdoCFU3nz0Wxv2oqRX2w9ISMbsCoZktIIFOjyieKWrNzhxaBmN01ZQ7DHu_9mQAH-28BWSXwRcybDTaMwKgFW4RwAy7YLjvSjrGWwp0W-rENZm11LfBBifcFb3VjzBHRGMQA6fncN2EF_iyFbj8xUg6MkilCt-Y1gcCLtiKtz2Ukjh6KDrF7OIt7EjORgnHyGSncuiQVLpU1aGxQIE_By12VRyjoD8TfcnfwLF20m9SACEEvFg3d8jL50p-vpx4JdatGVMtFvIZO_6_MA9-uBlARv9f0q73pazzbdqYyz8Gcudtyv_9rH5A6cMd5A-GYfVOzzlbxA3y-OF8IPPGicrSDuvdknPKPbotFm4Zln31pd8zj9OSG8li6oVydKYQdpXAQsKiOxAkLBXkjaeLojUQzRgPq_-QuIuiX-eBIb2D5qnZhHwLKHPuUHr5Q5-0sA3WdlCyR5jwj91d73Sc2Vxsp-670VGC6wMzCI0CMPqFtWletm826voc96Vd68VbdDc5E0oY9XOGLkHp9izsuZEdicUg_j4gcvw7FIVoO13XIm-lt6ZeJr4lJ1d4UO2sBVuKIl3SQjlAjRUlamNhl6sfJOuUL7yw3ZVVljWtfPYtvesOwI4e124maHl7iDvDvEzIT9myT8Ts9ournu7VxXfY0tooy2XoQMM-6WzRYygz7BQ5zrJc-tXtDQjey86b10DDuizLLIIXjVNKECd3WjV4U1A7JQZLNKJsckq6ZZiCIMMFsC0RSYQjcU2CoHieRTKlLXTY4pKrREJgjMeTOvcs97VKgmE6YfsDRd1_Ojp4I9V_GGcy4brJ5gHLxScPw__L-YgGVgBe7Cf6opCwdT5BpyLLKnTVINkO1adzJcKyXFhLmt3ZWsL7z-EBMt",
+              "format": "openai-responses-v1",
+              "id": "rs_009b2223ba98c27f016a132deb5cec8193ae3da9c550ead9be",
+              "index": 0
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1258,
+      "completion_tokens": 1739,
+      "total_tokens": 2997,
+      "cost": 0.05846,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.05846,
+        "upstream_inference_prompt_cost": 0.00629,
+        "upstream_inference_completions_cost": 0.05217
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1034,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 1258,
+    "completion_tokens": 1739,
+    "total_tokens": 2997,
+    "cost": 0.05846,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.05846,
+      "upstream_inference_prompt_cost": 0.00629,
+      "upstream_inference_completions_cost": 0.05217
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 1034,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 1034,
+  "cost_usd": 0.05846,
+  "parsed_summary": "parsed 70/70 ratings",
+  "request_payload": {
+    "model": "openai/gpt-5.5",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses (E1-E5) and 14 bipolar constructs. Rate each response on each construct on a 1-7 scale: 1 = strongly the LEFT pole, 7 = strongly the RIGHT pole, 4 = neutral or mixed.\n\nResponses:\n**E1:** I recommend **Option E: Leadership style mismatch**. The shift in retrospective themes from product execution (\"what to ship next\") to organizational friction (\"process and communication\") is the smoking gun. This symptom points strongly to an engineering organization that has hit a critical scaling inflection point.\n\n**E2:** The most plausible primary diagnosis is **Option C: Loss of psychological safety following a layoff round 4 months ago**. The timeline is the strongest clue: the layoff occurred precisely when the team’s decline began. Survivor syndrome in high-performing teams often triggers a cascade of defensive behaviors—information hoarding, reluctance to raise risks, and a shift from collaboration to self-preservation.\n\n**E3:** **Primary Diagnosis: Leadership style mismatch (Option E).**\n\nThe decisive signal is the retro theme shift from “what to ship next” to “process and communication.” That is the classic fingerprint of a team that has outgrown its operating model. A 40-person, four-squad organization is well past the size where heroic, centralized, founder-style leadership can clear bottlenecks by sheer force of will. What worked during the prior high-growth delivery phase—rapid directional pivots, informal coordination, and leaders who personally own key technical decisions—has become a source of friction.\n\n**E4:** # Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff\n\nThe timing is the single most diagnostic signal here. A layoff occurred 4 months ago; output decline and attrition span 6 months but accelerated into missed milestones over the last two quarters. The retro shift — from \"what to ship next\" to \"process and communication\" — is the fingerprint of a team that no longer feels safe taking risks or owning ambiguity.\n\n**E5:** **Recommendation: Option C — loss of psychological safety following the layoff round.**\n\nThe strongest primary diagnosis is that the team’s operating system was destabilized by the layoff, producing a trust and safety problem that now shows up as delivery decline, senior attrition, and process friction. The key signal is not just that milestones were missed, but that retros shifted from forward-looking product energy — “what to ship next” — to “process and communication.” That often happens when people no longer believe the implicit contract is stable. After a layoff, even strong teams can bec...\n\nConstructs (id : left pole ↔ right pole):\n  C_M1_1: 'Diagnoses psychological safety loss from layoff (E2, E5)'  (1) ↔ (7)  'Diagnoses leadership/operating model mismatch at scale (E3)'\n  C_M1_2: 'Emphasizes trust contract and human/emotional dynamics (E4, E5)'  (1) ↔ (7)  'Emphasizes behavioral symptoms like hoarding and self-preservation (E2)'\n  C_M1_3: 'Anchors diagnosis primarily in post-layoff timing (E2, E4)'  (1) ↔ (7)  'Anchors diagnosis in organizational scaling inflection (E1)'\n  C_M2_1: 'Layoff-driven psychological safety collapse'  (1) ↔ (7)  'Scaling-driven leadership style mismatch'\n  C_M2_2: 'Scaling-driven leadership style mismatch'  (1) ↔ (7)  'Layoff-driven psychological safety collapse'\n  C_M2_3: 'Layoff-driven psychological safety collapse'  (1) ↔ (7)  'Scaling-driven leadership style mismatch'\n  C_M3_1: 'Diagnoses root cause as leadership style mismatch'  (1) ↔ (7)  'Diagnoses root cause as loss of psychological safety'\n  C_M3_2: 'Attributes decline to broken trust and fear of risk'  (1) ↔ (7)  'Attributes decline to organizational scaling bottlenecks'\n  C_M4_1: 'Blames leadership style mismatch'  (1) ↔ (7)  'Blames layoff-induced psychological safety loss'\n  C_M4_2: 'Focuses on leadership and scaling problems'  (1) ↔ (7)  'Focuses on layoff trauma and safety'\n  C_M4_3: 'Diagnosis: leadership mismatch'  (1) ↔ (7)  'Diagnosis: post-layoff trust collapse'\n  C_M5_1: 'Post layoff trust and safety erosion'  (1) ↔ (7)  'Leadership model outgrown by team scale'\n  C_M5_2: 'Scaling inflection in leadership capacity'  (1) ↔ (7)  'Survivor syndrome from workforce reduction'\n  C_M5_3: 'Structural mismatch of scaling leadership'  (1) ↔ (7)  'Psychological safety loss after layoffs'\n\nOUTPUT FORMAT (strict). Write exactly 70 lines, no commentary, no markdown fences, no headers. One line per (construct, element) pair, in this exact format:\n<construct_id>,<element>,<rating>\n\nExample (showing the format only - your numbers will differ):\nC_M1_1,E1,1\nC_M1_1,E2,2\nC_M1_1,E3,3\nC_M1_2,E1,4\n...\n\nConstraints:\n- rating is an integer from 1 to 7\n- iterate all 14 constructs in the order listed, and within each construct all 5 elements in order (E1-E5)\n- produce 70 lines total\n- output ONLY the lines, nothing before or after"
+      }
+    ],
+    "temperature": 0.0,
+    "max_tokens": 2500
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "cell_id": "B_N_run10",
+  "task": "B",
+  "condition": "N",
+  "run_idx": 10,
+  "phase": "phase4_ratings",
+  "model_short_name": "M1",
+  "persona_or_neutral": "neutral",
+  "system_prompt": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation.",
+  "user_prompt": "You are presented with 5 anonymous responses (E1-E5) and 12 bipolar constructs. Rate each response on each construct on a 1-7 scale: 1 = strongly the LEFT pole, 7 = strongly the RIGHT pole, 4 = neutral or mixed.\n\nResponses:\n**E1:** # Primary Diagnosis: Option C — Loss of Psychological Safety\n\nThe temporal evidence points decisively here. A layoff occurred four months ago; the performance decline spans six months but the *acute* symptoms — senior departures, retro topic shift toward \"process and communication\" — cluster tightly around and after that event. When retros pivot from \"what to ship\" to \"how we work together,\" the team is signaling that the implicit contract underwriting risk-taking has broken.\n\n**E2:** I recommend **Option C: loss of psychological safety following the layoff round** as the primary diagnosis. The strongest signal is the combination of **rising voluntary senior attrition**, **missed milestones**, and retros shifting from product/engineering ambition — “what to ship next” — toward **process and communication**. That pattern often indicates the team is no longer operating from shared trust.\n\n**E3:** **Primary Diagnosis: Leadership Style Mismatch (Option E)**\n\nThe decisive signal is the shift in retrospective themes from “what to ship next” to “process and communication.” When a previously high-performing team fixates on coordination rather than execution, the operating system—not the engineers—is broken. At roughly 40 people across four squads, the group has crossed the threshold where heroic, centralized, or player-coach leadership can maintain coherence. The old style created an invisible coordination tax that has now become visible: missed milestones are not a capacity problem but a de...\n\n**E4:** I recommend **Option E: Leadership style mismatch** as the primary diagnosis because the team is exhibiting the classic symptoms of an organizational scaling fracture. The most revealing signal is the intersection of the team's size (~40 people across 4 squads) and the qualitative shift in retrospective themes from \"what to ship next\" to \"process and communication.\" Forty engineers represents a well-documented inflection point where informal, highly-aligned leadership breaks down. During the preceding \"period of strong delivery,\" leadership likely relied on heroics, close-knit informal channel...\n\n**E5:** The most likely primary diagnosis is **Option C: Loss of psychological safety following a layoff round 4 months ago**. The surface signals align almost perfectly with the classic aftermath of workforce reductions in high-trust engineering cultures. When a high-performing team experiences layoffs, the surviving members often perceive the event as a breach of the implicit “performance-reward” contract that previously defined their culture.\n\nConstructs (id : left pole ↔ right pole):\n  C_M1_1: 'Trust/safety breach diagnosis (E1, E5)'  (1) ↔ (7)  'Leadership scaling mismatch diagnosis (E3)'\n  C_M1_2: 'Cites layoff as triggering event (E1, E2)'  (1) ↔ (7)  'Cites team size threshold as trigger (E3)'\n  C_M1_3: 'Emphasizes attrition and missed milestones as evidence (E2, E3)'  (1) ↔ (7)  'Emphasizes temporal clustering around layoff (E1)'\n  C_M2_1: 'Layoff-triggered trust rupture'  (1) ↔ (7)  'Scaling-driven leadership mismatch'\n  C_M2_2: 'Implicit contract breach framing'  (1) ↔ (7)  'Observable symptom-pattern framing'\n  C_M2_3: 'Psychological safety loss after layoffs'  (1) ↔ (7)  'Leadership scaling fracture'\n  C_M4_1: 'Loss of psychological safety after layoffs'  (1) ↔ (7)  'Leadership style mismatch from team scaling'\n  C_M4_2: 'Loss of psychological safety after layoffs'  (1) ↔ (7)  'Leadership style mismatch from team scaling'\n  C_M4_3: 'Loss of psychological safety after layoffs'  (1) ↔ (7)  'Leadership style mismatch from team scaling'\n  C_M5_1: 'Scaling-driven leadership and coordination failure'  (1) ↔ (7)  'Layoff-induced trust and psychological safety collapse'\n  C_M5_2: 'Scaling-driven leadership and coordination failure'  (1) ↔ (7)  'Layoff-induced trust and psychological safety collapse'\n  C_M5_3: 'Scaling-driven leadership and coordination failure'  (1) ↔ (7)  'Layoff-induced trust and psychological safety collapse'\n\nOUTPUT FORMAT (strict). Write exactly 60 lines, no commentary, no markdown fences, no headers. One line per (construct, element) pair, in this exact format:\n<construct_id>,<element>,<rating>\n\nExample (showing the format only - your numbers will differ):\nC_M1_1,E1,1\nC_M1_1,E2,2\nC_M1_1,E3,3\nC_M1_2,E1,4\n...\n\nConstraints:\n- rating is an integer from 1 to 7\n- iterate all 12 constructs in the order listed, and within each construct all 5 elements in order (E1-E5)\n- produce 60 lines total\n- output ONLY the lines, nothing before or after",
+  "model_id_requested": "anthropic/claude-opus-4.7",
+  "model_id_used": "anthropic/claude-opus-4.7",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 7770,
+  "timestamp_iso": "2026-05-24T19:21:56.808184",
+  "raw_response_content": "C_M1_1,E1,1\nC_M1_1,E2,1\nC_M1_1,E3,7\nC_M1_1,E4,7\nC_M1_1,E5,1\nC_M1_2,E1,1\nC_M1_2,E2,1\nC_M1_2,E3,7\nC_M1_2,E4,7\nC_M1_2,E5,2\nC_M1_3,E1,7\nC_M1_3,E2,1\nC_M1_3,E3,2\nC_M1_3,E4,3\nC_M1_3,E5,4\nC_M2_1,E1,1\nC_M2_1,E2,1\nC_M2_1,E3,7\nC_M2_1,E4,7\nC_M2_1,E5,1\nC_M2_2,E1,2\nC_M2_2,E2,2\nC_M2_2,E3,5\nC_M2_2,E4,5\nC_M2_2,E5,1\nC_M2_3,E1,1\nC_M2_3,E2,1\nC_M2_3,E3,7\nC_M2_3,E4,7\nC_M2_3,E5,1\nC_M4_1,E1,1\nC_M4_1,E2,1\nC_M4_1,E3,7\nC_M4_1,E4,7\nC_M4_1,E5,1\nC_M4_2,E1,1\nC_M4_2,E2,1\nC_M4_2,E3,7\nC_M4_2,E4,7\nC_M4_2,E5,1\nC_M4_3,E1,1\nC_M4_3,E2,1\nC_M4_3,E3,7\nC_M4_3,E4,7\nC_M4_3,E5,1\nC_M5_1,E1,7\nC_M5_1,E2,7\nC_M5_1,E3,1\nC_M5_1,E4,1\nC_M5_1,E5,7\nC_M5_2,E1,7\nC_M5_2,E2,7\nC_M5_2,E3,1\nC_M5_2,E4,1\nC_M5_2,E5,7\nC_M5_3,E1,7\nC_M5_3,E2,7\nC_M5_3,E3,1\nC_M5_3,E4,1\nC_M5_3,E5,7",
+  "raw_response_full": {
+    "id": "gen-1779646916-Q0Kn9wxDBtIltpyZoL3W",
+    "object": "chat.completion",
+    "created": 1779646916,
+    "model": "anthropic/claude-4.7-opus-20260416",
+    "provider": "Anthropic",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "C_M1_1,E1,1\nC_M1_1,E2,1\nC_M1_1,E3,7\nC_M1_1,E4,7\nC_M1_1,E5,1\nC_M1_2,E1,1\nC_M1_2,E2,1\nC_M1_2,E3,7\nC_M1_2,E4,7\nC_M1_2,E5,2\nC_M1_3,E1,7\nC_M1_3,E2,1\nC_M1_3,E3,2\nC_M1_3,E4,3\nC_M1_3,E5,4\nC_M2_1,E1,1\nC_M2_1,E2,1\nC_M2_1,E3,7\nC_M2_1,E4,7\nC_M2_1,E5,1\nC_M2_2,E1,2\nC_M2_2,E2,2\nC_M2_2,E3,5\nC_M2_2,E4,5\nC_M2_2,E5,1\nC_M2_3,E1,1\nC_M2_3,E2,1\nC_M2_3,E3,7\nC_M2_3,E4,7\nC_M2_3,E5,1\nC_M4_1,E1,1\nC_M4_1,E2,1\nC_M4_1,E3,7\nC_M4_1,E4,7\nC_M4_1,E5,1\nC_M4_2,E1,1\nC_M4_2,E2,1\nC_M4_2,E3,7\nC_M4_2,E4,7\nC_M4_2,E5,1\nC_M4_3,E1,1\nC_M4_3,E2,1\nC_M4_3,E3,7\nC_M4_3,E4,7\nC_M4_3,E5,1\nC_M5_1,E1,7\nC_M5_1,E2,7\nC_M5_1,E3,1\nC_M5_1,E4,1\nC_M5_1,E5,7\nC_M5_2,E1,7\nC_M5_2,E2,7\nC_M5_2,E3,1\nC_M5_2,E4,1\nC_M5_2,E5,7\nC_M5_3,E1,7\nC_M5_3,E2,7\nC_M5_3,E3,1\nC_M5_3,E4,1\nC_M5_3,E5,7",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1885,
+      "completion_tokens": 723,
+      "total_tokens": 2608,
+      "cost": 0.0275,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0275,
+        "upstream_inference_prompt_cost": 0.009425,
+        "upstream_inference_completions_cost": 0.018075
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 1885,
+    "completion_tokens": 723,
+    "total_tokens": 2608,
+    "cost": 0.0275,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0275,
+      "upstream_inference_prompt_cost": 0.009425,
+      "upstream_inference_completions_cost": 0.018075
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 0,
+  "cost_usd": 0.027500000000000004,
+  "parsed_summary": "parsed 60/60 ratings",
+  "request_payload": {
+    "model": "anthropic/claude-opus-4.7",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses (E1-E5) and 12 bipolar constructs. Rate each response on each construct on a 1-7 scale: 1 = strongly the LEFT pole, 7 = strongly the RIGHT pole, 4 = neutral or mixed.\n\nResponses:\n**E1:** # Primary Diagnosis: Option C — Loss of Psychological Safety\n\nThe temporal evidence points decisively here. A layoff occurred four months ago; the performance decline spans six months but the *acute* symptoms — senior departures, retro topic shift toward \"process and communication\" — cluster tightly around and after that event. When retros pivot from \"what to ship\" to \"how we work together,\" the team is signaling that the implicit contract underwriting risk-taking has broken.\n\n**E2:** I recommend **Option C: loss of psychological safety following the layoff round** as the primary diagnosis. The strongest signal is the combination of **rising voluntary senior attrition**, **missed milestones**, and retros shifting from product/engineering ambition — “what to ship next” — toward **process and communication**. That pattern often indicates the team is no longer operating from shared trust.\n\n**E3:** **Primary Diagnosis: Leadership Style Mismatch (Option E)**\n\nThe decisive signal is the shift in retrospective themes from “what to ship next” to “process and communication.” When a previously high-performing team fixates on coordination rather than execution, the operating system—not the engineers—is broken. At roughly 40 people across four squads, the group has crossed the threshold where heroic, centralized, or player-coach leadership can maintain coherence. The old style created an invisible coordination tax that has now become visible: missed milestones are not a capacity problem but a de...\n\n**E4:** I recommend **Option E: Leadership style mismatch** as the primary diagnosis because the team is exhibiting the classic symptoms of an organizational scaling fracture. The most revealing signal is the intersection of the team's size (~40 people across 4 squads) and the qualitative shift in retrospective themes from \"what to ship next\" to \"process and communication.\" Forty engineers represents a well-documented inflection point where informal, highly-aligned leadership breaks down. During the preceding \"period of strong delivery,\" leadership likely relied on heroics, close-knit informal channel...\n\n**E5:** The most likely primary diagnosis is **Option C: Loss of psychological safety following a layoff round 4 months ago**. The surface signals align almost perfectly with the classic aftermath of workforce reductions in high-trust engineering cultures. When a high-performing team experiences layoffs, the surviving members often perceive the event as a breach of the implicit “performance-reward” contract that previously defined their culture.\n\nConstructs (id : left pole ↔ right pole):\n  C_M1_1: 'Trust/safety breach diagnosis (E1, E5)'  (1) ↔ (7)  'Leadership scaling mismatch diagnosis (E3)'\n  C_M1_2: 'Cites layoff as triggering event (E1, E2)'  (1) ↔ (7)  'Cites team size threshold as trigger (E3)'\n  C_M1_3: 'Emphasizes attrition and missed milestones as evidence (E2, E3)'  (1) ↔ (7)  'Emphasizes temporal clustering around layoff (E1)'\n  C_M2_1: 'Layoff-triggered trust rupture'  (1) ↔ (7)  'Scaling-driven leadership mismatch'\n  C_M2_2: 'Implicit contract breach framing'  (1) ↔ (7)  'Observable symptom-pattern framing'\n  C_M2_3: 'Psychological safety loss after layoffs'  (1) ↔ (7)  'Leadership scaling fracture'\n  C_M4_1: 'Loss of psychological safety after layoffs'  (1) ↔ (7)  'Leadership style mismatch from team scaling'\n  C_M4_2: 'Loss of psychological safety after layoffs'  (1) ↔ (7)  'Leadership style mismatch from team scaling'\n  C_M4_3: 'Loss of psychological safety after layoffs'  (1) ↔ (7)  'Leadership style mismatch from team scaling'\n  C_M5_1: 'Scaling-driven leadership and coordination failure'  (1) ↔ (7)  'Layoff-induced trust and psychological safety collapse'\n  C_M5_2: 'Scaling-driven leadership and coordination failure'  (1) ↔ (7)  'Layoff-induced trust and psychological safety collapse'\n  C_M5_3: 'Scaling-driven leadership and coordination failure'  (1) ↔ (7)  'Layoff-induced trust and psychological safety collapse'\n\nOUTPUT FORMAT (strict). Write exactly 60 lines, no commentary, no markdown fences, no headers. One line per (construct, element) pair, in this exact format:\n<construct_id>,<element>,<rating>\n\nExample (showing the format only - your numbers will differ):\nC_M1_1,E1,1\nC_M1_1,E2,2\nC_M1_1,E3,3\nC_M1_2,E1,4\n...\n\nConstraints:\n- rating is an integer from 1 to 7\n- iterate all 12 constructs in the order listed, and within each construct all 5 elements in order (E1-E5)\n- produce 60 lines total\n- output ONLY the lines, nothing before or after"
+      }
+    ],
+    "temperature": 0.0,
+    "max_tokens": 2500
+  }
+}

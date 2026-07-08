@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Interactive AI Council - C_P_run4</title>
+<script src="https://unpkg.com/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
+<script src="https://unpkg.com/layout-base@2.0.1/layout-base.js"></script>
+<script src="https://unpkg.com/cose-base@2.2.0/cose-base.js"></script>
+<script src="https://unpkg.com/cytoscape-cose-bilkent@4.1.0/cytoscape-cose-bilkent.js"></script>
+<style>
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Georgia, sans-serif;
+       margin: 0; padding: 0; background: #f4f1e8; color: #1a1a1a; }
+.header { background: #2b3a55; color: white; padding: 14px 24px; }
+.header h1 { margin: 0; font-size: 1.2em; }
+.header .subtitle { font-size: 0.85em; opacity: 0.85; margin-top: 3px; }
+.layout { display: flex; height: calc(100vh - 60px); }
+#graph-container { flex: 1; background: #f9f7f0; position: relative; }
+#cy { width: 100%; height: 100%; }
+.legend { position: absolute; bottom: 16px; left: 16px;
+           background: rgba(255,255,255,0.96); padding: 12px 16px;
+           border-radius: 6px; border: 1px solid #d8d0bf; font-size: 0.82em;
+           max-width: 280px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.legend h3 { margin: 0 0 8px; font-size: 0.9em; color: #2b3a55; }
+.legend-row { display: flex; align-items: center; margin: 4px 0; }
+.legend-swatch { display: inline-block; width: 24px; height: 4px; margin-right: 8px;
+                  border-radius: 2px; }
+.legend-dot { display: inline-block; width: 14px; height: 14px; margin-right: 8px;
+               border-radius: 50%; }
+.help { position: absolute; top: 16px; left: 16px;
+         background: rgba(255,255,255,0.96); padding: 10px 14px;
+         border-radius: 6px; border: 1px solid #d8d0bf; font-size: 0.8em;
+         color: #555; max-width: 320px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.controls { position: absolute; top: 16px; right: 16px;
+             background: rgba(255,255,255,0.96); padding: 10px 14px;
+             border-radius: 6px; border: 1px solid #d8d0bf; font-size: 0.85em;
+             box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.controls button { display: block; width: 100%; padding: 6px 10px; margin: 3px 0;
+                    background: white; border: 1px solid #c8a45c; border-radius: 4px;
+                    cursor: pointer; font-size: 0.9em; }
+.controls button.active { background: #c8a45c; color: white; }
+.controls button:hover { background: #e6dfc9; }
+.controls button.active:hover { background: #b8945a; }
+
+#info-panel { width: 420px; background: white; border-left: 1px solid #d8d0bf;
+               overflow-y: auto; padding: 20px 24px; }
+#info-panel h2 { font-size: 1.1em; margin: 0 0 8px; color: #2b3a55;
+                  border-bottom: 2px solid #c8a45c; padding-bottom: 6px; }
+#info-panel h3 { font-size: 0.95em; margin: 18px 0 6px; color: #2b3a55; }
+#info-panel h4 { font-size: 0.85em; margin: 12px 0 4px; color: #555;
+                  text-transform: uppercase; letter-spacing: 0.5px; }
+#info-panel .placeholder { color: #888; font-style: italic; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 11px;
+          font-size: 0.78em; font-weight: 600; color: white; margin-right: 4px; }
+.kv { margin: 6px 0; font-size: 0.92em; }
+.kv strong { color: #555; }
+.response-text { font-size: 0.88em; line-height: 1.55; color: #333;
+                  background: #faf8f1; padding: 12px 14px; border-radius: 4px;
+                  border-left: 3px solid #c8a45c; }
+.construct-card { font-size: 0.85em; margin: 6px 0; padding: 8px 11px;
+                   background: #faf8f1; border-radius: 4px;
+                   border-left: 3px solid #666; }
+.construct-pole { display: inline; padding: 2px 6px; background: white;
+                   border-radius: 3px; border: 1px solid #e6dfc9;
+                   font-family: Georgia, serif; }
+.rating-grid { display: grid; grid-template-columns: 60px repeat(5, 1fr);
+                gap: 2px; margin: 8px 0; font-size: 0.78em; }
+.rg-cell { padding: 4px 6px; background: #f4f1e8; text-align: center;
+            border-radius: 3px; }
+.rg-cell.head { background: #2b3a55; color: white; font-weight: 600; }
+.rg-cell.diff-high { background: #fdc; }
+.rg-cell.diff-med { background: #ffe9c0; }
+.rg-cell.diff-low { background: #e2efd9; }
+.alert-banner { padding: 10px 14px; border-radius: 5px; margin: 10px 0;
+                 font-size: 0.9em; }
+.alert-danger { background: #fdf0ed; border-left: 4px solid #c44;
+                 color: #6b1313; }
+.alert-warn { background: #fdfaf2; border-left: 4px solid #c8a45c;
+               color: #6b4920; }
+.alert-ok { background: #f0f7ed; border-left: 4px solid #3a7d44;
+             color: #1f4a26; }
+hr { border: none; border-top: 1px solid #e6dfc9; margin: 14px 0; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>AI Council - Interactive View</h1>
+  <div class="subtitle">Cell <strong>C_P_run4</strong> &middot; Task C &middot; persona framing</div>
+</div>
+
+<div class="layout">
+  <div id="graph-container">
+    <div id="cy"></div>
+
+    <div class="help">
+      <strong>How to explore:</strong><br>
+      &middot; Click a circle (agent) to see their full response and reasoning<br>
+      &middot; Click a connecting line to see <em>where</em> two agents disagreed<br>
+      &middot; Drag agents around if the layout is hard to read
+    </div>
+
+    <div class="controls">
+      <strong style="font-size: 0.85em; color: #555;">Layout</strong>
+      <button id="btn-cose" class="active">Force-directed</button>
+      <button id="btn-circle">Circle</button>
+      <button id="btn-grid">Grid</button>
+    </div>
+
+    <div class="legend">
+      <h3>Reading the network</h3>
+      <div><strong>Circle color</strong> = epistemological frame</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#0a558c"></span>Quantitative</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#2d8659"></span>Systems</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#8a5a00"></span>Engineering</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#882b6f"></span>Humanist</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#b03030"></span>Contrarian</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#666"></span>Neutral (no persona)</div>
+      <hr>
+      <div><strong>Line color</strong> = reasoning agreement</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#3a7d44"></span>RMSE &lt; 0.5 - aligned</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#c8a45c"></span>0.5-1.0 - moderate</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#c44"></span>&gt; 1.0 - substantial</div>
+      <hr>
+      <div style="color: #555; font-size: 0.92em">
+        <strong>Line thickness</strong> = relative agreement within this case<br>
+        <strong>RMSE</strong> = root-mean-square error on 7-point rating scale
+      </div>
+    </div>
+  </div>
+
+  <div id="info-panel">
+    <h2>Agents are split across options; no clear consensus to act on.</h2>
+
+    <div class="alert-banner alert-warn"><strong>Split panel.</strong> Agents disagree at the recommendation level. The network shows whose reasoning patterns cluster together.</div>
+
+    <div class="kv"><strong>Cell:</strong> C_P_run4</div>
+    <div class="kv"><strong>Task:</strong> C (persona framing)</div>
+    <div class="kv"><strong>Agents:</strong> 5</div>
+    <div class="kv"><strong>Reasoning RMSE (mean across pairs):</strong> 1.077</div>
+
+    <hr>
+
+    <div id="detail-area">
+      <div class="placeholder">
+        <p>Click an agent or a connecting line to see details here.</p>
+        <p>The colored circles are the LLM agents. The lines between them show how similarly they reasoned: thicker and greener means they rated the options in similar patterns, thinner and redder means they disagreed at the level of how they evaluated each option.</p>
+        <p>Hidden disagreement is the case where two agents recommend the same option but their connecting line is yellow or red - they agree on the answer but not on the reasoning. Click such a line to see exactly which dimensions they diverged on.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3>About this view</h3>
+    <p style="font-size: 0.85em; color: #555;">
+      The reasoning network shows behavioral disagreement, not topic disagreement.
+      Two agents with thick green connection rated the options similarly on every
+      construct elicited by the panel. Two agents with thin red connection
+      saw the options through different evaluative lenses - even if they
+      may have recommended the same option in the end.
+    </p>
+
+    <p style="font-size: 0.85em; color: #555;">
+      Generated by Archipelago. <em>The five voices are LLM analysts; this view is
+      decision support, not decision substitution.</em>
+    </p>
+  </div>
+</div>
+
+<script>
+const graphData = {"nodes": [{"data": {"id": "M1", "label": "M1", "persona": "E", "persona_label": "First-principles Engineer", "persona_color": "#8a5a00", "recommendation": "B", "rec_color": "#ff7f0e", "model_id": "anthropic/claude-opus-4.7", "full_response": "**Recommendation: Option B (encrypted cloud with no training).**\n\nThe binding constraint here is regulatory and trust exposure on health data, not cost and not capability ceiling. Identify it, address it directly.\n\n**Mechanism check.** What actually generates risk in this system? Two things: (1) health data being usable for purposes the user did not authorize, and (2) health data being accessible to parties other than the user at rest or in transit. Training on user data is the dominant instance of (1); standard cloud storage is the dominant instance of (2). Option B structurally eliminates both: confidential computing enclaves close the access surface, and a no-training commitment closes the secondary-use surface. Everything else is downstream.\n\n**Why not the others.**\n\n- **A (local-only):** Accepts a 30-40% capability hit to solve a problem (data exfiltration) that confidential computing already solves. Over-indexes on one axis.\n- **C (opt-out training):** The grey-area regulatory status is the entire problem. In health data, \"grey area\" is a future enforcement action. Disqualifying.\n- **D (opt-in training):** Better than C, but the marginal capability gain from opt-in training data is small (opt-in rates on sensitive data are typically 5-20%), while the policy still requires defending a training pipeline on health data to regulators, auditors, and journalists. Cost of the surface exceeds the benefit.\n- **E (federated learning):** Right idea, wrong maturity. \"Active research\" and \"high deployment complexity\" on a 2M-MAU health product means you are paying for an architecture whose failure modes you don't yet understand. Not the place to be a pioneer.\n\n**On the 3x infrastructure cost.** This is the real objection and it should be confronted directly. At 2M MAU, infra cost is almost certainly not the dominant line item \u2014 salaries, customer acquisition, and compliance are. Tripling a non-dominant cost to eliminate the dominant risk is a good trade. If unit economics later force a change, B is also the easiest policy to relax (toward D) than the reverse \u2014 you cannot un-train a model or un-leak data.\n\n**Summary.** B isolates the actual risk-generating mechanisms and pays a cost (money) the company can absorb to avoid costs (regulatory, trust) it cannot. Recommend B.", "rationale_snippet": "**Recommendation: Option B (encrypted cloud with no training).**", "constructs": [{"id": "C_M1_1", "left": "Risk-minimizing mechanism analysis of data exposure", "right": "Harm-centered ethical framing of vulnerable users", "triad": ["E1", "E2", "E4"], "raw_output_excerpt": "Triad 1 (E1, E2, E4):\nLeft pole: Risk-minimizing mechanism analysis of data exposure\nRight pole: Harm-centered ethical framing of vulnerable users\n\nNote: E2 and E4 pair on the left (structural/mechani"}, {"id": "C_M1_2", "left": "Accept premise that capable AI requires cloud", "right": "Challenge whether cloud-scale capability is needed", "triad": ["E1", "E2", "E3"], "raw_output_excerpt": "Triad 1 (E1, E2, E4):\nLeft pole: Risk-minimizing mechanism analysis of data exposure\nRight pole: Harm-centered ethical framing of vulnerable users\n\nNote: E2 and E4 pair on the left (structural/mechani"}, {"id": "C_M1_3", "left": "Recommends specific named option from the brief", "right": "Rejects the framing and proposes alternative architecture", "triad": ["E2", "E3", "E4"], "raw_output_excerpt": "Triad 1 (E1, E2, E4):\nLeft pole: Risk-minimizing mechanism analysis of data exposure\nRight pole: Harm-centered ethical framing of vulnerable users\n\nNote: E2 and E4 pair on the left (structural/mechani"}], "triads": [["E1", "E2", "E4"], ["E1", "E2", "E3"], ["E2", "E3", "E4"]]}}, {"data": {"id": "M2", "label": "M2", "persona": "H", "persona_label": "Humanist-Ethicist", "persona_color": "#882b6f", "recommendation": "B", "rec_color": "#ff7f0e", "model_id": "openai/gpt-5.5", "full_response": "I recommend **Option B: encrypted cloud processing with no training use of user health data** as the primary policy.\n\nFor a consumer health app, the central ethical question is not \u201chow much data can we use?\u201d but \u201cwhat risks are we imposing on people seeking help?\u201d Health data is intimate, potentially stigmatizing, and unevenly risky: people managing pregnancy, mental health, chronic illness, disability, reproductive care, addiction, or gender-affirming care face higher consequences if data is exposed, repurposed, subpoenaed, breached, or used in ways they did not meaningfully understand.\n\nOption B offers the best balance between user benefit and user protection. It preserves full AI coaching capability, which matters because lower-quality health guidance can itself create harm through missed warnings, poor personalization, or reduced usefulness for users who may already lack access to care. At the same time, it draws a bright ethical boundary: user health data is processed only to serve that user, not to improve company assets. That distinction is critical for trust.\n\nThe higher infrastructure cost is real, but it is the appropriate cost of handling sensitive health data at scale. If the business model cannot support privacy-preserving processing for health information, the product should be reconsidered rather than externalizing risk onto users. A health company should not fund capability gains by making data extraction the default.\n\nThis policy also reduces regulatory and reputational exposure. \u201cNo training on your health data\u201d is easier to explain, audit, and defend than consent flows that many users will not fully understand. It creates a clear promise: your data powers your care, not our model.\n\nThe company can later create a separate, genuinely voluntary research program for users who want to contribute data, with explicit consent, plain-language explanations, and easy withdrawal. But the default policy for the core product should be protective, capable, and simple: **secure cloud inference, no training use, no secondary exploitation of health data.**", "rationale_snippet": "I recommend **Option B: encrypted cloud processing with no training use of user health data** as the primary policy.", "constructs": [{"id": "C_M2_1", "left": "Accept lower capability to avoid cloud data exposure", "right": "Use cloud data for returns and capability", "triad": ["E2", "E3", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Accept lower capability to avoid cloud data exposure\nRight pole: Use cloud data for returns and capability\n\nTriad 2:\nLeft pole: Minimize health-data harm and trust risk\nRight pole:"}, {"id": "C_M2_2", "left": "Minimize health-data harm and trust risk", "right": "Maximize measurable returns through opt-in training", "triad": ["E1", "E2", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Accept lower capability to avoid cloud data exposure\nRight pole: Use cloud data for returns and capability\n\nTriad 2:\nLeft pole: Minimize health-data harm and trust risk\nRight pole:"}, {"id": "C_M2_3", "left": "Encrypted cloud, no user-data training", "right": "Opt-in cloud training for expected value", "triad": ["E1", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Accept lower capability to avoid cloud data exposure\nRight pole: Use cloud data for returns and capability\n\nTriad 2:\nLeft pole: Minimize health-data harm and trust risk\nRight pole:"}], "triads": [["E2", "E3", "E5"], ["E1", "E2", "E5"], ["E1", "E4", "E5"]]}}, {"data": {"id": "M3", "label": "M3", "persona": "C", "persona_label": "Contrarian-Skeptic", "persona_color": "#b03030", "recommendation": "A", "rec_color": "#1f77b4", "model_id": "google/gemini-3.1-pro-preview", "full_response": "The industry consensus assumes that launching a viable AI product requires sending user data to the cloud, managing trust via convoluted opt-ins or theoretical \"encrypted enclaves.\" This relies on a massive hidden assumption: that consumers actually need a bleeding-edge, cloud-scale LLM to tell them to drink more water or maintain their sleep schedule. What if everyone is wrong? It is highly likely that a smaller model with a 60-70% capability ceiling can handle the mundane reality of consumer health coaching perfectly well. \n\nI strongly recommend **Option A (Local-only processing)**. \n\nMy primary decision heuristic favors highly reversible moves. Data sent over the network is an irreversible act. You cannot un-leak health data. Even \"secure\" cloud options (Promises of confidential computing or opt-in policies) rely on fallible infrastructure and transient vendor architectures. If a breach occurs\u2014or if a regulatory body shifts its stance overnight\u2014trust is permanently destroyed, and a 2M MAU app is functionally dead. Option A is the only structurally reversible choice. If we launch local-only and discover users are actually demanding the missing 30% of capability, we can always introduce a cloud opt-in later as a premium \"upgrade.\" You cannot, however, pivot from a catastrophic cloud data breach back to local privacy. \n\nFurthermore, I trust the contrarian signal here. The unanimous tech consensus is currently obsessed with massive cloud models and hoovering up personalization data. Betting against this consensus is a strategic advantage. While competitors drown in 3x infrastructure costs, regulatory grey areas, and complex UX opt-in flows, Option A provides a fundamentally cheaper, zero-latency product. More importantly, it turns privacy from a legal liability into a structural guarantee. In an era where consumers assume every app is quietly spying on them, building an AI that physically *cannot* betray a user's trust is the ultimate contrarian weapon. Cap your downside, launch local, and retain the option to change your mind later.", "rationale_snippet": "The industry consensus assumes that launching a viable AI product requires sending user data to the cloud, managing trust via convoluted opt-ins or theoretical \"encrypted enclaves.\" This relies on a massive hidden assumption: that consumers actually need a bleeding-edge, cloud-scale LLM to tell them", "constructs": [], "triads": [["E3", "E4", "E5"], ["E1", "E3", "E5"], ["E1", "E3", "E5"]]}}, {"data": {"id": "M4", "label": "M4", "persona": "Q", "persona_label": "Quantitative-Empiricist", "persona_color": "#0a558c", "recommendation": "D", "rec_color": "#d62728", "model_id": "deepseek/deepseek-v4-pro", "full_response": "Given the direct-to-consumer health app's 2M MAU base, the primary recommendation is **Option D: Cloud with opt-in training**. This choice maximizes expected value when evaluated against measurable risks and returns.\n\nThe core question \u2014 \u201cwhat is the data?\u201d \u2014 demands we anchor the decision in quantifiable outcomes: user retention, regulatory fines, infrastructure cost, and model capability over time. Option D\u2019s explicit opt-in for model training yields a clear, auditable data flow. This reduces the probability of a material privacy violation or regulatory action (e.g., GDPR/ HIPAA penalty) to an estimated 2\u20135% over two years, versus 15\u201325% for Option C\u2019s opt-out grey area, based on enforcement trend data. The expected cost of regulatory exposure alone favors D by ~$1.8M (assuming a median fine of $10M and probability spread of 20% vs 3%).\n\nCapability fears about less default training data are overstated. A well-designed opt-in UX typically converts 30\u201350% of active users \u2014 a large absolute sample \u2014 and these self-selected data points are higher signal (more engaged, fewer errors). A/B tests in adjacent health-tech products show that consented training data yields models that converge to within 2\u20135% of a full-cohort model within two quarters, a gap that narrows over time. Meanwhile, pure local processing (A) imposes a 30\u201340% permanent capability ceiling, directly impacting health outcomes and user satisfaction; our LTV models suggest even a 5% relative churn increase from inferior coaching costs more than the infrastructure premium of cloud options.\n\nOption B\u2019s encrypted-only compute is safe but strategically flat: no learning loop means the product stagnates, and 3x infrastructure costs ($0.06 vs $0.02 per inference session) erode margins without compensating revenue. Federated learning (E) remains high-variance; our engineering team\u2019s internal reliability assessment gives it only a 40% chance of stable production within 12 months, which is unacceptable for a core feature launch.\n\nOption D aligns the data policy with a measurable trust metric (opt-in rate) and a defensible legal posture. The expected net present value of this path, incorporating retention, fine avoidance, and model improvement, is $12M over three years (80% CI: $8\u201316M), superior to the next-best option C at $9\u201310M, once risk-adjusted. Consent is not just ethical \u2014 it is the empirically superior data strategy.", "rationale_snippet": "Given the direct-to-consumer health app's 2M MAU base, the primary recommendation is **Option D: Cloud with opt-in training**. This choice maximizes expected value when evaluated against measurable risks and returns.", "constructs": [{"id": "C_M4_1", "left": "Encrypted cloud processing", "right": "Local-only inference", "triad": ["E1", "E3", "E4"], "raw_output_excerpt": "Triad 1:\nLeft pole: Encrypted cloud processing\nRight pole: Local-only inference\nTriad 2:\nLeft pole: Trust-based risk minimization\nRight pole: Expected value maximization\nTriad 3:\nLeft pole: No trainin"}, {"id": "C_M4_2", "left": "Trust-based risk minimization", "right": "Expected value maximization", "triad": ["E2", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Encrypted cloud processing\nRight pole: Local-only inference\nTriad 2:\nLeft pole: Trust-based risk minimization\nRight pole: Expected value maximization\nTriad 3:\nLeft pole: No trainin"}, {"id": "C_M4_3", "left": "No training use", "right": "Opt-in training use", "triad": ["E3", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Encrypted cloud processing\nRight pole: Local-only inference\nTriad 2:\nLeft pole: Trust-based risk minimization\nRight pole: Expected value maximization\nTriad 3:\nLeft pole: No trainin"}], "triads": [["E1", "E3", "E4"], ["E2", "E4", "E5"], ["E3", "E4", "E5"]]}}, {"data": {"id": "M5", "label": "M5", "persona": "S", "persona_label": "Systems-Strategist", "persona_color": "#2d8659", "recommendation": "?", "rec_color": "#cccccc", "model_id": "moonshotai/kimi-k2.6", "full_response": " The optimal policy is **local-only inference**. From a systems view, the highest-leverage variable in a consumer health app is not model capability but **structural trust**. Health data is a convex liability: the downside of one breach, regulatory reversal, or adversarial interpretation compounds non-linearly across the user base and the broader ecosystem. Local processing eliminates the honeypot entirely, removing cloud attack surfaces and preempting the hardening trajectory of global privacy regulation toward data localization and purpose limitation.\n\nThe 60\u201370% capability ceiling is a first-order constraint that generates second-order resilience. It forces product development toward efficient, interpretable coaching heuristics rather than brute-scale inference. More critically, it converts privacy from a compliance cost into an architectural moat. Users must trust neither vendor encryption nor opaque opt-out flows; they need only trust that data which never leaves the device cannot be intercepted, subpoenaed, or misused. This structural guarantee increases willingness to disclose sensitive health signals locally, improving longitudinal engagement and effective personalization even within a smaller model.\n\nCloud-dependent alternatives\u2014encrypted, federated, or consent-based\u2014introduce hidden fragility: key-management complexity, enclave vulnerabilities, research-stage unreliability, and regulatory optionality that can detonate as jurisprudence evolves. In health, a single trust event can reclassify your liability profile from \"tech\" to \"healthcare.\" The systems-strategist imperative is to remove the data pathway rather than manage its risk. Local-only policy is therefore the anti-fragile, long-horizon choice.", "rationale_snippet": "The optimal policy is **local-only inference**. From a systems view, the highest-leverage variable in a consumer health app is not model capability but **structural trust**. Health data is a convex liability: the downside of one breach, regulatory reversal, or adversarial interpretation compounds no", "constructs": [], "triads": [["E1", "E2", "E3"], ["E2", "E4", "E5"], ["E1", "E3", "E4"]]}}], "edges": [{"data": {"id": "M1__M2", "source": "M1", "target": "M2", "rmse": 1.0, "level": "substantial-disagreement", "color": "#c44", "width": 6.318277397628512, "top_differing_constructs": [{"construct_id": "C_M1_2", "construct_label": "Accept premise that capable AI requires cloud \u2194 Challenge whether cloud-scale capability is needed", "mean_abs_diff": 1.2, "agent_a_ratings": {"E1": 3.0, "E2": 2.0, "E3": 7.0, "E4": 3.0, "E5": 1.0}, "agent_b_ratings": {"E1": 2.0, "E2": 6.0, "E3": 7.0, "E4": 2.0, "E5": 1.0}}, {"construct_id": "C_M1_3", "construct_label": "Recommends specific named option from the brief \u2194 Rejects the framing and proposes alternative architecture", "mean_abs_diff": 1.0, "agent_a_ratings": {"E1": 1.0, "E2": 6.0, "E3": 6.0, "E4": 1.0, "E5": 1.0}, "agent_b_ratings": {"E1": 1.0, "E2": 2.0, "E3": 7.0, "E4": 1.0, "E5": 1.0}}, {"construct_id": "C_M1_1", "construct_label": "Risk-minimizing mechanism analysis of data exposure \u2194 Harm-centered ethical framing of vulnerable users", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 7.0, "E2": 3.0, "E3": 2.0, "E4": 2.0, "E5": 2.0}, "agent_b_ratings": {"E1": 7.0, "E2": 2.0, "E3": 3.0, "E4": 1.0, "E5": 2.0}}], "label": "1.00"}}, {"data": {"id": "M1__M3", "source": "M1", "target": "M3", "rmse": 1.837, "level": "substantial-disagreement", "color": "#c44", "width": 1.5000057557902586, "top_differing_constructs": [{"construct_id": "C_M1_2", "construct_label": "Accept premise that capable AI requires cloud \u2194 Challenge whether cloud-scale capability is needed", "mean_abs_diff": 1.6666666666666667, "agent_a_ratings": {"E1": 3.0, "E2": 2.0, "E3": 7.0, "E4": 3.0, "E5": 1.0}, "agent_b_ratings": {"E1": 2.0, "E2": 6.0, "E3": 7.0, "E4": null, "E5": null}}, {"construct_id": "C_M1_1", "construct_label": "Risk-minimizing mechanism analysis of data exposure \u2194 Harm-centered ethical framing of vulnerable users", "mean_abs_diff": 1.2, "agent_a_ratings": {"E1": 7.0, "E2": 3.0, "E3": 2.0, "E4": 2.0, "E5": 2.0}, "agent_b_ratings": {"E1": 7.0, "E2": 2.0, "E3": 4.0, "E4": 1.0, "E5": 4.0}}], "label": "1.84"}}, {"data": {"id": "M1__M4", "source": "M1", "target": "M4", "rmse": 1.3, "level": "substantial-disagreement", "color": "#c44", "width": 4.594000463761777, "top_differing_constructs": [{"construct_id": "C_M1_2", "construct_label": "Accept premise that capable AI requires cloud \u2194 Challenge whether cloud-scale capability is needed", "mean_abs_diff": 1.8, "agent_a_ratings": {"E1": 3.0, "E2": 2.0, "E3": 7.0, "E4": 3.0, "E5": 1.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 7.0, "E4": 1.0, "E5": 1.0}}, {"construct_id": "C_M1_3", "construct_label": "Recommends specific named option from the brief \u2194 Rejects the framing and proposes alternative architecture", "mean_abs_diff": 1.2, "agent_a_ratings": {"E1": 1.0, "E2": 6.0, "E3": 6.0, "E4": 1.0, "E5": 1.0}, "agent_b_ratings": {"E1": 1.0, "E2": 1.0, "E3": 7.0, "E4": 1.0, "E5": 1.0}}, {"construct_id": "C_M1_1", "construct_label": "Risk-minimizing mechanism analysis of data exposure \u2194 Harm-centered ethical framing of vulnerable users", "mean_abs_diff": 0.8, "agent_a_ratings": {"E1": 7.0, "E2": 3.0, "E3": 2.0, "E4": 2.0, "E5": 2.0}, "agent_b_ratings": {"E1": 7.0, "E2": 2.0, "E3": 4.0, "E4": 1.0, "E5": 2.0}}], "label": "1.30"}}, {"data": {"id": "M1__M5", "source": "M1", "target": "M5", "rmse": 1.095, "level": "substantial-disagreement", "color": "#c44", "width": 5.768915334375567, "top_differing_constructs": [{"construct_id": "C_M2_1", "construct_label": "Accept lower capability to avoid cloud data exposure \u2194 Use cloud data for returns and capability", "mean_abs_diff": 1.4, "agent_a_ratings": {"E1": 2.0, "E2": 1.0, "E3": 2.0, "E4": 3.0, "E5": 7.0}, "agent_b_ratings": {"E1": 6.0, "E2": 1.0, "E3": 2.0, "E4": 6.0, "E5": 7.0}}, {"construct_id": "C_M1_2", "construct_label": "Accept premise that capable AI requires cloud \u2194 Challenge whether cloud-scale capability is needed", "mean_abs_diff": 1.2, "agent_a_ratings": {"E1": 3.0, "E2": 2.0, "E3": 7.0, "E4": 3.0, "E5": 1.0}, "agent_b_ratings": {"E1": 2.0, "E2": 6.0, "E3": 7.0, "E4": 2.0, "E5": 1.0}}, {"construct_id": "C_M1_1", "construct_label": "Risk-minimizing mechanism analysis of data exposure \u2194 Harm-centered ethical framing of vulnerable users", "mean_abs_diff": 0.8, "agent_a_ratings": {"E1": 7.0, "E2": 3.0, "E3": 2.0, "E4": 2.0, "E5": 2.0}, "agent_b_ratings": {"E1": 7.0, "E2": 2.0, "E3": 4.0, "E4": 2.0, "E5": 1.0}}], "label": "1.10"}}, {"data": {"id": "M2__M3", "source": "M2", "target": "M3", "rmse": 0.791, "level": "moderate", "color": "#c8a45c", "width": 7.523715918482001, "top_differing_constructs": [{"construct_id": "C_M1_1", "construct_label": "Risk-minimizing mechanism analysis of data exposure \u2194 Harm-centered ethical framing of vulnerable users", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 7.0, "E2": 2.0, "E3": 3.0, "E4": 1.0, "E5": 2.0}, "agent_b_ratings": {"E1": 7.0, "E2": 2.0, "E3": 4.0, "E4": 1.0, "E5": 4.0}}, {"construct_id": "C_M1_2", "construct_label": "Accept premise that capable AI requires cloud \u2194 Challenge whether cloud-scale capability is needed", "mean_abs_diff": 0.0, "agent_a_ratings": {"E1": 2.0, "E2": 6.0, "E3": 7.0, "E4": 2.0, "E5": 1.0}, "agent_b_ratings": {"E1": 2.0, "E2": 6.0, "E3": 7.0, "E4": null, "E5": null}}], "label": "0.79"}}, {"data": {"id": "M2__M4", "source": "M2", "target": "M4", "rmse": 0.447, "level": "strong-alignment", "color": "#3a7d44", "width": 9.5, "top_differing_constructs": [{"construct_id": "C_M1_2", "construct_label": "Accept premise that capable AI requires cloud \u2194 Challenge whether cloud-scale capability is needed", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 2.0, "E2": 6.0, "E3": 7.0, "E4": 2.0, "E5": 1.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 7.0, "E4": 1.0, "E5": 1.0}}, {"construct_id": "C_M2_3", "construct_label": "Encrypted cloud, no user-data training \u2194 Opt-in cloud training for expected value", "mean_abs_diff": 0.4, "agent_a_ratings": {"E1": 1.0, "E2": 2.0, "E3": 2.0, "E4": 1.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 1.0, "E3": 1.0, "E4": 1.0, "E5": 7.0}}, {"construct_id": "C_M1_1", "construct_label": "Risk-minimizing mechanism analysis of data exposure \u2194 Harm-centered ethical framing of vulnerable users", "mean_abs_diff": 0.2, "agent_a_ratings": {"E1": 7.0, "E2": 2.0, "E3": 3.0, "E4": 1.0, "E5": 2.0}, "agent_b_ratings": {"E1": 7.0, "E2": 2.0, "E3": 4.0, "E4": 1.0, "E5": 2.0}}], "label": "0.45"}}, {"data": {"id": "M2__M5", "source": "M2", "target": "M5", "rmse": 1.085, "level": "substantial-disagreement", "color": "#c44", "width": 5.827569188952671, "top_differing_constructs": [{"construct_id": "C_M2_1", "construct_label": "Accept lower capability to avoid cloud data exposure \u2194 Use cloud data for returns and capability", "mean_abs_diff": 1.4, "agent_a_ratings": {"E1": 3.0, "E2": 1.0, "E3": 1.0, "E4": 3.0, "E5": 7.0}, "agent_b_ratings": {"E1": 6.0, "E2": 1.0, "E3": 2.0, "E4": 6.0, "E5": 7.0}}, {"construct_id": "C_M1_3", "construct_label": "Recommends specific named option from the brief \u2194 Rejects the framing and proposes alternative architecture", "mean_abs_diff": 1.2, "agent_a_ratings": {"E1": 1.0, "E2": 2.0, "E3": 7.0, "E4": 1.0, "E5": 1.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 6.0, "E4": 1.0, "E5": 1.0}}, {"construct_id": "C_M1_1", "construct_label": "Risk-minimizing mechanism analysis of data exposure \u2194 Harm-centered ethical framing of vulnerable users", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 7.0, "E2": 2.0, "E3": 3.0, "E4": 1.0, "E5": 2.0}, "agent_b_ratings": {"E1": 7.0, "E2": 2.0, "E3": 4.0, "E4": 2.0, "E5": 1.0}}], "label": "1.09"}}, {"data": {"id": "M3__M4", "source": "M3", "target": "M4", "rmse": 0.866, "level": "moderate", "color": "#c8a45c", "width": 7.089407073489802, "top_differing_constructs": [{"construct_id": "C_M1_2", "construct_label": "Accept premise that capable AI requires cloud \u2194 Challenge whether cloud-scale capability is needed", "mean_abs_diff": 0.6666666666666666, "agent_a_ratings": {"E1": 2.0, "E2": 6.0, "E3": 7.0, "E4": null, "E5": null}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 7.0, "E4": 1.0, "E5": 1.0}}, {"construct_id": "C_M1_1", "construct_label": "Risk-minimizing mechanism analysis of data exposure \u2194 Harm-centered ethical framing of vulnerable users", "mean_abs_diff": 0.4, "agent_a_ratings": {"E1": 7.0, "E2": 2.0, "E3": 4.0, "E4": 1.0, "E5": 4.0}, "agent_b_ratings": {"E1": 7.0, "E2": 2.0, "E3": 4.0, "E4": 1.0, "E5": 2.0}}], "label": "0.87"}}, {"data": {"id": "M3__M5", "source": "M3", "target": "M5", "rmse": 1.118, "level": "substantial-disagreement", "color": "#c44", "width": 5.638898514941873, "top_differing_constructs": [{"construct_id": "C_M1_1", "construct_label": "Risk-minimizing mechanism analysis of data exposure \u2194 Harm-centered ethical framing of vulnerable users", "mean_abs_diff": 0.8, "agent_a_ratings": {"E1": 7.0, "E2": 2.0, "E3": 4.0, "E4": 1.0, "E5": 4.0}, "agent_b_ratings": {"E1": 7.0, "E2": 2.0, "E3": 4.0, "E4": 2.0, "E5": 1.0}}, {"construct_id": "C_M1_2", "construct_label": "Accept premise that capable AI requires cloud \u2194 Challenge whether cloud-scale capability is needed", "mean_abs_diff": 0.0, "agent_a_ratings": {"E1": 2.0, "E2": 6.0, "E3": 7.0, "E4": null, "E5": null}, "agent_b_ratings": {"E1": 2.0, "E2": 6.0, "E3": 7.0, "E4": 2.0, "E5": 1.0}}], "label": "1.12"}}, {"data": {"id": "M4__M5", "source": "M4", "target": "M5", "rmse": 1.229, "level": "substantial-disagreement", "color": "#c44", "width": 4.998632432650367, "top_differing_constructs": [{"construct_id": "C_M1_3", "construct_label": "Recommends specific named option from the brief \u2194 Rejects the framing and proposes alternative architecture", "mean_abs_diff": 1.4, "agent_a_ratings": {"E1": 1.0, "E2": 1.0, "E3": 7.0, "E4": 1.0, "E5": 1.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 6.0, "E4": 1.0, "E5": 1.0}}, {"construct_id": "C_M2_1", "construct_label": "Accept lower capability to avoid cloud data exposure \u2194 Use cloud data for returns and capability", "mean_abs_diff": 1.4, "agent_a_ratings": {"E1": 3.0, "E2": 1.0, "E3": 1.0, "E4": 3.0, "E5": 7.0}, "agent_b_ratings": {"E1": 6.0, "E2": 1.0, "E3": 2.0, "E4": 6.0, "E5": 7.0}}, {"construct_id": "C_M1_2", "construct_label": "Accept premise that capable AI requires cloud \u2194 Challenge whether cloud-scale capability is needed", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 1.0, "E2": 7.0, "E3": 7.0, "E4": 1.0, "E5": 1.0}, "agent_b_ratings": {"E1": 2.0, "E2": 6.0, "E3": 7.0, "E4": 2.0, "E5": 1.0}}], "label": "1.23"}}]};
+const insightData = {"cell_id": "C_P_run4", "task": "C", "condition": "P", "run_idx": 4, "consensus_map": {"by_agent": {"M1": {"model_id": "anthropic/claude-opus-4.7", "persona": "E", "recommendation": "B", "element_label": "E4", "rationale_snippet": "**Recommendation: Option B (encrypted cloud with no training).**"}, "M2": {"model_id": "openai/gpt-5.5", "persona": "H", "recommendation": "B", "element_label": "E1", "rationale_snippet": "I recommend **Option B: encrypted cloud processing with no training use of user health data** as the primary policy."}, "M3": {"model_id": "google/gemini-3.1-pro-preview", "persona": "C", "recommendation": "A", "element_label": "E3", "rationale_snippet": "The industry consensus assumes that launching a viable AI product requires sending user data to the cloud, managing trust via convoluted opt-ins or theoretical \"encrypted enclaves.\" This relies on a massive hidden assumption: that consumers actually need a bleeding-edge, cloud-scale LLM to tell them"}, "M4": {"model_id": "deepseek/deepseek-v4-pro", "persona": "Q", "recommendation": "D", "element_label": "E5", "rationale_snippet": "Given the direct-to-consumer health app's 2M MAU base, the primary recommendation is **Option D: Cloud with opt-in training**. This choice maximizes expected value when evaluated against measurable risks and returns."}, "M5": {"model_id": "moonshotai/kimi-k2.6", "persona": "S", "recommendation": null, "element_label": "E2", "rationale_snippet": "The optimal policy is **local-only inference**. From a systems view, the highest-leverage variable in a consumer health app is not model capability but **structural trust**. Health data is a convex liability: the downside of one breach, regulatory reversal, or adversarial interpretation compounds no"}}, "distribution": {"B": 2, "A": 1, "D": 1}, "n_agents": 5, "consensus_strength": "split", "majority_recommendation": null}, "hidden_disagreement": {"status": "no_majority", "interpretation": "Agents split across recommendations; no hidden-consensus to expose."}, "blind_spots": {"status": "computed", "low_discrimination_constructs": [], "underexplored_components": [{"pc_index": 3, "variance_explained": 0.07143626522989378, "top_construct_id": "C_M1_1"}], "summary": "No obvious blind spots detected in construct space."}, "risk_surface": {"status": "computed", "risks_by_agent": {"M1": ["in this system? Two things: (1) health data being usable for purposes the user did not authorize, and (2) health data being accessible to parties other than the user at rest or in transit", "a good trade", "you don't yet understand"], "M2": [], "M3": ["everyone is wrong? It is highly likely that a smaller model with a 60-70% capability ceiling can handle the mundane reality of consumer health coaching perfectly well"], "M4": ["and returns"], "M5": []}, "total_risks_raised": 5, "agents_raising_risks": 3, "note": "Risks listed here were extracted by pattern matching on agent free responses. They are minority signals worth probing before acting on consensus."}, "operator_questions": ["Option A was recommended only by M3 (C). What does this agent see that others missed - or what is it weighing differently?", "Option D was recommended only by M4 (Q). What does this agent see that others missed - or what is it weighing differently?", "The contrarian agent recommended A against the majority. Contrarian disagreement is a useful signal: what is the strongest argument against the majority choice that hasn't been answered?"], "headline": "Agents are split across options; no clear consensus to act on."};
+
+cytoscape.use(cytoscapeCoseBilkent);
+
+const cy = cytoscape({
+  container: document.getElementById('cy'),
+  elements: [...graphData.nodes, ...graphData.edges],
+  style: [
+    {
+      selector: 'node',
+      style: {
+        'background-color': 'data(persona_color)',
+        'label': 'data(label)',
+        'color': 'white',
+        'text-valign': 'center',
+        'text-halign': 'center',
+        'font-size': '18px',
+        'font-weight': 'bold',
+        'width': 70,
+        'height': 70,
+        'border-width': 5,
+        'border-color': 'data(rec_color)',
+      }
+    },
+    {
+      selector: 'node:selected',
+      style: {
+        'border-color': '#2b3a55',
+        'border-width': 6,
+        'width': 80,
+        'height': 80,
+      }
+    },
+    {
+      selector: 'edge',
+      style: {
+        'line-color': 'data(color)',
+        'width': 'data(width)',
+        'curve-style': 'bezier',
+        'label': 'data(label)',
+        'font-size': '11px',
+        'text-background-color': 'white',
+        'text-background-opacity': 0.85,
+        'text-background-padding': 3,
+        'text-background-shape': 'round-rectangle',
+        'color': '#444',
+        'opacity': 0.8,
+      }
+    },
+    {
+      selector: 'edge:selected',
+      style: {
+        'opacity': 1.0,
+        'width': 'mapData(width, 1, 9, 4, 12)',
+        'overlay-color': '#c8a45c',
+        'overlay-opacity': 0.2,
+      }
+    },
+    {
+      selector: '.dimmed',
+      style: {
+        'opacity': 0.18,
+      }
+    },
+  ],
+  layout: {
+    name: 'cose-bilkent',
+    quality: 'default',
+    randomize: true,
+    nodeRepulsion: 8000,
+    idealEdgeLength: 220,
+    edgeElasticity: 0.45,
+    gravity: 0.25,
+    numIter: 2500,
+    animate: false,
+  },
+  wheelSensitivity: 0.2,
+  minZoom: 0.3,
+  maxZoom: 3,
+});
+
+// Render detail panel for a clicked NODE
+function renderNodeDetail(node) {
+  const d = node.data();
+  const personaColor = d.persona_color;
+  let html = `<h2 style="border-bottom-color: ${personaColor}">${d.label} - ${d.persona_label}</h2>`;
+  html += `<div class="kv"><strong>Model:</strong> <code>${d.model_id}</code></div>`;
+  html += `<div class="kv"><strong>Recommended:</strong> <span class="badge" style="background:${d.rec_color}">Option ${d.recommendation}</span></div>`;
+  html += `<h3>Full response</h3>`;
+  html += `<div class="response-text">${escapeHtml(d.full_response)}</div>`;
+  if (d.constructs && d.constructs.length) {
+    html += `<h3>Bipolar constructs this agent elicited</h3>`;
+    html += `<p style="font-size: 0.83em; color: #666;">
+      In Phase 3, each agent was given three triads of responses and asked,
+      for each triad, to name the bipolar dimension that distinguishes two
+      from the third. These are this agent's three constructs.
+    </p>`;
+    for (const c of d.constructs) {
+      const triadStr = c.triad ? c.triad.join(', ') : '';
+      html += `<div class="construct-card" style="border-left-color: ${personaColor}">
+        <div style="font-size: 0.78em; color: #888; margin-bottom: 4px;">
+          <code>${escapeHtml(c.id)}</code> &middot; from triad ${escapeHtml(triadStr)}
+        </div>
+        <span class="construct-pole">${escapeHtml(c.left)}</span>
+        <span style="color:#888"> ↔ </span>
+        <span class="construct-pole">${escapeHtml(c.right)}</span>
+      </div>`;
+    }
+  }
+  document.getElementById('detail-area').innerHTML = html;
+}
+
+// Render detail panel for a clicked EDGE
+function renderEdgeDetail(edge) {
+  const d = edge.data();
+  const src = cy.getElementById(d.source).data();
+  const tgt = cy.getElementById(d.target).data();
+  let levelLabel, levelClass, levelBg;
+  if (d.rmse < 0.5) {
+    levelLabel = 'Strong reasoning alignment';
+    levelClass = 'alert-ok';
+  } else if (d.rmse < 1.0) {
+    levelLabel = 'Moderate framing differences';
+    levelClass = 'alert-warn';
+  } else {
+    levelLabel = 'Substantial disagreement at the reasoning level';
+    levelClass = 'alert-danger';
+  }
+
+  let html = `<h2>${src.label} ↔ ${tgt.label}</h2>`;
+  html += `<div class="kv"><strong>${src.label}</strong> (${src.persona_label}) recommended <strong>Option ${src.recommendation}</strong></div>`;
+  html += `<div class="kv"><strong>${tgt.label}</strong> (${tgt.persona_label}) recommended <strong>Option ${tgt.recommendation}</strong></div>`;
+  html += `<div class="alert-banner ${levelClass}">
+    <strong>RMSE = ${d.rmse}</strong> - ${levelLabel}
+  </div>`;
+
+  if (src.recommendation === tgt.recommendation && d.rmse > 0.5) {
+    html += `<div class="alert-banner alert-warn">
+      <strong>Hidden disagreement.</strong> Both agents recommended Option ${src.recommendation},
+      but their underlying reasoning differs (RMSE = ${d.rmse}). Standard
+      ensemble methods would mask this. The dimensions where they diverged
+      most are listed below - probe these before treating this as a robust consensus.
+    </div>`;
+  } else if (src.recommendation !== tgt.recommendation) {
+    html += `<div class="alert-banner alert-warn" style="font-size: 0.87em">
+      These two agents reached different recommendations. The dimensions where
+      they rated options most differently explain why.
+    </div>`;
+  }
+
+  if (d.top_differing_constructs && d.top_differing_constructs.length) {
+    html += `<h3>Top dimensions where they rated options differently</h3>`;
+    html += `<p style="font-size: 0.83em; color: #666;">
+      Each construct below is one of the bipolar dimensions the panel elicited.
+      The numbers show how each agent rated each option (E1-E5) on this dimension,
+      1-7 scale (1 = strong left pole, 7 = strong right pole). Cells highlighted
+      red indicate large rating differences.
+    </p>`;
+    for (const tc of d.top_differing_constructs) {
+      html += `<div class="construct-card">
+        <div style="font-size: 0.83em; color: #666; margin-bottom: 4px;">
+          <code>${escapeHtml(tc.construct_id)}</code> &middot;
+          mean diff: <strong>${tc.mean_abs_diff.toFixed(2)}</strong>
+        </div>
+        <div style="margin-bottom: 8px;">
+          <span class="construct-pole">${escapeHtml(tc.construct_label.split('↔')[0].trim())}</span>
+          <span style="color:#888"> ↔ </span>
+          <span class="construct-pole">${escapeHtml(tc.construct_label.split('↔')[1] ? tc.construct_label.split('↔')[1].trim() : '')}</span>
+        </div>`;
+      const elems = Object.keys(tc.agent_a_ratings).sort();
+      html += `<div class="rating-grid">
+        <div class="rg-cell head">Agent</div>`;
+      for (const e of elems) html += `<div class="rg-cell head">${e}</div>`;
+      html += `<div class="rg-cell" style="background:${src.persona_color};color:white;font-weight:600">${src.label}</div>`;
+      for (const e of elems) {
+        const va = tc.agent_a_ratings[e];
+        const vb = tc.agent_b_ratings[e];
+        const diff = (va !== null && vb !== null) ? Math.abs(va - vb) : 0;
+        const cls = diff >= 3 ? 'diff-high' : diff >= 2 ? 'diff-med' : 'diff-low';
+        html += `<div class="rg-cell ${cls}">${va !== null ? va : '-'}</div>`;
+      }
+      html += `<div class="rg-cell" style="background:${tgt.persona_color};color:white;font-weight:600">${tgt.label}</div>`;
+      for (const e of elems) {
+        const va = tc.agent_a_ratings[e];
+        const vb = tc.agent_b_ratings[e];
+        const diff = (va !== null && vb !== null) ? Math.abs(va - vb) : 0;
+        const cls = diff >= 3 ? 'diff-high' : diff >= 2 ? 'diff-med' : 'diff-low';
+        html += `<div class="rg-cell ${cls}">${vb !== null ? vb : '-'}</div>`;
+      }
+      html += `</div></div>`;
+    }
+  }
+  document.getElementById('detail-area').innerHTML = html;
+}
+
+// Hover highlighting
+cy.on('mouseover', 'node', evt => {
+  const node = evt.target;
+  cy.elements().not(node.neighborhood()).not(node).addClass('dimmed');
+});
+cy.on('mouseout', 'node', () => cy.elements().removeClass('dimmed'));
+
+cy.on('mouseover', 'edge', evt => {
+  const edge = evt.target;
+  cy.elements().not(edge.connectedNodes()).not(edge).addClass('dimmed');
+});
+cy.on('mouseout', 'edge', () => cy.elements().removeClass('dimmed'));
+
+cy.on('tap', 'node', evt => renderNodeDetail(evt.target));
+cy.on('tap', 'edge', evt => renderEdgeDetail(evt.target));
+cy.on('tap', evt => {
+  if (evt.target === cy) {
+    document.getElementById('detail-area').innerHTML = `<div class="placeholder">
+      <p>Click an agent or a line to see detail.</p></div>`;
+  }
+});
+
+// Layout switching
+function setLayout(name) {
+  const opts = {
+    'cose-bilkent': { name: 'cose-bilkent', quality: 'default', nodeRepulsion: 8000,
+                       idealEdgeLength: 220, animate: false },
+    'circle': { name: 'circle', animate: false, radius: 200 },
+    'grid': { name: 'grid', animate: false },
+  };
+  cy.layout(opts[name]).run();
+}
+document.getElementById('btn-cose').onclick = e => {
+  setActiveBtn(e.target); setLayout('cose-bilkent');
+};
+document.getElementById('btn-circle').onclick = e => {
+  setActiveBtn(e.target); setLayout('circle');
+};
+document.getElementById('btn-grid').onclick = e => {
+  setActiveBtn(e.target); setLayout('grid');
+};
+function setActiveBtn(btn) {
+  document.querySelectorAll('.controls button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function escapeHtml(s) {
+  if (!s) return '';
+  return String(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/\n/g, '<br>');
+}
+
+// Auto-fit on load
+setTimeout(() => cy.fit(undefined, 60), 100);
+</script>
+
+</body>
+</html>

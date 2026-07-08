@@ -1,0 +1,106 @@
+{
+  "cell_id": "D_P_run2",
+  "task": "D",
+  "condition": "P",
+  "run_idx": 2,
+  "phase": "phase3_constructs",
+  "model_short_name": "M1",
+  "persona_or_neutral": "H",
+  "system_prompt": "You are an analyst with a humanist-ethicist epistemological frame. You center stakeholders, dignity, and distributional consequences. You see economic framings as incomplete. Your default question is 'who is affected and how?'. Your decision heuristic is to minimize unjustified harm to vulnerable parties, then optimize. Generate analysis from this frame.",
+  "user_prompt": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** ## Primary Strategy: Option B — Managed Retreat and Relocation\n\n**Why this, and why now.** Every other option is a bet that the projections are roughly right. Option B is the only one that remains coherent if they are wrong in the bad direction — and the contrarian read of the evidence is that they are. The \"30-50 cm by 2040\" figure rests on ice-sheet models that have repeatedly been revised upward; the hurricane frequency in this country has already 3x'd against baseline a decade ahead of schedule.\n\n**E2:** # Recommendation: Option B — Managed Retreat and Relocation\n\n## The binding constraint\n\nStrip away the rhetoric and look at the physics and the arithmetic. 2-3M people will be displaced from coastal zones over 15 years. That displacement is happening regardless of which option you pick — it is baked into the sea-level and storm-frequency numbers.\n\n**E3:** # Recommendation: Option E — Social cohesion and human capital first\n\n## Why this strategy\n\nThe threshold question in any adaptation strategy is not \"what do we protect?\" but \"who survives the transition with their dignity, livelihoods, and political voice intact?\" On a 15-year horizon with 2-3 million projected internal migrants, 10-15% agricultural yield losses, and recurring catastrophic storms, the population — not the coastline — is the asset most at risk of irreversible damage. Seawalls can be rebuilt; a generation of children pulled from school during displacement, a fishing community s...\n\n**E4:** ## Recommendation: Option C (Ecosystem-based adaptation) as primary, with explicit hedging\n\n**The data favor C on expected-value grounds.** Per-km coastal protection cost runs ~30% below hard infrastructure (multiple meta-analyses: Narayan et al. 2016; World Bank 2017 mangrove studies estimate $0.5-1.5M/km vs $2-5M/km for seawalls). With 4,500 km of coastline and a $17.5B/year primary allocation, that cost differential is decisive: ecosystem-based defenses let us cover meaningfully more shoreline within budget.\n\n**E5:** ## Recommendation: Option C (Ecosystem-based adaptation) as primary strategy\n\n**Why C is the leverage point.** Climate adaptation is fundamentally a problem of compounding uncertainty over a 15-year horizon where the error bars on every projection widen each year. The strategist's question is not \"what protects most under the median scenario\" but \"what posture degrades most gracefully across the full distribution of futures, including the ones we haven't modeled?\" Ecosystem-based adaptation is the only option whose protective capacity *grows* with time rather than depreciating, whose failure m...\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E2, E3\nTriad 2: E3, E4, E5\nTriad 3: E2, E3, E4\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'.",
+  "model_id_requested": "anthropic/claude-opus-4.7",
+  "model_id_used": "anthropic/claude-opus-4.7",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 5770,
+  "timestamp_iso": "2026-05-22T12:25:40.200568",
+  "raw_response_content": "Triad 1:\nLeft pole: Coastline and infrastructure as primary unit of analysis\nRight pole: People and dignity as primary unit of analysis\n\n(E1, E2 share the infrastructure/physics framing; E3 centers human capital and lives)\n\nTriad 2:\nLeft pole: Cost-efficiency and ecological leverage as decisive criterion\nRight pole: Human welfare and social fabric as decisive criterion\n\n(E4, E5 share ecosystem/expected-value reasoning; E3 centers people)\n\nTriad 3:\nLeft pole: Treats displacement and physical exposure as binding constraint\nRight pole: Treats budget allocation and protective coverage as binding constraint\n\n(E2, E3 frame the problem around population displacement as inevitable reality; E4 frames it around cost-per-km optimization)",
+  "raw_response_full": {
+    "id": "gen-1779449136-gfAqtmbaPWK01qVjfJM1",
+    "object": "chat.completion",
+    "created": 1779449136,
+    "model": "anthropic/claude-4.7-opus-20260416",
+    "provider": "Anthropic",
+    "system_fingerprint": null,
+    "service_tier": "standard",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "Triad 1:\nLeft pole: Coastline and infrastructure as primary unit of analysis\nRight pole: People and dignity as primary unit of analysis\n\n(E1, E2 share the infrastructure/physics framing; E3 centers human capital and lives)\n\nTriad 2:\nLeft pole: Cost-efficiency and ecological leverage as decisive criterion\nRight pole: Human welfare and social fabric as decisive criterion\n\n(E4, E5 share ecosystem/expected-value reasoning; E3 centers people)\n\nTriad 3:\nLeft pole: Treats displacement and physical exposure as binding constraint\nRight pole: Treats budget allocation and protective coverage as binding constraint\n\n(E2, E3 frame the problem around population displacement as inevitable reality; E4 frames it around cost-per-km optimization)",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1291,
+      "completion_tokens": 277,
+      "total_tokens": 1568,
+      "cost": 0.01338,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.01338,
+        "upstream_inference_prompt_cost": 0.006455,
+        "upstream_inference_completions_cost": 0.006925
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 1291,
+    "completion_tokens": 277,
+    "total_tokens": 1568,
+    "cost": 0.01338,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.01338,
+      "upstream_inference_prompt_cost": 0.006455,
+      "upstream_inference_completions_cost": 0.006925
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 0,
+  "cost_usd": 0.013380000000000001,
+  "parsed_summary": "parsed 3/3 constructs",
+  "request_payload": {
+    "model": "anthropic/claude-opus-4.7",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst with a humanist-ethicist epistemological frame. You center stakeholders, dignity, and distributional consequences. You see economic framings as incomplete. Your default question is 'who is affected and how?'. Your decision heuristic is to minimize unjustified harm to vulnerable parties, then optimize. Generate analysis from this frame."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** ## Primary Strategy: Option B — Managed Retreat and Relocation\n\n**Why this, and why now.** Every other option is a bet that the projections are roughly right. Option B is the only one that remains coherent if they are wrong in the bad direction — and the contrarian read of the evidence is that they are. The \"30-50 cm by 2040\" figure rests on ice-sheet models that have repeatedly been revised upward; the hurricane frequency in this country has already 3x'd against baseline a decade ahead of schedule.\n\n**E2:** # Recommendation: Option B — Managed Retreat and Relocation\n\n## The binding constraint\n\nStrip away the rhetoric and look at the physics and the arithmetic. 2-3M people will be displaced from coastal zones over 15 years. That displacement is happening regardless of which option you pick — it is baked into the sea-level and storm-frequency numbers.\n\n**E3:** # Recommendation: Option E — Social cohesion and human capital first\n\n## Why this strategy\n\nThe threshold question in any adaptation strategy is not \"what do we protect?\" but \"who survives the transition with their dignity, livelihoods, and political voice intact?\" On a 15-year horizon with 2-3 million projected internal migrants, 10-15% agricultural yield losses, and recurring catastrophic storms, the population — not the coastline — is the asset most at risk of irreversible damage. Seawalls can be rebuilt; a generation of children pulled from school during displacement, a fishing community s...\n\n**E4:** ## Recommendation: Option C (Ecosystem-based adaptation) as primary, with explicit hedging\n\n**The data favor C on expected-value grounds.** Per-km coastal protection cost runs ~30% below hard infrastructure (multiple meta-analyses: Narayan et al. 2016; World Bank 2017 mangrove studies estimate $0.5-1.5M/km vs $2-5M/km for seawalls). With 4,500 km of coastline and a $17.5B/year primary allocation, that cost differential is decisive: ecosystem-based defenses let us cover meaningfully more shoreline within budget.\n\n**E5:** ## Recommendation: Option C (Ecosystem-based adaptation) as primary strategy\n\n**Why C is the leverage point.** Climate adaptation is fundamentally a problem of compounding uncertainty over a 15-year horizon where the error bars on every projection widen each year. The strategist's question is not \"what protects most under the median scenario\" but \"what posture degrades most gracefully across the full distribution of futures, including the ones we haven't modeled?\" Ecosystem-based adaptation is the only option whose protective capacity *grows* with time rather than depreciating, whose failure m...\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E2, E3\nTriad 2: E3, E4, E5\nTriad 3: E2, E3, E4\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 2000
+  }
+}

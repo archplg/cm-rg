@@ -1,0 +1,106 @@
+{
+  "cell_id": "G_N_run8",
+  "task": "G",
+  "condition": "N",
+  "run_idx": 8,
+  "phase": "phase3_constructs",
+  "model_short_name": "M1",
+  "persona_or_neutral": "neutral",
+  "system_prompt": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation.",
+  "user_prompt": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** I recommend Option A: Predicted short-term survival. In a sustained overflow where admissions chronically exceed discharges by eight patients daily, the system cannot afford allocative neutrality. A fixed queue or lottery would strand dozens of salvageable patients in hallways each week while beds remain occupied by those least likely to benefit.\n\n**E2:** I recommend adopting **Option A: Predicted short-term survival**. In a sustained crisis where daily admissions vastly outpace discharges, the clinical and ethical imperative must shift from individual-centered care to population-level survival. Relying strictly on SOFA scores and 28-day survival probability is the most reliable way to mathematically minimize aggregate mortality.\n\n**E3:** Adopt Option C: first-come-first-served with a minimum ICU-need floor. This is the only protocol that fully replaces informal triage with a rule-based, bias-resistant process that can be operationalized in days, defended in court, and communicated transparently to exhausted staff and terrified families. In a moment of systemic overload where trust is the scarcest resource, procedural fairness must anchor every decision.\n\n**E4:** I recommend adopting **Option A: predicted short-term survival**. In a sustained ICU overflow, the ethically relevant question is not whether every patient has equal human worth—they do—but how to use a temporarily insufficient, life-saving resource so that the fewest people die. Option A is the clearest protocol for that purpose.\n\n**E5:** # Recommendation: Option A — Predicted short-term survival (SOFA-based)\n\nAdopt Option A. Under sustained overflow with eight net admissions per day, the protocol's first job is to function: to give exhausted clinicians a defensible, reproducible answer at 3 a.m. when two patients need the same bed.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E4, E5\nTriad 2: E1, E4, E5\nTriad 3: E1, E2, E3\n\nFor each triad, output EXACTLY this format with no markdown, no bold, no bullets, no numbered lists:\nTriad 1:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 2:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 3:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'. Use plain text labels (Triad N, Left pole, Right pole) without any markdown formatting.",
+  "model_id_requested": "anthropic/claude-opus-4.7",
+  "model_id_used": "anthropic/claude-opus-4.7",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 3311,
+  "timestamp_iso": "2026-05-25T11:22:06.234468",
+  "raw_response_content": "Triad 1:\nLeft pole: Emphasizes operational usability for exhausted bedside clinicians\nRight pole: Emphasizes aggregate mortality and allocative logic\n\nTriad 2:\nLeft pole: Justifies via contrast with inferior alternatives\nRight pole: Justifies via standalone ethical principle\n\nTriad 3:\nLeft pole: Prioritizes outcome maximization via survival prediction\nRight pole: Prioritizes procedural fairness and institutional trust",
+  "raw_response_full": {
+    "id": "gen-1779704522-GOvxPlHP0DXmQNdQAwaS",
+    "object": "chat.completion",
+    "created": 1779704522,
+    "model": "anthropic/claude-4.7-opus-20260416",
+    "provider": "Anthropic",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "Triad 1:\nLeft pole: Emphasizes operational usability for exhausted bedside clinicians\nRight pole: Emphasizes aggregate mortality and allocative logic\n\nTriad 2:\nLeft pole: Justifies via contrast with inferior alternatives\nRight pole: Justifies via standalone ethical principle\n\nTriad 3:\nLeft pole: Prioritizes outcome maximization via survival prediction\nRight pole: Prioritizes procedural fairness and institutional trust",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1038,
+      "completion_tokens": 166,
+      "total_tokens": 1204,
+      "cost": 0.00934,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00934,
+        "upstream_inference_prompt_cost": 0.00519,
+        "upstream_inference_completions_cost": 0.00415
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 1038,
+    "completion_tokens": 166,
+    "total_tokens": 1204,
+    "cost": 0.00934,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00934,
+      "upstream_inference_prompt_cost": 0.00519,
+      "upstream_inference_completions_cost": 0.00415
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 0,
+  "cost_usd": 0.009340000000000001,
+  "parsed_summary": "parsed 3/3 constructs",
+  "request_payload": {
+    "model": "anthropic/claude-opus-4.7",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** I recommend Option A: Predicted short-term survival. In a sustained overflow where admissions chronically exceed discharges by eight patients daily, the system cannot afford allocative neutrality. A fixed queue or lottery would strand dozens of salvageable patients in hallways each week while beds remain occupied by those least likely to benefit.\n\n**E2:** I recommend adopting **Option A: Predicted short-term survival**. In a sustained crisis where daily admissions vastly outpace discharges, the clinical and ethical imperative must shift from individual-centered care to population-level survival. Relying strictly on SOFA scores and 28-day survival probability is the most reliable way to mathematically minimize aggregate mortality.\n\n**E3:** Adopt Option C: first-come-first-served with a minimum ICU-need floor. This is the only protocol that fully replaces informal triage with a rule-based, bias-resistant process that can be operationalized in days, defended in court, and communicated transparently to exhausted staff and terrified families. In a moment of systemic overload where trust is the scarcest resource, procedural fairness must anchor every decision.\n\n**E4:** I recommend adopting **Option A: predicted short-term survival**. In a sustained ICU overflow, the ethically relevant question is not whether every patient has equal human worth—they do—but how to use a temporarily insufficient, life-saving resource so that the fewest people die. Option A is the clearest protocol for that purpose.\n\n**E5:** # Recommendation: Option A — Predicted short-term survival (SOFA-based)\n\nAdopt Option A. Under sustained overflow with eight net admissions per day, the protocol's first job is to function: to give exhausted clinicians a defensible, reproducible answer at 3 a.m. when two patients need the same bed.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E4, E5\nTriad 2: E1, E4, E5\nTriad 3: E1, E2, E3\n\nFor each triad, output EXACTLY this format with no markdown, no bold, no bullets, no numbered lists:\nTriad 1:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 2:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 3:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'. Use plain text labels (Triad N, Left pole, Right pole) without any markdown formatting."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 2000
+  }
+}

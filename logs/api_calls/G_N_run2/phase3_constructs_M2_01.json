@@ -1,0 +1,115 @@
+{
+  "cell_id": "G_N_run2",
+  "task": "G",
+  "condition": "N",
+  "run_idx": 2,
+  "phase": "phase3_constructs",
+  "model_short_name": "M2",
+  "persona_or_neutral": "neutral",
+  "system_prompt": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation.",
+  "user_prompt": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** I recommend adopting **Option A: predicted short-term survival**. In a sustained ICU overflow, the system’s central obligation is to prevent the greatest number of imminent, avoidable deaths using criteria that clinicians can apply consistently now. Option A is the most defensible protocol because it focuses narrowly on the medical question most relevant to ICU scarcity: who is most likely to survive this acute episode with intensive care.\n\n**E2:** I firmly recommend adopting **Option A (Predicted short-term survival)**. Under sustained absolute capacity overflow, a health system’s moral imperative fundamentally shifts from individual patient advocacy to population-level survival. Option A directly addresses this by maximizing the absolute number of lives saved.\n\n**E3:** Adopt the predicted short-term survival protocol. In a sustained overflow where clinicians are already making life-and-death decisions without rules, replacing shadow triage with an explicit, auditable clinical score is the only defensible course. The SOFA-based model can be operational in days because staff already use it; it communicates a single, comprehensible value to families—saving the most lives possible in the immediate crisis—and courts have consistently upheld similar frameworks.\n\n**E4:** I recommend adopting **Option A: Predicted short-term survival** as the formal triage protocol. This protocol replaces the current informal, biased decision-making with an objective, clinically familiar tool—the SOFA score—that ICU teams already use. It can be operational within 7 days because it requires minimal new training, and it communicates clearly: in a sustained crisis, we prioritize patients with the highest likelihood of surviving with ICU-level care.\n\n**E5:** # Recommendation: Option A — Predicted Short-Term Survival (SOFA-based)\n\nAdopt Option A. In a sustained overflow where admissions exceed discharges by eight patients daily, every bed-day allocated to a patient unlikely to survive is a bed-day denied to one who would. The ethical center of gravity in a true crisis standard of care is saving the most lives from the immediate threat — not the most life-years, not procedural purity, and not equality of chance.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E2, E4\nTriad 2: E2, E3, E5\nTriad 3: E2, E4, E5\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'.",
+  "model_id_requested": "openai/gpt-5.5",
+  "model_id_used": "openai/gpt-5.5",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 11408,
+  "timestamp_iso": "2026-05-22T00:58:43.121037",
+  "raw_response_content": "Triad 1:\nLeft pole: Population-level survival maximization\nRight pole: Operational objectivity and feasibility\n\nTriad 2:\nLeft pole: Consequentialist life-saving ethics\nRight pole: Auditable legal-procedural justification\n\nTriad 3:\nLeft pole: Crisis utilitarian moral framing\nRight pole: Practical implementation and bias reduction",
+  "raw_response_full": {
+    "id": "gen-1779407922-e8fULmH9an42DGVImg9D",
+    "object": "chat.completion",
+    "created": 1779407922,
+    "model": "openai/gpt-5.5-20260423",
+    "provider": "OpenAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "Triad 1:\nLeft pole: Population-level survival maximization\nRight pole: Operational objectivity and feasibility\n\nTriad 2:\nLeft pole: Consequentialist life-saving ethics\nRight pole: Auditable legal-procedural justification\n\nTriad 3:\nLeft pole: Crisis utilitarian moral framing\nRight pole: Practical implementation and bias reduction",
+          "refusal": null,
+          "reasoning": null,
+          "reasoning_details": [
+            {
+              "type": "reasoning.encrypted",
+              "data": "gAAAAABqD5w84OLLtHl1gQW-MzamPl2KkQZREXL9cLgR7mqNn1UkFQPvdIGo1tK0DrGZMCDjcNfMK0R2A3G8kz2YtSSS2ygkDNTv84O4qAUrVEsrrVDBHcNWFkU2eFxSxwb24H0CazvXyA6p-Q-hYB3TCYyUswzg0aKtkOwzO1rCsBWxs1vFN-n10JxYeYcIeqMEzufrfwYMjqejIeYqEgVBoIUfAoGNKVvNJ8BIUK1secqULILFzEMq4kxUG7tLyikIlnvT5IM4xcJ8fwvqcj6vxs3EC75wgXtQ0eDoLUjHDxNSVvM8_XVl-fOzHsSPL-OwO18cU2XaawG6LFa_s32uUVUeXYOSmkzQH0ZUq95UPkgpFlvzJouxovWCypTUYfAJe9LWYZ2KhaCVx0xuM1MPQsZyobYp9REI8jEmd4W6mcDVo4RXEb5xqHtMeebX2O4cRyRjwPiBO1IAZT6pB9xRPoMqJFBaS4MqLwBlGM2wxfGOSU_4FcFhKuzuSkGqOat6M6lPBg6c4jWTgxKX5Fl0wsCQFJtyyRW8xcyJwc7BjAq3B_G5hkj2iNlqGlAHZLpExX4RjfFVgLOHFZcBZjWwIdId5YEDgPNbjR4-3SAS3rvISSWq9D3jfoaZo_jE0WaR3w4-0rPx6JveSr7M0xKK-Hce6x3iCQ_2wVqNkaqreJFpclSsSeY9q4eubj4j_6qVWWHJCN1Z0ADTXL2OXSvfruTeB--DDaOt9oSRE8KRFqxSL4hlv0jZ3rH2lFxtoyReQ72FIXceIVw07yMLxb_v84GvYwUdVUO4fhGUmBlXLQGR3Ltr8nfQZe0y_jgAp8Rts_Nl9br4sv_cbj2ldZIbyzPYj07okyxNTK7aMte81115iRl2YQ32PBF7bwYxB1sgP9TIObrAKED2zfVUq9Fz_ir3N054yXRXjtoKDtYKm622morflJTFu3eQHutNwJuidVX6suqWTkhCPuf9MVGdFUIIT1t2mgcpzLDoIUcJnMc2E-exdUsq_ta8gp3uTUX0WXPxDWDvJeEtmFlOVIp5HyDWxU8XgLjLccPPWpK-SVB9DvFKhiY5h1w2hFEU4Qc-UyALrdJGTwC_WFVyvSY0l67gw0TglpmsOq952ylw_uQ8uu93CiSZRYxTY0CyNfpYm-t_2VbvVorq2G4POOHGYSteVdi6ahCm3tHQaPC0Ew0ZkYf19SalaZgZz8B8fRKAQoBxmw0yfg04B-Jcs2-Ryc3UDaQR22hNcfdr1EDGgnn0H6CQLRyC2PzpCbW6WdM4NC91eiTx-xZmmWrkIWnQPPoE8aaj124h1j1znjOwc4Ul0zPjb9tjSxUHMzyoHHen-7KgPemN-ZC0B0DUeYijnyTOytxi6pBOc_jwxMUARy4SneUV9xp_wZfnGKnlQjv4QrConBTqytWhTXNYnIim2vO_GrOpckNDlUgzJiyZd6DjRxRlQTr2RxxSQV6shGZ9rpr-q-oxD1U9pQ_CeT4g1B_pawxmfndNxyggtQmy2nsujwnRrs4Ng9SLIbwo6jAFyysItVvp01McIonzsYLIp_vUr2m_nq9c7oIvsQuencAx42UG4mw9oUOaMxz10jvdoftW76DjoG4bSFqBV7xtbiZdK9DKR6ovzgv78FvuS214yJFyUB3kbbo1Uwknrpg6nJMEjjLWM28mimgGH8CKizjB_gZ21EkR6I3G7zl_V2MKIQ80Bgo-M9bCfIT1yEISoB-p9FHmV65TnLxQXzks_2VCkEGZlUUjqkDvDdX8l38WAiSZIib6KTusAPdj6MBkTSBT34CsoxxvTi62nP-qvrFJjx5psQi-jMI6XBaGzAtt7MIxIkmoODPi_QzLjf6EYwNVS6yCueQukqVKZXnOy2q3v6RyO3bDpCtilDUYN5vbIjh5_X15RlNw701RPMlpCsbqQSzwIYidJukeC1duUti_x3EKb6xWrFkZ6ockD87n99aaT7TrGwGj7Yb9-Met_bzraew6y_0NqyGi7jMRJoH9cvwC6l39yWeKFOwBlPM5qNk2kswKI93MrYbhUNh3JtnN8qc9ICj-lAY_cfKTNd07CA8i5C6JdJnL_5AP2BiX855CfqGw-m9mgg-3M28MqwTzr9s2dh3Zo3bZwIl1PYQ19ia_CicR7JQ8mnCN5skHiK5aKHGtFhy13eY1lMy262oHO7atiXbRXV-bAVptrGpCfwJGyKTuqRcslAg2feaF2VjxZsovOddTblJ9cAVRMCllc7Hs_1r-0N8IbcPsB8q3QHcbx-0M3pGcBtxBPlRLBKbX3pYuCXy9B0SvVe3XPz07U7Q5wB3UwYozakVjHsERAOEAZGwVQxN4Yx3s2yE1dsNYsd-31rj2ox1B0rAysv7M5rGO_z-FGwAcWREJW8JDzU-w_HvdGWP0ziJqWnfwcqZTK1Nm70nEuoGyMNwxHiNEbvLHRUPZq-_Qpq9NbEKjzzk4prpZ1pk-SOhsBOBTMbXA4NdK5bdDcXTiY7SHVpBWF_B0qf3gsO_XuKN_9x8XqBj5alYnfkRXBIEmQDMAg9w4Vx20l8CqIAtOMz9eo2OH15woGmDGhIQ1fJl-_5pyqMJTP9OMY_liIvBmpAoI-z4DI2pa4fhOZtZg15NcaJc_hZWIpE4b7L7qrz78wNcRV0GVM6ZokZe8iUp7Ud0uPuQFhR61uy19XyT5AJOOiErx3N2E3RJap53Sohvj83n9LvtcAumXcRirwf9BlM7q45rkoalvGAfTuykQRUWd_1oWO4h2-WJxGwc8iMLwkx6bmFLBrp-onOdWyyc8BZntFwUWrN6Whigy_HgLbLf80APHSyCDKiD5CqVJ1frohVEzrt6xfJm1jdQ6Awcd-DWdngsbCnwKj09TgTFJn4NVF4ApTtdEmjz1fMtOK5cFYzwm-TGNaTJMWTvBdlY2sTsDl53KvNyGOO4X5vbpoTaG4fXFG3DEP1VBCMNXrsd89Q4WRTG3_8sVPCWB7fr4KcslZIlemL0KjZzNIqorPvsQUDW2MMmDSAN0uEAE2NNxMH4aQqOzSTEpSPz883L4ck0wdpmhWdDw_36DwogF21-fpvBVHK6vqqCwguV611upGxxIsJYLnEO-ddqaEeNPD5cU1I_o-qK1sh43Dspmi4oe7-Hno6zzwxgvRmkwtmAEXGmHwve_ALdoPii8NqP1zlj-x3zWsK971PgCsegV9VZ6cfY0jd0-ai5B8HgkC-IKocVmAVeGyULpVR7nuFVcIcEghKnfFmco0Zj6bNvUKQS8iACeSPMhYkx6KwPNsh03GFMrOamIgvwfyda0q1DmmmpbKdTTDHbx6Ojgp16Tsmi5BR918-_kqIGuEXa0zy7zpg0ik4I991yqt9qBgP4OLG0HCV_JoheWhz_Nf5OFBPkg5nBYDOg_FsR4P1pGi8EXIo3yN01mECDvVkjb1jAvgUUwm6ghd1XTX1FtcmfwxBurEl8SBfDLLF3yC5caVd3yVruNE-uXbibLkT-SuD2NgolpX32jwONTDs6uH_fGUWPPVd4BA68CI2OrP5D89Ig_mUCHQsxyiS0PMMIOVINmVcIgXDM0VuPfiWQ8RxWKP0PCy4xkoQOQZ6FhbM0bndBjeMU9UcRN8-yHNk7hxqVsKVL4EXiPwkSd6kVQ4V6z1Cpch9xtrlJV71_dhj28PDAk5Vlu1DwHA-UnGNrE0_6eIBr08ukMPXyh25nLoNfO0tkxVZvDixAjWPiL641LNsblN2LuiCHyDXlhpQTEGL8N3RTj6kaaXUVk-SoHD94feVBUZ3vzs3Y9kmoOcJp1K63bUpHo-ZqwXZ572L6-bqT-Mh7ULEg6iRBBUDVxxVP8z4638P8OaGIpFQ22gjlLnv164Mkbk-wph-rVsQLM9zWO8v71Dj8d_60FzniTmCZ01LCLKtfnQB62u9qyHK4svi20ADoNFHSR_vt1kdXb1PcgvrLCbd7QUL6nZicmwN0LjFpwkyQlAfd6UXm8ZLm_iVWVB4HXOBjqsGhBLd2o7YFAnaYPit6MSFCwPpjk_k4venel-zo6c5RRDbECgtINICSS9XZfNMZw5-rn7DhUKgb03AupcR2sTDBqEDMN7-Emv4t5eL0OQka1SDYKswG8-bkfsKR_14XmfcuvWr2rlx0FjPHlLf5GjtO9idKhUKlMYe55fXIhBXiR",
+              "format": "openai-responses-v1",
+              "id": "rs_05c4e3a6625a2c48016a0f9c330f448194a5d0fe6e1f2278f3",
+              "index": 0
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 624,
+      "completion_tokens": 588,
+      "total_tokens": 1212,
+      "cost": 0.02076,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.02076,
+        "upstream_inference_prompt_cost": 0.00312,
+        "upstream_inference_completions_cost": 0.01764
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 516,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 624,
+    "completion_tokens": 588,
+    "total_tokens": 1212,
+    "cost": 0.02076,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.02076,
+      "upstream_inference_prompt_cost": 0.00312,
+      "upstream_inference_completions_cost": 0.01764
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 516,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 516,
+  "cost_usd": 0.02076,
+  "parsed_summary": "parsed 3/3 constructs",
+  "request_payload": {
+    "model": "openai/gpt-5.5",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** I recommend adopting **Option A: predicted short-term survival**. In a sustained ICU overflow, the system’s central obligation is to prevent the greatest number of imminent, avoidable deaths using criteria that clinicians can apply consistently now. Option A is the most defensible protocol because it focuses narrowly on the medical question most relevant to ICU scarcity: who is most likely to survive this acute episode with intensive care.\n\n**E2:** I firmly recommend adopting **Option A (Predicted short-term survival)**. Under sustained absolute capacity overflow, a health system’s moral imperative fundamentally shifts from individual patient advocacy to population-level survival. Option A directly addresses this by maximizing the absolute number of lives saved.\n\n**E3:** Adopt the predicted short-term survival protocol. In a sustained overflow where clinicians are already making life-and-death decisions without rules, replacing shadow triage with an explicit, auditable clinical score is the only defensible course. The SOFA-based model can be operational in days because staff already use it; it communicates a single, comprehensible value to families—saving the most lives possible in the immediate crisis—and courts have consistently upheld similar frameworks.\n\n**E4:** I recommend adopting **Option A: Predicted short-term survival** as the formal triage protocol. This protocol replaces the current informal, biased decision-making with an objective, clinically familiar tool—the SOFA score—that ICU teams already use. It can be operational within 7 days because it requires minimal new training, and it communicates clearly: in a sustained crisis, we prioritize patients with the highest likelihood of surviving with ICU-level care.\n\n**E5:** # Recommendation: Option A — Predicted Short-Term Survival (SOFA-based)\n\nAdopt Option A. In a sustained overflow where admissions exceed discharges by eight patients daily, every bed-day allocated to a patient unlikely to survive is a bed-day denied to one who would. The ethical center of gravity in a true crisis standard of care is saving the most lives from the immediate threat — not the most life-years, not procedural purity, and not equality of chance.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E2, E4\nTriad 2: E2, E3, E5\nTriad 3: E2, E4, E5\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 2000
+  }
+}

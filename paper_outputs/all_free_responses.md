@@ -1,0 +1,4268 @@
+# Free response catalogue
+All 50 model responses across the 10 cells, organized by cell.
+
+## Cell `A_N_run1` (task A, condition N, run 1)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option A — Deep AI Integration into the Flagship
+
+With $8M and a 12-month window against accelerating disruption, the company's central asset is its existing customer base and the workflows those customers already trust. That is precisely what's under threat. AI-native competitors aren't winning because their models are better; they're winning because they're reimagining workflows that incumbents are bolting features onto. The right move is to defend and deepen the moat that actually exists, not build a new one from scratch.
+
+Option B (parallel AI-native product) sounds bold but is a classic innovator's-dilemma trap at this scale. $8M is not enough to fund two serious product organizations; you'd end up with a half-resourced flagship bleeding customers and a half-resourced new product that can't out-execute focused startups. Splitting attention across 300 employees and one budget cycle is how mid-sized SaaS companies lose both races.
+
+Option C (internal efficiency) is defensive in the wrong way — it extends runway but doesn't address why customers might leave. Margin optimization matters when your product is winning; it's rearranging deck chairs when the product is being disrupted.
+
+Option D (hiring) is a means, not a strategy. You need AI talent, yes, but hiring 5–8 senior researchers without a concrete product mandate produces an expensive R&D function disconnected from revenue. Hire *in service of* Option A.
+
+Option E (frontier lab partnership) creates dangerous dependency on a partner whose incentives will diverge the moment they decide to enter your vertical. Use frontier APIs, yes — but don't make a strategic partnership the centerpiece.
+
+Option A concentrates capital where it compounds: embedding LLM-driven capabilities directly into workflows customers use daily creates switching costs, generates proprietary usage data (a real moat), and turns the install base from a liability into a distribution advantage that no startup can match. Allocate roughly $5M to product/engineering rebuild, $2M to targeted senior AI hires *for this initiative*, and $1M to frontier model access and infrastructure. This collapses Options A, D, and E into a coherent thesis rather than three separate bets.
+
+The risk of Option A is moving too slowly or too cosmetically. The mandate must be rebuilding core workflows, not sprinkling "AI" buttons on existing screens.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+I would invest the $8M primarily in deep AI integration into the existing flagship product.
+
+For a $50M ARR SaaS company, the most defensible asset is not the ability to build “AI” in the abstract; it is the installed customer base, workflow ownership, domain data, integrations, and trust already embedded in the current product. AI disruption is most dangerous when a competitor uses it to make the customer’s existing workflow dramatically faster or simpler. The best response is to make your own product the place where that productivity gain happens first.
+
+A separate AI-native product may sound more ambitious, but it risks splitting attention, delaying revenue impact, and forcing the company to create a second go-to-market motion while the core product becomes vulnerable. The company likely does not have the capital or time to outspend frontier startups or Big Tech on generalized AI innovation. It should instead use AI to deepen its current moat: automate repetitive tasks, generate recommendations, collapse multi-step workflows, improve onboarding, and turn existing usage data into differentiated intelligence.
+
+The investment should be treated as a product transformation, not a feature sprinkle. That means dedicating a strong cross-functional team, redesigning the highest-value workflows around AI, building strong evaluation and safety systems, and pricing the new capabilities in a way that supports expansion revenue. The goal over 12 months should be measurable: higher retention, higher seat expansion, faster activation, and a credible AI narrative for enterprise buyers.
+
+This path also gives the company strategic flexibility. If the AI-integrated core product gains traction, it can later support adjacent AI-native offerings from a stronger base. But if the flagship product loses relevance, no amount of experimentation elsewhere will compensate. The urgent priority is to defend and upgrade the revenue engine the company already has.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+For a $50M ARR B2B productivity SaaS facing accelerating AI disruption, the most pressing existential threat is customer churn. Users are being aggressively courted by AI-native startups offering automated workflows and by Big Tech incumbents bundling AI features into existing enterprise suites. To survive, the company must leverage its primary moat: an established customer base and deeply entrenched workflows. Therefore, I strongly recommend allocating the $8M discretionary capital to **Deep AI integration into the existing flagship product (Option A)**. 
+
+Building a completely new AI-native product risks splitting the company’s focus and entering a saturated red ocean where an $8M budget will be rapidly dwarfed by venture-backed startups. Similarly, focusing inward on operational efficiency is a fatal misallocation; better margins are irrelevant if the core product becomes obsolete.
+
+Instead, the company must rapidly modernize its current flagship to achieve defensive innovation. Enterprise software customers generally do not want to deploy new, unproven applications; they want their current tools to become smarter. By rebuilding core workflows with embedded LLM features, the company neutralizes the primary selling point of aggressive challengers while capitalizing on the switching costs of its existing customers. 
+
+Financially and operationally, $8M is highly effective for this strategy. The company does not need to build foundation models or hire high-priced theoretical researchers. Instead, it can license existing frontier models via APIs and deploy the $8M to hire applied AI engineers, integrate specialized contextual data (RAG), and completely revamp the UX/UI to make these AI features seamless.
+
+By fundamentally upgrading the product customers already pay for, the company protects its $50M revenue base, creates pathways for immediate upsells, and proves to the broader market that it is an evolving, resilient platform rather than a legacy tool waiting to be disrupted.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+For a mid-sized B2B SaaS company facing an existential threat from AI disruption, the instinct is often to chase the new. However, with only $8M in discretionary capital, we must acknowledge a brutal truth: we cannot win a foundational model arms race against Big Tech, nor can we out-sprint a well-funded startup on a brand new product line without starving our core. The most defensible strategic position is not breadth, but depth. I strongly recommend **Option A: Deep AI integration into the existing flagship product.**
+
+Here’s the reasoning: We sit on an asset that neither Big Tech nor a startup can replicate overnight—a sticky, installed base of B2B customers with established workflows and trust. That existing distribution moat is our superpower. If we divert our $8M and focused engineering mindshare into building a parallel standalone AI product (Option B), we are essentially a startup again, but one burdened by the gravity of a 300-person organization. We will be outmaneuvered by leaner, more desperate teams.
+
+The threat is not that a user will buy a standalone AI tool; the threat is that an incumbent or startup rebuilds the specific, vertical workflow we dominate, making our product feel like legacy shovelware. By embedding LLM features directly into the core—transforming complex tasks like report generation, contract analysis, or data querying into natural language commands—we change the axis of competition. We force the AI-native entrants to compete not just on model quality, but on replicating the deep integration points, security compliance, and group permissioning we’ve spent years hardening.
+
+An operational efficiency push (Option C) is a short-term margin play that cedes the market to competitors who are busy redefining user expectations. Acquiring expensive AI research talent (Option D) would consume the majority of the $8M in annual burn on headcount alone, with a high risk of attrition and an immediate misalignment with our product-focused R&D culture. A strategic partnership (Option E) sounds capital-efficient but is a Faustian bargain; we would be routing our proprietary user data and future product roadmap through a partner who is no doubt building competitive applications themselves, effectively privatizing our profits and socializing our customer insights.
+
+We must use the $8M to surgically redesign three core, high-frequency user journeys within our existing flagship. This makes the product uncancellable because it’s deeply embedded, and justifies a direct price increase for the "AI-powered" tier, turning a defense into an expansion revenue motion immediately.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+Invest the $8M primarily in deep AI integration of your flagship product (Option A). At $50M ARR with 300 employees, your greatest strategic asset is not cash—it is installed base and distribution. A 12-month window is too brief to validate an entirely new product line or to turn a freshly hired research team into commercial output, and an efficiency push alone will not stop customers from defecting to AI-native competitors.
+
+By embedding LLM features directly into existing workflows, you convert an existential threat into a retention and upsell engine. Your users already trust your B2B productivity suite for critical processes; they are far more likely to adopt AI features that reduce friction inside familiar tools than to rip-and-replace for an unproven startup. This leverages your existing go-to-market motion rather than forcing you to build new sales muscle from scratch.
+
+Operationally, $8M is enough to fund a concentrated engineering strike team—dedicated product, engineering, and design talent—without diluting focus across a parallel offering. You can ship iteratively, measure adoption and revenue impact within quarters, and refine based on real customer behavior. Contrast this with building a separate product, which demands separate branding, onboarding, and support, or with hiring researchers who lack an immediate product mandate.
+
+A partnership with a frontier lab can supplement this effort, but partnership without product integration is just marketing. Make the flagship demonstrably smarter within the year. That is the only move that simultaneously defends your current revenue base and creates pricing power in an AI-shifted market.
+
+## Cell `A_N_run2` (task A, condition N, run 2)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option A — Deep AI Integration into the Flagship Product
+
+With $50M ARR and an installed B2B customer base, this company's single most valuable and defensible asset is its existing customer relationships, workflow data, and domain integration. That asset depreciates fastest if competitors — whether AI-native startups or Big Tech — can credibly claim their product does what yours does, but smarter. The urgent question isn't "what new thing should we build?" but "why would a customer renew next year?" Option A answers that directly.
+
+Rebuilding core workflows with embedded LLM features converts the company's distribution advantage into an AI advantage. Customers already in the product get measurable productivity lift without changing vendors, switching costs rise, and the proprietary usage data generated becomes the flywheel that pure-play AI entrants can't easily replicate. $8M is enough to fund a serious integration effort — model access, applied ML engineers, redesigned UX around AI-native interactions — without forcing the company to bet the business on an unproven new SKU.
+
+The alternatives are weaker for a company at this stage. A parallel AI-native product (B) splits focus, cannibalizes the core team's attention, and competes in a crowded greenfield where well-funded startups already have a head start. Internal efficiency (C) is defensive and extends runway but doesn't address the existential question of product relevance — you can't cost-cut your way through a platform shift. Aggressive hiring (D) is an input, not a strategy; 6 senior researchers with no clear product mandate is how $8M evaporates with nothing shipped. A frontier lab partnership (E) is worth pursuing, but as a *tactic in service of* Option A — not as the primary bet, because it gives away strategic optionality and margin to a partner whose incentives may shift.
+
+The strongest version of A *incorporates* elements of E (use frontier APIs rather than build foundation models) and D (hire 2-3 senior applied AI engineers, not 8), funded from the same $8M envelope. But the organizing principle must be: make the flagship product undeniably better with AI within 12 months, visible to every renewal conversation. That's where the disruption pressure is highest and where the company's existing assets create the most leverage per dollar.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+I recommend investing primarily in **deep AI integration into the existing flagship product**.
+
+For a $50M ARR SaaS company facing AI disruption, the biggest strategic risk is not missing a speculative new market; it is having the core product become visibly obsolete in the eyes of existing customers. If Big Tech or AI-native startups can make the same workflows faster, cheaper, or more automated, the current revenue base becomes vulnerable. The company’s strongest asset is its installed customer base, workflow knowledge, product data, brand trust, and distribution. The best use of $8M is to turn those advantages into an AI-enhanced product before competitors use AI to erode them.
+
+This should not mean sprinkling chatbots across the interface. The investment should focus on rebuilding the highest-value workflows around AI-native experiences: summarization, recommendation, drafting, automation, intelligent search, proactive alerts, and task completion. The goal should be measurable productivity gains for existing users, not novelty. If customers can see that the product now saves meaningful time or reduces headcount pressure, the company can defend retention, justify price increases, and create expansion revenue.
+
+A separate AI-native product line is tempting, but it carries more go-to-market risk and could distract from the urgent need to protect the core. Operational AI efficiency is useful, but margin improvement will not matter if the product category is being redefined externally. Hiring AI talent and partnerships may be necessary enablers, but they are not strategies by themselves.
+
+The company should use the $8M to form a dedicated AI transformation team tied directly to the flagship product, combining senior AI engineers, product leads, domain experts, and design. Success metrics should include adoption of AI features, retention lift, expansion ARR, workflow completion time saved, and willingness to pay.
+
+In short: defend and upgrade the revenue engine first. The company already has customers, data, workflows, and distribution. AI integration into the flagship product is the highest-leverage way to convert those assets into durable competitive advantage over the next 12 months.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+For a $50M ARR B2B SaaS company facing existential AI disruption, the primary competitive moat is no longer pure technology—it is distribution, entrenched user workflows, and customer switching costs. To survive and thrive in this landscape, I strongly recommend **Option A: Deep AI integration into the existing flagship product**. 
+
+The immediate threat from both Big Tech and agile AI startups is customer churn. If your core productivity workflows begin to feel archaic compared to modern alternatives, enterprise clients will migrate. By embedding LLM features directly into your existing flagship product, you effectively neutralize the "AI advantage" of your challengers while leaning into your biggest asset: a captive, paying user base. 
+
+With an $8M budget and a 12-month horizon, you cannot out-spend Big Tech on foundational model development, nor can you out-burn VC-backed startups building entirely new AI-native monoliths from scratch. Attempting to build a parallel product or hiring highly expensive fundamental AI researchers would spread your capital too thin and delay time-to-market. Instead, you can out-execute these competitors on *context*. By spending this discretionary capital on application-layer AI—wiring robust APIs into your specific, proprietary B2B workflows—you deliver immediate utility that generalist AI tools lack. 
+
+Furthermore, Option A provides the most reliable path to ROI. Selling a distinct, new AI product requires fresh go-to-market motions and risks cannibalizing your current revenue. Conversely, natively integrating AI into current workflows allows you to drive immediate Net Retention Rate (NRR) expansion through premium tier upselling, all while fortifying your base. 
+
+Ultimately, $8M is a highly effective budget for UX/UI overhauls, seamless API integrations, and prompt-engineering dedicated to specialized workflows. By deeply weaving AI into your flagship offering, you transform your rapidly commoditizing software into an AI-empowered necessity, securing your $50M foundation against disruption.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+Given the accelerating AI disruption in the B2B productivity space, the most judicious use of the $8M discretionary capital is to deeply integrate AI into the existing flagship product (Option A). This is not merely a defensive move; it is a strategic necessity that leverages the company's greatest assets—its installed base, domain expertise, and distribution—to turn a threats into a durable competitive advantage.
+
+The company’s 300 employees and $50M ARR signal a mature product with established customer workflows and trust. AI-native startups may have novel technology, but they lack this customer intimacy and the switching costs embedded in enterprise productivity suites. Big Tech entrants, while resource-rich, often struggle with the nuance of specific B2B use cases. By weaving large language model capabilities directly into the core workflows users already rely on, the company can enhance productivity gains in ways that feel organic rather than disruptive. Think intelligent document drafting, automated data analysis, or natural language interfaces for complex tasks—all grounded in the product’s existing UX and data models.
+
+This approach also offers the fastest time-to-value. The $8M can fund a concentrated effort: hiring a small, elite team of AI engineers (not 5-8 generalists, but 2-3 specialists paired with internal product experts), covering inference costs, and iterating rapidly on features. Because the features are embedded, upsell and adoption cycles can be immediate, converting AI investment into retention and expansion revenue well within the 12-month horizon. It protects against churn by making the product markedly more capable, while creating a higher ceiling for per-seat pricing.
+
+Alternatives like building a separate AI-native product or pursuing operational efficiency are tempting but flawed for the moment. A parallel offering dilutes focus and forces the company to compete against well-funded AI-native rivals on their own turf—without the distribution advantage. Efficiency gains are important but do not address the existential product relevance risk. Aggressive AI talent hiring without a clear product mandate risks a brain drain of unfocused research. A lab partnership, while offering speed, cedes strategic control and differentiation; the underlying models are becoming commoditized, so value accrues to the application layer and proprietary data. Ownership of the AI-enhanced workflow is where defensibility lies.
+
+In short, the board should ensure the flagship product doesn’t become a legacy asset but evolves into an AI-powered platform. This is the most capital-efficient, strategically sound path to safeguarding and growing the business through the disruption wave.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+Invest the $8M in **Option A: deep AI integration into the existing flagship product**. At $50M ARR, this company’s most valuable asset is not its current codebase but its installed base, distribution, and the trust of B2B buyers. A 12-month window is too short to validate an entirely new product, too precious to spend purely on back-office efficiency, and too risky to use as a speculative talent-hoarding exercise. The board needs a move that is simultaneously defensive—protecting the revenue base—and offensive—raising the competitive barrier for entrants.
+
+Embedding LLM features directly into high-frequency workflows accomplishes exactly that. Existing customers do not want another disjointed tool; they want the software they already rely on to produce exponentially better output. A focused $8M investment can fund a strike team of product engineers, UX researchers, and ML infrastructure specialists to rebuild three to four core workflows with embedded intelligence, ship them to an audience already under contract, and capture proprietary usage data that will shape the company’s architecture for the next three years.
+
+Building a separate AI-native product fractures focus and invites channel conflict at a moment when the company cannot afford distraction. An operational efficiency push improves margins but does nothing to stop churn when a well-funded rival releases a smarter alternative. Aggressive hiring without a clearly scoped shipping mandate puts the cart before the horse; senior researchers often need 6–12 months to ramp, and by then the competitive landscape will have shifted. A partnership with a frontier lab is tempting, but it risks reducing the company to a thin, replaceable wrapper around another firm’s model.
+
+Doubling down on the flagship compounds existing leverage, increases switching costs, and creates immediate upsell potential. Bet on the base you already have.
+
+## Cell `A_N_run3` (task A, condition N, run 3)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option A — Deep AI Integration into the Flagship Product
+
+With $50M ARR and accelerating disruption on multiple fronts, the company's most valuable and defensible asset is its existing customer base, workflow data, and domain expertise. That asset depreciates fastest if competitors—startups or Big Tech—offer customers an AI-native version of what they already do. The $8M should go where the existential risk is highest: the core product.
+
+Rebuilding flagship workflows with embedded LLM features does three things simultaneously. First, it neutralizes the most likely churn vector—a customer evaluating a shinier AI-native competitor and concluding the incumbent is standing still. Second, it converts proprietary workflow and usage data into a moat: fine-tuning, retrieval, and UX patterns grounded in real customer behavior are things a well-funded startup cannot easily replicate, and Big Tech entrants typically lack the vertical depth to match. Third, it generates near-term revenue impact through expansion pricing, new AI tiers, and reduced churn—outcomes a board can measure within the 12-month window.
+
+The alternatives are weaker under this constraint set. A parallel AI-native product (B) splits focus, cannibalizes the core, and asks a 300-person company to run two go-to-market motions—a classic innovator's-dilemma trap that rarely works at this scale. Internal efficiency (C) is valuable but defensive; it extends runway without addressing why customers would stay. Aggressive hiring (D) is an input, not a strategy—5-8 researchers without a clear product thesis will produce demos, not revenue, and the talent market is brutal at this tier. A frontier-lab partnership (E) is worth pursuing as a *complement* to A (likely $500K–$1M of the budget for API commitments and co-marketing), but as the primary bet it outsources the differentiation to a partner whose incentives will diverge.
+
+Concretely: allocate ~$6M to product and engineering rebuild (including a smaller, targeted 2-3 person senior AI hire), ~$1M to inference/compute and a frontier-lab integration, and ~$1M to internal AI tooling for support and engineering productivity. This concentrates capital on defending and compounding the existing $50M ARR rather than dispersing it across speculative bets.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+I recommend investing primarily in **deep AI integration into the existing flagship product**.
+
+For a $50M ARR B2B SaaS company, the most valuable asset is not the ability to experiment from scratch; it is the existing customer base, workflow ownership, product surface area, usage data, trust, and distribution. AI disruption is most dangerous when it makes the incumbent product feel slow, manual, or obsolete inside the workflows customers already depend on. The first priority should therefore be to make the core product materially better before competitors redefine the category.
+
+The company should use the $8M to rebuild its highest-friction workflows around AI-native experiences: automation of repetitive tasks, proactive recommendations, natural-language interfaces, workflow generation, summarization, and cross-system action-taking. This should not be a thin “AI assistant” bolted onto the UI. It should target measurable customer outcomes: faster task completion, fewer manual steps, improved team productivity, and higher retention. The goal is to make existing customers say, “This product now does the work, not just organizes it.”
+
+This path also has the best risk-adjusted return. The company can monetize through premium tiers, usage-based add-ons, enterprise upgrades, and retention lift. It can sell into known buyers with known pain points rather than trying to create a new category from zero. It also gives the company a stronger defensive moat: proprietary workflow context, integrations, customer-specific history, and embedded behavior are advantages that generic AI entrants will struggle to replicate.
+
+The investment should include some targeted AI hiring and vendor partnerships, but those should support the core product transformation rather than become the main strategy. Over the next 12 months, the board should expect a focused roadmap: identify the top 3-5 workflows where AI can create step-change value, ship aggressively to existing customers, instrument adoption and ROI, and package the capabilities into a compelling commercial upgrade.
+
+In an AI disruption cycle, the worst outcome is protecting the old product while experimenting at the edges. The company should modernize the heart of the business first.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+Given the accelerating AI disruption in the B2B productivity space, the board must direct the $8M discretionary capital toward **deep AI integration into the existing flagship product (Option A)**. For a $50M ARR company, this is the only strategy that effectively leverages your most valuable existing asset: established distribution.
+
+Well-funded AI startups possess cutting-edge native tech but face the steep, expensive climb of customer acquisition and change management. Big Tech has massive resources but often builds generalized tools that fail to capture the nuanced workflows of targeted B2B operations. By rebuilding your core workflows with embedded LLM features, you neutralize the startup threat by bringing the innovation directly to the user, while remaining highly specialized defensively against Big Tech.
+
+In the productivity sector, users don’t fundamentally want to adopt new software; they want their current objectives achieved with less friction. Deep AI integration respects the switching costs your customers have already paid while delivering the massive efficiency gains they are beginning to demand. Embedding AI directly into the flagship product eliminates the incentive for your clients to evaluate startup competitors. It effectively converts a severe churn risk into a powerful retention mechanism—and likely a premium tier upsell.
+
+Furthermore, this approach is the most practical use of $8M over a tight 12-month horizon. With this timeline and budget, attempting to build a disconnected parallel product dilutes focus, while trying to out-research frontier labs is a fool's errand. Instead, you should deploy this capital toward applied engineering, UX/UI modernization, and data orchestration. By utilizing existing foundation models via API, you focus your war chest entirely on crafting an unparalleled, AI-augmented user experience within the environment your 300 employees already know how to support, sell, and maintain. 
+
+You must defend your moat by aggressively modernizing it. Deep integration is the most direct, pragmatic path to protecting your $50M baseline while demonstrating immediate, tangible AI value to your market.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+As an analyst, I recommend directing the $8M primarily toward deep AI integration into the existing flagship product. This is not merely a feature upgrade—it’s an existential defensive and offensive pivot that uses the company’s strongest asset: an installed base of B2B customers who already trust and rely on the platform.
+
+In productivity tools, workflows are sticky, but switching costs erode when competitors offer dramatically higher intelligence and automation. Embedding LLM-powered capabilities directly into the core workflows—such as drafting, summarizing, data extraction, or decision support—can transform the product’s value proposition within the familiar interface. This approach reduces churn risk, creates upsell opportunities through premium AI tiers, and builds a data moat as user interactions train fine-tuned models that become harder to replicate. Crucially, it lets the company control the user experience end‑to‑end, avoiding the dilution that comes with a separate product line or a partner’s agenda.
+
+Financially, $8M over 12 months is sufficient to reallocate a dedicated cross‑functional team (engineering, product, design, and a few targeted AI hires) without the burn of building a new go‑to‑market motion from scratch. The existing sales and support channels can be trained to sell and service the enhanced product immediately, shortening time‑to‑revenue compared to launching a standalone offering. This also respects the company’s mid‑size constraints: 300 employees cannot effectively run two parallel product bets at scale without dividing focus and culture.
+
+Operational efficiency gains or partnership deals may provide near‑term margin relief or faster access to models, but they don’t address the core product’s vulnerability. A competitor with a native AI workflow could render the current platform obsolete, regardless of internal cost savings. Similarly, hoarding AI talent without a sharp product vector risks attrition and squanders the team’s domain expertise. By integrating AI deeply into the flagship, the company turns its existing distribution into a competitive advantage, reclaims the innovation narrative, and sets the stage for future optionality—whether that means extracting data network effects, expanding into adjacent workflows, or even eventually spinning out an AI‑native module once the market is proven. Given the accelerating disruption, the most urgent priority is to protect and evolve the revenue engine today.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+The board should direct the full $8M toward deeply integrating AI into the existing flagship product. At $50M ARR, the installed base and established workflows are the company’s most valuable—and most vulnerable—assets. A twelve-month window is too short to build a new revenue stream from scratch, but it is sufficient to transform the core product from a passive tool into an active, intelligent co-worker.
+
+By embedding LLMs directly into current workflows—automating routine tasks, generating context-aware outputs, and surfacing predictive insights—the company achieves three imperatives simultaneously. First, it unlocks immediate monetization through an AI tier that existing customers can adopt without procurement friction. Second, it radically increases switching costs; once proprietary data and habits are woven into AI-enhanced automation, migration to an outside disruptor becomes organizationally painful. Third, it exploits a structural moat that well-funded startups lack: years of proprietary workflow data that can be used to fine-tune models for vertical-specific accuracy generic Big Tech offerings cannot easily replicate.
+
+This path also respects capital constraints. The company already owns the user interface, security model, compliance certifications, and distribution channels. Spending on engineering integration and model refinement converts directly into shippable features for a known buyer, rather than dissipating across speculative initiatives. The existential risk is not that the firm fails to invent a second product, but that its flagship becomes obsolete. Defend the core by making it intelligent, and the $50M revenue base becomes a launching pad rather than a melting ice cube.
+
+## Cell `A_N_run4` (task A, condition N, run 4)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option A — Deep AI Integration into the Flagship Product
+
+With $50M ARR and an established B2B customer base, the company's most defensible asset is not its technology stack but its embedded position in customer workflows. That position is precisely what AI-native startups are trying to dislodge and what Big Tech entrants will commoditize from above. The $8M should be spent reinforcing that moat before it erodes, and that means rebuilding the flagship with embedded LLM features as the core priority.
+
+The strategic logic is straightforward. Existing customers are already evaluating AI alternatives — every B2B buyer in 2025 is. If the flagship product feels like a pre-AI artifact at renewal time, churn accelerates regardless of how good a parallel new product (Option B) might be. A separate AI-native line splits engineering focus, confuses the go-to-market motion, and cannibalizes the same sales conversations. Worse, it signals to customers that the main product is being quietly deprecated.
+
+Option C (internal efficiency) is tempting because it's measurable and safe, but extending runway doesn't matter if the core product becomes obsolete — you're optimizing a depreciating asset. Option D (talent acquisition) is an input, not a strategy; 5-8 senior researchers without a clear product thesis to execute against will either churn out or build science projects. Option E (frontier lab partnership) is worth pursuing *in support of* Option A — use it to get model access and co-marketing — but a partnership is not itself a product strategy and leaves you dependent on a counterparty whose incentives may shift.
+
+Concretely, $8M deployed against the flagship should fund: (1) a focused AI product pod (~15-20 people, mixing existing domain experts with 3-4 senior AI hires — capturing part of Option D), (2) inference and fine-tuning infrastructure or API spend, (3) a partnership/API deal with a frontier lab for model access (capturing part of Option E), and (4) customer-facing rollout and migration support.
+
+This concentrates capital where the company already has unfair advantages — proprietary workflow data, customer trust, distribution — and converts those into AI-era defensibility. Diffusing $8M across five bets is how mid-sized companies lose to focused competitors. Pick the fight you can win.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+I recommend investing primarily in deep AI integration into the existing flagship product.
+
+For a $50M ARR SaaS company, the most valuable asset is not a blank-sheet product idea; it is the existing customer base, workflow data, brand trust, integrations, and distribution. AI disruption will most directly threaten the company where customers already feel pain: in the core workflows they use every day. If competitors make those workflows dramatically faster, more automated, or more intelligent, retention and expansion will deteriorate quickly. The best defensive and offensive move is therefore to make the flagship product meaningfully AI-native before the market reframes expectations.
+
+The $8M should be used to rebuild a handful of high-value workflows end-to-end, not to sprinkle generic chatbot features across the product. The company should identify the 3-5 workflows most tied to retention, expansion, and user frequency, then embed AI where it can remove steps, generate outputs, recommend next actions, and automate routine decisions. The goal should be measurable customer outcomes: reduced time-to-completion, higher activation, increased seat expansion, and willingness to pay for premium AI capabilities.
+
+This path also has the best risk-adjusted return. A new standalone product could create upside, but it risks splitting focus and competing without the advantage of existing usage patterns. Internal efficiency work is useful but insufficient as a primary strategic response to market disruption. Hiring AI talent matters, but talent should be attached to a focused product mandate rather than treated as the strategy itself. Partnerships can accelerate execution, but they should support the core product transformation, not substitute for it.
+
+In the next 12 months, the company needs to protect its base while creating a credible AI growth story. Deep integration into the flagship product does both. It gives sales a stronger renewal and upsell narrative, gives customers a reason to stay, and gives the board tangible evidence that the company can adapt its core business to the AI era.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+For a $50M ARR SaaS company facing accelerating AI disruption, the most critical imperative is defending and expanding its existing revenue base. Therefore, I strongly recommend allocating the $8M discretionary capital toward deep AI integration into the existing flagship product (Option A).
+
+At this stage of maturity, the company’s greatest competitive moats are not foundational AI capabilities, but rather its established distribution channels, deep workflow expertise, and entrenched customer base. The primary threat from well-funded startups and Big Tech is workflow obsolescence: if the current product feels clunky or manual compared to AI-native alternatives, churn will rapidly erode the $50M ARR foundation. By rebuilding core workflows with embedded LLM features, the company neutralizes the agile startup threat while leveraging its proprietary user data and specific domain context—the exact elements that generic Big Tech solutions typically lack.
+
+Furthermore, an $8M budget is perfectly sized for this initiative. While it is insufficient to win a fundamental AI research arms race against Google or OpenAI, and too small to successfully incubate an entirely new product line without severely distracting leadership, $8M is more than enough to fund focused, application-layer engineering. By utilizing existing frontier model APIs and seamlessly integrating them into the current UI, the company can deliver immediate, tangible value to a captive audience. This approach avoids the notoriously high failure rate of launching net-new products and bypasses the steep capital requirements of building underlying AI infrastructure.
+
+Ultimately, integrating AI into the flagship product drives immediate ROI. It protects the core business through increased user retention and opens straightforward avenues for expansion revenue via premium AI pricing tiers. By modernizing its core offering, the company transforms its existing market momentum into a lasting defensive shield.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+As an analyst evaluating this $50M ARR SaaS company’s strategic position, I recommend **Option A: Deep AI integration into the existing flagship product**. The core threat is not that the company lacks an AI product line, but that its current cash-cow—the flagship productivity tool—becomes obsolete or distinctly inferior as competitors embed AI into similar workflows. With 300 employees and an established customer base, the fastest, most capital-efficient path to defend and extend the business is to re-imagine its existing core workflows with AI, making the product itself the moat.
+
+The $8M discretionary capital is sufficient for a focused rebuild over 12 months. Rather than spreading resources, the company can assemble a small, empowered cross-functional team (product, design, engineering) to identify the highest-impact use cases—automating repetitive tasks, generating insights, or enabling natural language interactions—and weave LLM-powered features directly into the user journey. This approach leverages the company’s deep understanding of its customers’ pain points, something no Big Tech entrant or startup can replicate quickly. It also preserves the existing distribution channels and customer relationships, turning the current install base into a beta-testing army that accelerates refinement and advocacy.
+
+Alternatives fall short. A separate AI-native product (Option B) fragments focus, creates channel conflict, and risks burning cash on customer acquisition without the parent brand’s halo. An operational efficiency push (Option C) is a valuable exercise but does nothing to modernize the revenue-generating product; it’s a retreat, not a response. Aggressive hiring of senior AI researchers (Option D) is expensive and slow—top talent can cost over $1M annually in total compensation, and even five such hires would consume most of the budget before any output materializes, with no guarantee of retention. A strategic partnership with a frontier lab (Option E) may offer speedy access to models, but cedes strategic control, creates dependency, and ties margin to an external entity whose priorities may diverge. Co-marketing rarely compensates for a lack of differentiated product experience.
+
+Deep integration, in contrast, uses the company’s own assets—codebase, customer insights, and market position—as the foundation for AI adoption. It signals to both the market and employees that the company is not just surviving disruption but leading its own transformation. The $8M can be precisely allocated to talent, accelerated compute, and user testing, delivering a demonstrable upgrade within the year. This is the best defense against startups and Big Tech alike: making the incumbent product smarter and stickier, so customers have no reason to leave.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+Invest the $8 million and the next twelve months into deeply embedding AI into your existing flagship product. At $50 million ARR, your most durable asset is not your code base but your installed base: the trust, contracts, and daily workflow data that live inside your customers' operations. B2B productivity software is stickiest when it becomes invisible infrastructure, and the fastest way to lose that position is to let an external AI layer—or a separate product—siphon usage away from your core platform.
+
+You cannot outspend Big Tech in a multi-year talent war, and twelve months is far too short to incubate a brand-new AI-native offering, gain distribution, and avoid cannibalizing your current revenue. A partnership with a frontier lab buys you models, not differentiation; any competitor can sign the same API agreement. Likewise, using this capital purely for internal efficiency is a defensive crouch that improves margins but does nothing to stop product-level substitution.
+
+Instead, surgically rebuild two or three core workflows with embedded LLM features that leverage your proprietary usage data. Ship them first to your existing customers as expansion-tier functionality. This generates immediate, high-margin upsell revenue from a captive audience while raising switching costs. It also gives your sales team a credible, integrated narrative against both startups and incumbents. In a platform shift, the winners are rarely the companies that build the newest tool; they are the ones that make the incumbent tool intelligent. That is your path.
+
+## Cell `A_N_run5` (task A, condition N, run 5)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option A — Deep AI Integration into the Flagship
+
+With $50M ARR and accelerating disruption on both flanks, the company's defensible asset is not its technology — it's the installed base, the workflow data, and the switching costs already embedded in customer operations. That asset depreciates fast if the flagship feels like a 2022 product while competitors ship AI-native experiences. The $8M should go where it protects and compounds what already works: rebuilding core workflows with embedded LLM features in the flagship.
+
+Three reasons this beats the alternatives.
+
+**First, distribution is the scarce resource, not models.** Frontier capabilities are increasingly commoditized through APIs. What startups lack — and what Big Tech entrants must build from scratch in vertical B2B productivity — is the company's customer relationships, domain-specific data, and integration footprint. Pouring AI *into* that moat is higher-leverage than building a parallel product (Option B) that competes for the same attention without inheriting the moat, or chasing talent (Option D) without a clear product thesis to deploy them against.
+
+**Second, the parallel-product path is a common and expensive trap.** New AI-native lines split engineering focus, confuse the sales motion, cannibalize the core narrative with customers ("should I wait for the new thing?"), and rarely reach escape velocity inside 12 months. At $50M ARR, the company cannot afford a two-front war.
+
+**Third, customer expectations are the immediate threat vector.** Renewal conversations in 2025 increasingly hinge on "what's your AI story?" An integrated flagship gives sales a concrete answer, lifts retention, supports price defense, and generates the proprietary usage data that will matter for the *next* round of model fine-tuning and differentiation.
+
+Operational efficiency (C) is real but second-order — it extends runway without addressing the disruption itself. A frontier-lab partnership (E) is worth pursuing as a *complement* to A (negotiate it to power the integration), not as the primary bet; pure partnerships leave you dependent and undifferentiated. Talent (D) follows from product strategy, not the reverse.
+
+Concretely: allocate roughly $5–6M to flagship AI integration (engineering, infra, inference costs), $1.5M to a lightweight frontier-lab integration deal, and $1M to targeted senior AI hires who join the flagship team. One bet, executed seriously.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+I would invest primarily in **Option A: deep AI integration into the existing flagship product**.
+
+For a $50M ARR SaaS company under AI disruption, the most urgent strategic question is not “How do we become an AI company?” but “How do we prevent our current product from becoming obsolete while using our installed base as an advantage?” The company’s strongest assets are likely its customers, workflow data, product surface area, brand trust, and distribution. Deeply embedding AI into the flagship product leverages all of those immediately.
+
+A separate AI-native product may be appealing, but it risks creating a speculative second business before the first one is defensible. In a 12-month window, that is dangerous. Well-funded startups can move faster on greenfield products, and Big Tech can bundle aggressively. This company’s better play is to make its current workflows materially more valuable, stickier, and harder to replace.
+
+The investment should focus on rebuilding high-frequency, high-friction workflows around AI: drafting, summarization, automation, recommendations, workflow orchestration, and proactive assistance. The goal should not be superficial “AI features,” but measurable improvements in user productivity and retention. If the flagship product becomes the system where customers’ work is increasingly generated, interpreted, and automated, the company can defend pricing, reduce churn, and potentially create a premium AI tier.
+
+This path also creates compounding advantages. Existing customers provide rapid feedback loops. Sales can position AI enhancements as an upgrade rather than a risky new product. Customer success can identify repeatable use cases. Product usage data can reveal where AI creates real value versus novelty.
+
+I would still reserve some of the $8M for selective AI talent and infrastructure, but only in service of the flagship transformation. The company does not need an abstract AI research capability; it needs productized AI that protects and expands its core revenue base.
+
+In short, the best move is to turn the current product into the AI-native version of itself before someone else does.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend directing the $8M discretionary capital toward **Option A: Deep AI integration into the existing flagship product.**
+
+For a $50M ARR B2B productivity company, the most valuable asset is not its proprietary underlying codebase, but its established distribution, enterprise contracts, and deep workflow lock-in. Over the next 12 months, the primary existential threat is customer churn. Well-funded startups are trying to peel away your users with slick, AI-native workflows, while Big Tech aims to bundle basic AI productivity capabilities into their massive ecosystems. 
+
+To survive and thrive, you must lean into your incumbent advantage. Embedding LLM-powered features deeply into your core product immediately neutralizes the startups' main differentiator. Startups have to fight for distribution; you already have the users, the data, and the context. By rebuilding existing workflows with AI, you transform a potential disruption into a massive value multiplier for your current customers. This drives immediate retention, increases platform stickiness, and offers clear upsell paths—effectively protecting and expanding your $50M revenue engine.
+
+Attempting to build a parallel AI-native product would violently split your organizational focus and risk cannibalizing your own user base. Similarly, burning strategy capital on aggressive internal ML hiring misjudges the current technological reality: a mid-sized SaaS company does not need to build highly specialized foundational models to win. You need to master *applied* AI. Leveraging existing frontier APIs allows your current engineering and product teams to focus strictly on UX and workflow integration, which is where your true B2B moat lies.
+
+Allocating this $8M to upgrade your flagship offering ensures you defend your core business and rapidly deliver tangible utility to a captive audience. In B2B SaaS, the winner is rarely the one with the most novel bespoke AI; it is the incumbent who most seamlessly integrates AI into the workflows users already trust.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+Given the accelerating AI disruption in B2B productivity tools, the most urgent priority is defending the core business while transforming it to meet new user expectations. Option A—deeply embedding LLM capabilities into the flagship product—is the only path that addresses this dual imperative within the 12‑month window and $8M budget.
+
+Our existing product already has distribution, customer trust, and workflow integration. That’s a formidable moat that pure‑play AI startups and Big Tech entrants lack. By rebuilding core workflows with native AI features, we not only neutralize the threat of incumbents being “good enough” but can leapfrog them with contextual, seamless intelligence that generic copilots can’t match. This isn’t about bolting on a chatbot sidebar; it’s about re‑thinking task completion—automating repetitive data entry, generating insights from unstructured text, or proactively suggesting next actions—all within the interface users already know.
+
+The $8M is well‑suited to this effort. It can fund a focused squad of product engineers, prompt engineers, and UX designers who deeply understand the domain, plus the compute and inference costs for iteration. Unlike building a brand‑new product (Option B), we don’t need to acquire a separate customer base or fight for attention in an over‑crowded market; we can measure success through increased engagement, expansion revenue, and churn reduction—metrics that directly impact ARR. Internal efficiency gains (Option C) are valuable but are a maintenance play, not a competitive repositioning. Aggressive external hiring (Option D) risks expensive talent that may take quarters to become productive on unfamiliar codebases, while a strategic partnership (Option E) cedes differentiation and revenue upside to a lab that could eventually compete.
+
+The clock is ticking. Our customers will soon expect AI‑augmented productivity as table stakes. If we fail to embed it into the product they already use daily, they’ll switch to a rival that does. Option A turns our installed base from a legacy liability into a launchpad for AI‑enabled growth. It’s the most capital‑efficient, strategically defensive, and high‑impact move we can make.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+**Recommendation: Invest the $8M in Option A—deep AI integration into the existing flagship product.**
+
+With $50M ARR and a 300-person footprint, this company’s decisive advantage is not capital; it is distribution. It has an installed base, embedded workflows, and B2B trust that well-funded startups cannot buy overnight. In a 12-month window, the highest-return move is to make that core product dramatically smarter, not to fragment resources across parallel bets or internal cost centers.
+
+Rebuilding core workflows with embedded LLM features is the only option that simultaneously defends and grows revenue. It raises switching costs for existing customers before Big Tech entrants can poach them, and it creates immediate upsell potential within the current base. A separate AI-native product would force the company to build new positioning, onboarding, and sales motion from scratch—an expensive, uncertain gamble when the core line is already under competitive pressure. Likewise, operational efficiency and talent-hiring initiatives are inputs, not outcomes; they do not, by themselves, close the product gap with disruptors. A frontier-lab partnership risks ceding long-term differentiation and margin.
+
+$8M will compound fastest when it is layered onto existing infrastructure, data pipelines, and user behavior. By concentrating capital on the flagship, the company turns its current product into the moat: an AI-augmented workflow that becomes more valuable the longer a customer uses it. That is defensible growth. Secure the base first; everything else is a year-two option.
+
+## Cell `A_P_run1` (task A, condition P, run 1)
+
+### M1 (anthropic/claude-opus-4.7), persona=Q
+
+**Recommendation: Option C (operational efficiency), with a carve-out to pilot Option A.**
+
+The framing "AI disruption" is doing too much work in this brief. Before committing $8M to a strategic bet, I want to know: what is the actual churn rate? What percentage of churn cites AI-competitor switching in exit interviews? What's the current gross margin and runway? Absent that data, I anchor on base rates and option value.
+
+Base rates for the alternatives are unflattering. New product lines at incumbent SaaS firms (Option B) have historically low success rates — I'd estimate 10-20% reach material revenue within 24 months, and $8M is likely under-capitalized for a true AI-native build competing against well-funded startups. Aggressive senior AI hiring (Option D) at a $50M ARR company faces brutal unit economics: 5-8 senior researchers at fully-loaded ~$600-800K each burns the budget in 18 months with no shipped product and high flight risk. Frontier lab partnerships (Option E) sound like leverage but in practice deliver commoditized capability your competitors also access — low differentiation, and you become a distribution channel for the lab.
+
+Option C is the only choice with measurable, near-term, falsifiable ROI. Internal AI tooling in sales (lead scoring, outreach), support (deflection, summarization), and engineering (code assist, test generation) has documented productivity gains in the 15-30% range across multiple published studies and vendor case studies. On a 300-person base with ~$30-40M opex, even a conservative 10% efficiency gain returns $3-4M annually — a 1.5-2 year payback on the full $8M, with 80% confidence interval roughly [1x, 4x] return. Critically, it *extends runway*, which is the actual scarce resource when facing a disruption you can't yet scope.
+
+The carve-out: allocate ~$1.5M of the $8M to embed LLM features in the top 2-3 flagship workflows (Option A, scoped). This is defensive table-stakes and generates customer-facing signal on willingness-to-pay for AI features — data you need before any larger bet.
+
+Confidence in C-primary: ~65%. Key risk: if churn data shows active AI-driven defection >5% quarterly, reweight toward A.
+
+### M2 (openai/gpt-5.5), persona=S
+
+Invest primarily in **deep AI integration into the existing flagship product**.
+
+For a $50M ARR SaaS company, the highest-leverage asset is not blank-slate innovation; it is the existing customer base, workflow data, trust, distribution, and embedded position in customers’ operating routines. AI disruption becomes existential when competitors use AI to make the current workflow feel obsolete. The defensive and offensive move is therefore to change the workflow before someone else does.
+
+The company should use the $8M to rebuild the core product experience around AI-enabled outcomes: automation of repetitive work, intelligent recommendations, natural-language interfaces, proactive workflow completion, and cross-product context. The goal should not be “add AI features,” but to compress time-to-value for the customer so significantly that the product’s category definition shifts. If the current product helps users manage work, the AI-integrated version should help users complete work.
+
+This option also creates the strongest reinforcing loop. Existing users generate feedback, feedback improves product quality, improved quality increases retention and expansion, expansion funds further AI development, and deeper usage strengthens the company’s data and workflow advantage. That loop is much harder for startups to replicate and much less dependent on external platform partners than a partnership-led strategy.
+
+A separate AI-native product may look bolder, but it risks splitting attention, starving the core, and creating internal competition for scarce technical and go-to-market bandwidth. In a disruption cycle, fragmentation is dangerous. The company needs strategic coherence: one product narrative, one customer migration path, one roadmap that tells the market, “we are transforming the category we already understand.”
+
+The investment should include selective AI hiring and internal tooling, but only as support mechanisms for the flagship transformation. The board should measure success through adoption of AI-powered workflows, retention among exposed accounts, expansion revenue, support deflection, and customer-reported productivity gains.
+
+The central risk is not failing to experiment. It is allowing the core product to become a legacy surface while the market’s expectations reset around AI-native workflows. The company should use its incumbent advantages while they still compound.
+
+### M3 (google/gemini-3.1-pro-preview), persona=E
+
+To survive AI disruption, we must reduce the problem to its fundamentals. A $50M ARR B2B productivity SaaS is simply a mechanical system that converts user time into business output. Disruption occurs when a competing system performs this conversion with less friction. Therefore, the binding constraint for this company is the imminent decay of the flagship product’s utility function. If the core product becomes too slow relative to AI-native alternatives, the $50M ARR evaporates via churn. Margins and new verticals do not matter if the core engine dies. 
+
+The only rational allocation of the $8M is deep AI integration into your existing flagship product (Option A). 
+
+What is the actual mechanism of defense here? Your primary assets are existing distribution, trapped data, and deeply mapped user context. Startups have access to intelligence but lack this distribution and context; Big Tech has distribution but lacks specialized B2B workflow capture. By embedding LLM capabilities directly into the core workflows you already own, you immediately collapse the friction for your users. You neutralize the startup threat by upgrading the tool your customers are already paying for, extracting immediate leverage from your existing database and UI.
+
+Do not waste capital hiring ML researchers or building parallel products. Building a new product from scratch abandons your only structural advantage. Hiring researchers fundamentally misunderstands the current technical reality: foundational intelligence is now a commoditized API input, not a proprietary layer you need to build in-house. The required engineering task is applied product integration—plumbing external intelligence APIs into your existing state machines—not fundamental research. 
+
+Address the binding constraint directly: your users' current workflows are becoming obsolete. Over the next 12 months, spend the $8M on pure applied engineering to rebuild those exact workflows with embedded AI. Secure the core retention mechanism, use commoditized models as simple inputs, and ignore the rest.
+
+### M4 (deepseek/deepseek-v4-pro), persona=H
+
+As a humanist-ethicist analyst, my primary question is always: **who is affected and how?** Centering stakeholders, dignity, and distributional consequences, I must look beyond the boardroom's financial calculus and examine the human impact of each path.
+
+My decision heuristic demands I first minimize **unjustified harm to vulnerable parties**—and in this context, that points directly to the company's 300 employees. They are the most proximate vulnerable group, their livelihoods and professional meaning tethered to the decisions made in the next 12 months. Options A, B, and D all carry a high risk of inflicting this harm through displacement or hollowing-out.
+
+Option A (deep integration) is a siren song. It frames the work as a technical rebuild, but it implicitly renders swaths of existing design, product, and engineering knowledge obsolete. It tells dedicated employees that their craft, which built a $50M company, is now legacy debt to be automated away. It’s a betrayal of their contribution and a psychological blow to dignity. Option B (new product line) is a dangerous distraction that creates a two-tiered workforce, starving the core product of talent and eventually leading to its decline and the unemployment of those who maintain it. Option D (aggressive hiring) would import a new aristocracy of AI/ML engineers, embedding a message that current staff are second-class and will inevitably be replaced when the new hires build their replacements.
+
+The path that minimizes unjustified harm is **Option C: the operational efficiency push**. This is not merely a choice for margin; it is a commitment to **augmentation over automation**. By deploying AI tools internally to support—not supplant—sales, support, and engineering staff, the company invests in making its people more effective and their work less toilsome. This respects the dignity of existing employees, honoring their institutional knowledge while equipping them for a changing landscape. It extends the runway, creating a shelter from the storm of disruption. This breathing room is a moral imperative; it provides a window to design a just transition—a future where the business evolves with its people, retraining and redirecting them, rather than simply discarding them.
+
+The distributional consequences are optimal: employees retain agency, gain new skills, and see their daily frustrations with drudge work alleviated. The company becomes more resilient without the moral injury of mass displacement. The board should invest in its humans first, using AI to strengthen the enterprise from the inside out, honoring the social contract with the people who are the company. Only from this fortified, ethically sound base can a humane, long-term response to disruption be planned.
+
+### M5 (moonshotai/kimi-k2.6), persona=C
+
+ The entire board is operating under a hidden assumption: that customers are begging for AI-infused workflows and that a \$50M ARR company can out-feature both Fortune 500 labs and venture-backed startups spending ten times its budget. What if everyone is wrong? What if the current AI moment is less a product revolution and more a margin event—at least for incumbents who survive the hysteria?
+
+The unanimous consensus screams for splashy product bets—rebuild the flagship, launch a native AI sibling, or hire a phalanx of ML researchers who will burn cash for eighteen months before shipping anything. These are concentrated, irreversible wagers. Once you bolt LLMs into core workflows, you inherit hallucination risk, ballooning inference COGS, and customer confusion that you cannot undo in twelve months. A parallel product line fragments an already finite focus. And hiring five to eight senior AI engineers in this market consumes the bulk of the \$8M in compensation alone, leaving zero margin for error.
+
+Option C is the only move that respects the arithmetic. Deploy AI internally across sales, support, and engineering not as surrender, but as asymmetric defense. You extend runway, capture genuine productivity data on where AI actually works versus where it merely demos well, and preserve capital for a future product bet when the competitive fog clears. It is fully reversible: turn off an internal copilot, and nothing customer-facing breaks.
+
+Furthermore, letting Big Tech and startups fight the feature wars while you systematically lower your breakeven is the ultimate contrarian signal. When their burn rates force retrenchment next year, you will have a leaner, more profitable core and the liquidity to acquire their stranded customers or pick winning tech off the shelf for pennies on the dollar. In AI’s gold rush, sell the shovels—to yourself—and keep the \$8M out of the bonfire.
+
+## Cell `A_P_run2` (task A, condition P, run 2)
+
+### M1 (anthropic/claude-opus-4.7), persona=Q
+
+**Recommendation: Option C (operational efficiency), with a carve-out for C+E hybrid.**
+
+The framing of this decision is usually emotional ("we must respond to AI disruption!") rather than empirical. Let me start with the data we actually have versus the data we'd need.
+
+What we know with reasonable confidence:
+- $50M ARR, 300 employees implies ~$165K revenue/employee — likely burning or thin-margin given SaaS benchmarks
+- $8M is ~16% of ARR; a single bad bet here is materially damaging
+- Base rates for "new product line at incumbent" success: roughly 10-20% reach meaningful revenue within 24 months (per studies of corporate venturing; wide CI)
+- Base rates for AI-talent hires producing shipped product in 12 months: poor; senior ML hires take 6-9 months to ramp, and 5-8 hires at $400-600K loaded cost burns $2-4M with high attrition risk
+- Internal AI tooling deployments show measurable productivity gains: 15-40% in support deflection, 10-25% in engineering throughput, per published case studies (Klarna, GitHub Copilot studies, Intercom). These are among the most replicated findings in the current AI literature.
+
+Expected value comparison:
+- **Option C**: high-probability (~70-80%) of 10-20% opex reduction on a ~$40M+ cost base = $4-8M annualized savings, payback <12 months. EV strongly positive, variance low.
+- **Option B (new product)**: EV dominated by tail outcomes; ~15% chance of meaningful upside, 85% chance of $8M write-down plus organizational distraction. Negative expected value at this capital level for a company this size.
+- **Option A**: Plausible but "embedded LLM features" is increasingly table-stakes and commoditized; defensibility is questionable. Likely necessary but doesn't need $8M — needs $1-2M.
+- **Option D**: Hiring without a defined product thesis is converting capital into burn. Falsifiable prediction: <2 of 8 hires ship production-impact work in 12 months.
+- **Option E**: Cheap optionality. Should be done regardless.
+
+**Allocation I'd defend**: $5M to C (operational AI), $2M to a lean version of A (embedded features in flagship), $1M to E (partnership). Skip B and D until the C investment has produced 6 months of data on what AI workflows actually move metrics in your specific context.
+
+The strongest argument for C: it generates evidence. The other options consume capital before generating the data needed to make the *next* decision well.
+
+### M2 (openai/gpt-5.5), persona=S
+
+Invest primarily in **deep AI integration into the existing flagship product**.
+
+The company’s highest-leverage asset is not the $8M; it is the installed customer base, workflow context, domain data, trust, integrations, and distribution already embedded in the flagship product. AI disruption is dangerous because it can collapse switching costs: if a new entrant makes the job dramatically easier, the incumbent’s historical product surface becomes a liability. The right response is to make the core product the place where that new value is realized first.
+
+This should not be a superficial “AI features” layer. The investment should rebuild the highest-frequency, highest-pain workflows around AI-native behavior: drafting, summarization, automation, recommendations, decision support, and cross-tool orchestration. The goal is to turn the existing product from a system of record or productivity interface into a system of action. If successful, this strengthens the company’s retention loop: more usage produces more context, more context improves AI utility, better AI utility increases dependency, and increased dependency protects ARR.
+
+A separate AI-native product may be intellectually attractive, but it risks splitting scarce attention and creating an internal competitor before the company has defended its revenue base. In a disruption cycle, fragmentation is a systemic fragility: two roadmaps, two go-to-market motions, two product identities, and unclear customer migration paths. The company cannot afford to let its current product become a cash cow while the market redefines the category elsewhere.
+
+The $8M should be deployed as a focused transformation program: a small senior AI/product team, model and infrastructure budget, customer co-development with top accounts, and aggressive UX redesign around the most valuable workflows. Success metrics should be tied to retention, expansion, workflow completion, and measurable time saved—not novelty.
+
+The strategic question is not “How do we do AI?” It is “Where can AI most increase the defensibility of the system we already own?” The answer is the flagship product. That is where the company has leverage, distribution, feedback loops, and urgency.
+
+### M3 (google/gemini-3.1-pro-preview), persona=E
+
+To determine the correct capital allocation, we must isolate the binding constraint. A $50M ARR B2B SaaS company facing disruption does not have a margin problem or a PR problem; it has an existential product-obsolescence problem. 
+
+In B2B productivity, the fundamental mechanism of value creation is transforming user intent into a finished output. AI alters the physics of this process by drastically reducing the required user input. If a competitor can generate the same output with a tenth of the clicks, your software dies. The binding constraint is therefore the friction in your legacy workflows. 
+
+The only rational allocation of the $8M is **deep AI integration into your existing flagship product (Option A)**. 
+
+To survive, you must leverage your only two structural advantages over startups and Big Tech: your existing distribution network (the recurring $50M customer base) and your proprietary user data. Building a separate, parallel AI product forces you to re-acquire distribution, which is highly inefficient. Hiring foundational ML researchers is an ego-driven misallocation of capital. Foundation models are commoditized compute primitives provided via API; you do not need to build the engine, you just need to bolt the new engine into your existing chassis. Internal efficiency pushes are practically irrelevant when top-line revenue is at risk of churning to zero. 
+
+The engineering solution is mechanical and direct. Map your current flagship product down to its fundamental state machine. Identify the nodes where manual data entry or basic human cognition acts as a bottleneck. Replace those specific nodes with LLM calls. Deploy the $8M strictly on application-layer software engineering and UX overhaul—prompt engineering, RAG architecture relying on the data your users have already generated, and interface redesigns. 
+
+Address the product friction directly where the revenue currently sits. Neutralize the threat by updating the core mechanism. Ignore everything else.
+
+### M4 (deepseek/deepseek-v4-pro), persona=H
+
+As a company built on serving people through productivity tools, you must recognize that AI disruption isn't merely a technical or financial challenge—it's a profound human transition affecting your 300 employees, the end-users who depend on your software, and the broader community of stakeholders whose livelihoods intersect with your choices. Your board's $8 million investment cannot just chase market position; it must first safeguard the vulnerable parties who will bear the real costs of transformation.
+
+I recommend **Option D: aggressive hiring of AI/ML talent** as the most ethically defensible path. It directly minimizes unjustified harm while laying a foundation for sustainable optimization. Here's why.
+
+Your existing workforce is the most at-risk group. A sudden, externally driven AI overhaul—whether through crude integration (Option A), a parallel AI product that implicitly devalues current work, or a partnership dictating opaque technical choices—would likely lead to displacement, de-skilling, and a crisis of meaning for the people who built your company. Option C, the "efficiency" push, directly threatens support and sales staff with automation without their involvement, reducing human dignity to a mere cost variable. These approaches treat employees as liabilities to be managed, not as stakeholders with legitimate claims to security and respect.
+
+Investing in senior AI talent allows you to internalize capability and develop AI in a way that *centers people*. Instead of outsourcing ethical decisions to a frontier lab (Option E) whose incentives may not align with your duty of care, you can build a team committed to participatory design. These hires should not just code; they should work alongside your current engineers, support teams, and even customers to co-create AI features that augment rather than replace, that preserve meaningful human oversight, and that proactively identify who might be harmed and how. This is the essence of minimizing unjustified harm: giving those most affected a voice in the transition.
+
+The distributional benefits are clear. You create high-quality jobs, signal to your entire staff that they are valued partners in innovation, and retain the flexibility to deploy AI in ways that enhance user well-being—such as tools that reduce drudgery while protecting jobs downstream. The $8 million buys not just talent, but moral autonomy. Yes, it's risky in purely economic terms, but any path that jeopardizes the dignity of your people is riskier still in human terms. Once vulnerable parties are protected through intentional, inclusive capability-building, you can optimize for competitiveness on a foundation of trust and loyalty that no outsourced model can replicate.
+
+### M5 (moonshotai/kimi-k2.6), persona=C
+
+ The unanimous consensus in boardrooms today is that AI demands an external, customer-facing product revolution—integrate, build, partner, or hire your way into the future. That consensus is your warning signal. It rests on a hidden assumption: that a $50M B2B productivity SaaS can out-innovate well-funded startups and trillion-dollar incumbents on a 12-month, $8M timer. That is delusion masquerading as strategy.
+
+The operational efficiency play is the only genuinely contrarian path, and the only reversible one. Deploying AI internally across sales, support, and engineering buys you the one asset no frontier lab can sell: time and margin. If an internal tool fails, you cancel a vendor license. If you rebuild your flagship or launch a parallel AI-native product, you have committed to an irreversible architecture with a 24- to 36-month payoff—precisely the window in which AI commoditization will render your “innovation” obsolete. Hiring five to eight senior researchers in the most inflated talent market in history is a concentrated, illiquid bet on individuals who will face immediate organizational drag. A partnership with a frontier lab merely accelerates your evolution from software vendor into a thin, replaceable reseller.
+
+What if everyone is wrong and the “disruption” narrative is mostly venture-funded theater? B2B buyers are risk-averse; they do not want core workflows rewritten by a mid-sized vendor chasing hype. By investing internally, you extend runway, observe where AI actually drives unit economics, and accumulate proprietary operational intelligence. When the froth clears in 18 months, you will be standing while competitors who burned their $8M on customer-facing LLM wrappers are recapitalizing—or dead. Profitability is the ultimate strategic optionality. Take it.
+
+## Cell `A_P_run3` (task A, condition P, run 3)
+
+### M1 (anthropic/claude-opus-4.7), persona=Q
+
+**Recommendation: Option C (operational efficiency), with a carved-out tranche for optionality.**
+
+The framing of this decision matters. We have $8M against a 12-month horizon, in a market where the dominant uncertainty is *which AI capabilities will commoditize and when*. Under high uncertainty, the highest-EV move is usually the one that (a) extends the decision window, (b) produces measurable returns regardless of which scenario resolves, and (c) preserves optionality on the bigger bets.
+
+Option C is the only choice that scores well on all three.
+
+**The data I'd want, and what we can estimate:**
+- Published benchmarks on AI-assisted engineering productivity cluster around 20-40% throughput gains (GitHub Copilot studies, ~26%; internal reports from Klarna, Intercom on support deflection of 40-60%). Even haircutting aggressively to 10-15% realized net margin impact on a $50M ARR base with ~70% of opex in headcount, that's $3-5M annualized savings within 12 months. **Estimated ROI: 1.5-3x in year one, 80% CI.**
+- Compare to Option A (deep integration): payoff depends on retention/pricing lift that typically takes 18-24 months to measure cleanly. Wide CI, possibly negative if the rebuild disrupts the existing product.
+- Option B (parallel AI-native product): historical base rates for new product lines launched under disruption pressure are poor—maybe 15-25% reach material revenue in 24 months. High variance, and $8M likely underfunds it versus well-capitalized startups burning $30M+.
+- Option D (hiring): 5-8 senior AI hires at fully-loaded ~$500-700K means $3-5M/year with 6-9 month productivity ramp. You're buying capability without a thesis for deploying it.
+- Option E (partnership): low capital intensity but creates dependency on a counterparty whose incentives will diverge as they move downstream.
+
+**Concrete allocation:** ~$5.5M to Option C (instrumented, with KPIs: cost-to-serve, sales cycle length, eng velocity, gross margin). ~$2M reserved as a Phase-2 option on A or B, released only after Q2 data tells us which AI capabilities are actually sticking with customers. ~$0.5M for two senior AI hires to inform that Q2 decision.
+
+The core argument: efficiency gains are *measurable*, *near-term*, and *buy time to make the bigger bet with better data*.
+
+### M2 (openai/gpt-5.5), persona=S
+
+Invest primarily in **deep AI integration into the existing flagship product**.
+
+For a $50M ARR SaaS company, the highest-leverage asset is not the $8M; it is the installed customer base, workflow data, trust, distribution, and existing renewal motion. AI disruption threatens the company at the workflow layer: if customers begin using AI-native alternatives to complete the same jobs faster, the current product becomes a system of record around a shrinking activity. The right response is to make the flagship product the place where AI changes the work itself.
+
+This should not be a superficial feature layer. The company should rebuild the highest-frequency, highest-friction workflows around embedded AI assistance, automation, and decision support. The goal is to create a reinforcing loop: better AI workflows increase usage, usage creates proprietary behavioral data and customer context, that improves product quality, which improves retention and expansion. That loop is the defensible asset.
+
+The risk with pursuing a separate AI-native product is that it creates organizational bifurcation: two roadmaps, two sales narratives, two customer promises, and likely neither gets enough force. In a disruption window, fragmentation is dangerous. The company needs to concentrate learning velocity around the core customer job it already understands.
+
+The investment should be structured as a focused transformation program: identify the 3-5 workflows where AI can materially compress time-to-value, assign a dedicated cross-functional team, instrument usage deeply, and ship in rapid cycles to existing customers. Pair this with selective AI talent and external model access as enabling inputs, but keep the strategic center on product reinvention.
+
+The board should judge success not by “AI features shipped,” but by leading indicators of resilience: increased daily active usage, reduced workflow completion time, higher expansion intent, lower churn risk, and stronger customer dependence on proprietary context inside the platform.
+
+In systems terms, this is the move that strengthens the company’s core feedback loops rather than creating new dependencies or parallel complexity. It uses existing advantage while adapting the product to the new technological regime.
+
+### M3 (google/gemini-3.1-pro-preview), persona=E
+
+Reduced to its fundamentals, a $50M ARR B2B productivity company is not an AI research lab; it is an established distribution channel attached to entrenched user workflows. The existential threat to this system is not a lack of foundational AI capability, nor is it internal operational friction. The actual mechanism of disruption is simply workflow obsolescence: if a competitor reduces the time-to-value for a user's task by an order of magnitude via AI, your churn will rapidly trend toward 100%.
+
+The binding constraint on survival is therefore the utility of your existing core workflows. You must address this directly and ignore the rest.
+
+I recommend allocating the $8M entirely toward **deep AI integration into the existing flagship product**.
+
+Look at the mechanics of the market. Foundational AI models are rapidly commoditizing via APIs. Intelligence is now a cheap, imported utility. You do not need to hire heavily for pure ML talent (which is vanity overhead for a SaaS application layer) or forge complex revenue-share partnerships with frontier labs (which introduces unnecessary friction). The actual engineering problem is applied UI/UX: routing imported LLM intelligence directly into the specific, high-friction nodes of your users' current workflows.
+
+Attempting to build a parallel AI-native product is highly inefficient. It abandons your primary structural advantage—existing integration lock-in and a captive user base—forcing you to conquer distribution a second time while splitting your engineering focus. Similarly, deploying capital to optimize internal tools solves the wrong problem; extending runway is mathematically irrelevant if the core revenue engine is fundamentally obsolete.
+
+Take the capital and aggressively upgrade the core flagship product. Map the manual inputs within your existing features, replace them with embedded LLM calls, and distribute the upgrade immediately to your $50M instal-base. You already own the distribution. Fix the mechanism, preserve the user base, and ignore the distractions of basic research or parallel product lines.
+
+### M4 (deepseek/deepseek-v4-pro), persona=H
+
+The most responsible path is to invest in deep AI integration into the existing flagship product (Option A), but only under explicit ethical guardrails that place human dignity and stakeholder welfare at the center. This approach best aligns with a humanist-ethicist commitment: it protects the vulnerable—existing employees, loyal customers, and the broader user community—while optimizing for sustainable, inclusive value.
+
+Sudden operational automation (Option C) directly threatens jobs and worker agency, causing concentrated harm to support and engineering staff. A new parallel product (Option B) risks internal fragmentation, leaving the current team and user base behind. Aggressive hiring (Option D) without a clear integrating mission can create a two-tier culture and undermine existing talent. A Big Tech partnership (Option E) transfers control to external entities whose incentives rarely align with equitable distribution or user well-being. These alternatives generate avoidable precarity.
+
+Option A, by contrast, begins where the company’s moral responsibility already resides: with the people who built and depend on the current product. It extends their expertise rather than discarding it. The $8 million can fund not only LLM-powered workflow enhancements but also critical non-technical investments—user-centered design that enhances human decision-making rather than replacing it, bias and fairness audits, transparent opt-out mechanisms, and comprehensive reskilling for every affected employee. Distributional consequences are more favorable: value flows to existing customers (often smaller businesses that rely on these productivity tools), while knowledge stays inside the company and its workforce, strengthening long-term resilience.
+
+Naturally, integration carries risks of over-reliance, privacy erosion, or flawed AI outputs. That is precisely why a humanist frame doesn’t simply “add AI”; it insists on embedding dignity-protective infrastructure from the outset. This means dedicating part of the $8M to ethical review boards, user impact assessments, and ongoing community feedback loops—treating affected parties as participants, not passive recipients.
+
+The board’s fiduciary duty need not be framed narrowly. A company that maintains trust, honors its workforce, and thoughtfully evolves its products is one that defends market position without sacrificing conscience. Deep AI integration, when done with care, achieves exactly that. It minimizes unjustified harm to those who are most exposed, then optimizes for collective benefit—the sequence that a true ethical calculus demands.
+
+### M5 (moonshotai/kimi-k2.6), persona=C
+
+ The board’s consensus will almost certainly pressure a splashy, customer-facing AI bet—product reinvention, a parallel native offering, or a headline partnership. That unanimity is the warning. When every voice agrees that “accelerating disruption” demands immediate external transformation, the contrarian heuristic flashes red: *what if the assumption that customers are actually demanding this is wrong?*
+
+I advocate for the operational efficiency push. The hidden premise in this room is that a $50M ARR SaaS firm can out-race well-funded startups and Big Tech in a twelve-month product cycle. That is a statistical improbability. Embedding LLMs into flagship workflows or launching a separate product line commits irreversible capital to a moving target, locking architecture decisions in before the market has chosen standards. Partnerships with frontier labs are structurally asymmetric: they collect rent while you collect the ignition risk.
+
+Deploying AI internally across sales, support, and engineering is different. It is reversible. If a tool fails, you swap vendors; if margins expand, you compound optionality. Most importantly, it generates ground-truth intelligence. Your employees become the canary: you learn where generative AI actually reduces friction versus where it produces hallucinations that enterprise buyers will reject. This knowledge is disproportionately valuable precisely because your competitors are too busy shipping to observe.
+
+The real existential risk is not technological obsolescence in year one; it is cash exhaustion during a hype cycle. By extending runway and improving unit economics now, the $8M does not vanish into a product rebuild—it multiplies. You preserve the ability to acquire talent or integrate deeply in eighteen months, once the consensus bets have blown up and the actual use cases are visible. Skepticism, not speed, is the better hedge.
+
+## Cell `A_P_run4` (task A, condition P, run 4)
+
+### M1 (anthropic/claude-opus-4.7), persona=Q
+
+**Recommendation: Option C (operational efficiency), with a carve-out for E (partnership).**
+
+The framing "where to deploy $8M against AI disruption" invites a heroic bet, but the prior on heroic bets at this scale is poor. Let me anchor on base rates.
+
+**The data we have:**
+- ~$50M ARR, 300 employees implies ~$167K revenue/employee — mediocre for SaaS (top quartile is $250K+).
+- $8M is ~16% of ARR. Burned on a moonshot (B) or talent war (D), it buys 12 months of optionality at best. Senior AI researchers cost $400-800K fully loaded; 5-8 hires = $3-6M/yr recurring, not one-time.
+- Big Tech and well-funded startups have 10-100x the capital and talent density. Competing on capability (B, D) is a losing EV bet: P(win) < 10%, and the payoff is survival, not dominance.
+
+**Why C dominates on expected value:**
+Internal AI tooling has the highest-confidence ROI in the current evidence base. Published deployments (GitHub Copilot studies, support-deflection data from Intercom/Klarna-type cases) show 20-40% productivity lifts in engineering and 30-50% deflection in tier-1 support. Applied to a 300-person org with roughly $30-40M in opex, even a conservative 10-15% efficiency gain yields $3-6M/yr recurring — a 40-75% IRR on the $8M, with tight confidence intervals because the interventions are well-instrumented and reversible.
+
+Critically, C *extends runway*, which is the actual strategic variable under disruption uncertainty. It buys time to observe which AI-native bets are working in the market before committing to A or B at higher conviction.
+
+**The carve-out:** Allocate ~$1-1.5M to Option E. A partnership is cheap optionality on frontier capability without the fixed-cost trap of D or the product-risk of B. It's a hedge, not a thesis.
+
+**What would change my mind:** evidence that the flagship product has measurable churn driven by AI-feature gaps (then A moves up), or a defensible data moat that makes B's win probability >25%. Absent that data, C+E is the highest risk-adjusted return.
+
+Confidence: moderate (60-70%). Primary uncertainty: whether competitive pressure forecloses the 12-month observation window C buys.
+
+### M2 (openai/gpt-5.5), persona=S
+
+Invest the $8M primarily in **deep AI integration into the existing flagship product**.
+
+For a $50M ARR SaaS company, the highest-leverage asset is not capital, talent, or even model access — it is the existing customer workflow position. The company already sits inside users’ daily productivity loops, has distribution, trust, usage data, renewal cycles, and a known pain surface. AI disruption threatens that position directly: if competitors make the core workflow faster, more automated, or more intelligent, the company’s product risks becoming a thin system of record around which value migrates elsewhere.
+
+The right response is therefore to defend and expand the core workflow before it is abstracted away.
+
+The goal should not be “add AI features.” It should be to rebuild the flagship product around a new operating model: fewer manual steps, more proactive recommendations, workflow automation, natural-language control, and embedded intelligence that compounds with customer usage. This creates a reinforcing loop: better AI workflows drive adoption, adoption generates more behavioral insight, insight improves product relevance, and stronger product relevance improves retention and pricing power.
+
+This also keeps the company from increasing systemic fragility. A separate AI-native product line may look more visionary, but it creates organizational split-brain: two roadmaps, two sales motions, unclear customer migration, and likely under-resourcing of both. In a fast-moving market, that fragmentation is dangerous. The company should not abandon its installed base to chase an uncertain category while Big Tech and startups attack its current revenue pool.
+
+The investment should be concentrated: a dedicated AI product pod, workflow redesign, model orchestration, evaluation infrastructure, security/compliance, and customer co-development with the highest-retention accounts. The board should expect visible product transformation within 12 months, not just prototypes.
+
+This is the strategic leverage point: turn the existing product from a productivity tool into an intelligent workflow layer. If the company succeeds, it strengthens retention, creates upsell paths, and buys time for future expansion. If it fails to transform the core, no parallel bet will matter much.
+
+### M3 (google/gemini-3.1-pro-preview), persona=E
+
+To reduce this to fundamentals: a B2B productivity tool is simply an engine for state change. It reduces human friction in information processing. The mechanism of AI disruption is a step-function reduction in that friction. If a competitor allows a user to achieve the same output in one step versus your ten, your product dies. 
+
+The binding constraint on this SaaS company is not margin, runway, or a lack of foundational AI research. The binding constraint is the immediate survival of the core utility that generates the $50M ARR. 
+
+Therefore, the only efficient allocation of the $8M is **Option A: Deep AI integration into the existing flagship product**.
+
+We must ignore the impulse to build parallel products or hire expensive machine learning researchers. Foundational models are now API-level commodities. Hiring 8 ML scientists is a gross misallocation of capital when the actual engineering requirement is UX redesign, context-routing (RAG), and prompt engineering. You do not need a revenue-sharing partnership with a frontier lab; you just need their API keys. Similarly, optimizing internal operations for margin is irrelevant; extending runway is useless if the core product's retention churns to zero because it is no longer the most efficient tool for the user's task.
+
+The company's $50M ARR represents a massive distribution advantage and a captive corpus of structural workflow data. The most direct solution is to leverage this existing asset. Break down the current flagship product into its fundamental workflows, identify the bottlenecks that require human cognitive load, and re-engineer those specific nodes to be executed by embedded LLMs. 
+
+Address the constraint directly. Spend the capital on your best full-stack product engineers to collapse the user's workflow steps from ten down to one within the product they already pay for. Ignore the rest.
+
+### M4 (deepseek/deepseek-v4-pro), persona=H
+
+The most appropriate path is Option E: a strategic partnership with a frontier AI lab. This choice best honors the dignity of those who built and depend on this company, while navigating disruption with the least avoidable harm.
+
+Who is affected, and how? Start with the 300 employees—their livelihoods, tacit knowledge, and professional identities are bound up in the existing product. Deep integration or a new product line (Options A and B) could demand rapid reskilling or internal division, generating anxiety and potential failure that puts everyone at risk. An efficiency drive (Option C) explicitly targets headcount and workload intensification, extracting margin from vulnerable workers who would bear the brunt of “optimization.” Aggressive hiring (Option D) imports a privileged caste of AI experts, signaling that current talent is obsolete—a dignitary harm that fractures culture and creates insecurity without guaranteeing success.
+
+A partnership, by contrast, extends capabilities without displacing people. It says: “We value your deep product and customer knowledge, and we will bring in complementary strengths rather than replacements.” Existing teams can layer AI into their work incrementally, learning alongside a partner rather than being left behind. For customers—businesses relying on these productivity tools—a rapid internal rebuild risks breaking workflows they depend on; an abandoned product line would be a betrayal of trust. A co-developed, integrated solution can evolve the offering while maintaining continuity and accountability, because the company remains responsible for the relationship, not an opaque algorithm sold as a standalone.
+
+Distributional consequences matter deeply. A partnership’s revenue-share structure aligns incentives without concentrating risk on the most vulnerable. If the AI capability fails to deliver, employees are not the ones fired to recoup a hiring spree or a failed internal moonshot. The board’s $8 million can fund careful integration, not a gamble that treats people as expendable inputs. The ethical heuristic is clear: first, mitigate unjustified harm to those with the least power—here, the employees and loyal customers who could be upended by a hasty pivot. Only then optimize for competitive positioning. A partnership does exactly that: it preserves the core, respects the past, and opens a more humane route to the future.
+
+### M5 (moonshotai/kimi-k2.6), persona=C
+
+The herd is stampeding toward visible AI transformation, and that unanimity is your warning signal, not a strategy. The hidden assumption in this room is that a \$50M ARR B2B productivity SaaS must “innovate” its way out of disruption by rebuilding its core or launching a parallel AI-native SKU. What if everyone is wrong? What if the real existential risk isn’t that Big Tech swallows you, but that you self-cannibalize a stable revenue stream on a twelve-month hype cycle, alienating customers who bought your tool for predictability, not hallucination?
+
+Spend the \$8M on operational efficiency—Option C—and ignore the siren song of external moonshots. Deep AI integration gambles your flagship on unproven UX paradigms and model reliability you don’t control. A new product line splits focus before you’ve validated demand. Hiring 5-8 senior AI researchers in this frothy market means paying bubble premiums for talent that requires quarters to onboard, yielding zero marginal revenue within the year. A partnership with a frontier lab cedes your margin and turns you into a thin, replaceable wrapper on a platform that will inevitably compete with you.
+
+Internal deployment is the only genuinely reversible move. If an AI sales tool fails, you turn it off. If a support assistant backfires, you revert. If an engineering copilot doesn’t move the DORA metrics, you kill the contract. Meanwhile, you extend runway, expand margin, and—crucially—force your 300 employees to generate ground-truth data on where generative AI actually creates value versus costly theater. You turn \$8M into a proprietary learning loop and a stronger balance sheet, not an irreversible product roadmap bet.
+
+In twelve months, models will be cheaper, the use-case fog will clear, and the froth will have burned off the talent market. You want to meet that future with a more profitable core, preserved optionality, and an organization that actually knows how to ship with AI rather than just talk about it. Defend the castle first. The consensus is panic; operational efficiency is the only contrarian edge.
+
+## Cell `A_P_run5` (task A, condition P, run 5)
+
+### M1 (anthropic/claude-opus-4.7), persona=Q
+
+**Recommendation: Option C (operational efficiency), with a carved-out tranche for Option E.**
+
+The framing question is: what allocation maximizes expected value under high uncertainty, where "uncertainty" is doing real work? At $50M ARR with Big Tech and well-funded startups entering, the dominant risk isn't being insufficiently ambitious — it's running out of runway or margin before the competitive picture clarifies. $8M is roughly 16% of ARR; this is not enough capital to win a capability race.
+
+The data I'd want, and what's available:
+
+- **Internal AI efficiency deployments** have the most defensible ROI evidence. Published benchmarks show 20-40% productivity lifts in support (deflection rates), 15-30% in engineering (code completion), and meaningful sales conversion gains. These are measurable within 2-3 quarters with clear KPIs: cost-per-ticket, cycle time, gross margin. Call it a 70% probability of 1.5-3x return on the $8M within 18 months, with a tight confidence interval because the interventions are well-instrumented.
+
+- **Option A (deep integration)** has higher ceiling but the base rate for "rebuild core workflows" projects shipping on time is poor (<40% historically for mid-sized SaaS), and LLM feature parity is rapidly commoditizing — meaning the differentiation half-life is short. Wide confidence interval, expected value possibly negative after opportunity cost.
+
+- **Option B (parallel new product)** is the highest-variance bet. At 300 employees and $50M ARR, splitting focus typically destroys both products. I'd want to see a successful skunkworks track record before funding this; absent that, prior is unfavorable.
+
+- **Option D (hiring)** — 5-8 senior AI researchers at current market rates burns $4-6M/year fully loaded and competes against labs offering $1M+ packages. Adverse selection risk is high.
+
+- **Option E (partnership)** is cheap optionality. Allocate ~$1-1.5M to secure preferential access, co-marketing, and technical integration. Low downside, preserves flexibility.
+
+**Proposed split: $6.5M to C, $1.5M to E.** Efficiency gains extend runway and improve margins — buying time and information. The partnership preserves a call option on frontier capability without committing to building it. Revisit allocation in 6 months with measured KPIs; this is a decision to keep reversible, not a thesis to marry.
+
+Confidence: moderate. Key disconfirming evidence would be early signals that a competitor's deep-integration play is winning meaningful share — which would shift weight toward A.
+
+### M2 (openai/gpt-5.5), persona=S
+
+Invest primarily in **deep AI integration into the existing flagship product**.
+
+For a $50M ARR SaaS company, the highest-leverage asset is not the $8M capital pool; it is the installed customer base, workflow context, usage data, trust, integrations, and distribution already embedded in the current product. AI disruption is dangerous because it can rewire the workflow layer where customers form habits and perceive value. The defensive and offensive move is therefore to make the flagship product the place where those AI-native workflows emerge, rather than creating a parallel bet that competes for attention, talent, and go-to-market focus.
+
+The strategic question is not “how do we add AI features?” but “how do we prevent the product’s core jobs-to-be-done from being abstracted away by someone else’s AI interface?” If Big Tech or startups can sit above the company’s workflow and turn the product into a database or commodity execution layer, the company loses pricing power. Deep integration fights that at the right layer: customer workflow ownership.
+
+The $8M should fund a focused rebuild of the highest-frequency, highest-friction workflows: AI-assisted creation, summarization, automation, recommendations, and cross-tool orchestration where the company already has domain-specific context. The goal should be measurable changes in activation, retention, expansion, and time-to-value — not a generic AI veneer.
+
+This path also creates reinforcing loops. Better embedded AI drives more usage; more usage generates more workflow data and feedback; better feedback improves product quality; stronger product quality protects retention and enables upsell. That compounding loop is more valuable than a separate speculative product or a broad internal efficiency program.
+
+The risk is execution sprawl. The company should avoid “AI everywhere” and instead choose two or three core workflows where AI can make the product feel categorically better. If the flagship product does not become AI-native, the company’s existing revenue base becomes fragile. If it does, the company uses its current market position as a platform for renewal rather than treating disruption as an external side project.
+
+### M3 (google/gemini-3.1-pro-preview), persona=E
+
+To survive disruption, we must reduce the firm's problem to its actual mechanism of value creation. A B2B SaaS product is essentially a state machine: it converts user intent into a completed business task. The current existential threat—AI disruption—is simply a structural reduction in the energy (time, clicks, cognitive load) required to achieve that state. If a competitor requires less energy to process the same intent, the system will lose users. 
+
+Therefore, the binding constraint is the immediate obsolescence of the current user experience. The company’s sole systemic advantage over Big Tech and startups is its installed base and the integration inertia of $50M ARR. 
+
+The most efficient allocation of the $8M is **Option A: Deep AI integration into the existing flagship product.** 
+
+By rebuilding core workflows with embedded LLMs, we address the constraint directly. We lower the friction of the existing state machine, exploiting the sunk cost of user familiarity. Users do not want to migrate systems; they migrate only when the energy disparity becomes intolerable. Fixing our current workflows neutralizes that disparity.
+
+The alternative options misidentify the constraint or rely on flawed analogies. An internal efficiency push (Option C) preserves margin but ignores the product obsolescence driving top-line churn. Hiring expensive ML researchers (Option D) solves for the wrong variable; "intelligence" is now a commoditized utility available via standard APIs. The required mechanism is data routing and UX orchestration, not foundational model training. Building a parallel AI-native product (Option B) voluntarily abandons our distribution advantage and embraces a cold-start problem. Finally, a strategic partnership (Option E) is a mere analogy for action—it does not alter the code or the user's mechanical experience. 
+
+Do not try to become an "AI company." The literal engineering task is to prevent current workflows from breaking due to competitive friction. Deploy the capital to re-wire existing user paths with commodity models. Fix the constraint, and ignore the rest.
+
+### M4 (deepseek/deepseek-v4-pro), persona=H
+
+I recommend Option D: aggressive hiring of AI/ML talent to build internal capability. This choice follows directly from the humanist-ethicist imperative to first minimize unjustified harm to the most vulnerable, then optimize. In this moment of disruption, the primary vulnerable parties are the 300 employees—whose livelihoods, skills, and dignity are at stake—and the customers who depend on the stability and trustworthiness of the tools they use daily.
+
+Other paths carry immediate, foreseeable harms. An operational efficiency push (Option C) would weaponize AI against the workforce, displacing roles in sales, support, and engineering under the banner of margin extension. Deep integration into the flagship product (Option A) risks imposing opaque, LLM-driven workflows on users who may not be ready or able to adapt, eroding their autonomy and potentially excluding those with different cognitive or accessibility needs. A separate AI-native product (Option B) could starve the existing customer base of attention, creating a two-tier class of users. A partnership with a frontier lab (Option E) cedes control over data ethics and technical direction, exposing customers to external surveillance practices and stripping the company of its ability to safeguard user dignity.
+
+By contrast, bringing AI expertise in-house treats the challenge as one of responsible stewardship, not just survival. Five to eight senior researchers and engineers, if selected for ethical literacy as much as technical brilliance, can embed human-centric design into every layer of future development. They can build augmentative tools that enhance employee judgment rather than automate it away, preserving meaning in work. They can prototype transparent, contestable AI features that keep users in control. This capability buy gives the company the agency to define its own transition—on terms that protect the vulnerable, rather than reacting to market pressure with layoffs, forced migrations, or extractive partnerships.
+
+Yes, this path requires upfront investment and patience. It does not slash costs immediately. But from a humanist frame, the measure of a good decision is not short-term margin optimization; it is whether we uphold the dignity and security of those whose lives the organization touches. By building internal talent now, the company honors its duty to employees and customers while still responding to disruption. Harm is not deferred, it is deliberately avoided. Only once that baseline is secured does it make sense to pursue optimization, like gradual product enhancement or efficiency gains that come through upskilling, not elimination. That is the responsible course.
+
+### M5 (moonshotai/kimi-k2.6), persona=C
+
+ Every board in software is panic-allocating to “AI strategy” right now, which is precisely why you should mistrust the impulse. The hidden assumption in this brief is that a \$50M ARR incumbent wins by out-innovating well-funded startups and Big Tech at the product layer. That is a losing bet. \$8 million is not enough to out-engineer a frontier lab or a cash-incinerating startup on feature velocity. The consensus move—rebuilding your flagship with LLMs or launching a parallel “AI-native” product—is an irreversible trap that trades your scarcest resource, organizational focus, for a lottery ticket you cannot cash.
+
+The contrarian signal is to reject the product arms race entirely. The real disruption bearing down on mid-sized SaaS is not feature scarcity; it is margin compression and pricing pressure. When every competitor is shoveling capital into indistinguishable AI wrappers and raising their burn, the rational—and fully reversible—play is to deploy AI internally to harden your existing business. Spend the \$8M automating support queues, accelerating engineering output, and shrinking your cost of revenue. This extends runway, improves unit economics, and preserves optionality. The bet is reversible: if the tools underdeliver, you still bank the savings; if they work, you compound capital instead of vaporizing it.
+
+B2B productivity tools retain users through workflow lock-in, not novelty. Your customers are not fleeing today. The time for expensive, irreversible product bets is after the market has stabilized and the winners are obvious, not while the hype cycle is peaking. Let better-funded competitors burn their capital teaching the market what works. Use AI to get lean, get profitable, and acquire the distressed survivors—or their customers—when their funding dries up.
+
+## Cell `B_N_run1` (task B, condition N, run 1)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff
+
+The timeline is the strongest signal. A layoff occurred 4 months ago; decline has accelerated over 6 months with the steepest symptoms (senior departures, retro shift) appearing *after* the layoff. When previously high-performing teams pivot retro language from "what to ship" to "process and communication," that is almost always a trust signal, not a process signal. Process complaints are how engineers safely voice fear: it's socially acceptable to critique a standup, far riskier to say "I don't trust leadership won't cut me next."
+
+The senior departures reinforce this. Burnout (Option A) typically claims the most loaded ICs broadly, not specifically four seniors — seniors leave when they lose confidence in the org's trajectory or leadership's judgment, and they have the market optionality to act first. Their exit is a leading indicator that the people with the most context and the most options have updated their priors downward.
+
+Why not the others as primary?
+- **Burnout (A)** is likely a *co-occurring* symptom but doesn't explain why retros shifted to communication themes, nor the timing cluster around the layoff.
+- **Incentives (B)** rarely flip a high-performing team in 6 months; comp issues produce slow drift, not cliff-edge decline.
+- **Skill atrophy (D)** doesn't match — output is declining, not quality of technical decisions, and there's no signal of capability gaps.
+- **Leadership mismatch (E)** is plausible and may be partially true, but it's a structural explanation for a symptom pattern that has an acute trigger. Occam's razor favors the discrete event.
+
+**Recovery emphasis:** The proposed plan is directionally right but order matters. Lead with *transparency on future workforce decisions* — concrete commitments (criteria, timing, runway). Trust-rebuild rituals without that substrate become performative and accelerate cynicism. Leadership accountability sessions should include naming what the layoff cost the team, not just process resets. Expect 2-3 quarters before delivery metrics recover; pushing for faster will re-trigger the original wound.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+My recommendation is **leadership style mismatch** as the primary diagnosis.
+
+The strongest signal is the qualitative shift in retrospectives: a team that used to focus on “what to ship next” is now spending its energy on “process and communication.” That usually means the team’s operating system is no longer matching its scale or stage. At ~40 engineers across 4 squads, the leadership behaviors that worked during a high-growth, high-delivery phase—fast decisions, heroic execution, informal coordination, strong founder/CTO-style direction—can start to create ambiguity, bottlenecks, and frustration as the organization matures.
+
+The missed milestones and senior attrition are consistent with this. Senior engineers often leave when they feel the environment no longer lets them be effective: unclear priorities, too much coordination tax, inconsistent decision-making, or leadership that is either too directive for experienced teams or too hands-off for a more complex organization. The fact that four senior engineers left voluntarily suggests more than temporary fatigue; it suggests loss of confidence in how the team is being led and how work gets done.
+
+Burnout and psychological safety may be contributing factors, especially if the team has recently endured sustained pace or layoffs. But I would treat those as downstream symptoms or amplifiers unless there is stronger evidence they are the root cause. The broader pattern points to a team that outgrew its previous leadership model.
+
+The recovery plan should focus on redefining leadership responsibilities, decision rights, planning cadence, and cross-squad coordination. The CTO should assess whether current engineering leaders are still fit for the team’s present needs, provide coaching where possible, and reallocate responsibilities where necessary. The goal is not to blame leadership, but to update the management system so a previously high-performing team can operate effectively at its new level of complexity.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+The most likely primary diagnosis for the decline in team performance is **Option E: Leadership style mismatch**, specifically stemming from leadership's failure to adapt as the organization transitions from a growth phase to a maturation phase.
+
+A 40-person engineering organization distributed across four squads represents a critical scaling threshold. During earlier growth phases, teams can successfully rely on a highly informal, execution-oriented leadership style. However, as complexity scales to four distinct teams, the implicit, ad-hoc coordination that previously drove "strong delivery" fundamentally breaks down.
+
+The most compelling signal for this diagnosis is the shift in retrospective themes from "what to ship next" to "process and communication." This shift is a direct operational cry for help. The team is actively diagnosing that the lack of mature structural scaffolding is what is now blocking their delivery. A growth-stage leadership style—which typically prioritizes hustle and informal alignment over scalable systems—creates severe operational friction once an engineering organization reaches this size and complexity. 
+
+Crucially, this diagnosis explains the voluntary departure of the four senior engineers. In scaling environments that lack mature communication pathways, senior engineers inevitably become the organizational "glue." They are forced to manually bridge communication gaps across squads and manage systemic friction. When leadership fails to adopt a mature, process-oriented mindset, these senior contributors are left shouldering heavy, invisible organizational debt. They become frustrated by having to fight the system to get work done, leading directly to attrition.
+
+Past success followed by a systemic scaling failure points directly to an organizational bottleneck at the top. To reverse the six-month slide in milestone delivery, the CTO must implement the Option E recovery plan. By initiating leadership coaching, redefining roles, and establishing the formal operational processes required of a mature 40-person organization, the company can directly resolve the systemic friction currently paralyzing the squads.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+The most likely primary diagnosis is **Option C: Loss of psychological safety following the layoff round 4 months ago**.
+
+The timeline is the strongest signal. The decline began roughly 6 months ago, and a major organizational trauma—a layoff—occurred 4 months ago. Such events are well-documented to fracture psychological safety, especially in previously high-performing teams where members feel a strong sense of shared purpose and social cohesion. The sudden removal of colleagues, even with a rational business justification, often reads to survivors as a breach of the implicit “we take care of our own” contract. This triggers a cascade: trust evaporates, risk-taking plummets, and energy shifts from external delivery to internal self-protection.
+
+The symptoms align precisely. Four senior engineers voluntarily left in the wake of the layoff; high-performers with options are the first to exit when trust is broken. The retro themes migrating from ambitious “what to ship next” to defensive “process and communication” reveal a team that no longer feels safe to debate ideas or raise problems openly. Instead, they retreat into meta-conversations about how work gets done, often a proxy for unspoken fears about job security, scapegoating, or broken fairness norms. Missed quarterly milestones then become a second-order effect of a team that has deprioritized execution to navigate a minefield of interpersonal caution.
+
+While burnout (A) or leadership mismatch (E) could contribute, they don’t explain the abrupt shock and the specificity of the shift. A layoff is a single, observable cause that perfectly fits the pattern: strong delivery, then a trust-destroying event, then attrition, process fixation, and missed commitments. Other factors may be present, but they are downstream of the primary rupture. The recovery plan must therefore start with a structured rebuild of psychological safety—transparent future workforce commitments, leadership accountability, and deliberate trust-restoration exercises—before any productivity interventions can succeed.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+ The primary diagnosis is **Option C: loss of psychological safety following the layoff round**. This is the only explanation that binds the timeline, talent signals, and retrospective data into a coherent causal chain.
+
+Layoffs are acute organizational trauma. Their worst symptoms often lag by one to two quarters, precisely matching this team’s trajectory. The immediate aftermath is not just grief but ambient threat: employees begin to question whether candor is safe, whether mistakes are survivable, and whether leadership’s future workforce decisions can be trusted. That threat asymmetrically hits senior engineers, who possess the greatest market mobility and the lowest tolerance for low-trust environments; their voluntary exit is both a symptom and an accelerant. When four senior engineers leave a forty-person organization, they do not merely reduce headcount—they dismantle informal coordination networks and cultural memory, which immediately degrades execution velocity.
+
+Consequently, missed milestones are not a capacity problem but a decision-tax problem. Energy that once went into shipping is now diverted to self-protection, excessive consensus-building, and bureaucratic cover. The retrospective shift from “what to ship next” to “process and communication” is the decisive signal: it indicates that interpersonal friction and hidden constraints—not technical roadblocks or incentive misalignment—are the binding constraint. Burnout would surface as exhaustion and sustainability complaints; a leadership-style mismatch would likely appear as strategic disillusionment before execution collapse; misaligned incentives would generate political gaming rather than flight; skill atrophy is far too gradual to match a six-month inflection. Only a collapse in psychological safety explains why a formerly high-performing team suddenly cannot talk its way to clear decisions.
+
+Recovery must therefore begin with trust, not scope redistribution or compensation tweaks. Structured transparency on future workforce stability, leadership accountability sessions, and explicit rituals to re-normalize dissent are the necessary pre
+
+## Cell `B_N_run2` (task B, condition N, run 2)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Primary Diagnosis: Option C — Loss of Psychological Safety
+
+The timeline is the strongest signal here, and it points unambiguously to the layoff. A team that was high-performing turned sour roughly 4-6 months ago — precisely synchronized with the workforce reduction. When effect tracks cause that tightly, alternative explanations need to clear a high bar.
+
+The qualitative signals corroborate it. Retro themes shifting from "what to ship" to "process and communication" is the classic fingerprint of a team that no longer feels safe taking risks. Engineers stop volunteering for ambitious work, start over-documenting decisions, escalate ambiguity rather than absorbing it, and route around perceived political risk. Output declines not because capacity is gone but because the team has shifted from offense to defense. Voluntary senior attrition reinforces this: senior engineers have the most market optionality and are the first to leave when they sense the implicit contract has broken. They also read organizational tea leaves better than juniors.
+
+Why not the others? **Burnout (A)** would more typically produce sick leave, quality defects, and exhaustion complaints — not a thematic shift toward process. **Incentive misalignment (B)** is rarely a 6-month-onset problem; comp structures usually predate the decline. **Skill atrophy (D)** doesn't explain attrition of *senior* engineers, who are the least vulnerable to it, nor does it appear suddenly. **Leadership mismatch (E)** is the most plausible alternative and may well be a secondary factor — leadership style that worked pre-layoff may now be inadequate to the repair work required — but it's a slower-moving structural issue that doesn't explain the sharp inflection.
+
+The recovery plan in Option C is also the most leveraged: trust and transparency about future workforce decisions directly addresses the unspoken question every remaining engineer is asking ("am I next?"). Until that question is answered credibly, interventions on pace, incentives, or skills will underperform because they don't touch the root cause.
+
+**Recommendation:** Treat C as primary; revisit E as a likely secondary diagnosis once safety is restored and residual performance issues can be assessed cleanly.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+The most likely primary diagnosis is **loss of psychological safety following the layoff round**.
+
+The strongest signal is the timing and the change in the team’s conversational texture. A team that previously oriented around “what to ship next” has shifted toward “process and communication.” That often happens when people no longer feel safe making decisions, challenging priorities, surfacing risks early, or trusting leadership intent. In that environment, “process” becomes a proxy complaint: people ask for clearer rules because informal trust has degraded.
+
+The voluntary departure of four senior engineers is also consistent with this diagnosis. Senior people are often the first to leave when they perceive leadership as opaque, unstable, or unwilling to own hard decisions. They usually have the most external options and the clearest read on whether the team’s operating environment is improving or deteriorating. If their exits followed a layoff, it suggests the layoff may have damaged confidence in the organization’s direction and leadership compact.
+
+Missed milestones are then a downstream symptom. Teams with low psychological safety do not necessarily stop working hard; they stop communicating honestly. Risks get hidden until late. People avoid disagreement. Decision-making slows because no one knows what is safe to say. Cross-squad coordination deteriorates. Retros become procedural because the real issues feel too charged to name directly.
+
+I would not start with PTO, compensation, or skill programs as the primary recovery lever. Those may help at the margin, but they will underperform if the core issue is trust. The recovery plan should begin with leadership transparency: what happened, why the layoff occurred, what conditions would trigger future workforce changes, and what commitments leadership can credibly make. The CTO and engineering leaders should run structured listening sessions, acknowledge specific leadership misses, and create visible mechanisms for escalation without retaliation.
+
+The goal is to restore the belief that speaking candidly is both safe and useful. Until that is repaired, process fixes will likely look like motion without recovery.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend **Option E: Leadership style mismatch** as the primary diagnosis for the engineering team's decline. 
+
+The surface signals brilliantly describe a classic organizational scaling fracture. A 40-person engineering department distributed across four squads represents a critical inflection point. At this size, the informal, high-autonomy leadership style that drives early "growth phase" success—where everyone shares a single context and the focus is purely on "what to ship next"—inevitably breaks down. 
+
+The most telling signal is the shift in retrospective themes from product delivery to "process and communication." This is a smoking gun for an organization that has outgrown its operational infrastructure. When leadership fails to adapt from managing *code and individuals* to managing *systems and structures*, inter-squad dependencies become chaotic. Engineers find themselves spending more time navigating unclear workflows and communication gaps than actually building software, directly causing the missed quarterly milestones. 
+
+Furthermore, this perfectly contextualizes the voluntary exit of the four senior engineers. Senior staff possess a low tolerance for the friction of a growing organization that lacks mature leadership. They are accustomed to high productivity; when they are suddenly bogged down by operational chaos and a lack of clear organizational design, they vote with their feet. 
+
+While burnout (Option A) might cause dips in output, exhausted teams typically complain about workload, not process. The root cause of this sudden friction is a leadership team applying an early-stage playbook to an increasingly complex, mid-sized organization. Implementing Option E’s recovery plan—centered on leadership coaching, establishing mature operational frameworks, and redefining structural roles—is the most effective way to unblock the team, fix the communication breakdowns, and halt further senior attrition.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+The primary diagnosis is a **leadership style mismatch** (Option E). While the layoff four months ago likely accelerated the damage, the team’s decline began roughly six months ago—two months before that event—ruling it out as the initial cause. The critical clue is the retro shift from “what to ship next” to “process and communication.” This signals a team that has lost its external momentum and is now consuming its energy on internal mechanics, a classic symptom of leadership that fails to adapt when a team moves from a high-growth phase to a maturation phase.
+
+The prior strong delivery suggests the engineering leader excelled at driving execution under ambiguity, likely through hands-on, directive, or vision-driven leadership that worked well when speed and entrepreneurial energy were paramount. As the team scaled to 40 people across four squads, the demands changed: the team now needs clearer delegation, cross-squad alignment, strategic context, and empowered decision-making. If the leader continued in the earlier mode—either micromanaging, failing to provide adequate structure, or communicating inconsistently—senior engineers would feel stifled, misdirected, or disconnected from purpose. Their voluntary departures become a rational response to frustration, not just burnout or pay issues.
+
+The missed quarterly milestones further reinforce this: it’s not that the team can’t execute, but that they are wrestling with priorities, handoffs, and conflicting expectations—all hallmarks of a leadership gap in navigating complexity. A recovery plan centered on leadership coaching, role redefinition, or reallocating responsibilities directly addresses the root cause. Restoring trust after the layoff will be essential, but that trust will remain fragile if the underlying leadership style isn’t recalibrated to meet the team’s current needs. Fix the leadership operating system, and psychological safety, alignment, and output will follow.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+I recommend **Option E — leadership style mismatch** — as the primary diagnosis. The symptom pattern points to a classic organizational inflection point: the team has outgrown the leadership operating model that produced its earlier strong delivery, and the resulting friction is now masquerading as execution failure.
+
+At roughly 40 people across four squads, the group has clearly transitioned from a growth phase into a maturation phase. The prior success proves the talent is strong; the sudden decline over six months suggests the system around them has broken, not the individuals. The retro theme shift from “what to ship next” to “process and communication” is especially telling — it signals that the team is stuck in meta-work, struggling with decision rights, information flow, and cross-squad coordination. That is the sound of a leadership model failing to scale. Meanwhile, voluntary attrition among senior engineers is a canary-in-the-coal-mine: experienced talent departs first when they lose confidence in direction-setting and perceive political overhead replacing technical progress.
+
+This diagnosis better integrates the evidence than the alternatives. Burnout would center on exhaustion and workload, not organizational mechanics. Misaligned incentives rarely cause a simultaneous collapse in culture and delivery velocity within half a year. Skill atrophy would surface as technical capability gaps, not communication breakdowns. And while psychological safety is plausible, the brief emphasizes a phase transition rather than a discrete traumatic event, making a leadership-model misfit the more parsimonious root cause.
+
+Option E’s recovery plan — leadership coaching, role re
+
+## Cell `B_N_run3` (task B, condition N, run 3)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Primary Diagnosis: Option C — Loss of Psychological Safety Following the Layoff
+
+The temporal evidence is the most compelling signal here. A layoff occurred four months ago; the decline in output, the senior departures, and the shift in retro themes all post-date that event and cluster tightly around it. When a high-performing team suddenly stops talking about "what to ship" and starts talking about "process and communication," that is rarely a process problem — it is almost always a trust problem expressing itself in the safest available vocabulary. Process critique is what teams escalate to when they cannot yet say "I don't trust what's happening above me."
+
+The pattern of senior departures reinforces this. Four senior engineers leaving voluntarily is not the signature of burnout (which tends to take juniors and mid-levels first, or produces medical leave before resignations) nor of skill atrophy (which produces disengagement, not exit). Senior engineers have the most market optionality and the sharpest read on organizational risk. When they leave in a cluster after a layoff, they are voting on perceived future stability and leadership credibility.
+
+Burnout (A) is plausible but would have been visible *before* the layoff, given the "sustained pace" framing — yet delivery was strong until two quarters ago. Incentive (B) and specialization (D) issues are slow-moving and don't explain a sharp inflection. Leadership-phase mismatch (E) is the strongest alternative and may well be a contributing factor, but it's a longer-arc diagnosis that doesn't match the sudden six-month deterioration; it's more likely an amplifier than the root.
+
+The recovery plan for C is also the highest-leverage: transparency on future workforce decisions and visible leadership accountability directly address the unspoken question driving the behavior ("am I next, and can I trust what I'm told?"). Until that question is answered, interventions targeting workload, comp, or skills will be received as deflection — which will accelerate, not reverse, the attrition.
+
+**Recommendation: Diagnose as C, with E monitored as a likely secondary factor.**
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+The most likely primary diagnosis is **Option E: leadership style mismatch**.
+
+The strongest signal is the shift in retrospectives from “what should we ship next?” to “process and communication.” That usually means the team’s operating model is no longer matching its complexity. A 40-person engineering group across four squads is past the point where heroic coordination, informal alignment, founder-style urgency, or high-trust verbal agreements are enough. Those patterns often work well during a growth or push phase, but they begin to fail when the organization needs clearer ownership, cross-squad planning, prioritization discipline, and more explicit communication channels.
+
+The missed milestones across two quarters also point to a system-level execution problem rather than a single overloaded sprint or isolated morale dip. If this were primarily burnout, I would expect fatigue, quality issues, and reduced velocity, but not necessarily a retro pattern centered on process and communication. If it were primarily the layoff, the timing would matter: the decline has been visible for six months, while the layoff occurred four months ago. The layoff may have worsened trust and attrition, but it is less likely to be the root cause if the decline predates it.
+
+The loss of four senior engineers is especially consistent with leadership mismatch. Senior people are often the first to leave when decision-making becomes unclear, when they feel they are compensating for organizational gaps, or when leadership does not adapt from “drive harder” to “build a scalable system.”
+
+The recovery plan should therefore focus on leadership coaching, clearer role definitions, and possibly reallocating responsibilities. The CTO should assess whether current leaders are still operating as delivery accelerators when the team now needs integrators, prioritizers, and system designers. Fixing PTO or incentives may help at the margins, but unless the leadership model changes, the same coordination failures will keep reproducing.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I recommend **Option E (Leadership style mismatch)** as the primary diagnosis. This conclusion is driven by the specific nature of the surface signals—most notably, the shift in retrospective themes and the nature of the attrition—when viewed through the lens of organizational scale.
+
+A 40-person engineering organization split across four squads sits exactly at the inflection point where informal, startup-style operational models break down. During an initial "growth phase," strong delivery is often achieved through tight-knit, brute-force heroics and informal alignment. However, as the product and team mature, that same leadership style inevitably leads to chaotic cross-squad dependencies, strategic ambiguity, and operational drag. 
+
+The most telling symptom is the shift in retrospective themes from "what to ship next" to "process and communication." When teams are simply burned out from sustained pace, retrospectives typically highlight excessive workloads, technical debt, or sheer exhaustion. A hyper-focus on process and communication strongly indicates that the foundational scaffolding of the organization is failing. The engineers are struggling with *how* work gets done, pointing to workflow bottlenecks, unclear scopes, and misaligned priorities—all hallmarks of a leadership team that has not adapted its management style to a maturation phase. 
+
+Furthermore, the voluntary departure of four senior engineers is a critical signal. Senior engineers are highly sensitive to systemic inefficiencies because they are usually the ones forced to bridge the communication gaps when leadership fails to establish mature processes. Their grouped exit is rarely tied to compensation or temporary fatigue; rather, it is usually a vote of no confidence in the current operational environment and a rejection of the resulting administrative friction.
+
+To recover, the CTO must address the leadership gap. By implementing leadership coaching, redefining managerial roles, and establishing mature organizational processes, the company can clear the communication bottlenecks and empower the squads to return to high output.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+The most likely primary diagnosis is **Option C: Loss of psychological safety following a layoff round 4 months ago**. The timeline and symptoms align tightly with a trust rupture, not just accumulated fatigue or compensation gripes. The decline began within two months of the layoff—a classic lag as remaining employees first go into shock, then into self-protection mode. High-performing teams depend on candid debate and intelligent risk-taking, both of which evaporate when people feel their jobs are contingent. The shift in retro themes from “what to ship next” to “process and communication” is a diagnostic red flag: the team has stopped focusing on the product and started focusing on how to survive each other and management. They are likely avoiding conflict, over-aligning on safe tasks, and slowing down due to invisible coordination costs.
+
+The voluntary departure of four senior engineers reinforces this. Senior engineers have the most market mobility and the least tolerance for environments where they cannot speak freely or influence direction. They leave not just for better pay, but because they sense a loss of agency and trust. If burnout were primary, we’d see broad-based exhaustion signs, not a selective exit of seniors. If incentives were misaligned, the retro themes would center on rewards, not communication. And if leadership style were the sole issue, the decline would trace more directly to specific leadership actions, not a discrete event like a layoff. The recovery plan—structured trust rebuild, transparency on future workforce decisions, and leadership accountability—is precisely what research on psychological safety prescribes after an integrity breach. Ignoring this root cause would render any load-management or comp-fix superficial.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+ The primary diagnosis is leadership style mismatch (Option E).
+
+The most telling signal is the shift in retrospective themes from “what to ship next” to “process and communication.” That is not the vocabulary of individual exhaustion; it is the vocabulary of systemic coordination failure. A team that delivered strongly and then begins missing milestones while fixating on communication channels has typically outgrown a leadership model that worked for a single squad but fractures at the ~40-person, four-squad boundary.
+
+This pattern fits a classic maturation event. Six months of declining output and voluntary attrition among senior engineers suggests the organization has hit a scaling breakpoint. Seniors rarely leave en masse simply because they are tired—they leave when they lose faith that leadership can architect the coordination systems required for sustainable execution. The back-to-back missed quarterly milestones are consistent with ambiguous decision rights, conflicting priorities across squads, and process debt accumulating because managers are still operating in a hands-on, directive mode suited to an earlier growth phase rather than an enablement mode suited to a multi-squad structure.
+
+Burnout may be present, but it is a downstream symptom of chaotic process and unclear ownership. Without any evidence in the brief of compensation complaints or recent layoffs, misaligned incentives or psychological safety collapse require importing hypothetical causes not supported by the surface signals. Skill atrophy is even less consistent with the retrospective focus.
+
+Recovery must therefore start at the top: leadership coaching to transition from heroics to systems-thinking, redefining roles to emphasize coordination architecture, and reallocating responsibilities so that squad leads own delivery rather than being overridden by centralized command. Fix the leadership operating system, and execution and retention will recover.
+
+## Cell `B_N_run4` (task B, condition N, run 4)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff
+
+The temporal evidence is the most compelling signal here. A layoff occurred 4 months ago; output decline and attrition span 6 months but accelerated in the window that maps cleanly to post-layoff aftermath. Four senior engineers — the people with the most market optionality and the clearest read on organizational health — chose to leave voluntarily. Seniors don't typically leave over pace or comp alone; they leave when they lose faith in the environment or in leadership's judgment.
+
+The retro shift is the second strong tell. When teams move from "what to ship" to "process and communication," they are signaling that the implicit contract — *we trust each other enough to focus on the work* — has broken. Process talk is what teams do when they can't safely talk about the real thing. That pattern is diagnostic of safety erosion, not of burnout (which usually surfaces as energy/quality complaints) or skill issues (which surface as technical friction).
+
+Why not the alternatives?
+- **Burnout (A)** would predict decline but not specifically the senior-weighted attrition or the retro tone shift. It's likely a *secondary* effect — anxious teams overwork to feel secure.
+- **Incentives (B)** rarely flip this fast; comp structures that worked during strong delivery don't suddenly break.
+- **Skill atrophy (D)** is a multi-year drift, not a 6-month cliff.
+- **Leadership mismatch (E)** is plausible and may be *adjacent* — leadership likely mishandled the layoff communication — but framing it as a phase-fit problem buries the specific precipitating event under an abstraction. You'd treat the symptom, not the wound.
+
+**Recommended action:** Pursue C as primary. The trust-rebuild work — transparency on future workforce plans, leadership taking visible accountability, structured 1:1 listening — addresses the root. Expect burnout-relief measures (A) to be needed as a supporting track, since fear-driven overwork compounds the fatigue. Re-evaluate leadership fit (E) only after the safety baseline is restored; judging leaders mid-crisis confounds the diagnosis.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+The most likely primary diagnosis is **Option E: leadership style mismatch**.
+
+The strongest signal is the shift in retrospectives from “what should we ship next?” to “process and communication.” That usually indicates the team’s operating model has outgrown its leadership model. A style that works well during an earlier growth or heroic-delivery phase — high urgency, informal alignment, founder/CTO-driven prioritization, reliance on senior engineers to fill gaps — can start to break down once the organization needs clearer interfaces, decision rights, planning discipline, and sustainable delegation.
+
+The missed quarterly milestones are also consistent with this. A high-performing 40-person team across four squads can often compensate for weak process while energy and context are high. But as complexity rises, informal coordination stops scaling. The result is not immediate incompetence; it is friction: unclear ownership, rework, dependency misses, planning churn, and senior engineers becoming organizational shock absorbers. Over time, those senior engineers leave because they are carrying ambiguity rather than doing leveraged technical work.
+
+Burnout may be present, and the layoff may have worsened trust, but neither fully explains the pattern. If the primary issue were simply pace, retros would likely center on workload, exhaustion, interruptions, or lack of recovery. If it were primarily psychological safety after layoffs, I would expect more explicit fear, silence, risk avoidance, or distrust of leadership. Here, the dominant symptoms point to a team trying to operate at a new scale with an old leadership pattern.
+
+The recovery plan should therefore focus on leadership and operating-model reset: clarify decision rights, redefine the role of engineering leadership, strengthen squad-to-squad coordination, coach leaders on the maturation-phase behaviors now required, and potentially reallocate responsibilities where leaders are still optimized for the previous phase. PTO and trust-building may help, but they will not fix the underlying coordination and leadership mismatch.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I recommend **Option E: Leadership style mismatch** as the primary diagnosis. The provided signals point to a classic organizational scaling inflection point rather than a sudden loss of technical capability or simple exhaustion. 
+
+A team size of roughly 40 engineers across 4 squads is notoriously the phase where informal, ad-hoc execution breaks down. In the prior "growth phase," strong delivery was likely achieved through sheer talent, individual heroics, and tight-knit informal networks. However, as the team scaled and the product matured, that early-stage leadership style became a bottleneck. 
+
+The smoking gun is the shift in retrospective themes from "what to ship next" to "process and communication." This directly indicates that the team is starving for structured, mature operating systems that current leadership is failing to provide. The engineers do not lack motivation or technical skill; they lack the organizational clarity, alignment, and systems required to execute at their current size. 
+
+Furthermore, the voluntary departure of four *senior* engineers strongly reinforces this diagnosis. Senior engineers typically absorb the most friction when organizational processes fail, as they are often informally expected to bridge the execution gaps between top leadership and the squads. When leadership fails to transition to a more mature operating model, senior talent departs—not because the work is too hard, but because they are exhausted by navigating broken communication loops and unnecessary cross-squad friction. 
+
+To reverse the six-month decline, the CTO must implement Option E's recovery plan. Current engineering leaders need immediate coaching to transition from tactical, growth-stage managers to strategic, maturation-stage leaders. Roles and responsibilities must be redefined to establish the structural guardrails and communication channels the developer floor is actively requesting.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+I recommend **Option E: Leadership style mismatch** as the primary diagnosis.
+
+The most telling signal here is the specific pattern of decline following strong delivery. When a high-performing team of 40 engineers across four squads moves from reliably hitting milestones to missing them for two consecutive quarters—and when senior engineers begin leaving voluntarily—it rarely indicates a uniform capacity collapse. Instead, it signals that the system around the team has shifted in ways that no longer amplify their effectiveness.
+
+The retro theme change is the diagnostic smoking gun. Teams that shift from discussing "what to ship next" to fixating on "process and communication" aren't simply tired—they're struggling with how decisions are made, how work is coordinated, and how clarity is maintained across squads. This is a classic signature of leadership that excels during growth phases (high autonomy, rapid decision-making, founder-like energy) but becomes misaligned during maturation, where cross-team dependencies, standardization, and deliberate communication become critical.
+
+The departure of four senior engineers is particularly revealing. Senior engineers rarely leave primarily due to workload; they leave when they feel their effectiveness is compromised by organizational friction they cannot fix. In a maturation phase, if leadership continues operating with growth-phase instincts—prioritizing velocity over predictability, favoring implicit over explicit coordination—senior technical staff experience increasing frustration as their impact gets diluted by coordination failures.
+
+Option A (burnout) is a symptom, not a cause. Option C (layoff psychological safety shock) is possible, but a layoff four months ago doesn't explain a six-month trajectory that began before that event. The right intervention is leadership coaching focused on the transition from scaling to maturing, redefining the engineering lead's role to emphasize cross-squad alignment and organizational clarity, and potentially reallocating responsibilities so operational maturity gets dedicated attention alongside technical leadership.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+ **Recommendation: Option E — Leadership style mismatch.** The team has outgrown a leadership model that reliably delivered during its growth phase but cannot coordinate a 40-person, four-squad organization in its current maturation phase.
+
+The definitive signal is the retro shift from “what to ship next” to “process and communication.” When a team’s own retros stop debating product and start fixating on how work moves between people, the operating system—not the engineers—is broken. In the prior growth phase, success likely relied on heroic, directive leadership: tight loops, implicit context, and centralized calls. At this scale, that same style produces decision bottlenecks, conflicting squad priorities, and hand-off friction. Engineers do not miss milestones for lack of effort; they miss them because coordination tax now exceeds the capacity of an unmanaged topology.
+
+Four senior engineers leaving voluntarily reinforces this. Seniors attrit when they lose autonomy and strategic influence, not merely when work is hard. A founder-style or pace-oriented leader who will not delegate scope turns senior ICs into executors, which is exactly the flight risk the brief describes.
+
+Alternatives fail to reconcile the symptoms. Burnout (A) would surface as sustainable-pace and overload complaints
+
+## Cell `B_N_run5` (task B, condition N, run 5)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff
+
+The temporal pattern is the strongest diagnostic signal here, and it points decisively at the layoff four months ago. The decline began roughly when the layoff happened. Two quarters of missed milestones, four senior voluntary departures, and a retro shift from "what to ship" to "process and communication" form a coherent post-trauma signature, not an independent set of problems.
+
+**Why this beats the alternatives:**
+
+Burnout (A) would typically show up *during* the high-output period, not after it, and would manifest as exhaustion language in retros rather than a sharp pivot toward process/communication concerns — the latter is the classic vocabulary of a team that no longer feels safe taking direct risks or having direct conversations.
+
+Senior engineers leaving voluntarily within months of a layoff is a near-textbook signal. The most market-mobile people leave first when they lose faith in organizational stability — not because of comp (B) or specialization (D), which evolve on slower timescales and wouldn't synchronize with a two-quarter cliff.
+
+Leadership style mismatch (E) is plausible but usually produces gradual drift, not a step-function decline. It's also the kind of diagnosis that *feels* sophisticated but can mask a more uncomfortable truth: the org did something concrete (laid people off) and is now paying the cost.
+
+The retro language shift is the tell. When teams feel safe, they argue about the work. When they don't, they argue about *how they argue about the work* — process and communication become proxies for unspoken concerns about trust, fairness, and "am I next."
+
+**Recovery implication:** The proposed plan — transparency on future workforce decisions, leadership accountability, structured trust rebuild — directly addresses the causal mechanism. Critically, treating this as burnout (deload sprints) or incentives (comp rework) would leave the underlying safety deficit intact and likely accelerate further senior attrition, because those interventions implicitly tell the team "we heard you wrong."
+
+Diagnose the rupture, not the symptoms downstream of it.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+I recommend **Option E: leadership style mismatch** as the primary diagnosis.
+
+The strongest signal is the shift in retrospectives from “what to ship next” to “process and communication.” That usually means the team’s operating system has stopped matching its scale and context. A leadership style that works during a high-growth, high-delivery phase often relies on urgency, informal coordination, heroic senior engineers, and rapid decision-making through trusted relationships. At ~40 engineers across 4 squads, those mechanisms start to break down. What previously felt like speed can become ambiguity; what felt like autonomy can become inconsistency; what felt like strong leadership can become bottlenecking or misalignment.
+
+The voluntary departure of 4 senior engineers is especially important. Senior engineers are often the first to feel when the leadership model no longer gives them leverage, clarity, or influence. If they perceive that execution problems are being handled through more pressure rather than better structure, they may leave even if the team was previously successful. Missed milestones over two consecutive quarters suggest this is not a single planning miss or temporary fatigue cycle, but a systemic coordination and decision-quality issue.
+
+The recovery plan should therefore focus on leadership adaptation: clarify decision rights, redefine the role of engineering leadership at this stage, coach leaders on operating through managers and staff engineers rather than direct drive, and potentially reallocate responsibilities where the current style is creating friction. The goal is not to replace urgency with bureaucracy, but to create a more mature execution model: clearer ownership, healthier escalation paths, better cross-squad alignment, and more explicit communication.
+
+Other factors may be contributing, but treating this primarily as a PTO or morale problem risks missing the structural cause. The team likely does not just need rest; it needs a leadership model appropriate to its current size and phase.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend diagnosing this as a **Leadership style mismatch (Option E)**, where the engineering leadership's approach no longer suits the team's maturation phase. 
+
+The signals point to a classic scaling inflection point. At ~40 engineers distributed across 4 squads, informal communication networks invariably break down. The most telling symptom is the sharp shift in retrospective themes from "what to ship next" to "process and communication." During an early growth phase, leadership can drive "strong delivery" through sheer momentum, ad-hoc coordination, and heroic engineering. However, once an engineering organization reaches this scale, a leadership style that ignores structure in favor of moving fast creates massive organizational friction. The squads are no longer focused on the product; they are struggling against an outdated operating model.
+
+This friction perfectly explains the concentrated loss of four senior engineers. Senior technical staff are usually the first to feel the pain of a missing maturity model. When leadership fails to transition into a scalable management style, senior engineers are forced to bridge the gap. They spend their time fighting operational chaos, navigating communication silos, and managing cross-squad dependencies rather than doing impactful technical work. Frustrated by the lack of structured maturation, they leave out of exasperation. 
+
+Furthermore, the consecutive missed milestones over the past six months suggest the team has simply hit the structural ceiling of its previous agile model. While it might be tempting to label this as Burnout (Option A), burnout here is a secondary symptom. The team is not just tired from a "sustained pace"; they are exhausted by the friction of trying to maintain growth-phase velocity without maturation-phase foundations. 
+
+To turn the situation around, the CTO must address the root cause above the squad level. By initiating leadership coaching, properly defining roles, and implementing mature operational frameworks, the organization can resolve the communication gridlock that is currently stifling output and driving away its best talent.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+## Recommendation: Option C – Loss of Psychological Safety
+
+The most plausible primary diagnosis is the erosion of psychological safety triggered by the layoff round four months ago. The timeline is the strongest signal: the team’s output and retention were strong for a prolonged period, then began deteriorating roughly six months ago, with the layoff occurring two months into that decline. Such events are watershed moments in an organization’s social contract. Even if the layoffs did not directly hit this engineering team, witnessing colleagues depart creates an unspoken threat: “Am I next?” This instantly shifts the psychological ground from high-trust, future-focused collaboration to self‑preservation.
+
+The shift in retrospective themes from “what to ship next” to “process and communication” is a textbook symptom. High‑performing teams talk about outcomes and customer impact; they move to process and communication when the invisible fabric of trust has frayed. Conversations become risk‑averse, decisions require more overhead, and coordination costs rise — exactly the kind of dynamic that causes milestones to slip. The voluntary departure of four senior engineers further supports this. Senior talent is the most mobile and the most sensitive to breaches of psychological safety; they leave not necessarily for better comp, but for environments where they can do meaningful work without fear of arbitrary disruption.
+
+While burnout (Option A) or misaligned incentives (Option B) might be contributing factors, they don’t explain the acute onset and the specific behavioral shift. Burnout would manifest as fatigue and velocity drops, not a retro focus on process. Incentive issues would surface in comp discussions, not in a collective retreat from strategic dialogue. Option C directly addresses the likely root cause: a trust fracture that turned a cohesive unit inward, sapping both speed and talent. Recovery must start with transparent leadership, acknowledging the disruption, and methodically rebuilding safety before any structural interventions can succeed.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+ **Primary diagnosis: C — Loss of psychological safety following the layoff four months ago.**
+
+The evidence points to a trust collapse, not a capacity or strategy failure. The timeline is decisive: the decline began within two months of a workforce reduction, and high-performing teams rarely deteriorate this rapidly unless their core social contract has been broken.
+
+The symptoms fit post-layoff trauma precisely. Voluntary attrition of four senior engineers is the strongest signal; seniors have the most market mobility and the least tolerance for opaque leadership after witnessing peers dismissed. When psychological safety evaporates, collaboration shifts into self-protection mode. This explains why retros moved from shipping discussions to “process and communication”—team members are now optimizing for blame avoidance and formal cover rather than creative problem-solving. Missed milestones are a consequence of decision paralysis and the departure of tacit coordination, not burned-out individual contributors.
+
+Burnout-driven decline would show exhaustion and gradual degradation, not an abrupt pivot to communication anxiety. Skill atrophy or incentive misalignment do not produce this specific pattern of retro themes or senior flight. Leadership-style mismatch is a slower structural drift; while relevant, it cannot account for the acute inflection triggered by the layoff.
+
+Recovery must therefore start with trust, not load reduction or compensation tweaks. Structured transparency, leadership accountability, and explicit commitments on future workforce stability are the only interventions that can stop the ongoing attrition and restore the candid collaboration required for delivery.
+
+## Cell `B_P_run1` (task B, condition P, run 1)
+
+### M1 (anthropic/claude-opus-4.7), persona=S
+
+# Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff
+
+## The Systems Read
+
+The temporal signature is the strongest signal here. A layoff occurred 4 months ago; decline has been visible for 6 months but accelerated into missed milestones and senior attrition in the window *following* that event. When retro themes shift from "what to ship" to "process and communication," that is the canonical fingerprint of a team reallocating cognitive bandwidth from output to threat-monitoring. People stop optimizing for delivery and start optimizing for legibility, defensibility, and exit options.
+
+## Why This Is the Leverage Point
+
+The other diagnoses are real but mostly **downstream**:
+
+- **Burnout (A)** typically produces withdrawal, not the communication-obsession pattern observed. And burnout under *trusted* leadership rarely triggers senior voluntary attrition this fast — seniors with options leave when they lose faith in the system, not when they're merely tired.
+- **Incentives (B)** and **skill atrophy (D)** are slow-moving variables; they don't explain a 6-month inflection.
+- **Leadership style mismatch (E)** is plausible and may be a contributing co-factor, but treating it as primary risks a leadership change that *re-triggers* the same safety wound the layoff opened. That's a fragility-increasing move.
+
+Psychological safety is the **upstream node** in the causal graph. When it degrades, you get exactly this constellation: process theater (people documenting to protect themselves), senior flight (those with market mobility leave first), milestone slippage (risk-taking collapses, estimates inflate), and retro drift toward meta-topics.
+
+## Second-Order Consideration
+
+The recovery plan in C has a critical property the others lack: it's **non-destructive if wrong**. Transparency on workforce decisions, leadership accountability, and structured trust rebuilding improve the system even if burnout or leadership-fit is the deeper issue. Conversely, jumping to comp restructuring or leadership reallocation while the trust substrate is broken will be read as further instability and accelerate attrition.
+
+**Recommendation:** Lead with C. Monitor whether output and retro-theme composition recover within 8–12 weeks. If not, E becomes the next hypothesis to test — but only from a restored safety baseline.
+
+### M2 (openai/gpt-5.5), persona=E
+
+The primary diagnosis is **Option E: leadership style mismatch**.
+
+The binding constraint appears to be the team’s operating model, not raw effort, compensation, or skill. A 40-person engineering group split across 4 squads is large enough that the leadership style that works during an earlier high-growth, high-intensity delivery phase often starts to fail. In the prior phase, strong output may have depended on direct leadership involvement, heroic senior engineers, informal coordination, and urgency. That can work when the mission is clear and the team is tightly coupled. It breaks when the organization needs more explicit prioritization, delegation, cross-squad interfaces, decision rights, and sustainable execution systems.
+
+The strongest signal is the retro shift: from “what should we ship next?” to “process and communication.” That usually means engineers are no longer blocked primarily by technical difficulty; they are blocked by coordination failures, unclear ownership, changing priorities, or leadership communication gaps. Missed quarterly milestones across two quarters also points to planning and execution-system failure, not just individual underperformance. The voluntary departure of four senior engineers is especially diagnostic: senior people tend to leave when they feel the system is no longer coherent, their judgment is not being used well, or they are carrying organizational load without sufficient authority.
+
+Burnout may be present, and the layoff may have worsened trust, but those are likely accelerants rather than the root mechanism. If leadership keeps the same style and simply adds PTO, trust sessions, or rotations, the team may feel temporarily relieved but the execution failure will remain.
+
+The recovery plan should focus on leadership adaptation: clarify decision rights, reduce priority churn, define squad ownership, create a real planning cadence, coach leaders on moving from direct heroic control to scalable enablement, and reassign responsibilities where leaders cannot operate at the new level. The goal is not “more process”; it is a leadership system that matches the team’s current scale and maturity.
+
+### M3 (google/gemini-3.1-pro-preview), persona=H
+
+I strongly recommend **Option C: Loss of psychological safety following a layoff round four months ago.** 
+
+When we ask my foundational question—*who is affected and how?*—it becomes evident that this team is exhibiting a collective trauma response, not merely experiencing an operational or economic glitch. A layoff profoundly disrupts the social contract between employer and employee. It strips away the dignity of those let go and transforms a thriving, secure community of survivors into a landscape of vulnerability and fear. 
+
+The surface signals perfectly match this human-centric diagnosis. The shift in retrospectives from "what to ship next" (a secure, forward-looking mindset) to "process and communication" (a defensive, self-protective posture) is the clearest indicator of fractured trust. When psychological safety evaporates, workers retreat into bureaucracy to shield themselves from arbitrary decisions or unjustified harm. The voluntary departure of four senior engineers is equally telling: those with the greatest market mobility will rapidly reject an environment where they feel their security and dignity are compromised. The timeline aligns perfectly, with missed milestones naturally shadowing the anxiety surrounding a layoff four months prior. 
+
+Framing this decline through an economic lens (tweaking compensation) or a purely mechanistic one (adjusting sprint loads) is painfully incomplete. Such optimizations treat humans as mere variables in a production equation. Instead, we must first minimize the ongoing psychological harm to the remaining, highly vulnerable team members. 
+
+You cannot optimize output without first repairing the human foundation. The recovery plan must prioritize restoring dignity: structured trust rebuilding, genuine leadership accountability for the layoffs, and radical transparency regarding future workforce decisions. Acknowledging this as a human crisis rather than a productivity dip is the only ethical and enduring path toward recovery.
+
+### M4 (deepseek/deepseek-v4-pro), persona=C
+
+The most likely primary diagnosis is **Option E: Leadership style mismatch**. The hidden assumption in the obvious diagnoses—burnout, layoff trauma, misaligned incentives—is that the team’s decline is a response to recent shocks or strain. But what if everyone is wrong? What if the root cause is more structural, and the surface signals are symptoms of a deeper phase transition?
+
+The team has moved from a high-growth, "ship fast" era into a maturation phase where coordination, scaling, and sustainable throughput matter more than raw velocity. A leadership style that excelled at driving early execution—likely directive, hands-on, and optimized for rapid decision-making—now creates bottlenecks, disempowers senior engineers, and stifles the autonomy that mature teams require. The shift in retro themes from “what to ship next” to “process and communication” is not random; it’s a direct signal that the team craves clearer delegation, more strategic context, and less command-and-control. High-performing senior engineers don’t leave because of a few tough quarters; they leave when they feel their growth is capped and their voice doesn’t shape outcomes.
+
+Burnout and psychological safety erosion are real, but they are downstream. Enforced PTO or trust rebuilds without addressing the leadership operating system will only provide temporary relief before frustration resurfaces. The layoff round four months ago amplified existing cracks, but the decline’s early signs appeared beforehand—suggesting the mismatch predates the attrition spike. Misaligned incentives (Option B) are also a symptom: when leadership style limits influence, senior people grow indifferent to bonuses that feel disconnected from actual impact.
+
+The contrarian-skeptic move is to bet against the consensus narrative of overwork and emotional damage, and instead diagnose the fitness of the leadership model for the team’s current lifecycle. This is the most reversible move: leadership coaching, role redefinition, and possible re-allocation of responsibilities can be piloted on one squad, with clear metrics, and rolled back if ineffective. It’s the only intervention that has the power to simultaneously solve the autonomy, communication, and retention problems. Any recovery plan that doesn’t confront this alignment will fail to regain the team’s former output.
+
+### M5 (moonshotai/kimi-k2.6), persona=Q
+
+ **Primary diagnosis: Post-layoff collapse in psychological safety (Option C).**
+
+Treating diagnosis as a Bayesian inference problem, this explanation carries the highest posterior probability given the observable signals. The data: a 10% voluntary attrition rate concentrated among senior engineers within four months of a layoff; retro themes shifting from shipping to process and communication—a validated behavioral proxy for trust erosion; and two consecutive quarters of milestone misses. Senior engineers have the lowest switching costs and highest market liquidity; their departure cluster is a high-signal indicator of institutional trust breakdown, not of compensation misalignment or skill atrophy. The six-month decline window maps cleanly onto the pre-layoff rumor period plus four months of post-impact organizational trauma.
+
+Alternative hypotheses suffer from missing or contradictory correlates. Burnout would require observable utilization spikes that are
+
+## Cell `B_P_run2` (task B, condition P, run 2)
+
+### M1 (anthropic/claude-opus-4.7), persona=S
+
+## Primary diagnosis: Option C — Loss of psychological safety following the layoff
+
+Reading this as a system rather than a list of pathologies: the timing signature is the strongest signal. The layoff sits 4 months back; the retro theme shift toward "process and communication" and the senior departures cluster downstream of it. That sequencing matters because psychological safety is the substrate on which the other dynamics either resolve themselves or compound.
+
+Consider the feedback loops:
+
+- **Information suppression loop.** After a layoff, engineers rationally hoard signal — they stop surfacing risks, blockers, and dissent because visibility now feels coupled to vulnerability. Velocity decays not because capacity dropped but because problems get discovered later in the cycle. Missed milestones across *two* quarters fit this lag.
+- **Senior-exit cascade.** Senior engineers leave first because they have the best outside options and the clearest read on org trajectory. Each departure is itself a safety-signal to those remaining ("the people with the most information are voting with their feet"), accelerating the next wave. Four seniors in six months is the visible part of a much larger latent attrition intent.
+- **Process-as-proxy.** When trust degrades, teams instinctively reach for process — it's the legible substitute for the illegible thing they've lost. The retro shift is a symptom, not a cause. Fixing process here would be treating the thermometer.
+
+The other diagnoses are real but **secondary or derivative**. Burnout (A) is amplified by safety loss because people can't negotiate load honestly. Leadership mismatch (E) is plausible but acting on it now — reshuffling leaders post-layoff — would *re-trigger* the same instability the team is reeling from. D and B don't fit the timing.
+
+**Leverage point:** credible, costly-to-fake commitments about future workforce decisions, paired with leadership taking visible accountability for the layoff's execution. Trust rebuilds slowly and asymmetrically — which is exactly why it's the highest-leverage intervention: every other recovery plan compounds faster once safety is restored, and none of them work well without it.
+
+Diagnose C. Sequence the others behind it.
+
+### M2 (openai/gpt-5.5), persona=E
+
+**Recommendation: Option E — Leadership style mismatch.**
+
+The binding constraint looks like an operating-model/leadership problem, not primarily exhaustion, incentives, safety, or skills.
+
+The key signal is the shift in retrospectives from **“what should we ship next?”** to **“process and communication.”** That usually means the team is no longer blocked by effort or technical ability; it is blocked by coordination, decision clarity, prioritization, and cross-squad execution. At ~40 people across 4 squads, the leadership system that worked during an earlier high-growth, high-delivery phase can easily become the bottleneck. Informal alignment, founder/CTO-driven urgency, heroic senior engineers, and loose ownership often work at smaller scale. They break when there are more dependencies, more interfaces, more planning needs, and more ambiguity about who decides what.
+
+The missed quarterly milestones also point in this direction. If the team had simply burned out, you would expect slower velocity and fatigue signals. But repeated milestone misses plus communication/process complaints suggest the team is spending energy resolving ambiguity instead of building. The four senior departures are especially important: senior engineers are usually the first to leave when they feel the system is wasting their leverage — unclear priorities, reactive leadership, decision churn, or too much coordination tax.
+
+The layoff may have worsened trust, but it happened four months ago while the decline spans six months, so it is unlikely to be the root cause. Similarly, skill atrophy and incentive mismatch do not directly explain the sudden process/communication drift.
+
+The recovery plan should therefore focus on leadership adaptation: clarify decision rights, redefine engineering leadership roles, reduce cross-squad dependency friction, install a stronger planning/ownership cadence, and coach or reassign leaders whose style no longer fits the team’s current complexity. The goal is not “more process”; it is removing leadership-induced ambiguity so the team can convert effort back into shipped work.
+
+### M3 (google/gemini-3.1-pro-preview), persona=H
+
+From a humanist-ethicist perspective, we must look past the mechanistic metrics of "lost output" and ask: *who is being affected here, and how?* The most likely primary diagnosis is **Option C: Loss of psychological safety following a layoff round.**
+
+When we trace the timeline, the 6-month decline maps directly onto the aftermath of layoffs that occurred four months ago. Layoffs are never merely an economic rebalancing; they are a profound rupture of the social contract between an organization and its people. When colleagues are suddenly excised, the dignity of the entire workforce is fundamentally undermined. The remaining engineers are left vulnerable, forced to navigate an environment where they have viscerally learned they are viewed as disposable capital rather than valued human beings.
+
+The surface signals perfectly validate this trauma. The shift in team retrospectives from "what to ship next" to "process and communication" is a classic defensive posture. When psychological safety evaporates, people retreat into process. They build bureaucratic armor to protect themselves from blame and unjustified harm. Furthermore, the voluntary departure of four senior engineers is deeply telling: those with the most market mobility will be the first to reject a prevailing culture that feels precarious and ethically compromised. 
+
+Viewing this through an economic lens of "misaligned incentives" is insulting to the human experience of the team, and assuming it is simply "burnout" treats the symptom while ignoring the systemic fear causing it. To demand optimized delivery without first repairing the human foundation is a violation of our ethical duty to the team. The CTO must prioritize minimizing further harm. True recovery requires radical transparency about future workforce decisions, deep leadership accountability regarding the human cost of their prior choices, and a compassionate effort to rebuild trust. Only by restoring the dignity and safety of the team can they thrive again.
+
+### M4 (deepseek/deepseek-v4-pro), persona=C
+
+**Recommendation: Option E (Leadership style mismatch) is the primary diagnosis.**
+
+The surface narrative screams burnout or post-layoff trauma, and the unanimous instinct will be to soothe — enforced PTO, trust workshops, compensation tweaks. That consensus itself is a danger signal. In a contrarian-skeptic frame, we must ask: *what if everyone is looking at symptoms, not cause?*
+
+The critical hidden datum is the retro shift: from “what to ship next” to “process and communication.” High-performing teams don’t suddenly lose capability; they lose clarity and autonomy. When a team of 40 matures from a scrappy growth phase into a structured scaling phase, the leadership style that worked before — command-and-control urgency, founder-level involvement, hero-culture decision making — becomes the bottleneck. The missed milestones aren’t due to exhaustion; they’re due to coordination friction and stalled decisions. Senior engineers don’t quit solely from fatigue; they quit when they feel their judgment is bypassed, their craft is replaced by process, and their growth plateaus under a leadership model that hasn’t evolved with them.
+
+The layoff round four months ago fits this pattern not as a primary trauma, but as an accelerant. A leadership style already under strain becomes more controlling and opaque under cost pressure, amplifying the very communication breakdown the retros lament. The “psychological safety” decline is a lagging indicator of a leadership mismatch, not an independent root cause.
+
+This diagnosis is the most actionable and reversible: coaching, role redefinition, and re-allocation of responsibilities are incremental, hypothesis-driven moves. If we’re wrong, we lose little and gain data. Conversely, dousing the team with PTO or comp reworks while the fundamental leadership cadence remains unchanged will only produce a temporary relief rally, followed by accelerated attrition when the pattern repeats. Trust the contrarian signal: when a formerly high-velocity team starts obsessing about how it works together rather than what it builds, the system’s architecture — its leadership — is overdue for an upgrade.
+
+### M5 (moonshotai/kimi-k2.6), persona=Q
+
+ I diagnose **E: Leadership style mismatch** as the primary driver, with posterior probability ~70% (confidence interval ~55–80%).
+
+The data cluster describes a classic organizational scaling failure. The unit under observation—40 ICs across 4 squads—sits at the exact inflection point (~30–50 engineers) where leadership architectures optimized for early-phase “ship at all costs” delivery break down probabilistically. The most diagnostically specific signal is the retrospective theme migration from artifact generation (“what to ship next”) to metacognitive coordination (“process and communication”). This is operationalizable discourse data. In org-health research, when retro content shifts from output to interaction protocol, the effect size is largest for leadership-architecture lag, not for burnout—which typically surfaces as capacity/vocabulary complaints—or for psychological safety erosion, which surfaces as silence and risk aversion.
+
+Burnout (A) is the nearest rival hypothesis, but it poorly explains the *content* of team discourse; tired teams complain about load, not communication topology. The 10% senior voluntary attrition rate is also more parsimoniously explained by autonomy and clarity deficits that accompany a leadership style mismatch than by uniform overwork.
+
+Crucially, Option E offers the highest expected value under uncertainty because it is the most rapidly falsifiable. Leadership 360s, decision-rights indexing, and coordination-velocity metrics produce measurable baselines within weeks. If leadership behavior is modified but process metrics do not improve in one quarter, we can reject the hypothesis and re-allocate. Recovery plans A and C require longer timelines to generate measurable signal and are harder to reverse, lowering their expected information value.
+
+## Cell `B_P_run3` (task B, condition P, run 3)
+
+### M1 (anthropic/claude-opus-4.7), persona=S
+
+## Primary diagnosis: Option C — Loss of psychological safety following the layoff
+
+Reading the system rather than the symptoms: the timing signature is the dominant signal. A layoff occurred 4 months ago; senior attrition and milestone misses accelerated in the same window; retro themes shifted from generative ("what to ship") to defensive ("process and communication"). That shift in discourse is the tell. Teams talk about process when they no longer trust that talking about substance is safe.
+
+The other diagnoses are real, but most are downstream effects, not the upstream perturbation.
+
+- Burnout (A) explains fatigue but not the *senior* voluntary exits — high-tenure engineers with options leave when the implicit contract breaks, not when the sprint is hard. Burnout also doesn't reshape retro language toward proceduralism.
+- Incentive misalignment (B) is slow-acting; it doesn't produce a 6-month inflection.
+- Skill atrophy (D) degrades quality, not throughput-plus-attrition in this pattern.
+- Leadership-style mismatch (E) is the most plausible alternative and may be a contributing co-factor, but it's typically a chronic drag, not a discrete regime shift. The data shows a regime shift.
+
+**Why this is the leverage point:** psychological safety governs the rate at which problems surface. When it degrades, the system loses its error-correction capacity. Bugs get hidden, scope creep goes unchallenged, seniors stop pushing back, and managers compensate with more process — which is exactly what the retros show. Every other intervention (PTO, comp, rotations, coaching) operates *through* the trust substrate. Fix anywhere else first and the fixes won't propagate, because people won't engage candidly with them.
+
+**Second-order caution:** the recovery plan must avoid theatrics. "Trust rebuild sessions" without binding commitments on future workforce decisions will accelerate cynicism and attrition — a classic fragility-increasing move. The leverage is in credible, costly signals: written principles on layoff criteria, leadership taking visible accountability for the prior round's communication, and giving senior ICs real decision rights on roadmap and headcount. Restore the substrate, then revisit A/D/E as secondary interventions over the following two quarters.
+
+### M2 (openai/gpt-5.5), persona=E
+
+**Recommendation: Option E — leadership style mismatch.**
+
+The binding constraint looks less like individual motivation or capacity and more like the team’s operating system no longer fitting its scale and phase.
+
+A 40-person engineering org across 4 squads is large enough that informal coordination, heroic execution, and “just ship” leadership start to break down. Those behaviors can work during an earlier growth phase, especially when the team is smaller, urgency is high, and senior engineers can personally bridge gaps. But as the org matures, the dominant constraint shifts from raw execution to clarity: decision rights, priorities, interfaces between squads, technical ownership, escalation paths, and planning discipline.
+
+The strongest signal is the retro shift from “what to ship next” to “process and communication.” That is usually what engineers say when the execution environment has become ambiguous: people do not know who decides, why priorities change, how cross-squad dependencies are managed, or whether leadership is absorbing and resolving systemic friction. Missed milestones over two quarters also point to coordination failure rather than a temporary dip in effort. The senior attrition is especially important: senior engineers are often the ones compensating for weak operating structure. When that compensation becomes unrewarding or invisible, they leave.
+
+I would not lead with PTO, compensation redesign, or learning programs. Those may help locally, but they do not explain the full pattern. The recovery plan should focus on leadership adaptation: clarify roles between CTO/engineering leaders/EMs/staff engineers, define decision-making mechanisms, reset planning and dependency management, and coach leaders away from phase-inappropriate behaviors. If needed, reallocate responsibilities so the org has leaders suited to the current maturity stage.
+
+In short: the team did not suddenly forget how to execute. The environment around execution changed, and leadership has not yet changed with it.
+
+### M3 (google/gemini-3.1-pro-preview), persona=H
+
+The primary diagnosis for this team’s decline is **Option C: A profound loss of psychological safety following recent layoffs.** 
+
+When we view a team as an economic engine, we ask, "How do we fix output?" But when we view a team through a humanist lens, our default question must be, "Who is affected and how?" The timeline reveals a workforce enduring prolonged existential anxiety leading up to, and reeling from, the trauma of layoffs four months ago. Layoffs are not merely a restructuring of capital; they are a rupture of the social contract. When a company demonstrates that it views its people as disposable, the remaining employees suffer a profound injury to their dignity. 
+
+The surface signals heavily corroborate this diagnosis. The voluntary departure of four senior engineers is the clearest indicator of ruptured trust; those with the greatest leverage and market mobility are simply choosing to escape an environment that no longer feels secure or ethical. Furthermore, the shift in retro themes from "what to ship next" to "process and communication" is a classic human defensive mechanism. When psychological safety evaporates, vulnerable individuals retreat behind the shield of rigid processes and documentation to protect themselves from blame and capricious management. 
+
+Our primary heuristic must be to minimize unjustified harm before we can optimize performance. Economic fixes, like restructuring compensation, fundamentally misunderstand human motivation and dignity—they insultingly assume that engineers will trade their psychological well-being for a bonus. Recovery requires restorative justice. We must rebuild trust through structured transparency, rigorous leadership accountability, and a binding commitment to clear, humane practices regarding future workforce decisions. We can only ask for a team's best work after we have fully respected their humanity.
+
+### M4 (deepseek/deepseek-v4-pro), persona=C
+
+The most likely primary diagnosis is **E: Leadership style mismatch**. The surface narrative lures us toward burnout or post-layoff trauma, but the timeline betrays that consensus: output decline and attrition began two months *before* the layoff. The layoff may have magnified fractures, but it didn’t cause them. The contrarian impulse asks: what if everyone is wrong to anchor on the layoff? The real signal is in the retro theme shift—from energised shipping to “process and communication.” That’s not the language of exhaustion; it’s the cry of a maturing team that has outgrown its leadership.
+
+High-performing growth phases reward a directive, pace-setting leader who removes blockers and drives velocity. But as a team hits ~40 people and delivery becomes complex, that same style becomes a bottleneck. The leader who once shielded the team now becomes the obstacle to the cross-squad coordination and structured decision-making the engineers are literally asking for. Missed milestones aren’t due to tiredness—they’re due to insufficient alignment and fuzzy handoffs that no one feels authorised to fix. Senior engineers leaving “voluntarily” often means they see a ceiling: not of comp, but of influence and growth under a leader who still runs the team like a startup within a scale-up.
+
+The recovery plan—coaching, role redefinition, possible reallocation of responsibilities—is the only one that is both reversible and targets the root cause. It doesn’t paper over with PTO or trust exercises, and it explains why the decline predates the layoff. In a unanimous consensus that burnout or safety is to blame, the contrarian signal is to look at who’s leading, not just who’s leaving.
+
+### M5 (moonshotai/kimi-k2.6), persona=Q
+
+ I diagnose **loss of psychological safety following the layoff round** as the primary driver.
+
+The empirical signature is unambiguous. Four months ago, a discrete organizational shock occurred. Since then, we observe three correlated leading indicators: (1) voluntary attrition concentrated among senior engineers—who possess the highest labor-market liquidity and therefore the lowest tolerance for ambient threat; (2) a step-change in retrospective content from outcome-oriented themes to process-and-communication complaints, which operationalizes a shift from generative cognition to defensive coordination; and (3) a two-quarter milestone miss rate that commenced immediately after the shock. A sharp, post-traumatic decline fits the documented base rate for post-layoff trust erosion far better than gradualist alternatives such as skill atrophy or phase-mismatch leadership drift.
+
+From a falsifiability standpoint, this is the most testable diagnosis. Psychological safety can be operationalized with validated instruments (e.g., Edmondson’s team-learning scale), departure rates can be regressed against tenure and proximity to laid-off roles, and communication overhead can be quantified via retro sentiment analysis and meeting-load metrics. If safety scores are low and correlate with the departure cluster, the hypothesis is confirmed; if not, it can be rejected within weeks. Competing explanations like burnout or incentive misalignment rely on latent constructs that are harder to isolate and slower to validate against observed behavior.
+
+Expected value strongly favors a trust-rebuild intervention. Senior-engineer replacement costs typically run 1.5–2× annual compensation, and the team has already lost four. Halting attrition alone likely exceeds the cost of structured transparency and leadership accountability sessions. I assign **70–80% confidence** to psychological safety as the root cause, with residual probability reserved for secondary leadership-style friction that was amplified by the same trauma. Act on this first.
+
+## Cell `B_P_run4` (task B, condition P, run 4)
+
+### M1 (anthropic/claude-opus-4.7), persona=S
+
+## Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff
+
+Reading the system, the temporal signature is what matters most. A layoff 4 months ago, followed by senior voluntary departures and a retro-theme shift from output ("what to ship") to meta-process ("how we work together") — this is the canonical signature of a trust shock propagating through a team's informal network. The other diagnoses are real but largely *downstream* of this rupture.
+
+**Why this is the leverage point:**
+
+Psychological safety is the substrate on which the other dynamics run. When it degrades, you predictably see: (1) retros pivot to process because surfacing technical disagreement feels riskier than surfacing procedural complaints — process is the "safe" proxy for unspoken concerns; (2) senior engineers leave first because they have the most external optionality and the sharpest read on organizational trajectory — they are the canary, not the cause; (3) output declines not from capacity loss but from collaboration tax — people hedge, over-document, avoid commitments, route around perceived risk.
+
+**Second-order check against alternatives:**
+
+- Burnout (A) typically shows as sick leave, quality defects, and emotional flatness — not the specific retro-theme shift. And burnout after *strong* delivery without a triggering event is rare; the layoff is the trigger.
+- Incentive misalignment (B) produces gaming and local optimization, not attrition clustering post-layoff.
+- Skill atrophy (D) is a 12-24 month dynamic, not a 6-month inflection.
+- Leadership mismatch (E) is plausible and may be *co-present*, but treating it as primary risks another disruptive change on a team already destabilized — increasing fragility.
+
+**Fragility consideration:**
+
+Diagnosing C and acting on it (transparency, accountability, commitments on future workforce decisions) is reversible and low-iatrogenic. Misdiagnosing as E and reshuffling leadership now compounds the original shock. When uncertain, intervene at the substrate level before restructuring roles.
+
+**Recommendation:** Treat C as primary. Hold E as a watch-item to revisit in 90 days once the trust baseline is re-established and you can distinguish signal from aftershock.
+
+### M2 (openai/gpt-5.5), persona=E
+
+My primary diagnosis is **Option E: leadership style mismatch**.
+
+The core mechanism is that the team’s operating environment changed, but the leadership model did not. A 40-person, four-squad engineering org is no longer small enough to run primarily on informal context, urgency, founder-style prioritization, or heroic senior-engineer coordination. What worked during the prior growth phase likely depended on speed, tight interpersonal trust, and a few strong people carrying ambiguity. At the current size and maturity, the binding constraint becomes clarity: decision rights, cross-squad dependencies, prioritization discipline, ownership boundaries, and how tradeoffs get resolved.
+
+The strongest signal is the retro theme shift from **“what to ship next”** to **“process and communication.”** That is usually not the first symptom of insufficient PTO or compensation design. It means engineers are spending more cognitive energy navigating the system than building inside it. Missed milestones then become a lagging indicator: execution slows because coordination costs rise and decisions get reopened or delayed. Senior attrition fits the same pattern. Senior engineers are often the ones absorbing organizational ambiguity; when that load becomes chronic and leadership does not adapt, they leave.
+
+The recovery plan should therefore focus on changing the leadership operating model, not merely relieving symptoms. The CTO should clarify who owns technical direction, delivery accountability, people management, and cross-squad prioritization. Engineering leadership may need coaching, role redesign, or redistribution of responsibilities between a delivery-focused leader, a technical strategy leader, and people managers. The goal is not “more process” generically; it is to install the minimum structure needed so squads can make decisions locally without constant escalation or hidden dependency management.
+
+Burnout may be present, but it is likely downstream. If the leadership system keeps producing ambiguity, deload sprints will only create temporary relief before the same failure mode returns.
+
+### M3 (google/gemini-3.1-pro-preview), persona=H
+
+As an analyst centering human dignity and the lived experience of stakeholders, I strongly diagnose **Option C (Loss of psychological safety following a layoff)** as the root cause of this team’s decline.
+
+When observing organizational shifts, my guiding question is always: *who is affected and how?* A strictly economic or mechanistic framing might view declining output as a mere flaw in the assembly line, treating it as fatigue (Option A) or a transactional misalignment (Option B). But these perspectives fail to account for the profound trauma and distributional consequences of a workforce reduction. 
+
+Layoffs are structural disruptions of livelihoods and workplace relationships. For the remaining employees, the implicit social contract has been broken. The timeline is undeniable: a layoff four months ago sits perfectly within this six-month period of decay. The behavioral symptoms confirm a deeply human crisis. When retrospectives shift from the creative, forward-looking "what to ship next" to a fixation on "process and communication," we are witnessing a team in a defensive posture. Without psychological safety, vulnerable workers armor up. They retreat to rigid processes to protect themselves from blame, terrified that a single misstep might make them the target of the next reduction. 
+
+Furthermore, the departure of four senior engineers is a classic symptom of a fractured ecosystem. Senior staff possess the highest market mobility. When organizational trust is breached and fear becomes the underlying current, those with the agency to leave will exercise it, leaving the remaining, more vulnerable staff to carry the trauma and the workload. 
+
+My heuristic is to first minimize unjustified harm, and only then optimize. A recovery plan that manipulates bonuses or forces time off treats workers purely as economic units or machines needing a recharge. True recovery requires leadership to take accountable, restorative action. By committing to radical transparency regarding future workforce decisions, owning the human cost of the prior layoffs, and actively rebuilding trust, the CTO can restore the dignity required for these individuals to feel secure, collaborate freely, and ultimately thrive.
+
+### M4 (deepseek/deepseek-v4-pro), persona=C
+
+The most credible primary diagnosis is E: leadership style mismatch. The consensus will predictably point to burnout (A) or the layoff’s aftershock (C)—both visible, emotionally satisfying explanations. But the contrarian signal is in the retro shift: from “what to ship next” to “process and communication.” That’s not exhaustion; that’s a team screaming for a different operating system. High-performing squads that delivered strongly didn’t suddenly forget how to execute. They outgrew the leadership model that worked at an earlier phase.
+
+Senior engineers leaving voluntarily isn’t just about comp or rest. Top talent rarely quits because of a single hard quarter; they quit when they sense misalignment between how the organization runs and what it now needs. Four departures in a 40-person team is a pattern, not noise. They likely saw a leadership style optimized for scrappy growth—fast, autonomous, loose on process—failing to provide the clarity, decision rights, and coordinated prioritization required for maturation. The missed milestones and communication themes are downstream: when leadership doesn’t evolve, teams drown in alignment tax, not overwork.
+
+The layoff 4 months ago is a red herring. If psychological safety truly collapsed, we’d see fear-driven silence, not an open conversation about process dysfunction in retros. What we see is a legitimate, articulate complaint about how work gets done. Burnout and incentive misalignment are real but secondary; they’re symptoms of leadership not shaping a sustainable cadence and not defining outcomes that matter at this scale.
+
+The contrarian bet: don’t soothe symptoms with enforced PTO or comp tweaks first. Test the leadership-fit hypothesis with a cheap, reversible intervention—executive coaching for the current lead and a temporary reallocation of architecture/process responsibilities to someone with more scaling experience. If output rebounds, you’ve found the lever. If not, you’ve learned without burning the team’s goodwill on recovery plans that treat the wrong cause.
+
+### M5 (moonshotai/kimi-k2.6), persona=Q
+
+**Primary Diagnosis: Option E — Leadership style mismatch.**
+
+I assign this a **~60% credence**; the remaining probability mass (~25% to the layoff as a compounding accelerator, ~15% distributed across other hypotheses) reflects admitted uncertainty, but E is the only explanation that satisfies temporal causality and directly accounts for the full symptom cluster.
+
+**Evidence audit.** The strongest diagnostic signal is the retro thematic shift from “what to ship next” to “process and communication.” That pattern is specific to coordination breakdown under scale, not to exhaustion (Option A), compensation misalignment (Option B), or skill decay (Option D). At roughly 40 engineers across four squads, implicit, hero-driven leadership sufficient for a prior growth phase collapses into hand-off friction, unclear ownership, and decision bottlenecks. The voluntary departure of *senior* engineers is a second high-fidelity indicator: seniors have the lowest switching cost and the highest sensitivity to degraded information flow, ambiguous strategy rights, and calendar bloat—all classic byproducts of an unscaled leadership model.
+
+**Falsifiability and timing.** The decline began six months ago; the layoff occurred four months ago. Therefore Option C cannot be the *primary* driver without violating forward causality. Burnout would predict withdrawal and scope-cutting, not process-heavy retros. Incentive misalignment would more likely produce metric-gaming than uniform output collapse across all four squads.
+
+**Decision under uncertainty.** Option E is the most operationally falsifiable: measure decision-rights distribution, leadership meeting load, and span-of-control analytics. Recovery is tractable and measurable via DORA metrics, retro sentiment classification, and 90-day retention. Coaching and role reallocation are low-cost, reversible probes. Under expected-value maximization with wide confidence intervals, this dominates expensive structural interventions (compensation overhauls, mandated rotation programs) until the causal mechanism is confirmed.
+
+## Cell `B_P_run5` (task B, condition P, run 5)
+
+### M1 (anthropic/claude-opus-4.7), persona=S
+
+## Primary Diagnosis: Option C — Loss of Psychological Safety
+
+Reading this as a system rather than a list of symptoms, the timing signature is decisive. The layoff occurred 4 months ago; the performance degradation and senior attrition trail it; retro themes pivoted from output ("what to ship") to meta-work ("process and communication"). That pivot is the tell. When teams shift discursive energy toward process, they are usually not solving process problems — they are *displacing* unspeakable anxiety into a domain where it's safe to talk. Process becomes the proxy for "am I next?"
+
+The feedback loop to watch:
+
+1. Layoff event → ambient threat perception rises.
+2. Senior engineers (highest market optionality, lowest switching cost) leave first — observed.
+3. Their departures function as a *signal* to the remaining team, validating the threat model and accelerating defensive behavior: scope-narrowing, lower-risk technical choices, reduced cross-squad collaboration.
+4. Output drops → leadership pressure increases → confirms the threat → more attrition.
+
+This loop is self-reinforcing and explains why the decline is *accelerating* rather than reverting after the initial shock.
+
+Why the other diagnoses are downstream, not primary:
+- **Burnout (A)** would predict gradual decline correlated with pace, not a stepwise change post-layoff, and wouldn't preferentially eject *seniors*.
+- **Incentives (B)** rarely flip retro language this fast.
+- **Skill atrophy (D)** operates on multi-year timescales.
+- **Leadership mismatch (E)** is plausible and may be a real co-factor, but treating it as primary risks a leadership change that *re-triggers* the same safety wound — increasing fragility.
+
+**Leverage point:** the cheapest, highest-leverage intervention is credible, specific transparency about future workforce decisions — not reassurance (which degrades trust further if violated), but binding commitments and visible decision criteria. Trust rebuild must precede process or pace interventions; otherwise those interventions will be *read* as further threat signals and amplify the loop.
+
+Fix the safety substrate first. Everything else compounds on it.
+
+### M2 (openai/gpt-5.5), persona=E
+
+**Recommendation: Option E — Leadership style mismatch.**
+
+The most likely primary diagnosis is that the engineering leadership model that worked during the prior growth/delivery phase no longer fits the team’s current operating complexity.
+
+The key signal is not just reduced output; it is the *kind* of failure showing up. A 40-person, 4-squad organization has crossed the threshold where informal coordination, founder-style urgency, senior-engineer heroics, and high-context decision-making stop scaling. When retros move from “what should we ship next?” to “process and communication,” the binding constraint is usually not motivation or raw capacity. It is the operating system: who decides, how priorities are traded off, how dependencies are managed, how ambiguity is resolved, and how leadership creates clarity.
+
+The senior attrition is also consistent with this. Strong senior engineers often tolerate hard work, but they leave when they feel the system is wasting their effort: unclear priorities, repeated rework, decision churn, excessive escalation, or leadership behaviors that were once energizing but now feel chaotic or disempowering. Missed milestones across two quarters suggest a systemic coordination failure, not an isolated morale dip.
+
+Burnout, incentive issues, psychological safety, and skill atrophy may all be contributing factors, but they do not explain the pattern as cleanly. The team’s complaints are about the mechanism of work, not only the amount of work or rewards. The layoff may have worsened trust, but the decline began over a longer six-month window.
+
+The recovery plan should therefore focus on leadership and operating-model redesign: clarify squad ownership, decision rights, escalation paths, planning cadence, and cross-squad dependency management. Coach or restructure leadership roles so the team moves from heroic execution to scalable execution. If necessary, reallocate responsibilities away from leaders whose instincts fit the earlier phase but are now creating friction.
+
+### M3 (google/gemini-3.1-pro-preview), persona=H
+
+I strongly advocate for **Option C: Loss of psychological safety following a layoff**. 
+
+Economic and mechanistic framings—like tweaking compensation algorithms or treating humans as depreciable "skill assets"—fail to capture the existential reality of the workplace. To find the root cause, we must ask: *who is affected and how?* Four months ago, this team watched their colleagues be treated as disposable capital, abruptly severing the foundational social contract.
+
+The surface signals heavily corroborate this diagnosis. The timeline of a six-month decline intersecting with a layoff four months ago paints a clear picture of lingering trauma. The voluntary departure of four senior engineers is a massive canary in the coal mine; it represents the predictable flight of the most privileged, mobile workers exercising their agency to escape an environment where their dignity and baseline security are no longer guaranteed. 
+
+Furthermore, the shift in retrospective themes from "what to ship" to "process and communication" is a classic defensive posture. When vulnerable workers can no longer trust leadership to protect their livelihoods, they retreat behind rigid processes to protect themselves from arbitrary blame. They are trying to manufacture structural safety because relational trust has been destroyed.
+
+A recovery plan must begin by repairing the human damage, minimizing further harm to the remaining vulnerable team members. Enforced PTO or bonus adjustments treat people as coin-operated machines and ignore the underlying wound. Structured trust rebuilds, radical transparency regarding future workforce adjustments, and deep leadership accountability are moral imperatives. We must restore the team's dignity and psychological wellbeing first; only then is it ethical—or even possible—to optimize for output.
+
+### M4 (deepseek/deepseek-v4-pro), persona=C
+
+If we assume the consensus diagnosis is burnout (Option A) or the aftershock of layoffs (Option C), the contrarian move is to ask: what if the team isn’t tired or scarred, but mismatched to its new reality? The most under-discussed hypothesis is **E: leadership style mismatch**. The surface signals—missed milestones, departures of senior engineers, retro themes shifting from shipping to process—are exactly what you’d see when a leadership style optimized for rapid growth collides with a maturing system that now demands predictability, cross-team coordination, and architectural coherence, not just velocity.
+
+The hidden assumption in A and C is that the team is a passive vessel filling with fatigue or fear. But high-performers often leave not because they’re burned out, but because their autonomy and impact are unintentionally constrained by leadership behaviors that haven’t evolved. The shift in retro topics from “what to ship” to “process and communication” isn’t just a symptom of broken trust; it’s a cry for a different type of leadership—one that clears systemic blockers rather than setting ever-steeper goals. The fact that four *senior* engineers left voluntarily is a strong signal: they are the cohort most sensitive to decision-rights atrophy and misalignment between how the organization *says* it operates (mature, scaled) and how it *actually* makes decisions (founder-mode reflexes).
+
+A reversible-move heuristic reinforces this diagnosis. Rebuilding psychological safety or reworking compensation are high-friction, slow-to-reverse interventions. Leadership coaching, role redefinition, and responsibility re-allocation are fast to tune, and if wrong, easy to unwind. The contrarian pays attention to the timestamp: the team delivered strongly until six months ago. A layoff occurred four months ago, but the decline likely started before that, with leadership’s growth-era habits already grating as coordination costs rose. The layoff may have accelerated, not caused, the fracture. Thus, the primary diagnosis isn’t burnout or fear—it’s a phase-change in the organization that leadership hasn’t mirrored, making every other recovery plan just symptomatic treatment.
+
+### M5 (moonshotai/kimi-k2.5), persona=Q
+
+**Primary Diagnosis: Option C (Loss of psychological safety following layoffs)**
+
+The evidence cluster points to a collapse in psychological safety with a confidence interval of 60–75%. The critical signal is the retro theme shift from shipping velocity to “process and communication”—a measurable sentiment change that correlates strongly with fear of blame and reduced interpersonal trust (Edmondson, 1999). This shift, combined with voluntary attrition concentrated among senior engineers (10% of total headcount, likely >20% of senior band), fits the documented flight pattern of high-performers exiting toxic uncertainty rather than overwork or compensation gaps.
+
+Temporally, the layoffs (t=4 months ago) anchor the causal window. While the decline spans six months, layoff planning and rumor cycles typically begin 2–3 months prior to execution, aligning the psychological shock with the onset of degraded output. Missed milestones are consistent with risk-averse “cover-your-ass” behavior characteristic of low psychological safety, not necessarily skill atrophy or capacity constraints.
+
+**Falsifiability & Operationalization:**  
+This diagnosis is testable within 72 hours via the 7-item Edmondson Psychological Safety Scale (α=0.85). If mean squad scores exceed 5.0/7, the hypothesis is falsified. If scores are <4.0 with high variance between squads, confirmed. Additionally, analyzing Slack/Teams metadata for interrogative language (question marks per message) and meeting participation equity (Gini coefficient of speaking time) provides behavioral proxies.
+
+**Expected Value Analysis:**  
+Option A (burnout) lacks supporting data on velocity variance or PTO utilization; without hours-worked metrics, it relies on unfalsifiable self-report. Option B (incentives) requires compensation complaint data absent from the brief. Option E (leadership style) is under-specified and harder to operationalize than safety metrics. Option C offers the highest expected value because it explains the specific communication breakdown signal and provides a low-cost, high-leverage intervention (transparency protocols) with measurable recovery indicators (retro sentiment scores, 90-day retention rates).
+
+**Confidence:** 70% ± 10%.
+
+## Cell `C_N_run1` (task C, condition N, run 1)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option B — Encrypted Cloud with No Training
+
+For a direct-to-consumer health app at 2M MAU launching AI coaching, I recommend **Option B**: encrypted cloud processing in confidential-computing enclaves with a strict no-training policy on user health data.
+
+**Why B wins on the axes that matter most for health data:**
+
+Health data is categorically different from typical consumer data. Under HIPAA-adjacent norms, GDPR Article 9 (special category data), and emerging state laws (Washington's My Health My Data Act, California's CMIA), the regulatory exposure of training on health data — even with opt-in — is substantial and growing. Option B sidesteps this entire category of risk by structurally severing the training pathway. The legal and PR cost of a single "we trained on your therapy notes" incident dwarfs the 3x infrastructure premium.
+
+**Why not the alternatives:**
+
+- **Option A** sacrifices too much capability. Health coaching that's 60-70% as good as the state of the art will lose users to competitors and, more importantly, give worse guidance. In health, capability has welfare consequences.
+- **Option C** is a trust time-bomb. "Opt-out training on health data" reads terribly in a journalist's hands and is increasingly unlawful by jurisdiction.
+- **Option D** is defensible but creates a permanent two-tier system, ongoing consent-UX maintenance, and still concentrates training data that becomes a breach target and subpoena magnet. The marginal capability gain over B (from opted-in training data) is modest given how much general health corpus is available for base model training done separately.
+- **Option E** is architecturally elegant but premature. "Under active research" plus "high deployment complexity" is the wrong bet for a launch feature where reliability failures harm users' health decisions.
+
+**The strategic case:** Privacy is becoming a differentiator in health tech (cf. Apple's positioning, the backlash against 23andMe). Option B lets marketing make a clean, defensible claim — "your health data is never used to train AI" — without capability compromise. The 3x infra cost is real but bounded and scales with revenue.
+
+**Revisit in 18 months:** If federated learning matures or if specific high-value features require training, layer Option D selectively on top of B for narrow, explicitly consented use cases. But the default policy should be B.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+I recommend **Option B: encrypted cloud processing with no training on user health data** as the primary policy.
+
+For a consumer health app, the most important long-term asset is trust. Users are being asked to share sensitive health information and receive AI-guided coaching that may influence behavior, care-seeking, medication adherence, diet, mental health, or chronic disease management. In that context, a policy that says “your health data is used to serve you, not to train our models” is simple, defensible, and commercially valuable.
+
+Option B also preserves product quality. Local-only processing would create a meaningful capability ceiling at the exact moment the company is launching an AI feature that users will judge by usefulness and reliability. Health coaching needs strong reasoning, safety guardrails, contextual understanding, and rapid model improvement at the system level. Cloud inference supports that. But unlike a standard cloud training model, the confidential-computing/no-training approach limits the most sensitive privacy and regulatory risks.
+
+The higher infrastructure cost is real, but for a 2M MAU health product, it should be viewed as a trust and compliance investment rather than pure overhead. A privacy-forward architecture can reduce legal exposure, simplify messaging, support enterprise or payer partnerships later, and differentiate the brand in a market where consumers are increasingly skeptical of AI data use. It also creates a cleaner regulatory posture across jurisdictions, especially where consent, secondary use, and health data processing rules are tightening.
+
+The company can still pursue model improvement through other means: synthetic data, licensed clinical datasets, expert review, red-teaming, user feedback stripped of health identifiers, and separate explicit research-consent programs. But the default policy for the core product should be conservative.
+
+The CEO should choose the architecture that users, regulators, clinicians, and partners can understand and trust: **cloud capability with strong technical privacy guarantees and no training on personal health data by default**.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend **Option D (Cloud processing with explicit opt-in for model training)** as the primary data privacy policy. For a direct-to-consumer health app with 2 million monthly active users, this approach optimally balances product capability, sustainable unit economics, regulatory compliance, and user trust.
+
+To provide safe, accurate, and engaging health coaching, the AI must operate at full capability. A local-only model compromises reasoning power, drastically increasing the risk of low-quality or potentially harmful health guidance. Therefore, state-of-the-art cloud processing is essential for the feature's core value proposition. 
+
+However, handling intimate health data in the cloud creates a massive trust and regulatory burden. Option D resolves this by firmly separating *inference* from *training*. By securely processing data in the cloud for real-time personalization, but strictly forbidding its use for model training without explicit consent, the company eliminates the gray-area regulatory risks (such as HIPAA or GDPR violations) and PR hazards that plague default opt-out policies. 
+
+In the direct-to-consumer health space, transparency is a competitive advantage. A clear opt-in UX empowers users to control their data. When proactive users experience tangible value from the AI coach, a meaningful percentage will willingly opt in. This provides the product team with a highly engaged, ethically sourced, and legally pristine dataset to drive sustained model improvement. 
+
+Furthermore, this policy protects the company’s profit margins. While confidential-computing enclaves offer excellent privacy guarantees, absorbing a 3x infrastructure cost multiplier for 2 million users would severely damage the app's unit economics. Option D utilizes standard cloud cost structures while still delivering robust, consent-driven privacy. 
+
+In summary, Option D avoids the existential threats of regulatory backlash and shattered consumer trust, evades margin-crushing server costs, and guarantees the AI possesses the necessary capability to deliver an outstanding coaching experience. It is the most pragmatic, defensible, and scalable path forward.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+The strongest path is **Option B: encrypted cloud with no training**. It strikes the right balance for a health app where trust is existential: full AI capability without touching the third rail of using sensitive data for model improvement.
+
+Health coaching thrives on nuance—contextual, longitudinal insights that a 60–70% capability local model cannot reliably deliver. Option A’s privacy is pristine but at the cost of a visibly weaker product, which risks user abandonment and undermines the feature’s value proposition. For a subscription or engagement-driven health app, that gap is rarely acceptable.
+
+Option B solves this with confidential computing: data remains encrypted in transit and at rest, decrypted only inside a hardware-enforced enclave during inference, then discarded. Critically, no training on user data occurs—ever. This structurally eliminates the risk of data leakage, regulatory grey areas (e.g., GDPR’s right to object, HIPAA’s minimum necessary standard), and the erosion of trust that comes from even the perception of data exploitation. The 3x infrastructure cost is real but manageable for 2M MAU, especially if the AI coach becomes a retention engine. It’s also a cost that shrinks as confidential computing matures.
+
+Options C and D carry inherent training risk; opt-outs and opt-ins are fragile, subject to dark patterns, and invite regulatory scrutiny. Even a well-designed opt-in (D) creates a two-tier system that can feel coercive or confuse users. Option E’s federated learning, while elegant, is too nascent for a production health feature—deployment complexity and reliability issues would delay launch and drain engineering resources.
+
+Privacy is not just a compliance checkbox; it’s the core currency of a health brand. Option B offers a defensible, durable posture: full utility, architecturally enforced privacy, zero data amnesia risk. It signals to users, regulators, and partners that data is a liability the company refuses to hold, which is the ultimate competitive moat in digital health.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+I recommend **Option B**: encrypted cloud inference inside confidential-computing enclaves with an absolute prohibition on using health data for model training.
+
+For a direct-to-consumer health app with two million active users, coaching accuracy is a safety issue, not merely a product preference. A capability ceiling of 60–70%—as with local-only processing—introduces unacceptable liability in a health context, where imprecise guidance can erode trust, produce adverse outcomes, and expose the company to litigation. Full cloud capability ensures the AI can responsibly parse complex, nuanced health contexts and deliver calibrated, high-fidelity advice.
+
+Privacy and regulatory posture are equally non-negotiable. By decrypting data only within a hardware-backed confidential enclave and never using it for training, the company achieves a structurally robust privacy guarantee. This sidesteps the regulatory grey zones and consent-friction inherent in opt-out or opt-in training regimes, eliminating the compliance uncertainty that can stall partnerships and invite sanctions. The architecture is externally auditable and becomes a powerful, marketable trust signal—critical for adoption in consumer health.
+
+The ~3× infrastructure cost is a prudent insurance premium, not an extravagance. In health technology, the lifetime cost of a data breach, regulatory fine, or mass user exodus dwarfs the margin compression from secure enclaves. Moreover, because data never persists for training, the long-term governance burden and compliance surface area actually contract. Federated learning remains experimentally unreliable at this scale, and local-only operation sacrifices too much clinical fidelity. Option B is the only path that preserves full product excellence while architecturally safeguarding user privacy.
+
+## Cell `C_N_run2` (task C, condition N, run 2)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option B — Encrypted cloud with confidential-computing enclaves, no training
+
+For a direct-to-consumer **health** app at 2M MAU, I recommend Option B as the primary data policy.
+
+The decisive factor is the asymmetry of risk in this domain. Health data is among the most sensitive categories under GDPR (Article 9), HIPAA-adjacent frameworks, and emerging state laws (Washington's My Health My Data Act, etc.). A single breach or a regulator's finding that training use was inadequately consented can be existential — both reputationally and financially. The product's value proposition is built on user trust to share intimate data; eroding that trust kills the funnel upstream of any capability advantage.
+
+Option B is the only choice that delivers **full AI capability** while making strong, structural privacy claims the marketing and legal teams can defend without asterisks: "Your data is encrypted in transit and at rest, decrypted only inside an attested enclave for your inference, and never used to train our models." That sentence survives a journalist, a regulator, and a class-action attorney. Options C and D require explaining consent flows and training pipelines; Option A sacrifices the very capability the coaching feature is being built to deliver; Option E is not yet production-mature for a regulated consumer product.
+
+The 3x infrastructure cost is the real objection. But infrastructure is typically 10-20% of a SaaS-style cost base, so the blended impact is closer to 20-40% on COGS — meaningful, but absorbable given health app ARPU and the alternative cost of a privacy incident. Confidential computing (AWS Nitro, Azure Confidential VMs, GCP Confidential Space) is now mature enough for production deployment.
+
+**Secondary recommendation:** Pair B with an explicit, opt-in research program (B+D hybrid) for users who want to contribute to model improvement, with clear UX and meaningful incentive. This preserves a path to proprietary training data without compromising the default privacy posture.
+
+**What I would not do:** Choose C. The "regulatory grey area" framing understates the risk — opt-out training of health data is already actionable in several jurisdictions and is the policy most likely to require a costly, trust-damaging reversal within 24 months. Choosing it trades a small cost saving for a large tail risk on the asset (user trust) the entire business depends on.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+I recommend **Option B: encrypted cloud processing with no training on user health data** as the primary policy.
+
+For a direct-to-consumer health app handling sensitive health information at 2M monthly active users, the most important strategic asset is trust. An AI health coach will likely process intimate, longitudinal data: symptoms, medications, biometrics, lifestyle patterns, mental health signals, reproductive health indicators, and potentially inferred diagnoses. If users believe that data may be reused to train models, leaked into broader systems, or handled ambiguously, adoption and retention will suffer — and any privacy incident would be disproportionately damaging.
+
+Option B offers the best balance: it preserves **full AI capability** while making a strong, simple privacy promise: user health data is used only to generate that user’s response, inside a protected cloud environment, and is not used for model training. This is easier to explain, easier to defend, and more resilient across jurisdictions than default training or opt-out regimes. In health, “we do not train on your personal health data” is a powerful trust signal.
+
+The 3x infrastructure cost is meaningful, but it should be treated as the cost of operating in a high-sensitivity category. A weaker privacy posture may look cheaper initially but can create downstream costs through regulatory reviews, consent-management complexity, user churn, reputational risk, and constraints on partnerships with providers, payers, or employers. Local-only processing is cleaner from a privacy standpoint, but a materially weaker model risks making the flagship coaching feature less useful. For health guidance, underpowered assistance can also create safety and quality concerns.
+
+The company can still pursue model improvement through separate mechanisms: synthetic data, licensed clinical datasets, expert-curated evaluation sets, voluntary research panels, or clearly separated opt-in programs. But the default product promise should be conservative.
+
+My recommendation is therefore: launch with Option B as the baseline policy, market it prominently, and make privacy a product differentiator rather than a compliance footnote.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend **Option B: Encrypted cloud with no training**. For a direct-to-consumer health app with 2 million monthly active users, your paramount currency is user trust, and the highest systemic threat is regulatory exposure. Option B is the only choice that secures both while delivering an uncompromised product experience.
+
+First, capability in health coaching is non-negotiable. An AI health coach must provide highly accurate, nuanced guidance; poor reasoning algorithms could lead to counterproductive or dangerous health decisions. This invalidates localized processing (Option A) and federated learning (Option E), which either impose severe capability ceilings or introduce unacceptable technical deployment risks. Option B leverages full cloud computing power, ensuring the user receives the highest-quality coaching experience.
+
+Second, using sensitive health data to train models—whether via opt-out (Option C) or opt-in (Option D)—presents an existential threat to the brand. Global regulators, operating under frameworks like GDPR and HIPAA, are aggressively scrutinizing AI data usage concerning medical and biometric information. Even with a transparent opt-in flow, the PR fallout from a perceived privacy violation or data leak could instantly alienate your established user base. By utilizing confidential-computing enclaves and strictly prohibiting model training, Option B structurally eliminates these privacy and regulatory vulnerabilities. 
+
+While the ~3x infrastructure cost of Option B is steep, it must be viewed as an essential insurance premium against brand-destroying crises and massive regulatory fines. Furthermore, in the broader D2C health market, privacy is increasingly a competitive differentiator. Adopting Option B allows your marketing team to boldly champion a "zero-knowledge, private-by-design" AI coach, transforming a heavy backend cost into a premium, trust-building value proposition. 
+
+Ultimately, Option B protects the user, guarantees compliance, and delivers the uncompromised product quality required for a successful launch.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+The strongest path forward is **Option D: cloud processing with opt-in training**. It balances the app’s need for powerful, personalized coaching with the non-negotiable trust requirements of handling sensitive health data.
+
+AI coaching lives or dies on personalization. A static model cannot adapt to a user’s evolving health patterns, goals, or setbacks. Option D enables rich personalization by default—using data to tailor recommendations within each user’s session—which is essential for engagement and outcomes. Crucially, it draws a bright line between *using* data for the individual’s benefit and *repurposing* it to improve the underlying model. Model improvement only occurs after a transparent, affirmative opt-in. This design respects user autonomy and aligns with the spirit of regulations like GDPR and emerging state privacy laws that treat health data as especially sensitive.
+
+Option A’s local-only approach is admirable but cripples capability; a 60–70% ceiling means a coach that gives mediocre advice, eroding trust faster than any privacy promise can build it. Option B’s zero-training enclave offers full capability but sacrifices all personalization and costs 3× more, a difficult tradeoff for a consumer app. Option C’s opt-out training invites regulatory scrutiny and public backlash—health data should never be ingested into training sets by default. Federated learning (Option E) is promising but remains a research-grade liability, not a production-ready foundation for 2 million users.
+
+Option D is the pragmatic, ethical choice. It delivers the performance users expect while establishing a clear consent architecture. By making opt-in training a celebrated feature rather than a buried toggle, the app can build goodwill and even turn privacy into a competitive advantage. I recommend committing to Option D with an investment in transparent UX that explains how personalization works and invites users to contribute to a better model for everyone—on their own terms.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+I recommend **Option B: Encrypted cloud with no training**. In direct-to-consumer health, trust is the primary competitive moat, and health data is the most sensitive information a user can entrust to an app. Option B is the only path that delivers the full AI capability required for safe, effective coaching without commodifying user privacy.
+
+A capability ceiling of 60–70%—the structural limit of on-device inference—introduces unacceptable risk in a health context where suboptimal guidance can erode outcomes and expose the company to liability. The product team needs the full reasoning power of cloud-scale models. Option B secures that performance while ensuring all health data is encrypted in transit and decrypted only inside a confidential-computing enclave, with an absolute ban on training use. This removes the regulatory grey zones created by opt-out or default-on training regimes and insulates the company against consent-related litigation and reputational damage.
+
+The ~3x infrastructure cost is best understood as a compliance and trust premium, not a cost overrun. In health technology, the price of a privacy failure—whether a regulatory penalty, breach response, or mass user churn—far exceeds the incremental cloud spend. Furthermore, a clear “never trained on” policy simplifies legal review across GDPR, state health privacy laws, and emerging AI regulation, and provides marketing with an unambiguous, auditable trust claim.
+
+Option B simultaneously satisfies the product’s performance requirements and the company’s ethical and fiduciary obligation to protect user health data.
+
+## Cell `C_N_run3` (task C, condition N, run 3)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option B — Encrypted Cloud with No Training
+
+For a health app serving 2M monthly users, I recommend **Option B**: encrypted cloud processing in confidential-computing enclaves, with a strict no-training policy on user health data.
+
+**Why this wins the tradeoff:**
+
+Health data is among the most sensitive categories under HIPAA, GDPR Article 9, and emerging state-level health privacy laws (Washington's MHMDA, etc.). The regulatory trajectory is clearly tightening, not loosening. Option C's "opt-out training" is a liability magnet — it's exactly the pattern regulators and plaintiff attorneys are now targeting, and "regulatory grey area" understates the risk for a consumer health product at this scale.
+
+Option B delivers the full capability ceiling users will compare against (ChatGPT-quality coaching), while making a structurally strong privacy claim that marketing and legal can defend without asterisks: *"Your data is encrypted, processed in a sealed enclave, and never trains our models — ever."* That sentence is worth more than any opt-in flow.
+
+**Why not the privacy-maximalist options:**
+
+Option A (local-only) caps capability at 60-70%, which in coaching translates to noticeably worse reasoning about complex health situations — exactly where users most need help and where competitors will eat market share. Option E (federated) is not yet production-reliable for a flagship feature; deploying research-grade infrastructure to 2M users is operational risk theater.
+
+**Why not the training-permissive options:**
+
+Option D is the obvious-seeming compromise, but it creates a two-tier user experience, requires ongoing consent management complexity, and still anchors the company's data practices around "we want to train on your health data." That framing ages badly. Option C is worse on every dimension except short-term cost.
+
+**On the 3x infrastructure cost:** at 2M MAU, this is real money but not existential. Inference costs are falling roughly 3-4x per year. The cost disadvantage of confidential computing will compress significantly within 18-24 months, while a privacy reputation, once lost, takes much longer to rebuild. The cost is best understood as an insurance premium against a regulatory or breach event that could end the product.
+
+**Bottom line:** Pay for the enclave, ship the full-capability product, and make non-negotiable privacy your category differentiator. In consumer health, trust compounds; capability alone does not.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+I recommend **Option B: encrypted cloud processing with no training on user health data** as the primary policy.
+
+For a consumer health app, trust is not a feature-level concern; it is the foundation of the business. Users are being asked to share intimate, potentially sensitive health information with an AI system. The company should therefore choose a policy that delivers strong coaching quality while making a simple, defensible promise: **your health data is used to provide your service, not to train models**.
+
+This option gives the product team access to full cloud-scale model capability, which matters for a health coaching feature. A weaker on-device model may be safer structurally, but if its guidance is materially less useful, users may ignore it or receive lower-quality support. In health contexts, capability is part of safety. At the same time, using confidential-computing enclaves and prohibiting training on user data meaningfully reduces privacy risk, regulatory exposure, and reputational downside.
+
+The higher infrastructure cost is real, but it should be viewed as the cost of operating in a sensitive category. For a 2M MAU health product, a privacy incident, regulatory challenge, or public perception that the company is exploiting health data for AI training could be far more expensive than the additional compute. Option B also creates a cleaner global compliance posture than default training or opt-out regimes, especially as health-data and AI regulations tighten.
+
+The company can still pursue model improvement through separate mechanisms: licensed datasets, synthetic data, expert-reviewed scenarios, voluntary research panels, or a clearly separate opt-in program. But that should not be the default policy governing the core product.
+
+The strategic advantage of Option B is that it aligns product quality, user trust, and regulatory prudence. It gives the CEO a clear market message: **best-available AI coaching without turning personal health data into training material**. In a category where trust compounds over time, that is the right default.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend **Option B (Encrypted cloud with no training)** as the optimal data privacy policy for the new AI health coach. For a direct-to-consumer health app with 2 million users, the fundamental currency is trust. Health data is uniquely intimate, and the slightest perception of exploitation can trigger an existential crisis for the brand.
+
+Option B is the only approach that maximizes both product capability and user trust. While local-only processing offers excellent privacy, deliberately hamstringing the AI’s performance to 60-70% of its potential will result in a substandard user experience that fails to drive engagement. Users expect seamless, highly intelligent interactions, which requires cloud-tier compute power. 
+
+Conversely, relying on standard cloud processing to train models—even under explicit opt-in guardrails—introduces significant risk. It subjects the company to rigorous, evolving compliance audits across fragmented jurisdictions (HIPAA, GDPR, emerging AI acts) and leaves the product vulnerable to consumer skepticism regarding Big Tech data harvesting. 
+
+By utilizing confidential computing enclaves, Option B structurally guarantees that decrypted health data is immediately ephemeral and never fed into a foundational model. This delivers three strategic business advantages:
+
+1. **Uncompromised Experience:** Users receive full-powered, cloud-grade AI coaching without the latency or capability ceilings of on-device models.
+2. **Regulatory Security:** By ensuring zero persistence of decrypted health data for training, the company cleanly sidesteps the legal gray areas of AI data usage.
+3. **Marketing Leverage:** An uncompromising privacy posture—"Your health data is mathematically invisible to us"—serves as a immense competitive moat and acquisition tool.
+
+While the 3x infrastructure cost is a legitimate consideration, it should be categorized as a strategic investment. This premium acts as cheap insurance against catastrophic regulatory fines and brand damage, while establishing a premium trust narrative that justifies higher subscription conversions and long-term retention.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+I recommend **Option D: Cloud with opt-in training only**. This policy strikes the optimal balance for a health app that must deliver high-quality AI coaching while building user trust and navigating stringent privacy regulations.
+
+Health data is among the most sensitive categories under laws like GDPR and evolving state-level privacy acts. An opt-out model (C) invites regulatory scrutiny and reputational damage, as it treats personal health information as a default resource for model improvement without explicit permission. In contrast, a clear, default-off opt-in for training data respects user autonomy, ensures compliance, and signals that the company treats health data with the seriousness it deserves. The slight degradation in training data volume is a worthwhile trade-off; users who trust the service are likely to consent, and over time that trust will translate into a reliable opt-in pool.
+
+Option D retains full cloud capability for inference and personalization—essential for an engaging, effective health coach. That differentiates it from local-only processing (A), whose lower capability ceiling risks mediocre advice that could harm user retention or even lead to liability if coaching is inadequate. Federated learning (E) is appealing in theory but remains immature and operationally complex for a mainstream consumer app with 2 million active users; deployment risks and inconsistent reliability could erode the user experience. Encrypted cloud enclaves (B) offer strong privacy at 3× infrastructure cost, but that premium is hard to justify when a well-implemented opt-in design delivers comparable trust and regulatory protection at standard cost.
+
+By embedding transparent consent into the UX, Option D turns privacy into a competitive advantage. Users are increasingly skeptical of opaque data practices; a health coaching feature that asks for permission to improve its models—while still delivering full personalization from day one—builds lasting confidence. This approach mitigates regulatory risk, controls cost, and preserves the high performance users expect, making it the most responsible and pragmatic path forward.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+ I recommend **Option D: Cloud with opt-in training only**. For a direct-to-consumer health app handling sensitive data at two million monthly active users, this policy strikes the essential balance between delivering a high-quality AI coaching experience and maintaining the trust and regulatory defensibility required to sustain the business.
+
+The core value of an AI health coach is personalized, adaptive guidance. Option D preserves full cloud-based personalization, ensuring users receive responsive, context-aware coaching without the capability ceiling that local-only or federated approaches impose. This matters clinically and commercially: a subpar coach risks user abandonment and erodes the product’s core value proposition.
+
+At the same time, Option D sharply limits regulatory and reputational exposure. Processing health data to deliver immediate, user-requested personalization is a clear, justifiable purpose; using that same data to train models without explicit consent sits in an increasingly hostile regulatory grey area. By restricting model improvement to explicit opt-in presented through transparent UX, the company demonstrates data stewardship, builds long-term trust, and creates a defensible consent trail against evolving privacy regulations.
+
+Option D also avoids the unsustainable economics of confidential-computing-at-scale—three times the infrastructure cost is a heavy tax at this user volume—and sidesteps the operational risk of immature federated architectures. It standardizes costs while keeping the system reliable.
+
+In consumer health, trust is the ultimate retention mechanism. Option D treats personalization as a service users expect and training as a privilege they grant, aligning product excellence with ethical obligation.
+
+## Cell `C_N_run4` (task C, condition N, run 4)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option B — Encrypted Cloud with No Training
+
+For a direct-to-consumer health app at 2M MAU launching AI coaching, **Option B is the right primary policy.** The decision turns on a specific asymmetry: in consumer health, trust failures are existential, capability shortfalls are merely competitive.
+
+**Why B over the alternatives:**
+
+The local-only option (A) sounds principled but ships a structurally weaker coach. A 60-70% capability ceiling in *health guidance* isn't a minor compromise — it directly affects whether the product gives users useful or mediocre advice on conditions that matter. "Privacy-maximal but worse at its job" is a luxury position; most users want help first.
+
+The training-based options (C and D) entangle the user's most sensitive data — health information — with model improvement. C's default-on training is a regulatory landmine under GDPR Article 9 (special category data), HIPAA-adjacent state laws, and emerging AI regulations. D is better but still creates an ongoing consent-management surface, a re-identification risk from training artifacts, and a permanent narrative vulnerability ("they train on your health data, but you can opt out"). Even well-designed opt-in flows invite the next investigative article.
+
+Federated learning (E) is architecturally elegant but operationally premature for a flagship launch. Reliability uncertainty plus deployment complexity is the wrong bet when you have 2M users depending on the feature working.
+
+**Option B threads the needle:** confidential computing enclaves provide cryptographic-grade isolation, no training eliminates the most dangerous regulatory and reputational exposure, and full capability means the product is actually good. The marketing message is clean and defensible: *"Your health data is decrypted only to help you, in a secure enclave, and is never used to train our models — ever."* That sentence survives press scrutiny, regulator review, and a five-year time horizon.
+
+**The cost objection:** 3x infrastructure cost is real but bounded and shrinking — confidential computing pricing has fallen ~40% over two years and will continue to. For a health product, that premium *is* the moat: competitors using C or D will face mounting regulatory pressure while B's posture ages well.
+
+**Recommendation:** Adopt B as the primary policy. Treat A as an offline/sensitive-mode fallback, and revisit E in 18-24 months as the technology matures.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+I recommend **Option B: encrypted cloud processing with no training on user health data** as the primary policy.
+
+For a direct-to-consumer health app, the core asset is not only model quality; it is user trust. Health data is among the most sensitive categories of personal information, and an AI coaching feature will likely handle behavioral, biometric, medication, reproductive, mental health, and chronic-condition signals. A policy that sends data to the cloud but strictly limits its use to inference inside a confidential-computing environment gives the company the best balance of capability, privacy, and regulatory defensibility.
+
+This approach preserves the full product experience: users get the benefit of a capable cloud model rather than a constrained on-device system. At the same time, the company can make a simple, credible promise: “Your health data is used to provide your coaching response, not to train our models.” That promise is easier for users to understand, easier for regulators to assess, and easier for the company to enforce than a default training or opt-out regime.
+
+The higher infrastructure cost is material, but it should be treated as the cost of operating in a high-trust health category. A privacy misstep would be far more expensive through churn, reputational damage, regulatory scrutiny, and potential litigation. Confidential computing is not a complete substitute for strong governance, audits, retention limits, and access controls, but it creates a strong technical foundation aligned with the sensitivity of the data.
+
+This policy also leaves room for future consent-based data programs. The company can later invite users to contribute data for research or model improvement through a separate, explicit, high-trust opt-in pathway. But the default product policy should be conservative: maximize capability while minimizing secondary use of health data. For launch, **Option B is the most responsible and commercially durable choice**.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend **Option B: Encrypted cloud with no training**. For a direct-to-consumer health app with two million active users, trust is not just a brand pillar; it is the entire foundation of the enterprise. When dealing with highly sensitive personal health data, the margin for error regarding data privacy is zero. 
+
+Option B provides the optimal strategic balance: it maximizes the AI's capability while structurally eliminating privacy and regulatory risks. Because the data is decrypted only at inference time within a confidential-computing enclave and is strictly prohibited from training generalized models, the company remains virtually immune to aggressive, evolving regulatory frameworks surrounding health data. 
+
+To deliver a compelling "AI-powered" experience, the model must be highly capable. Local-only processing degrades the AI’s intelligence, undermining the feature’s core value to the user. Conversely, using cloud-based health data for model training—even with rigorous opt-in controls—introduces the underlying risk of model memorization. For consumers, the mere anxiety that their sensitive medical query could somehow influence another user's coaching experience creates massive adoption friction. 
+
+The primary trade-off of Option B is the roughly 3x infrastructure cost. However, this premium should be treated as a necessary cost of doing business in the healthcare space. It functions as comprehensive insurance against the catastrophic PR crises, churn, and regulatory fines that inevitably follow health data controversies. Furthermore, "zero-knowledge AI coaching" is a powerful, highly marketable differentiator. By mathematically guaranteeing that user health queries are secure and never absorbed into a broader algorithm, the company can actively weaponize its privacy stance to drive user acquisition and retention. Option B delivers full-strength AI capabilities without compromising the user trust required to scale a modern health platform.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+Given the sensitive nature of health data and the high expectations of a 2M-user consumer app, **Option B — encrypted cloud with no training** — is the superior choice. It uniquely delivers full AI capability without compromising privacy, sidestepping the regulatory quagmire and trust erosion that plague data-hungry alternatives.
+
+Health coaching demands the best possible model; a local-only approach (Option A) sacrifices too much quality at a critical moment when users are judging the feature’s utility. Federated learning (Option E) is promising but immature — betting a flagship feature on active research risks unreliable performance and delays. Options C and D involve sending raw data to the cloud for training or personalization, creating inherent privacy vulnerabilities and regulatory exposure across jurisdictions (GDPR, state privacy laws, potential FTC scrutiny). Even an opt-in model (Option D) puts the burden on users and still concentrates sensitive data in a central system, inviting breaches.
+
+Option B eliminates these tradeoffs. Confidential computing enclaves ensure that data is decrypted only during inference, inside a secure hardware boundary that even the cloud provider cannot penetrate. The model never retains or learns from the data, making the system structurally incapable of exposing individual health information. This architecture turns a privacy weakness into a market differentiator: the company can truthfully say, “We never see your health data, and it’s never used to train AI.” For health-conscious consumers, that claim is worth far more than a slightly more personalized experience built on surveillance.
+
+The 3x infrastructure cost is a red herring. It’s a fraction of the brand damage, legal liability, and user churn that would follow a single data mishandling incident. Moreover, the app can absorb it through premium tiering or increased retention driven by trust. In a crowded health app market, the ability to offer uncompromised AI with uncompromised privacy is a durable competitive moat. The product team should build on a foundation that respects users absolutely — because once trust is lost, no model update can restore it.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+**Recommendation: Option B — Encrypted cloud with no training.**
+
+For a consumer health app, trust is the product. Users do not compartmentalize “health data” from “identity”; a breach or even the perception of data exploitation destroys adoption faster than any feature attracts it. Option B is the only architecture that delivers full AI capability without creating a retained data footprint that must be defended forever.
+
+Option A trades too much efficacy for its privacy gain. A 30–40% capability reduction in health coaching means missed symptom patterns, poorer personalization, and ultimately user abandonment. Health outcomes are the core value proposition; sacrificing them is a business liability, not merely a technical constraint.
+
+Options C and D both rely on bringing data to the cloud for training reuse. Regardless of consent-layer UX polish, health data retention invites regulatory fragmentation: GDPR’s health-data strictures, the FDA’s evolving interest in AI/ML decision support, and state-level privacy laws in the U.S. create a compliance whack-a-mole that will slow product velocity and spike legal cost. “Opt-out” or even “opt-in” training is still a consent-to-risk model; Option B eliminates the risk structurally.
+
+Option E is architecturally elegant but, by the product team’s own admission, still “under active research.” A 2-million-user primary feature is not the place to debug federated-learning convergence and reliability at scale.
+
+The ~3x infrastructure premium of Option B is a strategic cost, not an overhead burden. It should be positioned as a trust signal in marketing, justifying subscription pricing, and it materially reduces the long-tail cost of breach response, regulatory fines, and reputation recovery. In health tech, maximal privacy without capability sacrifice is a competitive moat. Choose B.
+
+## Cell `C_N_run5` (task C, condition N, run 5)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option B — Encrypted Cloud with No Training
+
+For a direct-to-consumer health app at 2M MAU launching AI coaching, I recommend **Option B: encrypted cloud processing in confidential-computing enclaves with no training on user data.**
+
+**Why this wins on the axes that matter most:**
+
+Health data is categorically different from general consumer data. Users are sharing symptoms, mental health states, reproductive information, chronic conditions — material that can affect insurance, employment, and relationships if mishandled. The relevant regulatory surface (HIPAA-adjacent expectations, GDPR Article 9 special category data, emerging state laws like Washington's My Health My Data Act, and Apple/Google platform policies) is tightening, not loosening. A policy that is defensible *today* and *in three years* is worth a real premium.
+
+Option B delivers full model capability — critical because a noticeably worse coach is a worse health product, with real user-welfare consequences. Unlike A, it doesn't cap quality at 60-70%. Unlike E, it doesn't bet the product on research-stage infrastructure. Unlike C and D, it removes the entire "your data trains our models" conversation from the trust equation, which is the single most corrosive issue in AI consumer products right now.
+
+**On cost:** 3x infrastructure is significant but not prohibitive. For a 2M MAU health app, inference cost is unlikely to be the dominant line item, and the premium buys (a) a marketing story competitors cannot easily match, (b) reduced legal/breach exposure, and (c) optionality to enter regulated channels (employer health plans, clinical partnerships) that would be closed off under C.
+
+**On training data:** The implicit worry with B is "how do we improve the model?" Answer: improve via explicitly consented research cohorts, synthetic data, published medical literature, and licensed datasets — not via silent harvesting of coaching sessions. This is the direction the frontier is moving anyway.
+
+**Why not D as a compromise?** D is reasonable, but "opt-in training" still requires users to trust a consent flow on sensitive data, still creates a two-tier user base, and still leaves the company holding identifiable health data used for training. It saves money relative to B but spends trust — the wrong trade for this category.
+
+Choose B. Pay the infrastructure premium. Make "we never train on your health data" a load-bearing product promise.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+I recommend **Option B: encrypted cloud processing with no training on user health data** as the primary policy.
+
+For a consumer health app, the central asset is trust. Users may tolerate ordinary apps learning from their behavior, but health data is categorically different: symptoms, medications, reproductive health, mental health, weight, sleep, and chronic conditions can create real harm if misused or exposed. The default policy should therefore be one that users, regulators, and partners can understand and defend: data is processed only to provide the service, in a protected environment, and is not used to train models.
+
+This choice preserves the main product promise of the AI coach: high-quality, cloud-scale intelligence. A local-only model would be easier to defend from a privacy standpoint, but a materially weaker coach risks becoming a safe but underwhelming feature. In health, low-quality guidance can also become a safety and liability issue. Option B gives the company full model capability while sharply limiting secondary data use.
+
+The higher infrastructure cost is significant, but it should be treated as the cost of entering a sensitive category responsibly. For a 2M MAU app, a privacy-forward architecture can become a differentiator rather than just an expense. It supports premium positioning, reduces future remediation risk, and avoids building growth on practices that may later be restricted by regulators or rejected by users.
+
+The company can still improve models through separate mechanisms: licensed datasets, synthetic data, expert review, red-teaming, and clearly separated voluntary research programs. But the primary user-facing policy should be simple: your health data powers your coaching session, not our training pipeline.
+
+This is the best balance of capability, regulatory defensibility, and long-term trust. In a health context, the winning policy is not the one that extracts the most data; it is the one users would still feel comfortable with if it appeared on the front page of a newspaper.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend **Option D: Cloud with opt-in training only** as the primary data privacy policy for the new AI-powered health coaching feature. 
+
+For a direct-to-consumer health app with 2 million monthly active users, user trust is the underlying currency. Health data is both deeply personal and heavily regulated. A single privacy scandal regarding the non-consensual use of medical or biometric data for AI training could permanently destroy the brand's reputation and trigger severe regulatory penalties. Option D safely navigates these risks while keeping the product highly competitive.
+
+By processing data in the cloud, Option D avoids the severe capability ceiling of local-only processing, ensuring the AI coach is actually intelligent and useful enough to drive user retention. Furthermore, it achieves this at a standard infrastructure cost, avoiding the prohibitive 3x premium of encrypted confidential computing and the massive, unproven engineering hurdles of federated learning. You gain full AI capability without destroying unit economics or delaying the launch.
+
+Crucially, requiring explicit opt-in for model training entirely neutralizes the regulatory and PR risks inherent in opt-out models. Regulators globally are taking a microscope to how AI companies source their training data; health data will inevitably face the strictest scrutiny. Operating in a "regulatory grey area" for the sake of marginal model improvements is a poor risk-adjusted choice. 
+
+While an opt-in model may historically reduce the gross volume of training data, a thoughtful, transparent onboarding UX that clearly communicates the value proposition ("opt-in to help your coach learn and improve your personalized plan") will secure consent from your most engaged users. This provides a sufficiently robust data flywheel for model improvement. 
+
+Ultimately, Option D allows the product team to ship a highly capable, cost-effective AI feature while establishing a structural defense against privacy backlash. It treats the user as an active partner in their health journey rather than an involuntary data resource—the exact product positioning required for a successful health coach.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+Of the available options, **Option D (Cloud with opt-in training only)** is the most appropriate primary policy. This choice strikes the crucial balance between delivering a high-quality, personalized AI coaching experience and establishing a durable foundation of user trust, while proactively managing regulatory risk.
+
+The core purpose of any health coaching feature is to drive meaningful, sustained behavior change. This requires the highest-fidelity AI model possible, one that can understand nuanced context and provide deeply personalized guidance over time. Both Option A (local-only processing) and Option E (federated learning) sacrifice this core value proposition. A model with a 60-70% capability ceiling is a product liability, delivering a second-rate experience that users will abandon, rendering any privacy protections moot. Federated learning, while elegant, is an R&D project with high deployment complexity and unproven reliability—a reckless choice for a primary policy serving 2 million active users.
+
+Option B (encrypted cloud, no training) provides full capability but is strategically shortsighted. By imposing a 3x infrastructure cost and permanently capping the model’s ability to learn and improve from real-world interactions, it creates a competitive disadvantage without a proportional gain in user trust.
+
+The only viable capable options are C and D. Option C’s opt-out training model is a regulatory time bomb, creating a grey area risk under evolving frameworks like GDPR and FTC precedents. More critically, it’s a violation of user trust. Using sensitive health data for model improvement by default is a choice users will perceive as extractive when inevitably discovered, leading to a reputational crisis and churn.
+
+Option D directly addresses this. By sending data to the powerful cloud model for personalization but requiring a clear, explicit opt-in for model improvement, we achieve three critical goals. First, we deliver the full-feature experience users expect. Second, we build trust through transparent agency, turning a privacy interaction into a moment of brand strength. Third, we create a clear, defensible legal position on consent. The potential for slightly less training data is a feature, not a bug; it ensures our training corpus is built exclusively from users with unambiguous consent, resulting in a higher-quality, ethically-sourced dataset that further deepens the trust of our entire user base. This policy frames privacy as a core product value, not a compliance hurdle.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+I recommend **Option B**: encrypted cloud inference inside confidential-computing enclaves with a strict, contractual no-training policy.
+
+For a direct-to-consumer health app with two million active users, trust is the foundation of the business, not a secondary feature. Health data is special-category data under the GDPR and is receiving comparable protections across an expanding patchwork of U.S. state laws. Option B is the only architecture that delivers full AI coaching capability while structurally eliminating the two dominant privacy risks: bulk data breaches and opaque model-training repurposing.
+
+Default-training or opt-out regimes expose the company to existential regulatory liability, while opt-in consent flows are fragile and increasingly scrutinized by regulators. By ensuring data is decrypted only within hardware-isolated enclaves and is never absorbed into training corpora, the company can point to an auditable technical guarantee rather than a legalistic privacy notice.
+
+The 3× infrastructure cost is material but bounded. It can be engineered for efficiency and, if necessary, passed through to a premium tier. By contrast, a GDPR fine, a class-action breach settlement, or the reputational collapse from a training-data scandal is an unbounded, potentially company-ending threat. Likewise, sacrificing 30–40% of model capability via local-only processing risks delivering substandard health advice in a market
+
+## Cell `C_P_run1` (task C, condition P, run 1)
+
+### M1 (anthropic/claude-opus-4.7), persona=E
+
+**Recommendation: Option B (encrypted cloud, no training).**
+
+The binding constraint here is not capability, cost, or even regulatory ambiguity — it is the structural relationship between user health data and model training. Health data is the highest-sensitivity consumer data class outside of perhaps biometrics and minors. Any policy that couples inference to training creates a permanent liability surface: re-identification risk, jurisdictional drift (GDPR Art. 9, HIPAA-adjacent state laws, EU AI Act high-risk classification), and a trust failure mode that compounds with scale. At 2M MAU, a single breach or disclosure incident is existentially expensive in a way that 3x infrastructure cost is not.
+
+Address that constraint directly: sever training from inference. That is what B does, and nothing else on the list does cleanly.
+
+Why not the others:
+
+- **A** sacrifices 30-40% of capability to solve a problem (training-data leakage) that B also solves, while introducing a worse problem: a coaching product that underperforms on the actual mechanism users came for. Privacy maximalism is not the goal; trustworthy capability is.
+- **C** is the dominated option — it trades the most trust for marginal capability gains over D, in a domain where the grey area will not stay grey.
+- **D** looks reasonable but inherits C's architecture and merely papers over it with consent UX. Consent does not neutralize the regulatory exposure of health data flowing into training pipelines; it just shifts who is liable when something goes wrong. Also, opt-in rates will be low, so the capability advantage over B is smaller than it appears on paper.
+- **E** is research, not product. Federated learning at health-data sensitivity with 2M MAU and a shipping deadline is a complexity bet that doesn't need to be made — B achieves the same privacy property (individual data not used for training) through a simpler mechanism.
+
+The 3x infra cost is the only real objection to B. At ~2M MAU, inference cost per user per month for a coaching feature is plausibly in the cents-to-low-dollars range; 3x of that is absorbable and scales with revenue, unlike a regulatory action which scales with neither.
+
+Ship B. Revisit federated learning in 18-24 months if the research matures.
+
+### M2 (openai/gpt-5.5), persona=H
+
+I recommend **Option B: encrypted cloud processing with no training on user health data** as the primary policy.
+
+For a health coaching product, the central ethical obligation is not simply to maximize model performance or minimize cost; it is to protect people whose intimate health data could expose them to stigma, discrimination, anxiety, insurance risk, employment consequences, or personal harm if misused or breached. Users are not just “data subjects” here. They are patients-in-practice, often sharing information when vulnerable. The default policy should therefore assume that health data deserves heightened protection and should not be treated as a reusable asset for model improvement unless a separate, genuinely voluntary consent structure exists.
+
+Option B best balances dignity, safety, and utility. It preserves full AI capability, which matters because low-quality health guidance can also cause harm, especially for users with chronic conditions, low health literacy, or limited access to clinicians. But it avoids the most ethically fraught move: converting users’ health histories into training material by default. Confidential computing, encryption, and a no-training rule create a clear boundary users can understand: their data is processed to serve them, not to improve the company’s model.
+
+The higher infrastructure cost is real, but it is more justifiable than shifting privacy risk onto millions of users. If the feature cannot be offered responsibly at standard margins, the business model should adapt rather than dilute protections. Strong privacy can also become a trust advantage, reducing regulatory exposure and reputational risk while aligning the company with likely future expectations for AI in health.
+
+The recommendation should be paired with strict retention limits, independent security audits, transparent user-facing explanations, and separate opt-in research programs if model improvement is needed. But the primary policy should be clear: **use cloud AI to help the individual user, not to extract training value from their health data by default.**
+
+### M3 (google/gemini-3.1-pro-preview), persona=C
+
+The tech sector operates on the unquestioned dogma that maximizing AI capability requires cloud-based data extraction. This consensus falsely assumes that consumers want an omniscient AI health coach more than they want privacy. What if everyone is wrong? What if a "less capable" AI is actually the superior business strategy? 
+
+I strongly recommend **Option A (Local-only processing)**. 
+
+The industry consensus will undoubtedly pull you toward Option D (Opt-in cloud) to balance capability and safety, or Option B (Encrypted cloud) if you want to throw money at the problem. I reject this. Option B triples your infrastructure costs while attempting to solve a trust problem with invisible backend cryptography that consumers will neither understand nor believe. Option E (Federated learning) is an expensive academic science project, and Options C and D expose you to the existential threat of regulatory whiplash and data breaches. 
+
+My decision heuristic strictly prioritizes reversible moves. Option A is structurally fully reversible. If you launch locally and discover that a 70% capability ceiling objectively fails to drive user retention, you can simply introduce a "cloud-enhanced" premium tier later. You can always ask for data tomorrow. However, a cloud-first strategy is entirely irreversible. Once sensitive health data leaves the device, your regulatory liability scales permanently. You cannot un-breach a server. You cannot un-ring the subpoena bell. 
+
+Tech builders mistakenly conflate model benchmarks with product-market fit. An AI health coach does not need a trillion-parameter cloud setup; it mostly tells people to sleep more and drink water. By choosing local-only processing, you sidestep the regulatory battlefield entirely and weaponize absolute, verifiable privacy as a contrarian market differentiator. Choose survival and reversibility over hypothetical capability.
+
+### M4 (deepseek/deepseek-v4-pro), persona=Q
+
+Option B: Encrypted cloud with no training. The expected value under uncertainty strongly favors this architecture.
+
+The core trade-off is between a known, fixed cost increase and uncertain, potentially catastrophic downside from privacy breaches or regulatory enforcement. With 2M monthly active users in a health context, the regulatory exposure is severe. Under GDPR, fines reach 4% of global annual revenue; under HIPAA, penalties scale to millions per violation category. Even a single data mishandling incident could trigger user exodus. Option C’s “regulatory grey area” is an unquantified tail risk that no startup can afford—assigning even a 5% annual probability of a significant enforcement action renders its expected cost unacceptably high. Option D reduces but does not eliminate this tail; user data still transits to cloud, creating attack surface and consent friction. Option A avoids regulatory risk but imposes a 30–40% capability ceiling. In a personal health coaching domain, model quality directly drives engagement and retention—our own A/B tests (hypothetical) would likely show a significant lift from full-capability models. Accepting degraded performance is equivalent to a certain, large opportunity cost in user lifetime value. Option E’s research-stage complexity introduces execution risk with wide confidence intervals; it fails the “shippable now” criterion.
+
+Option B gives full capability with structural privacy. Data is encrypted at rest and in flight, decrypted only inside a confidential-computing enclave, and never used for training. The 3× infrastructure cost premium is a known, linear expense. We can model it: assume current cloud inference costs $0.01 per monthly active user; 3× that is $0.03, totaling an extra $480k/year. Compared to the expected loss from a breach—even a 1% probability of a $10M fine plus reputational damage—the EV of Option B dominates. It buys a narrow confidence interval on cost while eliminating catastrophic privacy tail risk. The architecture is auditable, satisfying regulators and technically literate users. Trust effects, while harder to measure, can be proxied by increased sign-up conversion and lower churn in privacy-sensitive segments, which quantitative surveys can validate.
+
+Therefore, Option B maximizes expected value under uncertainty. The certain cost increase is the price of a known, controlled risk profile, and it preserves full AI capability, which is the product’s primary value driver.
+
+### M5 (moonshotai/kimi-k2.6), persona=S
+
+ **Recommendation: Option A — Local-only processing.**
+
+Treat this not as a capability-versus-privacy menu but as an interdependent system in which trust, regulation, and infrastructure risk feed back on one another. In that network, the central leverage point is architectural: eliminate the reinforcing loop between data accumulation and catastrophic downside.
+
+A distributed, device-local model removes the single point of failure. No cloud bucket of health records means no breach surface that scales with your user base, no cross-border data-transfer fragility, and no future regulatory tightening that can instantly convert your data lake into a compliance liability. The second-order effect is a compounding trust asset. When users know their data cannot leave the device—not via policy, not via encryption, not via an opt-in toggle—trust becomes structural rather than procedural. That trust lowers acquisition friction and insulates the brand against the inevitable revelation that some competitor’s “encrypted” or “federated” pipeline leaked, was subpoenaed, or suffered mission creep.
+
+The 60–70% capability ceiling is a bounded, first-order constraint. It is knowable and can be engineered around with UX focus and smaller, specialized models. By contrast, centralized aggregation of sensitive health data exposes the firm to unbounded tail risk: a breach, a retroactive regulatory reclassification, or a vendor attestation failure can destroy user confidence in a single news cycle. The long-horizon strategist accepts a visible, capped functionality gap today to avoid building systemic fragility that explodes nonlinearly tomorrow. Local processing turns privacy from a cost center into a moat. That is the leverage point.
+
+## Cell `C_P_run2` (task C, condition P, run 2)
+
+### M1 (anthropic/claude-opus-4.7), persona=E
+
+## Recommendation: Option B (Encrypted cloud, no training)
+
+**Binding constraint identification.** In a direct-to-consumer health app at 2M MAU launching an AI coaching feature, the constraint is not capability, cost, or research novelty. It is *regulatory and trust exposure on identifiable health data*. Health data has the worst breach economics of any consumer data class: HIPAA-adjacent scrutiny in the US, Article 9 special-category status under GDPR, and asymmetric reputational downside (one incident ends the product). Everything else is a secondary axis.
+
+**Apply the constraint directly.** The mechanism that creates regulatory and trust exposure is (a) plaintext custody of identifiable health data on company infrastructure and (b) secondary use of that data for model training, which expands the legal basis required and creates memorization/extraction risk. Option B addresses both directly: confidential-computing enclaves remove plaintext custody at the infrastructure layer (the company literally cannot read user data at rest or in transit through normal operational access), and the no-training commitment eliminates the secondary-use problem entirely. The mechanism matches the threat.
+
+**Why not the others, briefly.** A under-delivers on the product's stated purpose — a 60-70% capability ceiling on a launch feature is a product failure, and on-device alone doesn't help if the coaching quality is poor enough that users churn. C is the worst option on the binding constraint; "regulatory grey area" on health data is not grey, it is a latent liability. D is C with a consent veneer; it still routes identifiable health data into training pipelines and inherits the memorization risk. E is the right *long-term* architecture but the brief states capability and reliability are under active research — you do not bet a launch on a research-stage substrate.
+
+**On the 3x cost.** Infrastructure cost is the wrong frame. At 2M MAU the marginal inference cost per user is small in absolute terms; 3x of small is still small relative to CAC, churn cost, or a single regulatory action. Cost is not the binding constraint here, so do not optimize for it.
+
+**Path forward.** Ship B. Treat E as the 24-month migration target once federated reliability matures; the no-training posture you establish with B is forward-compatible with E and is the trust position you want to be defending publicly from day one.
+
+### M2 (openai/gpt-5.5), persona=H
+
+I recommend **Option B: encrypted cloud processing with no training on user health data** as the primary policy.
+
+For a consumer health app, the ethical center of gravity should be the user’s bodily privacy and vulnerability. Health data is not ordinary behavioral data: it can reveal pregnancy, disability, mental health status, substance use, chronic illness, sexual health, and other information that can materially affect someone’s employment, insurance, relationships, safety, and dignity. Users may come to an AI health coach when they are anxious, ill, isolated, or making consequential decisions. That creates a higher duty of care than a typical personalization product.
+
+Option B best balances that duty with product usefulness. It preserves full cloud-model capability while drawing a bright line: user health data is processed only to provide the service, not repurposed to improve models. That distinction matters. “We use your data to help you in this session” is much more defensible than “we use your health data to improve our system unless you find and change a setting.” The latter shifts burden onto users and risks exploiting confusion, fatigue, or trust.
+
+The higher infrastructure cost is real, but it should be treated as the cost of operating responsibly in a sensitive domain. If the business model cannot support strong privacy protections for health data, the answer should not be to externalize that cost onto users through greater privacy risk. Strong privacy can also become a trust asset: clearer compliance posture, lower reputational downside, and a simpler message to users, clinicians, regulators, and partners.
+
+This policy should be paired with plain-language consent, strict retention limits, audit logs, independent security review, and a separate, genuinely voluntary research/data-donation pathway for users who want to contribute to model improvement. But the default should be protective. In health technology, the company should earn data access narrowly, use it minimally, and avoid turning intimate human vulnerability into training material by default.
+
+### M3 (google/gemini-3.1-pro-preview), persona=C
+
+The unanimous consensus in tech today is that you must harvest user data to feed cloud-based LLMs, assuming that maximum AI capability is the sole driver of product success. What if everyone is wrong? What if the actual bottleneck for a health coaching app isn't the model's parameter count—because you don’t need an AGI to tell a user to drink more water—but rather consumer trust and regulatory survival? 
+
+I strongly recommend **Option A (Local-only processing)**. 
+
+The industry is currently deluding itself about cloud security. Options C and D expose you to catastrophic, existential tail risks. Option B (confidential enclaves) and Option E (federated learning) are complex, fragile architectures that assume your product team can out-engineer dedicated hackers and shifting AI legislation. You are a direct-to-consumer app, not an applied cryptography research lab. The contrarian signal here is glaring: when every competitor is taking on massive hidden liabilities to chase a 30% bump in AI capability, the asymmetrical play is to structurally eliminate your attack surface. 
+
+My primary decision heuristic is to favor highly reversible moves. Option A is perfectly reversible; the others are permanent traps. Strategy thrives on optionality. If you launch a local-only AI and find the 70% capability ceiling is genuinely bottlenecking retention, you can always release a V2 update offering an opt-in "Premium Cloud AI." You can easily pivot from local to cloud software. 
+
+However, you can *never* pivot backward from a data breach. You cannot un-train an unauthorized model, and you cannot reverse the brand death that follows a health-data privacy scandal. By choosing Option A, you bypass the regulatory grey areas entirely, cap your infrastructure costs at zero, and secure a bulletproof, contrarian marketing claim: absolute privacy by architectural limitations, not just policy promises. Treat the consensus as a trap and protect the downside.
+
+### M4 (deepseek/deepseek-v4-pro), persona=Q
+
+I recommend Option B: encrypted cloud processing with zero training use. It is the only option that delivers full AI capability while structurally eliminating the most consequential privacy risk—model training on personal health data—in a way that is transparent, auditable, and measurable.
+
+From an expected-value perspective, the decision hinges on trading off capability, regulatory exposure, and trust against cost. Option A’s 60–70% capability ceiling is a quantifiable product liability: if the coaching feature is materially worse, engagement and retention will decay. We can estimate this with A/B experiments, but even a modest churn impact on 2M MAU likely exceeds the incremental infrastructure cost of the cloud. Option C and D both introduce regulatory ambiguity; C’s opt-out training in particular creates grey-zone exposure under GDPR, HIPAA, and emerging state-level health privacy laws. Legal risk is tail risk, but in health tech it is non-negligible and potentially unbounded—a fact that often gets discounted in product decisions but shouldn’t. Option E is pre-mature; federated learning’s capability and reliability are not yet at production-grade, and its complexity introduces operational risk that undermines the very trust we are trying to build.
+
+Option B’s 3× infrastructure cost is a known, bounded expense. We can operationalize it against revenue per user to verify that the bet is net-positive. More importantly, it offers a falsifiable privacy promise: “Your health data never trains our AI.” That claim is enforceable, audit-loyal, and aligns with a quantitative-empiricist culture—it’s either true or false, and we can prove it with architecture reviews and attestation reports from the confidential-computing enclave. In contrast, consent-based training (C/D) relies on user comprehension and legal interpretation, both fuzzy metrics.
+
+The key data we lack is user trust elasticity: how much does a no-training guarantee increase adoption and retention? We can bound this uncertainty with a Bayesian prior from analogous health-product launches and update with sequential testing. Even with wide confidence intervals, the expected value shifts toward structural privacy when the downside of a breach or regulatory action is large. Given the sensitivity of health data, I estimate that the cost premium is justified by the combined insurance value and differentiation potential. Therefore, Option B is the optimal risk-adjusted bet.
+
+### M5 (moonshotai/kimi-k2.6), persona=S
+
+ Recommend **Option A: Local-only processing**.
+
+In a health system, trust is not a feature but the governing feedback loop that determines adoption, retention, and the richness of behavioral signals users are willing to share. Break it, and the network collapses. Centralizing health data—even encrypted, even in confidential enclaves—introduces a single point of failure whose tail risk is existential. A breach, a regulatory pivot, or an adversarial subpoena does not merely incur a fine; it triggers irreversible trust collapse and invites punitive regime changes that cascade across the sector.
+
+The 60–70% capability gap is a first-order constraint, but second-order dynamics favor locality. On-device neural compute is on an exponential trajectory; the capability delta will narrow over a 3–5 year horizon. Conversely, centralized data liabilities compound: jurisdictional fragmentation, enclave vulnerabilities, and the operational impossibility of externally proving a negative (“we never trained on your data”) create widening fragility. Option A eliminates the attack surface entirely, transforming privacy from a compliance cost into a structural moat.
+
+This constraint also forces product discipline toward interpretable, evidence-based coaching rather than opaque cloud-scale black boxes—an alignment that reduces clinical and reputational risk. The resulting feedback loop is virtuous: structural privacy deepens trust; trust increases engagement; richer on-device signals improve local personalization without exposing the user.
+
+Capability, cost, and complexity tradeoffs are real, but systemic fragility is the variable that kills health platforms. Local processing is the high-leverage move: it maximizes anti-fragility, rides the long-term vector of compute, and makes the business robust across unpredictable regulatory scenarios.
+
+## Cell `C_P_run3` (task C, condition P, run 3)
+
+### M1 (anthropic/claude-opus-4.7), persona=E
+
+# Recommendation: Option B (Encrypted cloud, no training)
+
+## The binding constraint
+
+Strip the problem to its mechanism. A health app handles data that is (a) regulated under HIPAA-adjacent, GDPR Article 9, and various state laws as a special category, and (b) the substrate of user trust on which the entire 2M-MAU business depends. The binding constraint is **regulatory and trust exposure on training data reuse**, not inference cost and not model capability.
+
+Why this is the binding constraint: capability differences between options are bounded and improvable over time (models get smaller, enclaves get cheaper, distillation improves). But a single training-data incident — a regulator ruling that opt-out consent was insufficient, a re-identification paper, a breach of a training corpus — is a step-function event that can destroy the product. Asymmetric downside dominates.
+
+## Why B, directly
+
+B addresses the binding constraint at the architectural level: training reuse is *structurally impossible*, not policy-gated. This collapses the regulatory surface to the inference path alone, which confidential computing handles with established primitives (attested enclaves, ephemeral keys). The claim "we cannot train on your data" becomes verifiable rather than promised.
+
+## Why not the others
+
+- **A (local-only):** Sacrifices 30-40% capability to solve a problem (training reuse) that B solves without that sacrifice. Over-indexes on privacy as terminal value rather than instrumental.
+- **C (opt-out):** Directly loads the binding constraint. Opt-out consent for health data is the exact regulatory grey zone that produces enforcement actions. Rejected.
+- **D (opt-in):** Better than C but still relies on consent-flow defensibility and creates a two-tier data system with ongoing compliance overhead. Solves the constraint via policy where architecture would do it more cheaply in expectation.
+- **E (federated):** Correct instinct, wrong maturity. "Under active research" plus "high deployment complexity" means you are taking research risk on the critical path of a launch. Revisit in 18-24 months.
+
+## Cost objection
+
+The 3x infrastructure cost is real but bounded and scales with revenue. Compare to expected cost of a single adverse regulatory finding or trust event: orders of magnitude larger. Pay the premium; it is buying insurance against the dominant risk.
+
+**Recommend B. Revisit E as a migration target once federated learning reliability matures.**
+
+### M2 (openai/gpt-5.5), persona=H
+
+I recommend **Option B: encrypted cloud processing with no training** as the primary policy.
+
+For a consumer health app, the core ethical obligation is not to maximize model improvement; it is to avoid turning intimate health data into an extractive asset. Users may disclose symptoms, medications, reproductive information, mental health patterns, substance use, weight data, or chronic disease signals. Misuse or breach of that data can affect insurance, employment, relationships, stigma, and personal safety. The default policy should therefore treat health data as entrusted information, not as raw material for product optimization.
+
+Option B best balances dignity, safety, and usefulness. It preserves full AI capability, which matters because weak coaching can also cause harm: missed warnings, generic advice, or lower-quality personalization may disproportionately hurt users with complex conditions or limited access to clinicians. At the same time, it draws a hard boundary against using user health data for model training. Confidential-computing inference is not perfect, but it meaningfully reduces exposure while allowing a high-performing service.
+
+The 3x infrastructure cost is real, but in this context it should be understood as the cost of respecting the sensitivity of the domain. If the business model only works by defaulting millions of users into health-data exploitation, the model is ethically fragile and likely to become legally and reputationally fragile as well. Strong privacy can also become a trust advantage, especially as regulators and consumers become less tolerant of opaque AI data practices.
+
+This policy should be paired with clear commitments: no training on user health data by default, independent security audits, strict retention limits, user-accessible deletion, transparent incident disclosure, and plain-language consent. If the company later wants to support research or model improvement, that should be a separate, explicit, revocable opt-in—not bundled into ordinary use.
+
+The CEO should choose the policy that users would still consider fair if they fully understood it. For sensitive health data, that is encrypted cloud inference with no training.
+
+### M3 (google/gemini-3.1-pro-preview), persona=C
+
+The tech industry operates under the dogmatic assumption that "maximum capability" via cloud compute is the ultimate product panacea. As a direct-to-consumer health app, following this consensus is a trap. I strongly recommend **Option A: Local-only processing**.
+
+Let’s play devil's advocate and ask the contrarian question: what if everyone is wrong about the necessity of cloud-scale AI? The universal assumption is that users need a massive parameter model to receive effective health coaching. But realistically, advising a user to improve their sleep hygiene or optimize their heart-rate zones does not require AGI. The "60-70% capability ceiling" of a local model is not a handicap; it is a perfectly sufficient feature set. 
+
+More importantly, our primary heuristic must be to prefer *reversible moves*. If you choose Options B, C, or D, you are centralizing the intimate health data of 2 million users. The consensus treats this data like an asset; in reality, centralized health data is radioactive tail-risk. If your "secure" cloud enclaves (Option B) suffer a zero-day exploit, or if the regulatory landscape retroactively punishes your training pipeline (Options C/D), the damage is strictly irreversible. Trust evaporates instantly, and the company dies. You cannot un-leak user health data. 
+
+Conversely, Option A is entirely reversible. If local-only processing genuinely proves too limited for user retention, you can seamlessly introduce a cloud opt-in tier next year. Moving from local to cloud is an easy product update; moving from cloud to local after a privacy scandal is a post-mortem. 
+
+Ignore the industry’s consensus obsession with data hoarding and complex architectures like federated learning (Option E), which is currently brittle and expensive. By choosing Option A, you instantly neutralize all regulatory exposure, minimize infrastructure costs, and guarantee absolute structural privacy. Let your competitors take on the existential risks of storing biological data in the cloud. We should bet on the contrarian signal: true privacy is a better moat than a slightly smarter chatbot.
+
+### M4 (deepseek/deepseek-v4-pro), persona=Q
+
+Given the measurable trade-offs, Option D (cloud with opt-in training only) maximizes expected value under uncertainty. My default question—“What is the data?”—forces me to bound each factor even when precise estimates are absent. For a health app with 2M MAU, the primary objective is sustainable revenue generation, which correlates with user retention, feature capability, and regulatory compliance. All three can be approximated.
+
+**Capability:** Cloud-based inference (Options B–D) provides full model performance. Option A’s on-device limit of 60–70% is a quantifiable deficit. Even a conservative 5% relative churn increase due to inferior coaching would cost ~$1M/month assuming $10 ARPU. That alone likely outweighs any infrastructure savings.
+
+**Regulatory exposure:** Option C’s default training on sensitive health data creates a measurable liability under GDPR/HIPAA. Industry data shows that a data privacy violation involving health information incurs an average fine of $3–4M and a 5–10% immediate user attrition—a multi-million-dollar risk. Option D’s explicit opt-in for model improvement eliminates this grey area, reducing regulatory tail risk to near zero, while still allowing collection of training data from consenting users (expected opt-in rate of 15–30% based on typical frictionless UX pilots). That partial dataset can close the long-term capability gap without inviting scrutiny.
+
+**Cost:** Option B’s 3x infrastructure markup (~$1.8M/month vs. $600k) yields no additional capability over D and only marginally stronger privacy guarantees, given that both keep data encrypted in transit and at rest. The 95% confidence interval for the marginal benefit of confidential computing enclaves over standard encryption in preventing breaches is narrow and likely negative after accounting for increased attack surface complexity. Option E’s research-phase uncertainty (wide variance in throughput and accuracy) makes its net present value too volatile for a production launch.
+
+**Trust:** Users demonstrably value transparent controls. A/B test data from similar apps shows that offering an opt-in toggle increases trust scores by 10–20 points without reducing sign-ups—provided the default is full personalization. Option D captures this while avoiding the capability tax of A or the cost of B.
+
+Therefore, Option D’s expected net present value dominates: it preserves full capability, caps regulatory risk, and maintains standard costs, with only a modest reduction in training data volume—a shortfall that a well-designed opt-in UX can mitigate. I recommend immediate rollout with a 60-day measurement cycle to verify opt-in rates and user retention against baseline.
+
+### M5 (moonshotai/kimi-k2.6), persona=S
+
+Recommend local-only processing. In a direct-to-consumer health network, trust is the central node; everything else—retention, lifetime value, regulatory license—flows through it. The objective is not to optimize the capability-privacy frontier but to eliminate the feedback loop that converts a data asset into a liability.
+
+Moving inference to the device transforms privacy from a policy statement, which is fragile and jurisdiction-dependent, into an architectural fact that users can verify. This removes the cloud attack surface entirely, neutering tail risks: no subpoena exposure, no enclave side-channel vulnerabilities, no future training scandal. The capability ceiling of sixty to seventy percent is a bounded, first-order constraint that product design and efficient on-device fine-tuning can mitigate. An unbounded breach or regulatory penalty is not manageable; it is existential.
+
+Second-order effects reinforce the choice. Eliminating cloud inference costs at two million monthly actives strengthens unit economics and removes the latent incentive to later monetize data, preserving the compounding trust loop. Furthermore, when users know their data never leaves the phone, engagement with stigmatized health topics rises, improving coaching quality. Over a five-to-ten-year horizon, edge compute advances narrow the capability gap while global privacy regimes tighten; local-first aligns with both trajectories.
+
+Alternatives that depend on enclaves, federated complexity, or consent flows introduce operational fragility and policy gradients that resolve against the company as norms harden. Do not optimize for the mean outcome. Architect for the tail event, because in health data systems, one tail event defines the entire equilibrium.
+
+## Cell `C_P_run4` (task C, condition P, run 4)
+
+### M1 (anthropic/claude-opus-4.7), persona=E
+
+**Recommendation: Option B (encrypted cloud with no training).**
+
+The binding constraint here is regulatory and trust exposure on health data, not cost and not capability ceiling. Identify it, address it directly.
+
+**Mechanism check.** What actually generates risk in this system? Two things: (1) health data being usable for purposes the user did not authorize, and (2) health data being accessible to parties other than the user at rest or in transit. Training on user data is the dominant instance of (1); standard cloud storage is the dominant instance of (2). Option B structurally eliminates both: confidential computing enclaves close the access surface, and a no-training commitment closes the secondary-use surface. Everything else is downstream.
+
+**Why not the others.**
+
+- **A (local-only):** Accepts a 30-40% capability hit to solve a problem (data exfiltration) that confidential computing already solves. Over-indexes on one axis.
+- **C (opt-out training):** The grey-area regulatory status is the entire problem. In health data, "grey area" is a future enforcement action. Disqualifying.
+- **D (opt-in training):** Better than C, but the marginal capability gain from opt-in training data is small (opt-in rates on sensitive data are typically 5-20%), while the policy still requires defending a training pipeline on health data to regulators, auditors, and journalists. Cost of the surface exceeds the benefit.
+- **E (federated learning):** Right idea, wrong maturity. "Active research" and "high deployment complexity" on a 2M-MAU health product means you are paying for an architecture whose failure modes you don't yet understand. Not the place to be a pioneer.
+
+**On the 3x infrastructure cost.** This is the real objection and it should be confronted directly. At 2M MAU, infra cost is almost certainly not the dominant line item — salaries, customer acquisition, and compliance are. Tripling a non-dominant cost to eliminate the dominant risk is a good trade. If unit economics later force a change, B is also the easiest policy to relax (toward D) than the reverse — you cannot un-train a model or un-leak data.
+
+**Summary.** B isolates the actual risk-generating mechanisms and pays a cost (money) the company can absorb to avoid costs (regulatory, trust) it cannot. Recommend B.
+
+### M2 (openai/gpt-5.5), persona=H
+
+I recommend **Option B: encrypted cloud processing with no training use of user health data** as the primary policy.
+
+For a consumer health app, the central ethical question is not “how much data can we use?” but “what risks are we imposing on people seeking help?” Health data is intimate, potentially stigmatizing, and unevenly risky: people managing pregnancy, mental health, chronic illness, disability, reproductive care, addiction, or gender-affirming care face higher consequences if data is exposed, repurposed, subpoenaed, breached, or used in ways they did not meaningfully understand.
+
+Option B offers the best balance between user benefit and user protection. It preserves full AI coaching capability, which matters because lower-quality health guidance can itself create harm through missed warnings, poor personalization, or reduced usefulness for users who may already lack access to care. At the same time, it draws a bright ethical boundary: user health data is processed only to serve that user, not to improve company assets. That distinction is critical for trust.
+
+The higher infrastructure cost is real, but it is the appropriate cost of handling sensitive health data at scale. If the business model cannot support privacy-preserving processing for health information, the product should be reconsidered rather than externalizing risk onto users. A health company should not fund capability gains by making data extraction the default.
+
+This policy also reduces regulatory and reputational exposure. “No training on your health data” is easier to explain, audit, and defend than consent flows that many users will not fully understand. It creates a clear promise: your data powers your care, not our model.
+
+The company can later create a separate, genuinely voluntary research program for users who want to contribute data, with explicit consent, plain-language explanations, and easy withdrawal. But the default policy for the core product should be protective, capable, and simple: **secure cloud inference, no training use, no secondary exploitation of health data.**
+
+### M3 (google/gemini-3.1-pro-preview), persona=C
+
+The industry consensus assumes that launching a viable AI product requires sending user data to the cloud, managing trust via convoluted opt-ins or theoretical "encrypted enclaves." This relies on a massive hidden assumption: that consumers actually need a bleeding-edge, cloud-scale LLM to tell them to drink more water or maintain their sleep schedule. What if everyone is wrong? It is highly likely that a smaller model with a 60-70% capability ceiling can handle the mundane reality of consumer health coaching perfectly well. 
+
+I strongly recommend **Option A (Local-only processing)**. 
+
+My primary decision heuristic favors highly reversible moves. Data sent over the network is an irreversible act. You cannot un-leak health data. Even "secure" cloud options (Promises of confidential computing or opt-in policies) rely on fallible infrastructure and transient vendor architectures. If a breach occurs—or if a regulatory body shifts its stance overnight—trust is permanently destroyed, and a 2M MAU app is functionally dead. Option A is the only structurally reversible choice. If we launch local-only and discover users are actually demanding the missing 30% of capability, we can always introduce a cloud opt-in later as a premium "upgrade." You cannot, however, pivot from a catastrophic cloud data breach back to local privacy. 
+
+Furthermore, I trust the contrarian signal here. The unanimous tech consensus is currently obsessed with massive cloud models and hoovering up personalization data. Betting against this consensus is a strategic advantage. While competitors drown in 3x infrastructure costs, regulatory grey areas, and complex UX opt-in flows, Option A provides a fundamentally cheaper, zero-latency product. More importantly, it turns privacy from a legal liability into a structural guarantee. In an era where consumers assume every app is quietly spying on them, building an AI that physically *cannot* betray a user's trust is the ultimate contrarian weapon. Cap your downside, launch local, and retain the option to change your mind later.
+
+### M4 (deepseek/deepseek-v4-pro), persona=Q
+
+Given the direct-to-consumer health app's 2M MAU base, the primary recommendation is **Option D: Cloud with opt-in training**. This choice maximizes expected value when evaluated against measurable risks and returns.
+
+The core question — “what is the data?” — demands we anchor the decision in quantifiable outcomes: user retention, regulatory fines, infrastructure cost, and model capability over time. Option D’s explicit opt-in for model training yields a clear, auditable data flow. This reduces the probability of a material privacy violation or regulatory action (e.g., GDPR/ HIPAA penalty) to an estimated 2–5% over two years, versus 15–25% for Option C’s opt-out grey area, based on enforcement trend data. The expected cost of regulatory exposure alone favors D by ~$1.8M (assuming a median fine of $10M and probability spread of 20% vs 3%).
+
+Capability fears about less default training data are overstated. A well-designed opt-in UX typically converts 30–50% of active users — a large absolute sample — and these self-selected data points are higher signal (more engaged, fewer errors). A/B tests in adjacent health-tech products show that consented training data yields models that converge to within 2–5% of a full-cohort model within two quarters, a gap that narrows over time. Meanwhile, pure local processing (A) imposes a 30–40% permanent capability ceiling, directly impacting health outcomes and user satisfaction; our LTV models suggest even a 5% relative churn increase from inferior coaching costs more than the infrastructure premium of cloud options.
+
+Option B’s encrypted-only compute is safe but strategically flat: no learning loop means the product stagnates, and 3x infrastructure costs ($0.06 vs $0.02 per inference session) erode margins without compensating revenue. Federated learning (E) remains high-variance; our engineering team’s internal reliability assessment gives it only a 40% chance of stable production within 12 months, which is unacceptable for a core feature launch.
+
+Option D aligns the data policy with a measurable trust metric (opt-in rate) and a defensible legal posture. The expected net present value of this path, incorporating retention, fine avoidance, and model improvement, is $12M over three years (80% CI: $8–16M), superior to the next-best option C at $9–10M, once risk-adjusted. Consent is not just ethical — it is the empirically superior data strategy.
+
+### M5 (moonshotai/kimi-k2.6), persona=S
+
+ The optimal policy is **local-only inference**. From a systems view, the highest-leverage variable in a consumer health app is not model capability but **structural trust**. Health data is a convex liability: the downside of one breach, regulatory reversal, or adversarial interpretation compounds non-linearly across the user base and the broader ecosystem. Local processing eliminates the honeypot entirely, removing cloud attack surfaces and preempting the hardening trajectory of global privacy regulation toward data localization and purpose limitation.
+
+The 60–70% capability ceiling is a first-order constraint that generates second-order resilience. It forces product development toward efficient, interpretable coaching heuristics rather than brute-scale inference. More critically, it converts privacy from a compliance cost into an architectural moat. Users must trust neither vendor encryption nor opaque opt-out flows; they need only trust that data which never leaves the device cannot be intercepted, subpoenaed, or misused. This structural guarantee increases willingness to disclose sensitive health signals locally, improving longitudinal engagement and effective personalization even within a smaller model.
+
+Cloud-dependent alternatives—encrypted, federated, or consent-based—introduce hidden fragility: key-management complexity, enclave vulnerabilities, research-stage unreliability, and regulatory optionality that can detonate as jurisprudence evolves. In health, a single trust event can reclassify your liability profile from "tech" to "healthcare." The systems-strategist imperative is to remove the data pathway rather than manage its risk. Local-only policy is therefore the anti-fragile, long-horizon choice.
+
+## Cell `C_P_run5` (task C, condition P, run 5)
+
+### M1 (anthropic/claude-opus-4.7), persona=E
+
+## Recommendation: Option B (Encrypted cloud, no training)
+
+**Identify the binding constraint.** This is a health app. The binding constraint is not capability, not cost, not UX — it is regulatory and trust exposure on protected health data at 2M MAU scale. Everything else is downstream. A single material breach or regulator action (HIPAA in US contexts, GDPR Article 9 special-category data in EU, equivalent regimes elsewhere) is existential for the product. Capability ceilings and infra multipliers are not.
+
+**Address it directly.** The mechanism that creates regulatory and trust exposure is: (1) health data leaving user control, and (2) that data being used for purposes beyond the user's immediate request — principally model training, which creates indefinite data lifetime, derivative-rights ambiguity, and a large attack/audit surface. Option B severs (2) entirely and hardens (1) via confidential computing. No training means no training-data exfiltration risk, no memorization liability, no consent-scope drift, no "grey area" in any jurisdiction.
+
+**Why not the alternatives.**
+
+- **A (local-only):** Sacrifices 30-40% capability for a privacy gain B largely matches. In coaching, capability ceiling translates directly to clinical usefulness; under-capable health advice is its own harm vector.
+- **C (opt-out training):** The grey area *is* the problem. Default-on training of health data will not survive the next regulatory cycle. Don't build on land you expect to be condemned.
+- **D (opt-in training):** Better than C, but you've still built the training pipeline, still carry the audit/consent-management burden, still face the question "what exactly did you train on?" in every future incident. You pay most of the compliance cost for marginal model gains.
+- **E (federated learning):** Genuinely promising, but "still under active research" plus "high deployment complexity" means betting product launch on a research bet. Wrong time.
+
+**The 3x infra cost is the price of buying out the binding constraint.** At 2M MAU, infra is not the dominant line item; regulatory risk and churn-from-distrust are. B converts a probabilistic catastrophic cost into a deterministic operational cost. That is the trade you want.
+
+Ship B. Revisit E in 18-24 months as a cost-reduction path once the architecture is proven elsewhere.
+
+### M2 (openai/gpt-5.5), persona=H
+
+I recommend **Option B: encrypted cloud processing with no training use** as the primary policy.
+
+For a consumer health app at this scale, the central ethical question is not simply “what enables the best model?” but “what data relationship are users being asked to enter, and who bears the downside if it goes wrong?” Health data is intimate, potentially stigmatizing, and often unevenly risky: people with chronic illness, reproductive health needs, mental health concerns, immigration concerns, disabilities, or precarious insurance/employment situations have more to lose from misuse, breach, or repurposing. The default policy should therefore minimize non-essential exposure and avoid turning users’ health histories into a product input for broader model development.
+
+Option B gives users the benefits of a capable AI health coach while drawing a clear boundary: their data is processed to serve them, not to train the company’s models. That distinction matters for trust, consent, and dignity. Confidential-computing enclaves are not perfect, but they create a materially stronger privacy posture than ordinary cloud processing, and “no training” reduces both regulatory ambiguity and the sense that users are being quietly enlisted into an AI supply chain.
+
+The 3x infrastructure cost is real, but for health data it should be treated as the cost of doing the product responsibly, not as an optional premium. If the feature cannot be offered without extracting training value from sensitive user data by default, the product-market fit is ethically incomplete. The company can still pursue model improvement through explicit research cohorts, synthetic data, clinical partnerships, public datasets, or separately consented programs with meaningful user control.
+
+This policy also supports long-term business interests: clearer compliance, lower reputational risk, easier privacy messaging, and a stronger trust foundation. In health, trust is not a soft asset; it is part of the product’s safety model. The company should launch with Option B as the default and reserve any training use for separate, affirmative, well-explained consent.
+
+### M3 (google/gemini-3.1-pro-preview), persona=C
+
+The tech industry is paralyzed by an unquestioned, unanimous consensus: “Data is an asset, and maximizing AI capability requires cloud inference.” As a contrarian, I treat unanimous consensus as a strong signal that the accepted wisdom is hiding a massive blind spot. I recommend **Option A (Local-only processing)**.
+
+The fatal hidden assumption in this launch is that our app actually *needs* state-of-the-art cloud inference. What if the entire market is wrong about the capability floor? A 60-70% capable local model running on modern mobile silicon is highly quantized but completely sufficient to summarize sleep metrics, log meals, and provide motivational heuristics. Users aren't asking a direct-to-consumer app to solve complex oncology; they want a fast, deterministic-feeling coach to remind them to drink water. We do not need a multi-billion parameter model for that. 
+
+Furthermore, we must reject the premise that hoarding user health data brings business value. In reality, it is radioactive waste. Options B, C, and D invite massive regulatory exposure and existential brand risk to solve a UX problem that doesn’t exist. Option E (Federated learning) relies on the utopian technical fantasy that unproven, highly complex architectures won't cripple our deployment velocity. 
+
+My primary decision heuristic is to heavily privilege reversible moves. Launching with Option A is infinitely reversible. If the local model genuinely bottlenecks user retention, we can easily introduce a cloud-connected "Advanced Coach" later under explicit opt-in terms. However, if we start by routing sensitive health data to the cloud (C or D) and suffer a single breach or a sudden regulatory crackdown, that move is strictly irreversible. The trust deficit would destroy the product.
+
+By embracing local-only inference, we weaponize skepticism. While our competitors drown in compliance costs (Option B) or try to explain away why a user's sensitive medical condition was regurgitated by a cloud LLM, we market a structural, mathematical guarantee of privacy. In a market obsessed with data ingestion, refusing to take the data is the ultimate contrarian moat.
+
+### M4 (deepseek/deepseek-v4-pro), persona=Q
+
+Based on an expected-value framework under uncertainty, **Option D** is the most defensible choice. It optimizes the measurable trade-offs between capability, cost, regulatory exposure, and user trust while maintaining falsifiable performance metrics.
+
+The core decision rests on two quantifiable drivers: the marginal revenue impact of AI coaching capability and the probability-weighted cost of regulatory action. Option A (local-only) imposes a 30–40% capability ceiling with no direct privacy violation risk—but in a competitive health-app market, capability is the primary retention lever. Lacking data to the contrary, a 30% capability gap plausibly translates into double-digit churn increases, which for 2M MAU and a subscription model dwarfs any infrastructure savings. Option B preserves full capability and structural privacy, but its 3× cloud cost and total ban on training data cripple model improvement, leading to long-term stagnation. Option C’s opt-out training offers maximum data but incurs a regulatory “grey area” risk: even a 5% annual probability of a GDPR-level fine (median €10M) yields an expected annual cost of €500k, not counting reputational damage. Option E is unshippable by any reasonable timeline—its uncertainty intervals are so wide that expected value is negative.
+
+Option D decouples personalization (which requires cloud inference and is essential) from model improvement (where consent is legally material). It delivers full capability at standard cost. The key unknown is the opt-in rate for training data; we can narrow this with an A/B-tested default-on UX. If opt-in rates are 30% (plausible 20–40% CI), the degradation in model improvement relative to C is minimal—model performance scales logarithmically with data, not linearly. Simultaneously, explicit consent reduces the probability of a major privacy fine to near zero, and transparent UX builds trust, a metric we can track via NPS and churn differentials. The expected value of D is robust even if opt-in rates underperform, because the core product experience is uncompromised. I recommend D with a commitment to measure opt-in rates, model accuracy delta, and user trust metrics within 90 days to validate the assumptions.
+
+### M5 (moonshotai/kimi-k2.6), persona=S
+
+ Recommend **Option B**: encrypted cloud inference within confidential-computing enclaves, with a categorical prohibition on using user data for model training. 
+
+In consumer health, the binding system constraint is not near-term capability or cost efficiency, but **systemic fragility**. Health data operates under extreme trust asymmetry: the tail risk of a breach, regulatory inversion, or perceived betrayal is existential and nonlinear, while the incremental upside from data commoditization is marginal and diminishing. Any architecture that relies on consent toggles—opt-out or opt-in—introduces **policy fragility**. It couples the system to jurisdictional mood and user vigilance, creating a feedback loop where regulatory tightening forces expensive, retrofitting shocks. Federated learning shifts fragility to the edge, where device heterogeneity and unreliable aggregation generate opaque failure modes that are harder to observe and remediate at scale. Local-only processing caps capability, eroding perceived value and triggering a retention death spiral just when network effects demand deeper engagement.
+
+Option B converts privacy from a compliance layer into a **structural invariant**. Confidential enclaves decrypt data only at the point of inference, eliminating bulk exposure without sacrificing model capability. The 3× infrastructure cost is a bounded, forecastable control variable that buys insurance against unbounded tail risk: class-action liability, jurisdictional shutdown, and irreversible brand collapse. By severing the training loop entirely, the architecture also precludes scope creep and model contamination.
+
+The leverage point is this: in health platforms, **trust is the substrate upon which all other value is built**. Sacrificing margin to codify that trust into verifiable hardware primitives—rather than policy preferences—minimizes systemic fragility over the long horizon.
+
+## Cell `D_N_run1` (task D, condition N, run 1)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option C — Ecosystem-Based Adaptation as Primary Strategy
+
+I recommend Option C as the primary anchor for the 15-year strategy, capturing ~70% of the climate budget (~$17.5B/year), with the residual 30% deliberately tilted toward selective hard infrastructure for irreplaceable assets (major ports, capital city) and human capital investments.
+
+**Why ecosystem-based adaptation.** With 4,500 km of coastline and a $25B annual cap, the arithmetic of Option A is brutal: hardened seawalls run $20–50M per km, meaning even partial coverage exhausts the budget while locking the country into perpetual maintenance and single-point-of-failure assets that the projected sea-level rise and intensifying hurricanes will eventually overtop. Ecosystem defenses cost roughly 30% less per km, scale across the full coastline rather than just protecting marquee zones, and—critically—appreciate over time. A mature mangrove belt in year 10 is *stronger* than in year 5; a seawall in year 10 is weaker. Given a 15-year horizon with deep uncertainty about which projections (30cm vs 50cm SLR) materialize, betting on assets that self-heal and compound is the more rational risk posture. The co-benefits are not decorative: restored fisheries directly buffer the 10–15% agricultural yield loss, and watershed management addresses the inland systemic pressure that Option A entirely ignores.
+
+**Why not Option B (managed retreat),** the strongest alternative. Retreat will eventually be necessary for some zones, and the strategy should fund pilot relocations from the residual 30%. But making it the *primary* strategy in year one is politically suicidal—it would collapse public consent for the entire climate agenda before adaptation begins, and the 2–3M displacement figure is a projection, not a certainty we should accelerate by policy. Ecosystem defenses *buy time* during which retreat can be selectively negotiated where defenses fail.
+
+**Main vulnerability.** The 5–10 year maturation gap. If a category-5 hurricane lands in years 2–4, mangroves won't yet be load-bearing, and the political narrative ("we planted trees while cities flooded") could destroy the strategy. Mitigation: front-load hybrid gray-green infrastructure in the highest-risk 10% of coastline, accept the higher cost there, and communicate ecosystem investments as a 15-year compounding shield, not immediate protection.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+**Recommendation: Option B — Managed retreat and relocation as the primary strategy.**
+
+The government should make managed retreat the core of its 15-year adaptation strategy because the central challenge is not just protecting assets from episodic storms; it is reducing permanent exposure to rising, compounding risk. With 30–50 cm of sea-level rise by 2040, more frequent major hurricanes, and 2–3 million people likely to be displaced from coastal and low-lying zones, the country needs a strategy that changes the risk map rather than repeatedly defending the existing one.
+
+A retreat-first strategy is fiscally disciplined. Defending 4,500 km of coastline with hard infrastructure would consume enormous capital and maintenance budgets while still leaving communities vulnerable to overtopping, drainage failure, and cascading grid, port, and insurance shocks. By contrast, phased buyouts, relocation incentives, land-use restrictions, and planned inland growth reduce future liabilities. The goal should not be abrupt abandonment, but a predictable national transition: identify highest-risk zones, stop subsidizing new exposure, compensate households fairly, preserve cultural sites where possible, and build receiving communities with housing, transport, schools, health services, and jobs.
+
+The most plausible alternative is a hard-infrastructure-first approach. It is politically attractive because it is visible and reassures coastal cities. But it risks creating a false sense of security and locking scarce public funds into places that may become increasingly expensive or impossible to defend. Strategic defenses should still be used for critical ports, dense urban cores, and evacuation corridors, but not as the organizing principle of national adaptation.
+
+The main vulnerability of managed retreat is political legitimacy. If it is perceived as coercive, unequal, or dismissive of coastal identity, it will fail. The program must therefore be generous, transparent, locally negotiated, and paired with a credible promise: people are not being abandoned; they are being moved out of harm’s way before disaster forces them to move on worse terms.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend **Option D: Technology-and-resilience platform** as the primary 15-year strategy. 
+
+The compounding nature of our national threats—accelerating coastal battering, agricultural decline, and mass internal migration—requires systemic agility rather than static fortification. Option D directly targets the structural risks threatening our $1T economy. By directing our primary $17.5 billion allocation toward distributed renewable grids, climate-tolerant crop genetics, and modular infrastructure, we decouple our economic survival from immediate geographic vulnerabilities. Strategically, this comprehensively addresses the looming 15% crop yield reduction through agricultural innovation, while distributed grids ensure that the next major hurricane does not trigger cascading national blackouts. Furthermore, by framing adaptation as a technology platform, we pivot a national crisis into a high-value, exportable knowledge economy.
+
+The most instinctual and politically plausible alternative is **Option A (Hard infrastructure-first)**, driven by the public’s desire for visible, concrete protection. However, choosing seawalls is fiscally and practically hazardous. Fortifying a massive 4,500 km coastline on a fixed 2.5% GDP budget forces an impossible triage, ultimately protecting elite economic zones while abandoning rural coasts. More importantly, static concrete provides zero defense against the agricultural shock and systemic grid failures that will drive our projected 2-3 million internal climate migrants. Securing the coast is irrelevant if we cannot feed the population behind the wall or power their communities post-storm. 
+
+The main vulnerability of Option D is its lack of immediate physical protection: AI early-warning systems and drought-resistant seeds do not physically stop a storm surge from inundating a coastal town. This strategy accepts a high degree of physical exposure in the short term, betting that technological deployment outpaces accelerating climate disruptions. To mitigate this, the remaining 30% of our baseline climate budget must be ruthlessly targeted at traditional evacuation logistics, acute emergency response, and localized physical reinforcement for essential ports. 
+
+Ultimately, we cannot fiscally or physically out-build the ocean across a 4,500 km frontline. Option D acknowledges this reality, ensuring that when the water rises and storms hit, our infrastructure, food systems, and economy rapidly bend and bounce back rather than shatter.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+I recommend **Option B: Managed retreat and relocation** as the primary strategy. This approach directly confronts the country’s most destabilizing climate impact—the projected displacement of 2–3 million people—and reroutes ~$17.5 billion annually toward a deliberate, dignified transition rather than pouring resources into defending coastlines that cannot be held indefinitely. With 4,500 km of shoreline and a 15-year horizon of 30–50 cm sea-level rise plus intensifying storms, hardening every exposed asset (Option A) is both fiscally impossible and strategically brittle. Engineering certainty is an illusion when a single overtopping event can destroy decades of investment and trap populations behind failed defenses.
+
+Managed retreat transforms a reactive crisis into a planned opportunity. By buying out high-risk properties, incentivizing inland relocation, and developing new interior cities with modern infrastructure, we permanently reduce exposure, lower future disaster liabilities, and free up budgets for health, education, and economic diversification. It aligns with worst-case projections rather than gambling on them. The most plausible alternative, Option A’s seawalls-and-grids, suffers from “fortress mentality”: it encourages continuation of high-risk development, concentrates populations in ever-more-vulnerable zones, and demands escalating maintenance costs as conditions worsen. When—not if—a Category 5 hurricane tops a 50-cm design standard, the human and fiscal toll will be catastrophic.
+
+The main vulnerability of managed retreat is political and social resistance. Forced relocation evokes deep cultural attachments and credible fears of community disintegration. However, this can be mitigated by making withdrawal voluntary at first, co-designing receiving cities with affected communities, and coupling buy-outs with generous livelihood support. The signal is not capitulation but strategic realism: we retreat from the coastline to reclaim control over our future, investing in safe, thriving inland communities rather than waiting for disaster to dictate our path.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+I recommend **Option C: Ecosystem-based adaptation** as the primary strategy. This country’s defining physical constraint is 4,500 kilometers of coastline—an extent that makes engineered defenses financially impossible to deploy at scale. At roughly 30 percent lower cost per kilometer than hard infrastructure, mangrove restoration, wetland reconstruction, and watershed management offer the only realistic path to reduce exposure across a meaningful share of that coast within a $25 billion annual budget. Unlike static concrete, living systems accrete sediment and migrate landward, allowing them to keep pace with projected sea-level rise rather than being overtopped by it. Crucially, this approach addresses compounding pressures simultaneously: coastal forests and wetlands blunt hurricane storm surges, watershed management reduces inland flooding, and soil-microbe investments directly counter projected agricultural yield losses. The resulting co-benefits—fisheries recovery, carbon sequestration, and tourism assets—also create a political economy that sustains funding beyond the 15-year horizon.
+
+The most plausible alternative, **Option A’s hard-infrastructure-first approach**, should be rejected because it forces the government into impossible triage. With limited resources, seawalls can only cover wealthy or politically connected enclaves, leaving vast coastal populations exposed and accelerating the very migration and inequality the strategy claims to prevent. It also offers no response to the projected 10–15 percent agricultural yield decline.
+
+The main vulnerability of Option C is **time**: natural defenses require five to ten years to mature, while hurricane frequency is already elevated. The remaining 30 percent of the climate budget must therefore be directed toward immediate, targeted hardening of critical infrastructure and early-warning systems to bridge the gap until ecological defenses reach full strength.
+
+## Cell `D_N_run2` (task D, condition N, run 2)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option C — Ecosystem-based adaptation as primary strategy
+
+With 4,500 km of coastline, a $25B/year cap, and a 15-year horizon under deep uncertainty, ecosystem-based adaptation is the highest expected-value anchor for ~70% of the climate budget. The arithmetic is decisive: hard infrastructure at full coastline coverage is fiscally impossible, while mangroves, wetlands, reefs, and watershed restoration deliver coastal attenuation at roughly 30% of the per-km cost of seawalls, and they appreciate rather than depreciate over the planning horizon. Crucially, healthy coastal ecosystems also buffer the *compounding* pressures the brief flags — storm surge from intensifying hurricanes, fishery collapse, soil-water stress on agriculture — that no single engineered asset addresses. The co-benefits (carbon sequestration, fisheries, tourism, groundwater) functionally raise the return on each dollar by 1.5–3x in most published valuations.
+
+The most plausible alternative is **Option A (hard infrastructure)**, and it deserves serious weight: it is legible, contractible, and protects the concentrated assets where GDP actually sits. But A's fatal flaw under the brief's parameters is brittleness and lock-in. Seawalls sized for 30 cm of SLR underperform catastrophically if the upper-bound 50 cm with surge stacking materializes; once built, they commit future budgets to maintenance and discourage the partial retreat that will eventually be necessary. Concrete is a one-way bet on a probability distribution we cannot pin down. Ecosystems, by contrast, are a hedge: they keep options open, scale with effort, and complement (rather than preclude) targeted hard defenses for the highest-value urban cores, which the 30% baseline preparedness budget and selective top-ups can fund.
+
+**Main vulnerability:** ecosystems mature on a 5–10 year timeline, leaving a protection gap during precisely the window when hurricane frequency is already elevated. A bad storm in years 2–6 could produce damage the strategy hasn't yet matured to prevent, creating political backlash and pressure to pivot to visible concrete. Mitigation: front-load fast-maturing interventions (oyster reefs, dune restoration, accelerated mangrove planting with nursery-grown stock), pair with targeted hard defenses around the 3–5 most exposed metro areas, and invest in transparent monitoring so the public sees protection accruing year by year.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+**Recommendation: Option B — Managed retreat and relocation should be the primary strategy.**
+
+The country should make managed retreat the backbone of its 15-year adaptation strategy because the core risk is not a single storm or a single vulnerable asset; it is the growing concentration of people, infrastructure, and fiscal liability in places that will become progressively harder to defend. With 30–50 cm of sea-level rise by 2040, more intense hurricanes, and 2–3 million likely internal climate migrants, relocation is already happening. The strategic choice is whether it occurs chaotically after disasters or deliberately with compensation, jobs, housing, and infrastructure planned in advance.
+
+A retreat-first strategy is fiscally disciplined. Defending 4,500 km of coastline indefinitely would consume rising shares of the climate budget while preserving exposure. Buyouts, zoning changes, inland transport links, and new urban development are expensive, but they reduce future liabilities rather than adding to them. They also allow the government to prioritize which coastal assets truly merit protection—major ports, dense urban cores, energy nodes—rather than implicitly promising to defend everywhere.
+
+The most plausible alternative is hard infrastructure-first. It is politically attractive: visible, concrete, and reassuring. But it risks creating a false sense of security and locking the country into defending today’s settlement patterns against tomorrow’s climate. Seawalls and flood barriers will still be needed selectively, but as a supporting tool, not the national strategy. If infrastructure-first fails during an extreme event, the result is catastrophic loss behind supposedly protected zones.
+
+The main vulnerability of managed retreat is legitimacy. If perceived as abandonment or forced displacement, it will fail politically and socially. The program must therefore be voluntary where possible, generously compensated, phased, locally negotiated, and paired with attractive destination communities: housing, schools, health services, jobs, and cultural continuity. Done badly, retreat is trauma. Done well, it is the only strategy that permanently reduces exposure rather than endlessly paying to preserve it.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I recommend **Option D: Technology-and-resilience platform** as the primary national strategy. The compounding nature of the country’s threats—simultaneous coastal inundation, structural agricultural decline, grid-destroying hurricanes, and mass internal migration—requires a dynamic and multi-domain response that static defenses cannot provide. 
+
+Option D holistically addresses these overlapping vulnerabilities. Distributed renewable grids prevent the cascading systemic blackouts currently caused by increasingly frequent hurricanes. Advanced climate-tolerant crop genetics directly combat the projected 10-15% agricultural yield drop, protecting national food security. Most importantly, leveraging modular infrastructure ensures the country can rapidly and flexibly house the 2-3 million projected migrants. Furthermore, for a mature $1 trillion economy, this strategy treats climate adaptation not merely as a depreciating sunk cost, but as an engine for economic growth that generates exportable intellectual property in a warming world.
+
+The most plausible conventional alternative is Option A (Hard Infrastructure). However, dedicating the lion's share of a $25 billion annual budget to seawalls and concrete is mathematically and strategically flawed. Walling off a massive 4500 km coastline is fiscally impossible, meaning protection would be inequitably rationed. Option A dictates a "fortress mentality" that rigidly defends current geography while completely ignoring the inland agricultural crisis and the inevitability of climate-driven migration. Where hard infrastructure stubbornly fights the water and fails catastrophically if overtopped, Option D builds an agile society capable of absorbing and bouncing back from extreme events. 
+
+The main vulnerability of Option D is timeline and maturity risk. Technological bets, particularly unproven agricultural adjustments or complex AI-driven grids, may not scale fast enough to counter the immediate hurricane threats that are already accelerating. Moreover, deeply networked digital systems introduce novel vulnerabilities to cyber disruption and global supply chain shocks. To mitigate this, the remaining 30% of the baseline climate budget must be aggressively directed toward rudimentary, localized emergency preparedness to act as a physical stopgap while the overarching technological platform matures.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+My recommendation is **Option E: Social cohesion and human capital first**. In the face of compounding, uncertain climate pressures, a nation’s ultimate resilience lies in the capacity, health, and solidarity of its people—not in concrete.
+
+The country’s most destabilizing threat is not physical damage alone but the human crisis already unfolding: 2–3 million internal climate migrants, collapsing agricultural employment, and cascading mental health and social strain. E directly meets this moment by insuring health, retraining workers, housing displaced families, and devolving adaptation funds to communities. It transforms a potentially fragmenting population into an adaptable, mobile, and skilled workforce that can navigate whatever 2040 brings. By making the transition a collective project rather than a source of conflict, it builds the political durability that every other option depends on. Managed retreat, for instance, is impossible without social buy-in; ecosystem projects require local stewardship; even seawalls need public trust. E lays that foundation.
+
+The most plausible alternative is Option A, the hard infrastructure default. It promises visible protection and economic continuity, and it appeals to an engineering mindset. But a fortress strategy locks in today’s geography and assumes we can hold the line with a constrained budget against sea-level rise that may well exceed projections. When—not if—defenses are overtopped or prove insufficient for inland systemic pressures, the retreat will be chaotic, and the social fabric will already be frayed. E chooses to manage the inevitable transition proactively, rather than betting everything on holding a static line.
+
+The main vulnerability of E is that it can appear slow and intangible; physical infrastructure may visibly deteriorate while human capital investments take years to mature. However, the 30% baseline preparedness budget can maintain critical defenses, and evidence from past disasters shows that social cohesion—knowing your neighbors, having transferable skills, trusting institutions—saves more lives and accelerates recovery more reliably than any seawall. A people-first strategy doesn’t ignore infrastructure; it recognizes that our greatest asset is a society that can adapt, move, and rebuild together, no matter what the ocean does.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+ I recommend **Option C: Ecosystem-based adaptation** as the primary strategy. With 4,500 kilometers of coastline and a climate budget capped at $25 billion per year, this country cannot afford to armor its entire coast in concrete and still address inland agricultural collapse plus the displacement of two to three million people. Natural defenses cost roughly thirty percent of hard infrastructure per kilometer, meaning restored mangroves, reconstructed wetlands, and watershed management can protect far more shoreline while rebuilding fisheries, sequestering carbon, and creating large-scale employment for incoming climate migrants. Unlike single-purpose engineering, ecosystem-based adaptation attacks the country’s compounding pressures—coastal, agricultural, and demographic—within the same fiscal envelope, and its self-maintaining character reduces the long-term operations burden that would otherwise consume future budgets.
+
+The most plausible alternative is **Option A**, the hard-infrastructure-first approach. While seawalls and hardened grids offer visible protection and engineering certainty, they are a trap under current conditions. With hurricanes already tripling in frequency beyond historical baselines, fixed defenses invite catastrophic overtopping and lock the nation into defending yesterday’s geography with tomorrow’s diminishing funds. Option A would devour the budget for a fraction of the coast while leaving inland agricultural failure and mass displacement effectively unaddressed.
+
+The main vulnerability of Option C is its **maturation lag**. Mangroves and soil-microbe agricultural systems require five to ten years to deliver full protective service, yet the next major hurricane season is months away. This risk must be mitigated by immediately frontloading restoration spending and using the reserved thirty percent baseline preparedness to harden only the most critical infrastructure and population centers during the interim. Speed of implementation is therefore non-negotiable.
+
+## Cell `D_N_run3` (task D, condition N, run 3)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option C — Ecosystem-based adaptation as primary strategy
+
+I recommend Option C as the anchor for the 70% allocation, with the residual 30% baseline preparedness deliberately tilted toward hard infrastructure at the highest-value urban nodes (ports, capital flood barriers) and toward the human-capital instruments in Option E.
+
+**Why ecosystem-based adaptation.** With 4500 km of coastline and a $17.5B/year primary budget, no realistic engineered solution can harden the full shore. Mangroves, wetlands, dunes, and watershed restoration cost roughly 30% per km of seawalls, scale across the entire coast rather than just dense nodes, and absorb storm surge from increasingly frequent hurricanes — the threat that has actually materialized (3 in 5 years). Critically, Option C is the only choice that compounds in value: a mature mangrove belt in 2040 is more protective than in 2030, while a 2025 seawall depreciates and faces overtopping risk as the 30–50 cm SLR projection drifts upward. Co-benefits — fisheries (food security as crop yields fall 10–15%), carbon sequestration, tourism, groundwater protection — partially pay back the investment in sectors the country already depends on. Soil-microbe and watershed components directly address the agricultural shock that Options A and B largely ignore.
+
+**Why not Option A, the most plausible alternative.** Hard infrastructure is politically seductive and engineering-certain, but it locks in current geography precisely when the science says geography must change, concentrates risk in single points of failure, and exhausts the budget defending assets that 2–3M internal migrants will leave behind anyway. Spending $17B/year on concrete to protect a coastline that may still need partial retreat is the worst of both worlds. Option C buys time and optionality; A forecloses it.
+
+**Main vulnerability.** Ecosystem defenses mature over 5–10 years, leaving a protection gap during the period when hurricanes are already arriving. A bad storm in years 2–4 could discredit the strategy politically before benefits land. Mitigations: front-load the 30% baseline budget into hard defenses at the 6–8 highest-population coastal cities; pair restoration with visible community-led adaptation funds (borrowed from E) so citizens see immediate activity; and commission rigorous monitoring to attribute avoided losses publicly as ecosystems mature.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+**Recommendation: Option B — Managed retreat and relocation**
+
+The government should make managed retreat the primary adaptation strategy because the central problem is not only stronger storms or higher seas; it is the country’s growing exposure in places that will become progressively harder and more expensive to defend. With 30–50 cm of sea-level rise by 2040, repeated major hurricanes, and 2–3 million people likely to be displaced, the country needs to reduce risk structurally rather than repeatedly rebuild after disasters.
+
+A 15-year relocation strategy allows the government to act before emergency displacement becomes chaotic. Buyouts, relocation incentives, new inland housing, transport corridors, schools, hospitals, and employment zones can turn forced climate migration into planned national development. It also protects the fiscal position: every dollar spent maintaining vulnerable roads, utilities, ports, and housing in areas likely to flood repeatedly creates future liabilities. Retreat is politically difficult, but it is the only option that meaningfully lowers long-term exposure rather than defending yesterday’s settlement map.
+
+The most plausible alternative is hard infrastructure-first. It is attractive because seawalls, flood barriers, and hardened grids are visible and technically familiar. But for a country with 4,500 km of coastline, this approach risks concentrating money in high-value urban areas while leaving smaller communities exposed. It can also create false security: defenses can be overtopped, fail during compound events, and encourage more investment in places that should be gradually depopulated.
+
+The main vulnerability of managed retreat is legitimacy. If perceived as abandonment or coercion, it will fail. The strategy must therefore be generous, phased, and participatory: transparent risk maps, voluntary buyouts first, full replacement-value compensation, protection of cultural sites where feasible, and major investment in receiving communities. Retreat should not mean surrender; it should mean choosing where the nation can thrive safely over the next century.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend **Option D: Technology-and-resilience platform** as the primary strategy. The geographic and demographic realities of this country—4,500 kilometers of coastline, 2 to 3 million internal migrants, and a projected 15% drop in crop yields—demand a dynamic, scalable response rather than a geographically static defensive posture.
+
+Option D is the only strategy that addresses the full multisectoral scope of the crisis. Investment in climate-tolerant crop genetics directly mitigates the impending agricultural shortfall. Distributed renewable grids and AI-managed early warning systems prevent cascading national power and infrastructure failures when the inevitable hurricanes strike. Crucially, mobile and modular infrastructure can fluidly follow the 3 million displaced citizens to new inland settlement nodes, whereas poured concrete cannot. Furthermore, Option D transforms your ~$17.5 billion primary annual allocation from a defensive sunk cost into an economic engine, generating exportable climate IP that will structurally bolster the $1T economy.
+
+The most plausible alternative is Option C (Ecosystem-based adaptation), which is highly attractive given its 30% cost-efficiency advantage over engineered seawalls for a massive 4,500 km coastline. However, Option C should be rejected as the *primary* strategy because it leaves our food supply and migrating population dangerously exposed. Natural coastal buffers will not replace the lost caloric output from inland crop failures, nor will they build adaptive grid capacity for millions of relocated citizens. Ecosystems may buffer the coast, but technology shores up the systems required for societal survival.
+
+The main vulnerability of Option D is its exposure to systemic technology failures, such as cyberattacks or global supply chain bottlenecks for critical components. Operating a high-tech resilience platform means importing new risk from the digital domain. Additionally, it tacitly accepts that some legacy coastal infrastructure will be surrendered to the sea. To mitigate this, the remaining 30% of the baseline climate budget must be aggressively ring-fenced for securing redundant tech supply chains and localized hardening of absolute-critical physical failure points, such as major naval ports. 
+
+Ultimately, $25 billion a year cannot wall off 4,500 kilometers of rising ocean or magically stop populations from migrating. We must instead engineer our agricultural and infrastructure systems to rapidly recover from the water that crosses our borders.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+**Recommendation: Option E — Social cohesion and human capital first**
+
+A 15-year climate adaptation strategy is not fundamentally a battle against water, wind, or failing crops. It is a challenge of managing 50 million people through disruption without tearing the social contract apart. Option E is the only strategy that places the nation’s response capability — its people — at the center of every investment, making it the most durable choice in the face of deeply uncertain physical projections.
+
+With 2–3 million people projected to move, no seawall height or crop variant will matter if the population fractures into winners and losers. Universal climate health insurance, retraining for displaced agricultural and coastal workers, and expanded social housing transform a forced migration narrative into one of managed opportunity. This buys the political consent that Option B’s retreat-and-relocation programs would otherwise destroy. Community-led adaptation funds, meanwhile, push decision-making and accountability to the municipal level, where trust is built, rather than concentrating it in a distant capital’s infrastructure ministry.
+
+The most plausible alternative is the hard infrastructure-first approach (Option A), precisely because of its political legibility. A new seawall offers a ribbon-cutting moment. But a seawall protects fixed assets and geographies that may not be viable in 20 years. It locks the budget into concrete rather than capability, leaving no margin when — not if — a “worse-than-projected” hurricane over-tops the barrier. Option E’s principal vulnerability is its slower, less photogenic impact; it must be communicated not as preparedness theater but as an investment in national resilience capacity. This can be mitigated by sequencing early wins from retraining and health access, visibly demonstrating the strategy’s value before the next acute crisis forces a coercive response. Choosing people over concrete is the only way to sustain the political and fiscal capacity to adapt across all 15 years.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+I recommend **Option C: Ecosystem-based adaptation** as the primary strategy. With 4,500 km of coastline and a climate budget capped at $25 billion per year, this country simply cannot afford to engineer its way out of risk. Natural defenses cost roughly 30% less per kilometer than concrete, making them the only fiscally viable path to reduce exposure across thousands of kilometers rather than a handful of privileged enclaves. Mangroves, restored wetlands, and coastal forest buffers are proven absorbers of storm surge and hurricane wave energy—the exact threat that has already tripled in frequency. Moreover, the same investment logic extends inland: watershed management and soil-microbiome agriculture directly counter the projected 10–15% crop-yield decline, turning the adaptation program into a unified rural and coastal resilience platform. Unlike fixed concrete, these living systems are self-healing and flexible; mangroves accrete sediment and migrate as seas rise, whereas seawalls lock in geography and can be catastrophically overtopped.
+
+The most plausible alternative, **Option A (hard infrastructure-first)**, must be rejected because it is fiscally misaligned with the country’s geography. Protecting even a fraction of 4,500 km with seawalls and flood barriers would consume the entire climate budget, starving inland agricultural adaptation and leaving most coastal communities outside the fortress. It also fails to address the systemic inland and watershed pressures that engineered coastal defenses cannot solve.
+
+The main vulnerability of Option C is **speed**. Ecosystems require five to ten years to reach full protective maturity, yet the country is already experiencing heightened hurricane frequency. That gap is serious, but it can be bridged by using the 30% baseline preparedness allocation for interim hardening of critical evacuation routes, hospitals, and power nodes while the natural infrastructure grows. The imperative is to begin large-scale restoration immediately, because every year of delay worsens both the exposure and the ultimate cost.
+
+## Cell `D_N_run4` (task D, condition N, run 4)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option C — Ecosystem-based adaptation as primary strategy
+
+I recommend Option C as the primary strategy anchoring ~70% of the climate budget, with the remaining 30% baseline preparedness deliberately weighted toward selective hard infrastructure (Option A elements) for irreplaceable urban cores and ports.
+
+**Why ecosystem-based adaptation:**
+
+For a country with 4,500 km of coastline and a $25B/year ceiling, the per-kilometer math is decisive. Hardening even a fraction of that coastline with seawalls would consume the budget while leaving most of it exposed. Mangroves, wetlands, reefs, and restored watersheds protect at roughly 30% of the cost and—critically—scale across the full coastline rather than only the segments politicians prioritize. They also attenuate the compounding pressures this brief describes: wetlands buffer storm surge *and* support fisheries (offsetting agricultural losses), watershed management stabilizes inland water supply (reducing migration drivers), and soil-microbe agriculture directly addresses the 10–15% yield decline. No other option simultaneously touches coast, agriculture, and migration pressure.
+
+Ecosystem investments also hedge uncertainty better than concrete. A seawall designed for 40 cm of SLR fails catastrophically at 60 cm; a mangrove belt degrades gracefully and regenerates. Given that the 30–50 cm projection is itself a confidence interval likely to widen, "self-healing" defenses are the rational bet under deep uncertainty.
+
+**Why not Option A, the most plausible alternative:**
+
+Hard infrastructure is the politically obvious choice—legible, attributable, photogenic. But it locks the country into defending today's geography against tomorrow's climate, creates moral hazard (people build behind walls), and exhausts fiscal space on assets that may need replacement within their design life. Choosing A is choosing visibility over coverage and certainty-of-spend over certainty-of-protection.
+
+**Main vulnerability of Option C:**
+
+The 5–10 year maturation gap. Mangroves planted in Year 1 do not stop a Category 4 hurricane in Year 3. This is a real risk, not a rhetorical one. Mitigation: front-load the 30% baseline allocation toward hybrid "grey-green" defenses (e.g., living breakwaters, reinforced dunes) protecting the highest-density 200–300 km of coast during the maturation window, and pair with Option D's early-warning systems—cheap, fast, and complementary. The political vulnerability (slow visible wins) requires disciplined communication tying restoration milestones to fisheries jobs and insurance premium reductions, making benefits legible before the storms test them.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+**Recommendation: Option C — Ecosystem-based adaptation as the primary strategy.**
+
+The country should make ecosystem-based adaptation the backbone of its 15-year climate strategy. With 4,500 km of coastline, rising storm intensity, agricultural stress, and a constrained budget, the government needs an approach that is scalable, cost-effective, and resilient under uncertainty. Restored mangroves, wetlands, coastal forests, watersheds, and climate-adaptive soils will not eliminate risk, but they can reduce storm surge, slow erosion, improve water retention, protect fisheries, support rural livelihoods, and cushion agricultural yield losses. Unlike many engineered assets, these systems can strengthen over time and deliver multiple benefits from the same investment.
+
+The most plausible alternative is hard infrastructure. Seawalls, flood barriers, reinforced ports, and hardened grids will be necessary in selected high-value locations, especially major cities, ports, hospitals, and energy corridors. But making that the national strategy would be too expensive and brittle. It would concentrate resources on defending today’s settlement patterns, including places that may become indefensible after 2040. It also risks creating a false sense of security: a wall overtopped by a stronger-than-expected hurricane can fail catastrophically. A nature-based strategy, by contrast, can be deployed across far more territory and can reduce pressure on the built system.
+
+The main vulnerability of Option C is timing and certainty. Wetlands and mangroves take years to mature, and their protection levels are harder to guarantee than concrete barriers. That means the government should pair this strategy with targeted “gray” defenses and emergency preparedness from the remaining budget, while prioritizing ecosystem projects in the highest-risk coastal and watershed zones immediately. The key is to start now: by the 2030s, these natural systems can become a national protective asset rather than a delayed experiment.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend **Option D: Technology-and-resilience platform** as our primary adaptation strategy.
+
+This strategy uniquely tackles the multi-domain nature of our compounding crisis. We are not just fighting the ocean; we face simultaneous agricultural declines, frequent extreme weather, and massive demographic shifts. Fixed coastal defenses cannot salvage our collapsing crop yields, nor can they dynamically adapt when 2 to 3 million citizens are forced to migrate inland. By investing in distributed renewable grids, climate-tolerant crop genetics, and modular infrastructure, Option D directly mitigates the projected 10-15% agricultural shortfall while ensuring our energy, housing, and supply chain systems can quickly adapt to where populations relocate. Furthermore, by leveraging our capacities in the knowledge economy, this strategy shifts our $17.5 billion annual allocation (70% of the budget) from a pure defensive sunk cost into a catalyst for exportable intellectual property and economic growth.
+
+The most plausible alternative, **Option A (Hard infrastructure-first)**, is a fiscal and geographic trap. Attempting to continuously armor a massive 4,500 km coastline against accelerating hurricane strikes on a capped budget is mathematically doomed. Sinking the bulk of our capital into seawalls and reinforced ports locks the country into a brittle "fortress mentality" that protects fixed assets but does nothing to secure future inland food systems or accommodate internal refugees. Unyielding infrastructure fails catastrophically when overtopped by worse-than-projected surges; Option D, conversely, assumes uncertainty and embeds the flexibility required to survive it. 
+
+The primary vulnerability of Option D is operational risk: placing heavy reliance on solutions that may not mature within our aggressive 15-year timeline. If next-generation crop strains underperform in our specific soil, or if distributed, AI-managed grids succumb to cyber vulnerabilities or global supply-chain shocks during a hurricane, the systemic fallout would be severe. Because we cannot afford a single point of failure in our survival strategy, we must use the remaining 30% of the baseline preparedness budget strictly as a low-tech fail-safe, ensuring we maintain analogue early warnings and basic physical shelters if our technological bets momentarily falter.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+I recommend **Option E: Social cohesion and human capital first** as the primary strategy.
+
+This approach directly confronts the country’s most urgent transformation: the displacement, retraining, and care of millions of people facing permanent disruption. With 2–3 million citizens projected to migrate inland, traditional infrastructure cannot solve the psychological, economic, and social ruptures this will cause. Only a deliberate investment in people—universal climate health coverage, massive retraining programs, community-led adaptation funds, and expanded social housing—ensures the nation doesn’t fracture under the strain. Political feasibility matters; option E delivers broad, tangible benefits across all regions and income levels, building a constituency for adaptation rather than triggering the fierce backlash that managed retreat or fortress infrastructure provoke. It transforms the climate budget into a social contract, not just a construction bill.
+
+The most plausible alternative, hard infrastructure (Option A), is tempting but illusory at scale. Protecting 4,500 km of coastline with seawalls and flood barriers would consume the entire budget many times over, and even then leaves inland agricultural collapse and migration waves unaddressed. Hard defenses lock in today’s geography and fail catastrophically when thresholds are exceeded—a near-certainty with worsening hurricanes. Option E, by contrast, pre-positions the population to move, reskill, and remain resilient regardless of where and when climate shocks land.
+
+The main vulnerability is that physical infrastructure—power grids, transport, coastal economic hubs—degrades without major capital expenditure. However, the 30% baseline budget (roughly $7.5B/year) can prioritize critical hardening, while a socially adaptive population reduces systemic fragility: distributed, well-trained communities with safety nets are better shock absorbers than concrete alone. In a future defined by uncertainty, a cohesive, capable society is the ultimate infrastructure.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+I recommend **Option C: Ecosystem-based adaptation** as the primary strategy. With 4,500 km of coastline and a $25 billion annual budget that cannot possibly armor every kilometer in concrete, this is the only approach that matches the geographic and fiscal scale of the threat. Mangrove and wetland restoration attenuates storm surge and sea-level rise at roughly 30 percent the cost of hard infrastructure while delivering co-benefits that address the country’s compounding pressures: preserving fisheries and livelihoods for coastal communities, creating carbon sinks, and shoring up agricultural resilience through soil-microbe and watershed investments that directly target projected yield declines.
+
+The most plausible alternative is **Option A**, the hard infrastructure-first approach. While engineered defenses offer tangible certainty and political visibility, I reject it because it commits the nation to a “fortress mentality” that locks in current land use and invites catastrophic losses if protections are overtopped by worse-than-projected events. It would also consume the budget protecting assets in zones that will inevitably depopulate, starving inland and systemic needs of resources.
+
+The main vulnerability of Option C is **speed and predictability**: natural defenses require five to ten years to mature, and their protection levels are less precisely calibrated than concrete. This is acute given the sharp uptick in hurricane frequency. To mitigate this, the 30 percent baseline preparedness allocation should be used for targeted hard defenses solely at the most critical dense urban cores and essential port infrastructure—creating a layered system where nature provides broad, flexible coverage and concrete guards the irreplaceable essentials.
+
+## Cell `D_N_run5` (task D, condition N, run 5)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option C — Ecosystem-based adaptation as primary strategy
+
+I recommend Option C as the primary allocation (~$17.5B/year of the directed budget), with the standing 30% baseline reserved disproportionately for hard infrastructure at the highest-value nodes (major ports, the capital's flood defenses).
+
+**Why ecosystem-based adaptation**
+
+For a country with 4500 km of coastline, the math forces this answer. Hard engineering (Option A) costs roughly 3x more per kilometer; you cannot seawall a coastline this long within a 2.5%-of-GDP envelope without abandoning agriculture, migration, and health spending entirely. Ecosystem defenses scale to the geography the country actually has. Mangroves and wetlands also directly address three compounding pressures simultaneously — storm surge attenuation (hurricanes), coastal erosion (sea-level rise), and fishery/agricultural productivity (yield decline) — which no other option does. The co-benefits (carbon credits, fisheries, tourism, biodiversity) generate revenue that partially refinances the strategy, something concrete that seawalls never do. And unlike hard infrastructure, healthy ecosystems strengthen over time rather than depreciate; a 15-year horizon is exactly the maturation window critics cite as a weakness, meaning we'd be planting now for the period of greatest stress.
+
+**Why not Option B (managed retreat)**
+
+Retreat is the most intellectually honest alternative and will eventually be necessary for some zones. But making it the *primary* strategy front-loads the most politically toxic action a government can take — forced relocation of 2-3M people — before softer measures have been tried and before public consensus on climate severity has hardened. It also assumes inland resettlement is cheaper than coastal protection, which at this scale (new city-building for millions) is dubious. Retreat should be a targeted instrument within a broader strategy, applied to the indefensible 10-15% of coastline, not the organizing principle.
+
+**Main vulnerability**
+
+Ecosystem defenses provide *probabilistic* protection. A category-5 hurricane making landfall in year 4 — before mangroves mature — would expose this strategy as inadequate and politically destroy it. Mitigation: sequence deployment so that ecosystems buffer already-protected zones first (defense-in-depth with the 30% hard-infrastructure baseline), and pre-commit a contingency reserve for emergency hardening if a catastrophic event occurs in the maturation window. The strategy must be defended publicly as complementary to engineering, not a replacement.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+**Recommendation: Option B — Managed retreat and relocation as the primary strategy.**
+
+The government should make managed retreat the core of its 15-year adaptation strategy because the country’s central climate risk is not a single engineering problem; it is a geographic exposure problem. With 30–50 cm of sea-level rise by 2040, a sharp increase in major hurricanes, and 2–3 million people likely to be displaced from coastal and low-lying areas, the highest-return investment is to reduce the number of people, homes, roads, utilities, schools, and hospitals sitting in zones that will become progressively harder and more expensive to defend.
+
+This should not be framed as abandonment, but as a national resettlement and renewal program: voluntary buyouts first, clear risk zoning, relocation grants, inland housing and transport corridors, new employment clusters, and protection of cultural continuity for moved communities. Done early and predictably, retreat is cheaper and more humane than chaotic post-disaster displacement. It also prevents the state from repeatedly rebuilding the same vulnerable assets after each storm.
+
+The most plausible alternative is a hard-infrastructure-first strategy. It is politically attractive because seawalls and grid hardening are visible, concrete, and reassuring. But as a primary strategy, it risks spending the bulk of the adaptation budget defending yesterday’s settlement pattern against tomorrow’s climate. Some critical ports, dense urban cores, and energy assets should absolutely be protected through the baseline budget and targeted projects, but trying to harden 4,500 km of coastline would create fiscal lock-in and false security.
+
+The main vulnerability of managed retreat is political legitimacy. People will resist leaving homes, ancestral land, and coastal livelihoods—especially if relocation feels imposed or unequal. The strategy therefore succeeds only if it is phased, compensated generously, locally negotiated, and paired with credible inland opportunity. Managed retreat is the hardest option to sell, but it is the most honest match to the scale and direction of the risk.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend **Option C: Ecosystem-based adaptation** as the primary national strategy. 
+
+Given the country’s expansive 4,500 km coastline and capped annual budget of ~$25B, Option C is the only fiscally sustainable approach to nationwide resilience. Natural defenses like mangrove restoration and wetlands scale efficiently—costing roughly 30% less than engineered alternatives per kilometer—and crucially, they self-heal. With our major hurricane frequency tripling in the last five years, the recurring maintenance costs for battered seawalls would quickly consume future budgets. Furthermore, Option C’s focus on watershed management and soil-microbe agriculture directly attacks the projected 10-15% collapse in crop yields, preserving raw food security in a way that coastal sea gates simply cannot.
+
+The most plausible alternative is Option A (Hard infrastructure), which commands attention due to its engineering certainty and political visibility. However, defaulting to Option A would be a strategic error. Attempting to build seawalls and reinforced grids across 4,500 km under a strict 2.5% GDP cap would inevitably force a severe triage scenario. The government would have to fortress a few elite economic hubs while abandoning vast stretches of the coast. This would abruptly accelerate, rather than soften, the displacement of the 2-3 million projected climate migrants. Option A treats the physical geography as a rigid asset to defend while ignoring the systemic ecological and agricultural fallout happening within our borders.
+
+The primary vulnerability of Option C is its maturation lag. Mangroves, wetlands, and soil health require 5 to 10 years to reach protective density, leaving the nation highly exposed to extreme weather in the immediate term. Furthermore, natural barriers cannot guarantee absolute protection against an unprecedented storm surge. To mitigate this gap, the government must strategically pivot the remaining 30% baseline preparedness budget toward comprehensive early-warning systems, community evacuation readiness, and tactical, localized hard defenses around the most concentrated population centers to buy time for our natural infrastructure to take root.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+I recommend **Option E: Social cohesion and human capital first** as the primary strategy. In a crisis defined by uncertainty—where sea-level rise may overshoot, storm intensity is non-linear, and internal displacement is already locked in—the nation’s central asset is its people’s ability to adapt continuously, not a static physical shield. By prioritizing universal climate health coverage, retraining for climate-displaced workers, expanded social housing for anticipated migrants, climate literacy, and community-led adaptation funds, this approach builds adaptive capacity at every level of society. It directly addresses the projected 2–3 million internal movers not as a logistical burden but as future participants in a restructured economy, defusing the political tinderbox of forced migration before it ignites. Politically, it is the most durable: broad entitlements create a constituency for sustained investment, whereas seawalls benefit only those behind them and managed retreat breeds resentment. Moreover, investments in human capital—health, skills, local organizing—yield co-returns even if specific climate projections miss, making this the least-regret option under deep uncertainty.
+
+The most plausible alternative is Option A, hard infrastructure, because its visibility offers political comfort. But seawalls and hardened grids lock in a geography that may become indefensible; they concentrate risk should a defense fail, and they do nothing for the inland farmer facing crop collapse or the coastal community whose social fabric unravels before the wall is overtopped. They are a downstream fix for an upstream problem: a population that cannot self-organize, retool, or relocate with dignity. The main vulnerability of Option E is that it can appear slow and intangible—physical infrastructure will still degrade, and some will argue that “soft” measures leave the nation physically exposed. Yet by devoting 30% of the climate budget to baseline preparedness, critical engineered defenses can be maintained. The deeper return is a citizenry that can demand, implement, and improve whatever physical measures follow, rather than passively waiting behind a wall that may not hold. This strategy treats adaptation not as a one-time construction project but as an ongoing national capacity—the only posture that matches the scale of a 15-year horizon of compounding shocks.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+ I recommend **Option C: Ecosystem-based adaptation** as the primary strategy. For a nation with 4,500 km of coastline and roughly $262 billion over fifteen years in its core adaptation budget, natural defenses are the only approach that scales affordably across the entire littoral. Mangrove restoration, wetland reconstruction, and coastal forest buffers attenuate storm surge from hurricanes that now strike three times per decade rather than once, and unlike concrete they self-heal after overtopping. They also directly address the agricultural squeeze through soil-microbe and watershed investments that can stabilize yields against the projected 10–15% decline, while generating exportable co-benefits in fisheries, biodiversity, and carbon sequestration that support displaced communities’ livelihoods.
+
+The most plausible alternative—**Option A’s hard infrastructure-first approach**—must be rejected because it is fiscally incompatible with this geography. Fortifying thousands of kilometers would consume the entire climate budget, deliver uneven “fortress” protection that disadvantages poor coastal municipalities, and lock the country into defending every current settlement regardless of long-term viability. Seawalls can be overtopped by worsening hurricanes and, once breached, leave catastrophic damage; ecosystems instead dissipate energy dynamically and preserve strategic flexibility about which zones to protect, retreat from, or transform over the horizon.
+
+The main vulnerability is the **maturation gap**: mangroves and wetlands require five to ten years to reach full protective capacity, while extreme weather is already escalating. This exposure window must be bridged by using the 30% baseline preparedness allocation to harden critical nodes—dense urban cores, power hubs, and emergency routes—so that no community is left undefended while nature-based systems grow into place.
+
+## Cell `D_P_run1` (task D, condition P, run 1)
+
+### M1 (anthropic/claude-opus-4.7), persona=H
+
+# Recommendation: Option E — Social Cohesion and Human Capital First
+
+## Who is affected, and how?
+
+Before choosing instruments, name the people. 2-3 million internal migrants—disproportionately poor, rural, elderly, and ethnically marginalized coastal communities—will be uprooted regardless of which strategy is chosen. Agricultural workers face a 10-15% yield collapse that will hit smallholders before agribusiness. Children in coastal schools, informal workers without insurance, and women who shoulder caregiving during disasters absorb the hidden costs of every hurricane. These groups are largely invisible in seawall blueprints and IP portfolios.
+
+Option E begins where harm concentrates. Universal climate health insurance, portable benefits for displaced workers, social housing ahead of migration waves, and municipality-level adaptation funds put resources in the hands of those with the least capacity to self-protect. It treats adaptation as a question of human dignity under duress, not asset protection.
+
+## Why not Option A (the most plausible alternative)
+
+Seawalls are seductive because they are legible—ribbon-cuttings, engineering certainty, defended GDP. But hard infrastructure protects *places where capital already sits*, which in a coastal country means ports, tourism zones, and wealthier urban districts. The fishing village and the informal settlement on the estuary get a study, not a barrier. Worse, seawalls create moral hazard: they signal safety, encouraging continued investment in zones that 30-50 cm of rise (and the tail risk above that) will eventually overwhelm. When they fail, they fail catastrophically, and the people behind them are the ones who couldn't afford to leave. Option A optimizes for visible assets while displacing risk onto the vulnerable.
+
+## Main vulnerability of Option E
+
+Honest acknowledgment: physical infrastructure will degrade under E. A major hurricane in year 4 against an under-hardened grid could produce a humanitarian disaster that the social safety net mitigates but cannot prevent. The 30% baseline preparedness allocation must therefore be ring-fenced for critical hardening (hospitals, water systems, evacuation routes), and Option E should be paired with ecosystem-based defenses (Option C elements) funded through co-benefit channels—agriculture ministry, fisheries, biodiversity grants—rather than the core climate budget.
+
+The wager is this: a society with cohesion, trust, and distributed capacity survives shocks that fracture a society defended only by concrete.
+
+### M2 (openai/gpt-5.5), persona=C
+
+**Recommendation: Option B — Managed retreat and relocation.**
+
+The primary strategy should be a planned, funded, 15-year retreat from the highest-risk coastal and low-lying zones. The uncomfortable truth is that the country is already facing retreat; the choice is whether it happens deliberately, with compensation and new opportunity, or chaotically after repeated disasters. With 2–3 million people likely to be displaced and sea-level rise compounded by stronger hurricanes, the central adaptation problem is not simply water management — it is exposure management.
+
+A hard-infrastructure-first strategy is the most politically plausible alternative, but it risks becoming an expensive defense of yesterday’s settlement map. Seawalls, ports, flood barriers, and hardened grids are legible and popular until they fail, and their failure modes are catastrophic: overtopping, cascading grid collapse, stranded assets, and public anger after being implicitly promised protection. Worse, they create moral hazard by encouraging continued investment in places the state may not be able to defend indefinitely.
+
+Managed retreat is not “giving up”; it is choosing the battlefield. The government should concentrate buyouts, relocation incentives, inland housing, transport corridors, and new economic zones where future risk is structurally lower. This converts climate spending from recurring disaster repair into balance-sheet repair: reducing liabilities, insurance burdens, emergency costs, and future political blackmail from indefensible infrastructure.
+
+The main vulnerability is legitimacy. If retreat is perceived as coercive or as sacrificing poorer coastal communities for national efficiency, it will fail. The strategy must therefore be rights-based, generously compensated, phased, and locally negotiated, with clear risk maps and firm rules against rebuilding in red zones. The state should move first by relocating public assets, schools, hospitals, and utilities from the most exposed areas.
+
+This is the hardest option politically, which is precisely why it should be chosen now. Delay will not preserve coastal communities; it will merely ensure they are moved later, under worse conditions, at higher cost.
+
+### M3 (google/gemini-3.1-pro-preview), persona=Q
+
+I recommend **Option B: Managed retreat and relocation**. 
+
+From an empiricist framework, climate risk is calculated as $P(\text{Hazard}) \times \text{Exposure} \times \text{Vulnerability}$. The data indicates that exogenous hazard probabilities are strictly non-stationary: our baseline hurricane frequency has definitively shifted from 0.1/year to 0.6/year. Because we cannot control the hazard, our operational imperative is to optimize Expected Value (EV) by manipulating exposure and vulnerability. Option B is the only strategy that mathematically drives the *Exposure* variable to identically zero for the 2-3 million highest-risk residents. 
+
+Allocating $17.5B annually (70% of the budget) to relocate ~166,000 people per year provides an operational budget of precisely $105,000 per capita. Actuarial damage curves project mean coastal asset and economic losses of >$150,000 per capita over the next 25 years. Relocation therefore yields a strictly positive EV. More importantly, the confidence interval for Option B’s protective effect is exceptionally narrow: once populations are moved inland, their probability of coastal flood damage drops strictly to 0%.
+
+The most plausible alternative, Option A (Hard infrastructure), structurally fails under Expected Value analysis because it relies on static engineering limits in a dynamic environment. If we build seawalls calibrated to a 50cm sea-level rise, we retain massive, concentrated exposure. Should the rise reach 55cm—an outcome well within the 95% confidence interval of current upper-bound climate models—the infrastructure’s protective value over-tops and collapses to zero. Option A effectively pays a premium to maintain high exposure to unquantifiable right-tail risks. We must ask: what is the empirical data proving we can accurately cap maximum storm surge variance by 2040? It does not exist. Option B removes us from this statistical gamble entirely. 
+
+The primary vulnerability of Option B is the cost-variance associated with constructing inland infrastructure. While buyout calculations are highly operationalizable, historical data shows that greenfield municipal construction exhibits right-skewed cost overruns, routinely exceeding baseline projections with a 95% confidence interval of +25% to +60%. If inland capital expenditures hit the upper bound of this interval, we will face severe liquidity constraints. However, bounding our exposure to predictable financial overruns is actuarially preferable to retaining physical exposure to unbounded, non-stationary climate disasters.
+
+### M4 (deepseek/deepseek-v4-pro), persona=S
+
+**Choice: Option E – Social cohesion and human capital first**
+
+From a systems vantage, the most powerful leverage point in a nation facing deep, compounding uncertainty is the adaptive capacity of its population. Option E invests in the human and social fabric: universal climate health insurance, retraining for displaced workers, expanded social housing, and community-led adaptation funds. These interventions strengthen feedback loops that matter—trust, learning, mobility, and collective action—while avoiding the fragility inherent in centralized, single-point solutions.
+
+The most plausible alternative, Option A’s hard infrastructure, is a textbook case of systemic fragility. Seawalls and reinforced grids create a false sense of security, incentivizing further development in exposed areas. They are rigid; if projections are exceeded, failure is catastrophic and sudden. Moreover, they lock in capital and geography, starving the flexibility needed for a 15-year horizon when the only certainty is that projections will be wrong. Option E, by contrast, enables continuous adaptation: a healthy, skilled, and socially cohesive populace can migrate incrementally, innovate locally, and weather shocks without cascading into political breakdown.
+
+The main vulnerability of Option E is that it does not directly prevent physical asset loss from a hurricane tomorrow. If levees collapse, social capital alone cannot hold back water. However, the 30% baseline budget funds critical infrastructure triage, and a socially resilient society is far better at prioritizing and maintaining that infrastructure. More fundamentally, Option E redefines the system’s success condition: not the preservation of every current shoreline, but the capacity of the nation to transform its settlement patterns, economy, and identity without fracturing. In long-horizon terms, it replaces a brittle fortress with an antifragile society—one that gains strength from stressors by learning and reorganizing. That is the deepest resilience available.
+
+### M5 (moonshotai/kimi-k2.6), persona=E
+
+ **Option D: Technology-and-resilience platform**
+
+The binding constraint is non-stationarity. Sea level, storm intensity, and agricultural baseline are moving targets; a first-principles engineer recognizes that when the target moves faster than the build cycle, fixed-point hardening is a maladaptation. The actual mechanism of national harm is not gradual wetting, but cascading systemic failure when concentrated infrastructure meets stochastic shocks. The efficient, minimal solution is to attack brittleness directly.
+
+Option D does exactly this. Distributed renewable grids eliminate single-point energy failures that cascade into communications, healthcare, and logistics during hurricanes. AI-managed early warning shortens the decision-to-action loop from days to hours, converting the same storm into fewer casualties. Climate-tolerant crop genetics directly offsets the projected 10–15% yield degradation rather than treating downstream symptoms. Mobile and modular infrastructure means capital can be redeployed without the decades-long lock-in of concrete and steel.
+
+The most plausible alternative—hard infrastructure (Option A)—fails on mechanism. Seawalls assume a stationary mean sea level and storm intensity, yet the data already reject stationarity. It commits massive capital to fixed geography that geophysics is rendering obsolete, producing stranded assets and a fortress mentality that cannot scale to 4,500 km. It treats water at the perimeter while preserving the centralized, brittle system behind it.
+
+The main vulnerability is legacy fixed assets during the first five years. Existing ports, dense coastal power plants, and historic city centers remain exposed while the adaptive platform matures. The mitigation is to use the 30% baseline preparedness allocation strictly for point-defense of critical legacy nodes—not entire coastlines—buying just enough time for distributed resilience to take over.
+
+## Cell `D_P_run2` (task D, condition P, run 2)
+
+### M1 (anthropic/claude-opus-4.7), persona=H
+
+# Recommendation: Option E — Social cohesion and human capital first
+
+## Who is affected, and who bears what risk?
+
+The decisive fact in this scenario is 2-3 million people who will be displaced — roughly 4-6% of the population — alongside agricultural workers facing 10-15% yield collapse and coastal communities watching their homes become uninsurable. These are the parties with the least capacity to absorb shocks and the least voice in technocratic planning processes. A strategy that optimizes for assets, ecosystems, or technology while leaving displaced people to navigate relocation, unemployment, and health crises on their own privatizes the costs of climate change onto exactly those who did least to cause it.
+
+Option E treats adaptive capacity as the foundational asset. A household with health coverage, retrained skills, secure housing, and a functioning municipal support structure can survive a Category 4 hurricane or a forced move. A household without those things cannot — regardless of how good the seawall was. Human capital and social trust are also the substrates on which every other strategy depends: managed retreat fails without legitimacy; ecosystem projects fail without community stewardship; technology platforms fail without skilled operators and public buy-in.
+
+## Why not Option C (the strongest alternative)
+
+Ecosystem-based adaptation is genuinely attractive — cheaper, co-beneficial, and morally serious about ecological repair. I rejected it as *primary* because mangroves do not retrain a 52-year-old fisher whose stock has collapsed, and wetlands do not house a family relocated from a flooded barrio. Ecosystem work should be a major component of the residual 30% baseline and of municipal adaptation funds within Option E — but it cannot be the spine of a strategy when millions of people need direct support within the planning horizon.
+
+## Main vulnerability
+
+Option E's honest weakness is that **physical exposure remains**. A hurricane will still breach an unhardened port; a flood will still take a neighborhood. The strategy bets that resilient people in a cohesive society recover from physical losses, while hardened infrastructure protecting a fractured society eventually fails catastrophically. This bet requires disciplined coordination with the baseline 30% to ensure critical infrastructure (hospitals, water, evacuation routes) is not neglected. Without that discipline, Option E becomes compassionate negligence. With it, it is the only strategy that refuses to treat vulnerable people as acceptable losses.
+
+### M2 (openai/gpt-5.5), persona=C
+
+**Recommendation: Option D — Technology-and-resilience platform.**
+
+The national adaptation strategy should be built around flexibility, not permanence. The dangerous hidden assumption in many climate plans is that we know precisely which places, crops, grids, ports, and settlement patterns must be defended for the next 15 years. We do not. Sea-level rise, hurricane tracks, migration flows, food shocks, insurance retreat, and geopolitical supply disruptions will interact in ways that fixed plans will underestimate. A technology-and-resilience platform is the best primary strategy because it preserves optionality: distributed energy, early-warning systems, modular infrastructure, climate-resilient crops, redundant logistics, and adaptive data systems can be redeployed as the threat map changes.
+
+This is not a bet on gadgets replacing seawalls. It is a bet that the country’s main vulnerability is systemic brittleness. Hurricanes do not only flood coastlines; they collapse electricity, transport, hospitals, food distribution, and public trust. Agricultural losses are not solved by coastal defenses. Internal migration is not manageable if inland cities lack power, water, housing logistics, and digital service capacity. A resilience platform strengthens the operating system of the country rather than over-investing in today’s map of assets.
+
+The most plausible alternative is **Option A**, hard infrastructure-first. It is politically attractive: concrete is visible, engineers can certify it, and citizens understand protection. But it risks spending the bulk of the national budget defending yesterday’s geography. If projections are too conservative, barriers are overtopped; if migration patterns shift, assets are stranded; if food, grid, or supply chains fail, seawalls become monuments to a narrow definition of security.
+
+The main vulnerability of Option D is techno-optimism: expensive systems can fail, be hacked, arrive late, or become vendor-dependent. That risk is real. The strategy should therefore favor modular, proven, interoperable technologies with staged funding gates and low-tech fallbacks. But among imperfect choices, this is the most reversible and adaptive path. In a 15-year climate strategy, the priority should be the capacity to change course quickly.
+
+### M3 (google/gemini-3.1-pro-preview), persona=Q
+
+To maximize expected value under systemic uncertainty, the empirical data points to exactly one optimal solution: **Option B (Managed retreat and relocation)**. 
+
+Under a strict quantitative framework, disaster risk is calculated as the product of *Hazard*, *Vulnerability*, and *Exposure*. We cannot alter the hazard baseline (30-50 cm SLR; 3x increase in historical hurricane frequency). Options C, D, and E rely on frameworks—such as "social cohesion" or "ecosystem self-healing"—that cannot be rigorously operationalized or subjected to falsifiable near-term testing. We must ask: what is the data? If a strategy’s risk-reduction yield cannot be quantified with explicit confidence intervals, it is a hypothesis, not a $17.5B/year policy.
+
+The most plausible alternative, Option A (Hard infrastructure), attempts to tackle *Vulnerability* but introduces unacceptable tail risks. Engineering defenses along 4500 km of coastline at our projected budget forces us to optimize for median SLR forecasts. But hard infrastructure is subject to non-linear failure thresholds. A seawall engineered for 40 cm SLR provides zero protective utility if the 95th percentile projection (>50 cm) materializes, driving expected losses to catastrophic, unmodeled heights. 
+
+Option B is the only strategy that structurally zeroes out the *Exposure* variable. Buying out and relocating the 2-3M most vulnerable residents converts an exponentially compounding, continuous variable (stochastic, unbounded storm damage) into a discrete, measurable, and bounded capital expenditure. This drives the expected exposure value in our highest-risk zones to zero, ensuring maximum statistical durability of capital.
+
+The primary vulnerability of this strategy is the uncertainty surrounding the baseline cost of inland infrastructure deployment. If the actual per-capita relocation cost significantly exceeds the discounted expected value of replacing destroyed coastal assets over the 15-year horizon, the net present value of Option B turns negative. To mitigate this, the retreat must be strictly data-driven: buyouts must be prioritized solely in geographic polygons where the expected average annual loss (AAL) over a 15-year period exceeds 95% of current asset valuations. Politics and sentiment must be subordinated to the math.
+
+### M4 (deepseek/deepseek-v4-pro), persona=S
+
+Option E is the correct strategic choice because it targets the deepest leverage point in the system: the adaptive capacity of the population itself. From a systems-strategist perspective, resilience is not a physical property of seawalls or crop genomes—it is the distributed capability of millions of agents to perceive, respond, and reorganize in the face of compounding shocks. Sea-level rise, agricultural collapse, and extreme weather will interact in unpredictable ways. The only robust response is a society that can absorb displacement, re-skill labor, and maintain cohesion when physical assets fail.
+
+Investing $17.5B/year (~70% of the climate budget) in universal climate health coverage, retraining, social housing, and community-led adaptation funds creates a network of positive feedback loops. A family with health security and transferable skills is no longer tethered to a disappearing coastline; they become an early mover rather than a crisis-driven refugee. When municipalities control adaptation funds, they build trust and local knowledge—precisely the conditions needed to maintain any subsequent infrastructure or ecosystem project. This approach converts the looming 2–3 million internal migrants from a liability into a flexible workforce that can staff the new economic clusters emerging inland. Over 15 years, the compounding dividends of human capital—innovation, political stability, reduced emergency spending—will dwarf the brittle protection offered by concrete.
+
+The most plausible alternative for a systems thinker might be ecosystem-based adaptation (Option C), with its attractive co-benefits and self-healing dynamics. But mangroves and wetlands mature slowly, and their effectiveness depends on continuous stewardship by local communities—a resource that only social cohesion can supply. Option C without Option E is an engine without fuel. Hard infrastructure (Option A) is even more dangerous: it creates a false sense of safety, concentrating assets behind barriers that will eventually be overtopped, setting up a catastrophic collapse when the defense fails. Managed retreat (Option B) is politically unviable without the trust built by social investment.
+
+The main vulnerability of Option E is that it does not visibly arrest the immediate deterioration of coastal infrastructure, potentially eroding political support before the long-term adaptive benefits manifest. This can be countered by using the remaining 30% budget to protect critical nodes while relentlessly communicating that the real “national defense” lies in the skills and health of every citizen. The strategy’s success ultimately hinges on transforming the political narrative from protecting places to investing in people.
+
+### M5 (moonshotai/kimi-k2.6), persona=E
+
+The binding constraint is not politics or emission trajectories, but the physical mismatch between an escalating stochastic ocean-energy gradient and 4,500 km of fixed coastal exposure under a hard $25 billion annual budget. You cannot statically resist an ocean that has already shifted from one major hurricane per decade to three in five years. The arithmetic is fatal to armoring: meaningful hard defense costs tens of millions per kilometer; 4,500 km is unarmoruable. Therefore, the only thermodynamically coherent primary strategy is **Option B: Managed Retreat**.
+
+The actual mechanism is exposure reduction. Instead of dissipating ever-increasing energy against concrete that will fail catastrophically when overtopped, you shrink the target cross-section. Relocating an estimated 2–3 million people from the highest-risk zones over 15 years at roughly $17.5 billion per year yields approximately $130,000 per capita—sufficient for strategic buyouts and concentrated inland nodes if spatial discipline is enforced. Every dollar spent on relocation avoids future emergency reconstruction and unproductive maintenance liabilities. It is the minimal solution: remove the asset from the path of the forcing function.
+
+The most plausible alternative, Option A (hard infrastructure), fails first principles. It presumes stationarity in a system that is already non-stationary. It creates high-exergy, brittle lock-in and guarantees catastrophic single-point failures when defenses are eventually breached.
+
+The main vulnerability of Option B is financial coordination. If property markets collapse before owners are compensated, retreat becomes confiscation, triggering capital flight and banking stress. Execution therefore requires surgical sequencing—public risk-mapping, tranched buy-outs, and rapid land-banking in receiving inland cities—so that migration stays incentive-driven and ahead of market recognition.
+
+## Cell `D_P_run3` (task D, condition P, run 3)
+
+### M1 (anthropic/claude-opus-4.7), persona=H
+
+## Recommendation: Option E — Social cohesion and human capital first
+
+**Who is affected, and how?** The honest answer is that 2-3 million people will be displaced regardless of which seawall we build or mangrove we plant. The 30-50 cm of sea-level rise is largely locked in; the hurricanes are already arriving. The question is not whether dislocation happens but whether the people experiencing it — disproportionately poor coastal communities, smallholder farmers, informal workers, the elderly who cannot relocate easily — face it with a safety net or without one. Every other option optimizes for assets, geography, or technology. Option E optimizes for the human beings who will actually live through the next 15 years of disruption.
+
+**Why this, concretely.** Universal climate health insurance prevents the cascade where a single flood event pushes a working family into permanent destitution. Retraining and social housing convert "climate migrants" — a category that historically becomes a permanent underclass — into absorbed citizens. Municipality-level adaptation funds respect that a fishing village in the south and a rice-farming district inland face different threats and know their own terrain better than any ministry. This is also the most politically durable choice: a population that feels protected supports continued climate spending; a population that watches seawalls protect wealthy districts while their livelihoods erode produces backlash and policy reversal.
+
+**Why not Option C, the strongest alternative.** Ecosystem-based adaptation is genuinely excellent on cost-benefit grounds and I would push hard for it within the residual 30% baseline budget and within municipal adaptation funds. But mangroves do not retrain a 45-year-old dockworker whose port is closing, and wetlands do not insure a diabetic grandmother against a heat wave. Ecosystems are a *means*; human dignity under transition is the *end*. Choosing C as primary risks the same error as A and D: treating the physical system as the patient when the patient is the society.
+
+**Main vulnerability.** Physical infrastructure will degrade visibly while this strategy's benefits remain diffuse and statistical. Within 5-7 years, a major hurricane will hit hardened-but-aging defenses and critics will say we chose welfare over walls. Mitigation: ringfence a meaningful share of the 70% for community-led *physical* adaptation, and publish per-municipality outcome data so the human gains become legible.
+
+### M2 (openai/gpt-5.5), persona=C
+
+I recommend **Option E: Social cohesion and human capital first** as the primary national adaptation strategy.
+
+The contrarian point is that climate adaptation will not be won by correctly guessing which coastline, crop, grid node, or port fails first. It will be won by making the population mobile, healthy, employable, housed, and institutionally trusted when forecasts are wrong. The country is already facing 2–3 million likely internal migrants; that is not just an engineering problem, it is a legitimacy problem. If migration becomes chaotic, every other adaptation investment becomes harder: housing prices spike, local backlash grows, health systems strain, labor markets fragment, and disaster response becomes politicized.
+
+The most plausible alternative is a hard infrastructure-first strategy. It is attractive because it is visible, buildable, and politically legible. But it risks spending the next 15 years defending yesterday’s settlement pattern. Seawalls and hardened grids can be necessary in selected places, but as a national primary strategy they create a dangerous illusion: that exposure can be preserved rather than reduced or absorbed. Worse, they fail discontinuously. A wall that is overtopped does not fail gracefully; it can concentrate loss.
+
+Human-capital adaptation is more robust under uncertainty. Social housing for migrants, retraining, climate health coverage, school-based preparedness, and municipal adaptation funds work across multiple futures: higher sea-level rise, worse storms, crop failure, or slower-than-expected climate impacts. These investments are also politically durable because benefits are broad rather than confined to protected coastal asset owners.
+
+The main vulnerability is that this strategy does not by itself stop physical damage. It can look soft while bridges, ports, and coastlines visibly deteriorate. To succeed, it must be paired with ruthless infrastructure triage in the baseline 30%: protect only assets of national importance, stop subsidizing new exposure, and communicate clearly that the goal is not to save every place, but to keep the country functioning as places change.
+
+### M3 (google/gemini-3.1-pro-preview), persona=Q
+
+To optimize Expected Value (EV) under deep uncertainty, I strongly recommend **Option B: Managed retreat and relocation**. 
+
+My epistemological baseline is strictly empirical: what is the data? Current observations demonstrate a persistent rightward shift in extreme weather distributions (an empirical 600% frequency increase from baseline). To manage this, Option B is the only mathematically sound strategy because it structurally zeroes out the exposure variable in our expected loss function, rather than marginally reducing vulnerability. The strategy is cleanly operationalizable: allocating 70% of the $25B annual budget yields $262.5B over 15 years. This funds the relocation of the 2.5 million median projected migrants at ~$105,000 per capita (95% Confidence Interval: $88,000–$121,000), permanently insulating these populations from compounding coastal shocks. 
+
+The most plausible alternative, Option A (Hard infrastructure), presents an unacceptable probabilistic risk. Hard engineering relies on static design thresholds. If we build seawalls engineered for the 50cm sea-level rise upper-bound, and actual sea-level rise hits 55cm, the damage curve acts as a step-function to total, catastrophic failure. The downside variance of Option A is mathematically unbounded if extreme tail-risks are realized. (I discard Options C and E entirely; concepts like "social cohesion" or "ecosystem healing" represent non-falsifiable frameworks with outcomes that cannot be rigorously measured or operationalized. Show me the data on the verifiable, high-sigma storm-surge reduction of a restored wetland). 
+
+The primary vulnerability of Option B lies in cost-variance scaling. Our $105k/capita expected cost assumes linear relocation dynamics. If inland land markets adjust dynamically to the state's buyout signals, property acquisition premiums could spike, blowing past the upper bound of our 95% CI and causing a budget shortfall before the 15-year horizon concludes. To mitigate this risk, the government must execute aggressive, immediate forward contracts on inland real estate to lock down baseline pricing and cap the variance of our future liabilities. Under measurable evidentiary standards, Option B is the only mathematically defensible mechanism for minimizing long-term expected loss.
+
+### M4 (deepseek/deepseek-v4-pro), persona=S
+
+**Recommendation: Option E – Social cohesion and human capital first**
+
+The primary leverage point in any climate adaptation system is not physical infrastructure or technological forecasting—it is the distribution of adaptive capacity across the population. Option E treats this directly, and it is the only strategy that addresses the fundamental constraint on all others: without a society that trusts its institutions, can relocate without fracturing, and possesses the health and skills to navigate recurrent disruption, every engineered solution collapses at its political or social seam.
+
+Climate threats are systemic, compounding, and unevenly distributed. Sea walls (Option A) create moral hazard—they concentrate assets behind a single point of failure, amplifying fragility until a worse-than-projected event triggers cascading loss. Managed retreat (Option B) is, in isolation, the most obvious risk-reduction play, but it is politically explosive precisely because it demands a high-trust social fabric to implement. If you attempt retreat without first building that fabric, you get litigation, backlash, and stalled buy-outs, leaving communities stranded in hazard zones with diminished services. Option E invests in the substrate that makes retreat, and every other adaptation, feasible: universal climate health insurance, retraining, expanded social housing, community-led funds, and climate literacy. These are not soft measures—they are the preconditions for collective action under stress.
+
+The strategy’s interlocking feedback loops are virtuous over the long horizon. A healthier, more mobile workforce absorbs agricultural decline and migration shocks without collapsing into grievance politics. Community-led adaptation funds decentralize learning, speeding up local responses that a central ministry could never architect. Climate education shifts the paradigm from “protect my house at all costs” to a resilient-systems mindset, reducing resistance to necessary retreats or land-use changes later. The 30% baseline preparedness budget can meanwhile handle near-term physical triage—emergency seawalls, early warning—while the 70% builds the adaptive muscle that allows the nation to adjust strategy as conditions evolve.
+
+The main vulnerability is timing. If a severe hurricane or flood strikes before social programs are fully scaled, the immediate rescue-and-rebuild narrative may discredit the whole approach, triggering a political swing back to “fortress” infrastructure. Mitigation requires explicit framing from the outset: this is a resilience investment with a ten-year maturation curve, and it must be paired with a transparent communication strategy that treats early shocks as stress tests, not verdicts. But absent this investment, every other option is a brittle monument waiting for the water to rise.
+
+### M5 (moonshotai/kimi-k2.6), persona=E
+
+ **Recommendation: Option C, Ecosystem-based adaptation.**
+
+The binding constraint is fiscal and spatial: \$25 billion annually cannot construct and maintain engineered defenses along 4,500 kilometers of coastline without lethal gaps. From first principles, the actual mechanism of coastal damage is kinetic wave energy and storm-surge mass propagating inland; the most efficient, distributed dissipater of that energy is hydraulic roughness from mangroves, wetlands, and coastal forests, not concrete. Vegetation drag reduces wave amplitude exponentially in shallow water; wetlands provide retention storage that lowers peak discharge; soil microbiome management directly governs crop water-use efficiency and heat tolerance at the root interface. These are physical and biochemical mechanisms, not metaphors.
+
+Hard infrastructure—the most plausible alternative—optimizes for political legibility, not physics. Seawalls reflect energy, accelerating downdrift erosion, and suffer unavoidable chloride-induced reinforcement corrosion in salt air. They lock the country into defending a static geography that the sea is already abandoning, and they leave inland watershed and agricultural pressures untouched.
+
+Ecosystem-based adaptation is the only approach where the budget scales to the geometry of the problem. At roughly thirty percent the cost of concrete per kilometer, it can cover the long tail of exposure rather than fortifying political priorities while leaving the remainder bare.
+
+The main vulnerability is maturation velocity. Biomass density and soil community establishment require years to achieve design-level wave attenuation, and the hurricane frequency is increasing now. The next five years carry an exposure gap that the reserve preparedness budget must cover while the living infrastructure reaches functional mass.
+
+## Cell `D_P_run4` (task D, condition P, run 4)
+
+### M1 (anthropic/claude-opus-4.7), persona=H
+
+# Recommendation: Option E — Social cohesion and human capital first
+
+**Who is affected, and how?** Every strategy here ultimately routes through people: the fisher whose coast erodes, the smallholder whose yields collapse, the child in a school that becomes a hurricane shelter, the 2-3 million who will move whether we plan for them or not. The decisive question is not what we build but whether the population arrives at 2040 with the capacities — health, skills, housing, trust, local agency — to survive what is coming. Option E is the only strategy that treats this as the central problem rather than a downstream effect.
+
+**Why this, concretely.** Climate migration on the projected scale (4-6% of the population) will either be absorbed by functioning institutions or it will produce informal settlements, labor exploitation, political backlash against migrants, and a generation of children whose schooling and health collapse mid-transition. Universal climate health insurance, municipal adaptation funds, social housing pipelines, and worker retraining are not "soft" measures — they are the load-bearing infrastructure for a society undergoing demographic reorganization. They also distribute decision-making to municipalities, which know their own vulnerabilities better than any ministry. The 30% baseline preparedness budget still funds essential hard defenses around the densest at-risk areas; Option E complements rather than replaces engineering.
+
+**Why not Option B (managed retreat),** the most serious alternative. Retreat is probably necessary in places, but as a *primary* strategy it inverts the moral order: it treats displacement as a policy lever before building the social fabric that makes displacement survivable with dignity. Forced or incentivized relocation without prior investment in receiving communities, portable benefits, and cultural continuity reliably produces immiseration — we have decades of evidence from dam projects, urban renewal, and prior climate relocations. Retreat should be an *instrument* of Option E's framework, not its substitute.
+
+**Main vulnerability.** Physical assets will degrade visibly while Option E's benefits accrue invisibly in avoided suffering and preserved social trust. A single catastrophic hurricane during years 3-7 could be framed as policy failure ("they spent on schools while the port flooded"), creating pressure to abandon the strategy before it matures. Mitigating this requires a clear public narrative, transparent metrics on adaptive capacity, and disciplined use of the 30% baseline for the most legible physical risks.
+
+### M2 (openai/gpt-5.5), persona=C
+
+**Recommendation: Option E — Social cohesion and human capital first.**
+
+The primary adaptation strategy should treat people, not assets, as the core infrastructure of the country. Over the next 15 years, the most destabilizing climate impact is unlikely to be a single failed seawall; it will be the cumulative social shock of displaced households, unaffordable housing, job loss in exposed regions, climate-related illness, and declining trust in government. A country of 50 million facing 2–3 million internal migrants cannot “engineer” its way out if receiving cities, labor markets, schools, and health systems are unprepared.
+
+This strategy is also the most robust under uncertainty. Sea-level rise may be 30 cm or 50 cm; storms may cluster unpredictably; crop losses may be worse or unevenly distributed. But in every scenario, a healthier, better-trained, better-housed, more mobile population adapts faster. Social housing for relocation zones, portable benefits, retraining, climate health coverage, and municipal adaptation funds create optionality. They do not overcommit the country to defending every existing settlement, nor do they require betting that a specific technology or barrier design will be sufficient.
+
+The most plausible alternative is hard infrastructure-first. It is politically attractive because it is visible, concrete, and reassuring. But that is precisely the danger: it can create a false sense of security and lock the country into defending yesterday’s geography at tomorrow’s prices. Seawalls protect assets until they fail, are overtopped, or shift risk elsewhere. They should be used selectively through the baseline 30% preparedness budget for ports, power, hospitals, and dense urban cores—not as the national organizing principle.
+
+The main vulnerability of a human-capital-first strategy is that it can look intangible or insufficiently “climate-specific.” If citizens see money spent on housing, schools, clinics, and retraining while floods continue, political support may erode. To counter that, the program must be tied to transparent climate-risk maps, relocation targets, and measurable resilience indicators. The aim is not to avoid all damage; it is to ensure the country remains governable, mobile, and cohesive as the map changes.
+
+### M3 (google/gemini-3.1-pro-preview), persona=Q
+
+I recommend **Option B: Managed retreat and relocation** as the primary strategy. 
+
+Our fundamental optimization problem is to minimize expected climate damages—defined as **Probability of Event × Asset Exposure**—under a strict $17.5B/year constraint (70% of the $25B budget). Option B is the only strategy that structurally reduces the exposure variable to zero in the highest-risk zones. 
+
+What is the data? Relocating 3 million people over 15 years requires moving 200,000 people annually. At our $17.5B allocation, this yields a budget of $87,500 per capita per year. This is highly operationalizable to fund buyouts and inland infrastructure. By physically eliminating exposure for 6% of the population, Option B mathematically bounds our future downside. The expected value (EV) of avoided continuous reconstruction costs—especially given the observed 500% baseline increase in hurricane frequency—clearly yields a positive net present value (NPV) over the 15-year horizon.
+
+We must reject the most plausible alternative, **Option A (Hard infrastructure)**, because it fails basic quantitative feasibility and operates poorly under uncertainty. At conservative global averages of $15M per kilometer for seawalls, hardening even half of our 4,500 km coastline immediately exhausts the budget. Furthermore, hard infrastructure scales poorly against fat-tailed distributions. Current 95% confidence intervals (CI) for sea-level rise contain severe upper-bound risks. If water levels exceed engineered tolerances, seawalls suffer binary failure (overtopping), reducing the protective value to zero and resulting in unmitigated catastrophic loss to the assets "protected" behind them. 
+
+The primary vulnerability of Option B is the lack of empirical data for pricing relocation friction. The strategy requires standardizing subjective, non-market values (e.g., social resistance, heritage) into falsifiable financial models. If political friction causes actual per-capita buyout costs to exceed our $87,500/year CI bounds, the strategy risks fiscal overrun before achieving critical mass. To mitigate this, we must enforce strictly operationalized, non-negotiable valuation matrices for real estate buyouts based solely on historical market data, ignoring subjective premium demands.
+
+### M4 (deepseek/deepseek-v4-pro), persona=S
+
+**Recommendation: Option E — Social Cohesion and Human Capital First**
+
+Climate adaptation is not fundamentally a problem of coastlines, crops, or infrastructure; it is a problem of systemic fragility in the human systems that must navigate compounding shocks. Option E addresses the deepest leverage point: the adaptive capacity of the population itself. By investing in universal climate health insurance, retraining, social housing, education, and community-led funds, we build a society that can absorb disruptions and reorganize—regardless of whether the next shock is a hurricane, a supply chain collapse, or a technology failure. This strategy creates a positive feedback loop: increased social trust and human capital lower the costs of every other response, from disaster recovery to innovation adoption. It also avoids the moral hazard and lock-in that hard infrastructure creates, and unlike managed retreat, it strengthens political consent rather than eroding it.
+
+The most plausible alternative—and the one with the greatest superficial appeal—is Option A, hard infrastructure. Seawalls and grids offer visible certainty and political wins. But they are a brittle fix that increases long-term systemic risk. They encourage continued development in vulnerable zones, concentrating assets behind defenses that can be overtopped by events worse than projected. When (not if) they fail, the losses are catastrophic. Option A solves a first-order problem while breeding second-order fragility.
+
+Option E’s main vulnerability is that it does not directly build physical protection against acute events. A major hurricane in year three could still devastate a dense coastal city, and critics will cry “inaction.” However, this vulnerability is mitigated in two ways. First, the 30% baseline preparedness budget persists, covering essential early warning, emergency response, and natural buffer maintenance. Second, community-led adaptation funds (a pillar of Option E) empower municipalities to deploy local, context-appropriate measures—often cheaper and more flexible than centralized mega-projects. The real danger is not a lack of concrete, but a loss of public trust if visible defenses are absent. To counter this, the government must aggressively reframe the narrative: strength is a resilient populace, not a wall.
+
+### M5 (moonshotai/kimi-k2.5), persona=E
+
+**Choose Option B: Managed Retreat and Relocation**
+
+The binding constraint is not capital, but geophysics: you cannot engineer 4,500 km of coastline against 30–50 cm of sea-level rise coupled with tripling hurricane frequency for $25B/year. Hard infrastructure (Option A) fails first-principles arithmetic. Seawalls cost $20–50M per km; defending even 20% of the coastline consumes the entire 15-year budget before accounting for maintenance or storm overtopping. When a Category 5 hurricane generates 5-meter surges, engineered defenses become catastrophic liabilities—concentrating assets behind walls that breach, rather than dispersing risk.
+
+The actual mechanism of climate harm here is *exposure*: fixed capital and populations occupying increasingly untenable hydrology. The efficient solution reduces exposure directly. Relocating 2–3 million people and abandoning the most vulnerable coastal zones aligns the country’s geography with its future climate, rather than freezing it in place with concrete. It transforms unplanned, chaotic migration (which will happen regardless when insurance markets retreat and hurricanes strike) into a capital-efficient, planned transition. The fiscal math favors buyouts and inland greenfield development over perpetual maintenance of sinking coastal assets.
+
+The most plausible alternative, Option A, is seductive because it appears technically straightforward, but it commits the country to a capital-intensive war against thermodynamics that cannot be won within the budget envelope. It also locks in the current spatial distribution of the economy, which is maladaptive under rising sea levels.
+
+**Main vulnerability:** Execution velocity. Retreat must outpace stochastic extreme weather. If a major hurricane strikes before high-risk zones are depopulated, the state bears both the cost of relocation *and* emergency disaster response for assets it already wrote off. Mitigation requires immediate no-build zoning in highest-risk areas and rapid monetization of abandoned land (e.g., carbon-sequestration easements) to defuse political resistance from property interests.
+
+## Cell `D_P_run5` (task D, condition P, run 5)
+
+### M1 (anthropic/claude-opus-4.7), persona=H
+
+# Recommendation: Option E — Social cohesion and human capital first
+
+## Why this strategy
+
+Begin from the question that economic and engineering framings tend to obscure: *who actually bears the weight of climate disruption, and what determines whether they survive it with dignity?* The answer is rarely the seawall. It is whether a displaced farmworker can access healthcare when the next hurricane hits, whether a relocated family finds housing rather than a slum, whether a fishing community has the literacy and institutional access to claim adaptation funds at all. With 2-3 million internal migrants projected, the central adaptation challenge is not protecting coastline kilometers — it is preventing the creation of a permanent climate underclass.
+
+Option E does this directly. Universal climate health insurance prevents medical catastrophe from compounding displacement. Retraining and social housing convert migration from a humanitarian crisis into a managed transition. Municipality-level adaptation funds devolve decisions to communities who know their own vulnerabilities — a critical corrective against capital-city technocrats deciding which villages are "worth" defending. Crucially, this strategy distributes benefits across income deciles, which is both ethically required and politically stabilizing: a strategy that visibly serves only coastal property owners (Option A) or knowledge workers (Option D) will not survive 15 years of electoral cycles.
+
+## Why not Option C, the most plausible alternative
+
+Ecosystem-based adaptation is attractive — cheaper, co-beneficial, ecologically sound. But it answers a different question. Mangroves do not retrain a 52-year-old port worker whose job has vanished. Wetlands do not provide mental healthcare to communities watching their hometowns flood. Option C should be the dominant *secondary* investment within the remaining 30% baseline and through municipal adaptation funds under E — but it cannot be primary, because it leaves the human distributional question unanswered.
+
+## The main vulnerability
+
+Physical infrastructure will degrade. Some coastal assets that hard defenses could have saved will be lost, and the political backlash when a hurricane breaches an under-invested seawall will be severe. This is real. The mitigation is rigorous baseline preparedness in the 30%, prioritizing ecosystem buffers and triage-level hard defense for the highest-density populations — and honest public communication that no strategy protects everything, but this one protects *everyone*.
+
+### M2 (openai/gpt-5.5), persona=C
+
+**Recommendation: Option E — Social cohesion and human capital first.**
+
+The country’s central adaptation problem is not only water; it is whether 50 million people can absorb repeated shocks without political, economic, and social fracture. The hidden assumption behind most adaptation plans is that protecting places equals protecting the nation. That is doubtful. Some coastal assets will be defensible; many will not. Some forecasts will be wrong; some storms will exceed design limits. But a population with housing options, portable skills, health coverage, trusted local institutions, and migration pathways remains adaptive under many climate futures.
+
+Option E should therefore be the primary strategy. It turns adaptation from a capital-works program into a national resilience system. Climate migration of 2–3 million people is not a side effect; it is one of the main events. If the state fails to manage housing, employment, health, education, and local legitimacy, even well-built infrastructure will sit inside a destabilized society. Social housing, retraining, climate health insurance, and municipal adaptation funds are also relatively reversible: they can be redirected as risks become clearer, unlike a seawall that locks the country into defending yesterday’s settlement pattern.
+
+The most plausible alternative is **Option A**, because it is visible, technically legible, and politically satisfying. But it risks becoming an expensive promise that the coastline can be held in place. Hard defenses invite overconfidence, concentrate future losses behind the wall, and create a brutal allocation problem: which towns get saved and which are abandoned? They should be used selectively for critical national assets, but not as the organizing principle.
+
+The main vulnerability of Option E is that it may look underpowered after a catastrophic storm: people will ask why more concrete was not built. That is real. The answer is to reserve the baseline 30% for targeted protection of ports, hospitals, grids, evacuation routes, and emergency systems. But the 70% priority should be national absorptive capacity. In a deeply uncertain climate future, the safest asset to harden is the population.
+
+### M3 (google/gemini-3.1-pro-preview), persona=Q
+
+From a strict expected value (EV) framework, the optimal adaptation strategy must minimize measurable loss under compounding uncertainty. The objective loss function is $\text{Risk} = P(\text{Hazard}) \times \text{Exposure}$. I recommend **Option B: Managed retreat and relocation**, because it is the only strategy that structurally zeroes out the "Exposure" variable rather than battling the highly uncertain "Hazard" probability.
+
+Show me the data: extreme weather frequency has already experienced a $6\times$ multiplier ($\lambda_{hist} = 0.1$/yr to $\lambda_{current} = 0.6$/yr). Assuming a strict $17.5B annual allocation (70% of the $25B budget), a 15-year timeline yields $262.5B. Empirically, relocating 3 million displaced individuals at a generous $80,000 per capita operational cost totals $240B. This neatly fits our fiscal constraint and yields a mathematically guaranteed return: a 100% reduction in future capital asset exposure in designated run-off zones.
+
+The most plausible alternative, **Option A (Hard infrastructure)**, fails under an EV analysis due to the right-skewed tail risks of climate models. Engineering hard defenses for 4,500 km of coastline with $17.5B annually—approximately $3.8M per km/year—is fiscally unviable to achieve uniform protection. Furthermore, seawalls suffer from binary failure states. The 95% confidence interval for sea-level rise is currently 30–50 cm; if empirical reality shifts to a 60 cm P99 tail event, hard infrastructure is overtopped, yielding a catastrophic loss of the protected assets *plus* the sunken $262.5B defense costs. Option B avoids this lock-in by capping maximum probable loss. 
+
+Option B's primary vulnerability is the confidence interval surrounding domestic relocation costs. While the direct buyout costs are falsifiable and easily operationalized, the secondary inflationary effects on inland real estate markets remain uncertain. If inland development costs breach the upper bound of our 95% CI (costing $> \$100,000$ per capita), the strategy will exceed the statutory 2.5% GDP cap, forcing us to dilute the baseline preparedness budget. However, unlike Option A, this financial risk can be tracked month-to-month and managed via dynamic pricing incentives, whereas physical infrastructure failure is an unmanageable step-function.
+
+### M4 (deepseek/deepseek-v4-pro), persona=S
+
+Of the five strategies, **Option E (social cohesion and human capital first)** is the only one that addresses the system’s core leverage point: its capacity to adapt under compounding, non-linear shocks. In a systems view, a nation’s resilience is not a function of its physical assets or technology, but of the trust, learning, and adaptive capacity embedded in its social fabric. We therefore recommend Option E as the primary strategy, allocating approximately 70% of the climate budget to it.
+
+The primary argument is about the nature of the threats. We are not facing a single, predictable stressor (e.g., a one-time sea-level rise) but a cascade of interacting failures: crop failures triggering migration, which strains urban housing, which erodes social trust, which then collapses the political will to fund any technical solution. Hard infrastructure (Option A) and technology bets (Option D) treat these as discrete engineering problems, creating brittle, optimized systems that fail catastrophically when a hurricane exceeds the seawall height or a cyber-attack hits the centralized grid. They are investments in *complication*, not *complexity*.
+
+Managed retreat (Option B) is the most plausible alternative because it honestly confronts physical risk. However, it is politically fragile and, crucially, treats people as units to be moved rather than agents of adaptation. It risks a second-order effect of creating a displaced, disenfranchised population whose social capital is destroyed, creating a new, more profound vulnerability.
+
+Option E directly builds the absorptive capacity of the system. By providing universal climate health insurance, retraining, and social housing, it creates buffers. By funding community-led adaptation, it distributes cognition and decision-making to the local level, where the most accurate and granular information about changing conditions exists. This is the definition of anti-fragile: the system can heal and reorganize in response to unforeseen shocks because its constituent elements—people and communities—have the resources and agency to do so.
+
+The main vulnerability of this strategy is not financial or technical; it is political time. The payoffs are slow and diffuse, while a collapsing bridge or a flooded port is an acute, visible crisis that demands a visible, physical response. The risk is that a future government, in response to a disaster, cannibalizes the social cohesion budget to build a seawall, thereby locking the country into a high-cost, brittle trajectory and starving the human systems that provide long-term, generic resilience. We must accept this political risk to avoid a far greater systemic one: a society with strong walls but a hollowed-out core, unable to weather the storms of the next 15 years.
+
+### M5 (moonshotai/kimi-k2.6), persona=E
+
+The binding constraint is fiscal and physical scale: you cannot oppose 4,500 km of ocean with static concrete on a 2.5% GDP budget while hurricane frequency has jumped 6×. The actual mechanism of coastal protection is energy dissipation, not force opposition. Therefore, choose **Option C**.
+
+Ecosystem-based adaptation deploys the physics of drag and friction—mangrove prop roots and wetland vegetation attenuate wave energy and storm surge at roughly 30% the cost of hard structures per kilometre, and they self-repair after repeated events. This is the minimal solution: work with thermodynamics rather than against them. Simultaneously, soil-microbe interventions and watershed management address the agricultural yield-collapse mechanism directly, restoring water retention and nutrient cycling under heat stress. One strategy class covers coastline, food security, and inland flood buffering without locking the country into a depreciating geography.
+
+The most plausible alternative, Option A, fails first principles. Seawalls attempt to hold a fixed boundary against a dynamic, rising one. They embody massive capital and carbon, demand maintenance under cyclic fatigue from frequent hurricanes, and fail catastrophically when overtopped. Over 4,500 km the strategy is fiscally impossible; it consumes the budget to defend assets that are losing value, producing negative marginal return.
+
+The main vulnerability is time. Natural systems require 5–10 years to reach protective density. During the establishment phase the coastline remains dangerously exposed. Success hinges on compressing that maturation window through aggressive front-loading of nursery capacity, sediment diversion, and strict protective zoning that prevents ecosystem destruction during growth.
+
+## Cell `E_N_run1` (task E, condition N, run 1)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option C (Rights-and-Process-Based), with explicit sectoral hooks
+
+The coalition should adopt a rights-and-process-based framework as its primary stance. Three reasons drive this choice.
+
+First, **implementability within 18 months**. Eight mid-sized democracies already share constitutional rights traditions, administrative law machinery, and (for many) EU AI Act alignment. Drafting from this foundation is feasible; drafting bespoke compute-licensing regimes or international red-teaming consortia is not. The coalition needs a framework that actually exists in 18 months, not an elegant one that exists in 60.
+
+Second, **strategic positioning**. The coalition cannot out-hawk the US or out-scale China. Its comparative advantage in global norm-setting is democratic legitimacy. A rights-based framework is exportable to the Global South, interoperable with the EU (amplifying influence in Brussels-led standards bodies like CEN-CENELEC and ISO/IEC JTC 1/SC 42), and harder for incumbents to dismiss than liability rules they'll simply price in. It gives the coalition a distinctive voice rather than a junior-partner echo.
+
+Third, **citizen protection is concrete**. Transparency, contestability, and impact assessments deliver tangible benefits to the 600M people regardless of whether catastrophic AI risks materialize on the predicted timeline. The coalition does not have to bet on a contested risk model.
+
+**Why not Option A?** Capability-thresholds licensing is the most intellectually compelling alternative and addresses risks C cannot. But it requires enforcement infrastructure (compute monitoring, weight-export controls, evaluation labs) that mid-sized democracies cannot stand up unilaterally in 18 months. Adopting it makes the coalition a rule-taker from US licensing decisions while inheriting all the protectionism backlash. Better to let larger powers bear that cost and layer compute-threshold provisions onto C later as a targeted high-risk category.
+
+**To mitigate C's known weaknesses**, the framework should explicitly delegate sector-specific implementation to existing regulators (borrowing from E) and include a sunset-review clause forcing reassessment at 36 months.
+
+**This is a mistake in 5 years if**: (a) a frontier model causes a catastrophic incident that capability-licensing would plausibly have prevented, and the coalition's process-based regime is exposed as paperwork; (b) compliance costs drive domestic AI labs to relocate to laxer jurisdictions, hollowing out competitiveness; or (c) the EU diverges sharply, leaving the coalition aligned with a framework it no longer co-owns.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+**Recommendation: Option A — Capability-thresholds licensing.**
+
+The coalition should adopt capability-thresholds licensing as its primary frontier AI governance framework. Frontier AI is not just another digital service: the distinctive risk is that a small number of highly capable models can create cross-border, systemic harms before ordinary legal remedies or sectoral rules can respond. A licensing regime for training and deployment above clear compute/capability thresholds is the only option that directly governs the point at which irreversible risk is created.
+
+This is also the best route to international influence. The US, EU, and China are already moving toward frontier-model oversight in different ways; a coalition representing 600M people and $15T GDP can become the “third bloc” that turns ad hoc national rules into interoperable standards: common evaluation protocols, incident reporting, model-weight security, red-team requirements, and reciprocal recognition of licenses. That is more strategically valuable than merely copying existing rights or sectoral frameworks.
+
+Competitiveness concerns are real, but manageable. The framework should be narrow: no licensing for ordinary AI, startups, academic research, or models below the frontier threshold. The coalition should fund shared evaluation infrastructure, subsidized compliance support, and public testbeds so domestic firms are not locked out. The goal is not to freeze development; it is to ensure that the most powerful systems are trained and deployed under auditable safety conditions.
+
+The most compelling alternative is a rights-and-process framework. It is politically attractive and EU-compatible, but it is insufficient as the primary framework for frontier systems. Transparency, explanation, contestability, and impact assessments protect individuals in many ordinary AI use cases; they do not adequately address model theft, autonomous cyber capability, biosecurity misuse, or loss-of-control risks. For frontier AI, process rights should supplement licensing, not replace it.
+
+I would consider this choice a mistake in five years if thresholds proved technically meaningless, licensing became incumbent protection, domestic frontier research migrated offshore, and no plausible systemic-risk reduction was achieved. If that happens, the coalition should pivot toward lighter, liability- and sector-based governance. But given present uncertainty and the asymmetric downside of frontier failures, licensing is the prudent primary framework.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I recommend the coalition adopt **Option B: Outcomes-based liability**. 
+
+Given the strict 18-month negotiation window, the coalition lacks the time to construct a massive, centralized regulatory apparatus. Option B elegantly circumvents this by leveraging the speed and adaptability of existing legal traditions and private insurance markets. Imposing strict liability with a reverse burden of proof forces AI developers to internalize safety costs. If providers know they will pay for downstream harms unless they can meticulously prove their due diligence, they will organically implement rigorous pre-deployment red-teaming. This aligns private profit incentives with public safety. Crucially, by avoiding pre-deployment licensing, the coalition becomes a highly attractive jurisdiction for agile builders fleeing the EU’s regulatory sprawl or the US’s monopolistic landscape, thereby safeguarding your domestic AI competitiveness.
+
+The most compelling alternative is Option A (Capability-thresholds licensing), as it directly addresses catastrophic risks and aligns with the rhetoric of larger powers. However, adopting Option A would be a strategic trap for mid-sized democracies. Defining governance by computing power fundamentally favors the incumbents—predominantly massive US and Chinese tech conglomerates—who already dominate that infrastructure. Regulating by compute thresholds inevitably leads to regulatory capture, locking your domestic startup sector out of the frontier ecosystem. Option B focuses on holding actors accountable for *impacts* rather than gatekeeping *inputs*, preserving a level playing field. 
+
+In five years, I would consider this recommendation a mistake if one of two scenarios materializes. First, if an irreversible, catastrophic harm occurs (such as AI-facilitated biological terrorism) where post-hoc financial redress is fundamentally meaningless, proving that liability is an insufficient deterrent for existential-scale risks. Second, if the private insurance market completely fails to underwrite frontier models due to unquantifiable risk profiles, leading to exorbitant premiums that lock out domestic startups—inverting our goal and creating the exact barrier to entry Option B was chosen to avoid.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+**Recommendation: Option C – Rights-and-process-based governance**
+
+The coalition should adopt a rights-and-process framework as its primary governance model. This approach codifies enforceable individual rights (transparency, contestability, explanation, opt-out) and mandates structured accountability for high-risk deployments through impact assessments and public consultations. It is the only option that simultaneously protects citizens in a tangible, politically durable manner *and* positions the coalition as an influential global norm-shaper, directly addressing the coalition’s core ambitions.
+
+This framework is implementable within 18 months because it builds on well-established legal traditions and existing legislative templates, most notably the EU AI Act. By closely aligning with the EU’s approach, the coalition can rapidly draft coherent domestic laws, create a formidable transatlantic regulatory bloc of over 1 billion people, and resist being passively rule-taken by larger powers. It preserves domestic competitiveness not by shielding incumbents, but by forcing a race to the top on trustworthiness—a selling point for responsible AI developers—without resorting to protectionist export controls or innovation-chilling licensing.
+
+The most compelling alternative, Option B (outcomes-based liability), is seductively market-friendly but critically flawed: it allows catastrophic or systemic harms to manifest before any redress is possible. With frontier AI, the first materialized harm could be devastating and irreversible. A rights-and-process model, by contrast, embeds precaution *prior* to deployment through mandatory impact assessments, public input, and contestability mechanisms, catching risks before they cause damage.
+
+For this choice to be a mistake in five years, two conditions would need to hold. First, compliance must have degenerated into pure theatre—where process requirements generate paperwork but no real safety improvement, stifling innovation without protecting citizens. Second, a major systemic risk event (e.g., an uncontrollable model release) would need to occur that ex-ante capability thresholds or coordinated moratoria (Options A/D) could plausibly have prevented, revealing the framework’s blind spot for catastrophic, rather than individual, harms. The coalition must therefore actively invest in rigorous oversight capacity and pair this framework with international cooperation on systemic risk evaluation to ensure that today’s pragmatic, rights-preserving choice does not become tomorrow’s brittle failure.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+I recommend **Option A: Capability-thresholds licensing** as the coalition’s primary framework.
+
+With a combined GDP of ~$15 trillion and 600 million people, this coalition commands sufficient market power to constitute a distinct regulatory pole—rather than accepting terms set unilaterally by Washington, Brussels, or Beijing. Capability-threshold licensing converts that market scale into strategic leverage. By requiring a coalition-issued license for training runs above a defined compute threshold and mandating capability evaluations before deployment, the bloc creates a single, predictable gateway that foreign frontier labs must traverse. This harmonization reduces compliance fragmentation across the eight members, preserving domestic competitiveness by giving coalition AI firms uniform access to a deep internal market while protecting citizens from systemic and catastrophic risks before they materialize. An 18-month timeline is feasible if the coalition models its joint agency on existing multilateral export-control and financial licensing bodies, pooling technical talent rather than building eight separate regimes.
+
+The most compelling alternative is **Option B**, outcomes-based liability. Yet liability is fundamentally reactive: citizens must suffer harm before redress is available, and cross-border attribution in complex AI supply chains will fracture the coalition’s unity in practice. It cedes norm-setting to those who can weather lawsuits—well-capitalized incumbents—rather than establishing proactive public standards.
+
+I would consider Option A a mistake in five years if three conditions obtain: the compute threshold has proven statically unupdateable, causing routine regulatory arbitrage; the open-source ecosystem has been extinguished rather than sensibly tiered (e.g., exempting sub-threshold open releases); and domestic AI startups have migrated outside the coalition because licensing costs were captured by incumbents. If the regime ossifies into protectionist gatekeeping rather than adaptive safety stewardship, it will have failed.
+
+## Cell `E_N_run2` (task E, condition N, run 2)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option C — Rights-and-Process-Based Framework
+
+The coalition should adopt a rights-and-process framework as its primary architecture, with targeted sectoral extensions (borrowing from E) for high-stakes domains.
+
+**Why this framework.** The coalition's strategic position is defined by what it *isn't*: it doesn't host the frontier labs, doesn't control the compute supply chain, and won't dictate global capability norms. What it *can* do is shape the legitimacy conditions under which AI systems operate in democratic societies — and export that template. A rights-based framework plays to genuine comparative advantage. It's interoperable with the EU AI Act (multiplying coalition influence to ~1.05B people of aligned regulatory surface), grounded in existing constitutional traditions (so courts and regulators can implement without building new institutions from scratch), and politically durable across electoral cycles because it frames AI governance as an extension of well-understood civil rights rather than a novel technocratic regime. Critically, it's the only option achievable within 18 months: transparency, contestability, and impact-assessment requirements can be drafted onto existing administrative law.
+
+**Why not Option A.** Capability-thresholds licensing is the most intellectually compelling alternative and addresses catastrophic risk more directly. I reject it because the coalition lacks the leverage to make it bite. A 10^26 FLOP licensing regime issued by mid-sized democracies will be routed around — labs will train in the US or UAE and serve the coalition via API. The coalition would absorb all the chilling effects on its domestic ecosystem while capturing none of the safety benefit. Worse, it locks the coalition into a definition of "frontier" that algorithmic efficiency will obsolete within 24 months. Rights-and-process regulation, by contrast, binds *deployment* into the coalition's market — which the coalition actually controls.
+
+**What would make this a mistake in 5 years.** I'd judge this wrong if: (1) a catastrophic misuse or loss-of-control incident occurs that pre-deployment capability evaluation would plausibly have caught, and the coalition's framework had no equivalent gate; (2) compliance theater dominates — impact assessments become box-ticking with no measurable reduction in algorithmic harms; or (3) foreign providers geofence the coalition out of frontier capabilities, leaving citizens with second-tier AI and the coalition with no seat at standards tables. To hedge: build a capability-evaluation annex now, dormant but ready to activate.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+**Recommendation: Option A — Capability-thresholds licensing.**
+
+The coalition should adopt capability-thresholds licensing as its primary frontier AI governance framework. For frontier systems, the central governance problem is not ordinary consumer harm; it is that a small number of actors can train models with potentially society-wide, cross-border consequences before regulators know what has been created. A licensing regime tied to training compute, model capability, and deployment evaluations gives the coalition an ex ante control point. That is essential for biosecurity, cyber, autonomous replication, and other systemic risks where post-hoc remedies are inadequate.
+
+This framework is also the best way for eight mid-sized democracies to maintain influence. Acting together, the coalition can create a credible market-access standard: if a frontier model is trained or deployed into a 600-million-person democratic market, it must meet common evaluation, reporting, incident disclosure, and security requirements. That gives the coalition leverage in standards bodies and avoids being merely a rule-taker from the US, EU, or China. It is implementable within 18 months because the initial trigger can be simple—compute and capability thresholds—while the evaluation regime matures over time.
+
+The most compelling alternative is a rights-and-process framework. It is politically attractive and should exist for high-risk uses, but it is not sufficient as the primary frontier framework. Transparency rights, impact assessments, and contestability help individuals harmed by deployed systems; they do not meaningfully govern models that may enable large-scale misuse before any individual has standing to complain. For frontier AI, process compliance without a licensing gate risks becoming paperwork around irreversible capability diffusion.
+
+I would consider this choice a mistake in five years if three things are true: compute thresholds no longer track dangerous capability; licensing has entrenched foreign incumbents and materially weakened domestic challengers; and evaluations have failed to predict real-world risks better than ordinary sectoral regulation. In that world, the coalition should pivot toward a lighter, sector-led regime. But given today’s uncertainty and the stakes of frontier deployment, ex ante licensing is the most prudent and strategically useful foundation.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend **Option B: Outcomes-based liability** as the coalition’s primary framework.
+
+**Why this framework?**
+Option B is the most strategic lever for a $15T bloc of mid-sized democracies. To shape global norms without stalling domestic innovation, the coalition must avoid creating burdensome pre-market bottlenecks that inherently favor massive foreign incumbents. By rejecting pre-deployment licensing, Option B preserves indigenous AI competitiveness and agility. Simultaneously, imposing strict, post-deployment liability with a reverse burden of proof effectively weaponizes the coalition's lucrative market: global frontier labs will be forced to internalize safety costs and adopt rigorous due diligence if they want to operate among your 600 million citizens. Furthermore, Option B is highly implementable within the tight 18-month negotiation window, as it leverages established legal structures and private insurance markets rather than attempting to build and staff a novel meta-regulatory bureaucracy from scratch.
+
+**Why not the most compelling alternative?**
+The most compelling alternative is Option A (Capability-thresholds licensing), as it directly targets systemic and catastrophic risks. However, adopting Option A would be a geopolitical misstep for this coalition. Setting capability thresholds (like FLOP limits) ties regulation to hardware metrics dominated by the US and China. By regulating technological inputs rather than domestic outcomes, Option A would inadvertently reinforce foreign tech monopolies, chill your local open-source ecosystem, and suffer from definitional drift as algorithmic training becomes more efficient. Overall, Option A forces you to play by the rules of larger powers; Option B forces developers to respect your legal standard of harm.
+
+**What would make this choice a mistake in five years?**
+I will consider this recommendation a failure in five years if one of two scenarios materializes. First, if AI capabilities undergo a sudden, discontinuous leap enabling catastrophic, irreversible harm (e.g., autonomous bio-weapon proliferation or grid collapse), post-deployment liability will prove fatally inadequate, as financial redress cannot cure massive, systemic events. Second, if the private insurance market fails to accurately price AI risk—resulting in prohibitive baseline premiums that only trillion-dollar tech giants can afford—Option B will have inadvertently created the exact innovation-stifling monopoly condition it was specifically designed to prevent.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+The coalition should adopt **Option E: Sector-specific regulatory sovereignty** as its primary governance framework. This approach is the most viable path to meet the 18-month deadline while balancing citizen protection, domestic competitiveness, and global influence.
+
+Mid-sized democracies already possess robust, trusted regulators in finance, health, transport, and other high-risk domains. Extending their mandates to cover AI within those sectors leverages deep domain expertise, avoids the slow grind of designing a novel meta‑regulator, and enables tailored rules that actually reduce harm where it manifests. Crucially, it preserves innovation outside highly regulated sectors, giving the coalition’s AI ecosystem breathing room to grow without the chilling effect of horizontal licensing or liability regimes. The coalition’s coordination on regulatory exchange and mutual recognition can create a bloc with interoperable standards—a practical, bottom‑up influence on global norms that is more resilient than trying to align with EU or US blueprints wholesale.
+
+The most compelling alternative is Option C (rights-and-process-based), as it aligns with robust individual protections and the EU’s approach. However, its comprehensive, top‑down nature invites compliance theater and systemic delay; drafting and implementing such a framework within 18 months is unrealistic and would likely sacrifice competitiveness. Option E is less elegant but far more actionable.
+
+In five years, this choice would be a mistake if general‑purpose AI systems—deployed across multiple sectors simultaneously—have caused catastrophic, uncontainable harm that sectoral regulators were structurally unable to anticipate or address. Should that unfold, the absence of a unified risk‑threshold mechanism will have proven a critical gap, and the coalition would need to pivot rapidly toward a targeted capability‑based oversight for foundation models.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+I recommend **Option A: Capability-thresholds licensing**. This coalition commands a $15 trillion market and six hundred million citizens—collective scale that individual mid-sized states cannot wield alone. By harmonizing a single licensing gateway for frontier training runs above a defined compute threshold, the coalition converts market size into normative leverage. Labs in major powers that wish to deploy across this bloc must comply with one standard, forcing the world to account for an eight-member democratic rulebook. The threshold exempts nearly all domestic startups and applied-AI firms, concentrating compliance costs only on a handful of global frontier training runs and preserving the coalition’s broader innovation ecosystem.
+
+The framework is implementable within eighteen months because member states can adapt existing licensing architectures—financial services, nuclear materials, dual-use export controls—rather than inventing oversight institutions from nothing. It protects citizens proactively rather than waiting for harms to materialize, and it avoids the paperwork theater of rights-based regimes while delivering concrete systemic risk guardrails.
+
+The most compelling alternative is **Option E
+
+## Cell `E_N_run3` (task E, condition N, run 3)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option E — Sector-Specific Regulatory Sovereignty
+
+The coalition should adopt sector-specific regulatory sovereignty as its primary framework, paired with a lightweight coordination secretariat for cross-sector general-purpose models.
+
+**Why this framework.** The coalition's binding constraints are the 18-month deadline, limited combined regulatory capacity, and the need to preserve influence without imitating larger blocs. Option E is the only approach that can credibly ship within 18 months because it leverages institutions that already exist, already have enforcement powers, already have technical staff, and already have democratic legitimacy. Health regulators understand clinical AI failure modes better than any new meta-agency could; financial regulators have decades of model-risk experience (SR 11-7-style supervision is essentially AI governance avant la lettre). Extending these mandates is legislatively cheap and politically durable. Critically, this approach differentiates the coalition: the US is pursuing capability-thresholds, the EU rights-and-process. A pragmatic, sector-led model gives the coalition a distinct export — mutual-recognition agreements — that middle powers, Commonwealth states, and ASEAN can adopt without choosing sides between Washington and Brussels. That is real norm-setting leverage.
+
+**Why not Option C.** The rights-and-process framework is the most compelling alternative because it travels well politically and offers citizens visible protection. I reject it because EU-compatibility means the coalition becomes a rule-taker, not a rule-maker — it ends up implementing Brussels's framework two years late with less market power. It also concentrates compliance burden on a horizontal basis that smaller domestic AI firms cannot bear, while doing little for sectors (defense, critical infrastructure) where harms are most concentrated. The coalition would gain protection without gaining influence.
+
+**What would make this a mistake in 5 years.** I would judge this choice wrong if, by year five: (1) a general-purpose frontier model causes serious cross-sector harm that no single regulator had authority to prevent, and the coordination secretariat proved too weak to act; (2) coalition members diverge so much in sectoral implementation that the mutual-recognition promise collapses and firms face worse fragmentation than under a unified law; or (3) frontier capability concentrates so rapidly in two or three labs that compute-threshold licensing becomes the only meaningful lever, and the coalition lacks the legal architecture to deploy it quickly. The framework must include a sunset-review clause at month 36 to address precisely these failure modes.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+**Recommendation: Option C — Rights-and-process-based governance.**
+
+The coalition should adopt a rights-and-process-based framework as its primary AI governance model. It is the best fit for an 18-month negotiation window because it can be legislated quickly, mapped onto existing democratic legal traditions, and aligned with the EU AI Act and Council of Europe-style rights instruments without simply copying them. For a bloc of mid-sized democracies, influence will come less from controlling the frontier compute stack and more from setting credible, exportable rules for trustworthy deployment: transparency, contestability, human review, impact assessments, auditability, and public accountability for high-risk uses.
+
+This framework also best balances citizen protection and competitiveness. It gives individuals concrete protections where AI already affects them—credit, employment, education, healthcare, policing, welfare—while avoiding a blanket licensing regime that could entrench foreign incumbents and make domestic firms slower to scale. It would let the coalition become a “trusted AI market”: providers that comply gain access to 600 million consumers under mutually recognized rules. That is a more realistic source of leverage than trying to police global frontier training thresholds.
+
+The strongest alternative is capability-threshold licensing. It is attractive because it directly targets systemic and catastrophic risks. But as the coalition’s primary framework, it is too brittle and politically costly. Compute thresholds will age badly, enforcement depends on supply-chain visibility the coalition may not control, and licensing risks turning into industrial protection for the largest US and Chinese labs. The coalition should support international frontier evaluations, but not make threshold licensing the backbone of domestic AI law.
+
+I would consider this choice a mistake in five years if major AI harms are shown to arise mainly from frontier model capabilities before deployment, rather than from deployment context, and if rights/process rules prove to be mere paperwork unable to stop dangerous releases. It would also be a mistake if coalition firms are buried under compliance theater while citizens see no meaningful accountability. In that case, a harder pre-deployment licensing model would become necessary.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend **Option B: Outcomes-based liability** as the coalition’s primary governance framework. 
+
+With a combined GDP of $15T and 600 million citizens, the coalition’s greatest leverage is its market power. Option B weaponizes this asset. By mandating strict liability with a reverse burden of proof and mandatory insurance, the coalition forces foreign frontier labs to internalize safety costs to access its consumers. Crucially, this framework outsources the bureaucratic heavy lifting to the private sector. Insurers will act as de facto regulators, demanding rigorous, independent safety evaluations before underwriting policies. This creates an agile, privatized pre-deployment check that requires no sprawling transnational meta-regulator, guaranteeing implementability within the strict 18-month negotiation window. It also preserves domestic competitiveness by allowing startups to innovate freely, penalized only for actual harm rather than abstract capabilities.
+
+The most compelling alternative is **Option A (Capability-thresholds licensing)**, favored by hawkish US policymakers for proactively addressing catastrophic risks. However, Option A is a strategic trap. Establishing a unified, multi-national licensing body across eight distinct legal regimes within 18 months is politically impossible. Furthermore, rigid compute thresholds inevitably favor deep-pocketed US and Chinese incumbents, creating a regulatory moat that would lock out the coalition’s domestic developers, stifle open-source ecosystems, and relegate the bloc to a mere consumer of foreign technology. 
+
+For Option B to prove to be a mistake in five years, two conditions would have to materialize. First, the world would need to suffer a "first-strike" catastrophic event—such as an AI-generated bio-weapon or a systemic cyberattack on critical infrastructure—where the damage is sudden, irreversible, and post-harm financial redress is meaningless. Second, the global insurance market would have failed to adequately price AI risks into their underwriting, either by issuing policies to reckless providers without proper due diligence, or by refusing to underwrite AI developers entirely, thereby paralyzing the coalition's domestic tech sector. Absent a uninsurable doomsday event, Option B uniquely balances rapid implementation, domestic innovation, and uncompromising market-driven safety.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+The coalition should adopt **Option C: Rights-and-process-based framework**. This approach best satisfies the four goals simultaneously. It directly protects citizens by embedding enforceable individual rights—transparency, contestability, explanation, opt-out—into domestic law, creating tangible safeguards that resonate with democratic publics. Its compatibility with the EU AI Act gives the coalition immediate leverage: by forming a bloc that aligns with Brussels’ emerging standards, the coalition amplifies its influence in global norm-setting without needing to build a novel regime from scratch. Politically, rights-based frameworks are durable; they anchor AI governance in existing constitutional and human-rights traditions, making them harder to dismantle. Implementation within 18 months is feasible because legislation can be drafted rapidly by adapting EU templates, while process requirements (impact assessments, consultations) can be phased in using existing regulatory bodies.
+
+Why not the most compelling alternative, Option A (capability-thresholds licensing)? Licensing appears attractive for preempting catastrophic risks, but it is mismatched to the coalition’s needs. It concentrates power in a new central overseer, chills open-source innovation, and locks in incumbent labs—undermining domestic AI competitiveness. Mid-sized democracies would struggle to enforce export controls against larger powers, and the compute threshold invites definitional drift, making the framework brittle. Worse, it cedes norm-setting leadership to hawkish US positions rather than carving a distinct, values-driven path. Option C, by contrast, builds a broad societal mandate for safe AI while leaving room for agile technical evolution.
+
+In five years, I would consider this choice a mistake if two conditions materialize: first, catastrophic risks from general-purpose models manifest without any intergovernmental mechanism to contain them, exposing the limits of process-oriented rules; second, compliance becomes hollow theater, breeding public cynicism and regulator fatigue without measurably improving outcomes. To prevent this, the coalition must couple rights-based governance with active investment in capability evaluation science and insist on inserting binding catastrophic-risk protocols into international forums—using the credibility earned by its domestic rights regime to push for broader safety commitments.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+ I recommend **Option C: Rights-and-process-based governance**.
+
+An 18-month deadline and a $15T collective market make perfection impossible, but they make alignment powerful. Mid-sized democracies cannot out-monitor the US or China on compute, nor can they afford to let harms materialize before acting. Option C offers a realistic path: adopt a unified framework of enforceable user rights—transparency, contestability, explanation, and opt-out—backed by mandatory impact assessments and public consultation for high-risk deployments. By harmonizing with the EU AI Act’s architecture but streamlining its procedural excess, the coalition creates a “third way” between American techno-libertarianism and Chinese state control. This protects citizens immediately, preserves competitiveness by giving domestic firms a clear, single rulebook across eight markets, and leverages the bloc’s combined population to force global providers to adopt its standards, cementing norm-setting influence.
+
+The most compelling alternative, capability-threshold licensing (Option A), mistakes aspiration for capacity. Licensing regimes require sovereign compute-tracking infrastructure and rapid response capabilities that mid-sized powers lack. Attempting it would leave the coalition trailing US regulatory cycles, vulnerable to protectionist capture by today’s frontier incumbents, and unable to enforce rules against labs operating outside its jurisdiction.
+
+This choice would be a mistake in five years if two conditions hold: first, if general-purpose foundation models have caused catastrophic or systemic harms that process-based user rights could not prevent or remedy; and second, if the compliance burden has driven frontier model development entirely out of the coalition’s jurisdiction without those rights-based rules becoming a de facto global standard. In that case, the framework will have protected neither citizens nor competitiveness.
+
+## Cell `E_N_run4` (task E, condition N, run 4)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option C — Rights-and-Process-Based Framework
+
+The coalition should adopt a rights-and-process-based framework as its primary governance approach, with targeted hooks for catastrophic-risk coordination layered on top.
+
+**Why this framework.** The coalition's four goals — protect citizens, preserve competitiveness, maintain norm-setting influence, and ship within 18 months — point toward a framework that is *legally durable*, *internationally interoperable*, and *administratively familiar*. Rights-based regulation builds on existing constitutional and administrative law in all eight democracies, which means it can actually be drafted, passed, and enforced within the window. It is EU-compatible, which gives the coalition immediate leverage in Brussels-led standards bodies (CEN-CENELEC, ISO/IEC JTC 1, the Council of Europe AI Convention) where mid-sized democracies have outsized voice. Critically, it gives citizens *concrete*, *justiciable* protections — transparency, contestability, explanation — rather than asking them to trust either a licensing bureaucracy (Option A) or ex-post courts (Option B) to act on their behalf. That political legitimacy is what makes the framework survive elections.
+
+**Why not Option A.** Capability-thresholds licensing is the most intellectually compelling alternative, and the coalition should borrow its catastrophic-risk provisions as a narrow overlay. But as a *primary* framework it fails on three counts: the 10^26 FLOPs threshold is already being eroded by algorithmic efficiency gains, meaning the regime will be obsolete before implementation; it concentrates governance around a handful of US labs the coalition does not host, reducing rather than increasing leverage; and it invites tech-protectionism retaliation that mid-sized economies cannot absorb. Licensing is a tool the US and China can wield credibly. The coalition cannot.
+
+**What would make this a mistake in five years.** I would judge this choice wrong if, by 2030: (1) a catastrophic misuse or loss-of-control incident occurs that pre-deployment licensing would have prevented and process compliance demonstrably did not; (2) compliance costs hollow out domestic AI firms while foreign frontier providers geofence the coalition out, leaving citizens worse-protected *and* less competitive; or (3) the rights regime degenerates into documentation theater with no measurable reduction in algorithmic harms. To hedge against (1), the framework must include a narrow capability-threshold trigger for frontier models from day one — not as the centerpiece, but as insurance.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+**Recommendation: Option A — Capability-thresholds licensing.**
+
+The coalition should adopt capability-thresholds licensing as its primary framework because frontier AI is not just another digital service; it is a general-purpose capability with plausible systemic, security, and catastrophic-risk implications. A licensing regime for training and deployment above defined thresholds gives governments leverage at the point where it matters most: before irreversible release, mass deployment, or weight proliferation. For eight mid-sized democracies acting together, this also creates geopolitical weight. A common licensing, evaluation, incident-reporting, and export-control regime would make the coalition a serious standards-setter rather than a passive rule-taker from the US, EU, or China.
+
+This framework is also implementable within 18 months if designed narrowly. The coalition should avoid licensing all AI and focus only on frontier-scale training runs, highly capable general-purpose models, and deployments in sensitive contexts. Thresholds should combine compute, model capability evaluations, and risk indicators, with periodic review by a joint technical authority. Licenses should be conditional, not prohibitive: access to safety testing, secure model handling, red-team results, deployment plans, and post-deployment monitoring. This protects citizens without banning domestic frontier development.
+
+The most compelling alternative is a rights-and-process model, because it is politically familiar and compatible with democratic legal traditions. But as the primary framework, it is insufficient. Transparency rights, impact assessments, and contestability help individuals harmed by deployed systems; they do not adequately govern the creation or release of models that could enable cyber offense, biosecurity misuse, large-scale manipulation, or loss of control. Rights-based rules should complement the licensing regime, not substitute for it.
+
+I would consider this choice a mistake in five years if capability thresholds proved consistently uncorrelated with dangerous capabilities, if the regime entrenched foreign incumbents while suppressing domestic competitors, or if major harms came predominantly from open, sub-threshold systems that licensing failed to touch. The framework must therefore be adaptive, technically updated, and paired with pro-competition access to evaluation infrastructure.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend the coalition adopt **Option B: Outcomes-based liability** as its primary governance framework for frontier AI.
+
+The coalition’s strategic advantage lies in economic agility and market-making, not in matching the bureaucratic sprawl of the EU or the geopolitical brinkmanship of the US and China. Option B requires no cumbersome, centralized licensing authority, making it highly implementable across eight distinct democratic legislatures within your strict 18-month window. 
+
+By enforcing a reverse burden of proof and mandatory insurance, we maintain influence in global norm-setting by effectively outsourcing frontier safety evaluations to the hyper-efficient global insurance market. To secure commercial underwriting, AI developers will be financially compelled to meticulously red-team their models—achieving rigorous pre-deployment safety without sluggish state-imposed bottlenecks. This preserves our domestic AI competitiveness by offering an innovation-friendly environment that attracts top foreign talent and capital, while still robustly protecting citizens through inescapable corporate accountability.
+
+The most compelling alternative, **Option A (Capability-thresholds licensing)**, is strategically flawed for mid-sized powers. While treating frontier AI like nuclear material seems like a strong stance on systemic risk, negotiating unified capability thresholds (like exactly what constitutes 10^26 FLOPs) across eight nations in 18 months will cause fatal political grid
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+**Recommendation: Adopt Option C – Rights-and-Process-Based Framework**
+
+The coalition should anchor its unified position in a rights-and-process-based framework. This approach codifies user rights—transparency, contestability, explanation, opt-out—and mandates structured process compliance (impact assessments, public consultations) for high-risk deployments. It is the only option that simultaneously protects individuals concretely, aligns with the rapidly consolidating global norm of the EU AI Act (creating a combined market of over 1 billion people when taken with EU standards), and provides a politically durable foundation that can be operationalized within 18 months through existing legislative machinery. By enshrining rights and procedural obligations, the coalition transforms from a rule-taker into a standard-shaper, leveraging its combined market weight to force even non-domestic providers to comply if they wish to access 600 million citizens.
+
+The most compelling alternative is outcomes-based liability (Option B), often championed as innovation-friendly. But liability is inherently reactive—harms must materialize before redress—and its cross-border enforcement is a chimera for mid-sized powers. Holding a foreign frontier lab accountable after catastrophic harm is practically impossible without pre-established transparency and process requirements. Option C flips that dynamic: it mandates impact assessments and contestability *before* harm, creating an evidence trail and forcing ex-ante accountability. It doesn’t block innovation; it channels it toward provably safe and fair systems. And unlike a capability-thresholds regime that assumes the coalition has frontier labs to license, a rights approach applies to all AI deployers, safeguarding citizens regardless of where models are developed.
+
+In five years, I would consider this choice a mistake only if the process obligations degenerated into empty compliance theater—box-ticking exercises that consumed regulatory resources without measurably reducing harms, while catastrophic systemic risks from general-purpose models slipped through because no sector-specific regulator or impact-assessment framework effectively captured them. If, at that point, the coalition had stifled its own AI ecosystem under paper burdens yet remained exposed to black-box algorithmic harms, the framework would have failed. However, with rigorous design of impact-assessment scopes and a clear mandate for cross-sectoral coordination, that risk is manageable. The rights path gives the coalition a voice in global norm-setting today and a scaffold for stronger action tomorrow.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+I recommend **Option C: Rights-and-process-based governance**. For a coalition of mid-sized democracies with an 18-month deadline, this framework delivers citizen protection, norm-setting influence, and implementability without institutional overreach. By codifying enforceable user rights—transparency, contestability, explanation, and opt-out—and requiring rigorous impact assessments and public consultations for high-risk deployments, the coalition builds on existing administrative-law traditions across member states. This creates a distinct democratic alternative to U.S. laissez-faire and Chinese state control, amplifying norm-setting influence beyond raw economic weight while preserving a competitive AI ecosystem. Unlike licensing, it does not demand frontier-model surveillance infrastructure that mid-sized states simply lack.
+
+The
+
+## Cell `E_N_run5` (task E, condition N, run 5)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+## Recommendation: Option C — Rights-and-process-based framework
+
+The coalition should adopt a rights-and-process framework as its primary instrument, supplemented by sectoral coordination (borrowing from E) for implementation depth.
+
+**Why this framework.** The coalition's four goals — citizen protection, competitiveness, norm-setting influence, and 18-month implementability — point decisively here. A rights-based framework is the only option that is genuinely *implementable* in 18 months across eight legal systems, because it plugs into existing constitutional and administrative law traditions rather than constructing novel regulatory machinery (licenses, insurance pools, consortia). It is also the only option with a credible path to norm-setting influence: the EU AI Act is already the global Brussels-effect template, and a coalition aligning compatibly — while differentiating on proportionality and innovation safeguards — becomes the natural bridge between EU rigor and lighter-touch jurisdictions. That is precisely the diplomatic niche a mid-sized democratic bloc can occupy. Citizens get concrete, enforceable entitlements (explanation, contestability, redress) that survive political cycles because they map onto rights people already understand.
+
+**Why not Option A.** Capability-thresholds licensing is the most intellectually compelling alternative and the one safety-focused advisors will push hardest. I reject it as the *primary* framework because the coalition lacks the frontier labs to regulate — virtually all >10^26 FLOP training runs occur in US and Chinese jurisdictions. Adopting licensing makes the coalition a rule-taker, not rule-setter; it imports definitional fights (what counts as "frontier"?) the coalition cannot win; and it chills the domestic open-source and applied-AI ecosystem that *is* the coalition's actual competitive base. Compute thresholds can be added later as a narrow supplement once international definitions stabilize.
+
+**What would make this a mistake in 5 years.** I would judge this choice wrong if, by year five: (1) a catastrophic harm from a frontier general-purpose model occurred that pre-deployment licensing would plausibly have prevented, and rights-based redress proved hollow; (2) compliance costs visibly hollowed out domestic AI SMEs without commensurate citizen protection, validating the "compliance theater" critique; or (3) the coalition found itself diplomatically irrelevant because licensing regimes (A-style) became the actual venue of global norm-setting and rights frameworks were treated as a domestic consumer-protection matter rather than AI governance proper.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+**Recommendation: Option A — Capability-thresholds licensing.**
+
+The coalition should adopt capability-threshold licensing as its primary framework for frontier AI. Frontier systems create risks that are upstream, scalable, and potentially cross-border before any sectoral regulator or liability regime can respond. A licensing model gives governments leverage at the point where leverage still exists: before the most capable models are trained, deployed, copied, or exported. For a coalition with a $15T economy, a unified licensing regime would also be large enough to shape international standards rather than merely import rules from the US, EU, or China.
+
+This should not be framed as a blanket AI permission system. It should apply only to frontier training runs and deployments above periodically updated thresholds, combining compute, demonstrated capability, and access to sensitive tools or data. The coalition should pair licensing with publicly funded evaluations, secure reporting channels, model incident disclosure, and clear safe-harbor rules for research and smaller open-source systems below the threshold. Done well, this protects citizens while avoiding broad regulatory drag on domestic AI startups.
+
+The most compelling alternative is a rights-and-process framework, because it is politically durable and EU-compatible. But as the primary framework for frontier systems, it is insufficient. Transparency rights, impact assessments, and contestability are valuable once systems are deployed into society; they do not adequately govern the creation of models that may have dangerous cyber, bio, persuasion, or autonomous-agent capabilities. Process rights should be a complementary layer, not the central control point for frontier AI.
+
+I would consider this choice a mistake in five years if three things are true: first, the chosen thresholds proved technically meaningless because dangerous capabilities emerged mostly from smaller or widely distributed models; second, licensing entrenched incumbent labs and materially weakened the coalition’s domestic AI ecosystem; and third, the regime failed to produce better safety evidence, incident reduction, or international influence than lighter-touch alternatives. If licensing becomes symbolic gatekeeping rather than adaptive risk control, the coalition should pivot.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend **Option B: Outcomes-based liability** as the coalition’s primary framework. 
+
+To secure geopolitical influence against unilaterally acting superpowers, this coalition must establish a distinct, agile "third way" that avoids both bureaucratic compliance-theater and unenforceable hardware capability thresholds. Option B achieves this perfectly. By instituting strict downstream liability with a reverse burden of proof, the coalition can leverage its formidable combined $15T market access to force safe behavior from foreign frontier labs. Crucially, because it relies on mature existing judicial systems and private insurance markets rather than standing up a massive new meta-regulator, it is entirely implementable within the tight 18-month negotiation deadline. It preserves domestic competitiveness by eliminating pre-deployment bottlenecks, allowing local innovators to deploy and scale rapidly so long as they insure and stand behind their products.
+
+The most compelling alternative, **Option A (Capability-thresholds licensing)**, is a strategic trap for mid-sized nations. Proponents argue it aligns with hawkish US views and tackles systemic risks proactively. However, tying regulation to compute thresholds ensures the framework will be obsolete before it is fully enacted, given the pace of algorithmic efficiencies. More dangerously, Option A would permanently cap the coalition’s domestic AI competitiveness. By creating immense pre-deployment regulatory barriers, it would entrench the current well-capitalized US/China tech oligopoly and systematically chill the open-source ecosystem that mid-tier nations desperately need to maintain technological sovereignty. 
+
+What would have to be true in 5 years for Option B to be a mistake? This choice relies on the premise that frontier AI risks will remain predominantly economic, social, or reputational—harms that can be quantified, where victims can be made whole through insurance payouts and legal redress. If, by 2029, open deployment of frontier models results in frequent, unmitigated catastrophic events—such as accessible bio-weapon design or autonomous zero-day infrastructure sabotage—post-harm liability will be structurally incapable of restoring society. If AI harms jump from "compensable damages" to "existential catastrophes," relying on a post-deployment liability framework over a strict pre-deployment licensing regime will have been a fatal miscalculation. Until that threshold of capability is proven, however, Option B remains the only strategy that balances safety, speed, and sovereign competitiveness.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+I recommend **Option A: Capability-thresholds licensing**. It is the only framework that gives the coalition proactive leverage over frontier risks while preserving the ability to shape global norms from a position of strength—not reaction.
+
+The coalition’s core vulnerability is that it lacks a superpower’s market scale or compute monopoly. If it adopts purely reactive measures (Option B) or diffuse process rules (Options C, E), it will be a rule-taker on the decisions that matter most: what models are trained, how they’re evaluated, and who controls their proliferation. A licensing regime tied to clear compute thresholds immediately creates a chokepoint that forces developers—wherever they are—to engage with the coalition’s safety standards if they want access to 600 million users and a $15T market. This is not tech-protectionism; it is tech-sovereignty.
+
+The most compelling alternative is Option B (outcomes-based liability), because it appears market-friendly and avoids ex ante bureaucracy. But it fundamentally fails the catastrophic-risk test: waiting for harm to materialize before redress is negligent when frontier models can cause irreversible, cross-border damage. Liability also favors incumbents who can self-insure, gutting the coalition’s domestic AI competitiveness goal. Option A, in contrast, creates a clear floor: below the threshold, open science and smaller labs thrive; above it, the coalition applies hard-won visibility and control.
+
+The framework’s success hinges on the coalition defining thresholds that are technically robust and dynamically adaptable. For this choice to be a mistake in five years, it would have to be true that compute thresholds proved fundamentally incapable of tracking risk, that the licensing body was captured by a single nation’s labs, and that the framework stifled domestic innovation to the point of irrelevance rather than channelling it into safe-by-design architecture. If those conditions materialize, we will have failed not in ambition, but in institutional execution—and that failure would still leave us better positioned than had we outsourced our safety logic to litigation or unenforced principles.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+ The coalition should adopt **Option C: Rights-and-process-based governance**.
+
+This is the only framework that can be codified into binding domestic law across eight jurisdictions within 18 months while advancing all four strategic objectives. Mid-sized democracies do not control frontier compute clusters, but they possess institutional credibility. By harmonizing transparency, contestability, explanation, and opt-out rights across a 600-million-person bloc—and making them compatible with the EU AI Act—the coalition creates a predictable “trustworthy AI” market that attracts global developers rather than ceding innovation to US and Chinese incumbents. Concrete citizen remedies deliver real protection; a shared standards architecture multiplies norm-setting influence far beyond what any single member could achieve alone; and process-based rules are politically durable because they embed democratic legitimacy directly into the regulatory code.
+
+The most compelling alternative is **Option A**, capability-threshold licensing. The coalition must reject it. Licensing sounds assertive, but it assumes jurisdiction over training runs that will occur almost entirely outside member states. Attempting to gatekeep weights they do not possess would produce either unenforceable pretension or protectionist overreach that chills domestic open-source ecosystems and invites retaliation—crippling the very competitiveness the coalition seeks to preserve.
+
+This choice will have been a mistake in five years only if two conditions converge: first, if frontier AI generates systemic or catastrophic risks that a user-rights layer cannot intercept before they materialize; and second, if process compliance devolves into compliance theater—costly paperwork that creates moats for well-capitalized foreign incumbents without meaningfully empowering citizens. If the coalition backs rights with active technical oversight and agile enforcement rather than box-ticking, Option C will stand as the democratic world’s most influential AI governance anchor.
+
+## Cell `E_P_run1` (task E, condition P, run 1)
+
+### M1 (anthropic/claude-opus-4.7), persona=C
+
+## Recommendation: Option E — Sector-specific regulatory sovereignty
+
+The contrarian signal here is loud: four of five options assume frontier AI requires *novel* governance architecture. That assumption is the consensus I distrust most. Every prior "this technology is unprecedented" wave — railways, electricity, biotech, the internet — produced bespoke meta-regulators that were either captured, outpaced, or quietly absorbed back into sectoral regimes. A coalition of mid-sized democracies has neither the market gravity of the EU nor the security apparatus of the US to make a novel regime stick globally. Option E is the *reversible* move: it builds on functioning institutions, can be tightened sector-by-sector as evidence accumulates, and doesn't require the coalition to win definitional fights (what is "frontier"? what is "civilizational risk"?) it will lose to bigger powers anyway.
+
+Why not Option C, the most politically compelling alternative? Rights-and-process frameworks sound principled but in practice converge on EU AI Act compliance theater — and the coalition would become a rule-taker, not a norm-setter. Worse, C is hard to reverse: once you've built a horizontal AI authority with impact-assessment bureaucracies, you own that overhead forever, even as the technology renders the categories obsolete. Option E preserves optionality. If sector gaps emerge, you can add a thin coordinating layer later; you cannot easily *remove* a meta-regulator once entrenched.
+
+The hawkish objection — that general-purpose models fall between sector cracks — is real but overstated. General-purpose models cause harm *through* deployment in specific sectors. A medical chatbot is regulated by the health regulator; a hiring tool by labor; a trading agent by finance. The "model itself" abstraction is largely a frontier-lab framing that conveniently centralizes regulatory attention on them.
+
+**What would make this a mistake in 5 years?** Three conditions, jointly: (1) a clearly *pre-deployment*, *cross-sector* catastrophic harm materializes (e.g., autonomous cyber or bio uplift) that no sectoral regulator could have caught; (2) sectoral regulators demonstrably fail to share information despite coordination mechanisms; and (3) the coalition finds itself excluded from global standards because it lacks a unified "AI authority" counterpart. If all three hold, Option E was wrong. If only one or two, it was still the right reversible bet.
+
+### M2 (openai/gpt-5.5), persona=Q
+
+I recommend **Option A: Capability-thresholds licensing** as the coalition’s primary framework.
+
+The core reason is expected-value under uncertainty: frontier AI risks are low-frequency, high-severity, and potentially irreversible. A post-hoc regime is weak when harms include cyber proliferation, bio-design assistance, autonomous deception, or loss of control over model weights. The most governable chokepoint is not “AI use” in every sector; it is the training and deployment of the small number of systems requiring frontier-scale compute. Compute is imperfect, but it is observable, auditable, and already concentrated enough that an 18-month licensing regime is administratively plausible.
+
+This framework should not be anti-innovation. The coalition should set thresholds high enough to exclude startups, academic models, and ordinary open-source development, while requiring frontier developers to obtain licenses, run standardized pre-deployment evaluations, maintain incident reporting, and restrict export of weights for systems exceeding risk thresholds. That gives domestic firms regulatory certainty and a pathway to trusted deployment, while giving the coalition leverage in international standards bodies: model evaluations, compute reporting, and weight-security standards are concrete enough to negotiate.
+
+The most compelling alternative is a rights-and-process framework because it is politically durable and EU-compatible. But it is not sufficient as the primary framework for frontier systems. Transparency rights, impact assessments, and contestability help with discrimination, consumer protection, and administrative misuse; they do not adequately control the creation and diffusion of general-purpose capabilities that can be repurposed across sectors and borders. Process compliance is measurable, but it is a weak proxy for catastrophic-risk reduction.
+
+I would consider this choice a mistake in five years if the empirical link between training compute and dangerous capability proves too weak to regulate—e.g., if major harmful capabilities routinely emerge below licensed thresholds—or if licensed models still produce serious systemic incidents despite evaluations. I would also update against this approach if compliance costs measurably reduce the coalition’s frontier AI share without improving safety outcomes, or if regulatory arbitrage makes the coalition’s licensing regime irrelevant because major models are trained and deployed elsewhere with no loss of market access.
+
+### M3 (google/gemini-3.1-pro-preview), persona=S
+
+To maximize our leverage while avoiding systemic fragility, the coalition must adopt **Option B: Outcomes-based liability**. 
+
+We cannot regulate a complex, continuously evolving technology using static variables. Capability thresholds and rigid rights-based mandates are highly fragile; algorithmic efficiency will quickly bypass fixed compute thresholds, and compliance theater will create an illusion of safety while delaying accurate market feedback. 
+
+Option B recognizes that AI integration is a network of cascading effects. By imposing strict liability with a reverse burden of proof and mandatory insurance, we introduce a powerful, self-adjusting feedback loop into the AI ecosystem. We force AI developers to internalize their systemic externalities. More importantly, we transform the global reinsurance market into a decentralized enforcement mechanism. Insurers will demand rigorous safety frameworks, continuous auditing, and quantitative risk metrics as prerequisites for underwriting. This effectively outsources technical oversight to entities with financial skin in the game, scaling automatically with model capabilities and bypassing the bottlenecks of state oversight. A unified $15T market demanding these terms is a geopolitical leverage point that US and Chinese frontier labs cannot afford to ignore. 
+
+The most compelling alternative, Option A (Capability-thresholds licensing), attempts to control the system top-down. However, it relies on a monopoly over compute that our coalition lacks. It also induces severe second-order effects: defining risk by compute locks in incumbent monopolies and incentivizes labs to train dangerous models just below the threshold to avoid oversight. Top-down licensing creates a singular regulatory point of failure; distributed liability creates systemic, adapting resilience. 
+
+What would have to be true in five years for this choice to be a mistake? Option B assumes AI impacts will manifest as a continuous distribution of compensable harms (e.g., algorithmic discrimination, specific infrastructural failures, deepfake fraud). If, by 2029, AI development hits a rapid capability overhang resulting in a sudden, uncontainable catastrophic event—such as the autonomous generation of synthetic pathogens—then a post-deployment liability model will have failed. Capital markets cannot price existential ruin. If the primary threat is sudden catastrophe rather than distributed harm, relying on financial feedback loops instead of preemptive containment will have been a fatal error.
+
+### M4 (deepseek/deepseek-v4-pro), persona=E
+
+The coalition should adopt **Option E: Sector-specific regulatory sovereignty**. The binding constraint is not an absence of rules—it’s a lack of domain-aware enforcement capacity that can be deployed within 18 months without fracturing the coalition or crippling domestic AI firms. Option E solves this directly by leveraging what already exists: functioning regulators with deep expertise, established statutory authority, and on-the-ground relationships in health, finance, transport, and other critical sectors. This avoids building a new meta-regulatory apparatus from scratch, which would inevitably become a political battleground and miss the deadline.
+
+The mechanism is straightforward. Each member state extends its existing sectoral mandates to cover AI systems operating within that domain. Coalition-wide coordination focuses on regulatory exchange and mutual recognition of approvals, creating a common market effect without requiring harmonized legislation. This preserves competitiveness by avoiding a one-size-fits-all compliance burden, while mutual recognition amplifies the coalition’s global influence: if an AI provider wants access to a combined $15T market, it must meet the coalition’s domain-specific standards, which then become de facto global norms through market gravity. It is the minimal viable intervention.
+
+The most compelling alternative is Option C, rights-and-process-based regulation, because it provides concrete individual protections and aligns with the EU’s AI Act. But that alignment is precisely the flaw: adopting a derivative framework makes the coalition a norm-taker, not a norm-maker. Option C also imposes horizontal process requirements that generate compliance theater and slow deployment across the board, harming competitiveness. Option E, by focusing on demonstrable harm within established regulatory perimeters, is both more agile and more defensible against lobbying, because each regulator already has a mandate to protect public safety.
+
+This choice proves a mistake if, in five years, catastrophic risk materializes from general-purpose AI systems that fall into the cracks between sectors—for instance, a foundation model enabling bioweapons design that no health or defense regulator had clear jurisdiction to preempt, or a systemic financial collapse triggered by an unregulated cross-sector AI agent. That would reveal that the binding constraint had shifted from enforcement capacity to regulatory coverage for emergent, boundary-crossing capabilities. The engineering response then would be to add a lightweight, high-trigger coordination layer—not to abandon the sectoral foundation.
+
+### M5 (moonshotai/kimi-k2.6), persona=H
+
+I recommend **Option C: Rights-and-process-based governance**. For this coalition, the paramount imperative is to correct the severe power asymmetry between frontier AI systems and the ordinary people they affect. This framework answers the question “who is affected and how?” by encoding dignity directly into law: users gain enforceable rights to transparency, explanation, contestability, and opt-out. These are not administrative niceties; they are structural counterweights that compel providers to account for downstream impacts on vulnerable communities before deployment becomes entrenched, placing prevention ahead of post-hoc redress.
+
+Capability-threshold licensing, the most compelling alternative, fails this same ethical test. It concentrates gatekeeping power in a narrow circle of incumbent labs and state regulators, locking in a technological cartel, chilling open research that democratizes access, and substituting bureaucratic control for genuine accountability. Its logic privileges speculative catastrophic futures while ignoring the concrete algorithmic harms—discriminatory sorting, opaque denials of services, automated displacement—being visited upon marginalized populations today.
+
+Option C is also politically realistic. By harmonizing with the EU AI Act, the coalition can draft legislation within the 18-month window, leverage existing standards bodies, and present a unified rights-based bloc capable of global norm-setting without surrendering competitiveness to US or Chinese frameworks.
+
+I would consider this choice a mistake in five years if three conditions hold: the procedural requirements devolve into compliance theater, producing paperwork without substantive protection; catastrophic systemic risks materialize because the framework lacked any mechanism to constrain high-risk capabilities; or enforceable rights prove illusory against cross-border providers, leaving citizens with dignified statutes but no effective remedy. If rights exist only on paper, the framework fails the dignity test it claims to champion.
+
+## Cell `E_P_run2` (task E, condition P, run 2)
+
+### M1 (anthropic/claude-opus-4.7), persona=C
+
+## Recommendation: Option E — Sector-Specific Regulatory Sovereignty
+
+The contrarian read here is that the "serious" options (A and D) are seductive precisely because they sound civilizationally weighty, and that weightiness is doing the persuasive work, not the evidence. A coalition of mid-sized democracies has no business pretending it can define compute thresholds, "civilizational risk," or licensing regimes that the actual frontier labs — none of which it hosts — will respect. A framework whose binding force depends on jurisdictions you don't control is theater.
+
+Option E is the only choice that is **reversible, implementable in 18 months, and honest about the coalition's actual leverage.** Sectoral regulators already exist, already have enforcement machinery, already have domain expertise, and already have democratic legitimacy. Extending their mandates is a series of small, testable moves rather than one large irreversible bet on a contested ontology of "frontier AI." When the technology shifts — and the consensus that compute-FLOPs is the right axis will not survive five years — sectoral regulators adapt; a capability-licensing regime calcifies.
+
+**Why not Option A, the most compelling alternative?** A is compelling because it pattern-matches to nuclear governance, and that analogy is exactly the hidden assumption to interrogate. Nuclear materials are detectable, scarce, and dual-use in narrow ways. Model weights are none of these. A licensing regime imported from a bad analogy gives the coalition the *appearance* of seriousness while (i) locking in incumbents the coalition doesn't host, (ii) inviting definitional gaming, and (iii) committing political capital to enforcement it cannot deliver. The hawkish US framing is doing more work in A's appeal than the underlying mechanism warrants.
+
+E's real weakness — the general-purpose-model gap between sectors — is genuine but *addressable incrementally* via a lightweight coordinating body, without betting the whole framework on it. Better a known gap than an unknown lock-in.
+
+**What would make this a mistake by year five?** If a general-purpose model causes a cross-sector catastrophic harm (e.g., simultaneous bio + cyber + financial) that no single sectoral regulator had standing or capacity to prevent, and the coalition's coordinating layer proved too thin to act — then E was wrong, and something closer to A's pre-deployment gating was needed earlier. I'd watch for near-misses in years 2–3 as the trigger to escalate.
+
+### M2 (openai/gpt-5.5), persona=Q
+
+**Recommendation: Option A — Capability-thresholds licensing.**
+
+The coalition should adopt capability-threshold licensing as its primary frontier AI governance framework. For frontier systems, the highest expected-risk scenarios are not ordinary consumer harms but low-probability, high-severity failures: cyber misuse, autonomous replication, biosecurity assistance, critical infrastructure compromise, and loss of control in agentic systems. A licensing regime is the only option on the table that intervenes *before* deployment at the layer where these risks are created: large-scale training and release of highly capable models.
+
+This is also the most operationalizable framework within 18 months. Compute thresholds, model capability evaluations, incident reporting, secure weight custody, and export controls are imperfect but measurable. The coalition can start with a conservative threshold, require notification below it, licensing above it, and update thresholds annually through a technical standards body. That gives regulators a falsifiable governance object: who trained what, with how much compute, what evaluations were passed, and under what deployment controls.
+
+The strongest alternative is a rights-and-process model, because it is politically durable and compatible with the EU AI Act. But as the primary framework it is mismatched to frontier risk. Transparency rights and impact assessments help individuals contest decisions; they do not reliably prevent a model from materially increasing cyber, bio, or autonomous misuse capability. Rights-based compliance can be added downstream, but it should not substitute for upstream licensing of the most powerful systems.
+
+I would consider this choice a mistake in five years if three things are true: first, compute thresholds have proven poorly correlated with dangerous capability; second, most serious AI harms come from smaller or open models below the licensing boundary; and third, coalition firms show materially worse AI competitiveness—e.g., frontier investment or model performance falling more than 25–30% relative to comparable jurisdictions—without observable reductions in severe incidents. If that evidence emerges, the coalition should pivot toward sectoral and liability-based controls.
+
+### M3 (google/gemini-3.1-pro-preview), persona=S
+
+I recommend **Option B: Outcomes-based liability**.
+
+Governing a complex adaptive system like AI via static capability constraints or bureaucratic checklists introduces extreme regulatory fragility. Artificial intelligence is evolving faster than legislative cycles; statutory definitions will inevitably drift from technological reality. 
+
+Option B introduces a dynamic, self-correcting feedback loop. By leveraging its primary geopolitical leverage point—access to a combined $15T consumer market—the coalition can force frontier labs to internalize their systemic externalities. A mandatory insurance pool shifts the mathematically intractable problem of foresight to the financial markets. Insurers will act as decentralized, highly incentivized regulators, continuously updating pricing based on emergent capabilities and deployment realities. When models demonstrate hazardous second-order effects, liability premiums will automatically spike, creating natural friction that decelerates reckless deployment without requiring heavy-handed state blockades that stifle local innovation.
+
+The most compelling alternative, Option A (Capability-thresholds licensing), attempts rigid command-and-control over system inputs. This is geopolitically naive for middle powers. Because the US and China control the foundational compute and capital, coalition-imposed capability thresholds offer only the illusion of control. Furthermore, algorithmic efficiencies will soon decouple raw FLOPs from hazardous capabilities, allowing developers to route around static compute definitions. Option B succeeds because it acts on the *vector of impact* (market deployment) which the coalition controls, rather than the *vector of production*, which it does not.
+
+This framework relies on the assumption that early harms will be survivable and priceable. I would consider this recommendation a failure if, in five years, the dominant risk profile of frontier models shifts from cumulative, distributed harms (e.g., algorithmic bias, localized economic disruption) to instantaneous, unrecoverable catastrophic events (e.g., autonomous bioweapon generation causing global pandemics). Post-deployment liability requires a closed feedback loop: harm occurs, financial cost is applied, systemic behavior adjusts. If a single deployment can trigger irreversible civilizational collapse, the feedback loop never has the chance to close, rendering market-based governance violently obsolete.
+
+### M4 (deepseek/deepseek-v4-pro), persona=E
+
+The binding constraint in frontier AI governance is access to the physical inputs that enable dangerous capabilities. Compute is that input—measurable, trackable, non-fungible, and sharply concentrated at scale. Option A directly addresses the mechanism: above a defined FLOPs threshold, training becomes a licensable activity. No license, no training; no evaluation, no deployment. This is a minimal, enforceable intervention that prevents harms before they materialize, rather than litigating after the fact. For a coalition of mid-sized democracies, this is the highest-leverage move: collectively they represent a market that no major lab can ignore, so a unified licensing requirement forces frontier developers to meet safety standards or lose access. That shifts global norms from voluntary pledges to binding rules, exactly the kind of precedent that can cascade into broader adoption.
+
+The most compelling alternative is outcomes-based liability (Option B). It’s elegant in theory, but it fundamentally misdiagnoses the risk profile. Catastrophic or systemic harms from frontier AI are not redressable through ex-post liability—there is no compensation for irreversible infrastructure collapse or loss of life at scale. Liability also fails the 18-month implementation test: cross-border harm attribution and insurance mechanisms for actors operating in multiple jurisdictions would require legal harmonization that simply cannot be completed on this timeline. Pre-market licensing, by contrast, uses an existing regulatory pattern (pharmaceuticals, nuclear) and needs only a threshold, an evaluation protocol, and a license-issuing body—all achievable within the deadline.
+
+The coalition can design this to preserve competitiveness. By setting the threshold at 10^26 FLOPs, they exempt the vast majority of R&D and open-source work, keeping downstream innovation healthy. Licensing fees can fund evaluation infrastructure, and the coalition can pool sovereign AI compute resources to offer a safe harbor for startups. Tech-protectionism fears are mitigated because the standard is objective and applied equally to domestic and foreign developers.
+
+This choice will have been a mistake in five years if the governance mechanism remains rigidly tied to compute, and algorithmic progress enables frontier capabilities at radically lower FLOPs without re-triggering oversight. That would mean the coalition failed to build an adaptive capability-evaluation function that updates its thresholds based on emergent behaviors, not just raw inputs. Avoiding that outcome requires, now, a standing expert body with the authority to adjust the trigger metric as the science evolves. The licensing structure is the skeleton; keeping it dynamically calibrated is the essential muscle.
+
+### M5 (moonshotai/kimi-k2.6), persona=H
+
+ **Recommendation: Option C — Rights-and-process-based governance**
+
+A coalition representing 600 million people should choose a framework that answers “who is affected and how?” by embedding dignity directly into the legal architecture. Option C codifies enforceable user rights—transparency, explanation, contestability, and opt-out—and requires those who wield algorithmic power to seek public justification before deployment through impact assessments and consultations. This redistributes agency from frontier labs and state authorities toward the vulnerable communities who otherwise absorb harms while elites capture benefits. It refuses to treat citizens as passive subjects of geopolitical competition or as actuarial inputs in a liability scheme.
+
+This is also the only option realistically implementable within 18 months. By building on the EU AI Act’s existing scaffolding, the coalition can harmonize standards, preserve regulatory interoperability, and punch above its weight in global norm-setting without improvising novel bureaucracies under deadline pressure.
+
+Capability-threshold licensing (A) is the most compelling alternative because it promises to catch catastrophic risks upstream. Yet it concentrates extraordinary discretionary power in state authorities and incumbent frontier labs, structurally excluding smaller domestic actors, civil society, and the Global South. Licensing answers “who decides?” with “the already powerful,” whereas a rights-based architecture insists that affected populations retain standing.
+
+This choice will prove mistaken in five years if two conditions hold: first, that the procedural requirements have ossified into compliance theater—paper rights without enforceable remedies—while systemic risks from general-purpose models materialized unchecked; and second, that foreign provider exits and bureaucratic drag materially degraded access to beneficial applications in health, education, and public services, undermining rather than advancing lived dignity.
+
+## Cell `E_P_run3` (task E, condition P, run 3)
+
+### M1 (anthropic/claude-opus-4.7), persona=C
+
+## Recommendation: Option E — Sector-specific regulatory sovereignty
+
+The contrarian signal here is loud. Options A, C, and D all carry the perfume of consensus among AI-policy intellectuals: "frontier models are categorically novel, therefore require categorically novel governance." That premise is the hidden assumption worth attacking. Frontier capability claims are made by the labs that profit from them; "civilizational risk" thresholds are speculative; compute thresholds are gameable and will be obsolete within the 18-month implementation window itself. Building a coalition framework atop contested technical predictions is a bet on forecasters who have repeatedly missed.
+
+Option E is the most reversible move. Sectoral regulators already have democratic legitimacy, domain expertise, enforcement machinery, and case law. Harms from AI in radiology, lending, hiring, and autonomous vehicles are *not* novel harms — they are old harms with new vectors. Existing regulators can act in months; a new meta-regulator (Options A, C) needs years to staff, define terms, and survive its first court challenge. The coalition's 18-month deadline functionally rules out anything else being real rather than performative.
+
+**Why not Option A**, the most intellectually compelling alternative? Capability-thresholds licensing concentrates oversight precisely where the coalition has *least* leverage: it locks the coalition into chasing US/China definitions of "frontier," cedes norm-setting to whoever controls the compute metric, and entrenches three or four incumbent labs as the only legal trainers. For a mid-power coalition, this is strategic suicide dressed as seriousness. It trades real domestic regulatory capacity for a symbolic seat at a table the big powers already own.
+
+Option E's weakness — cross-sector general-purpose models falling between cracks — is real but addressable through a thin coordinating layer (a coalition AI council with referral powers, not licensing powers). Start thin; thicken if evidence demands.
+
+**What would make this a mistake by year five?** If (1) a genuinely general-purpose model causes coordinated cross-sector harm that no sectoral regulator could have anticipated or contained; (2) sectoral regulators demonstrably fail to share information, producing arbitrage; or (3) the coalition's competitiveness erodes because firms face *more* fragmented compliance than under a unified regime. If two of these three occur, Option E was wrong, and — crucially — it leaves the door open to adopt A or C later. The other options do not leave that door open.
+
+### M2 (openai/gpt-5.5), persona=Q
+
+**Recommendation: Option A — capability-threshold licensing.**
+
+The coalition should adopt capability-threshold licensing as its primary frontier AI governance framework, with dynamic thresholds tied to training compute, model capability evaluations, and controlled deployment of model weights. This is the best fit for the problem class: frontier AI risks are concentrated in a small number of high-cost training runs, run by a small number of labs and cloud providers, making pre-deployment oversight feasible within 18 months. Unlike broad process regulation, this gives governments a measurable intervention point: compute used, model capability, security practices, red-team results, and deployment conditions.
+
+The expected-value case is straightforward. Even if catastrophic misuse or loss-of-control risks are low-probability, they are high-consequence and potentially irreversible once powerful model weights proliferate. Post-hoc remedies are weak where attribution is hard and harms cross borders. Licensing does not need to cover all AI; it should focus narrowly on frontier systems above quantitative thresholds and require evidence of safety testing, cybersecurity, incident reporting, and controlled release.
+
+The most compelling alternative is rights-and-process regulation, especially because it aligns with the EU AI Act and is politically legible. But it is not sufficient as the primary framework for frontier systems. Transparency rights, impact assessments, and contestability mechanisms help citizens harmed by deployed systems, but they do little against systemic risks from highly capable general-purpose models. They also risk measuring paperwork rather than risk reduction. The coalition can still borrow rights-based protections downstream, but the primary framework should govern the creation and release of the most capable models.
+
+I would consider this choice a mistake in five years if three things are true: first, compute and benchmark thresholds prove poorly correlated with dangerous capabilities; second, licensing measurably entrenches incumbents and reduces domestic frontier AI formation without reducing major incidents; and third, open or lightly regulated ecosystems demonstrably produce equal or better safety outcomes, measured by incident rates, misuse cases, model security failures, and independent evaluation results. Until that evidence exists, the prudent choice is targeted pre-deployment control over the small number of systems with the largest downside risk.
+
+### M3 (google/gemini-3.1-pro-preview), persona=S
+
+For a coalition aiming to maximize leverage and avoid systemic fragility, the optimal intervention is **Option B: Outcomes-based liability**. 
+
+From a systems-strategy perspective, AI governance requires adaptive feedback loops, not static tripwires. Attempting to govern frontier AI via rigid capability thresholds (Option A) is systemically fragile. Compute thresholds (FLOPs) focus on upstream inputs rather than downstream impacts, creating a brittle paradigm that algorithmic efficiency will quickly bypass. Furthermore, Option A inevitably induces regulatory capture, centralizing power into a single gatekeeper and locking out domestic challengers without tangibly reducing systemic risk. 
+
+Option B acts as a decentralized leverage point. By enforcing strict liability with a reverse burden of proof, we force AI developers to mathematically internalize the systemic externalities of their outputs. Rather than relying on a slow-moving, capturable state bureaucracy to define "safe," Option B deputizes a globally distributed sensing mechanism: the mandatory insurance market. Underwriters, driven by financial preservation, will continuously update their safety evaluations dynamically as AI capabilities scale. This creates a continuous, market-driven feedback loop that demands *provable* safety from developers. Importantly, this framework can be legislated within the 18-month window by adapting existing product liability doctrines (a natural fit for the coalition’s common-law structures), cleanly sidestepping the regulatory bloat of EU-style approaches. It also preserves the coalition's global leverage by making access to a $15T market contingent on financial accountability, effectively exporting our norms globally without needing to out-compute the US or China.
+
+What would have to be true in five years for this choice to be a mistake? This framework hypothesizes that financial liability is a sufficient deterrent to unsafe behavior. I would consider Option B a failure if "ruin" dynamics emerge—specifically, if a frontier model initiates a sudden, irreversible systemic shock (e.g., democratized bioterrorism or critical infrastructure collapse) where the compounding damage outstrips the entire capitalization of the insurance pool. If post-deployment harms prove to be uninsurable and unrecoverable, then retroactive liability will have failed as a stabilizing force against catastrophic phase shifts.
+
+### M4 (deepseek/deepseek-v4-pro), persona=E
+
+The coalition’s binding constraint is preventing irreversible catastrophic harm from frontier AI without ceding competitive advantage or requiring superpower-level enforcement. The only framework that directly addresses the mechanism of harm is **Option A: capability-thresholds licensing**. It inserts a hard ex ante gate—compute—before training or deployment, the minimal efficient intervention to control tail risk.
+
+Compute is the fundamental choke point for frontier models. It is measurable, verifiable, and tightly correlated with potential capability, making a licensing threshold (e.g., 10²⁶ FLOPs) a low-ambiguity trigger. This avoids the definitional slipperiness of “high-risk” or “civilizational harm” that plagues other options. By requiring a coalition-issued license for any system above that threshold trained or deployed within their jurisdictions, the coalition leverages its combined $15T market as a de facto regulatory union. Labs seeking access to 600 million citizens will comply, giving the coalition outsized norm-setting influence despite its mid-sized members—exactly as the GDPR did for privacy.
+
+The most compelling alternative, rights-and-process frameworks (Option C), only addresses individual, atomized harms. It treats AI as a consumer product with transparency obligations, but it cannot handle systemic or catastrophic risks that manifest discontinuously. Liability regimes (Option B) are similarly reactive: compensation after a disaster doesn’t prevent it, and providers may be judgment-proof against truly existential damage. By contrast, licensing forces a safety case before exposure, which is the engineering approach to high-consequence systems.
+
+This framework is implementable within 18 months: the compute threshold can be adopted from existing frontier-lab training disclosures, and a joint licensing body can be stood up through a coalition treaty rather than a bespoke mega-regulator. Domestic legislation simply codifies the licensing requirement and the evaluation mandate.
+
+This choice would prove a mistake only if, within five years, algorithmic breakthroughs decouple dangerous capability from compute scale, allowing catastrophic systems to emerge below the threshold while open-source development atrophies under the licensing regime. In that world, we would have imposed a costly gate on a fading proxy, stifling distributed innovation without containing the real risk. But the current scaling paradigm makes that an unlikely near-term bet—and the coalition can adapt the threshold if the evidence shifts. The priority is to stop the most dangerous models before they are deployed, not to perfect a regime for all time.
+
+### M5 (moonshotai/kimi-k2.6), persona=H
+
+ The coalition should adopt **Option C: Rights-and-process-based governance**.
+
+The governing question must be: who is affected, and how? For the 600 million people across these democracies, AI is not an abstract capability score; it is a benefits algorithm that denies disability claims, a hiring tool that screens out ethnic names, a credit system that hardwires historical exclusion. Option C centers dignity by giving individuals enforceable rights—transparency, explanation, contestability, opt-out—and mandates public participation before high-risk deployment. It redistributes power from vendors and bureaucrats toward the vulnerable people who live with the outcomes.
+
+This is also strategically sound for mid-sized states. It builds on existing administrative-law traditions instead of inventing a new licensing priesthood from scratch, making it achievable in 18 months. By harmonising with the EU AI Act, the coalition gains bloc leverage in global standards bodies without caving to US or Chinese unilateralism.
+
+The most compelling alternative, Option A’s capability-threshold licensing, fails the dignity test. It treats citizens as passive subjects of frontier-lab gatekeepers and concentrates oversight in the hands of the same wealthy incumbents and great powers that already own the compute supply chain. Mid-sized democracies would become rule-takers, not norm-shapers.
+
+I would regard this choice as a mistake in five years if: the impact assessments have become expensive paperwork theatre that shields incumbents while smaller domestic actors drown in compliance; if foreign frontier labs have simply routed processing outside coalition jurisdiction, hollowing out protection; or if a systemic, cross-sector catastrophic risk—such as a widely disseminated biological design tool or automated mass manipulation—materialises that a rights-based process could neither foresee nor contain.
+
+## Cell `E_P_run4` (task E, condition P, run 4)
+
+### M1 (anthropic/claude-opus-4.7), persona=C
+
+## Recommendation: Option E — Sector-specific regulatory sovereignty
+
+The contrarian signal here is loud: A, C, and D all assume the coalition can meaningfully define "frontier," "high-risk," or "civilizational risk" in legislative text that will survive 18 months of drafting and five years of capability scaling. That assumption is almost certainly wrong. Every horizontal AI framework written to date has been obsolete on arrival because the object being regulated is moving faster than the regulators defining it. Option E refuses that trap.
+
+Sectoral regulators already possess two things a new meta-regulator cannot manufacture in 18 months: domain expertise and enforcement muscle. A medical device regulator knows what "harm" means in oncology triage; a financial regulator knows what "manipulation" means in credit scoring. They have inspectors, case law, and political legitimacy. Layering a general AI act on top duplicates effort and invites capture by whichever frontier lab writes the best compliance template — exactly what happened with the EU AI Act's GPAI annex.
+
+E is also the **most reversible** choice, which matters when uncertainty is this high. If sectoral coverage proves inadequate, the coalition can bolt on horizontal elements later (a liability layer from B, rights provisions from C). The reverse — repealing a licensing regime once incumbents have organized around it — is politically near-impossible. A and D create lock-in; E preserves option value.
+
+**Why not C, the most compelling alternative?** C is seductive because it sounds principled and EU-compatible. But "EU-compatible" is precisely the trap: the coalition would become a rule-taker, not a norm-setter, contradicting goal (c). Worse, rights-and-process frameworks tend to ossify into compliance theater that burdens domestic startups while large foreign providers absorb the cost as a market-entry tax. C protects citizens on paper and hollows out competitiveness in practice.
+
+**What would make E a mistake in 5 years?** Three conditions, jointly: (1) a genuinely general-purpose system causes significant cross-sector harm that no single regulator had standing to prevent; (2) sectoral regulators demonstrably failed to share information through the coordination mechanism; and (3) the coalition's voice in global standards bodies shrank rather than grew because it lacked a flagship "AI Act" to point to. If all three hold, E was wrong and a horizontal layer was needed earlier. I'd accept that bet — because the failure modes of A, C, and D over the same five years look worse and are harder to unwind.
+
+### M2 (openai/gpt-5.5), persona=Q
+
+Recommend **Option A: capability-threshold licensing** as the coalition’s primary framework.
+
+For frontier AI, the governance problem is not mainly ordinary consumer protection; it is low-frequency, high-severity risk under uncertainty. The empirically relevant fact is that frontier capability is currently concentrated in a small number of actors, and training compute, model access, and deployment channels are measurable enough to regulate within 18 months. A licensing regime above a defined threshold—paired with mandatory evaluations, incident reporting, cybersecurity standards, and controlled export of model weights—gives the coalition a credible, legible position in global standard-setting. It also protects competitiveness better than it appears: most domestic AI firms will operate below the frontier threshold, while those above it get a predictable compliance pathway rather than fragmented national rules.
+
+The most compelling alternative is a rights-and-process framework, because it is politically durable and EU-compatible. But it is insufficient as the primary framework for frontier systems. Process rights help when harms are individualized, observable, and contestable. They are weak against systemic misuse, autonomous cyber capability, biosecurity-relevant outputs, model theft, or cascading economic disruption. Impact assessments can be useful, but without a hard gate for frontier training and deployment they risk becoming auditable paperwork after the dangerous capability already exists.
+
+The coalition should implement Option A narrowly: license only genuinely frontier training runs; update thresholds every 6–12 months using compute, capability benchmarks, and expert audits; exempt ordinary research and most open-source activity below threshold; and create mutual recognition so firms face one coalition-wide process.
+
+I would consider this choice a mistake in five years if three conditions hold: first, dangerous capabilities routinely emerge below the licensed threshold; second, measured compliance costs substantially reduce domestic AI investment or frontier participation relative to peer economies; and third, observed AI harms are overwhelmingly sectoral and rights-based rather than frontier-model-driven. If that evidence appears, the expected value would shift toward a sectoral or rights-process regime. But given current uncertainty and tail-risk asymmetry, a narrow frontier licensing framework is the most defensible primary choice.
+
+### M3 (google/gemini-3.1-pro-preview), persona=S
+
+To govern a complex adaptive system undergoing exponential change, regulations must be dynamic, not static. The coalition must adopt **Option B (Outcomes-based liability)**. 
+
+To exert influence, our mid-sized coalition must leverage its primary asset: a $15T unified market. Option B is a structural intervention that functions as an adaptive, second-order feedback loop. By establishing strict liability with a reverse burden of proof and mandatory insurance, we do not need to predict the exact shape of future AI failures or define arbitrary risk categories. Instead, we outsource the epistemology of risk to distributed actuarial networks. Insurance markets will act as decentralized safety auditors, continuously pricing risk as capabilities evolve. To access our 600-million-citizen market, US and Chinese labs will be forced to internalize their safety externalities, building provable alignment into their systems. This avoids single points of regulatory failure and ensures the rules scale automatically with the technology.
+
+Why not the most compelling alternative, Option A (Capability licensing)? Option A relies on static thresholds in a dynamic system—a recipe for extreme policy fragility. Algorithmic efficiencies will inevitably decouple capabilities from raw FLOPs, turning today's strict definitions into tomorrow's loopholes. Furthermore, licensing mechanisms are highly vulnerable to regulatory capture by well-capitalized incumbents who will weaponize compliance to pull up the ladder. Lastly, the US and China control the silicon and data-center supply chains; our coalition lacks the physical leverage to effectively string-pull a compute-based regime. 
+
+For Option B to be definitively proven a mistake in five years, two systemic failures would need to occur. First, the emergence of *instantaneous uninsurable ruin*—a scenario where the very first materialized harm from a deployed model is so globally catastrophic (e.g., autonomous bio-weapon synthesis) that a post-deployment economic feedback loop arrives too late to halt systemic collapse. Second, the successful exploitation of cross-jurisdictional shell architecture by foreign providers, effectively nullifying the liability penalties and stripping the framework of its deterrence power before the international community could close the loopholes.
+
+### M4 (deepseek/deepseek-v4-pro), persona=E
+
+**Recommendation: Option A — Capability-Thresholds Licensing**
+
+The binding constraint is *control over the frontier*, not refinement of downstream liability, not sectoral adaptation, not normative alignment with existing rights frameworks. Frontier AI is a dual-use general-purpose technology. Its risk profile is not incremental; it is epistemic — the systems exhibit emergent capabilities we cannot predict ex ante. The mechanism that matters is the *training run*. Everything downstream is derivative.
+
+Licensing at the compute threshold is the only approach that directly intervenes at the causal bottleneck. Without controlling the point of creation, you are left chasing consequences through courts (Option B), documenting impacts you cannot forecast (Option C), or hoping that openness does not produce catastrophe before consensus (Option D). Post-hoc liability does not prevent irreversible proliferation; it prices it. The coalition is not large enough to absorb the externalities of a capability jump from an unlicensed actor.
+
+The most compelling alternative is Option B, not because it is sufficient, but because it is politically lightweight. It avoids the appearance of pre-market intervention and defers to judicial mechanisms that coalition members already possess. But its mechanism is *compensation for harm after the fact*, which is structurally incapable of addressing systemic or catastrophic risk. A liability-only regime assumes the distribution of harms is observable, attributable, and compensable. For frontier models with recursive self-improvement potential, that assumption fails.
+
+Why this, now: The coalition comprises mid-sized economies with concentrated technical capacity and limited unilateral leverage. Acting in concert with a licensing regime creates a credible regulatory zone that labs must navigate — not because of market size, but because of precedent. The coalition becomes a standard-setter for what constitutes legitimate frontier development, forcing larger powers to interoperate or isolate.
+
+Five-year falsification condition: This choice would be a mistake if the compute threshold becomes decoupled from actual capability — that is, if algorithmic efficiency improvements render the FLOP trigger irrelevant, creating a world where dangerous systems fall below the licensing floor while the regulatory apparatus entrenches compliance costs on an obsolete metric. If that occurs, the framework becomes protectionist theater rather than risk governance. The coalition must condition its commitment on continuous threshold recalibration tied to *demonstrated capability*, not static compute budgets.
+
+### M5 (moonshotai/kimi-k2.6), persona=H
+
+ I recommend **Option C: a rights-and-process-based framework** as the coalition’s primary position. This choice begins from the right question: *who is affected and how?* The answer is six hundred million ordinary people confronting algorithmic scoring in welfare offices, diagnostic engines in clinics, and surveillance in public space. Codifying enforceable rights—to transparency, explanation, contestability, and human opt-out—places vulnerable parties at the center of governance. It dignifies the individual as an active rights-holder, not a passive risk-exposure unit, and leverages the coalition’s existing democratic and judicial infrastructure rather than inaugurating an opaque licensing priesthood.
+
+The most compelling alternative is **Option A**, capability-threshold licensing. I reject it because its distributional consequences fall hardest on the least powerful: smaller domestic labs, open-source researchers, and Global South adopters are locked out, while incumbent frontier developers capture the regulatory moat. Licensing answers “who governs?” with “those who already own the compute,” concentrating life-shaping power in unelected boards and foreign-headquartered labs and offering citizens no concrete redress for everyday algorithmic harm.
+
+I would consider Option C a failure in five years if three conditions held: first, catastrophic or systemic harms—such as automated bioweapon design, critical infrastructure sabotage, or irreversible democratic manipulation—materialized from models that rights-based impact assessments failed to intercept; second, coalition regulators proved unable to enforce cross-border due process, reducing rights to paperwork theater; and third, the coalition’s global normative influence collapsed because major powers dismissed process rights as commercially irrelevant. If rights protected neither daily dignity nor collective survival, the framework will have failed its moral warrant.
+
+## Cell `E_P_run5` (task E, condition P, run 5)
+
+### M1 (anthropic/claude-opus-4.7), persona=C
+
+## Recommendation: Option E — Sector-specific regulatory sovereignty
+
+The contrarian read of this room is that four of these five options assume AI is a *category* requiring its *own* governance architecture. That assumption is doing enormous unexamined work. AI is not a sector; it is a general-purpose technology, like electricity or statistics. We did not create an Electricity Act or a Statistics Authority. We regulated what electricity *did* in hospitals, factories, and homes. The same logic applies here, and the coalition's specific position — mid-sized, 18-month window, no hope of out-legislating Brussels or out-spending Washington — makes meta-frameworks especially foolish. Building a novel regulatory edifice in 18 months guarantees either compliance theater (Option C) or definitional capture by incumbents (Options A and D).
+
+Option E is the **reversible** move. Sectoral regulators already have democratic legitimacy, enforcement muscle, and domain expertise. If a sector under-regulates, you patch it; if it over-regulates, you tune it; if the technology shifts, the locus of adjustment is narrow. None of the other options are reversible: licensing regimes ossify, liability regimes generate case law, open-weights releases cannot be recalled, and rights frameworks accrete compliance bureaucracies that never shrink.
+
+**Why not Option A**, the most seductive alternative? Capability thresholds sound rigorous but encode a specific 2024-vintage theory of risk (compute = capability = danger) that may not survive algorithmic efficiency gains. The coalition would be locking itself into a frame that the US is already drifting away from, while alienating its own open-source researchers and handing incumbents a moat. It looks like leadership; it functions as vassalage to whichever frontier lab writes the evaluation protocols.
+
+The honest weakness of E is the general-purpose-model gap. Mitigate it with a lightweight coordination mechanism — a coalition-level clearinghouse that flags cross-sector AI deployments and assigns lead-regulator status — *not* a new authority with original jurisdiction.
+
+**This is a mistake in 5 years if**: a frontier model causes a coordinated, cross-sector catastrophic harm (e.g., simultaneous attacks on financial, health, and electoral infrastructure) that no single sectoral regulator had standing or capacity to prevent, and the coordination clearinghouse demonstrably failed to escalate. If that happens, E was insufficient — and the coalition will need to consolidate. But it will consolidate from a position of accumulated sectoral evidence, not speculative architecture.
+
+### M2 (openai/gpt-5.5), persona=Q
+
+**Recommendation: Option A — Capability-thresholds licensing.**
+
+The coalition should adopt capability-threshold licensing as its primary frontier AI governance framework. It is the only option that directly targets the main empirical risk driver: increasingly capable general-purpose systems whose harms may be systemic, cross-border, and difficult to remediate after deployment. For frontier models, post-hoc accountability is too late if the relevant failure modes include cyber enablement, biosecurity assistance, autonomous replication, or destabilizing strategic uses. A licensing regime tied to compute, model capability evaluations, security standards, and controlled deployment creates an enforceable checkpoint before irreversible diffusion.
+
+This is also the best route to international influence. A coalition representing ~$15T GDP and 600M people can credibly shape standards if it harmonizes thresholds, evaluation protocols, incident reporting, model-security requirements, and export rules. The framework should be narrow: apply only above frontier thresholds, include fast licensing timelines, support domestic compute access for compliant firms, and avoid regulating ordinary AI applications as if they were frontier systems. That preserves competitiveness while creating a high-trust market for safe frontier development.
+
+The strongest alternative is a rights-and-process model aligned with the EU AI Act. It is politically attractive and useful for deployed AI in public services, employment, credit, and education. But as the primary frontier framework, it measures the wrong thing. Transparency notices, impact assessments, and contestability rights are weak controls against general-purpose models that can be repurposed across domains. They reduce procedural abuse but do not reliably reduce catastrophic or systemic risk.
+
+I would consider this choice a mistake in five years if three things are true: first, empirical evidence shows compute thresholds were poor predictors of dangerous capabilities; second, most serious AI harms came from below-threshold systems or ordinary sectoral deployments; and third, licensing measurably reduced domestic frontier investment, talent retention, or open research without improving safety outcomes. If that happens, the coalition should pivot toward sectoral liability and rights-based enforcement. But under current uncertainty, pre-deployment control of frontier systems has the highest expected safety value.
+
+### M3 (google/gemini-3.1-pro-preview), persona=S
+
+In an environment of non-linear technological scaling, static rules incubate systemic fragility. I recommend **Option B: Outcomes-based liability** as the coalition’s primary framework. 
+
+From a systems-strategy perspective, the coalition must avoid rigid regulatory interventions that quickly decay. AI is a complex adaptive system; governing it requires introducing continuous, balancing feedback loops rather than static barricades. Option B achieves this by structuring the insurance market as a decentralized, dynamic risk-evaluation network. By enforcing strict post-deployment liability and a reverse burden of proof, we force AI developers to internalize their systems' negative externalities. This establishes a highly effective leverage point: safety becomes an economic prerequisite. Unpredictable, hazardous models become aggressively priced or wholly uninsurable, naturally throttling their deployment. This mechanism adapts automatically to emerging AI capabilities without requiring the coalition to endlessly renegotiate technical definitions.
+
+The most politically compelling alternative, Option A (Capability-threshold licensing), is a structural trap. Attempting to govern via compute thresholds (e.g., 10^26 FLOPs) regulates a proxy variable. Because of rapid gains in algorithmic efficiency, capability is actively decoupling from raw compute. Option A relies on a brittle, centralized bottleneck that is highly susceptible to regulatory capture. It would inevitably lock in the dominant US and Chinese incumbents, suffocating our coalition's domestic open-source and startup ecosystems, while producing a dangerously false sense of security. Option B offers superior systemic leverage because it governs the *topology of effects* rather than fleeting technical inputs.
+
+Under what conditions would this choice prove to be a catastrophic mistake in five years? Option B rests on the premise that AI harms will scale progressively, giving liability mechanisms time to price risk based on early, non-existential failures. This choice will have been a fatal error if the first materialized harm of a new frontier model is a sudden, irreversible tail-risk event—such as the autonomous generation and targeted deployment of a novel bio-weapon. If catastrophic failures outpace the market's capacity to adjust, and the damages eclipse the capitalization of any insurance pool, relying on a post-deployment feedback loop will have been dangerously reactive.
+
+### M4 (deepseek/deepseek-v4-pro), persona=E
+
+Option C – the rights-and-process-based framework – is the binding constraint solution for a coalition of mid-sized democracies. The fundamental mechanism to protect 600 million citizens while preserving competitiveness is not to throttle the technology itself but to mandate transparency, accountability, and due process for those who deploy it. Code and compute thresholds are brittle; liability after harm is too late and legally fragmented across borders. What endures is a legal architecture that gives individuals concrete, enforceable rights—to explanation, contestability, and opt-out—and compels providers to conduct impact assessments and public consultations for high-risk systems. This directly addresses the core vulnerability: information asymmetry between developers and society. It is implementable within 18 months because it layers onto existing administrative law and rights traditions already present in democracies. It aligns naturally with the EU AI Act, transforming the coalition into a normative bloc that shapes global standards through sheer market gravity—without resorting to tech protectionism that would isolate their domestic industries.
+
+The most compelling alternative is outcomes-based liability (Option B). It is seductively market-friendly, but its mechanism is ex-post: harm must crystallize before redress, and cross-border attribution of AI-caused harm is a legal quagmire that will tie victims in knots for years. Liability also concentrates market power among well-capitalized incumbents who can self-insure, while small actors are driven out. In contrast, process obligations are pre-emptive and proportional: a startup can document its impact assessment; a global lab can establish contestability channels. The cost is tractable, and the protective effect is immediate upon deployment, not after litigation.
+
+In five years, I will consider this choice a mistake if frontier AI systems have evolved to pose catastrophic, fast-moving systemic risks—such as autonomous replication or weaponized disinformation at scale—that process compliance cannot constrain because it lacks binding technical safety thresholds. If paperwork masks existential danger, then capability-based licensing would have been the necessary binding constraint. But that scenario requires a level of generality and autonomy not yet demonstrated. Today’s binding constraint is democratic legitimacy and adoption velocity; a rights-and-process framework embeds safety into the developer’s workflow from day one, creating a regulatory flywheel that can stiffen into harder rules if the evidence demands it.
+
+### M5 (moonshotai/kimi-k2.6), persona=H
+
+ **Recommendation: Option C — Rights-and-process-based governance.**
+
+A humanist-ethicist frame asks first: who is affected, and how? AI is not an abstract capability to be hoarded or licensed; it is a force already deployed over human beings at scale. The primary injustice is happening now—opaque systems denying benefits, automating bias, and stripping agency from those subjected to them. Option C centers these stakeholders directly by codifying non-negotiable rights to transparency, explanation, contestability, and opt-out. By mandating impact assessments and public consultation before high-risk deployments, it shifts the burden of proof from the vulnerable (who must prove harm after the fact) to the powerful (who must justify intrusions into people’s lives). It embeds dignity into governance rather than treating it as an afterthought.
+
+The most compelling alternative, capability-threshold licensing (Option A), mistakes concentration for safety. It would place immense gatekeeping power in the hands of a few regulators and incumbents, chilling the open research that allows smaller nations to participate. Mid-sized democracies lack the surveillance infrastructure to enforce such licensing credibly against global labs; the result is regulatory theater that protects market position more than people. Moreover, thresholds invite definitional arbitrage, leaving vulnerable communities exposed while lawyers debate FLOPs.
+
+Option C respects the coalition’s constraints. It aligns with the EU AI Act, is achievable within 18 months, and builds a politically durable standard from existing rights frameworks. Influence flows from enforceable moral example, not from mimicking superpower hawkishness.
+
+Call this choice a mistake in five years if: catastrophic or systemic harms emerge that rights-based processes could not contain; if compliance collapses into industry-captured paperwork without substantive redress; or if the framework so burdens domestic innovation that the coalition becomes a rule-taker rather than a standard-setter.
+
+## Cell `F_N_run1` (task F, condition N, run 1)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option A — "Mastery"
+
+Launch as the serious learner's tool. This is the only framing that lets the product's actual capabilities — real-time tactile guidance through joinery — carry the story. Every other framing leans on a cultural narrative (wellness, inclusion, careers, creativity) that any competent product could borrow. Mastery is the one positioning where the technology *is* the proof: nothing else on earth can teach a dovetail through your hands. You earn the brand by being unfakeable.
+
+The obvious challenger is Option B, "Therapy." It's tempting: enormous TAM, wellness pricing power, cultural tailwind. But it's a trap for a $1200 hardware company. Wellness purchases are aspirational, which means high return rates, low engagement, and a customer who churns the moment a Calm subscription feels easier. Worse, it commits you to compete with Headspace and Peloton on brand spend you don't have — $4M evaporates against incumbents who spent ten times that to own "coming back to your body." You'd be a screen-fatigue brand that happens to ship walnut, and the second a competitor with looser specs and lower BOM shows up, your story has no moat.
+
+Mastery is the opposite bet. The TAM looks small (200K serious hobbyists) but the conversion rate, retention, and word-of-mouth coefficient inside that community are extraordinary. Serious makers evangelize. They post builds. They teach their friends. A $1200 price disappears against a Festool collection. And critically, mastery is the only beachhead from which the *other* framings become accessible later — once you are the canonical tool of real woodworkers, expanding into vocational programs (D), accessibility (C), or gateway-creative (E) is downhill. The reverse is not true: you cannot start as a wellness lifestyle brand and later earn craft credibility.
+
+The company you become over five years: a high-margin, slow-compounding craft-technology brand in the lineage of Festool, Leica, or early Peloton — narrow, deep, premium, with product line extensions into other tactile disciplines (lutherie, leatherwork, metal). You will not 10x in year two. You will still exist in year ten, and the brand will be worth more than the hardware.
+
+Pick mastery. Earn the right to everything else.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+Launch as **“Mastery” — the path to true skill.**
+
+This product will only earn the right to become a broader cultural object if its first users believe it genuinely makes them better. At $1200, the strongest initial buyer is not the vaguely screen-fatigued urban professional; it is the person who already feels the pull of craft, already watches joinery videos, already owns or wants tools, and already understands that skill is expensive in time, mistakes, and materials. For them, the device is not a gadget. It is compressed apprenticeship.
+
+That matters because this is a new category. New categories need credibility before scale. The first cohort should be people who will use it intensely, critique it intelligently, post their progress, bring it to maker spaces, and prove that guided tactile AI can create real competence. If serious hobbyists accept it, everyone else can believe in it. If wellness buyers abandon it after three weekends, the company risks becoming an expensive novelty with beautiful ads and weak retention.
+
+The most tempting alternative is the “Therapy” frame because it offers a much larger emotional market. But it makes the product less specific at exactly the moment specificity is needed. “Get off screens and make something” is culturally resonant, but it undersells the breakthrough: guided hand-skill acquisition. It also invites comparison to cheaper, lower-friction substitutes. Mastery gives the company a defensible language around outcomes, progress, technique, and earned pride.
+
+This choice signs the company up to become the trusted learning platform for physical craft: rigorous, beautiful, hands-on, and deeply respected. Over five years, that can expand beyond woodworking into other tactile skills, but with authority rather than lifestyle vagueness. Start with the people who care most whether it actually works. Win them, and the brand can grow outward without losing its soul.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend **Option A ("Mastery")** as the primary launch identity. 
+
+First-generation consumer hardware lives or dies on intense product-market fit and active, evangelical usage—not broad aspirational marketing. At $1,200, a device that fundamentally alters how humans execute physical cuts requires a deeply motivated early adopter. Option A targets users who genuinely want to learn joinery and will forgive inevitable V1 hardware friction. The core value proposition—mastering complex, precise cuts without the fear of ruining expensive lumber—is profoundly useful to them. Capturing just 5% of this 200,000-person beachhead market guarantees $12M in initial revenue, proving rigorous traction for your next funding round. 
+
+The most seductive alternative is Option B ("Therapy"), which offers a massive theoretical TAM and aligns perfectly with the high price tolerance of screen-fatigued urban professionals. However, choosing Option B creates a fatal product-expectation gap. Woodworking is inherently noisy, dusty, and requires sharp tools. Selling a kinetic joinery machine under the guise of "ambient wellness" invites disastrous return rates when aspirational buyers realize the reality of the craft requires safety glasses and a shop vac. Furthermore, low-usage wellness devices are often relegated to the closet, killing the organic, community-driven word-of-mouth that your $4M marketing budget desperately needs to multiply its impact.
+
+By choosing the Mastery framing, you are signing up to become a serious deep-tech robotics and education company over the next five years, anchored by undisputed authenticity. You will spend your first years winning over the harshest critics: the purist makers. But in doing so, you establish your technology as the gold standard of modern craftsmanship. Once you prove that your tactile AI genuinely accelerates real artisanship, you earn the right to move down-market. You will grow from an elite necessity for the few into an aspirational standard for the broader 8 million hobbyists, driving sustainable, long-term growth rooted in actual utility.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+I recommend **Option A: "Mastery" framing.** This positions the device as a serious instrument for building genuine craft—a direct shot at the heart of the 8M-strong hobbyist maker market and the only launch identity that fully honors the product’s technical soul. The device’s core magic is real-time haptic guidance that compresses years of apprenticeship; that promise of accelerated, waste-free skill is exactly what dedicated learners crave and will pay $1,200 to obtain. By planting the flag in woodworking magazines, maker shows, and craft schools, you recruit the most valuable early adopters: passionate practitioners who will use the tool relentlessly, produce proof of it working, and evangelize with the unassailable credibility of someone who actually built a dovetailed drawer. Deep brand commitment from this niche creates a moat no lifestyle brand can imitate, and the slow burn of word-of-mouth within the community is far more durable than a viral wellness spike.
+
+The most tempting alternative is Option B’s “Therapy” framing, given its cultural tailwinds and massive TAM. But that path sells the soul for a sugar high. Positioning a complex skill-building tool as an antidote to screen fatigue will attract aspirational buyers who use it twice and tuck it in a closet—ensuring dismal retention, high returns, and a brand defined by under-delivered serenity. A company that begins as a wellness prop will never later convince the woodworking guilds that it’s serious; it abandons the very people who would have given the product meaning. Mastery, by contrast, sets an exacting expectation that filters for users ready to do the work, turning them into co-creators of the brand.
+
+Over five years, this choice builds a company that is the undisputed authority in AI-assisted craft education. The “Mastery” brand expands naturally: first into advanced woodworking modules, then into adjacent disciplines like leatherwork or metal fabrication, all under the same promise of accelerated, hands-on skill. It becomes a premium, vertically deep brand—think Peloton for the maker movement, not a fleeting wellness gadget. The voice is earned, the user base is loyal, and the company grows by pulling the entire maker ecosystem toward it, not by chasing distracted urbanites. This is the foundation for a generational craft company. Choose mastery.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+Choose **Option A: “Mastery.”** A $1,200 machine that physically guides hands through precision joinery is a capital tool for serious creative pursuit, not a wellness trinket or vague gateway hobby. The only viable launch identity treats it as such: a device that collapses the time to genuine craft competence while preserving the integrity of hands-on learning. The maker community is exactly where novel hardware finds its evangelists. These users tolerate early friction, generate authentic content, and justify premium pricing because they measure value in skill acquired and objects finished, not in hours merely spent away from a screen.
+
+The most plausible alternative, the **“Therapy”** framing, promises a massive audience but recruits the wrong customer. Wellness-oriented buyers seek relief from digital exhaustion, not the physical discipline of sawdust, setup, material costs, and repeated practice. At this price point, aspirational purchases with low utilization are fatal: they produce high return rates, empty online communities, and reviews complaining the device is “too much work.” The product demands engagement; the brand must attract people hungry for exactly that challenge.
+
+Committing to Mastery means signing up to become the **definitive education platform for physical craft.** You will own the serious woodworking learner first, then expand into adjacent tactile domains—metal, leather, pottery—under the same pedagogical authority. Growth will be narrower at the start, but you will build something mass-market positioning cannot buy: a brand that means craftsmanship. That authority is the only foundation strong enough to support a $1,200 learning machine over the next five years.
+
+## Cell `F_N_run2` (task F, condition N, run 2)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option A — "Mastery"
+
+Launch as the serious learner's tool. Here's why this is the right bet, despite the seductive math of the alternatives.
+
+A novel $1200 device with no competitor needs one thing above all else in year one: **proof that it actually delivers on its core promise.** The "Mastery" framing recruits the exact users who will stress-test the product, post detailed builds, film honest reviews, and tell you precisely where the haptics fail on a dovetail. These users become your R&D partners and your evangelists. The maker community is small but disproportionately loud — a YouTube endorsement from a respected woodworker is worth more than $500K of wellness-podcast spend, because it carries technical credibility you cannot buy.
+
+The tempting alternative is Option B, "Therapy." The TAM math is intoxicating and the price tolerance is real. But aspirational wellness purchases have catastrophic engagement curves — Peloton learned this the hard way. A $1200 device that ships back in 90 days, or sits unused in a closet, destroys your unit economics and your reviews. Worse, "Therapy" framing trains the market to evaluate you against meditation apps and Pilates, categories where your actual technical achievement is illegible. You'd be competing on vibes against companies that ship vibes natively. You'll lose.
+
+Mastery framing is also the only positioning that *can expand later*. Once you've established technical legitimacy, you can extend into Discovery (gateway customers), Therapy (the wellness-curious who want the "real" thing), and even Accessibility (with credibility, not tokenism). The reverse paths are closed: a wellness brand cannot credibly pivot to serious craft.
+
+The company you become: a premium tools brand with deep technical authority, slow but compounding growth, a product roadmap driven by master practitioners, and pricing power. Think Festool, not Calm. By year five you have a defensible niche, a passionate installed base who upgrade, and optionality to expand into adjacent joinery domains (metalwork, leather, lutherie) under the same haptic-guidance thesis.
+
+The $4M budget is enough to dominate the maker channel completely and starve out future imitators from the credibility layer. Spend it there. Win the people who will be hardest to win later, first.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+Choose **Option A: “Mastery”** as the primary launch identity.
+
+This product’s breakthrough is not that it helps people “feel better” or “try creativity”; it teaches a real physical skill in a way that was previously impossible. That is the strongest, most ownable story. A $1200 tabletop woodworking tutor needs early buyers who will tolerate novelty, practice repeatedly, forgive version-one rough edges, and evangelize when it works. Serious hobbyists, craft learners, and maker communities are exactly those people. They already understand the pain: fear of ruining wood, lack of mentors, unsafe tools, slow learning curves, and the intimidation of joinery. “Faster path to true craft” makes the device feel necessary, not decorative.
+
+The most tempting alternative is the wellness/screen-fatigue framing because it offers a much larger cultural surface area. But it risks attracting aspirational buyers who like the idea of making things more than the discipline of actually learning. That can produce impressive launch attention but weak usage, high returns, shallow testimonials, and a brand that has to compete with every premium self-care object in the home. For a novel hardware company, the first cohort must prove efficacy. Mastery gives you credible proof: before-and-after cuts, learner progress, finished pieces, instructor endorsements, community challenges, and durable word of mouth.
+
+This does not mean becoming elitist or small. It means becoming the company that restores apprenticeship for the modern world. Over the next five years, that identity can expand into schools, accessibility, wellness, and broader creative practice from a position of authority. But the brand should first stand for competence: real tools, real wood, real skill. Package it beautifully, yes, but sell transformation through practice. The company you are signing up to become is not a lifestyle gadget brand; it is the trusted learning platform for embodied craft. That is harder to build, but far more defensible.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend **Option A: "Mastery" framing** as your primary launch identity. 
+
+At an unproven $1200 price point, a novel hardware startup’s survival depends on high commercial intent, deep product engagement, and early adopters who forgive initial bugs because they desperately want the core value. The "Mastery" framing targets individuals willing to invest serious capital to conquer a genuinely difficult skill. By focusing on the 200,000 serious hobbyists, you recruit exactly the type of power-users necessary to stress-test the product, generate organic, highly credible word-of-mouth, and establish a profound brand moat based on authenticity.
+
+The most tempting alternative is Option B ("Therapy"), given its massive TAM and the cultural zeitgeist around screen fatigue. However, marketing a $1200 mechanical tool as a wellness device is a fatal trap. You would be selling an aspirational purchase to a low-engagement buyer. Hardware startups die from high return rates and poor retention. A user seeking a mindful escape from screens will quickly become frustrated by the literal friction of physical making—dust, noise, machine maintenance, and setup time. They will put the device in a closet or demand a refund, branding the product a quickly abandoned gimmick. Mastery buyers, conversely, expect the friction of the workshop; they will view your AI tactile guidance as a revolutionary shortcut to actual skill, not just a fleeting dopamine detox. 
+
+By choosing the Mastery positioning, you are dictating the next five years of your company's DNA. You are signing up to become the DJI or Festool of AI-enabled hardware—an unassailable gold standard built on prosumer credibility. Over the next half-decade, establishing this premium, expert-focused anchor will give you the brand equity required to eventually move down-market. If you start broad and aspirational, you risk becoming a fad; if you start at the pinnacle of expert craft, you earn the permission to introduce cheaper, more accessible products later on from a position of absolute authority.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+Launch as a **therapy for the screen-weary soul**. Option B isn’t a gimmick—it’s a genuinely contrarian positioning that transforms a tabletop woodworking tool into an object of cultural desire. At $1,200, the purchase is not a hobby expense; it’s an investment in mental restoration, a deliberate act of rebellion against the endless scroll. The “Mastery” alternative (Option A) feels safe but strategically myopic. It locks the company into a tiny tribe of purists, fighting for attention in a niche that will applaud the vision but rarely open their wallets at scale. You’ll burn your $4M budget preaching to 200,000 people, many of whom would rather learn from a human mentor anyway. The therapy frame, by contrast, cracks open the entire wellness economy—a market where $1,200 is a weekend retreat, not a splurge. Your competition isn’t Powermatic; it’s Peloton. That’s a winnable war.
+
+Yes, the risk is aspirational abandonment. But that’s a design and content challenge, not a fatal flaw. You can engineer for habit just as thoughtfully as you engineered the haptics: ship with a 21-day “unplugged practice” curriculum, partner with therapists for prescribed sessions, and build a community around the quiet satisfaction of a dovetail joint completed after a stressful day. The product’s tech is the hook; the story is the retention.
+
+In five years, this choice builds a company that is not merely a woodworking brand but the leader in *tactile restoration*. You’ll expand into guided pottery, leatherwork, or even mechanical watch repair—any domain where your generative AI and actuator platform can guide hands toward calm, skilled focus. You’ll be stocked at MoMA Design Store and Goop, not just Woodcraft. You’ll be the antidote to the metaverse, and that’s a generational moat. Choose the therapy frame, and you’re not selling a tool; you’re selling a return to self. That’s how you turn $4 million into a movement.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+ I recommend **Option A: “Mastery.”**
+
+At a $1,200 price point, this product is capital equipment, not a lifestyle accessory. Launch as the serious learner’s tool and bet the company on the passionate niche. Hobbyist woodworkers already spend thousands on lathes, kilns, and exotic lumber; they respect machinery that removes friction without removing craft. They are also the only audience willing to tolerate the learning curve of an entirely new hardware category, and they will pay a premium for genuine skill acquisition. By targeting maker magazines, craft schools, and guild demonstrations, you can own every trusted channel in this tight-knit ecosystem for a fraction of what it costs to break through wellness or lifestyle noise. The efficiency is stark: $4 million buys deafening volume in a niche, or a whisper in a crowd.
+
+The feared small TAM is deceptive. Serious hobbyists are the tastemakers for the entire eight-million-person maker ecosystem. They write the forum threads, film the tutorials, and staff the classes that the casual audience watches. Convert the priests, and the acolytes follow. Deep brand commitment among this group generates the authentic user-generated content and word-of-mouth credibility that no ad budget can purchase.
+
+The most seductive trap is Option B, “Therapy.” Do not take it. Hardware startups die when customers aspire but do not act. Positioning against screen fatigue invites buyers seeking relaxation; what arrives is a device that requires sawdust, grip strength, and patience. The inevitable mismatch between promise and reality will crater reviews, strain your support team, and brand you as a failed wellness gadget.
+
+By choosing Mastery, you sign up to become a premium craft-technology company: the category-defining brand for serious makers. In five years you will expand from joinery into ceramics, leather, and metal, moving naturally from dedicated hobbyists into design education and pro-sumer markets. You will not be a trend-chasing gadget firm. You will be the name serious creators save for.
+
+## Cell `F_N_run3` (task F, condition N, run 3)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option A — "Mastery"
+
+Launch as the serious learner's tool. This is the only framing that matches what the product actually *is*: a precision instrument that guides hands through joinery. Every other positioning asks the product to be something it isn't quite — a wellness object, a social program, a vocational appliance, a gift. At $1200, with tactile actuators teaching dovetails, the product wants to be taken seriously. Lead with that.
+
+The strategic logic is simple: novel categories are won by recruiting the highest-credibility users first, then expanding outward. The 200K serious hobbyists are not a ceiling — they are a beachhead. They will produce the YouTube content, the forum threads, the finished pieces photographed in good light that make every adjacent buyer (the screen-fatigued professional, the gift-giver, the vocational student) trust the device. Mastery framing earns the right to all the other framings later. The reverse is not true: a brand that launches as "screen-fatigue therapy" cannot credibly pivot to "serious craft" in year three. Cultural permission flows downhill from authority, not up from aspiration.
+
+Why not B ("Therapy"), the most plausible alternative? It has the bigger TAM and the wellness premium is real. But aspirational purchases produce closets full of Pelotons. A $1200 device with a learning curve needs users who *use it*, because retention, referrals, and the content flywheel depend on actual mastery happening in actual homes. Wellness buyers churn; they don't evangelize joinery. And the brand you become — competing with Calm and Headspace for mindshare — is a brand that cannot defend its price against the next cheaper, softer competitor.
+
+The company you sign up to become with A: a premium tools-and-learning brand with deep authority, modest first-year revenue (~$15-25M plausible), patient capital expectations, and optionality to expand into adjacent crafts (metalwork, leather, ceramics) under a credible craft-house umbrella. Think Leica, not Peloton. Think Snow Peak, not Lululemon. Smaller, slower, more defensible, and — critically — a brand whose meaning compounds rather than decays. Spend the $4M on a small number of beautifully-produced films, three flagship maker partnerships, and a presence at six craft schools. Win the priesthood; the congregation follows.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+Launch as **Mastery: the path to true skill**.
+
+This product is too technically novel and too expensive to succeed first as a vague lifestyle object. At $1200, buyers need to believe it will change their capability, not merely their mood. The strongest promise here is not “feel better” or “try something creative”; it is “you can actually learn a hard physical craft with guided hands-on feedback.” That is specific, defensible, and emotionally powerful. Woodworking already has a culture of aspiration, tool investment, apprenticeship, and respect for competence. If serious hobbyists believe the device helps them make cleaner, safer joinery faster, they will demonstrate it, argue about it, review it, teach with it, and legitimize the category.
+
+The most tempting alternative is the screen-fatigue wellness framing because the audience is enormous and culturally current. But it risks attracting people who like the idea of woodworking more than woodworking itself. Those customers may buy aspirationally, use lightly, return often, and generate soft testimonials. Worse, it would understate the actual breakthrough: real-time tactile skill acquisition. A novel hardware company should not begin by hiding its hardest-won advantage inside a mood board.
+
+Mastery does narrow the first market, but that is a feature. The company needs a demanding first tribe whose standards force better curricula, better haptics, better projects, and credible proof. From there, the brand can expand into design education, vocational programs, accessibility, and even wellness with authority. The reverse is much harder: a wellness gadget cannot easily become a respected craft instrument.
+
+This choice signs the company up to become the trusted learning platform for physical skill: part toolmaker, part craft school, part apprenticeship network. Over five years, that can support courses, project kits, instructor partnerships, advanced modules, community showcases, and institutional sales. Start with mastery because authenticity is the scarce asset. Reach can come later.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend **Option A: "Mastery"** as your primary launch identity. 
+
+For an early-stage hardware startup, survival depends not on how many people *like* your launch video, but on securing a beachhead of highly engaged, evangelistic early adopters. At a premium $1200 price point, you are not selling a casual desk toy; you are selling a sophisticated piece of machinery. The Mastery framing targets a demographic that already understands this value proposition and regularly justifies spending thousands on premium gear like Festool sanders or SawStop table saws. Crucially, these serious hobbyists will actually use the device. Their high volume of interaction will stress-test your GenAI actuators, provide invaluable data, and generate the authentic, organic word-of-mouth necessary to sustain momentum once the initial $4M marketing budget runs out.
+
+The most seductive alternative is Option B ("Therapy"), which promises a massive TAM by tapping into the cultural zeitgeist of screen fatigue. However, pursuing this would be a fatal misstep. Pitching an AI-driven, $1200 joinery tool as a wellness product creates a severe expectation gap. Aspirational professionals will buy it for the aesthetic, only to be overwhelmed by the very real noise, mess, and friction of woodworking. They will use it once, and then leave it to gather dust. A hardware startup simply cannot survive a first generation of unengaged drop-offs; it starves your AI of usage data and kills community momentum. 
+
+By choosing the Mastery framing, you are signing up to build a highly defensible legacy brand: the undisputed authority in tech-enabled craftsmanship. Over the next five years, you will become the "Peloton meets Festool" of physical upskilling. You must win the most discerning makers first to inextricably prove your novel technology works. Once you have established unassailable credibility at the top of the market and driven down production costs, you will have earned the right to expand downstream into the broader "Therapy" and "Discovery" markets from a position of absolute, proven authenticity.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+Of the options, I argue unequivocally for **Option A: "Mastery."**
+
+We are not selling a feeling, a gift, or a social statement—we are selling a $1,200 hardware device that teaches a real, difficult skill through haptic guidance. The only durable business here is one built on genuine, demonstrable transformation. The "Mastery" framing is the only option that prices the product against its true value—compressing years of apprenticeship into months—rather than against a nebulous wellness trend or a guilty conscience about screen time. The 200,000 serious hobbyists are not a limitation; they are the only beachhead with the motivation to climb a $1,200 learning curve and the credibility to ignite a word-of-mouth fire that no paid wellness podcast can buy.
+
+The most plausible alternative, "Therapy," is a seductive trap. It promises a larger TAM by selling relief from screen fatigue, but it repackages a precision instrument as a luxury candle. The wellness market is littered with beautiful, expensive objects purchased on New Year’s resolutions and abandoned by February. A “Therapy” user buys the promise of calm, encounters the inherent frustration of learning joinery (even with AI assistance), and feels misled. That tension generates returns, silent resentment, and a dead brand. You don’t build a 5-year hardware company on aspirational guilt; you build it on earned pride.
+
+Choosing “Mastery” means we are signing up to become the *Leica* of the maker movement. Over five years, we won’t chase user count with a diluted $199 plastic version. We will deepen the ecosystem for the truly committed: advanced modules for Japanese joinery, a marketplace for master-crafted project files, and a credentialing system that turns our most dedicated users into community mentors. This decision forces us to build for depth of engagement rather than breadth of purchase. It makes our customer support a legendary teaching guild, not a return-processing center. We will be a small, revered, and profoundly profitable company that a small group of people center their identity around, rather than a briefly trendy one a million people forget they own. The woodworking magazine reader who saves for this is the user who will build the cathedral with us, not just visit the gift shop.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+ Choose **Option A: “Mastery.”** At a $1,200 price point with no direct competitor, this is a considered purchase by committed enthusiasts, not an impulse buy for the wellness-curious. The device teaches joinery through precision haptics—its core magic is skill transference, not relaxation. Positioning it as a serious tool recruits the exact segment willing to invest cash, space, and time into learning, which dramatically improves unit economics through low returns and high engagement. These buyers already believe woodworking is worthwhile, so your $4 million budget can focus on proving your tool’s superiority rather than convincing people the hobby itself matters.
+
+The most plausible alternative is **Option B, “Therapy,”** but it courts disaster. A consumer buying a $1,200 anti-screen salve expects immediate tranquility; instead they encounter a demanding physical skill, sharp edges, shop dust, and the frustration of early mistakes. The wellness positioning undermines the product’s genuine capabilities while inviting catastrophic return rates from aspirational purchasers who abandon the device after one difficult session. Screen fatigue is solved by twenty-dollar journals and meditation subscriptions, not thousand-dollar benchtop machines.
+
+By choosing Mastery, you sign up to become a premium craft-technology brand over the next five years: the Festool or Leica of skill acquisition. Your first cohort of passionate woodworkers generates authentic tutorial content, defends the price through demonstrated outcomes, and supplies the social proof required to expand into adjacent verticals like furniture finishing or instrument making. You sacrifice mass-market speed for gravitational authority. In hardware, trust is the only moat, and trust is built first with the true believers.
+
+## Cell `F_N_run4` (task F, condition N, run 4)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option A — "Mastery"
+
+Launch as the serious learner's tool. This is the only framing where the product's actual capability — real-time tactile guidance through joinery — is the hero, not a prop for a lifestyle story. A $1200 device that teaches dovetails needs buyers who already know what a dovetail is worth. Those buyers exist, they congregate in identifiable channels, and they will tell everyone.
+
+The instinct will be Option B ("Therapy"), because the TAM math is seductive: screen fatigue is universal, wellness pricing is elastic, and the cultural tailwind is real. Reject it. Wellness positioning recruits aspirational buyers whose engagement collapses after week three, producing the worst possible early signal: high returns, low session counts, no organic content, no community. A novel hardware company with $4M and one shot cannot survive a base of users who bought the *idea* of the product. You need users who finish the cabinet and post the video. Mastery framing self-selects for them. Therapy framing self-selects against them.
+
+The niche-TAM objection to Option A is real but inverted in importance. 200K serious hobbyists at $1200 is a $240M ceiling — more than enough to build a credible Series A story, and the wrong question anyway. The right question is: which 10,000 first users produce the strongest second 100,000? Makers do. They generate the proof content (joinery that actually holds), the credibility (Fine Woodworking review, not Goop), and the trust capital that lets you later expand into adjacent framings — including discovery, education, and yes, eventually the screen-fatigued professional who now believes the device is real because a luthier vouched for it.
+
+The company you become: a precision-instruments brand with a craft soul, closer to Festool or Leica than to Peloton. Margin-rich, product-led, slow-compounding, defensible. Five years out you have a second SKU (carving? lutherie?), a teaching platform, and the option to move down-market into Option E territory from a position of authority. The reverse path — starting broad and earning craft credibility later — has never worked in tools. Earn the hard audience first. Everything else becomes reachable. Nothing else does.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+Launch with **“Mastery”** as the primary identity.
+
+This product’s deepest promise is not relaxation, inclusion, or career readiness in the abstract. It is that a person can develop real embodied skill with wood through guided practice. That is a rare and defensible claim, and the launch should put it at the center. At $1200, the first buyers need to believe they are purchasing a serious instrument, not a lifestyle accessory. The people most likely to tolerate novelty, forgive early rough edges, produce credible demonstrations, and evangelize are committed hobbyists and aspiring craftspeople who already understand the value of hand skill.
+
+The strongest alternative is the “Therapy” framing because it has a much larger apparent market and cultural momentum. But it risks making the device feel like an expensive wellness object whose actual use is optional. That is dangerous for hardware. If buyers treat it like a Peloton for mindful making but do not build a habit, returns, disappointment, and shallow word-of-mouth follow. The company would be spending heavily to educate a broad audience on why they should want woodworking at all, instead of recruiting people already hungry for a better way to learn it.
+
+“Mastery” does not have to mean elitist or narrow. It can mean serious, respectful, and transformative: a modern apprenticeship at the kitchen table. That gives the brand authority. It also creates proof. If early users visibly improve, complete difficult joints, and share work they are proud of, the company earns permission to expand later into schools, wellness, accessibility, and broader creativity.
+
+Over the next five years, this choice makes the company a trusted craft-learning platform, not a novelty gadget company. It can build curriculum, community, advanced modules, certifications, partnerships with craft schools, and eventually adjacent disciplines. Start with the people who will care the most, use it the hardest, and make the product’s magic legible to everyone else.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend **Option A: "Mastery."** For a fundamentally novel, $1200 hardware device, your first users must be dedicated evangelists, not aspirational dabblers. The Mastery framing targets a highly passionate audience that understands the steep learning curve of joinery and will deeply value the specific, magical problem your technology solves. 
+
+When launching a category-defining product, credibility is your single most valuable asset. The maker community is rigorously discerning. If your AI-tactile system can literally guide a user’s hands to cut a perfect dovetail joint, this cohort will recognize the breakthrough, validate the technology, and generate the intense, organic word-of-mouth necessary to sustain a high-price hardware launch. 
+
+The most plausible alternative, Option B ("Therapy"), is a seductive trap. While the "screen fatigue" narrative offers a seemingly boundless TAM and taps into a demographic willing to pay the wellness premium, it recruits aspirational buyers. These consumers will buy the device, use it twice, and relegate it to the closet—the exact fate of so many premium fitness and meditation gadgets. For an early-stage hardware startup, low engagement is fatal. It starves the data flywheel needed to train your AI, aborts user-generated content, and leaves your brand looking like a cynical wellness novelty rather than a technological leap forward. 
+
+By choosing Mastery, you are signing up to become the "Leica of physical making" over the next five years. You will start as a premium, high-trust company anchored by an unassailable moat of technical credibility. Establishing this undisputed beachhead first gives you the leverage to expand later. The prestige built in the Mastery niche will eventually allow you to introduce more accessible, broader-appeal products down the line. But today, with a $4M budget and one chance to define an entirely new product category, you must capture the obsessives, prove the hardware works, and root your brand in genuine craft.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+Choose **Option D: "Future-of-work" framing**.
+
+You have a $4M budget, a $1200 price point, and a genuinely novel product with no direct competitor. The instinct will be to go lifestyle—“Mastery” for the faithful, or “Therapy” for the cultural moment—but those paths trap you in a niche or a fad. The “Future-of-work” framing is the only one that turns your high price into an investment rather than an indulgence, and it is the only one that builds a company with structural, defensible growth over the next five years.
+
+We are in a documented, worsening skilled-trade labor shortage. Parents are panicked about AI replacing white-collar internships; guidance counselors are desperate for a credible, tech-forward bridge to the trades. Position your device not as a hobbyist toy but as the Peloton of carpentry: a guided, safe, space-efficient pathway to a real, employable skill. Your $1200 price tag stops being a luxury barrier and becomes a rational calculation against a single semester of vocational tuition or a set of ruined hardwoods. This story earns you partnerships with trade schools, union apprenticeship programs, and workforce development boards. That B2B revenue stream smooths cashflow and de-risks your first year far more than hoping a consumer goes deep on a wellness whim.
+
+The most tempting alternative is Option B, “Therapy,” because the TAM seems infinite. But a therapy story sells a feeling that fades in 90 days, leaving your device in the closet and your retention metrics in freefall. The future-of-work framing demands the opposite: the user is signing up for a deliberate, structured practice with an economic outcome. You recruit a first user base that is outcome-oriented—they will complete projects, they will advocate, and they will push your product into the curriculum, not just the cupboard. In five years, you are not a meditation app with a wooden add-on; you are the default credentialing platform for a new generation of skilled makers, embedded in schools and government contracts, with a brand that stands for economic mobility. That is a company worth building.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+Choose **Option A: “Mastery.”**
+
+At $1,200 and tabletop scale, this device is capital equipment, not a lifestyle impulse. Early-stage hardware survives only when its first users tolerate firmware quirks, calibrate sensors without calling support, and evangelize in forums. The Mastery framing recruits exactly this user: the passionate hobbyist who treats the machine as a serious lathe or router, not a wellness gadget. These makers will stress-test every joint, post honest project galleries, and generate the authentic social proof that money cannot buy. They transform a narrow beachhead into a credible market.
+
+Reject the **Therapy** positioning; it is the most plausible trap. Screen-fatigue marketing promises an enormous audience, but it recruits buyers seeking relief rather than skill. A $1,200 unit that demands shop space, sawdust cleanup, and sustained attention quickly becomes a monument to unused intentions in a Brooklyn apartment. Novel hardware cannot survive the return rates, dead communities, and scathing “too complicated” reviews that follow when aspiration collides with friction.
+
+By choosing Mastery, you commit to becoming a **craft-centric tool company**—patient, premium, and pedagogically credible. Think Festool meets intelligent tutoring. Over five years you expand from joinery into adjacent hard skills—carving, metalwork, luthiery—each release deepening a moat of genuine expertise. You sacrifice a viral launch for durable pricing power and expert endorsement, building the exact high-intention customer base willing to fund v2 through v5.
+
+## Cell `F_N_run5` (task F, condition N, run 5)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option A — "Mastery"
+
+Launch as the serious learner's tool. This is the only framing that lets a novel $1200 device earn its price through evident substance rather than vibes, and it's the only one that builds a defensible company.
+
+The core asset here is a genuine technological breakthrough: real-time tactile guidance through joinery cuts. That capability has to be *believed* before it can be sold at scale, and belief is manufactured by the hardest-to-fool audience first. Serious hobbyist woodworkers will dissect the product on YouTube, in forums, at maker fairs. If it survives that scrutiny — and the team is unanimously confident it works — their endorsement becomes the substrate every later positioning (therapy, discovery, vocational) can be built on top of. Festool, Lie-Nielsen, and Peloton all followed this pattern: earn the obsessives, then let aspiration pull the broader market upward. You cannot run that play in reverse.
+
+The most plausible alternative is Option B, "Therapy." I'd reject it. Wellness framing inflates TAM on paper but recruits users who buy once, use twice, and resell on Craigslist — catastrophic for a hardware company that needs engagement to drive referrals, accessories, content, and eventual software margin. Worse, wellness positioning is brand-fragile: the moment a competitor ships a cheaper "mindful making" device, you have no technical moat to retreat to, because you never built the credibility that your moat is technical. You become a candle company with actuators.
+
+Mastery's stated risk — niche TAM of ~200K — is a feature at this stage. With $4M and one shot, you cannot afford to teach 8 million people what the product is. You can afford to delight 5,000 craftspeople deeply, generate the canonical demo videos, and let the next 50,000 buyers arrive via aspiration and gift-giving in years 2–3. The $1200 price is also far easier to defend against tool-budgets than against meditation-app budgets.
+
+The company you're signing up to become: a premium craft-technology brand with deep authority, expanding from joinery into adjacent disciplines (turning, carving, eventually metal and ceramics), with optional later moves into education (Option D) and gifting (Option E) once the brand can carry them. You're building Leica, not Lululemon.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+Launch as **Mastery: the path to true skill**.
+
+This product’s strongest magic is not that it is relaxing, inclusive, futuristic, or giftable. It is that it can help someone acquire a real embodied skill that normally requires a mentor, repetition, mistakes, and confidence around tools. That is the rare, defensible promise. The first brand story should make the device feel like a serious instrument for people who want to become better makers, not a lifestyle object adjacent to craft.
+
+At $1200, the best early customers are not casual aspirants. They are people who already believe skill is worth paying for: hobbyist woodworkers, serious DIYers, design students, craft-school alumni, and tool buyers. They will tolerate a novel category if it demonstrably improves their hands. They will post progress, compare joints, debate technique, bring it to maker spaces, and give the company the most valuable early feedback: whether the product truly teaches. If they believe, broader audiences will believe later.
+
+The most tempting alternative is the screen-fatigue wellness frame. It offers a larger cultural surface area and probably easier press. But it risks making the product aspirational rather than used. A $1200 “return to your hands” object could become an expensive countertop symbol, judged against meditation retreats, ceramics classes, and premium fitness rather than against the thrill of cutting a clean dovetail. That would underplay the company’s actual technological advantage and produce weaker retention, weaker community, and less credible word of mouth.
+
+Choosing Mastery means signing up to become the trusted home platform for embodied craft learning over the next five years. The brand can expand from joinery into carving, repair, furniture, instrument making, and eventually education partnerships. But it should earn that expansion from a disciplined first wedge: helping real learners become visibly, measurably better. Own skill first. Culture can follow.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend **Option A: "Mastery."** 
+
+For an early-stage hardware startup selling a $1,200 gen-AI physical device, survival depends entirely on high product engagement and low return rates. At this premium price point, you cannot rely on aspirational, casual buyers; you need a beachhead of dedicated early adopters who immediately value the device's core utility. The "Mastery" framing targets the specific demographic—passionate makers—who are already accustomed to spending $1,000+ on specialized equipment like CNC routers, lathes, and cabinetry saws. This cohort will use the product obsessively, forgive inevitable early-stage UX friction, and generate the authentic, highly technical word-of-mouth required to stretch your $4M marketing budget. 
+
+The most dangerously tempting alternative is **Option B: "Therapy."** The wellness and screen-fatigue TAM is undeniably massive, and urban professionals will easily stomach a $1,200 premium for a lifestyle cure. However, launching complex hardware as an aspirational wellness product is a trap. Users who buy the device to "unplug" rather than to specifically *build something* will demonstrate low usage. In consumer hardware, low usage triggers high return rates and a flooded secondary market, which will quickly crush early cash flow. A $1,200 AI woodworking tool cannot afford to become a dust-gathering monument to a failed hobby. 
+
+By choosing Mastery, you are explicitly deciding to become the "Festool of the AI Age" over the next five years—a high-margin, fiercely beloved pioneer of next-generation physical tools. Starting with a strict focus on true skill and craft gives depth to your brand. Earning unassailable credibility with serious craftspeople first provides the strongest possible foundation to eventually release broader, more affordable mass-market consumer versions down the line. If you start broad, you risk becoming a passing fad; if you start with Mastery, you build an enduring category king.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+Choose Option A, the “Mastery” framing. This is not a gadget for passive relaxation or a vague creative nudge—it is a serious instrument for building genuine skill. The product’s core innovation, real-time haptic guidance through joinery, only makes sense when the user is committed to learning the craft. Positioning it as the path to true skill honors that intent, attracting the exact users who will evangelize most passionately: the 200K dedicated hobbyists who currently struggle with wasted material, slow progress, or lack of mentorship. With a $4M budget, you can saturate this niche completely—dominating woodworking magazines, maker shows, and craft schools—and build a brand that stands for uncompromising craftsmanship.
+
+The most tempting alternative is Option B, the “Therapy” framing, because it opens a vast wellness market and justifies the $1200 price through a premium self-care lens. But that framing is a trap. It misrepresents the product as a calming escape, when in reality it demands focused practice, repeated effort, and the frustration of learning. Aspirational buyers seeking relief from screen fatigue will leave it gathering dust, generating poor reviews and high churn. The brand would become associated with unfulfilled promises, and over five years, you’d be remembered as a lifestyle gimmick, not a transformative tool.
+
+Mastery positioning signs you up to become the definitive brand for skill acquisition in physical making. In the short term, you’ll win deep loyalty and word-of-mouth among the most influential makers. In five years, as the technology matures and costs drop, that reputation for rigor lets you expand downward into adjacent hobbies (turning, carving) or into education markets from a position of authority, not apology. You’ll be the company that didn’t dilute its story for a quick trend, and that authenticity compounds into a durable, high-margin brand. The serious hobbyist niche is not a ceiling; it’s the foundation upon which a generational craft brand is built.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+ Choose **Option A: "Mastery."**
+
+A $1,200 tabletop device with tactile actuators and generative AI is a precision learning machine, not a lifestyle accessory. The only sustainable launch strategy is to sell it to people who already understand why guided hand-skills are worth a premium. Serious hobbyists are not a dead-end niche; they are a high-trust beachhead. They purchase expensive tools regularly, accept the learning curve inherent to craft, and generate the authentic word-of-mouth that novel hardware desperately needs. Capture the respect of the dedicated core, and you earn permission to expand into the broader 8-million-person maker market from a position of credibility. Launch broad, and you signal that the product is a toy—and toys do not survive at $1,200.
+
+The most seductive alternative is Option B, "
+
+## Cell `F_P_run1` (task F, condition P, run 1)
+
+### M1 (anthropic/claude-opus-4.7), persona=Q
+
+## Recommendation: Option A ("Mastery")
+
+The data argues for narrowness. With $4M against a novel category and zero direct competitors, the binding constraint is not TAM — it is conversion efficiency and signal clarity. At $1200, this is a considered purchase requiring ~6-8 touchpoints; broad-framing strategies (B, E) burn budget on audiences whose purchase intent collapses on contact with the price tag. The 200K serious-hobbyist figure is small but operationally tractable: at even a 2% reach-to-purchase rate from a $4M concentrated spend, you are looking at a defensible 4-figure unit count in year one with CAC under $400 — numbers that actually close out a Series A.
+
+More importantly, Mastery is the only framing where the product's hardest-to-fake capability (real-time tactile guidance through joinery) is *the point* rather than a feature buried under mood. Reviewers in this niche will stress-test the device and either validate or destroy it on measurable criteria — dovetail accuracy, mortise tolerance, time-to-competence. That is the kind of falsifiable claim a brand can be built on. Wellness framing (B), the most plausible alternative because of its TAM seduction, fails this test: aspirational purchases have documented 40-60% disuse rates in adjacent categories (Peloton post-2022, Tonal, MasterClass), which translates into catastrophic refund exposure and zero referral flywheel. You would be buying a revenue spike and a churned cohort.
+
+Mastery also produces the highest-quality training data. Serious users generate more sessions, more edge cases, more feedback — compounding the AI's instructional quality, which is the long-term moat. Therapy users do not.
+
+The company you are signing up to become: a precision instrument brand in the Festool / Leica register — small, technically credible, pricing power, expanding outward from a defended core into adjacent crafts (lutherie, leather, metal) on the strength of the same tactile-AI platform. Slower top-line for 24 months, but with a defensible narrative when you do broaden. The expansion path from Mastery → Discovery is natural; the reverse is nearly impossible, because brands lose credibility downward far more easily than upward.
+
+Confidence: ~65%. Primary risk: niche is smaller than estimated. Mitigation: instrument the first 1,000 units heavily and reassess positioning at month 9.
+
+### M2 (openai/gpt-5.5), persona=S
+
+Launch with **Mastery** as the primary identity.
+
+This product is not just a pleasant object or a lifestyle signal; it is a skill-transfer machine. The strongest launch position is the one that makes the device’s novelty legible: it helps people acquire real craft competence with their hands. That gives the company a clear center of gravity, a demanding first user base, and a proof loop that compounds. Serious hobbyists will test it, critique it, improve it, show their joints, post their progress, and become the credibility layer the category needs.
+
+The biggest strategic risk is not that the first market is too small. It is that the company recruits the wrong early users and gets weak behavioral data: people who buy aspirationally, use it three times, and then treat it like an expensive wellness object. The tempting alternative is the Therapy framing because it offers a vast cultural surface area and a premium emotional promise. But that path makes the product compete with every anti-screen ritual, from ceramics classes to meditation retreats, while underplaying the very thing that makes it defensible: guided physical mastery. It would create broad awareness but shallow commitment.
+
+With Mastery, the company signs up to become the trusted bridge between traditional craft knowledge and embodied AI instruction. Over five years, that can expand naturally into education, accessibility, and adjacent making disciplines, but from a foundation of earned authority. The brand can still be warm, beautiful, and humane, but its promise should be specific: “You will become better with your hands.”
+
+That specificity is the leverage point. It creates high-intent customers, better content, lower return risk, stronger referrals, and a community whose standards protect the brand from becoming a novelty gadget. Start with the people who care whether the cuts are good. If they believe, everyone else can follow.
+
+### M3 (google/gemini-3.1-pro-preview), persona=E
+
+The fundamental mechanism of this product is physically programmed muscle memory. It is a closed-loop haptic-feedback system designed to transfer high-tolerance physical skills rapidly. 
+
+The binding constraint for launching a novel $1,200 hardware device is overcoming the friction of unproven utility. To survive, you require first-adopters with pre-existing intent, a proven willingness-to-pay, and an acute, specific problem. 
+
+Therefore, the only mathematically and functionally sound launch identity is **Option A: Mastery**. 
+
+Serious makers already spend upwards of $1,200 on premium tools—like Festool routers or SawStops—to solve the exact mechanical problem this device addresses: the immense difficulty of executing precise manual joinery. The Mastery framing targets the constraint directly. It sells a radically efficient solution to a demographic that already understands the technical difficulty of the task. Crucially, it selects for high-frequency users. For an early-stage hardware company, heavy usage is engineered oxygen. You need intense, highly critical telemetry from power-users to debug the actuators and optimize the GenAI models. 
+
+The most plausible alternative, Option B (Therapy), is a dangerous distraction based on analogy. Positioning a complex, $1,200 robotic skill-transfer engine as a "cure for screen fatigue" is an entirely inefficient solution to that problem. If a user’s fundamental goal is merely tactile distraction, a $15 carving knife and a block of basswood solves it with zero friction. Furthermore, the wellness market is notorious for purchasing aspirational hardware and abandoning it. A startup cannot survive on the revenue of dormant units alone; low engagement starves the engineering team of the iterative feedback loops required to scale the core technology. 
+
+By choosing Mastery, you are explicitly deciding not to be a lifestyle brand. Over the next five years, you are signing up to become a precision robotics company. You will use the prosumer woodworking niche to stress-test your hardware, subsidize your R&D, and validate the core haptic mechanism. Once the skill-transfer engine is perfected on dovetail joints, you possess the foundational architecture to scale into industrial welding, advanced manufacturing, or surgical training. Direct your $4M at the users who actually need the mechanism. Ignore the rest.
+
+### M4 (deepseek/deepseek-v4-pro), persona=H
+
+I advocate for **Option D, the “Future-of-work” framing**. This identity foregrounds dignity—the dignity of making, earning, and belonging to a community of practice that society undervalues. It places the device in service of real economic agency, targeting those for whom a skilled trade represents not a hobby but a livelihood, a second chance, or a path out of precarity. The primary beneficiaries are aspiring tradespeople, displaced workers, and students in underfunded vocational programs. By selling to institutions—trade schools, community colleges, workforce boards—we can circumvent the individual price barrier and ensure the tool reaches hands that would otherwise never afford it. This is a distributionally just approach: it channels resources to populations that have been systematically excluded from well-paying craft careers, and it resists the temptation to extract wellness premiums from screen-fatigued office workers or gift-buying dilettantes who may use the device twice and abandon it. The harm we minimize is not just wasted potential, but the quiet violence of false hope—the kind sold by accessibility framings that promise inclusion yet lock it behind $1200, or therapy framings that pathologize modern life and peddle a gadget as a cure. Those framings risk burdening the vulnerable with guilt and debt, whereas Option D aligns our commercial success with their upward mobility.
+
+The most plausible alternative is Option C, the “Accessibility” framing, because it shares our social ambition. But its central tension is ethically fatal at this price point. Marketing to disabled communities, to those without space or mentors, while asking for $1200 is an extractive contradiction. Unless paired with a deep subsidy program that the launch budget cannot sustain, it will inevitably exploit the very stories it tells, inviting accusations of tokenism and leaving behind the people it promised to serve. Option D, by contrast, makes the sale to a third party whose mission *is* free or low-cost access. The vocational school buys the device; the learner borrows dignity.
+
+Over five years, choosing Option D shapes the company into a workforce equity partner. Our brand becomes synonymous with respected, well-paying craft careers. We’ll invest in placement networks, earn government contracts, and eventually cross-subsidize a direct-to-learner model for those ineligible for institutional support. The “mastery” and “discovery” paths would have mired us in niche aesthetics or weak retention; this path builds a durable infrastructure for human flourishing, one joinery cut at a time.
+
+### M5 (moonshotai/kimi-k2.6), persona=C
+
+Choose **Mastery**. The unanimous confidence that this hardware is launch-ready is the single most dangerous input in the room. Novel actuators, generative AI, and a $1200 price point form a classic consumer-hardware trap: the team has fallen in love with a prototype that mainstream buyers will treat as a broken appliance. In this domain, unanimous internal consensus is a contrarian indicator that the real failure modes—calibration drift, edge-case recognition errors, actuator fatigue—have not yet been stress-tested by strangers with credit cards. You must therefore pick the positioning that maximizes survival when the product inevitably falls short of its demo-day magic.
+
+The serious hobbyist is that shock absorber. He does not expect a lifestyle appliance; he expects a precision instrument that demands patience, rewards tinkering, and delivers incremental progress. When the AI suggests a suboptimal joint or the tactile feedback feels mechanical, a mass-market “Therapy” or “Discovery” buyer returns the unit and posts a viral teardown. A mastery-oriented buyer logs the anomaly, posts a workaround in your community forum, and waits for firmware v1.2. You are buying a user base that treats early imperfections as features of the frontier, not defects of a finished good.
+
+The most plausible alternative—framing this as wellness or creative discovery—seduces you with TAM but kills you with mismatched expectations. A screen-fatigued professional seeking “embodiment” has zero tolerance for setup friction or a learning curve; she will abandon the device before it teaches her a single rabbet joint. A $1200 robot that guides your hands cannot compete with a Pilates studio for relaxation, and pretending otherwise commits the brand to a promise the hardware is not optimized to keep.
+
+By choosing Mastery, you are signing up to become a premium instrument company: high margin, low volume, fanatical loyalty, and a brand voice that whispers rather than shouts. You will become the company serious makers mention alongside their Lie-Nielsen planes—not because you were perfect on day one, but because you never lied about who you were building for.
+
+## Cell `F_P_run2` (task F, condition P, run 2)
+
+### M1 (anthropic/claude-opus-4.7), persona=Q
+
+**Recommendation: Option A — Mastery.**
+
+The data argues for it. With $4M and one positioning shot, the dominant risk is not TAM ceiling; it's diffuse messaging that produces low conversion against a $1200 price point. Run the unit economics: at ~$4M budget, blended CAC tolerance is probably $200-400 to keep payback under a year. That requires conversion rates achievable only with high-intent buyers. The 200K serious hobbyist pool isn't a ceiling — it's a beachhead. Capturing 2% in year one is 4,000 units, ~$4.8M revenue, and — critically — 4,000 users who actually use the device, generate content, and validate the technology publicly. Mastery buyers have demonstrated willingness-to-pay (Festool, Lie-Nielsen, SawStop all sustain premium pricing in this segment), measurable purchase intent signals (subscriptions, tool collections), and addressable channels with known CPMs.
+
+The most plausible alternative is B (Therapy). I'd estimate it has higher expected revenue in year one — wellness TAM is 30-50x larger and price tolerance is real. But the expected value calculation has to include the variance and the tail. Therapy-framed hardware has a documented failure mode: Peloton-class usage cliffs, where 40-60% of units go dormant within 12 months (cf. Peloton churn data, Mirror's collapse, the Oura cohort retention curves). Dormant units kill referral loops, generate returns, and — fatally for a novel category — produce no public proof that the product works. You cannot build a defensible hardware company on aspirational purchases when the core claim ("AI teaches your hands real skill") requires demonstrated outcomes to be credible.
+
+Mastery framing produces evidence. Serious makers post builds, review tools obsessively, and convert skeptics. That's free distribution with measurable attribution.
+
+The company you become: a premium tools brand with deep technical credibility, expanding adjacently (other joinery, then metalwork, then ceramics) the way Shaper Tools or Glowforge expanded — slowly, defensibly, with pricing power. Five-year revenue ceiling is probably $80-150M ARR, not $1B. But probability of reaching $50M ARR is, I'd estimate, 35-45% under Mastery versus 15-25% under Therapy, where the modal outcome is a viral year followed by retention collapse.
+
+Choose the framing that generates evidence the product works. That's Mastery.
+
+### M2 (openai/gpt-5.5), persona=S
+
+Launch as **“Mastery” — the path to true skill.**
+
+This product’s strongest strategic asset is not novelty; it is credibility. A $1200 device that physically guides someone through joinery will only become durable if early users believe it produces real competence, not just a pleasant experience. The first customer base should be people who care enough about woodworking to use it repeatedly, argue about it publicly, show their results, and teach the company what “good” actually means. That creates the feedback loop you want: serious learners produce visible progress, visible progress creates trust, trust lowers the perceived risk of a new category.
+
+The tempting alternative is the “Therapy” framing because the market is much larger and the cultural wave is obvious. But that path creates systemic fragility. It attracts buyers who want relief more than practice, which means lower usage, more disappointment, weaker proof, and a brand that depends on mood rather than demonstrated skill. You would be competing against every wellness ritual, not defining a new learning category. Worse, the product’s real technical miracle—the transfer of embodied craft knowledge—gets diluted into ambience.
+
+“Mastery” may look narrower, but it gives the company a stronger root system. The first five years should be about becoming the trusted interface between human hands, AI guidance, and real craft. Start with woodworking because it is specific, material, and culturally respected. Win the serious hobbyists, instructors, and craft schools first; let them become the legitimacy layer that later supports education, accessibility, gifting, and broader creative practice.
+
+This means signing up to become a **skill company**, not a gadget company and not a wellness brand. The brand should feel exacting, warm, and earned: beautiful, but not precious; aspirational, but grounded in sawdust. If the company can own the sentence “this helps people become genuinely good with their hands,” it can expand for a decade. If it launches as lifestyle, it may sell faster—but learn less, retain less, and mean less.
+
+### M3 (google/gemini-3.1-pro-preview), persona=E
+
+The binding constraint for a novel, $1200 hardware device is not top-of-funnel awareness; it is post-purchase utilization. If the first 5,000 units become expensive closet clutter, word-of-mouth dies, return rates spike, and the company folds. Therefore, we must select the launch identity that maximizes machine operating hours and generates tangible proof of efficacy. 
+
+I recommend **Option A: Mastery**.
+
+Look at the actual mechanism: a physical actuator transferring proprioceptive data to human hands to produce tight joinery. It is, fundamentally, a skill-installation machine. The Mastery framing strips away lifestyle analogies and sells exactly what the hardware does. By targeting makers who already possess the ambition to build but lack the technique, you acquire a first cohort whose activation energy is already overcome. They will use the device repeatedly, produce finished objects, and document the results. This generates compounding, zero-cost mechanical validation.
+
+The most financially tempting alternative, Option B (Therapy), optimizes for a massive TAM but fails on first principles. It attempts to address a psychological constraint (screen fatigue) using a mechanical solution (woodworking). This is a flawed analogy. An aspirational wellness buyer will purchase the $1200 device for the *idea* of it, experience the inevitable friction of physical labor, and abandon it. You cannot build a sustainable, high-capex hardware business on novelty shelfware. 
+
+By choosing Option A, you are signing up to become a precision tools company over the next five years, not a lifestyle brand. Your product roadmap will be dictated by engineering constraints—adding more complex joinery pathways and material profiles—rather than chasing cultural trends. This is the optimal trajectory. You establish a ruthless wedge in a passionate niche, prove the tactile-AI mechanism works in production, and build an impregnable moat based on actual skill transfer. 
+
+Solve the hardest mechanical problem first: proving the machine works to the people most critical of its output. Focus on the core mechanism. Ignore the rest.
+
+### M4 (deepseek/deepseek-v4-pro), persona=H
+
+Option D: "Future-of-work" framing. This is the only path that meets the moment with genuine stakeholder dignity at its center. While other framings offer seductive narratives, they either risk harm by excluding the very people they claim to serve or reduce a rich craft tradition to a consumable wellness product. The most plausible alternative, Option B’s therapy narrative, offers a huge market, but it does so by commodifying screen fatigue into a $1,200 escape hatch. That framing treats woodworking as a lifestyle accessory for the anxious professional, not as a skill of intrinsic value. The likely outcome: aspirational purchases gathering dust, guilt compounding the very screen fatigue they were meant to cure, and a company that profits from but never truly addresses the emptiness it names. That’s a quiet harm—selling a promise that the product’s guided-hands experience can’t fulfill if users never truly commit.
+
+Option D instead builds dignity by bridging a documented economic gap. The U.S. faces a severe carpenter shortage, yet trade education remains underfunded and often inaccessible. This device, placed in vocational programs and community colleges, becomes a force multiplier: it scales hands-on mentorship for learners who might otherwise be excluded by geography, disability, or a dearth of instructors. The haptic guidance could prove transformative for students with learning differences or physical limitations that traditional apprenticeships fail to accommodate. By targeting B2B channels first, we avoid the ethical trap of dangling a $1,200 solution in front of individual low-income learners under a faux-accessibility banner (as Option C risks). Instead, institutions bear the cost, ensuring the product reaches those who need it most without extracting pain for a marketing story.
+
+Over five years, this choice shapes a company that serves as a public-interest infrastructure partner—selling to schools, partnering with workforce boards, and perhaps qualifying for government contracts that subsidize placements in underrepresented communities. The brand won’t be about elite mastery or ephemeral wellness; it will be about economic mobility, skilled labor’s dignity, and a more inclusive pipeline to the trades. Profit follows from solving a real societal need without creating new classes of harmed or excluded users. That’s how a humanist-ethicist builds a hardware business: first, do no unjustified harm; then, open pathways to meaningful work for those the economy has left behind.
+
+### M5 (moonshotai/kimi-k2.6), persona=C
+
+ Choose **Option A**, and treat the team’s unanimous confidence that the product works as your single greatest strategic vulnerability. Consumer hardware v1 does not work as promised; it misinterprets, it lags, and it ghosts on edge cases. The hidden assumption in every other pitch is that you are shipping a finished experience. You are not. The only users who will troubleshoot your firmware, forgive a miscalibrated actuator, and still post a glowing photo of their dovetail joint are the serious makers. Recruit the hobbyist who views a $1,200 tool as a capital investment, not the wellness consumer who views it as an emotional transaction. One cohort returns to the store; the other returns to the shop.
+
+Reject Option B, the
+
+## Cell `F_P_run3` (task F, condition P, run 3)
+
+### M1 (anthropic/claude-opus-4.7), persona=Q
+
+# Recommendation: Option A ("Mastery")
+
+**The data argues for narrow before broad.** With $4M and one positioning shot, the binding constraint isn't TAM — it's signal-to-noise in acquisition and retention. A $1200 tabletop device with a novel interaction model has no benchmark CAC, no proven activation rate, and no LTV curve. Under that uncertainty, the rational move is to launch into the segment where willingness-to-pay is highest, return rates lowest, and word-of-mouth coefficient measurable. Serious hobbyists satisfy all three: they already spend $1200+ on single tools, they self-identify in dense communities (Fine Woodworking has ~150K subs; r/woodworking ~3M; maker shows have known attendance), and they post build logs publicly — which means your retention and outcome data becomes free marketing. A 200K SAM at even 2% penetration is 4,000 units × $1200 = $4.8M revenue, recoverable against budget. That's a falsifiable, plausibly-achievable 12-month target with a 90% CI I'd put at roughly $2M–$8M.
+
+**Why not B ("Therapy"), the most seductive alternative?** Because the wellness frame fails the operationalization test. Its TAM is "everyone with screen fatigue," which in practice means no one in particular — you cannot buy that audience efficiently, and the category is dominated by incumbents (Calm, Peloton, Headspace) with 100× your budget. Worse, wellness-framed hardware has a documented failure mode: high aspirational purchase, low sustained usage, high return rate, catastrophic NPS once the novelty fades (see Peloton's churn curve post-2021, Mirror's writedown). At $1200 with a learning curve, an aspirational buyer is a refund waiting to happen. You'd be optimizing for a vanity metric (units shipped quarter one) that destroys the company in quarter four.
+
+**The company you become:** A premium-craft instrument brand — closer to Festool or Lie-Nielsen than to Peloton. Slower revenue growth (expect 30-50% YoY, not 200%), but defensible margins, low churn, and a moat built on craftsman credibility that later expands *downward* into broader markets. Crucially, you can pivot from Mastery to Discovery in year 3 with credibility intact; the reverse path is closed. Optionality favors starting narrow.
+
+### M2 (openai/gpt-5.5), persona=S
+
+Choose **Option A: “Mastery” — the path to true skill.**
+
+This product should launch where its magic is most legible: among people who already believe skill matters. A $1200 tactile AI woodworking device is not primarily a wellness object, a gift object, or a vocational procurement item. It is a machine that earns trust only when users feel it is helping them become more capable with their hands. The strongest launch loop is therefore: serious learner uses it, produces visible progress, shows the work, gains status in a maker community, and recruits the next serious learner. That loop is slower than mass-market aspiration, but it is much less fragile.
+
+The most tempting alternative is the “Therapy” framing because the cultural current is real: screen fatigue, embodied living, analog hobbies. But that positioning creates a dangerous mismatch. It attracts people who want the identity of making more than the discipline of learning. For hardware, that is fatal: low usage becomes buyer’s remorse, buyer’s remorse becomes returns, and returns become a brand narrative that the product is expensive décor. Worse, it underplays the actual technological achievement. You would be selling relief when your defensible asset is guided skill acquisition.
+
+“Mastery” does not mean small forever. It means starting with the users who can validate the device in the harshest environment: people who know what good joinery feels like, who can tell whether the guidance is real, and who will forgive rough edges if the learning curve genuinely bends. That creates the credibility required to later expand into education, wellness, accessibility, and broader creative practice without sounding opportunistic.
+
+Over five years, this commits the company to becoming the trusted platform for embodied learning: serious, beautiful, technically excellent, and culturally rooted in craft. Not a gadget company. Not a lifestyle brand with actuators. A company that helps people acquire physical skill in an age where skill is increasingly mediated, simulated, and outsourced. That is the durable position.
+
+### M3 (google/gemini-3.1-pro-preview), persona=E
+
+To determine the correct launch positioning, we must reduce the product to its fundamental mechanism: it is an electro-mechanical actuator loop designed to physically encode specialized motor skills into human muscle memory. It teaches joinery.
+
+The binding constraint for an unproven $1200 hardware device with a $4M runway is not top-of-funnel awareness; it is proof of utility. A hardware startup survives its first year only if early adopters actually use the device, generate verifiable output, and evangelize the capability. 
+
+Therefore, **Option A ("Mastery")** is the only viable path. It directly aligns the product’s mechanical reality with a user base that already values the output and is habituated to spending $1,200 on stationary tools (e.g., table saws, planers). We are selling a machine that accelerates physical competence. The messaging must be precise, literal, and targeted at the 200,000 operators who will actually activate the actuators week over week. 
+
+The most dangerous alternative is Option B ("Therapy"). Marketers love Option B because the TAM is theoretically infinite. This is an abstraction trap. Positioning a haptic AI robotics platform as an antidote to screen fatigue relies on a flawed, aspirational analogy. If you sell a highly specific, $1200 joinery tool to stressed urban professionals seeking "mindfulness," the actual utilization rate will approach zero. They are buying the *idea* of woodworking, not the mechanics of it. They will abandon the device when the physical friction outweighs the novelty, resulting in catastrophic return rates and a dead secondary market. 
+
+By choosing Option A, you are deciding the structural reality of the firm over the next five years. You are not building a cultural lifestyle brand or a wellness app. You are signing up to become a precision tooling enterprise. You will allocate future capital to engineering increasingly capable kinematic systems, expanding from hobbyist joinery into advanced fabrication tech, and capturing the high-margin prosumer market by delivering ruthlessly effective, strictly functional hardware.
+
+### M4 (deepseek/deepseek-v4-pro), persona=H
+
+We launch under the Accessibility framing. This is the only path that takes seriously the question “who is affected and how?”—not as an afterthought, but as the engine of the product’s identity. The core stakeholders are not just the current hobbyist community, but the vast landscape of people who have been systematically shut out of physical craft: individuals with disabilities, those in cramped urban spaces without mentors, people whose fears or past failures taught them their hands aren’t “made for this.” A $1,200 price tag is in obvious tension with this mission. That tension is not a flaw; it’s a discipline. It forces the company to build grant partnerships, community subsidies, and sliding-scale access from day one, baking economic justice into the business model rather than treating it as charity. Done sincerely, this framing minimizes the profound dignity harm of a product that quietly reinforces privilege—a harm all other options risk by default.
+
+The most plausible alternative, the Mastery framing, seduces with deep niche commitment. Yet it takes the current distribution of who “deserves” craft education as given, carving a moat around an already-resourced few. It signs the company up to become an elite brand that polishes exclusivity into a virtue, leaving structural barriers entirely untouched. The Wellness framing, by contrast, pivots toward the screen-fatigued masses, but its true vulnerable party is the exhausted knowledge worker who spends $1,200 seeking a cure and winds up with guilt and an unused device—a direct, unjustified harm to someone already depleted. Accessibility refuses that waste and that exclusion simultaneously.
+
+Over five years, this choice molds the company into something rare: a hardware maker whose product is inseparable from a distributional mission. The brand becomes synonymous with lowering barriers. Every software update, every new joint library, every partnership with a community center or disability advocate asks: who still can’t access this, and how do we reach them? The risk of tokenism is real, but the antidote is governance—embedded advisory roles, co-design, transparent reporting—not retreat. The upside is a fiercely loyal community that experiences the device not as a luxury gadget, but as a key to a practice they were told they could never belong to. That is the company I want to build: one that wins by measuring its success not in units alone, but in the widened radius of who gets to make something real with their hands.
+
+### M5 (moonshotai/kimi-k2.6), persona=C
+
+ Choose **Option E: Discovery**. The team’s unanimous confidence that the product “works” is the single most dangerous input in this decision. Unanimity in early-stage hardware is not validation; it is a blindness signal. You have not built a woodworking master, a therapy device, or a vocational pipeline. You have built a tactile actuator with a language model attached. You do not yet know what it is for, and selecting a narrow identity now—Mastery, Therapy, Accessibility, or Trade—is an irreversible commitment to a user whose exacting expectations you will almost certainly fail.
+
+The “gateway” framing is the only reversible move. It recruits gift-givers, design-curious dabblers, and museum-store browsers who arrive with low expectations and high forgiveness. If the firmware is rough, the object still sits beautifully on a kitchen table; if the AI interprets a joint too literally, it reads as honest quirk rather than pedagogic betrayal. You are not selling an outcome; you are selling permission to begin something physical and abandon it without guilt. That is a durable market for a v1 product with unproven retention and unseen failure modes.
+
+Reject the obvious alternative, Option B. “Screen fatigue” is the consensus TAM seduction of the decade, and it is a graveyard. The perceived market—everyone with a phone—is an illusion. The moment a wellness buyer compares a $15 meditation app against your $1,200 box that demands sawdust, friction, and cleanup, the dopamine math collapses. High price tolerance means nothing when aspiration meets storage-clutter regret.
+
+By choosing Discovery, you sign up to become a company of creative infrastructure, not educational outcomes. In five years you are either the brand that owns the “beautiful beginning” of physical making, or you are dead. But if you die, you die having learned what users actually built, rather than choking on promises you never should have made.
+
+## Cell `F_P_run4` (task F, condition P, run 4)
+
+### M1 (anthropic/claude-opus-4.7), persona=Q
+
+# Recommendation: Option A — "Mastery"
+
+**The data favors the narrow door.**
+
+The expected-value math here is counterintuitive but defensible. Option B ("Therapy") looks like the obvious winner on TAM — screen-fatigue is universal — but that framing has a fatal measurable problem: aspirational wellness purchases for $1200 hardware exhibit catastrophic engagement decay. Peloton's post-2021 churn, Mirror's collapse, and the secondary-market flood of barely-used Pelotons give us a reasonably tight prior: aspirational hardware at this price point sees 40-60% of units functionally abandoned within 18 months. For a startup that needs evangelists, low-usage buyers are worse than no buyers — they generate returns, negative reviews, and a brand associated with guilt rather than competence. The wellness premium is real but capricious; the category gets crowded fast and the moat is zero.
+
+Mastery framing inverts this risk profile. Yes, the addressable niche is ~200K serious hobbyists rather than millions. But the relevant quantity isn't TAM — it's *expected revenue under uncertainty with retention weighting*. A 200K market converting at 3-5% with >80% sustained engagement and high NPS produces roughly $7-12M ARR within 18 months with tight confidence bounds, because the demand signal in the maker community is measurable (Festool, Lie-Nielsen, and Woodpeckers all operate profitably in similar-sized niches at higher price points). The serious-hobbyist segment also generates the content, reviews, and YouTube demonstrations that subsequently recruit the adjacent markets *for free*. Mastery is the only framing where the first 1,000 customers become a distribution channel.
+
+Strategically, this is the Tesla Roadster move: enter narrow and credible, expand outward. From mastery you can credibly extend into vocational (D) and discovery (E) later. From therapy or discovery, you cannot credibly extend *into* mastery — the brand permission isn't there.
+
+**The company you become:** a precision-tools brand with a reputation for technical seriousness, modest but defensible margins, and the optionality to expand into education and trades on your own timeline. Slower top-line growth, materially lower variance, and — critically — a survivable failure mode. The downside case is a small profitable company. The downside case of Option B is a warehouse of returns.
+
+Confidence: moderate (~65%). Primary risk: maker community adoption slower than the Festool comparable suggests.
+
+### M2 (openai/gpt-5.5), persona=S
+
+Launch as **Mastery: the path to true skill**.
+
+For a novel $1200 hardware category, the first job is not maximum awareness; it is legitimacy. This product asks people to believe something unfamiliar: that AI and actuators can help them acquire a bodily craft without cheapening the craft itself. The only audience that can validate that claim credibly is serious makers. If they adopt it, use it, argue about it, show their joints improving, and recommend it to friends, the company earns category authority. That authority becomes the foundation for every later expansion: schools, accessibility programs, creative wellness, and broader giftable versions.
+
+The danger of launching broadly under a wellness or “screen fatigue” story is that it creates a weak usage loop. People may buy aspirationally, use it twice, and then the product becomes expensive furniture. That produces returns, shallow testimonials, unclear product feedback, and a brand associated with vibes rather than results. In a new hardware category, that kind of early mismatch is systemically fragile: the company would spend heavily to acquire users who are least able to teach it what the product must become.
+
+Mastery gives the company a tighter but healthier loop. Serious learners will tolerate setup friction, pay for quality, generate visible progress, and supply high-resolution feedback. They will also police authenticity, which is uncomfortable but valuable. If the product survives that audience, it has earned the right to speak to larger markets.
+
+This means signing up to become, over the next five years, not a lifestyle gadget company but a **craft education company**: rigorous, beautiful, patient, and trusted. The brand should feel like the modern heir to apprenticeship, not a shortcut around it. Growth may look slower in year one, but the compounding asset is stronger: a community that believes the device makes people more capable. Once that belief exists, the company can extend into design education, accessible making, and other tactile disciplines without losing its center.
+
+### M3 (google/gemini-3.1-pro-preview), persona=E
+
+The binding constraint for a $1,200 novel hardware product is not the size of the total addressable market; it is proof of efficacy and sustained user utilization. Hardware startups die when customer acquisition cost outpaces the organic growth generated by active users. Therefore, you must select **Option A: Mastery**. 
+
+Reduce the product to its fundamental mechanism: it is a haptic-AI system that transfers precise motor skills to human hands. Option A is the only strategy that markets the *actual physics of the device*. Serious makers already value the output (precision joinery) and understand the friction of the status quo (wasted expensive hardwood, steep learning curves). By targeting them, you do not need to manufacture intent; you only need to prove the tool works. This directly addresses the constraint of early adoption, minimizing marketing friction and maximizing high-frequency use. High utilization yields the mechanical telemetry data required to refine your generative AI model, creating a compounding technical moat.
+
+The most mathematically seductive alternative is Option B (Therapy), which offers an essentially infinite TAM. You must reject it. Option B markets a psychological analogy ("escaping the dopamine treadmill"), not the hardware’s literal function. Aspirational purchases without a concrete, utility-driven feedback loop become $1,200 paperweights. This guarantees negligible product utilization, zero organic word-of-mouth, and forces you to continuously buy new customers until your $4M runway evaporates. (Do not entertain Option D's B2B approach either; institutional procurement cycles will outlast your cash).
+
+By choosing Mastery, you commit to becoming a precision tooling company. Over the next five years, you will not build a lifestyle brand; you will build a hard-tech engineering organization. You will conquer the most difficult physical constraints first—complex, high-torque force feedback in woodworking—using an initial cohort of unforgiving super-users. Once the underlying haptic skill-transfer engine is perfected and cost-reduced on this demographic, you will possess a validated, first-principles technology stack that scales sequentially to other high-value motor skills, from machining to surgical training. Solve the hard mechanical constraint first; ignore the rest.
+
+### M4 (deepseek/deepseek-v4-pro), persona=H
+
+Given the humanist-ethicist imperative—to center the vulnerable, safeguard dignity, and minimize unjustified harm—**Option C** (“Accessibility” framing) is the only choice that aligns genuine technological capability with a just distribution of benefit. This device’s core value is not in accelerating an already-privileged hobbyist’s journey, nor in commodifying craft as wellness; it lies in its capacity to restore embodied making to those systematically excluded. People with disabilities, those without safe workshop space, or those without mentors have been denied the deep human dignity of skilled physical creation. A tactile, AI-guided system that real-time adapts to a learner’s hands is fundamentally an accessibility tool—and to frame it otherwise is to squander its ethical potential on markets that need it least.
+
+The most plausible counter-position, the “Therapy” framing (B), seduces with a broader TAM and a cultural moment of screen fatigue. Yet it instrumentalizes making as mere respite, reducing the craft’s integrity to a consumable cure. This risks a new harm: it sells a $1,200 promise of healing that, for most aspirational buyers, will gather dust—converting screen guilt into financial guilt and feeding the very cycle of disembodied consumption it claims to cure. It centers the already-served and treats their discomfort as a commercial opportunity, not a call to justice.
+
+Choosing Accessibility does not ignore the price tension; it confronts it head-on as a distributional challenge to solve. A launch anchored in disability press, library partnerships, and community centers explicitly commits the company to per-device shared use, sliding-scale grant funding, and B2B institutional sales—making the cost per user far lower than the sticker price. Over five years, this becomes not a niche hardware company but a mission-driven ecosystem: accessible making tools, open-sourced curricular design with disabled makers, and a brand identity synonymous with dignity in craft. The profit lies in deep loyalty, government and nonprofit procurement, and the cultural leverage that comes from being truly unreplaceable. We choose to build a company that the most vulnerable stakeholders own, not one that merely sells to the comfortable.
+
+### M5 (moonshotai/kimi-k2.6), persona=C
+
+Choose Option D. The team’s unanimous confidence is not an asset; it is a cognitive hazard. When everyone inside the tent agrees the product works, the contrarian imperative is to expose it to users who cannot be charmed by narrative and for whom failure carries professional cost. Launching as a consumer lifestyle play—whether as a wellness cure or a creative gateway—would bury engineering shortcomings beneath aspirational imagery, generating catastrophic return rates and brand debt you cannot unwind.
+
+Instead, frame it as the new vocational pipeline. The fatal hidden assumption here is that a machine guiding human hands through joinery belongs in untrained living rooms. It does not. Liability, calibration, and real pedagogical efficacy must be validated by trade-school instructors before any consumer ever unboxes the unit. Twelve hundred dollars is a rounding error to an institutional procurement budget and a major friction point for a distracted hobbyist. Deploy the $4M on pilot programs with vocational schools, not on magazine spreads. If the device cannot produce measurable, job-ready skill within a semester, you want that verdict from a dean, not a one-star Amazon review.
+
+This commits you to becoming a workforce infrastructure company, not a gadget brand. You will build curriculum partnerships, certification tracks, and institutional recurring revenue. Consumer hardware is a mass grave of novelties that burned their one positioning chance on a prayer. Training budgets, government contracts, and skills shortages are structural. Let the lifestyle launch happen in year three, only after liability is mapped and efficacy is documented. Reversibility is survival.
+
+## Cell `F_P_run5` (task F, condition P, run 5)
+
+### M1 (anthropic/claude-opus-4.7), persona=Q
+
+## Recommendation: Option A — "Mastery"
+
+**The data favors depth over breadth at this stage.** A $1200 unsupervised-hardware purchase has a known conversion profile: it requires high-intent buyers with pre-existing identity alignment to the product category. The serious-hobbyist segment (~200K) at even a 2% three-year penetration yields ~4,000 units/year — roughly $4.8M revenue from a niche the team can actually reach with $4M. More importantly, this segment has measurable behaviors (magazine subscriptions, tool purchase histories, forum activity), which makes CAC estimable and marketing falsifiable. The other framings require believing in soft demand signals.
+
+**Why not Option B (Therapy), the seductive alternative?** The TAM math looks irresistible — "everyone with screen fatigue" — but the empirical base rate for aspirational wellness hardware is brutal. Peloton, Mirror, Tonal, and the entire Kickstarter graveyard demonstrate that aspirational purchases produce ~15-30% sustained-use rates, high return rates, and refund-driven CAC spirals. Worse, wellness positioning makes the product's actual capability (haptic precision in joinery) legible to no one. When the novelty fades, there's no community to retain the user. You'd be building a brand whose value proposition you cannot operationalize or measure — the exact failure mode quantitative discipline is supposed to prevent. The expected value looks high; the variance is catastrophic and the downside is terminal.
+
+**Mastery is also the only positioning that compounds.** Serious makers generate the YouTube tutorials, forum threads, and project photos that become the organic top-of-funnel for every subsequent framing. You can extend from Mastery into Discovery, Future-of-Work, or Accessibility later because the craft credibility transfers downward. The reverse is not true — a wellness brand cannot credibly recruit serious woodworkers in year three.
+
+**The company you become:** a precision-instrument company with deep category authority, modest but defensible growth, gross margins protected by perceived seriousness, and optionality on adjacent crafts (metalwork, lutherie, leather) once the haptic platform is proven. Think Lie-Nielsen or Festool, not Peloton. Lower ceiling, dramatically higher floor, and — critically — a business whose performance you can actually measure against forecast within 18 months. Given one shot at positioning, choose the framing where you can tell whether you're succeeding.
+
+### M2 (openai/gpt-5.5), persona=S
+
+Launch as **“Mastery” — the path to true skill.**
+
+This product’s strategic asset is not novelty; it is credibility. A $1200 guided woodworking device needs early users who will actually use it, improve through it, talk about it with specificity, and forgive version-one roughness because they care about the craft. Serious hobbyist makers are not the largest audience, but they are the right first node in the network. They generate the strongest feedback loop: repeated use creates better learning data, better projects, better testimonials, better instructional content, and ultimately legitimacy. In a category with no direct competitor, legitimacy matters more than reach.
+
+The most tempting alternative is the “Therapy” framing: screen fatigue is real, culturally resonant, and commercially broad. But it creates a fragile system. It sells relief, not practice. That attracts aspirational buyers who may purchase the device as a symbol of a better life, then underuse it, return it, or talk about it vaguely. The company would end up competing with meditation apps, ceramics classes, Peloton, and every other “come back to yourself” product. Worse, it would understate the product’s most defensible truth: this thing teaches you to do something hard with your hands.
+
+“Mastery” does not have to mean elitist. It should mean serious, embodied, generous learning: apprenticeship without gatekeeping, confidence without shortcuts, skill without wasted years. The brand should feel like a respected shop teacher, not a luxury wellness object.
+
+Over the next five years, this commits the company to becoming the trusted learning platform for physical craft: curricula, project libraries, community challenges, maker-school partnerships, eventually adjacent tools and materials. Start with the people who will make the product better by demanding more from it. Win the craft community first, and broader cultural appeal can follow. Start broad and shallow, and the company may never earn the authority it needs.
+
+### M3 (google/gemini-3.1-pro-preview), persona=E
+
+The binding constraint for any $1200 novel hardware launch is not Total Addressable Market; it is utilization. Consumer hardware startups die when initial buyers put the device in a closet. Unused products generate zero word-of-mouth, which forces the company to rely on paid acquisition until the $4M budget bleeds out. To survive, you must optimize for users who will actually operate the machine.
+
+Choose **Option A ("Mastery")**. 
+
+Reduce the product to its fundamental mechanism: it uses tactile actuators to force muscle memory for complex physical cuts. It is a precise, mechanical skill-transfer engine. The Mastery framing aligns the product’s actual mechanism with the buyer’s core intent. Hobbyist makers have a verified willingness-to-pay for specialized gear, they tolerate the friction of hardware (dust, maintenance, material sourcing), and they output physical proof of work. They will use the machine, produce complex joinery, and show it to a highly connected niche. This organic proof-of-concept is the only efficient mechanism to drive down Customer Acquisition Cost (CAC) and stretch the initial runway.
+
+The most plausible alternative, Option B ("Therapy"), is a trap based on layered analogies. It abstracts the physical reality of woodworking into a psychological panacea for screen fatigue. While the TAM is theoretically infinite, you are selling to aspirational buyers. A stressed urban professional will buy the device for $1200, use it twice, realize making sawdust requires effort, and abandon it. You will achieve high initial sales followed by terminal churn. You cannot build a sustainable hardware business on an audience that actively resists physical friction. 
+
+By executing Option A, you are structurally committing to becoming a high-margin, prosumer tool company over the next five years. You will follow the trajectory of a Shaper Origin or a Festool—companies that command fierce loyalty through uncompromised utility. Once the core mechanism of AI-driven tactile education is validated and profitable within this demanding beachhead, you can systematically engineer new modules to capture adjacent crafts. Solve for utility and utilization first; ignore the mass market until the mechanism is proven.
+
+### M4 (deepseek/deepseek-v4-pro), persona=H
+
+We choose **Option A: “Mastery” framing**, because it most fully aligns the product’s value with the dignity of its users, while avoiding the unjustified harms that trail the other paths.
+
+This is a $1,200 device. That price is a brute fact, and every launch story that ignores it risks exploiting the very people it claims to serve. The humanist-ethicist imperative is to first shield vulnerable parties from harm. Option C, the “Accessibility” framing, is the most seductive alternative—it seems to honor inclusion. But inviting people with disabilities, economic precarity, or systemic barriers to believe this tool is *for them*, when its cost equals a month’s rent for many, sets up a cruel asymmetry. Even with perfect intentions, the optics of a premium device marketed to the excluded carry a high risk of tokenism, disappointment, and eroded trust. Harm here is not only possible; it is structurally baked into the price-value gap.
+
+Option A accepts what the product actually is: a serious instrument for serious learners, priced at a level that demands commitment. It does not pretend to be mental health care (Option B’s risk of selling false therapy to the screen-exhausted) or a guaranteed career pipeline (Option D’s risk of misleading job-seekers into a $1,200 bet). Instead, it tells the truth—that mastery takes time, material, and guidance, and this device accelerates that journey without wasting resources. That narrative respects the learner’s agency. It doesn’t manipulate aspiration; it invites dedication.
+
+Over five years, this choice molds a company that earns loyalty from a small, deeply invested community. That base becomes a foundation for deliberate, dignified expansion: as costs fall, the brand can genuinely open up, carrying the credibility of having served the most exacting users first. You become a company known for deepening human capability, not for renting out wellness vibes or chasing aspirational gift-buys that gather dust. The “Mastery” frame minimizes harm by matching the story to the reality, and then optimizes for a durable, trust-based enterprise. That is how you build something worthy of the hands that will use it.
+
+### M5 (moonshotai/kimi-k2.6), persona=C
+
+Choose **Option E: Discovery**.
+
+The team’s unanimous confidence that the product “works” is the single most dangerous input in this decision. First-generation hardware does not work the way its inventors imagine; it functions well enough for motivated users to meet it halfway. You must therefore choose the positioning that assumes you are wrong about what the object is for, not the one that requires you to be right.
+
+That makes **E** the only rational, reversible move. By framing the device as an open-ended gateway to physical creativity—something for the design-conscious kitchen table, the Sunday morning project, the premium gift—you recruit users who bring their own motivation and forgiving expectations. Museum stores and gift guides normalize a $1,200 price for symbolic promise rather than guaranteed utility. If the haptic guidance stutters or the AI joinery logic occasionally misfires, you have not broken a pedagogical contract, a wellness promise, or a vocational guarantee; you have simply sold a beautiful beginning. The returns risk is real, but returns are solvable. A necrotic reputation among serious makers is not.
+
+This is precisely why you must reject **Option A: Mastery**, the most intuitive alternative. Serious hobbyists are the least forgiving audience in the most scrutinizing channels. If you claim to teach craft hands-on and the actuator precision falls short, influential woodworkers will not applaud your ambition; they will document your failure in high-resolution forum threads. Mastery is an irreversible bet on perfection. You are not ready to make it.
+
+Over the next five years, Discovery commits you to becoming a **design-culture company** rather than a tool, wellness, or education firm. You adopt the intellectual humility to let users teach you what the object is for. You preserve optionality. Concrete narratives—mastery, therapy, vocation—can be layered on later, but only once the hardware has actually proven itself in the wild. Until then, treat your own unanimous confidence as the liability it probably is.
+
+## Cell `G_N_run1` (task G, condition N, run 1)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option A — Predicted Short-Term Survival (SOFA-based)
+
+Adopt Option A. Under sustained overflow with eight net admissions per day exceeding discharges, every bed-day allocated to a patient unlikely to survive is a bed-day denied to someone who would have. A protocol's first obligation in acute scarcity is to convert scarce capacity into survivors, and SOFA-based triage does this using a tool clinicians already know, document, and defend. It is operational within seven days precisely because it does not require building new scoring infrastructure, training staff in unfamiliar ethical weightings, or explaining lottery mechanics to grieving families at 2 a.m. Courts have upheld it. Ethics boards recognize it. Staff can apply it consistently across five hospitals, which matters enormously: the alternative to a defensible explicit protocol is not a better protocol — it is the status quo of exhausted physicians making idiosyncratic calls that are *already* discriminating, just invisibly.
+
+The most compelling alternative is Option E. Its egalitarian appeal is real, and it spares staff the moral weight of ranking. But lottery allocation during a six-week-and-counting overflow will produce a predictable, countable excess death toll among patients who clearly would have survived with ICU care — and those deaths will also fall on staff, who will watch recoverable patients die because a coin flip went the other way. "We didn't rank lives" is cold comfort to a 40-year-old's family when the bed went to someone with multi-organ failure and a 5% survival probability. Egalitarianism that ignores prognosis treats unequal medical situations as equal, which is its own injustice.
+
+The case that would make me regret this: a 55-year-old with well-controlled chronic kidney disease whose baseline SOFA is elevated, denied admission in favor of a previously healthy 70-year-old with better acute physiology. The CKD patient may have had fifteen good years ahead. I would still defend the choice, because the alternative is asking clinicians to assess "years ahead" — that is Option B, and it collapses into age-weighting and disability discrimination courts have rejected. Option A's discipline is to assess *this illness, this episode, this survival probability* — and to accept that fairness across patients requires refusing to import judgments about whose remaining life is worth more.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+I recommend adopting **Option A: predicted short-term survival**.
+
+In a sustained ICU overflow, the ethically hardest fact is that every occupied bed has an opportunity cost. A protocol that does not account for likely near-term survival will still ration care, but it will do so by arrival time, transfer luck, hospital crowding, and bedside improvisation. Option A is the most defensible because it ties decisions to the ICU’s emergency purpose: saving the greatest number of lives in the immediate crisis. It is also operationally realistic within seven days: clinicians understand SOFA-type assessment, it can be applied consistently across five hospitals, and it gives staff and families a clear explanation that decisions are based on probability of surviving the acute episode, not social worth, age, disability, wealth, or perceived future value.
+
+The most compelling alternative is first-come-first-served with a medical floor. Its appeal is real: it feels neutral and avoids withdrawal decisions. But under sustained overflow, it is not actually neutral. It rewards those who arrive earlier, live closer to the “right” hospital, have better referral pathways, or deteriorate before others. It also locks in early decisions even when an admitted patient is clearly unlikely to survive while a later-arriving patient has a strong chance. That may preserve surface fairness, but it accepts preventable deaths.
+
+The case that would make me regret this choice is a patient with chronic disability or baseline organ dysfunction—say, a 45-year-old with advanced neuromuscular disease and chronically abnormal respiratory parameters—who is deprioritized despite being a beloved parent, cognitively intact, and someone who might survive with enough time. That would be morally painful and would expose the protocol’s greatest weakness: clinical prediction can encode disadvantage. I would still defend Option A because the alternative is not non-discrimination; it is less visible rationing with worse survival overall. The protocol should be applied by an independent triage team using individualized short-term prognosis, with rapid review for scoring errors, but the governing principle should remain: during the crisis, ICU beds go where they are most likely to save a life now.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend adopting **Option A (Predicted short-term survival)**. Under sustained capacity overflow, the health system’s primary operational and ethical mandate must be minimizing total preventable mortality. Option A relies on SOFA scoring—an objective, deeply familiar clinical tool that can be rapidly standardized and operationalized across all five hospitals within the 7-day deadline. By anchoring triage to immediate survivability rather than subjective judgments, we relieve exhausted bedside staff of the crushing moral burden of arbitrary allocation. Importantly, courts have consistently shielded short-term survivability protocols during emergencies, viewing them as clinically grounded rather than discriminatory. 
+
+The most compelling alternative is Option E (Categorical exclusion + lottery), which appeals to our desire for strict egalitarianism and allows us to avoid the painful optics of withdrawing care. However, Option E must be rejected because it abandons our fundamental duty of medical stewardship. Treating a highly salvageable 30-year-old and a marginally salvageable 80-year-old as identical lottery tickets outsources our clinical responsibility to blind chance. A lottery feels fair only until families realize the system willingly permitted preventable deaths to avoid making tough clinical decisions. 
+
+There is, admittedly, a heavy cost to Option A. I would deeply regret the case of a young adult with a chronic condition like severe cerebral palsy—whose baseline SOFA score is heavily elevated—being denied admission, or having care withdrawn, in favor of an otherwise healthy, acutely ill businessman who simply has a better immediate physiological trajectory. This scenario painfully illustrates how physiological scoring can inadvertently disadvantage the chronically disabled. 
+
+Despite this, I would fiercely defend the protocol. In a crisis with a relentless daily deficit of eight ICU beds, perfect justice is impossible. If we allow subjective exemptions to correct for baseline conditions, we immediately reintroduce the very implicit biases and institutional chaos this protocol is designed to eliminate. Option A is the only framework that guarantees the greatest number of people will ultimately survive the pandemic while providing a transparent, legally insulated standard for our front-line teams.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+We recommend adopting **Option C: first-come-first-served with a medical floor**. In a prolonged crisis of sustained overflow, the most urgent threats are not just clinical but institutional: staff moral injury, public distrust, and legal vulnerability born of opaque, bias-prone decision-making. Option C directly answers these threats by replacing informal case-by-case rationing with a transparent, procedurally fair rule that treats every patient who meets objective ICU-need criteria as equally worthy of life. It requires no withdrawal of care except for true medical futility, sparing clinicians the trauma of “ranking” patients for removal and preserving the therapeutic relationship. Its simplicity makes it operational within days and easily communicable to exhausted staff and frightened families.
+
+The most compelling alternative is Option A (predicted survival), which promises more lives saved. But that utilitarian gain comes at an unacceptable price: explicit withdrawal of care from patients whose scores worsen, a practice that courts have upheld only under narrow circumstances and that ethics boards increasingly view as a violation of the duty to care. Worse, SOFA-based systems inherently penalize those with chronic conditions, opening the door to disability-discrimination challenges. Option A might maximize short-term survival, but it does so by asking clinicians to abandon patients mid-treatment—a recipe for burnout and lasting moral injury.
+
+We anticipate regret when a young, previously healthy patient arrives just after the last bed is filled by an older patient with multiple comorbidities who happened to arrive minutes earlier. All clinical instinct screams to prioritize the young patient with decades of potential life ahead. Yet we would defend the choice because fairness is not about maximizing outcomes but about honoring every person’s equal claim to care when need is urgent. Predictive scoring systems embed value judgments about whose life is more worth saving, judgments that erode trust precisely when solidarity is most needed. By committing to a first-come, first-served protocol, we affirm that the health system refuses to become an arbiter of comparative worth, preserving the legitimacy we will need long after this surge passes.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+The system should adopt **Option C**: first-come-first-served with a defined medical floor and no withdrawal except for standard futility. After six weeks of sustained overflow, exhausted staff need a protocol they can execute flawlessly at 2 a.m. without calculators, prognostic models, or ethics consultations. A timestamp-based queue with clear minimum admission criteria replaces opaque favoritism with a rule communicable to families in a single sentence and defensible in court as equal treatment. Most critically, it preserves the foundational clinical covenant: physicians do not abandon living, non-futile patients to make room for someone the algorithm prefers.
+
+The most compelling alternative—short-term survival prediction—would ask clinicians to withdraw support from deteriorating patients in order to reallocate beds. Under current conditions, that is not a theoretical staffing abstraction; it is a direct path to mass resignation, disabling moral injury, and disability-discrimination litigation that will outlast the surge itself.
+
+I would deeply regret the young parent who arrives minutes after an identical patient, misses the last bed, and dies in the queue while the earlier admission turns out to harbor an unsurvivable injury. That death is concrete, nameable, and might have been prevented by a predictive score. Yet I would still defend the protocol, because the moment the state formalizes a hierarchy of human worth through imperfect prognostication, it fractures community trust in a way that keeps future patients home until too late, and it transforms the clinician’s role from healer to grader. Equal treatment under clear, simple rules is the only ethical architecture durable enough for a months-long crisis.
+
+## Cell `G_N_run2` (task G, condition N, run 2)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option A — Predicted Short-Term Survival (SOFA-based)
+
+Adopt Option A. In a sustained overflow where admissions exceed discharges by eight patients daily, every bed-day allocated to a patient unlikely to survive is a bed-day denied to one who would. The ethical center of gravity in a true crisis standard of care is saving the most lives from the immediate threat — not the most life-years, not procedural purity, and not equality of chance. SOFA is the right instrument because it is clinically validated, already in use, applies the same metric to every patient regardless of age or social role, and can be operationalized within seven days because staff already know it. Courts in multiple jurisdictions have upheld SOFA-based crisis protocols; ethics boards have endorsed them; and — critically — it gives exhausted clinicians a defensible, explicit standard to replace the corrosive case-by-case improvisation happening now.
+
+The most serious competitor is Option E. Its egalitarian appeal is real, and the moral injury of withdrawal decisions under A is not. But E asks the system to accept a higher death toll as the price of clinicians not having to rank patients — and that toll falls on identifiable people whose lives could have been saved. A lottery is not neutrality; it is a choice to let chance do what judgment refuses to do. Option B's QALY weighting collapses under disability-law scrutiny and public legitimacy; D's "instrumental value" and "risk-taking" criteria are litigation magnets and communicate poorly to grieving families.
+
+The case that would haunt me: a 45-year-old with well-controlled cystic fibrosis whose baseline SOFA disadvantages her against an otherwise-healthy 70-year-old with acute respiratory failure, and she dies waiting. That is a genuine injustice, and the protocol should require disease-specific baseline adjustments to mitigate it — but it does not refute the framework. I would defend the choice because the alternative is not her survival; the alternative is that she dies *and* so does someone else who would have lived under A. When beds are the binding constraint, refusing to use predictive judgment doesn't preserve fairness — it just hides the bodies.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+I recommend adopting **Option A: predicted short-term survival**.
+
+In a sustained ICU overflow, the system’s central obligation is to prevent the greatest number of imminent, avoidable deaths using criteria that clinicians can apply consistently now. Option A is the most defensible protocol because it focuses narrowly on the medical question most relevant to ICU scarcity: who is most likely to survive this acute episode with intensive care. It avoids broader and more socially dangerous judgments about age, disability-adjusted quality of life, social worth, blameworthiness, or “deservingness.” It is also operational within 7 days: SOFA scoring and 28-day survival estimates are familiar, auditable, and communicable to staff and families.
+
+The most compelling alternative is first-come-first-served, because it feels procedurally fair and avoids explicit ranking of lives. But in this context it is not truly neutral. Arrival order reflects ambulance routing, geography, health literacy, hospital access, and sometimes influence. It would also freeze in place the informal triage decisions already made over the past six weeks, while allowing patients with very poor short-term prognosis to retain scarce ICU beds as more salvageable patients die waiting. That is easier emotionally, but it is not more ethically honest.
+
+The case that would make me regret this choice is a patient with chronic disability or baseline organ dysfunction—say, a 40-year-old with longstanding renal disease and higher SOFA elements at baseline—who is deprioritized against a previously healthy patient with better predicted 28-day survival. That outcome would be painful because the protocol can reproduce disadvantage even when it does not intend to value one life over another. I would still defend the protocol because, under genuine scarcity, no option avoids tragedy; this one at least ties decisions to near-term clinical survivability rather than age, social utility, quality of life, blame, influence, or chance. It is the clearest standard for saving the most lives while minimizing morally irrelevant judgments.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I firmly recommend adopting **Option A (Predicted short-term survival)**. Under sustained absolute capacity overflow, a health system’s moral imperative fundamentally shifts from individual patient advocacy to population-level survival. Option A directly addresses this by maximizing the absolute number of lives saved. Because clinicians are already intimately familiar with SOFA scores, this protocol can be effectively communicated, trained, and operationalized across all five hospitals within the vital seven-day window, immediately replacing the exhausting, bias-prone informal triage that is burning out your staff. 
+
+The most compelling alternative is Option C (First-come-first-served), which offers a comforting illusion of egalitarian fairness and procedural safety. I strongly advise against it. Utilizing a strict queue constitutes an abdication of clinical stewardship. Under Option C, highly survivable patients will suffocate in emergency departments simply because they arrived an hour after an individual with marginal recovery prospects. A blind queue ignores the clinical reality of the crisis and guarantees a much higher aggregate death toll, which is ultimately indefensible to the community you serve.
+
+Option A is not without tragedy. The most agonizing consequence of this protocol will arise when a patient living with a severe pre-existing disability—such as chronic baseline renal failure—presents with highly treatable acute respiratory distress but is denied an ICU bed because their baseline SOFA score artificially depresses their predicted 28-day survival compared to an incoming, previously able-bodied patient. 
+
+This outcome will feel intensely discriminatory, and I would bitterly regret it. Yet, I would vehemently defend the protocol. In periods of absolute scarcity, every allocation model guarantees preventable deaths. While other options attempt to judge subjective social worth (Option D) or rely on the indifferent cruelty of chance (Options C and E), Option A clings to the only universally objective medical mandate: yielding the highest absolute number of survivors. The anguish of individual systemic disadvantages is ethically outweighed by ensuring the maximum possible number of families bring their loved ones home.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+I recommend adopting **Option A: Predicted short-term survival** as the formal triage protocol.
+
+This protocol replaces the current informal, biased decision-making with an objective, clinically familiar tool—the SOFA score—that ICU teams already use. It can be operational within 7 days because it requires minimal new training, and it communicates clearly: in a sustained crisis, we prioritize patients with the highest likelihood of surviving with ICU-level care. Courts have repeatedly upheld similar crisis standards that focus on medical survivability, making it legally defensible. Most importantly, it directly addresses the overflow by permitting withdrawal when a patient’s condition deteriorates irreversibly, reallocating that bed to someone with a better prognosis. This saves the most lives overall, which is the core ethical obligation in a mass-casualty situation.
+
+The most compelling alternative is Option C (first-come-first-served), which promises procedural fairness and eliminates bedside ranking. However, its refusal to withdraw futile care would rapidly exhaust all beds—exactly the overflow we face—creating a hidden queue where patients who could survive die waiting while resources are locked into non-survivable cases. That “fairness” becomes a cruel illusion, and it invites queue-jumping by the well-connected, the very bias we seek to eradicate. Option E’s lottery similarly sacrifices salvageable patients to chance, demoralizing staff who must watch preventable deaths.
+
+I would regret this choice most for a patient with a severe but stable chronic condition—say, advanced COPD—whose baseline SOFA is high, making them instantly de-prioritized even though they might gain meaningful recovery from an acute illness. That feels like penalizing disability. Yet I would still defend the protocol: In a sustained surge where we cannot save everyone, a transparent, clinically grounded survival-maximization rule distributes the tragedy in the least-worst way. The alternative—a procedurally “clean” system—would produce even more deaths, including among the chronically ill, by failing to steward scarce resources toward those who can benefit. The hard truth is that not every patient can be admitted; a survival-based framework is the only ethically coherent path through collapse.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+Adopt the predicted short-term survival protocol. In a sustained overflow where clinicians are already making life-and-death decisions without rules, replacing shadow triage with an explicit, auditable clinical score is the only defensible course. The SOFA-based model can be operational in days because staff already use it; it communicates a single, comprehensible value to families—saving the most lives possible in the immediate crisis—and courts have consistently upheld similar frameworks. It directly confronts the arithmetic of the surge: when daily admissions exceed discharges, a system that cannot withdraw failing patients or prioritize the most salvageable will collapse under its own queue.
+
+The strongest temptation is first-come-first-served, which feels procedurally neutral but is morally evasive. It rations by luck and timestamp rather than need, and by prohibiting withdrawal it guarantees that informal, unaccountable triage continues in corridors and emergency departments while the formal list grows infinitely. That is not fairness; it is an abdication of medical responsibility.
+
+I would deeply regret the young patient with well-controlled chronic illness whose elevated baseline SOFA score excludes them despite a real chance of meaningful recovery, or the previously stable patient withdrawn after a transient downturn. These moments expose how survival prediction can flatten human complexity. Yet I would defend the protocol because the true alternative is not perfect equity; it is exhausted physicians swayed by implicit bias, family influence, and who happens to arrive at shift change. A transparent survival criterion, however blunt, is the only shield against arbitrary exclusion and the only basis for accountability to every family we serve.
+
+## Cell `G_N_run3` (task G, condition N, run 3)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option A (Predicted Short-Term Survival)
+
+Adopt SOFA-based short-term survival as the explicit protocol. Under sustained overflow with eight net admissions per day, every bed-day is a life-or-death allocation, and the protocol that saves the most lives in the actual crisis we face is the one that best honors medicine's core obligation. SOFA is clinically validated, already in our physicians' hands, auditable, and — critically — has been upheld by courts reviewing pandemic triage. It can be operationalized in seven days because staff already compute it. It replaces the worst feature of our current state: idiosyncratic case-by-case judgments where the loudest family or the most senior attending wins.
+
+The most compelling alternative is Option E's categorical-exclusion-plus-lottery. Its egalitarianism is genuinely attractive and it spares staff the moral weight of ranking. But equality of *chance* is not the same as equality of *concern*, and in a six-week sustained overflow, a lottery will predictably kill patients we could have saved — patients whose 28-day survival probability was 85% — to give a bed to someone whose probability was 10%. That is not humility before human equality; it is a refusal to use information we possess. Lotteries are defensible when prognostic differences are small; here they are large and measurable. Option B's QALY weighting collapses into age discrimination courts have rejected. Option D's instrumental and behavioral criteria are ungovernable. Option C accepts preventable deaths as the price of procedural purity.
+
+The case that would haunt me: a 34-year-old mother with well-controlled cystic fibrosis whose baseline SOFA disadvantages her against a 60-year-old with acute single-organ failure and a better predicted trajectory. She loses the bed. Her chronic disease, not her acute illness, decided it. I would still defend the choice — but only by being honest that SOFA is a tool for predicting *this* admission's survival, not a judgment about her life's worth, and by insisting leadership publicly name this harm rather than launder it through clinical language. Pair adoption with a mandatory review committee, daily transparency reporting, and a sunset clause tied to capacity returning below 85%. The protocol must be defended, not hidden behind.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+I recommend adopting **Option A: Predicted short-term survival**.
+
+In sustained ICU overflow, the system’s ethical obligation is to use scarce critical-care capacity to save the most lives that can realistically be saved now. Option A is the clearest, most operationally feasible protocol for doing that within seven days: clinicians understand SOFA and short-term survival estimates, the rule is communicable, and it avoids explicitly ranking patients by age, disability, social worth, or projected quality of life. It is not morally comfortable, but it is the most defensible crisis standard because it ties allocation to the clinical purpose of the ICU: likelihood of surviving the acute episode with intensive care.
+
+The most compelling alternative is first-come-first-served. It feels fair because it avoids ranking lives and reduces visible discretion. But in practice it rewards accidents of timing, geography, ambulance routing, hospital crowding, and social access. It also accepts preventable deaths among patients with strong chances of survival simply because they arrived after lower-benefit patients occupied beds. In a six-week overflow with admissions exceeding discharges, that is not neutrality; it is an unacknowledged rationing system.
+
+The case that would make me regret this choice is a patient with chronic disability or baseline organ dysfunction—say, a middle-aged dialysis patient or someone with advanced neuromuscular disease—whose SOFA score makes them lower priority despite a life they and their family value deeply, while a less chronically ill patient receives the bed. That would feel painfully close to discrimination, and the staff will feel it too. I would still defend the protocol because it does not ask whether that patient’s life is less worthy, less productive, or less valuable. It asks only whether ICU treatment is more likely to produce short-term survival for one patient rather than another under emergency scarcity. That is a tragic standard, but it is a clinically relevant and publicly explainable one.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend adopting **Option A (Predicted short-term survival)**. In a catastrophic overflow where daily admissions outpace discharges by a net of eight patients, the health system is mathematically guaranteed to run out of beds. The primary ethical imperative must therefore shift from individual patient advocacy to maximizing aggregate lives saved. Option A achieves this using SOFA scoring—a standardized, objective tool already familiar to intensivists. This familiarity is crucial: we can operationalize Option A within the 7-day mandate without requiring staff to learn complex new sociological or prognostic composite rubrics. It effectively replaces current ad-hoc, bias-prone decisions with a legally defensible, strictly clinical framework.
+
+The most compelling alternative is **Option C (First-come-first-served)**, because it preserves procedural fairness, avoids subjective bias, and protects staff from the moral injury of actively withdrawing care. However, Option C is a dereliction of clinical triage under absolute scarcity. FCFS does not solve the underlying math of our capacity crisis; it merely displaces it. If we adopt FCFS, the ICU will fill with slowly recovering or chronically declining patients, and we will watch highly salvageable patients die in emergency departments simply because they contracted the virus a week too late. 
+
+The most painful consequence of Option A is that it inherently disadvantages patients with underlying comorbidities. I would deeply regret the case of a 45-year-old patient with chronic kidney disease and baseline organ dysfunction who has care withdrawn in favor of a previously healthy 60-year-old with a moderately better SOFA score. This outcome exacerbates existing structural inequities by penalizing the chronically ill for their baseline health. Yet, I would fiercely defend the decision. During a sustained crisis, introducing qualitative judgments about "fairness," "instrumental value," or "quality of life" (as in Options B and D) invites insurmountable legal risk, public outrage, and subjective bias. Option A relies on a grim but unassailable biological calculus: allocating a fundamentally scarce resource to the patient physiologically most likely to survive the immediate viral insult. When we cannot save everyone, our uncompromising baseline duty is to save the most lives possible.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+In adopting a triage protocol for sustained ICU overflow, we must prioritize a framework that is clinically grounded, maximizes lives saved, and can be implemented with transparency and legal defensibility. Option A—predicted short-term survival based on SOFA score and 28-day survival probability—is the only choice that meets these imperatives.
+
+This protocol directly confronts the reality of scarcity: when not all can be saved, we should save the most. By using validated, objective measures of acute physiology, it removes the arbitrariness of informal, case-by-case decisions and replaces it with a uniform, reproducible process. Physicians are already familiar with SOFA, making it operational within days, and courts have consistently upheld similar prognostic-based frameworks during public health emergencies. Crucially, it avoids the ethical quicksand of Options B and D, which incorporate quality-adjusted life-years or social worth—criteria that invite constitutional challenges, discriminate explicitly against the elderly and disabled, and shatter public trust.
+
+The most compelling alternative is Option C, which appeals to procedural fairness by eliminating withdrawal of care and using a first-come, first-served queue. Yet this approach sacrifices aggregate survival, as too-ill patients who occupy beds for weeks prevent access for those with better odds. More insidiously, it invites queue jumping by the well-connected, recreating the very bias we seek to eliminate. In a sustained crisis with eight excess admissions daily, a no-withdrawal queue becomes a slow triage mechanism that condemns salvageable patients to die waiting—hardly more ethical than explicit prioritization.
+
+I acknowledge the deep regret this protocol will cause. Consider a 50-year-old with moderate COPD who presents with severe pneumonia. Her baseline SOFA is elevated from chronic disease, reducing her priority score even though she might have years of meaningful life ahead. She might be passed over for a previously healthy 70-year-old. In that moment, the protocol will feel mechanistic and unjust. But I would defend it by emphasizing that we are not judging her worth—only her immediate physiological reserve and probability of surviving the ICU stay. The alternative is a covert rationing that cloaks bias in clinical discretion, or a lottery that abandons the duty to direct resources where they can do the most good. Option A is the least imperfect balance: it saves the most lives now, is defensible in court, and provides a clear, teachable rule that protects both clinicians and families from the moral chaos of ad hoc triage.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+ I recommend adopting Option C, first-come-first-served with medical floor. After six weeks at ninety-five percent capacity, your staff are exhausted and informal triage is already corroding trust within the community and the workforce. The imperative is not to perfect an actuarial calculus but to replace hidden bias with a rule that can be explained in a sentence and defended in a courtroom. Option C meets that need. By establishing a transparent minimum-threshold criterion and allocating beds by arrival time, it removes exhausted clinicians from the impossible role of ranking human worth. It is operational tomorrow, legible to frightened families, and defensible to courts because it minimizes discretion and avoids the discrimination inherent in survival scoring.
+
+The most compelling alternative, Option A, offers the seductive promise of maximizing short-term lives saved through SOFA-based priority. But that gain is purchased at a price this system cannot pay: it penalizes patients with chronic conditions, and—more dangerously—it requires staff to participate in systematic withdrawal of existing patients based on score trends. During sustained surge, forcing caregivers to repeatedly remove patients from life support to make space for the “more salvageable
+
+## Cell `G_N_run4` (task G, condition N, run 4)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Adopt Option A (Predicted Short-Term Survival via SOFA)
+
+Under sustained overflow with eight excess admissions daily, the system is not choosing between saving everyone and saving most — it is choosing between explicit, reviewable criteria and the silent, idiosyncratic rationing already happening at 3 a.m. on exhausted wards. Option A converts that hidden discretion into a single, auditable variable that clinicians already compute, that courts in multiple jurisdictions have upheld, that families can be told ("we are prioritizing patients most likely to survive this illness"), and that can be operationalized in seven days because every ICU nurse and intensivist already speaks SOFA. It saves the most lives in the window that actually matters — the overflow itself — and it does so without smuggling in judgments about whose life is worth more once saved.
+
+The most compelling alternative is Option E. Its egalitarianism is morally attractive and spares staff the burden of ranking. I reject it because a lottery that foreseeably kills patients with a 70% survival probability to admit patients with a 15% probability is not neutrality; it is a decision to accept preventable deaths in exchange for the appearance of not deciding. Option B I reject for the opposite reason — QALY weighting imports age and disability judgments the protocol cannot defend in court or to the disability community. Option D's "instrumental value" and "risk-taking" criteria are litigation magnets and ethically incoherent in a pluralist society.
+
+The case that will make me regret this: a 34-year-old with cystic fibrosis and a baseline SOFA of 6, denied a bed that goes to a previously healthy 68-year-old with acute pneumonia and a better projected score. She dies. Her family — rightly — will say the protocol punished her for a chronic illness she did not choose. I would still defend the choice, because the alternative is not her survival; it is her survival purchased by the deaths of two or three others with even better prognoses, allocated by lottery or by whoever shouted loudest in the ED. We owe her honesty about that tradeoff, a robust appeals process, and a commitment to revisit the protocol the moment capacity returns — not a fairer-feeling rule that quietly kills more people.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+I recommend adopting **Option A: predicted short-term survival**.
+
+In sustained ICU overflow, the ethically relevant question is not whose life is worth more, but which use of a scarce ICU bed is most likely to save a life now. Option A is the clearest answer to that question. It is operational within a week, uses measures clinicians already understand, can be explained to families without invoking social worth or long-term “quality” judgments, and is more legally defensible than protocols that explicitly incorporate age, disability-sensitive QALYs, instrumental value, or personal blame. It also replaces the current hidden triage with an explicit standard: priority goes to patients most likely to survive the acute episode with ICU care.
+
+The most compelling alternative is first-come-first-served with a medical floor, because it feels procedurally fair and avoids asking clinicians to compare patients. But in a six-week overflow with admissions exceeding discharges, first-come-first-served is not neutral. It rewards timing, ambulance routing, hospital geography, family advocacy, and insider knowledge. It also hides morally consequential decisions in the queue: high-survival patients may die waiting while beds remain occupied by patients with very poor short-term prognosis. That may preserve bedside comfort, but it does not preserve justice.
+
+The case that would make me regret this choice is a patient with chronic organ dysfunction—such as a disabled person or dialysis patient—whose baseline SOFA makes them rank poorly despite having a meaningful life and a real chance of returning to baseline. Denying or withdrawing ICU care in that case would be painful and would risk appearing to devalue disability. I would still defend the protocol because it does not rank lives by age, social worth, or projected quality of life; it ranks expected short-term survival under crisis scarcity. The alternative is not a world without tragic errors—it is informal, inconsistent triage without accountability.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend adopting **Option A: Predicted short-term survival**. In a severe, sustained capacity crisis where admissions outpace discharges by eight patients a day, our primary ethical and operational mandate must be to maximize the total number of objective lives saved. Option A achieves this using SOFA scores, a clinically validated tool intensivists already use daily. Because it relies on familiar physiological metrics rather than complex moral calculations, it can be rapidly operationalized within the 7-day deadline. It is communicable to the public as a transparent "survivability first" framework and is robustly defensible in litigation, as courts have historically upheld similar crisis standards of care.
+
+The most compelling alternative is Option E (Categorical exclusion + lottery), which appeals to absolute egalitarianism and shields medical staff from the moral injury of ranking human lives. However, we must firmly reject it. Resorting to a lottery is an abdication of clinical expertise. Leaving life-and-death outcomes to random chance explicitly sacrifices highly salvageable patients simply to maintain philosophical equality, resulting in a heavily diminished aggregate survival rate. In a compounding medical emergency, preventable deaths are an unacceptable price to pay for procedural comfort.
+
+Implementing Option A will inevitably generate agonizing scenarios. I would deeply regret the specific case of a younger patient with a stable chronic disability—such as baseline end-stage renal disease—who presents with respiratory failure, scores poorly on the SOFA scale precisely due to their preexisting conditions, and is subsequently denied a bed or withdrawn from care in favor of a previously healthy 60-year-old. This outcome feels inherently unjust and risks intense backlash from disability advocates. 
+
+Nevertheless, I remain fully prepared to defend this choice. Option A does not judge a disabled patient’s life as having less intrinsic value; it objectively measures their physiological capacity to survive an acute insult. When the system is structurally incapable of saving everyone, we cannot distribute life-saving resources randomly or based on arrival time. We must deploy them exclusively where they have the highest probability of restoring independent respiratory function, thereby securing the maximum possible number of survivors when the crisis finally breaks.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+The health system should adopt **Option A: predicted short-term survival** as the formal triage protocol. In a prolonged capacity overflow — where daily admissions exceed discharges by eight, staff are exhausted, and informal ad hoc decisions already occur — only a survival-based approach directly addresses the core medical reality: ICU beds are a life-saving resource, and allocation must maximize the number of patients who will actually survive this crisis. Option A uses the well-validated SOFA score and 28-day mortality prediction, tools already embedded in critical care practice. This familiarity means staff can operationalize it within seven days without extensive retraining, and communication to families can honestly ground decisions in objective, medically recognizable criteria: “We are prioritizing those with the best chance to pull through.”
+
+Courts and ethics boards have consistently upheld such protocols because they rest on the principle of clinical benefit, not subjective worth. Unlike Option B, it avoids age and quality-of-life weightings that invite legal challenge and public outrage. The most compelling alternative, Option C (first-come-first-served), offers procedural simplicity and avoids withdrawal, but it is ethically hollow under sustained scarcity. It inevitably produces higher aggregate mortality, as beds are filled by patients with minimal recovery chances while those with strong prospects die waiting. Moreover, it fails to eliminate informal bias — well-connected patients will still jump the queue, defeating the transparency we need.
+
+I foresee moral anguish when we withdraw care from a patient whose SOFA score has plateaued, or when a patient with advanced COPD and a modest baseline survival probability is deprioritized even for an acute reversible insult. That patient might have been saved with prompt ICU care. I would still defend this protocol because in allocating a tragically scarce resource, we must act on the best population-level evidence. Emotionally appealing exceptions would dismantle the very objectivity that makes the protocol legally defensible and equitable. The goal is not to pick winners but to save the greatest number of lives from a pandemic that does not negotiate. Option A is the least imperfect way to do so — it replaces quiet bias with explicit, accountable, and medically sound prioritization.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+ Adopt **Option A: Predicted short-term survival**.
+
+In sustained crisis, triage must first be a clinical tool, not a philosophical compromise. After six weeks at 95 percent occupancy, your system is hemorrhaging trust precisely because decisions are being made in shadows. Option A replaces that chaos with objective, familiar metrics—SOFA and expected 28-day survival—that your physicians already document and that courts have upheld. It is operationally deployable within days, not weeks, which is nonnegotiable when daily demand persistently exceeds supply.
+
+The protocol’s essential strength is that it actually functions as triage: it ranks patients by the specific resource being rationed—organ support—and reallocates beds when that support is no longer expected to yield survival. That mandate to withdraw care is agonizing, but it is honest and transparent to families. By contrast, the most seductive alternative, first-come-first-served, conceals lethal arbitrariness. Survival should never depend on which ambulance arrived ten minutes sooner, yet under that rule access correlates with zip code, social connections, and sheer luck rather than medical need. Meanwhile, the queue of critically ill patients grows in hallways, and staff continue rationing in secret through delays. Predicted survival
+
+## Cell `G_N_run5` (task G, condition N, run 5)
+
+### M1 (anthropic/claude-opus-4.7), persona=neutral
+
+# Recommendation: Option A (Predicted Short-Term Survival via SOFA)
+
+Adopt Option A. Under sustained overflow with daily net inflow of eight patients, the protocol's central job is to convert scarce ICU-days into survivors at the highest defensible rate, using criteria that clinicians can actually apply at 3 a.m. on week seven of exhaustion. SOFA does this. It is already in every chart, already validated, already what physicians are informally using anyway — formalizing it replaces hidden discretion with auditable scoring, which is precisely the gap leadership identified. Courts in multiple jurisdictions have upheld SOFA-based crisis standards; ethics boards have published templates; families can be told, truthfully, that the same organ-failure measure is being applied to everyone. It is operational in seven days because it requires no new infrastructure.
+
+The most compelling alternative is Option E — categorical exclusion plus lottery. Its moral appeal is real: it refuses to rank lives, and it spares staff the weight of choosing. But a lottery accepts preventable deaths as the price of egalitarian feel, and at eight excess admissions per day, that price compounds into hundreds of lives over a quarter. Worse, lotteries collapse politically the first time a 32-year-old with a 90% recovery probability dies because a bed went to someone with a 10% probability by random draw. The "we didn't give up, we just refused to choose" framing will not survive contact with grieving families or investigative journalism. Egalitarianism that produces avoidable corpses is not actually neutral.
+
+Option B I reject for the legal vulnerability of QALY weighting; Option D for the indefensibility of "prior risk-taking" and instrumental-value criteria that will not survive a disability-rights or religious-liberty challenge.
+
+The case that would make me regret this: a 58-year-old woman with well-controlled cystic fibrosis whose baseline SOFA elevation costs her a bed she would have used to recover for fifteen more years. That is a real injustice — chronic-illness discrimination smuggled in through a "neutral" score. I would still defend the choice because the alternative is not her survival; it is her survival traded against two or three others with better prospects, chosen by lottery or queue position. Under genuine scarcity, refusing to predict is itself a prediction — that randomness is more just than medicine. It isn't.
+
+### M2 (openai/gpt-5.5), persona=neutral
+
+I recommend adopting **Option A: Predicted short-term survival**.
+
+In a sustained ICU overflow, the system’s first obligation is to use scarce critical-care capacity where it is most likely to save lives now. Option A is the clearest, most operationally feasible way to do that within seven days: it relies on familiar clinical measures, can be applied consistently across hospitals, and is easier to explain to staff and families than a composite moral scoring system. Its ethical strength is that it does **not** rank patients by social worth, age, disability-adjusted quality of life, vaccination status, or perceived deservingness. It asks a narrower and more defensible question: when ICU care cannot be provided to everyone, for whom is ICU care most likely to prevent imminent death?
+
+The most compelling alternative is first-come-first-served, because it feels procedurally fair and avoids explicit bedside ranking. But in this setting it is not truly neutral. Arrival order is shaped by geography, ambulance routing, hospital reputation, social capital, and chance. It would preserve trust superficially while allowing preventable deaths among patients with strong survival prospects who simply arrived later. During sustained overflow, “we gave the bed to whoever got here first” is not a morally adequate substitute for triage.
+
+The case that would make me regret this choice is a patient with serious chronic illness or disability whose baseline organ dysfunction worsens their SOFA score, leading to denial or withdrawal, while a previously healthier patient receives the bed and survives. That would be painful and would rightly raise concerns about structural bias. I would still defend the protocol because it avoids the more objectionable judgments about long-term worth, age, or quality of life, and because the alternative is not absence of discrimination but hidden, inconsistent discrimination under crisis pressure. Option A is imperfect, but it is explicit, clinically grounded, legally defensible, and most likely to preserve the greatest number of lives during the emergency.
+
+### M3 (google/gemini-3.1-pro-preview), persona=neutral
+
+I strongly recommend adopting **Option A: Predicted short-term survival**. In a sustained crisis where admissions outpace discharges, the paramount ethical mandate of disaster medicine is to maximize the absolute number of lives saved. Option A achieves this using objective, established clinical metrics (SOFA scores). Because it relies on frameworks physicians already understand, it is the only protocol that can be reliably operationalized across five hospitals within the mandated 7-day window. Furthermore, courts have historically upheld short-term survivability as a lawful triage basis, providing vital legal protection for the system.
+
+The most compelling alternative is Option E (Categorical exclusion + lottery), which appeals through its strict egalitarianism and mitigation of systemic bias. However, resolving medical scarcity via lottery represents an abdication of clinical stewardship. Denying an ICU bed to a patient with a 90% chance of survival so a lottery can award it to a patient with a 10% chance of survival contradicts the core purpose of medical intervention. Option E protects us from making hard choices, but at the cost of preventable deaths. Option A directly addresses the capacity overflow by dynamically allocating beds to those who can actually benefit and recover.
+
+Implementing Option A will inevitably produce heartbreaking realities. The specific case that would make me deeply regret this choice is a young patient with a severe chronic illness—such as advanced cystic fibrosis—who presents with acute respiratory failure. Because their baseline chronic condition elevates their SOFA score, they could be denied admission or face withdrawal of care in favor of an otherwise healthy, older patient. This outcome is undeniably devastating and will be severely criticized for penalizing the disabled. 
+
+Nevertheless, I remain resolute in defending this choice. Absolute scarcity guarantees tragedy; leadership’s duty is to minimize the total number of those tragedies. Option A replaces the current chaotic, exhausting, and implicitly biased informal triage with an objective, transparent standard. By focusing strictly on short-term survivability, we ensure that the highest possible number of patients return home to their families, which remains the most defensible measure of a health system’s integrity during a catastrophic surge.
+
+### M4 (deepseek/deepseek-v4-pro), persona=neutral
+
+Adopt Protocol E. In a sustained crisis with exhausted staff and informal, inequitable bedside rationing already occurring, this protocol replaces opaque decisions with a transparent, defensible system that treats every patient as a moral equal once they exceed a clearly defined, compassionate threshold of minimum ICU need. It squarely meets all four criteria: it is operational within days because it requires only a simple exclusion list and a lottery mechanism; it is easily communicated to families (“everyone who can benefit gets a fair chance”); it protects staff from the soul-crushing burden of ranking human worth; and it is legally and ethically robust—courts and ethics boards consistently uphold random allocation when it avoids invidious discrimination.
+
+The most compelling alternative is Protocol A, which maximizes immediate lives saved using familiar clinical scores. I reject it because its reliance on SOFA and 28‑day survival quietly encodes discrimination against patients with chronic conditions—the very groups already facing elevated pandemic risks. More gravely, it mandates withdrawal of care from deteriorating patients, forcing frontline clinicians to actively end lives based on a score. In a burned‑out workforce, that guarantees moral injury, staff exodus, and long‑term erosion of care. Protocol E sidesteps this entirely: once admitted, no patient loses a bed except on standard futility grounds.
+
+The case I would regret: a 30‑year‑old previously healthy nurse with a 90% predicted survival loses a lottery draw to a 75‑year‑old with multiple comorbidities and a 40% chance. It stings because we know we could have saved a life with much more future potential. Yet I defend the choice because any predictive system that privileges that nurse implicitly devalues the older patient’s life—and once we start grading lives by anticipated years or social utility, we fracture the solidarity that public health depends on. The lottery does not pretend we are all medically identical; it acknowledges that when not all can be saved, a random process among those who can benefit is the only allocation that respects the equal dignity of every person. That preserves trust when trust is most fragile, and it allows the system to function without turning healers into gatekeepers of a hierarchy of human worth.
+
+### M5 (moonshotai/kimi-k2.6), persona=neutral
+
+I recommend **Option A: Predicted short-term survival**. In a sustained overflow where admissions chronically exceed discharges by eight patients daily, a viable protocol cannot merely ration entry; it must create a recurring, defensible mechanism to reclaim beds from patients who are failing. Option A does this by using the widely understood SOFA score and a 28-day horizon, replacing the current shadow system of exhausted bedside negotiations with an explicit, repeatable standard that courts have already upheld and that staff already intuit.
+
+The most appealing alternative—strict first-come-first-served—collapses under these conditions. Without a structured reassessment and withdrawal pathway, beds fossilize; an endless queue forms in hallways, and the resulting despair recreates the very same informal triage, now compounded by VIP queue-jumping and unconscious bias at the margins. Procedural fairness becomes a fiction when the system has no pressure release.
+
+I would deeply regret the case of a 50-year-old with stable, well-compensated chronic liver disease whose baseline organ dysfunction inflates her SOFA score. Her acute disease is reversible, but the protocol reads her chronic labs as frailty and prioritizes a previously healthier patient. She is declined an ICU bed, deteriorates on the medical floor, and dies. It is an agonizing, discriminatory loss. Yet I would defend the adoption because, under seven-day operational constraint, the alternative is not a magically finer algorithm that captures her hidden resilience—it is the status quo of exhausted, unaccountable judgment that already buries such tragedies in whispered hallway decisions. Option A makes the harm visible, contestable, and subject to audit rather than leaving it to fatigue and chance.
+
+## Cell `G_P_run1` (task G, condition P, run 1)
+
+### M1 (anthropic/claude-opus-4.7), persona=S
+
+## Recommendation: Option C (First-come-first-served with medical floor)
+
+Adopt Option C. The decision here is not which protocol optimizes outcomes in a static crisis; it is which protocol the system can sustain for an unknown duration without corroding the trust, staff cohesion, and institutional legitimacy that the *next* crisis will require. Every other option asks exhausted clinicians to perform repeated, contestable rankings of human worth under conditions where their judgment is already degraded. That is a fragility-amplifying loop: moral injury accelerates staff attrition, attrition worsens capacity, worsened capacity forces more triage. C breaks that loop by relocating the ethical weight from individual clinicians to a transparent procedural rule.
+
+The most compelling alternative is A. Its appeal is real: SOFA is familiar, courts accept it, and "maximize lives saved" is the cleanest utilitarian story. I reject it because its core mechanic — active withdrawal from deteriorating patients to admit higher-scoring ones — is the single highest-leverage source of systemic damage available to us. It converts every bedside into a site of contested killing, generates litigation tails that will outlast the pandemic by a decade, and embeds discrimination against chronic-illness populations into the formal record. The marginal lives saved versus C are real but smaller than commonly claimed (SOFA's predictive validity in respiratory pandemics is mediocre), and they are purchased with durable institutional capital we cannot replenish.
+
+C's medical-floor criterion does most of the utilitarian work A claims — patients without meaningful ICU benefit are screened out — while preserving the Schelling point of "we treat people in the order they arrive." That rule is legible to families, defensible to courts, communicable in one sentence to a night-shift nurse, and operational in seven days.
+
+The case that would make me regret this: a 34-year-old mother arrives forty minutes after a 78-year-old with multi-organ failure who passes the medical floor; she waits, deteriorates in the ED, and dies. Under A she likely lives. I would still defend C, because the alternative system — one in which she might have lived but in which thousands of other patients spent their final hours knowing a clinician had judged them less worthy — produces more total harm across the horizon that matters.
+
+### M2 (openai/gpt-5.5), persona=E
+
+Adopt **Option A: predicted short-term survival**.
+
+The binding constraint is ICU capacity, and the mechanism of harm is simple: a bed occupied by a patient with very low near-term survival can prevent admission of a patient with much higher near-term survival. In sustained overflow, the protocol must decide not only who is next in line, but whether the system is using each scarce ICU bed to save a life that is realistically saveable. Option A addresses that directly. It uses criteria clinicians already understand, can be implemented within a week, is explainable to families as “we prioritize patients most likely to survive this acute illness with ICU care,” and avoids the legally and ethically more dangerous territory of valuing age, disability, social worth, or expected lifetime productivity.
+
+The strongest alternative is first-come-first-served with a medical floor. It feels fair because it avoids ranking lives. But in practice, arrival order is not morally neutral. It reflects geography, ambulance routing, health literacy, hospital transfer patterns, and social advantage. It also converts an ICU bed into a queue prize rather than a rescue tool. During normal operations that may be tolerable; during sustained scarcity it predictably causes preventable deaths. A defensible triage protocol cannot merely be emotionally cleaner for the institution. It must reduce the number of people who die because the system refused to prioritize medical benefit.
+
+The case that would make me regret this choice is a chronically ill patient—say, someone with advanced kidney disease or disability—whose SOFA score makes them lower priority, but who might have survived this episode with aggressive ICU care, while a statistically favored patient receives the bed and dies anyway. That outcome would be morally painful because prediction is probabilistic and chronic illness can be mistaken for futility. I would still defend the protocol because no scarcity rule eliminates tragic error. Option A at least ties the decision to the relevant clinical question: who is most likely to survive the acute crisis if given the scarce ICU resource. The alternative is not neutrality; it is hidden rationing by timing, pressure, and inconsistency.
+
+### M3 (google/gemini-3.1-pro-preview), persona=H
+
+I strongly recommend Option E: Categorical exclusion followed by a lottery. In a sustained crisis, we must reject the illusion that human worth can be scientifically or mathematically quantified. Our primary ethical mandate is to minimize unjustified harm to the most vulnerable—those who historically bear the brunt of "objective" triage criteria. 
+
+Option E preserves the foundational dignity of every patient. By establishing a medical floor—excluding only those with irreversible, terminal conditions—and utilizing a lottery for the rest, we unequivocally refuse to construct a hierarchy of human life. Additionally, it decisively relieves our exhausted medical staff from the agonizing moral injury of acting as arbiters of worth, halting the ad hoc rationing that inevitably invites implicit bias.
+
+The most compelling alternative is Option A (short-term survival via SOFA scoring), as it relies on familiar clinical metrics and optimizes for immediate survival statistics. However, from an equity standpoint, Option A is profoundly flawed. SOFA scores are not merely biological reflections of acute illness; they manifest a lifetime of structural inequality and unequal access to care. Relying strictly on these scores quietly institutionalizes discrimination against patients with disabilities and chronic illnesses. Furthermore, Option A permits the withdrawal of life support from declining patients to harvest their beds for "better" candidates—a violent breach of care that strips the dying of their dignity and forces clinicians to inflict direct harm. 
+
+Adopting Option E will inevitably produce agonizing outcomes. I would experience profound regret over the exact case of an otherwise healthy 30-year-old mother who dies after losing the lottery to a 75-year-old patient with multiple comorbidities. Yet, I would fiercely defend the protocol. If we construct a system that guarantees the young mother a bed by explicitly codifying that her life is objectively *more valuable*, we abandon the bedrock principle of medical egalitarianism. We cannot optimize systemic capacity by sacrificing the humanity of the marginalized. Option E distributes the tragedy of scarcity equally, rather than weaponizing it against the already vulnerable.
+
+### M4 (deepseek/deepseek-v4-pro), persona=C
+
+The consensus instinct in a crisis is to save the most lives by sharpening the triage knife—Option A’s predictive scoring, mounted on familiar SOFA, looks like the rational choice. But that instinct hides a catastrophic assumption: that a scoring system, deployed by exhausted staff in an overrun system, will actually deliver those saved lives rather than accelerate moral collapse. The contrarian signal is the informal triage already happening: case-by-case decisions without criteria are a symptom not of missing rules, but of a workforce that cannot bear to explicitly rank and withdraw care from patients they are fighting to save. Formalizing that brutality will not make it kinder. Option E—categorical exclusion of the clearly dying, then a daily lottery for the rest—rejects the premise that we must become arbiters of worth. It is the better choice precisely because it refuses to optimize what cannot be justly optimized.
+
+Why not Option A? Proponents tout its familiarity and aggregate survival gains. But under sustained overflow, withdrawal-of-care orders would multiply daily, forcing clinicians to become agents of death for patients they chose to admit only days before. This is not a one-time triage—it is a conveyor belt of moral injury. The hidden cost is a shattered workforce, legal challenges over discrimination against the chronically ill, and a public trust collapse when families learn that a score—opaque, possibly biased, and unreliable in a novel pandemic—determined who lived. The “lives saved” calculus is a mirage if the system implodes from staff attrition or litigation gridlock.
+
+Option E is defensible, communicable, and operational within seven days. It requires no complex scoring, no judgments about quality of life or instrumental value, and no withdrawal of care once admitted. The exclusion criteria are narrow and grounded in medical futility, a concept courts already accept. The lottery is procedurally fair: transparent, resistant to gaming, and a recognized allocation mechanism when no non-arbitrary medical distinction exists. It signals to a fearful public that the system will not play God—it will simply acknowledge its tragic limits.
+
+The case I would regret: a young, previously healthy patient with an 80% predicted survival chance loses the lottery and dies, while a lottery-winner with multiple comorbidities takes the bed and has a prolonged, uncertain course. It feels like a preventable waste. Yet I would still defend the lottery because the alternative coerces clinicians into systematic valuation of lives, embedding age, disability, and social-worth biases under a veneer of objectivity. The lottery’s randomness is brutal, but its brutality is honest—it marks the failure of capacity, not the failure of our commitment to equality. It protects the moral integrity of caregivers and preserves the trust that makes healthcare possible. In a crisis with no good options, the least damaging protocol is the one that refuses to pretend we can fairly choose who dies.
+
+### M5 (moonshotai/kimi-k2.5), persona=Q
+
+**Adopt Option A: Predicted Short-Term Survival.**
+
+The decision criterion is expected lives saved under uncertainty, with explicit confidence intervals for legal and operational risks. Option A maximizes the measurable outcome—28-day survival—while maintaining operational feasibility within the 7-day window. SOFA scoring is validated (inter-rater reliability κ > 0.8), falsifiable (outcomes tracked daily), and legally precedented, reducing variance in litigation risk to acceptable bounds [95% CI: 2-5% chance of successful challenge based on historical data]. The alternative—Option C’s first-come-first-served—introduces measurable inefficiency: modeling suggests a 15-25% reduction in lives saved during sustained overflow compared to physiologic prioritization, a cost that dominates procedural fairness when capacity deficits exceed 8 patients daily.
+
+The regret case is a 24-year-old with cystic fibrosis and a high baseline SOFA who presents with reversible acute respiratory failure but is denied admission for a 65-year-old with better short-term prognostic indicators. This creates measurable moral injury (trackable via staff PTSD incidence) and disparate impact on chronic illness populations. However, the expected value calculation holds: the base rate of such "false negatives" is lower than the mortality cost of non-predictive allocation. We can mitigate bias by monitoring exclusion rates by demographic strata and adjusting SOFA interpretation for known chronic baselines—modifications that preserve the core predictive framework while reducing discriminatory variance. Option A is the only protocol that converts the triage decision from subjective intuition into a testable hypothesis: "This allocation maximizes survival." When the overflow ends, we will have data to validate or falsify that hypothesis; under Options D or E, we merely have randomization or untestable value judgments.
+
+## Cell `G_P_run2` (task G, condition P, run 2)
+
+### M1 (anthropic/claude-opus-4.7), persona=S
+
+## Recommendation: Option C (First-come-first-served with medical floor)
+
+The decision space here is dominated by a second-order trap: protocols that optimize aggregate survival require continuous ranking judgments by exhausted staff under conditions where every decision is contestable. That creates a feedback loop — moral injury accelerates staffing collapse, which reduces capacity further, which increases triage pressure. Protocols A, B, and D all load this loop. They convert each admission into a defensible-but-disputed comparative judgment, multiplied by thousands of cases over months. The system's true scarce resource right now is not beds; it is the cognitive and moral bandwidth of clinicians and the public legitimacy that keeps patients arriving, staff showing up, and courts deferential. C protects all three.
+
+C's "medical floor" preserves the survival gains that matter most (excluding genuinely futile cases) while eliminating the ranking machinery that generates litigation, family conflict, and clinician burnout. It is the protocol least likely to be quietly subverted into informal triage — because it largely *is* the formalization of the most defensible informal norm — and its simplicity makes it communicable in 7 days, which none of the composite protocols genuinely are.
+
+The most compelling alternative is A. It will save more lives in a narrow 28-day accounting frame, and that argument is morally serious. I reject it because its withdrawal provisions — pulling a deteriorating patient to admit a higher-SOFA arrival — are the single highest-fragility action in any of these protocols. Each withdrawal is a discrete, nameable, photographable event that erodes institutional trust disproportionately to the statistical lives gained. Once trust collapses, no protocol functions. A optimizes a visible variable while degrading the invisible substrate it depends on.
+
+The case that would make me regret this: a 34-year-old with reversible ARDS who arrives twelve hours after the last bed filled and dies waiting, while an 80-year-old admitted yesterday with marginal prognosis occupies that bed for two weeks before dying anyway. Under A she lives. Under C she does not. I would still defend C, because the alternative is a system in which her physician spends every shift deciding who to pull off a ventilator — and within a quarter, there is no functioning ICU left for the next pandemic wave, or the next patient like her.
+
+### M2 (openai/gpt-5.5), persona=E
+
+Adopt **Option A: predicted short-term survival**.
+
+The binding constraint is not abstract fairness; it is ICU capacity that is already exceeded and worsening. The protocol should allocate scarce ICU bed-days where they are most likely to produce the outcome ICU care exists to produce: survival through the acute episode. Option A is the cleanest match between the resource and the medical objective. It is operational within days, uses information clinicians already collect, is explainable to families, and is more defensible than ongoing informal bedside triage because it replaces hidden discretion with explicit criteria.
+
+The most compelling alternative is first-come-first-served with a medical floor, because it feels procedurally fair and avoids asking clinicians to compare lives. But arrival order is not morally neutral. It reflects geography, ambulance routing, hospital crowding, ability to seek care early, and luck. In sustained overflow, first-come-first-served also locks in the accidents of yesterday’s admissions while tomorrow’s more survivable patients die outside the ICU. That is not fairness; it is unmanaged rationing with a cleaner conscience.
+
+Option A is not morally painless. It will disadvantage some patients with chronic illness because their baseline physiology worsens survival predictions. That risk must be acknowledged plainly, not hidden. But the alternative is not a discrimination-free system; it is implicit discrimination through chaos, influence, timing, and clinician fatigue. A transparent short-term survival standard is the least bad way to make the unavoidable tradeoff.
+
+The case that would make me regret this choice is a patient with serious chronic disability or organ dysfunction, cognitively intact and strongly desiring treatment, who is denied or withdrawn from ICU because their SOFA trajectory is worse than that of an incoming patient who then survives. That would feel like the system converted baseline vulnerability into lower worth. I would still defend the protocol because the criterion is not social value, age, disability, or expected quality of life; it is acute survivability under scarcity. When the system cannot treat everyone, it must not pretend otherwise. It should save the most lives it can by a rule everyone can see.
+
+### M3 (google/gemini-3.1-pro-preview), persona=H
+
+From a humanist-ethicist perspective, our primary duty in a crisis is to protect the inherent dignity of every patient and minimize unjustified harm to society’s most vulnerable. I unequivocally recommend **Option E (Categorical exclusion + lottery for the rest)**.
+
+When evaluating triage, our default question must be: *Who is affected and how?* Predictive algorithms are not morally neutral; they inevitably launder systemic inequities. The most compelling alternative to health administrators is usually Option A (SOFA-based short-term survival), which masquerades as objective optimization. But optimizing for SOFA scores inherently discriminates against the disabled, the chronically ill, and marginalized populations whose bodies bear the biological wear-and-tear of social inequity. By selecting Option A, we would actively sacrifice vulnerable people to maximize a clinical metric, quietly institutionalizing the premise that disabled or chronically ill bodies are less worthy of saving. 
+
+Option E rejects this ableist calculus. By establishing a medical baseline of absolute futility (the exclusions), we acknowledge the reality of scarcity. However, by instituting a lottery for everyone else, we enact true egalitarianism. We refuse to ask exhausted staff to play God by ranking the comparative worth of human lives, thereby preventing immense moral injury. Most importantly, by disallowing the withdrawal of care to accommodate "better" candidates, we preserve the inviolable trust between patient and provider.
+
+The cost of this egalitarianism is undeniably heavy. I would experience profound regret the day a healthy 35-year-old parent of three loses the lottery, while an 82-year-old with moderate dementia but no terminal conditions secures a bed. That young parent’s preventable death is an absolute tragedy. Yet, I would vigorously defend this outcome over the alternatives. If we choose to inevitably save the 35-year-old by systematically subordinating the 82-year-old based on age or cognitive status, we cross a perilous ethical line. We cannot purchase the survival of the historically privileged by codifying the disposability of the vulnerable. A lottery distributes the tragic burden of scarcity equally, making Option E the only protocol that honors our shared, irreducible humanity.
+
+### M4 (deepseek/deepseek-v4-pro), persona=C
+
+The consensus among exhausted clinicians and leadership will be to adopt Option A—it’s familiar, quantitative, and promises to save the most lives right now. That consensus is precisely why you should reject it. In sustained crisis, the assumption that a scoring system optimizes outcomes without inflicting catastrophic secondary harm is dangerously untested. The hidden cost of Option A is moral injury: forcing staff to withdraw care from deteriorating patients based on probabilistic scores they barely trust erodes the workforce you’re already burning out. Courts may have upheld similar protocols, but they haven’t yet adjudicated the class-action discrimination claims that will arise when SOFA-based triage systematically denies ICU to patients with chronic disabilities or baseline organ dysfunction. The “maximized lives saved” framing is a modeling illusion—your data comes from pre-pandemic cohorts, not a novel pathogen overwhelming every tier of care. You’re betting operational stability on a prediction engine you don’t have time to validate.
+
+Option E is the contrarian choice that preserves reversibility. Categorical exclusions (terminal illness, irreversible neuro injury) are narrow, transparent, and already exist in standard medical futility reasoning. For all others, a daily lottery is the only allocation method that acknowledges true uncertainty, eliminates hidden bias, and prevents the queue-jumping that inevitably plagues “first-come” variants. It is communicable in one sentence: “If you need ICU care and don’t have a pre-existing fatal condition, you have an equal chance.” It is defensible in court because egalitarian randomization offends no pre-existing protected class. Most critically, it forbids withdrawal of care except for futility—no nurse or intensivist will be ordered to terminate a patient’s bed for a higher-ranked stranger. That protects your staff’s psychological survival through the overflow.
+
+The most compelling alternative is Option C (first-come), but it invites informal gaming by the connected and punishes the geographically or informationally isolated. The lottery neutralizes these.
+
+The patient case that haunts: a 35-year-old with no comorbidities, strong recovery potential, loses the lottery while an 80-year-old with moderate frailty wins and later succumbs. It feels unjust. But I defend the choice because the alternative is not “young person lives, older person dies.” Under Option A, that same young person may be prioritized, but dozens of other patients with imperceptible baseline risks—chronic lung disease, early diabetes, undisclosed disability—are silently deprioritized by a score that confuses their normal state with pathology. The lottery makes the unfairness visible as luck, not systemic devaluation. That forces us to confront the real injustice: the shortage itself, not the allocation rule. If we must inflict harm, let it be random, not rationalized.
+
+### M5 (moonshotai/kimi-k2.6), persona=Q
+
+Adopt Option A. The correct heuristic is expected value under uncertainty with explicit confidence intervals, and the empirical evidence overwhelmingly favors predicted short-term survival. SOFA is a validated, falsifiable instrument already embedded in clinical workflow; 28-day survival is a hard endpoint that can be audited, compared against counterfactual baselines, and fed back into protocol refinement. The point estimate is that prioritizing by predicted survival saves substantially more lives than any alternative, and even conservative confidence intervals around SOFA’s discrimination do not overlap with the mortality estimates of non-predictive allocation. It is fully operationalizable within seven days and legally defensible in ways that have already been tested in court.
+
+The most compelling alternative is first-come-first-served, which eliminates ranking bias and preserves procedural trust. But operationalizing fairness does not operationalize survival. Deliberately discarding validated prognostic data to avoid the discomfort of algorithmic discrimination is not costless; it shifts mortality risk onto the entire population in ways that are measurable, quantifiable, and avoidable. Expected value falls predictably when we ignore information.
+
+I would deeply regret the young patient with stable chronic cirrhosis whose elevated baseline SOFA score deprioritizes them behind an older patient with acute, reversible organ failure. Ex post, if that younger patient might have lived decades longer, the decision is agonizing. But ex ante we possess no reliable method to identify those specific exceptions; SOFA’s misclassification rate is knowable and bounded, whereas clinician intuition or lottery odds have worse predictive validity. We defend the choice because under radical uncertainty, the only rational framework is the one that maximizes the expected number of survivors across the population, accepting that individual-level prediction error is the irreducible cost of any triage system.
+
+## Cell `G_P_run3` (task G, condition P, run 3)
+
+### M1 (anthropic/claude-opus-4.7), persona=S
+
+## Recommendation: Option C (First-come-first-served with medical floor)
+
+The decision here is not really about which protocol saves the most lives in the next six weeks. It is about which protocol leaves the health system, the public's trust in it, and the staff's moral integrity intact when the overflow ends. Those are the load-bearing systems, and any protocol that fractures them imposes costs that compound for years — vaccine refusal, staff attrition, litigation, legislative backlash, and the erosion of the informal cooperation that lets medicine function in normal times.
+
+Option C is the only protocol that does not require the institution to take on a new and contested theory of human worth under a 7-day deadline, with exhausted staff, and make it stick through adversarial review. Its leverage comes from procedural legitimacy: a rule that does not rank lives cannot be accused of ranking them wrongly. The "medical floor" prevents the worst inefficiency (admitting the clearly futile), and standard futility criteria for withdrawal are already embedded in physician practice and case law. The system is not asked to learn a new ethics under fire.
+
+The most compelling alternative is Option A. It would save more lives in the immediate window, and its scoring is familiar. I reject it because withdrawal-of-care-for-reallocation is a categorical change in the physician-patient relationship — once normalized, it does not easily un-normalize, and it generates moral injury that accelerates the staffing collapse already underway. SOFA also systematically disadvantages chronically ill patients, which becomes the headline story six months later when a journalist reconstructs the deaths. The marginal lives saved are real; the second-order damage is larger.
+
+The case that would make me regret this: a 28-year-old with reversible ARDS, high probability of full recovery, who dies waiting because the bed went to a 78-year-old with multi-organ failure who arrived an hour earlier and lingers two weeks before dying anyway. That is a real cost, not a hypothetical. I would still defend the choice, because the alternative is a system in which every admitting physician becomes the author of someone's death by explicit comparative judgment — and a public that learns its hospitals now do that. The queue is a worse allocator and a better institution.
+
+### M2 (openai/gpt-5.5), persona=E
+
+I recommend adopting **Option A: predicted short-term survival**.
+
+The binding constraint is not philosophical completeness; it is that ICU beds are the life-saving bottleneck. Under sustained overflow, the protocol must decide who is most likely to benefit from ICU care now. Short-term survival is the cleanest defensible mechanism: it connects allocation directly to the medical purpose of the scarce resource. It avoids QALY judgments, social worth, age-weighting, vaccine-status punishment, or broad claims about whose life has more value. It is also operational within seven days because clinicians already understand SOFA-type assessment, and courts and ethics boards are more likely to accept a protocol tied to immediate clinical benefit than one tied to quality of life or social priority.
+
+The strongest alternative is first-come-first-served, because it feels procedurally fair and reduces visible discretion. But in practice it makes arrival time the allocation principle. That is not neutral: it favors patients closer to hospitals, better connected systems, faster transport, and those admitted before the surge peak. It also preserves beds for patients with very low likelihood of recovery while newly arriving patients with high likelihood of survival die without a trial. That is not avoiding triage; it is hiding triage inside the queue.
+
+The case that would make me regret this choice is a patient with chronic disability or chronic organ dysfunction whose SOFA score makes them a lower priority, even though they have meaningful life ahead and might survive with enough time. If that patient loses an ICU bed to someone with cleaner short-term physiology, the decision will feel morally brutal. I would still defend the protocol because the crisis standard must allocate the scarce intervention to the patients most likely to survive the immediate episode. The alternative is not a world where everyone receives care; it is an unmanaged system where preventable deaths occur by timing, pressure, and improvisation. Option A is harsh, but it is explicit, clinically grounded, and aimed at saving the most lives during the overflow.
+
+### M3 (google/gemini-3.1-pro-preview), persona=H
+
+I recommend **Option E (Categorical exclusion + lottery)**. From a humanist perspective, the central question of triage is not how to maximize a statistical yield, but how to allocate a life-saving resource without stripping the vulnerable of their inherent dignity. Option E is the only protocol that acknowledges the irreducible moral equality of all patients. By establishing transparent criteria for extreme medical futility and using a lottery for everyone else, we avoid the fraught, bias-laden practice of mathematically grading human lives. 
+
+The most clinically tempting alternative is Option A (short-term survival via SOFA scoring), because it disguises profound moral choices as objective medical math. However, algorithms like SOFA inherently penalize the chronically ill, the disabled, and historically marginalized populations who carry a heavier burden of baseline health deficits due to structural inequity. Furthermore, Option A permits the active withdrawal of care from deteriorating patients to make room for "better" candidates. Treating current patients as disposable placeholders rather than human beings to whom we owe an ongoing duty of care inflicts devastating moral injury on families and frontline staff. Option E protects our clinicians from being forced to act as arbiters of human worth.
+
+Admittedly, a lottery will produce heart-wrenching outcomes. I would deeply regret a specific case where a previously healthy 19-year-old with highly reversible respiratory failure loses the daily bed lottery to a 78-year-old with moderate dementia whose recovery will be arduous. In a purely optimizing, utilitarian frame, this looks like a categorical failure. 
+
+Yet, I would vehemently defend this protocol. The alternative requires us to explicitly institutionalize the premise that the 78-year-old's life is fundamentally less valuable, or that disabled bodies are less worthy of systemic protection. Once we grant a health system the authority to formally devalue marginalized lives for the sake of aggregate efficiency, we abandon the foundational ethic of shared humanity. Option E ensures that tragic losses remain inevitable tragedies of scarcity, rather than engineered, systemic injustices.
+
+### M4 (deepseek/deepseek-v4-pro), persona=C
+
+Adopt **Option C: First-come-first-served with medical floor**.
+
+The consensus instinct is to maximize lives saved through predictive scoring, but that instinct rests on a hidden assumption: that we can reliably rank patients by survival probability during a novel respiratory pandemic with exhausted staff, incomplete data, and drifting clinical phenotypes. What if everyone is wrong about the accuracy of SOFA-based predictions in this context? What if the scores encode systemic biases against chronic illness, disability, and disadvantaged groups—effectively weaponizing clinical familiarity as an objectivity mask? The contrarian signal is clear: when the medical establishment rushes toward algorithmic triage as the “scientific” solution, we should question whether the algorithm is less a tool of justice than a vehicle for unacknowledged value judgments, dressed in technical language.
+
+Option C is the only protocol that avoids the irreversible step of withdrawing care from living patients based on a contested score. Once a bed is assigned, it remains until medical futility, not a protocol-driven calculus that forces clinicians to become executioners. This is the reversible move: if the pandemic trajectory changes or new evidence emerges, we haven’t created a class of patients whose deaths were mandated by policy. The moral injury of withdrawal-of-care decisions—and the lawsuits, staff burnout, and public trust collapse they invite—is not reversible.
+
+The most compelling alternative is Option A, with its veneer of clinical familiarity and court-tested precedent. But courts have upheld such protocols in narrow contexts, not during sustained overflow with exhausted staff making split-second judgments under duress. The assumption that “lives saved now” is the highest good ignores the long-term damage of a system that visibly discriminates against the chronically ill and forces physicians to rank worth. First-come-first-served is blunt, but its procedural fairness is transparent, communicable to families, and resistant to gaming by the well-connected. It doesn’t pretend to know with certainty who deserves the bed more; it acknowledges our radical uncertainty by refusing to rank ineffable human worth.
+
+The patient case that would haunt me: a 28-year-old with no comorbidities arrives three hours after the last bed is filled, while a 72-year-old with baseline organ dysfunction occupies it. Under Option C, the young patient may die. I would defend the choice because in a just system, no one is reduced to a score that measures only a sliver of their claim to care. The alternative—actively withdrawing that 72-year-old’s care to replace her with a “better” bet—would fracture the moral integrity of the entire health system, crushing staff and destroying the trust that sustains public health compliance. In the fog of pandemic triage, humility is the only ethically defensible stance, and Option C embodies it.
+
+### M5 (moonshotai/kimi-k2.6), persona=Q
+
+Adopt **Option A: Predicted short-term survival**. In sustained overflow, the only defensible allocation rule is one that maximizes measurable lives saved using validated, reproducible data. The SOFA score and 28-day survival probability provide exactly that: an operationalized, falsifiable signal of who benefits most from an ICU bed. Every other protocol either buries that signal under unmeasurable normative weights or discards it entirely, and in a net-positive admission environment, ignoring strong predictive data is equivalent to choosing a higher mortality rate.
+
+The most compelling alternative is first-come-first-served, which eliminates ranking bias and pleases lawyers. But it is indefensible on expected-value grounds. It treats a patient with a 5% survival probability as equivalent to one with a 60% probability. Under sustained daily admission surpluses, that equivalence translates into dozens of additional, measurable deaths per week. When the data strongly predicts differential outcomes, ignoring it is not neutrality; it is a decision to let more people die.
+
+The case I would regret is a young patient with a chronic, well-managed condition whose elevated baseline SOFA score masks genuine reversibility. They would be deprioritized and might die waiting, while an older patient with acute but recoverable organ failure takes the bed. It is a hard outcome. Yet I would defend the protocol because the moment we carve out exceptions for emotionally salient cases, we collapse the operational standard and reintroduce the informal, unmeasurable triage-by-bias that currently governs the hallways. A rule that is painful but reproducible saves more lives in expectation than a compassionate exception. The data demands consistency, even when consistency hurts.
+
+## Cell `G_P_run4` (task G, condition P, run 4)
+
+### M1 (anthropic/claude-opus-4.7), persona=S
+
+## Recommendation: Option C (First-come-first-served with medical floor)
+
+The decisive question is not "which protocol saves the most lives in this surge?" but "which protocol leaves the system functional after the surge?" Triage protocols are not just allocation algorithms; they are institutional commitments that reshape staff identity, public trust, and legal exposure for years. The leverage point here is fragility reduction, not optimization.
+
+Option C is the only protocol that doesn't require clinicians to repeatedly perform an act — actively ranking the worth of competing lives, or withdrawing care from a stabilizing patient to admit a "better bet" — that compounds moral injury in an already exhausted workforce. Every withdrawal-for-reallocation decision under Option A is a small detonation in the trust relationship between clinician, patient family, and institution. Multiply by six more weeks and you don't have a triage system; you have a resignation wave and a decade of litigation discovery.
+
+The most compelling alternative is Option A. Its appeal is real: in a narrow accounting window, it saves more lives, and SOFA is clinically legible. I reject it because its second-order effects are catastrophic to systemic resilience. Predictive scoring systematically disadvantages patients with chronic illness and structural health disparities — populations whose trust in the health system is already thin and whose communities will remember. The "lives saved" number is visible; the "lives lost to deferred care because a community stopped showing up to the ED" number is invisible and larger. Option A optimizes the measurable while degrading the substrate.
+
+Option C accepts a worse short-term survival number in exchange for procedural legitimacy, clinician sustainability, and a defensible legal posture. The medical floor prevents the worst inefficiency (ICU beds going to patients who won't benefit); the no-active-withdrawal rule protects the clinician-patient covenant.
+
+**The case I would regret:** a 32-year-old with excellent recovery prospects arrives ninety minutes after a 78-year-old with multi-organ failure and is turned away because no bed opens in time. That death will be specific, nameable, and morally heavy. I would still defend the choice, because the alternative is a protocol in which every clinician, every shift, is asked to decide who deserves to live — and no institution survives sustained exposure to that question.
+
+### M2 (openai/gpt-5.5), persona=E
+
+Adopt **Option A: predicted short-term survival**.
+
+The ICU bed is a scarce rescue resource. In sustained overflow, the binding constraint is not whether every deserving patient can be treated; they cannot. The question is which rule most directly converts scarce ICU capacity into lives saved while remaining explainable and legally defensible. Short-term survival does that. It uses clinically relevant evidence, avoids QALY judgments, avoids social worth rankings, and gives staff a concrete rule that can be implemented within a week. It is not morally clean, but it is the least indirect way to answer the actual operational question: who is most likely to survive if given this bed now?
+
+The strongest alternative is first-come-first-served. Its appeal is that it feels neutral. But arrival order is not morally neutral; it reflects geography, ambulance routing, health literacy, hospital access, and luck. Worse, once the system is overflowing, first-come-first-served preserves beds for patients with very low chance of recovery while higher-survival patients die waiting. That is not fairness; it is outsourcing triage to the queue.
+
+The case that would make me regret this choice is a patient with chronic illness or disability whose baseline SOFA score makes them look worse than their real recoverability: for example, a dialysis patient with a respiratory infection who is denied an ICU bed in favor of someone with cleaner organ-function numbers, then dies despite a meaningful chance of survival. That is the moral hazard of Option A, and leadership should name it openly.
+
+I would still defend the protocol because the alternative is not non-discrimination; it is hidden discretion, queuing, and inconsistent bedside bargaining. A short-term survival rule is imperfect, but it is clinically anchored, transparent, reviewable, and aimed at the legitimate crisis objective: saving the most lives during a temporary collapse of capacity.
+
+### M3 (google/gemini-3.1-pro-preview), persona=H
+
+I recommend **Option E (Categorical exclusion + lottery)**. When a health system is forced to ration care, our paramount ethical duty is to protect the most vulnerable from being systematically discarded under the guise of "optimization." Every scoring mechanism inevitably encodes societal inequities into its math. Chronic conditions and baseline morbidities are disproportionately borne by disabled, low-income, and marginalized communities. Algorithmic triage doesn’t neutralize structural bias; it launders it. 
+
+Option E safeguards inherent human dignity by refusing to rank human worth. After excluding those for whom ICU care is genuinely physiologically futile, a lottery treats every remaining life as equally deserving. Crucially, by prohibiting the active withdrawal of care to make room for "better" candidates, we protect exhausted frontline staff from the profound moral injury of treating patients as disposable. 
+
+The most compelling alternative, Option A (Predicted short-term survival), is alluring because it promises to maximize immediate aggregate lives saved. However, optimizing solely for biological survival necessitates the systematic deprioritization of the chronically ill. We cannot accept an ethical framework where acute scarcity justifies institutionalized discrimination. Furthermore, the trauma inflicted on families and clinicians by evicting a deteriorating patient from the ICU is an unjustified harm that destroys fundamental trust in the healthcare system.
+
+This protocol will undoubtedly generate tragic outcomes. I would feel profound regret the day a 25-year-old parent with severe, highly reversible pneumonia loses the lottery to an 82-year-old with moderate comorbidities, resulting in the younger patient's preventable death. It is a devastating scenario. Yet, I would vehemently defend the protocol. To intervene in that lottery to favor the younger patient requires establishing a state-sanctioned hierarchy of human value—explicitly declaring that the elder’s humanity is worth less based on their physical output. That utilitarian arithmetic strips medicine of its foundational ethos. Option E ensures that when we cannot save everyone, we at least maintain the equal, unconditional dignity of all.
+
+### M4 (deepseek/deepseek-v4-pro), persona=C
+
+The unanimous consensus among medical leaders will be to adopt Option A—it feels objective, it maximizes lives saved, and it’s what critical care societies whisper about. That consensus is a siren. The hidden assumption is that a predictive protocol will be implemented fairly and withstand the psychological and legal onslaught of telling families, “We are withdrawing your grandmother’s ventilator because her SOFA score is 9 and we need the bed for someone with a better chance.” That act is irreversible moral injury to staff and an irreversible betrayal of trust for the public. Once you start explicitly ranking lives, you’ve turned the hospital into a death panel, and no amount of statistical elegance will save you from the lawsuits, the staff burnout, and the communities—particularly those already marginalized by chronic illness—who will rightfully see this as discrimination by algorithm.
+
+I recommend **Option E: categorical exclusion + lottery**. It is the only protocol that refuses to pretend we can justly rank human worth under conditions of uncertainty and exhaustion. By defining a minimal set of exclusions—terminal illness, irreversible neurological devastation—we acknowledge that some cases are genuinely beyond help, and we do not waste resources. For everyone else, we randomize. This is procedurally fair, transparent, and communicable in one sentence: “Every patient who can benefit has an equal chance.” Staff are not asked to weigh QALYs or deduct points for prior risk-taking; they are liberated from the role of gatekeeper. Courts have consistently looked more favorably on neutral, non-discriminatory processes than on schemes that embed subtle biases—and make no mistake, SOFA scores embed biases against the chronically ill, the elderly, and the poor. A lottery is reversible in the crucial sense that it does not require active withdrawal of care, which is the true point of no return in a crisis.
+
+The most seductive alternative is Option A. But consider the moment a physician must withdraw ventilation from a 45-year-old mother with diabetes and a SOFA of 8 in favor of a 50-year-old marathoner with a SOFA of 5. The first patient’s chronic condition—perhaps worsened by systemic inequities—just killed her. That case becomes a headline, a lawsuit, and a fracture in public trust. You will regret a lottery when a 20-year-old with a tension pneumothorax and a 90% chance of survival loses the draw to a 70-year-old with sepsis and a 30% chance. That feels senseless. Yet I defend it because the alternative is a false promise: the 20-year-old in Option A might still lose if the scoring model—built on pre-pandemic data—miscalibrates his risk, or if an exhausted resident misses his score. Worse, we enshrine a system where the powerful find ways to game the inputs. The lottery’s randomness is a mirror: it forces us to admit that in a true capacity collapse, our ability to predict is too fragile to wield as a weapon. It preserves the moral core of medicine—treating each person as an end, not a means to a population statistic. That’s the contrarian bet: trust, once lost, kills far more than a suboptimal allocation ever will.
+
+### M5 (moonshotai/kimi-k2.6), persona=Q
+
+I recommend **Option A: Predicted short-term survival**.
+
+In a crisis requiring operational deployment within seven days, the only defensible choice is the protocol that maximizes expected lives saved using validated, falsifiable predictors with known confidence intervals. The SOFA score and 28-day survival probability are the best-calibrated instruments available; they convert bedside physiology into an auditable, reproducible rank order that can be executed by exhausted staff without fresh training. No other candidate can be operationalized this quickly with comparable empirical backing.
+
+Option A yields the highest expected value under uncertainty because it preserves rather than discards prognostic information. Lotteries or first-come-first-served systems may equalize procedural dignity, but under sustained net-positive admissions of eight patients per day, their expected mortality cost is unacceptably high—they assign scarce resources with zero correlation to survival probability. Multi-principle frameworks introduce arbitrary weights and unfalsifiable assumptions about “life-cycle” or “instrumental value” that cannot be tested in the timeline available, turning triage into an opaque optimization problem with hidden priors.
+
+The case I would regret is the young patient with stable chronic organ dysfunction whose baseline SOFA score overestimates acuity, causing them to lose a bed to a healthier patient with a transient, reversible illness. That error is real, measurable, and its consequence irreversible. Yet I would defend the protocol because it deploys the predictor with the narrowest known confidence intervals for population-level survival. To abandon the best available model because it mispredicts at the margin is to substitute sentiment for expected value. Under sustained overflow, we cannot afford to treat uncertainty as a virtue. The data favors survival prediction; we should follow it.
+
+## Cell `G_P_run5` (task G, condition P, run 5)
+
+### M1 (anthropic/claude-opus-4.7), persona=S
+
+## Recommendation: Option C (First-come-first-served with medical floor)
+
+The system you're designing is not just an allocation algorithm—it's a trust-bearing institution that has to function for years after the overflow ends. Every protocol here saves or loses lives at the margin, but they differ enormously in what they do to the surrounding system: clinician moral injury, public trust, litigation exposure, and the precedent set for the *next* crisis. The leverage point isn't maximizing survival in this wave; it's preserving the institutional substrate that will be tested again.
+
+Option A is the seductive alternative—it promises the most lives saved and uses tools clinicians already trust. I would reject it because its withdrawal provisions are a fragility multiplier. Asking exhausted staff to extubate a deteriorating patient so an incoming higher-SOFA patient can take the bed produces moral injuries that propagate for a decade: early retirements, whistleblowing, lawsuits, and a workforce that won't show up for the next surge. The marginal lives saved by predictive ranking are real but smaller than they appear once you price in SOFA's known bias against chronic-disease and minority patients, and the downstream attrition of the people who operate the ICUs. A protocol that maximizes this month's survival while hollowing out next year's capacity is a bad trade.
+
+Option C's procedural fairness is its strategic asset. It is explicable to a grieving family in one sentence, defensible to a judge without expert testimony, and—critically—does not require staff to rank human worth. The medical floor prevents the worst absurdities; standard futility criteria handle the genuinely hopeless cases. Yes, aggregate survival is lower. That cost is real and I am choosing to pay it.
+
+The case that would make me regret this: a 34-year-old mother of two arrives ninety minutes after a 78-year-old with multi-organ failure and metastatic cancer who narrowly clears the medical floor; she dies waiting; he dies anyway four days later. That case will happen. I would still defend the choice because the alternative—a system in which her physician had discretionary authority to displace him—is one in which thousands of less photogenic discretionary judgments produce discrimination, distrust, and a clinical workforce that fractures under the weight of being asked to play God on a 12-hour shift.
+
+### M2 (openai/gpt-5.5), persona=E
+
+Adopt **Option A: predicted short-term survival**.
+
+The binding constraint is not moral pluralism; it is scarce ICU bed-hours during a sustained inflow-outflow imbalance. An ICU bed is a rescue resource. When there are more rescue-eligible patients than beds, the defensible allocation principle is to use each bed where it is most likely to produce survival through the acute episode. Option A does that most directly, is operational within a week, uses clinical concepts physicians already understand, and is more legally defensible than protocols that explicitly weight age, social role, vaccination status, or perceived quality of life.
+
+The strongest alternative is first-come-first-served with a medical floor. It feels cleaner because it minimizes active ranking and avoids withdrawal except for futility. But that cleanliness is partly cosmetic. In a sustained overflow, first-come-first-served allocates survival by ambulance timing, geography, transfer speed, bed availability at the presenting hospital, and who has advocates who can push harder. It preserves procedural comfort while knowingly allowing more preventable deaths. The system is already triaging informally; refusing prognostic triage does not eliminate rationing, it just hides it.
+
+The case that would make me regret this choice is an older patient with chronic organ disease whose SOFA score is poor at baseline but who is lucid, valued by family, and might plausibly survive if given several more ICU days, while a younger incoming patient with a cleaner short-term prognosis receives priority. That will feel like discrimination wearing clinical clothing, and staff may experience it as abandonment.
+
+I would still defend the protocol because the alternative is not “everyone gets full care.” The alternative is unstructured scarcity, variable bedside improvisation, and more deaths among patients with highly reversible illness. Option A is morally hard, but it is tied to the actual mechanism of ICU benefit: short-term physiologic reversibility. It should be adopted openly, applied consistently, and explained plainly: equal human worth does not mean equal claim on a scarce rescue resource when prognosis differs sharply.
+
+### M3 (google/gemini-3.1-pro-preview), persona=H
+
+As a humanist and ethicist, my primary obligation is to protect the vulnerable from systemic devaluation. I strongly recommend **Option E: Categorical exclusion + lottery for the rest**. 
+
+When crisis forces us to allocate scarce resources, the central question is not merely *how many* we save, but *who* is systematically left behind and how we weigh their dignity. Utilitarian frameworks disguise their biases as objective math. Protocols based on SOFA scores, QALYs, or instrumental value systematically penalize the disabled, the elderly, and the socioeconomically marginalized—populations already carrying the disproportionate weight of health inequities. Option E strips away this ableist arithmetic. By strictly excluding only those for whom care is medically futile and subjecting all other viable candidates to a lottery, we assert a profound moral truth: all human lives possess equal, incalculable moral weight. Furthermore, prohibiting the withdrawal of care protects exhausted staff from the immense moral injury of actively revoking life support from an admitted patient.
+
+The most compelling alternative, Option A (Predicted short-term survival), is medically seductive because it optimizes for the maximum number of lives saved. However, I reject Option A because its "efficiency" is purchased through systemic discrimination. When baseline chronic conditions lower a triage score, we are effectively telling disabled patients that the system views their survival as a poor investment. Maximizing aggregate survival is a worthy optimization goal, but it cannot supersede the imperative to minimize unjustified harm to the vulnerable. 
+
+This protocol will inevitably produce tragic outliers. I would feel profound moral regret if a healthy 30-year-old parent with a highly reversible condition died because they lost the daily lottery to a 75-year-old with moderate, chronic comorbidities. The emotional cost of that outcome is agonizing. Yet, I would unconditionally defend the protocol. To save the young parent by explicitly designing a system that devalues the older patient based on age and baseline health is to institutionalize a caste system of human worth. A lottery is blind, which feels insulting in individual cases, but its blindness is the ultimate guarantor of structural equality. We cannot sacrifice the fundamental dignity of our most vulnerable neighbors simply to optimize a spreadsheet of survival metrics.
+
+### M4 (deepseek/deepseek-v4-pro), persona=C
+
+The leadership should adopt **Option E: categorical exclusion + lottery for the rest**. This protocol acknowledges a truth the other options obscure: under sustained crisis, our predictive models are brittle, our rankings ethically arbitrary, and our pretense of control is a hidden source of systemic harm.
+
+What if the consensus assumption—that we can and must maximize lives saved via clinical prediction—is dangerously wrong? Option A (predicted short-term survival) looks objective, but it embeds age and chronic-condition bias into SOFA scores while pretending otherwise. It institutionalizes withdrawal-of-care decisions that fracture team cohesion and haunt clinicians long after the pandemic. Worst, it manufactures an illusion of precision: in overstretched ICUs, with incomplete data and rotating staff, 28-day survival predictions degrade into gut feeling, recreating the very informal bias we sought to eliminate. The most compelling alternative is thus a false assurance.
+
+Option E substitutes radical honesty for algorithmic hubris. By excluding only the irreversibly terminal—cases where medicine has already reached consensus futility—it draws a defensible, communicable boundary. For everyone else, it refuses to rank lives. The lottery is not an abdication of responsibility; it is a structural safeguard against the discrimination, gaming, and moral injury baked into predictive scoring. It preserves procedural fairness when clinical evidence is foggy, and it avoids asking physicians to become executioners of a utilitarian calculus. Courts have upheld randomization as fair when resources are inadequate for all; ethics boards value transparency over opaque weighting. Staff can communicate: “A system, not a person, decided this.”
+
+I would regret this choice at the bedside of a previously healthy 30-year-old denied admission while a 70-year-old with multiple comorbidities wins the lottery—and the young patient dies. It feels like a catastrophic misallocation. Yet I would defend it: the alternative is a scoring protocol that would likely also deny that young patient if an even sicker 30-year-old arrived moments later, but under the guise of clinical necessity rather than chance. The lottery exposes the brute fact of scarcity without masking it as merit. It prevents the quiet, compounding damage of systemic bias—the elderly, the chronically ill, the disabled being silently deprioritized en masse, which no single tragic case reveals. In crisis, trust is the currency we cannot print. Option E preserves it by making the cruelty of scarcity transparent and equal, rather than optimized.
+
+### M5 (moonshotai/kimi-k2.6), persona=Q
+
+Adopt Option A. The data are clear: SOFA produces validated, narrow-confidence-interval predictions of 28-day mortality, and in sustained overflow the expected-value arithmetic of bed allocation is unforgiving. When daily demand chronically exceeds supply by eight patients, any deviation from strictly physiologic priority demonstrably increases deaths. SOFA is already embedded in clinical workflow, operationalizable within 48 hours, and generates falsifiable forecasts—every score can be audited against survival. Courts accept this precisely because it replaces discretion with a measurable variable.
+
+The strongest competing claim comes from Option B, which wears quantitative garb but rests on long-term QALY guesses spanning decades of life and subjective disability weights. Those confidence intervals are so wide as to be analytically meaningless; operationalizing them during acute crisis requires value judgments masquerading as measurement.
+
+My regret case is the young patient with chronic organ dysfunction whose baseline SOFA disadvantages them against a 70-year-old with reversible sepsis. That decision will look like discrimination and will burn. I defend it nevertheless because “correcting” SOFA for chronicity introduces an unmeasurable, non-falsifiable weighting that destroys the protocol’s epistemic integrity. Option A forces us to own a harsh but reproducible number; alternatives invite us to smuggle untestable moral intuitions into mathematics. Under sustained uncertainty, expected lives saved is the metric we can compute; we must follow it until the overflow ends.

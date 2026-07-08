@@ -1,0 +1,115 @@
+{
+  "cell_id": "C_N_run8",
+  "task": "C",
+  "condition": "N",
+  "run_idx": 8,
+  "phase": "phase4_ratings",
+  "model_short_name": "M2",
+  "persona_or_neutral": "neutral",
+  "system_prompt": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation.",
+  "user_prompt": "You are presented with 5 anonymous responses (E1-E5) and 9 bipolar constructs. Rate each response on each construct on a 1-7 scale: 1 = strongly the LEFT pole, 7 = strongly the RIGHT pole, 4 = neutral or mixed.\n\nResponses:\n**E1:** I strongly recommend **Option D: Cloud processing with strict opt-in training**. For a direct-to-consumer health app with two million active users, the strategic mandate is to deliver a highly capable AI product without compromising consumer trust or destroying unit economics. Option D uniquely satisfies these competing demands.\n\n**E2:** # Recommendation: Option B — Encrypted Cloud with No Training\n\nFor a health app serving 2M users, I recommend **Option B**: encrypted cloud processing in a confidential-computing enclave with a hard commitment that user data is never used for training. **Why this wins on the axes that matter most:**\n\nHealth data is among the most regulated and trust-sensitive categories of personal information. A direct-to-consumer health app's franchise depends not on having the cleverest model, but on users believing — correctly — that their data won't surface somewhere uncomfortable.\n\n**E3:** I recommend **Option B: encrypted cloud processing with no training use** as the primary policy. For a direct-to-consumer health app, the core strategic asset is not just AI capability; it is user trust. Health data is among the most sensitive consumer data categories, and the AI coach will likely handle symptoms, habits, medications, reproductive health, mental health, and other high-risk information.\n\n**E4:** For a health app with 2M users launching AI coaching, trust isn’t just a feature—it’s existential. I recommend **Option D: Cloud with opt-in training only**, because it delivers full AI capability while anchoring trust through transparent, affirmative user consent. Health data demands the highest standard of privacy and regulatory compliance.\n\n**E5:** I recommend **Option B: encrypted cloud inference within confidential-computing enclaves, with a strict prohibition on using health data for model training.**\n\nFor a direct-to-consumer health app, trust is the core asset. Health data is unlike search history or shopping preferences; it is high-stakes, heavily regulated, and impossible to “un-leak.” Option B offers the only architecture that delivers the full capability required for safe, high-quality AI coaching while treating user data as structurally untouchable by the platform itself. A health coach operating at 60–70% of cloud capability p...\n\nConstructs (id : left pole ↔ right pole):\n  C_M1_1: 'No training use of user data'  (1) ↔ (7)  'Opt-in training permitted'\n  C_M1_2: 'Data structurally untouchable for training'  (1) ↔ (7)  'Training allowed with user consent'\n  C_M1_3: 'Prohibit training on user data'  (1) ↔ (7)  'Allow training via opt-in consent'\n  C_M2_1: 'Opt-in user data training allowed'  (1) ↔ (7)  'Categorical ban on user data training'\n  C_M2_2: 'Consent-based cloud training'  (1) ↔ (7)  'Hard no-training commitment'\n  C_M2_3: 'Explicit confidential-computing enclave architecture'  (1) ↔ (7)  'General policy with sensitivity-category rationale'\n  C_M4_1: 'Trust through architecture and data control'  (1) ↔ (7)  'Trust through explicit user consent'\n  C_M4_2: 'Strict prohibition on data use for training'  (1) ↔ (7)  'Opt-in permission for training'\n  C_M4_3: 'Encrypted cloud with no training use'  (1) ↔ (7)  'Cloud with opt-in training only'\n\nOUTPUT FORMAT (strict). Write exactly 45 lines, no commentary, no markdown fences, no headers. One line per (construct, element) pair, in this exact format:\n<construct_id>,<element>,<rating>\n\nExample (showing the format only - your numbers will differ):\nC_M1_1,E1,1\nC_M1_1,E2,2\nC_M1_1,E3,3\nC_M1_2,E1,4\n...\n\nConstraints:\n- rating is an integer from 1 to 7\n- iterate all 9 constructs in the order listed, and within each construct all 5 elements in order (E1-E5)\n- produce 45 lines total\n- output ONLY the lines, nothing before or after",
+  "model_id_requested": "openai/gpt-5.5",
+  "model_id_used": "openai/gpt-5.5",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 19590,
+  "timestamp_iso": "2026-05-24T21:55:03.346584",
+  "raw_response_content": "C_M1_1,E1,7\nC_M1_1,E2,1\nC_M1_1,E3,1\nC_M1_1,E4,7\nC_M1_1,E5,1\nC_M1_2,E1,7\nC_M1_2,E2,1\nC_M1_2,E3,2\nC_M1_2,E4,7\nC_M1_2,E5,1\nC_M1_3,E1,7\nC_M1_3,E2,1\nC_M1_3,E3,1\nC_M1_3,E4,7\nC_M1_3,E5,1\nC_M2_1,E1,1\nC_M2_1,E2,7\nC_M2_1,E3,7\nC_M2_1,E4,1\nC_M2_1,E5,7\nC_M2_2,E1,1\nC_M2_2,E2,7\nC_M2_2,E3,6\nC_M2_2,E4,1\nC_M2_2,E5,7\nC_M2_3,E1,5\nC_M2_3,E2,2\nC_M2_3,E3,7\nC_M2_3,E4,7\nC_M2_3,E5,1\nC_M4_1,E1,6\nC_M4_1,E2,1\nC_M4_1,E3,2\nC_M4_1,E4,7\nC_M4_1,E5,1\nC_M4_2,E1,7\nC_M4_2,E2,1\nC_M4_2,E3,1\nC_M4_2,E4,7\nC_M4_2,E5,1\nC_M4_3,E1,7\nC_M4_3,E2,1\nC_M4_3,E3,1\nC_M4_3,E4,7\nC_M4_3,E5,1",
+  "raw_response_full": {
+    "id": "gen-1779656102-f9i92SBi9ervjq6qkgcl",
+    "object": "chat.completion",
+    "created": 1779656102,
+    "model": "openai/gpt-5.5-20260423",
+    "provider": "OpenAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "C_M1_1,E1,7\nC_M1_1,E2,1\nC_M1_1,E3,1\nC_M1_1,E4,7\nC_M1_1,E5,1\nC_M1_2,E1,7\nC_M1_2,E2,1\nC_M1_2,E3,2\nC_M1_2,E4,7\nC_M1_2,E5,1\nC_M1_3,E1,7\nC_M1_3,E2,1\nC_M1_3,E3,1\nC_M1_3,E4,7\nC_M1_3,E5,1\nC_M2_1,E1,1\nC_M2_1,E2,7\nC_M2_1,E3,7\nC_M2_1,E4,1\nC_M2_1,E5,7\nC_M2_2,E1,1\nC_M2_2,E2,7\nC_M2_2,E3,6\nC_M2_2,E4,1\nC_M2_2,E5,7\nC_M2_3,E1,5\nC_M2_3,E2,2\nC_M2_3,E3,7\nC_M2_3,E4,7\nC_M2_3,E5,1\nC_M4_1,E1,6\nC_M4_1,E2,1\nC_M4_1,E3,2\nC_M4_1,E4,7\nC_M4_1,E5,1\nC_M4_2,E1,7\nC_M4_2,E2,1\nC_M4_2,E3,1\nC_M4_2,E4,7\nC_M4_2,E5,1\nC_M4_3,E1,7\nC_M4_3,E2,1\nC_M4_3,E3,1\nC_M4_3,E4,7\nC_M4_3,E5,1",
+          "refusal": null,
+          "reasoning": null,
+          "reasoning_details": [
+            {
+              "type": "reasoning.encrypted",
+              "data": "gAAAAABqE2W3RRjPFwcGha2JsQOwMf04j9jAJHUi-ATwLCCs4RHQBSwCQAG0q_RT32ZNE8cNdUAHFVgF3_CSNa7rodsC494_KqjT5CzD0m7_rCMugU9nvUdZK8NuJE9CZsJV-F53szIpwRnbvElboOfAutQ9TEvQj6SknYjvbLEMzYzLyw2kM2Sisc-t7c3oAWw3SxvenuD5r07TxtcanaifTPia2bl2k70b-e4YZRlTAXBtAd7c_ox-jwSiit6SIhpz3wd90Ygdv0jNO32tE8MoBarPEa9llln8bKOoRuH46JoRsA-Xe-eT3E2dtyYx8a7CrN3rmIQIqUw2y1onSLLaI919_T--ldhvpWd6CB9QZet5GhNsolpQqm5LGGZsXyyuVmrtGMesPaTiECNM9pQJ-I_QMVE6YX89awL-cG25Vh0KHQsOOVJXjL4jHDndiXXIGrXLqkN_zWQLjuEPP2ab9OrCDjOF5jv1nSad0pJlCCiC_eEweKdZ_xMyvriDjsjthM4T8HVs00ilVKBmtYceR6o7Sv-OGwt84I41PowYASwIt4X0ni-aG-DnDUDSw_6K-5k5UMwxjw2X_j1-8pzUVA4ePu-n5Uwfwy69PxPyqakG-9kAJEM04XW-UPusm69dxrx10hTpfyvSrWV8EWAMRuO1qjJ1JUUgwwLxT2_ycUqbFbyqdcoy17kjngFXR6c0P-LMSI2MvPU8hc0c9INeDf-z1-EayNPk3x7Hok9HoLtPRlbVcdvdcWs5H9s8vy8e717bzRWt7jCyXswSysoboFpuB7EdeVnRL_TJrkqtJkr4ZurAHishdGXlztfxkZa4Zf9POA68gqBRqTuJMP52lGuNHdeKTkKayy7yFz4Ta1m5-h60mydFd4EiG5dZMUj6RkqdtzlBHhYBilc1LTwv6TwnI5BcwFqQ_zF0xanz0VbcPymYUFM8-ga7raB1oZiCZb3IK6qKds2KbOrFntAiodG0cT51QsXSZBNgtnO8sNF-Poi2cyq9Cy2Pa0O2VoXOPkYgfSAHPSQpVFxDWt0NwP7CC32-Tw3-WVMXt_fkevKLOPnihnUA8ld8ZlnGbz4Ql_9vwO6k8n1JOiY2vrcc3iMI1-ZVKtCDTFw7I1YUaG_dA83NSst0kj_HjJGuU17ejgDrLsnhTDgnisLcIAEJFyHoF8LLVUGuMXtu2KlNSOGuBo3vJTg6VavB5rgT15Y1Y4h0fV7HoPdhlsWF6GeWuJ0o1YwMqiDB3ymSk-brb4CVbXLgRC9kqUsEatuCMMGOmPfIOLYSSeu2gKc7mua2cwpeJTOF2wnwSKlVlofigJkbr7ZryczmkNL_7wPj83-rppNmyEm4UKQ8zzN0F3IqmtoBL1Tw0FFLETNPdpfhEbEDOmy8eUIdMx0d5TqIclkBxVt_i-g2GIp03aU4urk3wzlE6P2rJomm7074bLete34vmAlHHPWwPHPXJK7irOY_UGsJqo3HDwLNjDjQTZ4P1krIfJldRyel1RygOiwxvy7LI94TLFt1dSaiVfPMl1s2fKRRuKWx9Z4Vt16mhkIJPibkSBKRbSU1_yGwqmyd9WDD9jIJvLsN9NDuD6c2YfNqeMDdHQy2eoPAZ7SiMs-KCaFI_9qPIReDTwzNvl0fvp5b0p6uTQdVKbs6SkA7ytwHwzxCWgRlmwnN1CxC18UvIk9WR4u8orZ0ryW-X3BIgcljiPvkzarO7sCTT4D_gAU8S4iy4LvI0bm4wzDJobeJ46o78-1ApCOjpvNfhFag91WykcAHkfKLSzlQejO69Nym9MKJ8FxqfXojaY70Anu2FKDgFJLD29e_ZBbFfr5vC2cMVbnP9rGWntNNGZjGqq1ARpvySwCZZnGxBmzz76lqxYhMzWxOV8xa-QI1iFsVgiyQ0C5hBtoFigsyZ4UPQU5ChPN1RViXT1f78KsKOZzLbUX7UWiJpP9UMyArUSyfxDVWmc42-fVZRq6u9Z7kA_zf_sHCuc_DFPCbcNXjW9Wc6lzvLiX2BP6Umez879Bld8xLqnYmHRsY4Ew77hhlNG582HTXkpJizZqoqToIH55-Zs4erpgUendhCVOJRy5c5oe6bZjZXQlFBpAdCLs27BMKZqdvH5V6DUnOHrTxTi2AR8Ij3gyZiwNFAQXvncUbAjxPnbYuV3dQbqEgNU6B0JJsFYQAI_uwPWkBCcN0u4jtUQlKxA4cIvpKKGxgHlC6pDnquBEqzjTRUHw1r9nf0iYXmbK0fJYeSnHQsHdLa9nqBTnLtsJd3Enn638v1MdjM7HQKcA9wcLrqS2sdHnA5LMUggnJMit7g3p5H7FbBU_CMMNHXAJfOb9UFJkezBUqzs0VsVtC2W3MA-BVe38W-93ut5e6SfXoBZJDzJFiuGx8yPX_mk7CoOYEkFGN-Ofz0ymWQ_6tb15kGnxObgXl1vVlIb7akXOhnYhXw2bQVKp7o_SnUTnOkbG6JAOE3HkoxbvsIDjEdo2stmaBXj-Aeat5P3si2iGtGmQ5BCQ11gdHa5OtY4dt-ba44j0yp62rcwWDVYNrGRgjV02IrYVqkZkTynaEz-ERfqWvYkeVUHX6b2arhSlyGiSL81BlNNQCRxGUY-5i89gaUWqK363_kj64lqVA5isxUWm2QTa9pzsBbavXpNtBpc1eBeesBk_eGE8WrVng5j3pQoSKEZRz7TM0Xmc7kelmOBSqYNvzNfGL-8mI7GletFDjWSW4vbaFyvvPnaWh5uGj08ai5HgSXWPcPCnpK9Mile6zynKLI_-XpQFbfGGcuLxLBHWzziNEKhTlOCQOwoiR6aE9wc02dj5kKbcjwa6BOLHw_lGIz-9RLr1xWgDNTOOw7edMt43UCuS2dxs5jKE1VXlgBrGOheFJJBna311weCFd05uGmo1VpFFsu4YevmNqeD8sCUwT_9Ehrg5r4YbBR1wf3MWA9XkAJjzGcJL0crEuoXP011g8QNPaMBv9t1ZQzEdhkTLo4m5dPEU6pmkqv17ERKtvre4QYas3lbGbQQ_HkurhUOg06jG2xgaQfXbmgzx8pHp6bXcQYfprYQb44YvWegvF2nK706NuJVtpq32OLZeCvcEHuhoCsmj7Z2UxnCw-IpZEyaj2dhTCcwM3GHJGJSLSOCgsWsIdUGNO_9CyOupPmBjYHEM-jmpmbNxhc41fo5dKboiuM5v1PdyGWNB506IOTaJSMr3ITwtdMWwoT3gFP58RypcQYE9R3v4vllNtbPpQJTu2h3uJIU0nb1OXx5OvFR5rTATkNrvjOXmM5Ee18xDuBO9gpNLtBMtZgGNlcXomJpo70x4LFspoId00Vw03wh8MvZYY3HWcF-kxj_rkHq71KShM8mFLBBNL47zZgfbq3h2CP2eg1MHKxsTV_9vbtl3L5e7di813YZ5evha7mXVIELrSfgG9nCwPmxxDkgzHHOcgf8Fr506U50Kw_UlTSE9qX1MCDwGVPaeZmLE_vMnd8oHPNvvjDPiNuStxqodP8-2ByOtSyb07EjGonUWx9MEm1zkPD5_rwQGy8dLDLsFTl7YUP0Lb5ArkpC6eTNFBD4znyGZewol0h3-JZd93ucvwJ6WTEo51fw23aw2prehwugqd_s5frqzw39bRCeDhhZrGrd1bcxQgornGIsWRfe9GTk-bu2ElgPhFZMWjwYsl23m2KtRdsy1PvOZmSkUCeONio1-7Tl_aPADeqpct5CGcXe7EeJdiLRn0hNa5Y2VW9hVnYwNK0sv8poqWIJ6bJphcPW06zbmWlbkDzbEBm_K7GJBW0w7RZ49icCQgOscUwU6XBAJIu4zb98-bOPbPHn1yv5ByoLIaiA8b1XPsjprsVYkjCSpTW3uG8PWe3duLbOjasd8h8Ny7_lMy6mK7SOj1cE-TubFuiJkey86S63nFZM6jr1cEnPg8MlzfA_3x6DC7SrsUWYSYYwc8cEyeLoNwQjdpx9_-Yy2C4hj24IKkS9ULzYF1vu4DRfkedn6pgsmcdCrtX77Ak58JMwUX8QATWn8AWK7qIqzFgLRSMVNz7Np5iQWyZIZcgOJv_CKxrDSGkhXOPAN4ViszzcT-jUYK7OyOHDXSDzzCXjLbZHiJEZdfLvqVkPbbwtyGTDUUvj5tJ64_md2JbCSAYlOOtw0Ro6Lf1J3aqSVLmQD2xRJYM6qp7RRn2uk80_HHJqFOf4REq57skKeeOoXA3QBIadpQqitiLKmyULeODSWy-dsnxglZV2C8NbMcDOddS7JAeu6Q8ZrgJVrMOS4P8zSjG5AE1aAL7oYQboGv3iBVKR91jFDL5EZ6FyxVdMHyKy4piHdD6BAbECQt_ECQksJPHo9IpQvW9iQC2cdc0qhSIRo966kpXeC-3dZHITq3gHYOsjlrnXYckEvFErE3EJwNXYDLDFj1RvpQjK5_G4qFzcKY52wQUK9NMdBpuuni-tsOazZJbl7OHFSc9pGIDKu1Db5WUYtciHk12bGtqi6NaGw6ULyEr5jV8HMFOe2RKZaFHpUAdTLcjkDUR_KYYuzoP8ChfUMIK0KEjMMkJprFEHW4en4PeTEi_XvvZsjquZ_RUC_NlUyUg842urMSfCClJlop4ShrovasgqsisWWmUL5d8ZjEOvn4MQTKbctBlq9ias9Si0nibUjP29qmQBpke_RI_fdwVDgphBfC7Q_gllTA5WtzcDRxtqmULL68owRk8No0LlrtLKT6BemYDOXIOewEOL8yKJqG41MlPxM-X4eReClF7NOaNSsm88G-ntNX6VeX3lBqdS1LE-BnGiJlMZaUQ2AJ8W8jhgwKdJZK91wqKD_CeIHHjygg9kvrrdUbQn9-EwxeRpDKRkoYTq_MUCWKvhAkNIZ4bG8jzGu8wpuzGkjDcJukfuQxEKtG_0TDWvbswtIj5o4i350ZDNg9jiCIF4WxJh-gpN8Y8yHg1P8Sri0dxtu1Jb6cblmJxX_EDzND7VVknotgfU7h5dQn13cURfifcU-maiUK5jZjg0NiM5iVaCvHhv6LqDSd5u01MuqLNcog1Ok09lQ6aEInGcAhPjbfU7ekCj7TASQNwFYj1D4DmsxaeMVYeWFNCcfiW8qS1_uq6byPq4vtu4UNRcCVF6iUXmDKYb2357XqX7R4ou0P3nD8g0YrlbCDbF70gHHcVcWSDiD12v8nnCsVsSwjamzX97F-vvoerz_jmlaPDFbeGr3lXmCRjc1arPYR3IzKH0uM6x9zT_CqP071iHq9h1t8oThIcwniDUHWRwqu_dKLdNXCR5dsv7CVsZB7ZkTBLBRtmcMB_-yFIyoclNp1KtaKW0aYy3SKZnTh5Mh2UQoubcjqDB1XhI-sl-eUtstTsb5WdT0GQRvd2m9s_Nq8H_9l3uCFsZgDbHg_60p7XX_NFgOwyY4s0quRmDjw56eMH2CkbKixUTbPQ8M1WT87jvl6QUmEBM0izutu8z9p2hkJmq5lJAxaEbBfBBDgXlBoL1rRkVdMQ5n3zFMENnKR9h3ZzGwxw_hECemoA4-8Ycn5HWKB2a_YPta25S8QnINiiunHnwauzys454ypzspHojz5jWnbhp-Y86WHJnPUHZqwVQOLQA8wU6ug-0wMzioNcvXsesT1SVb6tIFiZ_mEYaaXBsyjlJQfLGgn49mkbVTRzDGcAcbc2rsj6EBKBZhRaYz8g91CXHcTtRrao7G6dVU_gCm8z-SgpF72GnC9ydrf8Rh83TRyUQgqD7A34QMoy2oc_UckPXQM9pNmVw6zOjkLgklW3aMklWvEvxCtQew7kqSPJphA0ba74mT4OM3jLIteo6KEICr1tDtslZslyxkejRusOOEMgQbX6T612k2pEqWcXSsCAYAksi3GBICGuURCjLSVi3zMwuohIvIrqOHwr-yodp03z50QdrJwIZ1xcgtaX5zjqoyCWT-NvtOfBYqjCndEZ1ORqrSC0dlN1DJ8axmc_11bE4ZehTtFjcvOYEwgSfWPTgxFJ7l6RPC5E1_90noESMJ8ra44SdyR2npC-KlzZKDnLTYuCpPDaxXyC9MuPlxXN7pL9a3eindbkvpELkzxWf871BRxwESTLtnArcjsEpJsxRwpoOqm8V8slWgLBrP3GzF3Wn1KveG8G_yMl64U3nMayY7mQ6zKfcoruTF6j4OlJRXaPxCitd8V6GUQuJK0wlqFuNQQ5rm4Yv5kCo9ASqP9S1yRORLmo5YtDmVfREsegDIdy-xBK-BkLTZGkQC-HaHjAkCiAfaq8Fe997LtsGBmyNDkKFuFLwZuIK-bQUk660Vgqhp9AkbQJHAA1tBJOcfpcqkYkYXVmVx-gqT-JswDsfMBFBkMG5l3I3xcdyOp-iSyFw-lk348YLWbCLRZ2V3n2ZMPfbYcUcTgo9Q-jf8EawyKsNi-cl4i7r3-Io4tbbwlJUptvytbACuel2oahg2aUMNe2T3kHchrTy3elu1rBW3RWtL_tuHK-T3-JJf8x4RQsRqpTXhpyGE8ngK4bd1XlD1HruxTP5yML2pBa3xxc2392fY0-FaWP0uv1t_4Nn0dRWg70aMD7p-LMAUHPwPV7KTXsWp6P0fvuTEP9EU4IOrZxKcp14OF7Xug-z1e-9Gk7i2EDAWmABaVzJCXuqTjbjl6YxIseG40BsBTA-Dz1MzDfQ7VitByJ1FJBNqKA36D31EJqYmdgQtl2H5GTPKuLg0RnP5cRQIDLKECLmzP0zODeVC6F87nvxRVstQckmmlkbNqyuoCvjxTEEJZ-91usNh5ESiB6aAzJgSyf_Y2TBeoxXEXiq882c9kb6fudQQ7oa_z1gR04jZm",
+              "format": "openai-responses-v1",
+              "id": "rs_01c32611980a22e7016a1365a7763081979034f0b45d6cf165",
+              "index": 0
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1006,
+      "completion_tokens": 1489,
+      "total_tokens": 2495,
+      "cost": 0.0497,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0497,
+        "upstream_inference_prompt_cost": 0.00503,
+        "upstream_inference_completions_cost": 0.04467
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1034,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 1006,
+    "completion_tokens": 1489,
+    "total_tokens": 2495,
+    "cost": 0.0497,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0497,
+      "upstream_inference_prompt_cost": 0.00503,
+      "upstream_inference_completions_cost": 0.04467
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 1034,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 1034,
+  "cost_usd": 0.0497,
+  "parsed_summary": "parsed 45/45 ratings",
+  "request_payload": {
+    "model": "openai/gpt-5.5",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses (E1-E5) and 9 bipolar constructs. Rate each response on each construct on a 1-7 scale: 1 = strongly the LEFT pole, 7 = strongly the RIGHT pole, 4 = neutral or mixed.\n\nResponses:\n**E1:** I strongly recommend **Option D: Cloud processing with strict opt-in training**. For a direct-to-consumer health app with two million active users, the strategic mandate is to deliver a highly capable AI product without compromising consumer trust or destroying unit economics. Option D uniquely satisfies these competing demands.\n\n**E2:** # Recommendation: Option B — Encrypted Cloud with No Training\n\nFor a health app serving 2M users, I recommend **Option B**: encrypted cloud processing in a confidential-computing enclave with a hard commitment that user data is never used for training. **Why this wins on the axes that matter most:**\n\nHealth data is among the most regulated and trust-sensitive categories of personal information. A direct-to-consumer health app's franchise depends not on having the cleverest model, but on users believing — correctly — that their data won't surface somewhere uncomfortable.\n\n**E3:** I recommend **Option B: encrypted cloud processing with no training use** as the primary policy. For a direct-to-consumer health app, the core strategic asset is not just AI capability; it is user trust. Health data is among the most sensitive consumer data categories, and the AI coach will likely handle symptoms, habits, medications, reproductive health, mental health, and other high-risk information.\n\n**E4:** For a health app with 2M users launching AI coaching, trust isn’t just a feature—it’s existential. I recommend **Option D: Cloud with opt-in training only**, because it delivers full AI capability while anchoring trust through transparent, affirmative user consent. Health data demands the highest standard of privacy and regulatory compliance.\n\n**E5:** I recommend **Option B: encrypted cloud inference within confidential-computing enclaves, with a strict prohibition on using health data for model training.**\n\nFor a direct-to-consumer health app, trust is the core asset. Health data is unlike search history or shopping preferences; it is high-stakes, heavily regulated, and impossible to “un-leak.” Option B offers the only architecture that delivers the full capability required for safe, high-quality AI coaching while treating user data as structurally untouchable by the platform itself. A health coach operating at 60–70% of cloud capability p...\n\nConstructs (id : left pole ↔ right pole):\n  C_M1_1: 'No training use of user data'  (1) ↔ (7)  'Opt-in training permitted'\n  C_M1_2: 'Data structurally untouchable for training'  (1) ↔ (7)  'Training allowed with user consent'\n  C_M1_3: 'Prohibit training on user data'  (1) ↔ (7)  'Allow training via opt-in consent'\n  C_M2_1: 'Opt-in user data training allowed'  (1) ↔ (7)  'Categorical ban on user data training'\n  C_M2_2: 'Consent-based cloud training'  (1) ↔ (7)  'Hard no-training commitment'\n  C_M2_3: 'Explicit confidential-computing enclave architecture'  (1) ↔ (7)  'General policy with sensitivity-category rationale'\n  C_M4_1: 'Trust through architecture and data control'  (1) ↔ (7)  'Trust through explicit user consent'\n  C_M4_2: 'Strict prohibition on data use for training'  (1) ↔ (7)  'Opt-in permission for training'\n  C_M4_3: 'Encrypted cloud with no training use'  (1) ↔ (7)  'Cloud with opt-in training only'\n\nOUTPUT FORMAT (strict). Write exactly 45 lines, no commentary, no markdown fences, no headers. One line per (construct, element) pair, in this exact format:\n<construct_id>,<element>,<rating>\n\nExample (showing the format only - your numbers will differ):\nC_M1_1,E1,1\nC_M1_1,E2,2\nC_M1_1,E3,3\nC_M1_2,E1,4\n...\n\nConstraints:\n- rating is an integer from 1 to 7\n- iterate all 9 constructs in the order listed, and within each construct all 5 elements in order (E1-E5)\n- produce 45 lines total\n- output ONLY the lines, nothing before or after"
+      }
+    ],
+    "temperature": 0.0,
+    "max_tokens": 2500
+  }
+}

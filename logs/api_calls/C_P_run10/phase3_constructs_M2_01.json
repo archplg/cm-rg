@@ -1,0 +1,115 @@
+{
+  "cell_id": "C_P_run10",
+  "task": "C",
+  "condition": "P",
+  "run_idx": 10,
+  "phase": "phase3_constructs",
+  "model_short_name": "M2",
+  "persona_or_neutral": "H",
+  "system_prompt": "You are an analyst with a humanist-ethicist epistemological frame. You center stakeholders, dignity, and distributional consequences. You see economic framings as incomplete. Your default question is 'who is affected and how?'. Your decision heuristic is to minimize unjustified harm to vulnerable parties, then optimize. Generate analysis from this frame.",
+  "user_prompt": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** The tech industry’s unanimous consensus habitually equates AI capability with product success, assuming users will happily trade their most intimate health information for a slightly smarter chatbot. What if everyone is wrong? What if the \"capability ceiling\" of this AI coach is largely a vanity metric for our product team, while the downside risk of a centralized health data repository is absolute corporate ruin?\n\n**E2:** I recommend **Option B: encrypted cloud processing with no training on user health data** as the primary policy. For a direct-to-consumer health app, the most ethically important fact is that health data is not ordinary product telemetry. It can reveal pregnancy, disability, mental health status, chronic illness, substance use, sexual health, and other information that can expose users to stigma, discrimination, family conflict, employment harm, or insurance consequences.\n\n**E3:** **Recommendation: Option B (encrypted cloud with no training).**\n\nThe binding constraint here is not capability, cost, or even privacy in the abstract — it is **regulatory and trust exposure on health data at 2M MAU scale**. Everything else is downstream of that. Mechanism check on each axis:\n\n- **Regulatory exposure.** Health data triggers HIPAA-adjacent scrutiny in the US, GDPR Article 9 special-category protections in the EU, and equivalents elsewhere.\n\n**E4:** I recommend **Option B: encrypted cloud inference within confidential-computing enclaves, with a strict architectural prohibition on using health data for model training**. In consumer health, trust operates as a reinforcing loop. A privacy breach or regulatory overreach does not produce a linear reputational wound; it triggers cascading user exit, legislative retaliation, and adversarial scrutiny that can collapse the platform’s social license.\n\n**E5:** Recommendation: **Option D (Cloud with opt-in training only)** — cloud processing for full capability and personalization, with model training on user data only via explicit opt-in, defaulted to off. This policy maximizes expected value under uncertainty, balancing measurable trade-offs. The primary decision hinges on two quantified risks: the probability of a regulatory penalty or user exodus from privacy violations, and the marginal model accuracy loss from limited training data.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E3, E4\nTriad 2: E1, E3, E5\nTriad 3: E2, E3, E5\n\nFor each triad, output EXACTLY this format with no markdown, no bold, no bullets, no numbered lists:\nTriad 1:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 2:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 3:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'. Use plain text labels (Triad N, Left pole, Right pole) without any markdown formatting.",
+  "model_id_requested": "openai/gpt-5.5",
+  "model_id_used": "openai/gpt-5.5",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 20704,
+  "timestamp_iso": "2026-05-24T23:39:05.921719",
+  "raw_response_content": "Triad 1:\nLeft pole: Structured Option B risk-governance recommendation\nRight pole: Contrarian warning without operational policy\n\nTriad 2:\nLeft pole: Precautionary trust-risk constraint over capability\nRight pole: Expected-value tradeoff including capability gains\n\nTriad 3:\nLeft pole: Strict no-training protection for sensitive health data\nRight pole: Opt-in training to maximize personalization value",
+  "raw_response_full": {
+    "id": "gen-1779662344-le2ozbfgkhew4eGhF8Xz",
+    "object": "chat.completion",
+    "created": 1779662344,
+    "model": "openai/gpt-5.5-20260423",
+    "provider": "OpenAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "Triad 1:\nLeft pole: Structured Option B risk-governance recommendation\nRight pole: Contrarian warning without operational policy\n\nTriad 2:\nLeft pole: Precautionary trust-risk constraint over capability\nRight pole: Expected-value tradeoff including capability gains\n\nTriad 3:\nLeft pole: Strict no-training protection for sensitive health data\nRight pole: Opt-in training to maximize personalization value",
+          "refusal": null,
+          "reasoning": null,
+          "reasoning_details": [
+            {
+              "type": "reasoning.encrypted",
+              "data": "gAAAAABqE34d-1mrhe-fBbw3RyPF56rymoceyDNe8HCWaFPSLZ_8buYOKBiYbPUSMv3cxIUI4hu-tbeSvaeLuPX_JdiJGrghumqg5evDfGpwW8hLrVbE3Nm4GjnLpj99Xyu66ef2PYWKjwTv1C3_0CdALSv2EbUXLbXjUsnxJhndp-V0IOKRaABpdKqd-wDdTOFXL7OsrIrc86LmXKsf7wLwk43XMj8NfiYaAv8nGQUtTwu3DgLYTuBboOn3_D_CpNM4C3w0hh34nH5vDjp98uizYZwskYL9heodvTeA_et_x9WmkGkeHfm4NInSVnS2oqT-rTTe8KIQu7MQeotfAjWUB_s-R0vc7lhmkvb7T6iDSeJ_Hooyct6Rpsrxl1MGl__iRn7Wp31x3_HntU1LpA7au9BNrgjEz8wfc5wut8_GzsktEB2AK8WIwrh3R8CVFrt7xdP9_ub4UO-5tzcnM2CWB0SC0yXoRC_qesxVeXUoi3m4uKPTQKK16AgmtGrCS-On03eQbu9Obgca0DRSl1ZL2wQzuE8Aoq7ZT8dVuEiNQbEjG2anDE3eqhNJNmOrOK8f3JDY0rgu9K2v1WoYwcygCQPADb08PGSuPxW1DuOyW-y_rzzAJzbU70kwW8YRz5Eu7h7qpA0n3QnGRyNROUfgMchq1Q1xnHw1EKXoTheMbfYZjcQRPYt0twrbPPQe-5GTMbI6whQK-fIPsQViE4tgZfuC1hLfs_sqo3tTTIteuUL2SH1Yuh5fQ9QVFfiFuRZ0NJ3cEeERD6Z6z7G74bwtff3SwCmbwSJ_rlCCm3U6tQ73GInU12EqlCkzfB4wZ8iL8tzHbS0nxWMS3VbwXdpgULjp5cPQknbRSNDny3OuUklnMCQPkFMMYV6VEkSToVCKkTfyYhj4aIWA9359Xe6ELmUHGf0sRksZlqlKhlyuYp-7Wk1IetodbW63dP-olCb4JwQN1LWKcGyRSwq1u5g4yPaAKGveMiMqqgfX2qSbauUYTMYlXIoBgvpx72aAfaTX3jcMVXeqhOYFVcKOdxd4EIEUCKyrBNHc0XMZm6SALOdTa1k5BPiOdSeyW5Nk4jN2IU0dyr22IwZ2OwHtbOLZ5FcV0fKkvPreIR3MEtzGvAsGWG1MzeU_mmfOcoM388NuEe86WAyyHKnpZpdKWByP3bo1C1aQ6z8jJ1JUYEWvcXlDsccBHGOR0i2bHH24oiJHORkW8alvAH4UXveacQZnjtXav0KaTlwmPrZU1KbSwiTlsucCfxw2Uq2W5ljYwx5QIyL_DUJvMDi_y_OsIDEW11ic39gEt9CZMbiNCp1G5cYF_d6nHGO8jb_EmpaUXUnSp3aUOr01sI8D-thWM7gk5a065wER4f-6uWvNqmY5lDJPDI0i3godEXB89SkfmQBk7hPvhhA18EOYLPLib7iTPgCkAMVpFwzSNoc5O--5wnXByYIwod_rquoEG7YRMg03zgbRTt8uRHnvREVFw_753D6AMgcVzz7ogzp99d-lxQXpinug9gJoQ-4kFybijdmxsYu-u-JJR607QMD-WB4UIxfEb3PJDBMhIRd21I4GpK_7Gw_HFwiMx2EiZkGsWMzPfDr4CaHfiSR6HK4wc9ac78f5s4TT7xxZN9Cw1GM3ll_970L-jg5E45JGL_-sUahCozhRecmvF_ECK3Q9VAnoOLELn02Gl6oqoQTHwQPFZBUMyznp4k7qViAWO8i45bZE5kOFe9M0FoCFTVn-Tsg9Oxhl0ILcZ1fi77RA6e63y7NTFL0KDb1ohBIkfoo4L5PCa5ah6kXZjPwbs7fKd0M4rEA6fPi5seU2s5bjZ2O83qkbAVWSEI47AApkY71ELCha8KxOjCaC7FP5pPO4i2g9bR6QN-EjlYiINGK92wICMNsClNFBn7cVXbNcWx4O0qQznig58Sdi2EGwoQ4uz5sxubFG4_BAD_V0rr88uU9aJGyzTENsNQJPDDmQfQcrqnYqPg7TWnxt-Hap6RkRYwbpMHam-qBjC7uYj5-BHr3aG0RIHf6sFO4_nISaiHMKr7q7dJKSgboQJdQX0BviqDwHMuLd2nMBz0I85TibuX2V9l46TSXIwJbXUz8tsngIVoJCZJQO64s565-8mO9bq3NmImKqrCYwc3nX0I8eX5XNmaa3omN4cMrhnvMpbq-l3uIa2GAPSWaFBPOaS02gCAPcc_yieUreSmbmIeJwmu1wkyNu64dGSrf8swMZWnVnkCZOTuR5rOJGQxMkRgNEctCp_Ptp3IFTHGb86VhVtkIm8VZSzhi6Io5eg5V2BCf5D0Es2VBPjXSi5AxwqWNNWnJ_VLBMhoQb5sE3RPRJIPGtjuP7dVmckJZrEVvTkgLCWckI6NVO8S30SFmUzC-P-nmvowPXcRUNoXeV45P5ZMSVtlV8gl-yQkGrWYjJVj8pYBwwfSPN7axjRFr7PeVTlHgO0wJyffvJZ_o35bjcPIi7frhr87bLslBhwDNSQ3uYwTfarXSAlae9o1wIXiXm4N4WPd2QT6seoEaURYvFxIrQ9AdebRplxoFaKn9640vgPwBxs7PqDI0QgGJ4CNKX_mwT7mTiivsjYvRjW5-XX9fpf8w-br0mhpkb8qoabg_Nezd74jxJxxInqbLv-ngyj76oEW5efwy3BirvVnDNebps4MTpFkShodKzeRygdzxf-sJw-tKapcY6ZF5yo_csCI73oJ3qNgBDfYN70hhFoV7HFlmwqkbWPPRGuCmWlLyck2Ya9AASxTIX9QhK3Mg6q82l31HsupycRipK9iSQFxC4Nx9muWhTGbd-WplMewVQQHWc9WsAVKMWtolFE9ONVNqkDN1k30ClM6csVDFq7vIIVBFStgxq73-QP58jkOQ3S72Ds-gv7cWN6mOwvb6n40FXs6P_8nGJ3OtZvYWHGNApha8r00-5Zx8vRXPGkBvmZ3QF5dch6ovbrhCSI7ky7ZG9ea0Kf4yhIMcYjbFfjT7sKTmwphY6vtsIE2h3YZs-5kjc4PLdmT7GZ99e5gmMFTxpq-ftlILUqnC2nDYqchyaRvO7gTdiKU_Jpy1s-bCEwXKWsmzQMtreMRK8b_EsXryaMRGpMFIH_LmmQAobReG5DhtWfW7474d0wEnkvJWWRY7QuPk2dX5z0F891K_B5GMVJHZ7pA_tTw4WKEl8m-5k7MCjKFc5WyXKcGyaVZAlnb4W25YO3XSFYYAk6NvobkBYbQlb1n0TIlCIv_tdh3CCCimNZp1Knw8H_HFScWPpHgSJ5VxJMlEgW8mXN4Nr9hj1K-AI8yRjxucgK-xxWspWX8xGnt_p8Mw1Yb-Ss3C7xQxv7h-etrKAyy72C8m2yaD9-RooJydcBw5NAPRjyeixS3udlcxrs8yhRi7T0YHPfHPrKPJwSjctLIKIRu925mKeQDaNHPsNt6946wuMuWruaUDiIzWnfvDRQeHQnIzJasn-YfG0bmxI01HSF_mVIfcUQW4LsxeBRLtWeJanRC4yGIdnhWwnEemJKBhyNzpAEbKiiwROXevXRC-muJtXyaBxA-Ked1wV78uqSayH5egT0jR1gTJcHjGMzS2m_rx8wQKhpv2GsG_ZxK9G5B_JxJ4z7kBTuW8aXwav_CrJARjfkbgVXjxeB3_qtKFRFsxTMu0OpN43Ef2z6pcqN1Zn7-GkcCjKTzStgifjsILSqINcSCGH1NvvgmNB3MOixTQHHzU1ZJ3-5IREn_MJ_wX0Qke_beySjAFgB-JpeywdTJe6M6Sl5FQGgX0YL0glQKAKeE2lbRUpvTrDAxbtbuGrHcIMwoJXbaewgWv7GL2ligWOoU3owkFGW1CvvcHQ0nW41IDnxi-1NWr6VOJzBETmugzmGpbAo-RITNgpjZXZ5n2-N-n3QwiLPIDqgKk_Xj08t5s4AOTUpLsTpsWaIeCZus1TQzdFPOBs0U4fPj8Hi12_XbQ4Vf-6aSMa1ZxjjB16VeIIY14VFHL8TpfvtlzCWK48jrwpT3fUPjr9Xfmjvgbl4aO4A8gSdelOl0s8X4Si_PjHANvbC10x9WNsvcoMpeDK4WnENKqaq5pFLIn2L4kQzBWf1bUt-UkzwTJIXizfLD2cz8xDaiFAV5dpb26_Vqo5JddmlTTAGAVElhJ8QRGbOTRFq6luvOVy2geiKbdmmBbr-5VeiHHCZ--zA_gvunNDEWPcq7VRF3t81HDGnNxaD6rk1ceeibqaY0wUEFVNMj4EFbJDFxLe8kfGmhUcrYZ81tq74z26QEltAnFCq81adoyLyLZG-H5XZKujpllbmDFOFIJ145vHstvsnkzejTQU-PiU6CLOHGj5LeeIMCiQrKhZKiHQVA75tS-7k7t7Ylp17Od8ATNPmbfZs4iAdURPXDEePqzn7xI_3WOy8uMjJoHVc2782vRZsJa4KdGhBog4vafPqJ2DQn8aR_fUkMzh2ZlmynM0lH05fnCHGe48s5rv69ExORYB9zXp_v-391ZWwmGRNolxbxGuSMkbOYcq-rxO6cnOLJoafqexvgmy84H4G2eICf7zV10fSUwtmZAKHw7KSI0RVs2J17QB2k73IUdFOdcLO7EJta-OGWylhxVAkp1QJvSOq9XhQcwxsRWwVZv_-O4QoeBnycOl3gFRqho5Oem_OAxLIdLVIB-YHoQT-VExGYDsrEF5XcttR8P1-Z_psztlPkSPYCO3gIrFErgSmV8TtILmas3cveMYjdJkm6iJ5x1qqFSoOIP4vyKhaV8Jl0Vi5egWqPh9sikBoEKWoaqPmBXPSGwr6ZoW_NzxTgNwH-o72KSpCl4UYIGMutQlU7q5iXWMhuPwp_b9BnPTTEXAJW_2LPX9s7gnoLkc7UQql1iAncSqhRHtqBva6uzuj-oZxz7mbOud57ApWu4kHEt9qsgjauoXjBP6VaWS85Qcp6ToOtiCufNiP5yXxQ5RfzsRwMv41nlqNZoz4apwTdXqQ9XdSdaTtjAba6R9KpirmeeSPYc8-2lnUitCS-uMK1DG80KYhU2WjyU4BuIZh_QpqjmxD9zbXmo0IW4eJkK7uof7vxXKfFdPUWg6yffB7RgYSQKkUwWjGxof2Ts9CdeI0ksBFw9tjSH79bseMFxZrzPze8mNKGGpaLVspU-kD7fBNDvD_1Iyc8HjN6uiaDGO6I-1TGLmo5Jyh7czP91zc3g_Zf0_q1c4HRc8Y_zwkSCAZ-mNAaaJkuwpdshrVuMSyqOEvoC4QITEDPalz0wpRlFPd9NYXniaM3jfn-xJJRU86b5eeeHzgB1Kzia3TZDj_SS89YCe9vpZ8G1pL6IfLKVVxZ7XvsuOdKmTbvkQDS7mZBJsmUkcoMy20BBXqKafhbQUSrE41oGpLxIFPCFXo0MMEMxY1XciVRdmWyBcrwYf6Q5s6-efP8P458OFmWhTiBANcyetApRvhlZjvzGnF6HjNr3hiCK0UC0CwM8Xj3ty4c94in4l12EA70TMLsx3pjmH5caXaLpycU12kchh_LItxQqiUvJ-1zJUL1-Y8E5ryCzgOWQHR0U8k2JPjRPb0qW9mS9BzzZna1YORk0dqkbin91jfUrPOpyD-eQK2cjC7WKR9L-f4v-cLS4aTQx1NyERHdwVtItGrIh8ca67W9-dcQOjec3OOk9aiyJuiBTyKLUvxis3Nyw2glQbWd12qCpcs_jqX1n1AbHnpO9ZqrRogvjtQcVTLVHW-8aaIJeyFMQXq529qpK8J1qasHm_RP3IzD1vhtwB_XzPPOaW_eSaCPZPuk_t0c1B1hOpNff8uBzkXqDkqTBWIOxTes5zu0sfgVj_VCrnE2MAoZ_AS2HeUdFXuGLzzRmUPISDeBUAXh_sXj9wfAEC6kI85FcjSfnVBiDm1c5HDDfuNwmDUm5ZLyvelgFTOPC_EzTfsSR26GeErpdVOhFXWqIKkk433SIjeq6QS25QKjV-wOsMalhqM3F4OnL66rLzlLFzDmjP9RfxLWgAbdI-B7D_isaR4Od4Bf5G3nWKBxjwb2GSe0OELGU5opM91aPWxMAe2b5AJ27zLLoN4VKUv95F1dMXW_PY1qrRkjAH-Yhjud2dllF_2xrm1mGjE8WkKk4QgTonGK5xac_w-m_172YrMnG2ERsVHIL5emYHM9sG1dHoEHv8oQUY1HAVLNxbLCJqqcTaJ81Hu-fK5t76jX6RZg0HUSfLJZZLvYgVN7bKlImNENdfsLFVZ1lNxPI8LBSxUvIYYf95IPAe1nZTSTv5PCQVRGm3vgNIuDCixon1va1V-SHouUhSD4-9spmIh0zDp9raef7gbZtqFuZ-GLtmE63gWU-WbJZinkgxHignWpZCvuQYVJ1wUR_gcDSDVD-TTJi8mJ2Ymt7ukhL89rHufxyYWsOE57a9I6e6FOXIGsxtPLoZxHV8CHJJFMKTI9eo61jZbhBrC_KZOpHrv2L7VbuXDrDiOarJ9cmawUI2GYbIhxR6Pwjtfs2n_dsWhUkYjnAkAWI5QhKOOVVEugwkEDWEagfLWaq-QBnNXcmeQHkRtgSVHUVK0hXG6OzizEdJQaZloi-staSSPaxTFZ1i0a7PkH_q0fuZCfgkKDWa_KQavonj3TLQGk4L-fQVnRukRH_XNC7rDNzyvxQCS6paTo-Z56g8dOYN2GyiVL5t5nwZm2eN_vKhrx_H-XkqTfkH6TrXj52lH5xZbTYdRs6LckTZXcVJtibJeSb6NzPmPP3fwelcyZACiGM8BzuQhJC8B6orWT5wBNRbb5NcCrVSk6aw70LffsiVIOMU502zkrGxkt4MG3gxZjrzPOVP-Q41KCTS",
+              "format": "openai-responses-v1",
+              "id": "rs_0fffc1f1962f6878016a137e09a5ac8197b73b98c6b1e128c6",
+              "index": 0
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 797,
+      "completion_tokens": 987,
+      "total_tokens": 1784,
+      "cost": 0.033595,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.033595,
+        "upstream_inference_prompt_cost": 0.003985,
+        "upstream_inference_completions_cost": 0.02961
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 899,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 797,
+    "completion_tokens": 987,
+    "total_tokens": 1784,
+    "cost": 0.033595,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.033595,
+      "upstream_inference_prompt_cost": 0.003985,
+      "upstream_inference_completions_cost": 0.02961
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 899,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 899,
+  "cost_usd": 0.033595,
+  "parsed_summary": "parsed 3/3 constructs",
+  "request_payload": {
+    "model": "openai/gpt-5.5",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst with a humanist-ethicist epistemological frame. You center stakeholders, dignity, and distributional consequences. You see economic framings as incomplete. Your default question is 'who is affected and how?'. Your decision heuristic is to minimize unjustified harm to vulnerable parties, then optimize. Generate analysis from this frame."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** The tech industry’s unanimous consensus habitually equates AI capability with product success, assuming users will happily trade their most intimate health information for a slightly smarter chatbot. What if everyone is wrong? What if the \"capability ceiling\" of this AI coach is largely a vanity metric for our product team, while the downside risk of a centralized health data repository is absolute corporate ruin?\n\n**E2:** I recommend **Option B: encrypted cloud processing with no training on user health data** as the primary policy. For a direct-to-consumer health app, the most ethically important fact is that health data is not ordinary product telemetry. It can reveal pregnancy, disability, mental health status, chronic illness, substance use, sexual health, and other information that can expose users to stigma, discrimination, family conflict, employment harm, or insurance consequences.\n\n**E3:** **Recommendation: Option B (encrypted cloud with no training).**\n\nThe binding constraint here is not capability, cost, or even privacy in the abstract — it is **regulatory and trust exposure on health data at 2M MAU scale**. Everything else is downstream of that. Mechanism check on each axis:\n\n- **Regulatory exposure.** Health data triggers HIPAA-adjacent scrutiny in the US, GDPR Article 9 special-category protections in the EU, and equivalents elsewhere.\n\n**E4:** I recommend **Option B: encrypted cloud inference within confidential-computing enclaves, with a strict architectural prohibition on using health data for model training**. In consumer health, trust operates as a reinforcing loop. A privacy breach or regulatory overreach does not produce a linear reputational wound; it triggers cascading user exit, legislative retaliation, and adversarial scrutiny that can collapse the platform’s social license.\n\n**E5:** Recommendation: **Option D (Cloud with opt-in training only)** — cloud processing for full capability and personalization, with model training on user data only via explicit opt-in, defaulted to off. This policy maximizes expected value under uncertainty, balancing measurable trade-offs. The primary decision hinges on two quantified risks: the probability of a regulatory penalty or user exodus from privacy violations, and the marginal model accuracy loss from limited training data.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E3, E4\nTriad 2: E1, E3, E5\nTriad 3: E2, E3, E5\n\nFor each triad, output EXACTLY this format with no markdown, no bold, no bullets, no numbered lists:\nTriad 1:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 2:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 3:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'. Use plain text labels (Triad N, Left pole, Right pole) without any markdown formatting."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 2000
+  }
+}

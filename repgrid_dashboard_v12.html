@@ -1,0 +1,2653 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Какая AI-модель лучше понимает ученика? Сравнение 14 моделей</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --color-brand-primary: #5A32FA;
+  --color-brand-primary-dim: #4527d3;
+  --color-text-primary: #1A1A24;
+  --color-text-secondary: #6B6B7B;
+  --color-bg-card: #FFFFFF;
+  --color-bg-1: #F9FAFD;
+  --color-bg-2: #F4F5F9;
+  --color-bg-3: #EEEFF6;
+  --color-border-light: #E2E4EC;
+  --color-accent-pink: #FF3B80;
+  --color-accent-mint: #00D09C;
+  --color-accent-yellow: #FFCC00;
+
+  --tint-primary: #EEEAFC;
+  --tint-pink: #FFEEF3;
+  --tint-mint: #E5F8F1;
+  --tint-yellow: #FFF8DC;
+
+  --font-heading: 'Nunito', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+
+  --shadow-card: 0 4px 16px rgba(26, 26, 36, 0.04);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg-2);
+  color: var(--color-text-primary);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, var(--color-brand-primary) 0%, #7C58FF 100%);
+  border-radius: var(--radius-xl);
+  padding: 48px 52px;
+  margin-bottom: 28px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(255, 204, 0, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 14px;
+}
+.hero-title {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+  max-width: 900px;
+}
+.hero-subtitle {
+  font-size: 17px;
+  font-weight: 400;
+  opacity: 0.94;
+  max-width: 800px;
+  line-height: 1.55;
+}
+.hero-meta {
+  margin-top: 18px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.85;
+  letter-spacing: 0.04em;
+}
+
+/* INTRO BLOCK */
+.intro {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: 32px 36px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-card);
+}
+.intro-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: var(--color-brand-primary);
+}
+.intro-body {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--color-text-primary);
+}
+.intro-body p { margin-bottom: 12px; }
+.intro-body p:last-child { margin-bottom: 0; }
+
+/* 4 TAKEAWAYS */
+.takeaways {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+@media (max-width: 1200px) {
+  .takeaways { grid-template-columns: repeat(2, 1fr); }
+}
+.takeaway {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+  border-left: 6px solid var(--color-brand-primary);
+}
+.takeaway.mint { border-left-color: var(--color-accent-mint); }
+.takeaway.pink { border-left-color: var(--color-accent-pink); }
+.takeaway.yellow { border-left-color: var(--color-accent-yellow); }
+.takeaway-number {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+.takeaway-title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.25;
+  margin-bottom: 12px;
+  color: var(--color-text-primary);
+}
+.takeaway-body {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+}
+.takeaway-body strong { color: var(--color-brand-primary); font-weight: 700; }
+.takeaway.mint .takeaway-body strong { color: #008566; }
+.takeaway.pink .takeaway-body strong { color: #C92E66; }
+.takeaway.yellow .takeaway-body strong { color: #A37800; }
+
+/* CARD */
+.card {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: 32px 36px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-card);
+}
+.card-header {
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+.card-subtitle {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+
+/* SCENARIO EXAMPLE */
+.scenario {
+  background: var(--color-bg-1);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--color-brand-primary);
+}
+.scenario-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-brand-primary);
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+.scenario-title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+.scenario-context {
+  font-size: 13.5px;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+  margin-bottom: 10px;
+}
+.scenario-context strong { color: var(--color-text-primary); font-weight: 600; }
+.scenario-expert {
+  background: var(--tint-mint);
+  border-left: 3px solid var(--color-accent-mint);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+.scenario-expert-label {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 11px;
+  color: #008566;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-right: 6px;
+}
+
+/* MODEL RESPONSE COMPARE */
+.model-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+.model-resp {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  border: 1px solid var(--color-border-light);
+}
+.model-resp.winner {
+  border: 2px solid var(--color-accent-mint);
+  background: var(--tint-mint);
+}
+.model-resp.loser {
+  border: 2px solid var(--color-accent-pink);
+  background: var(--tint-pink);
+}
+.model-resp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+.model-resp-name {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 14px;
+}
+.model-resp-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.badge-good { background: var(--color-accent-mint); color: white; }
+.badge-bad { background: var(--color-accent-pink); color: white; }
+.model-resp-body {
+  font-size: 13px;
+  line-height: 1.55;
+  font-style: italic;
+  color: var(--color-text-primary);
+}
+.model-resp-body::before { content: '«'; color: var(--color-text-secondary); }
+.model-resp-body::after { content: '»'; color: var(--color-text-secondary); }
+
+/* DIMENSIONS - 8 cards */
+.dimensions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+.dimension {
+  background: var(--color-bg-1);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  border-left: 6px solid var(--color-brand-primary);
+}
+.dim-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.dim-number {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-brand-primary);
+  line-height: 1;
+}
+.dim-title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 18px;
+  flex: 1;
+}
+.dim-what {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.dim-poles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 16px 0;
+}
+.pole {
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.pole.low {
+  background: var(--tint-pink);
+  border-left: 3px solid var(--color-accent-pink);
+}
+.pole.high {
+  background: var(--tint-mint);
+  border-left: 3px solid var(--color-accent-mint);
+}
+.pole-label {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.pole.low .pole-label { color: #C92E66; }
+.pole.high .pole-label { color: #008566; }
+.pole-example {
+  font-style: italic;
+  color: var(--color-text-secondary);
+}
+.dim-ratings {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border-light);
+}
+.dim-ratings-title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: 10px;
+}
+.rating-row {
+  display: grid;
+  grid-template-columns: 200px 1fr 40px;
+  gap: 14px;
+  align-items: center;
+  padding: 4px 0;
+}
+.rating-model {
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.rating-bar-bg {
+  height: 9px;
+  background: var(--color-bg-3);
+  border-radius: 999px;
+  position: relative;
+  overflow: hidden;
+}
+.rating-bar-fg {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.3s;
+}
+.rating-value {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: right;
+}
+.r-low { background: var(--color-accent-pink); }
+.r-mid { background: var(--color-accent-yellow); }
+.r-high { background: var(--color-accent-mint); }
+
+/* RANKING TABLE */
+.rank-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+.rank-table th {
+  background: var(--color-bg-3);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 12px 10px;
+  text-align: left;
+  border-bottom: 2px solid var(--color-border-light);
+}
+.rank-table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--color-border-light);
+  vertical-align: middle;
+}
+.rank-table td.num {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  text-align: right;
+}
+.rank-table tr.tier-top td { background: var(--tint-mint); }
+.rank-table tr.tier-bottom td { background: var(--tint-pink); }
+.tier-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.tier-top-badge { background: var(--color-accent-mint); color: white; }
+.tier-mid-badge { background: var(--color-accent-yellow); color: #5A4500; }
+.tier-low-badge { background: #FFAA66; color: #4A2900; }
+.tier-bottom-badge { background: var(--color-accent-pink); color: white; }
+
+/* PRODUCT USE CASES */
+.usecases {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.usecase {
+  padding: 24px 28px;
+  border-radius: var(--radius-md);
+  border-left: 6px solid var(--color-brand-primary);
+  background: var(--tint-primary);
+}
+.usecase.mint { border-left-color: var(--color-accent-mint); background: var(--tint-mint); }
+.usecase.yellow { border-left-color: var(--color-accent-yellow); background: var(--tint-yellow); }
+.usecase.pink { border-left-color: var(--color-accent-pink); background: var(--tint-pink); }
+.usecase-title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.usecase-question {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  font-style: italic;
+  margin-bottom: 14px;
+}
+.usecase-answer {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.usecase-answer p {
+  margin: 0 0 10px 0;
+}
+.usecase-answer p:last-child {
+  margin-bottom: 0;
+}
+.usecase-answer strong { color: var(--color-brand-primary); font-weight: 700; }
+.usecase.mint .usecase-answer strong { color: #008566; }
+.usecase.yellow .usecase-answer strong { color: #A37800; }
+.usecase.pink .usecase-answer strong { color: #C92E66; }
+
+/* METHODOLOGY */
+.method-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+.method-grid h4 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 13px;
+  margin-bottom: 8px;
+  color: var(--color-brand-primary);
+  letter-spacing: 0.02em;
+}
+
+/* PCA SCATTER */
+.pca-wrap {
+  background: var(--color-bg-1);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 24px;
+  align-items: stretch;
+}
+.pca-svg-container {
+  position: relative;
+  width: 100%;
+}
+.pca-svg-container svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.pca-legend-sidebar {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  border: 1px solid var(--color-border-light);
+}
+.pca-legend-sidebar-title {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: 10px;
+}
+.pca-legend-sidebar-title:not(:first-child) {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border-light);
+}
+
+/* Horizontal legends below chart */
+.pca-legend-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+.pca-legend-bottom-panel {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+}
+.pca-legend-bottom-title {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: 12px;
+}
+.pca-legend-bottom-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.pca-legend-bottom-items.three { grid-template-columns: repeat(3, 1fr); }
+
+.pca-legend-bottom-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+.pca-legend-bottom-shape {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+}
+.pca-legend-bottom-label {
+  font-weight: 700;
+  font-size: 12.5px;
+  line-height: 1.2;
+}
+.pca-legend-bottom-desc {
+  font-size: 10.5px;
+  color: var(--color-text-secondary);
+  line-height: 1.3;
+}
+.pca-legend-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 12.5px;
+}
+.pca-legend-row.clickable {
+  cursor: pointer;
+  padding: 8px 10px;
+  margin: 0 -10px;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+.pca-legend-row.clickable:hover {
+  background: var(--color-bg-2);
+}
+.pca-legend-row.clickable.active {
+  background: var(--tint-pink);
+  box-shadow: inset 0 0 0 1.5px var(--color-accent-pink);
+}
+.pca-legend-row.clickable.active::after {
+  content: '✓';
+  color: var(--color-accent-pink);
+  font-weight: 900;
+  margin-left: 4px;
+}
+.pca-legend-hint {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--color-border-light);
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  font-style: italic;
+  line-height: 1.4;
+}
+.pca-svg-container .pca-dot {
+  cursor: pointer;
+  transition: fill-opacity 0.3s, filter 0.3s, stroke-width 0.15s;
+}
+.pca-legend-row-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px var(--color-border-light);
+}
+.pca-svg-container .pca-dot:hover {
+  stroke-width: 4 !important;
+}
+.pca-svg-container .pca-tooltip {
+  position: absolute;
+  background: rgba(26, 26, 36, 0.95);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 10;
+}
+.pca-takeaway {
+  background: var(--tint-mint);
+  border-left: 4px solid var(--color-accent-mint);
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-top: 18px;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+.pca-takeaway p {
+  margin: 0 0 8px 0;
+}
+.pca-takeaway p:last-child {
+  margin-bottom: 0;
+}
+.pca-takeaway strong { color: #008566; }
+
+/* HEATMAP */
+.heatmap-wrap {
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+.heatmap {
+  display: inline-block;
+  min-width: 100%;
+}
+.heatmap-row {
+  display: grid;
+  grid-template-columns: 180px repeat(11, minmax(48px, 1fr));
+  gap: 3px;
+  margin-bottom: 3px;
+}
+.heatmap-header {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 10px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  text-align: center;
+  padding: 8px 4px;
+  background: var(--color-bg-3);
+  border-radius: 4px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heatmap-scenario {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px 12px;
+  background: var(--color-bg-card);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.heatmap-scenario:hover {
+  background: var(--tint-primary);
+  color: var(--color-brand-primary);
+}
+.heatmap-cell {
+  padding: 10px 4px;
+  border-radius: 4px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heatmap-cell:hover { transform: scale(1.15); z-index: 2; position: relative; }
+.hm-precise { background: #008566; }
+.hm-correct { background: #00D09C; }
+.hm-vague   { background: #FFCC00; color: #5A4500; }
+.hm-wrong   { background: #FF3B80; }
+.heatmap-legend {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 18px;
+}
+.heatmap-legend-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 10px 14px;
+  background: var(--color-bg-1);
+  border-radius: 8px;
+}
+.heatmap-legend-box {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heatmap-legend-text {
+  flex: 1;
+}
+.heatmap-legend-label {
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.heatmap-legend-desc {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+.heatmap-takeaway {
+  background: var(--tint-yellow);
+  border-left: 4px solid var(--color-accent-yellow);
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-top: 18px;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+.heatmap-takeaway strong { color: #A37800; }
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 26, 36, 0.6);
+  backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+.modal-overlay.visible {
+  display: flex;
+}
+.modal {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  max-width: 680px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+.modal-header {
+  padding: 28px 32px 18px;
+  border-bottom: 1px solid var(--color-border-light);
+  position: sticky;
+  top: 0;
+  background: var(--color-bg-card);
+  z-index: 2;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+.modal-eyebrow {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-brand-primary);
+  margin-bottom: 8px;
+}
+.modal-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+.modal-subtitle {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-bg-3);
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+.modal-close:hover {
+  background: var(--color-accent-pink);
+  color: white;
+}
+.modal-body {
+  padding: 24px 32px 32px;
+}
+.modal-section {
+  margin-bottom: 22px;
+}
+.modal-section:last-child { margin-bottom: 0; }
+.modal-section-title {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+}
+.modal-section-content {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.modal-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.modal-meta-item {
+  background: var(--color-bg-1);
+  padding: 12px 14px;
+  border-radius: 8px;
+}
+.modal-meta-label {
+  font-family: var(--font-heading);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: 4px;
+}
+.modal-meta-value {
+  font-size: 14px;
+  font-weight: 600;
+}
+.modal-quote {
+  background: var(--color-bg-1);
+  border-left: 4px solid var(--color-brand-primary);
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-style: italic;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+.modal-quote::before { content: '«'; color: var(--color-text-secondary); }
+.modal-quote::after { content: '»'; color: var(--color-text-secondary); }
+.modal-quote.expert {
+  background: var(--tint-mint);
+  border-left-color: var(--color-accent-mint);
+}
+.modal-quote.precise {
+  background: #E6F7F0;
+  border-left-color: #008566;
+}
+.modal-quote.correct {
+  background: var(--tint-mint);
+  border-left-color: var(--color-accent-mint);
+}
+.modal-quote.vague {
+  background: var(--tint-yellow);
+  border-left-color: var(--color-accent-yellow);
+}
+.modal-quote.wrong {
+  background: var(--tint-pink);
+  border-left-color: var(--color-accent-pink);
+}
+.modal-quality-pill {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: white;
+}
+.modal-quality-pill.precise { background: #008566; }
+.modal-quality-pill.correct { background: #00D09C; }
+.modal-quality-pill.vague   { background: #FFCC00; color: #5A4500; }
+.modal-quality-pill.wrong   { background: #FF3B80; }
+.modal-answers-list {
+  background: var(--color-bg-1);
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.8;
+}
+.modal-answers-list .ok { color: #008566; font-weight: 700; }
+.modal-answers-list .wrong-mark { color: #C92E66; font-weight: 700; }
+
+@media (max-width: 900px) {
+  .takeaways { grid-template-columns: 1fr; }
+  .model-compare, .usecases, .dim-poles, .method-grid { grid-template-columns: 1fr; }
+  .hero-title { font-size: 32px; }
+  .rating-row { grid-template-columns: 130px 1fr 36px; }
+  .heatmap-row { grid-template-columns: 100px repeat(11, minmax(32px, 1fr)); }
+  .pca-wrap { grid-template-columns: 1fr; }
+  .heatmap-legend { grid-template-columns: 1fr; }
+  .modal-meta-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">Эксперимент · сравнение 14 AI-моделей</div>
+    <h1 class="hero-title">Какая AI-модель лучше понимает ученика?</h1>
+    <p class="hero-subtitle">Дали четырнадцати AI-моделям одну и ту же задачу - проанализировать ответы ученика по математике, поставить диагноз и предложить следующий шаг. Прочитали все 168 ответов вручную. Нашли восемь измеримых отличий, которые меняют выбор модели для разных задач.</p>
+    <div class="hero-meta">14 моделей · 12 сценариев · 168 ответов · 8 измерений · полный качественный анализ ответов</div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="intro">
+    <div class="intro-title">Что это и зачем</div>
+    <div class="intro-body">
+      <p>Современные AI-модели от Anthropic (Claude), Google (Gemini), OpenAI (GPT), Meta (Llama), Alibaba (Qwen), Moonshot (Kimi), DeepSeek, NVIDIA, Cohere - умеют рассуждать о математике. Но <strong>рассуждают они по разному, и тратят неодинаковое количество ресурса на это</strong>. Если строить AI-помощника учителю математики, важно понимать не только «какая модель умнее», но <strong>в чём конкретно отличается каждая</strong>: одна точна в диагнозе, другая хороша в объяснении, третья лучше адаптирует язык под ребёнка.</p>
+      <p>Мы дали 12 моделям одинаковые 12 задач - ученик сделал серию упражнений, часть правильно, часть неправильно. Модель должна понять <strong>что именно</strong> ученик делает не так и предложить следующий шаг. Это базовая задача любой AI-системы в образовании - распознать ошибку мышления, не просто отметить «неверно».</p>
+      <p>Получилось 168 развёрнутых ответов (132 в исходном прогоне на 11 моделях, плюс 12 от Opus 4.8 и 24 от двух новых Gemini, добавленных по мере выхода). Прочитали каждый вручную и нашли 8 устойчивых паттернов того, как модели различаются.</p>
+    </div>
+  </div>
+
+  <!-- 4 MAIN TAKEAWAYS -->
+  <div class="takeaways">
+    <div class="takeaway">
+      <div class="takeaway-number">ВЫВОД 1</div>
+      <div class="takeaway-title">Самые лучшие - Claude Sonnet, Opus и GPT-5</div>
+      <div class="takeaway-body">
+        Они единственные систематически <strong>воспроизводят арифметику ошибки</strong> ученика - не просто называют тему «ошибка в умножении», а уточняют «делит 12 на 3 вместо 21». На 12 из 12 сценариев. У остальных моделей этот навык «мигает».
+      </div>
+    </div>
+    <div class="takeaway mint">
+      <div class="takeaway-number">ВЫВОД 2</div>
+      <div class="takeaway-title">Размер модели не определяет качество</div>
+      <div class="takeaway-body">
+        <strong>NVIDIA Nemotron Nano (9B параметров)</strong> на геометрии и текстовых задачах показала рассуждение уровня флагманских моделей. А <strong>Llama 3.3 70B</strong> и <strong>Qwen 2.5 72B</strong> (обе в 8 раз больше) дают расплывчатые диагнозы. Архитектура и обучение важнее размера.
+      </div>
+    </div>
+    <div class="takeaway pink">
+      <div class="takeaway-number">ВЫВОД 3</div>
+      <div class="takeaway-title">Уверенность ≠ правильность (но это меняется)</div>
+      <div class="takeaway-body">
+        <strong>Cohere</strong> показала уверенность 0.90 при расплывчатом диагнозе, <strong>Qwen</strong> - 0.80 при <em>неправильном</em>. Долго единственным исключением был GPT-5. Но <strong>Opus 4.8</strong> (28 мая 2026) показал калибровку ещё лучше - разброс 0.20-0.82, честно низкую уверенность на неоднозначных кейсах. Похоже, калибровка - то, что новые поколения моделей реально улучшают.
+      </div>
+    </div>
+    <div class="takeaway yellow">
+      <div class="takeaway-number">ВЫВОД 4</div>
+      <div class="takeaway-title">Sweet Spot эксперимента - Kimi K2</div>
+      <div class="takeaway-body">
+        Качество <strong>6.0/6.0</strong> совпадает с Opus и GPT-5, но при <strong>10× меньшей цене чем Sonnet</strong> и <strong>14× меньшей чем Gemini</strong>. Подходит для типовых ошибок (например frac_03 - конкатенация цифр). На сложных многошаговых задачах глубина рассуждения меньше, чем у верхнего тира - но для большинства задач этого достаточно.
+      </div>
+    </div>
+  </div>
+
+  <!-- OPUS 4.8 UPDATE BANNER -->
+  <div style="background: linear-gradient(135deg, #F0ECFE 0%, #F7F5FF 100%); border: 2px solid #5A32FA; border-radius: 14px; padding: 18px 24px; margin-bottom: 28px; display: flex; align-items: flex-start; gap: 16px;">
+    <div style="flex-shrink: 0; width: 44px; height: 44px; background: #5A32FA; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px;">★</div>
+    <div style="flex: 1;">
+      <div style="font-family: var(--font-heading); font-weight: 900; color: #5A32FA; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px;">Обновление от 28 мая 2026</div>
+      <div style="font-size: 14px; line-height: 1.6; color: #1A1A24;">
+        В день выхода <strong>Claude Opus 4.8</strong> мы прогнали её по тем же 12 сценариям и оценили вручную. Результат - <strong>средний балл 6.3 из 7, это новый лидер эксперимента</strong> (прежний лидер, Sonnet, набрал 5.9). Главное отличие от Opus 4.7 - калибровка уверенности: разброс значений от 0.20 до 0.82 вместо почти постоянной величины, что превосходит даже прежний эталон калибровки - GPT-5. Это уточняет наш <strong>третий вывод</strong>: теперь есть модель, чьей собственной оценке уверенности можно доверять. Opus 4.7 мы оставили в данных как точку отсчёта - так видно, что меняется за одно обновление. Следом мы добавили две Gemini нового поколения (3.5 Flash и 3.1 Pro): они подтвердили обратную сторону того же вывода - калибровка осталась слабым местом Google (обе показали те же 2 из 7, что и Gemini 2.5 Pro), несмотря на прогресс в других областях. Фактическая стоимость прогона составила <strong>$0.31</strong> - вдвое меньше прогноза, потому что новая модель рассуждает лаконичнее.
+      </div>
+    </div>
+  </div>
+
+  <!-- LIVE EXAMPLE -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Конкретный пример - как разные модели видят одного ученика</div>
+      <div class="card-subtitle">Сценарий lin_01 из эксперимента, показывает источник наших выводов</div>
+    </div>
+
+    <div class="scenario">
+      <div class="scenario-label">Сценарий lin_01 · 7-й класс · алгебра</div>
+      <div class="scenario-title">Айдан решает линейные уравнения</div>
+      <div class="scenario-context">
+        Айдан правильно решил три уравнения подряд (x+5=12, x-3=10, 2x+6=14). Затем <strong>3x-9=12</strong> решил как x=1 (правильный ответ x=7). И <strong>4x+8=20</strong> как x=7 (правильный x=3).
+      </div>
+      <div class="scenario-expert">
+        <span class="scenario-expert-label">Эксперт говорит:</span> Возможны две гипотезы - либо Айдан ошибается в переносе, либо правильно переносит, но потом делит не то число. Хороший диагноз должен это различить.
+      </div>
+    </div>
+
+    <p style="font-size: 14px; margin-bottom: 14px; color: var(--color-text-secondary); line-height: 1.6;">Вот как ответили <strong style="color: var(--color-text-primary)">две модели</strong> - заметьте разницу в глубине:</p>
+
+    <div class="model-compare">
+      <div class="model-resp winner">
+        <div class="model-resp-header">
+          <div class="model-resp-name">Claude Sonnet 4.6</div>
+          <div class="model-resp-badge badge-good">точно</div>
+        </div>
+        <div class="model-resp-body">В задаче 4 (3x=21) делит 12 на 3 вместо 21 на 3, получая x=1. В задаче 5 (4x=12) делит 8 на 4 вместо 12 на 4. Похоже, ученик делит исходное свободное число, а не результат после первого шага.</div>
+      </div>
+      <div class="model-resp loser">
+        <div class="model-resp-header">
+          <div class="model-resp-name">Qwen 2.5 72B</div>
+          <div class="model-resp-badge badge-bad">неверное направление</div>
+        </div>
+        <div class="model-resp-body">Айдан correctly solves simple addition and subtraction equations but makes mistakes when multiplication is involved, suggesting an issue with isolating the variable. (буквально: «правильно решает простые задачи на сложение и вычитание, но ошибается там где есть умножение - возможно, проблема с изоляцией переменной»)</div>
+      </div>
+    </div>
+
+    <p style="font-size: 13.5px; margin-top: 18px; line-height: 1.6; color: var(--color-text-secondary);">
+      Claude Sonnet <strong style="color: var(--color-text-primary)">воспроизвёл арифметику</strong>: показал учителю точные числа, которые ученик использовал. Qwen дала <strong style="color: var(--color-text-primary)">неправильный диагноз</strong> - в задаче нет ошибки в умножении, ученик именно ошибается в делении. <strong style="color: var(--color-text-primary)">Это 3-й случай из 12 когда Qwen подменяет основной диагноз соседним концептом.</strong>
+    </p>
+  </div>
+
+  <!-- PCA SCATTER - QUICK LANDSCAPE -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Карта 14 моделей: точность диагноза vs глубина воспроизведения</div>
+      <div class="card-subtitle">2D-проекция по реальным оценкам ручного анализа ответов - не вспомогательные метрики</div>
+    </div>
+
+    <div class="pca-wrap">
+      <div class="pca-svg-container" id="pcaSvgContainer">
+        <div class="pca-tooltip" id="pcaTooltip"></div>
+      </div>
+
+      <div class="pca-legend-sidebar">
+        <div class="pca-legend-sidebar-title">Цвет · семейство</div>
+        <div id="pcaLegendList"></div>
+      </div>
+    </div>
+
+    <!-- Horizontal legends below chart -->
+    <div class="pca-legend-bottom">
+      <div class="pca-legend-bottom-panel">
+        <div class="pca-legend-bottom-title">Форма · качество</div>
+        <div class="pca-legend-bottom-items" id="pcaLegendShapes"></div>
+      </div>
+      <div class="pca-legend-bottom-panel">
+        <div class="pca-legend-bottom-title">Размер · цена 12 задач (log)</div>
+        <div class="pca-legend-bottom-items three" id="pcaLegendSizes"></div>
+      </div>
+    </div>
+
+    <div class="pca-takeaway">
+      <p><strong>Как читать карту:</strong></p>
+      <p><strong>положение</strong> = качество, <strong>цвет</strong> = провайдер, <strong>форма</strong> = тир качества, <strong>размер</strong> = цена (логарифмическая шкала).</p>
+      <p><strong>Sweet Spot - Kimi K2</strong> (★ метка): качество 6.0/6.0 совпадает с Opus и GPT-5, но при <strong>10× меньшей цене чем Sonnet</strong> и <strong>14× меньшей чем Gemini</strong> при сопоставимом качестве (Gemini тоже 6.0, но 5.0 по воспроизведению арифметики и завышенная уверенность).</p>
+      <p>Это привлекательная цель для экономного по стоимости решения в продакшене.</p>
+      <p><strong>Клик на семейство в легенде справа</strong> приглушает остальные модели - удобно изолировать конкретного провайдера.</p>
+      <p><strong>Клик на форму</strong> - детали по модели.</p>
+    </div>
+    </div>
+  </div>
+
+  <!-- FINAL RANKING TABLE -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Итоговое ранжирование 14 моделей</div>
+      <div class="card-subtitle">«Средний балл / 7» = среднее по 8 измерениям × 12 сценариям = 96 точек данных на модель, оцифрованных по 7-балльной шкале</div>
+    </div>
+
+    <table class="rank-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Модель</th>
+          <th class="num">Средний балл / 7</th>
+          <th class="num">Цена (12 задач)</th>
+          <th>Тир</th>
+          <th>Главная характеристика</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="tier-top" style="background: linear-gradient(90deg, #F0ECFE 0%, #FFFFFF 35%);">
+          <td><strong>1</strong></td>
+          <td><strong>Claude Opus 4.8</strong> <span style="display: inline-block; background: #5A32FA; color: #FFFFFF; font-size: 9px; font-weight: 900; padding: 1px 6px; border-radius: 8px; letter-spacing: 0.04em; margin-left: 4px; vertical-align: 2px;">НОВЫЙ ЛИДЕР</span></td>
+          <td class="num"><strong>6.3</strong></td>
+          <td class="num">$0.31</td>
+          <td><span class="tier-badge tier-top-badge">Верхний</span></td>
+          <td>Лучшая калибровка уверенности в эксперименте + две гипотезы + заметила повреждённые данные (28 мая 2026)</td>
+        </tr>
+        <tr class="tier-top">
+          <td><strong>2</strong></td>
+          <td><strong>Claude Sonnet 4.6</strong></td>
+          <td class="num"><strong>5.9</strong></td>
+          <td class="num">$0.10</td>
+          <td><span class="tier-badge tier-top-badge">Верхний</span></td>
+          <td>Воспроизводит арифметику + единственная внимательно перечитывает вопрос</td>
+        </tr>
+        <tr class="tier-top">
+          <td><strong>3</strong></td>
+          <td><strong>Claude Opus 4.7</strong></td>
+          <td class="num"><strong>5.3</strong></td>
+          <td class="num">$0.62</td>
+          <td><span class="tier-badge tier-top-badge">Верхний</span></td>
+          <td>Лучшие визуальные опорные подсказки + признаёт несколько гипотез</td>
+        </tr>
+        <tr class="tier-top">
+          <td><strong>4</strong></td>
+          <td><strong>GPT-5</strong></td>
+          <td class="num"><strong>5.0</strong></td>
+          <td class="num">$0.42</td>
+          <td><span class="tier-badge tier-top-badge">Верхний</span></td>
+          <td>Реальная калибровка + замечает побочные наблюдения (неравенство треугольника, перенос ошибки между задачами)</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><strong>Gemini 3.1 Pro</strong> <span style="display:inline-block;background:#EA4335;color:#fff;font-size:9px;font-weight:900;padding:1px 6px;border-radius:8px;letter-spacing:0.04em;margin-left:4px;vertical-align:2px;">НОВАЯ</span></td>
+          <td class="num">4.8</td>
+          <td class="num">$0.76</td>
+          <td><span class="tier-badge tier-mid-badge">Средний</span></td>
+          <td>Системно даёт несколько гипотез, но сорвалась в свободный текст на lin_03; калибровка слабая</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Kimi K2</td>
+          <td class="num">4.7</td>
+          <td class="num">$0.01</td>
+          <td><span class="tier-badge tier-mid-badge">Средний</span></td>
+          <td>Экономный по стоимости конкурент по качеству на типовых ошибках</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td><strong>Gemini 3.5 Flash</strong> <span style="display:inline-block;background:#EA4335;color:#fff;font-size:9px;font-weight:900;padding:1px 6px;border-radius:8px;letter-spacing:0.04em;margin-left:4px;vertical-align:2px;">НОВАЯ</span></td>
+          <td class="num">4.6</td>
+          <td class="num">$0.43</td>
+          <td><span class="tier-badge tier-mid-badge">Средний</span></td>
+          <td>Точнее старой 2.5 Pro, но тот же балл: калибровка не улучшилась, редко даёт несколько гипотез</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Gemini 2.5 Pro</td>
+          <td class="num">4.6</td>
+          <td class="num">$0.14</td>
+          <td><span class="tier-badge tier-mid-badge">Средний</span></td>
+          <td>Сильна для архитектуры с участием учителя (эскалировала в 9 из 12 сценариев), но с завышенной уверенностью</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>NVIDIA Nemotron Nano 9B</td>
+          <td class="num">4.4</td>
+          <td class="num">$0.002</td>
+          <td><span class="tier-badge tier-mid-badge">Средний</span></td>
+          <td>Сюрприз: модель на 9 миллиардов параметров с рассуждением уровня флагманов 70B+</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>NVIDIA Nemotron Super 49B</td>
+          <td class="num">4.3</td>
+          <td class="num">$0.006</td>
+          <td><span class="tier-badge tier-low-badge">Нижний</span></td>
+          <td>Калибровка работает (в отличие от исходной Llama), но точность не выросла</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>DeepSeek V3</td>
+          <td class="num">3.5</td>
+          <td class="num">$0.004</td>
+          <td><span class="tier-badge tier-low-badge">Нижний</span></td>
+          <td>Слепые пятна на сложных многошаговых задачах (3 неверных диагноза)</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>Cohere Command R+</td>
+          <td class="num">3.5</td>
+          <td class="num">$0.05</td>
+          <td><span class="tier-badge tier-low-badge">Нижний</span></td>
+          <td>Шаблонные комментарии без конкретики - стиль учебника</td>
+        </tr>
+        <tr class="tier-bottom">
+          <td>13</td>
+          <td>Qwen 2.5 72B</td>
+          <td class="num">2.6</td>
+          <td class="num">$0.003</td>
+          <td><span class="tier-badge tier-bottom-badge">Избегать</span></td>
+          <td>3 неверных направления + 9 общих диагнозов, самая короткая модель</td>
+        </tr>
+        <tr class="tier-bottom">
+          <td>14</td>
+          <td>Llama 3.3 70B</td>
+          <td class="num">1.6</td>
+          <td class="num">$0.005</td>
+          <td><span class="tier-badge tier-bottom-badge">Избегать</span></td>
+          <td>Расплывчатые диагнозы на 12/12 сценариях, уверенность всегда 0.80</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top: 18px; font-size: 13.5px; color: var(--color-text-secondary); line-height: 1.6;">
+      <strong style="color: var(--color-text-primary)">Главное наблюдение:</strong> в 269 раз разница в стоимости (Opus $0.62 vs Nano $0.002) даёт лишь 1.5 балла разницы в качестве. <strong style="color: var(--color-text-primary)">Sweet Spot - Kimi K2 за $0.01 (4.7/7).</strong> В 10 раз дешевле Sonnet при том же уровне понимания типовых ошибок.
+    </p>
+  </div>
+
+  <!-- 8 DIMENSIONS -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">8 измерений, по которым модели различаются</div>
+      <div class="card-subtitle">Из ручного прочтения 132 ответов (12 сценариев × 11 моделей) <span class="kelly-link" onclick="openKellyModal()" style="color: var(--color-brand-primary); text-decoration: underline; cursor: pointer; font-weight: 600;">методом репертуарной решётки Келли</span></div>
+    </div>
+
+    <div class="dimensions" id="dimensionsContainer"></div>
+  </div>
+
+  <!-- HEATMAP - 12 scenarios x 11 models -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Карта качества: 12 сценариев × 14 моделей</div>
+      <div class="card-subtitle">Каждая ячейка - глубина воспроизведения арифметики для одного сценария по одной модели (из ручного прочтения 132 ответов)</div>
+    </div>
+
+    <div class="heatmap-wrap">
+      <div class="heatmap" id="heatmapContainer"></div>
+    </div>
+
+    <div class="heatmap-legend">
+      <div class="heatmap-legend-item">
+        <div class="heatmap-legend-box hm-precise">●</div>
+        <div class="heatmap-legend-text">
+          <div class="heatmap-legend-label">Точно (тёмно-мятный кружок ●)</div>
+          <div class="heatmap-legend-desc">Точный механизм ошибки + воспроизведение конкретных чисел. Например: «делит 12 на 3 вместо 21».</div>
+        </div>
+      </div>
+      <div class="heatmap-legend-item">
+        <div class="heatmap-legend-box hm-correct">◐</div>
+        <div class="heatmap-legend-text">
+          <div class="heatmap-legend-label">Правильно (мятный полу-кружок ◐)</div>
+          <div class="heatmap-legend-desc">Правильная категория ошибочного представления, но без воспроизведения конкретной арифметики.</div>
+        </div>
+      </div>
+      <div class="heatmap-legend-item">
+        <div class="heatmap-legend-box hm-vague">○</div>
+        <div class="heatmap-legend-text">
+          <div class="heatmap-legend-label">Расплывчато (жёлтый круг ○)</div>
+          <div class="heatmap-legend-desc">Диагноз правильный по теме задачи, но не указывает что именно ученик делает не так. Не помогает учителю.</div>
+        </div>
+      </div>
+      <div class="heatmap-legend-item">
+        <div class="heatmap-legend-box hm-wrong">✕</div>
+        <div class="heatmap-legend-text">
+          <div class="heatmap-legend-label">Неверное направление (розовый крестик ✕)</div>
+          <div class="heatmap-legend-desc">Диагноз идёт в неверном направлении - подменяет ошибочное представление соседним концептом или приписывает несуществующую ошибку.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="heatmap-takeaway">
+      <strong>Что особенно важно:</strong> розовые ячейки ✕ (неверное направление) сосредоточены у конкретных моделей. <strong>Qwen 2.5 72B</strong>: 3 неверных (lin_01, geo_03, и косвенно frac_03). <strong>DeepSeek V3</strong>: 3 неверных (frac_03, geo_03, word_03). <strong>Llama 3.3 70B</strong>: 12 из 12 жёлтых (расплывчатые). <strong>Sonnet, Opus 4.7 и Opus 4.8</strong>: почти сплошь тёмно-мятные (у Opus 4.8 два ◐ на сценариях lin_03 и word_01, где входные данные оказались повреждены - и модель честно это отметила). <strong>Ошибки распределены по моделям неравномерно</strong> - у каждой модели свой паттерн слабых мест на конкретных сценариях, а не просто общий уровень качества. Клик на заголовок сценария - детали задачи. Клик на ячейку - ответ модели и сравнение с экспертом.
+    </div>
+  </div>
+
+  <!-- PRODUCT USE CASES -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Какую модель для какого продуктового сценария</div>
+      <div class="card-subtitle">Применение находок к конкретным сценариям в образовательных продуктах</div>
+    </div>
+
+    <div class="usecases">
+      <div class="usecase">
+        <div class="usecase-title">AI-помощник учителю</div>
+        <div class="usecase-question">Учитель видит, что ученики ошиблись - нужен точный вывод «что именно идёт не так»</div>
+        <div class="usecase-answer">
+          <p>Главное - <strong>точное воспроизведение арифметики ошибки</strong>. Учителю не нужно «ошибка в умножении», нужно «делит 12 на 3 вместо 21».</p>
+          <p>Лучший выбор - <strong>Claude Sonnet 4.6</strong>, единственная также внимательно перечитывает вопрос (заметила «вопрос про мальчиков, а не девочек» в word_03).</p>
+          <p><strong>Бюджетная альтернатива - Kimi K2</strong> ($0.01 за 12 задач, в 10 раз дешевле Sonnet). На типовых ошибках даёт сопоставимое качество. Для сложных многошаговых случаев - использовать Sonnet как проверяющий.</p>
+          <p><strong>Gemini 2.5 Pro</strong> как вторичный вариант - её передача учителю в 9 из 12 сценариев естественно ложится на архитектуру с участием учителя.</p>
+        </div>
+      </div>
+
+      <div class="usecase mint">
+        <div class="usecase-title">Объяснение для ребёнка</div>
+        <div class="usecase-question">Объяснить ребёнку 6-9 лет где он ошибся - простыми словами, через визуальные образы</div>
+        <div class="usecase-answer">
+          <p>Главное - <strong>визуальная опорная подсказка</strong> и <strong>адаптация языка</strong> под профиль.</p>
+          <p>Лучшие - <strong>Claude Opus 4.7</strong> (высшая оценка по визуальным подсказкам) и <strong>Claude Sonnet 4.6</strong>.</p>
+          <p><strong>Kimi K2</strong> неожиданно хороша в адаптации языка - последовательно отвечает по-русски для русских имён.</p>
+          <p>GPT-5 и Llama систематически отвечают по-английски, игнорируя профиль ученика.</p>
+        </div>
+      </div>
+
+      <div class="usecase yellow">
+        <div class="usecase-title">Массовая генерация учебного контента</div>
+        <div class="usecase-question">Создание тренировочных задач, объяснений теории, планов уроков массово</div>
+        <div class="usecase-answer">
+          <p>Здесь важна <strong>структурированность вывода</strong>, а не глубокий диагностический анализ.</p>
+          <p><strong>Gemini 2.5 Pro</strong> часто хороша на образовательном контенте. <strong>НО:</strong> её уверенность стабильно выше 0.95 (завышенная) - в конвейере генерации нужны страховочные проверки на выходе.</p>
+          <p>Альтернатива: <strong>DeepSeek V3</strong> или <strong>Kimi K2</strong> для краткого вывода по цене в 10-30 раз меньшей.</p>
+        </div>
+      </div>
+
+      <div class="usecase pink">
+        <div class="usecase-title">Экономика собственного хостинга</div>
+        <div class="usecase-question">При масштабе 500 тысяч и более учеников - переходить на открытые модели (open-source)?</div>
+        <div class="usecase-answer">
+          <p><strong>Не Llama, не Qwen</strong>. На 12 сценариях оба показали расплывчатые диагнозы или неверное направление.</p>
+          <p><strong>Кандидаты для собственного хостинга:</strong> NVIDIA Nemotron Nano 9B (неожиданный фаворит, $0.002), Kimi K2 ($0.01), DeepSeek V3 ($0.004 - но со слепыми пятнами на многошаговых задачах).</p>
+          <p>Гибридная схема: Nano или DeepSeek как первичный диагност, Sonnet как проверяющий для подозрительных случаев.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY ARCHITECTURAL INSIGHT -->
+  <div class="card" style="background: linear-gradient(135deg, #FFF8DC 0%, #FFFAEC 100%); border-left: 6px solid var(--color-accent-yellow);">
+    <div class="card-header" style="border-bottom-color: rgba(255, 204, 0, 0.3);">
+      <div class="card-title">Главное архитектурное наблюдение</div>
+      <div class="card-subtitle">То, ради чего стоило делать весь эксперимент</div>
+    </div>
+
+    <div style="font-size: 15px; line-height: 1.7;">
+      <p style="margin-bottom: 14px;"><strong>На одной серии из 5 ответов даже флагманские модели расходятся в диагнозе.</strong> В сценарии lin_01 Claude Sonnet поставил «ошибка в делении», остальные модели верхнего тира - «ошибка в переносе знака». Эксперт допускает обе гипотезы.</p>
+
+      <p style="margin-bottom: 14px;">При расширении до 11 моделей расхождение стало ещё ярче. На <strong>frac_03</strong> (перевод дроби в десятичную) 5 моделей правильно увидели конкатенацию цифр (например 0.13 из 1/3), 5 диагностировали другое (периодические десятичные, незавершённое деление), 1 - проблему с разрядностью. <strong>Половина флагманских моделей не видит реальную модель мышления ученика.</strong></p>
+
+      <p style="margin-bottom: 14px;">Это значит - в задаче knowledge tracing (отслеживание понимания материала учеником) <strong>нет одного правильного ответа на основе одной серии</strong>. Есть несколько правдоподобных гипотез о ходе мышления ученика, и они требуют active probing (активных уточняющих вопросов) - модель должна задать диагностический вопрос чтобы выбрать между гипотезами.</p>
+
+      <p style="margin-bottom: 0;"><strong>Продуктовая импликация:</strong> AI-помощник учителю не может работать как «вот 5 ответов → вот диагноз → вот рекомендация». Нужна <strong>двухтактная архитектура</strong> - первичная гипотеза, потом уточняющий вопрос, потом обновлённая гипотеза. Это меняет интерфейс и для помощника учителю, и для инструмента работающего напрямую с учеником принципиально.</p>
+    </div>
+  </div>
+
+  <!-- METHODOLOGY -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Как это сделано</div>
+      <div class="card-subtitle">Прозрачность методологии для воспроизводимости</div>
+    </div>
+
+    <div class="method-grid">
+      <div>
+        <h4>Что давали моделям</h4>
+        <p>12 сценариев в 4 категориях: линейные уравнения, дроби, геометрия, текстовые задачи. По 3 в каждой, классы 5-9. Для каждого сценария - имя ученика, контекст («7-й класс, около 6 месяцев изучает алгебру»), 5 недавних ответов с пометкой правильно или неправильно. Одна и та же системная инструкция всем моделям, одна и та же схема вывода в формате JSON, параметр температуры 0.7.</p>
+      </div>
+
+      <div>
+        <h4>Какие 14 моделей</h4>
+        <p>Claude Sonnet 4.6, Claude Opus 4.7, GPT-5, Gemini 2.5 Pro, Llama 3.3 70B, Qwen 2.5 72B, Kimi K2 (Moonshot), DeepSeek V3, NVIDIA Llama 3.3 Nemotron Super 49B v1.5, NVIDIA Nemotron Nano 9B v2, Cohere Command R+ - это исходные 11. Двенадцатой добавлена Claude Opus 4.8 в день её выхода (28 мая 2026). Затем добавлены ещё две Gemini нового поколения - Gemini 3.5 Flash (I/O, 19 мая 2026) и Gemini 3.1 Pro (февраль 2026) - чтобы проверить, сдвинулась ли позиция Google за два поколения. Итого 14 моделей. Все через API OpenRouter. Модели с цепочкой рассуждений (Gemini, GPT-5) потребовали в 5 раз больше токенов вывода - это само по себе важное продакшен-наблюдение.</p>
+      </div>
+
+      <div>
+        <h4>Как анализировали</h4>
+        <p>Прочитали все 168 ответов вручную (132 в исходном прогоне на 11 моделях, плюс 12 ответов Opus 4.8 и 24 ответа двух новых Gemini, добавленных по мере их выхода). По <span class="kelly-link" onclick="openKellyModal()" style="color: var(--color-brand-primary); text-decoration: underline; cursor: pointer; font-weight: 600;">методу репертуарной решётки Келли</span> - для каждой триады ответов искали «какие два похожи, чем отличается третий». Из этих сравнений выявили 8 устойчивых биполярных измерений, появляющихся в 4 и более сценариев из 12. Финальные оценки - усреднение 12 пошаговых оценок по каждому измерению.</p>
+      </div>
+
+      <div>
+        <h4>Что осталось за рамками</h4>
+        <p>Область этого эксперимента: <strong>5-9 классы, западная математическая традиция, английский язык математики</strong>. Не покрыты: начальная школа (K-4), 10-11 классы, нестандартные обозначения, культурные особенности (разделитель в десятичных дробях, алгоритмы деления столбиком). Не оценивали безопасность контента и страховочные проверки. Результаты валидны для базового сравнения, не для финального решения о выборе модели в продакшене.</p>
+      </div>
+    </div>
+
+    <div style="background: var(--tint-yellow); border-left: 4px solid var(--color-accent-yellow); padding: 14px 18px; border-radius: 10px; margin-top: 18px; font-size: 13.5px; line-height: 1.6; color: var(--color-text-primary);">
+      <strong>Общая стоимость эксперимента: $1.67 за весь эксперимент</strong> (144 валидных API-ответа по 12 моделям). Разбивка: <strong>$1.12</strong> - первоначальный раунд на 5 моделях; <strong>$0.24</strong> - расширение на 6 моделей; <strong>$0.31</strong> - добавление Claude Opus 4.8 (28 мая 2026, фактически вдвое дешевле прогноза в $0.62, потому что 4.8 лаконичнее в рассуждении). Каждое расширение стоило 15-28% от исходной суммы - аргумент за регулярные пересборки бенчмарка при выходе новых моделей. Модели с цепочкой рассуждений (Gemini, GPT-5) тратят в 3-4 раза больше токенов вывода чем обычные - продакшен-импликация: при выборе модели для структурированного вывода (конвейер генерации контента, конвейер оценки) стоимость нужно умножать не только на цену за токен, но и на фактическое потребление токенов.
+    </div>
+  </div>
+
+</div>
+
+<!-- Modal overlay -->
+<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this) closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div class="modal-header">
+      <div class="modal-eyebrow" id="modalEyebrow"></div>
+      <div class="modal-title" id="modalTitle"></div>
+      <div class="modal-subtitle" id="modalSubtitle"></div>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+const MODELS = [
+  { id: 'sonnet', name: 'Claude Sonnet 4.6' },
+  { id: 'opus', name: 'Claude Opus 4.7' },
+  { id: 'gpt5', name: 'GPT-5' },
+  { id: 'gemini', name: 'Gemini 2.5 Pro' },
+  { id: 'kimi', name: 'Kimi K2' },
+  { id: 'deepseek', name: 'DeepSeek V3' },
+  { id: 'nemo_super', name: 'NVIDIA Nemotron Super 49B' },
+  { id: 'nemo_nano', name: 'NVIDIA Nemotron Nano 9B' },
+  { id: 'cohere', name: 'Cohere Command R+' },
+  { id: 'llama', name: 'Llama 3.3 70B' },
+  { id: 'qwen', name: 'Qwen 2.5 72B' },
+];
+
+const DIMENSIONS = [
+  {
+    num: '1',
+    title: 'Точность диагноза: конкретный механизм или ярлык темы',
+    what: 'Хороший диагноз называет точный механизм ошибки («делит 12 на 3 вместо 21»). Плохой - переформулирует тему задачи («ошибка в умножении»). Это разные вещи: первое помогает учителю, второе - нет.',
+    poleLow: { label: 'Ярлык темы', example: 'Llama lin_01: «Inconsistent application of algebraic operations» (буквально: «непоследовательное применение алгебраических операций» - это просто переформулировка темы)' },
+    poleHigh: { label: 'Точный механизм', example: 'Sonnet lin_01: «делит 12 на 3 вместо 21, ошибка в этапе деления»' },
+    ratings: { opus48: 7, sonnet: 7, opus: 6, gpt5: 6, gemini: 6, gemini35f: 6, gemini31p: 6, kimi: 6, deepseek: 4, nemo_super: 5, nemo_nano: 5, cohere: 4, llama: 2, qwen: 1 },
+  },
+  {
+    num: '2',
+    title: 'Воспроизведение арифметики ошибки',
+    what: 'Модель воспроизводит конкретные числа, через которые ученик пришёл к неверному ответу, или говорит общими словами «есть проблема с X». Воспроизведение - то что отличает анализ продуктового уровня от уровня «есть проблема».',
+    poleLow: { label: 'Описание паттерна', example: 'Llama frac_02: «consistently providing incorrect answers» (буквально: «постоянно даёт неправильные ответы» - это констатация факта, не диагноз)' },
+    poleHigh: { label: 'Воспроизведение чисел', example: 'Sonnet frac_02: «(1+1)/(3+4)=2/7 - классическая ошибка типа сложить-по-горизонтали»; geo_03: «13−5=8, вычитает вместо возведения в квадрат»' },
+    ratings: { opus48: 6, sonnet: 7, opus: 6, gpt5: 6, gemini: 5, gemini35f: 6, gemini31p: 5, kimi: 6, deepseek: 4, nemo_super: 5, nemo_nano: 6, cohere: 3, llama: 1, qwen: 2 },
+  },
+  {
+    num: '3',
+    title: 'Следующая задача: визуальная подсказка или абстрактная задача',
+    what: 'После диагноза модель предлагает следующую задачу. Хорошая - содержит опорную подсказку или визуальный образ («раздели круг на 2 части и закрась 1/2»). Плохая - просто похожая задача без подсказок или возврат к уже освоенному материалу.',
+    poleLow: { label: 'Абстрактная или вредная', example: 'Llama frac_01: «1/2 + 1/2» (возврат к уже освоенному)' },
+    poleHigh: { label: 'Визуальная подсказка', example: 'Opus frac_02: «Нарисуй прямоугольник, раздели пополам, потом одну половину ещё пополам»' },
+    ratings: { opus48: 7, sonnet: 6, opus: 7, gpt5: 5, gemini: 5, gemini35f: 6, gemini31p: 6, kimi: 5, deepseek: 4, nemo_super: 5, nemo_nano: 5, cohere: 3, llama: 2, qwen: 3 },
+  },
+  {
+    num: '4',
+    title: 'Калибровка уверенности: реальная или фиктивная',
+    what: 'Модель сообщает оценку уверенности от 0 до 1. Хорошая - уверенность варьируется (0.62 на сложном случае, 0.93 на ясном). Плохая - почти всегда одно значение. Если значение уверенности не зависит от реальной сложности задачи, его нельзя использовать как сигнал.',
+    poleLow: { label: 'Значение по умолчанию', example: 'Llama: уверенность = 0.80 во всех 12 сценариях из 12 / Gemini: 0.95 и выше в 8 случаях из 12' },
+    poleHigh: { label: 'Реальная вариация', example: 'GPT-5: разброс от 0.62 (frac_02) до 0.95 (geo_01) / NVIDIA Super: 0.7-0.85' },
+    ratings: { opus48: 7, sonnet: 5, opus: 5, gpt5: 6, gemini: 2, gemini35f: 2, gemini31p: 2, kimi: 5, deepseek: 4, nemo_super: 6, nemo_nano: 5, cohere: 5, llama: 1, qwen: 3 },
+  },
+  {
+    num: '5',
+    title: 'Автономия или передача учителю',
+    what: 'Модель решает следующий шаг сама или просит передать учителю (`teacher_intervention`). Это не «лучше» или «хуже» - это разные продуктовые сценарии. Для помощника учителю передача естественна; для автономного тьютора - проблема.',
+    poleLow: { label: 'Автономное решение', example: 'Opus: `easier_prerequisite` (более простая предпосылка) в 10 из 12 сценариев' },
+    poleHigh: { label: 'Передача учителю', example: 'Gemini: `teacher_intervention` (передать учителю) в 9 из 12 сценариев' },
+    ratings: { opus48: 2, sonnet: 3, opus: 2, gpt5: 3, gemini: 6, gemini35f: 1, gemini31p: 2, kimi: 3, deepseek: 3, nemo_super: 4, nemo_nano: 4, cohere: 3, llama: 2, qwen: 3 },
+  },
+  {
+    num: '6',
+    title: 'Адаптация языка под профиль ученика',
+    what: 'У ученика русское имя - модель отвечает по-русски где это нужно (объяснение для ребёнка) или игнорирует и пишет по-английски. Критично для развивающихся рынков - где локализация это требование продакшена.',
+    poleLow: { label: 'Игнорирует язык', example: 'Llama: всегда английский, даже когда ученик Айдан, Рустам, Орхан / GPT-5: тоже преимущественно английский' },
+    poleHigh: { label: 'Адаптирует под профиль', example: 'Sonnet, Kimi K2: русский в объяснении для русских имён, английский где имя нейтральное' },
+    ratings: { opus48: 7, sonnet: 7, opus: 5, gpt5: 3, gemini: 6, gemini35f: 7, gemini31p: 7, kimi: 7, deepseek: 3, nemo_super: 4, nemo_nano: 4, cohere: 4, llama: 1, qwen: 5 },
+  },
+  {
+    num: '7',
+    title: 'Признаёт несколько гипотез или даёт одну',
+    what: 'В неоднозначных случаях (как у Айдана, как у Зары) - может быть несколько гипотез о ходе мышления ученика. Хорошая модель признаёт это. Плохая - даёт одну уверенную, не оставляя места для альтернатив.',
+    poleLow: { label: 'Одна категоричная', example: 'Gemini: уверенность 0.95, одна гипотеза, передача учителю - паттерн в 7 случаях из 12' },
+    poleHigh: { label: 'Несколько гипотез', example: 'Opus lin_03: «may have guessed pattern-matching, then errors» (буквально: «возможно угадала по шаблону, потом ошибки») - явно две гипотезы' },
+    ratings: { opus48: 7, sonnet: 5, opus: 6, gpt5: 5, gemini: 3, gemini35f: 4, gemini31p: 6, kimi: 4, deepseek: 3, nemo_super: 3, nemo_nano: 4, cohere: 3, llama: 2, qwen: 2 },
+  },
+  {
+    num: '8',
+    title: 'Внимательное чтение вопроса',
+    what: 'Заметила ли модель что вопрос изменился - например в word_03 финальный вопрос про мальчиков, а не девочек. Или что 3, 4, 7 нарушает неравенство треугольника в geo_03. Это внимательное чтение, а не процедурный диагноз.',
+    poleLow: { label: 'Поверхностное чтение', example: 'Большинство моделей в word_03: остановились на «не делает финальный шаг», не заметили нюанс «девочки vs мальчики»' },
+    poleHigh: { label: 'Внимательное перечитывание', example: 'Sonnet word_03: «144 is the correct count of girls, but the question asked for boys» (буквально: «144 - это правильное число девочек, но вопрос был про мальчиков») / GPT-5 geo_03: «3, 4, 7 нарушает неравенство треугольника»' },
+    ratings: { opus48: 7, sonnet: 7, opus: 5, gpt5: 6, gemini: 4, gemini35f: 5, gemini31p: 4, kimi: 4, deepseek: 3, nemo_super: 3, nemo_nano: 4, cohere: 3, llama: 2, qwen: 2 },
+  },
+];
+
+// =============================================================================
+// PCA SCATTER - 2D positioning based on manual content analysis ratings
+// X: точность диагноза (construct 1), Y: глубина воспроизведения (construct 2)
+// Encodings: color=family, shape=tier, size=price (log scale)
+// =============================================================================
+const MODEL_FAMILIES = [
+  { id: 'anthropic',  name: 'Anthropic',   color: '#5A32FA' },  // фирменный фиолетовый
+  { id: 'openai',     name: 'OpenAI',      color: '#10A37F' },  // бирюзовый OpenAI
+  { id: 'google',     name: 'Google',      color: '#EA4335' },  // Google red - яркий красный
+  { id: 'meta',       name: 'Meta',        color: '#0866FF' },  // Meta blue
+  { id: 'nvidia',     name: 'NVIDIA',      color: '#76B900' },  // NVIDIA green
+  { id: 'alibaba',    name: 'Alibaba',     color: '#FF8800' },  // оранжевый Qwen
+  { id: 'moonshot',   name: 'Moonshot AI', color: '#1F1F1F' },  // почти-чёрный (Moonshot brand)
+  { id: 'deepseek',   name: 'DeepSeek',    color: '#06B6D4' },  // циан
+  { id: 'cohere',     name: 'Cohere',      color: '#FACC15' },  // ярко-жёлтый (отличный от оранжевого Alibaba)
+];
+
+const FAMILY_COLOR = MODEL_FAMILIES.reduce((acc, f) => { acc[f.id] = f.color; return acc; }, {});
+
+// Tiers and their shapes
+const TIERS = {
+  top:    { name: 'Верхний тир',  desc: 'Для автономной диагностики',     shape: 'circle'   },
+  mid:    { name: 'Средний тир',  desc: 'С оговорками',                   shape: 'square'   },
+  low:    { name: 'Нижний тир',   desc: 'Ограниченное применение',        shape: 'diamond'  },
+  avoid:  { name: 'Избегать',     desc: 'Не подходит для диагностики',    shape: 'triangle' },
+};
+
+const PCA_POSITIONS = [
+  // x = точность диагноза 1-7, y = глубина reconstruction 1-7, cost = $ per 12 tasks, tier
+  { id: 'sonnet',     name: 'Claude Sonnet 4.6',          family: 'anthropic', x: 7.0, y: 7.0, cost: 0.104, tier: 'top'   },
+  { id: 'opus48',     name: 'Claude Opus 4.8',            family: 'anthropic', x: 7.0, y: 6.0, cost: 0.312, tier: 'top'   },
+  { id: 'opus',       name: 'Claude Opus 4.7',            family: 'anthropic', x: 6.0, y: 6.0, cost: 0.619, tier: 'top'   },
+  { id: 'gpt5',       name: 'GPT-5',                      family: 'openai',    x: 6.0, y: 6.0, cost: 0.422, tier: 'top'   },
+  { id: 'kimi',       name: 'Kimi K2',                    family: 'moonshot',  x: 6.0, y: 6.0, cost: 0.010, tier: 'mid'   },
+  { id: 'gemini',     name: 'Gemini 2.5 Pro',             family: 'google',    x: 6.0, y: 5.0, cost: 0.144, tier: 'mid'   },
+  { id: 'gemini35f',  name: 'Gemini 3.5 Flash',           family: 'google',    x: 6.3, y: 5.7, cost: 0.431, tier: 'mid'   },
+  { id: 'gemini31p',  name: 'Gemini 3.1 Pro',             family: 'google',    x: 6.5, y: 5.3, cost: 0.758, tier: 'mid'   },
+  { id: 'nemo_nano',  name: 'NVIDIA Nemotron Nano 9B',    family: 'nvidia',    x: 5.0, y: 6.0, cost: 0.002, tier: 'mid'   },
+  { id: 'nemo_super', name: 'NVIDIA Nemotron Super 49B',  family: 'nvidia',    x: 5.0, y: 5.0, cost: 0.006, tier: 'low'   },
+  { id: 'deepseek',   name: 'DeepSeek V3',                family: 'deepseek',  x: 4.0, y: 4.0, cost: 0.004, tier: 'low'   },
+  { id: 'cohere',     name: 'Cohere Command R+',          family: 'cohere',    x: 4.0, y: 3.0, cost: 0.046, tier: 'low'   },
+  { id: 'qwen',       name: 'Qwen 2.5 72B',               family: 'alibaba',   x: 1.5, y: 2.0, cost: 0.003, tier: 'avoid' },
+  { id: 'llama',      name: 'Llama 3.3 70B',              family: 'meta',      x: 2.0, y: 1.0, cost: 0.005, tier: 'avoid' },
+];
+
+// Log scale for size: cheapest ~6px radius, most expensive ~22px
+function costToSize(cost) {
+  // costs range 0.002 (Nano) to 0.619 (Opus) - factor of ~310x
+  // log10 maps to (-2.7, -0.2), range ~2.5
+  const logCost = Math.log10(cost);
+  // normalize to 0..1
+  const normalized = (logCost - Math.log10(0.002)) / (Math.log10(0.619) - Math.log10(0.002));
+  // map to radius range
+  return 6 + normalized * 16;  // 6-22 px radius
+}
+
+// Generate SVG shape path centered at (cx, cy) with size s (radius equivalent)
+function shapePath(shape, cx, cy, s) {
+  if (shape === 'circle') {
+    return `<circle cx="${cx}" cy="${cy}" r="${s}"`;
+  }
+  if (shape === 'square') {
+    // square inscribed in circle radius s -> side = s * sqrt(2)
+    const side = s * 1.7;
+    return `<rect x="${cx - side/2}" y="${cy - side/2}" width="${side}" height="${side}"`;
+  }
+  if (shape === 'diamond') {
+    const d = s * 1.15;
+    return `<polygon points="${cx},${cy-d} ${cx+d},${cy} ${cx},${cy+d} ${cx-d},${cy}"`;
+  }
+  if (shape === 'triangle') {
+    const d = s * 1.25;
+    return `<polygon points="${cx},${cy-d} ${cx+d*0.866},${cy+d*0.5} ${cx-d*0.866},${cy+d*0.5}"`;
+  }
+  return `<circle cx="${cx}" cy="${cy}" r="${s}"`;
+}
+
+function renderPCA() {
+  const W = 760, H = 620;
+  const margin = { top: 40, right: 50, bottom: 60, left: 70 };
+  const plotW = W - margin.left - margin.right;
+  const plotH = H - margin.top - margin.bottom;
+
+  const xMin = 1, xMax = 7;
+  const yMin = 1, yMax = 7;
+
+  const xScale = v => margin.left + (v - xMin) / (xMax - xMin) * plotW;
+  const yScale = v => margin.top + (1 - (v - yMin) / (yMax - yMin)) * plotH;
+
+  const xMid = xScale(4), yMid = yScale(4);
+
+  // Jitter overlapping points slightly - but keep Kimi K2 anchored at (6,6) Sweet Spot
+  const positions = PCA_POSITIONS.map(p => ({ ...p }));
+  const seen = {};
+  // Process in order that puts Kimi FIRST among (6,6) so others jitter around it
+  const orderForJitter = positions.slice().sort((a, b) => {
+    if (a.id === 'kimi') return -1;
+    if (b.id === 'kimi') return 1;
+    return 0;
+  });
+  orderForJitter.forEach(p => {
+    const key = `${p.x},${p.y}`;
+    if (seen[key] === undefined) seen[key] = 0;
+    else {
+      seen[key]++;
+      const offset = seen[key];
+      p.x += offset * 0.22;
+      p.y -= offset * 0.22;
+    }
+  });
+
+  const dots = positions.map(p => {
+    const cx = xScale(p.x), cy = yScale(p.y);
+    const fill = FAMILY_COLOR[p.family];
+    const size = costToSize(p.cost);
+    const shape = TIERS[p.tier].shape;
+    const shapeStart = shapePath(shape, cx, cy, size);
+    // Pending models (not yet hand-coded) render with reduced opacity and dashed stroke
+    const isPending = p.pending === true;
+    const fillOpacity = isPending ? 0.45 : 0.88;
+    const strokeDash = isPending ? ' stroke-dasharray="3,2"' : '';
+    return `${shapeStart} fill="${fill}" fill-opacity="${fillOpacity}" stroke="white" stroke-width="2.5"${strokeDash} data-model-id="${p.id}" data-name="${p.name}" class="pca-dot" style="cursor: pointer;"/>`;
+  }).join('');
+
+  const xTicks = [1, 2, 3, 4, 5, 6, 7].map(v => `
+    <line x1="${xScale(v)}" y1="${margin.top + plotH}" x2="${xScale(v)}" y2="${margin.top + plotH + 6}" stroke="#6B6B7B" stroke-width="1"/>
+    <text x="${xScale(v)}" y="${margin.top + plotH + 22}" font-family="JetBrains Mono, monospace" font-size="11" fill="#6B6B7B" text-anchor="middle">${v}</text>
+  `).join('');
+  const yTicks = [1, 2, 3, 4, 5, 6, 7].map(v => `
+    <line x1="${margin.left - 6}" y1="${yScale(v)}" x2="${margin.left}" y2="${yScale(v)}" stroke="#6B6B7B" stroke-width="1"/>
+    <text x="${margin.left - 12}" y="${yScale(v) + 4}" font-family="JetBrains Mono, monospace" font-size="11" fill="#6B6B7B" text-anchor="end">${v}</text>
+  `).join('');
+
+  // Sweet Spot marker - Kimi K2 at (6, 6)
+  // Position label BELOW Kimi (away from Opus/Sonnet at top-right)
+  const sweetX = 6, sweetY = 6;
+  const sweetCx = xScale(sweetX), sweetCy = yScale(sweetY);
+
+  const sweetSpotMarker = `
+    <!-- Sweet Spot dashed lines from Kimi to both axes -->
+    <line x1="${margin.left}" y1="${sweetCy}" x2="${sweetCx}" y2="${sweetCy}"
+          stroke="#FF3B80" stroke-width="2" stroke-dasharray="6,4" opacity="0.65"/>
+    <line x1="${sweetCx}" y1="${margin.top + plotH}" x2="${sweetCx}" y2="${sweetCy}"
+          stroke="#FF3B80" stroke-width="2" stroke-dasharray="6,4" opacity="0.65"/>
+
+    <!-- Sweet Spot ring around Kimi -->
+    <circle cx="${sweetCx}" cy="${sweetCy}" r="26" fill="none" stroke="#FF3B80" stroke-width="2.5" stroke-dasharray="4,3" opacity="0.85"/>
+
+    <!-- Sweet Spot label - positioned to LEFT of Kimi to avoid Opus -->
+    <g transform="translate(${sweetCx - 175}, ${sweetCy + 38})">
+      <rect x="0" y="-15" width="160" height="30" rx="15" fill="#FF3B80" opacity="0.95"/>
+      <text x="80" y="5" font-family="Nunito, sans-serif" font-size="12" font-weight="900" fill="white" text-anchor="middle" letter-spacing="0.06em">★ SWEET SPOT · KIMI K2</text>
+    </g>
+    <!-- Connector from label to Kimi point -->
+    <line x1="${sweetCx - 15}" y1="${sweetCy + 38}" x2="${sweetCx - 18}" y2="${sweetCy + 22}"
+          stroke="#FF3B80" stroke-width="2" opacity="0.85"/>
+
+    <!-- Tick highlights on axes for sweet spot -->
+    <text x="${margin.left - 12}" y="${sweetCy + 4}" font-family="JetBrains Mono, monospace" font-size="11" font-weight="800" fill="#FF3B80" text-anchor="end">${sweetY}</text>
+    <text x="${sweetCx}" y="${margin.top + plotH + 22}" font-family="JetBrains Mono, monospace" font-size="11" font-weight="800" fill="#FF3B80" text-anchor="middle">${sweetX}</text>
+  `;
+
+  return `
+    <svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
+      <rect x="${xMid}" y="${margin.top}" width="${margin.left + plotW - xMid}" height="${yMid - margin.top}" fill="#E5F8F1" opacity="0.6"/>
+      <rect x="${margin.left}" y="${yMid}" width="${xMid - margin.left}" height="${margin.top + plotH - yMid}" fill="#FFEEF3" opacity="0.6"/>
+      <rect x="${margin.left}" y="${margin.top}" width="${xMid - margin.left}" height="${yMid - margin.top}" fill="#FFF8DC" opacity="0.4"/>
+      <rect x="${xMid}" y="${yMid}" width="${margin.left + plotW - xMid}" height="${margin.top + plotH - yMid}" fill="#FFF8DC" opacity="0.4"/>
+
+      <text x="${xScale(6.3)}" y="${yScale(6.7)}" font-family="Nunito, sans-serif" font-size="11" font-weight="800" fill="#008566" opacity="0.7" letter-spacing="0.05em">ВЕРХНИЙ ТИР →</text>
+      <text x="${xScale(1.5)}" y="${yScale(1.3)}" font-family="Nunito, sans-serif" font-size="11" font-weight="800" fill="#C92E66" opacity="0.7" letter-spacing="0.05em">← ИЗБЕГАТЬ</text>
+
+      <rect x="${margin.left}" y="${margin.top}" width="${plotW}" height="${plotH}" fill="none" stroke="#E2E4EC" stroke-width="1"/>
+      <line x1="${xMid}" y1="${margin.top}" x2="${xMid}" y2="${margin.top + plotH}" stroke="#E2E4EC" stroke-width="1" stroke-dasharray="4,4"/>
+      <line x1="${margin.left}" y1="${yMid}" x2="${margin.left + plotW}" y2="${yMid}" stroke="#E2E4EC" stroke-width="1" stroke-dasharray="4,4"/>
+
+      ${xTicks}
+      ${yTicks}
+
+      ${sweetSpotMarker}
+
+      <text x="${margin.left + plotW / 2}" y="${H - 15}" font-family="Nunito, sans-serif" font-size="13" font-weight="800" fill="#1A1A24" text-anchor="middle">Точность диагноза (1-7) →</text>
+      <text x="20" y="${margin.top + plotH / 2}" font-family="Nunito, sans-serif" font-size="13" font-weight="800" fill="#1A1A24" text-anchor="middle" transform="rotate(-90 20 ${margin.top + plotH / 2})">Глубина воспроизведения (1-7) →</text>
+
+      <text x="${margin.left + plotW / 2}" y="${margin.top - 12}" font-family="Nunito, sans-serif" font-size="12" font-weight="700" fill="#6B6B7B" text-anchor="middle" letter-spacing="0.05em">ОЦЕНКИ ИЗ КАЧЕСТВЕННОГО АНАЛИЗА · 132 ОТВЕТА</text>
+
+      ${dots}
+    </svg>
+  `;
+}
+
+function renderPCALegend() {
+  // ===== FAMILIES (color) - in sidebar, clickable for filtering =====
+  const usedFamilies = MODEL_FAMILIES.filter(f => PCA_POSITIONS.some(p => p.family === f.id));
+  const familyHTML = usedFamilies.map(f => {
+    const models = PCA_POSITIONS.filter(p => p.family === f.id).map(p => p.name);
+    const shortNames = models.join(', ')
+      .replace(/Claude /g, '').replace(/NVIDIA Nemotron /g, 'Nemotron ')
+      .replace(/Nemotron Super 49B/g, 'Super 49B').replace(/Nemotron Nano 9B/g, 'Nano 9B')
+      .replace(/Sonnet 4.6/g, 'Sonnet').replace(/Opus 4.7/g, 'Opus')
+      .replace(/Gemini 2.5 Pro/g, 'Gemini').replace(/Llama 3.3 70B/g, 'Llama')
+      .replace(/Qwen 2.5 72B/g, 'Qwen').replace(/DeepSeek V3/g, 'V3')
+      .replace(/Command R\+/g, 'Command R+');
+    return `
+      <div class="pca-legend-row clickable" data-family-id="${f.id}" onclick="toggleFamilyFilter('${f.id}')">
+        <div class="pca-legend-row-dot" style="background:${f.color}"></div>
+        <div style="flex:1;">
+          <div style="font-weight: 700; font-size: 12.5px;">${f.name}</div>
+          <div style="font-size: 11px; color: var(--color-text-secondary); margin-top: 1px;">${shortNames}</div>
+        </div>
+      </div>
+    `;
+  }).join('');
+  document.getElementById('pcaLegendList').innerHTML = familyHTML + '<div class="pca-legend-hint" id="pcaLegendHint">Клик на семейство = подсветить только его</div>';
+
+  // ===== TIERS (shape) - horizontal panel below chart =====
+  const tierShapeSvg = (shape) => {
+    const cx = 18, cy = 18, s = 11;
+    const path = shapePath(shape, cx, cy, s);
+    return `<svg width="36" height="36" viewBox="0 0 36 36">${path} fill="#6B6B7B" stroke="white" stroke-width="2"/></svg>`;
+  };
+
+  const shapesHTML = Object.entries(TIERS).map(([key, t]) => `
+    <div class="pca-legend-bottom-item">
+      <div class="pca-legend-bottom-shape">${tierShapeSvg(t.shape)}</div>
+      <div class="pca-legend-bottom-label">${t.name}</div>
+      <div class="pca-legend-bottom-desc">${t.desc}</div>
+    </div>
+  `).join('');
+  document.getElementById('pcaLegendShapes').innerHTML = shapesHTML;
+
+  // ===== PRICE (size) - horizontal panel below chart =====
+  const priceExamples = [
+    { cost: 0.002, label: '$0.002', desc: 'самая дешёвая · Nano 9B' },
+    { cost: 0.05,  label: '~$0.05', desc: 'средняя · Cohere' },
+    { cost: 0.62,  label: '$0.62',  desc: 'самая дорогая · Opus' },
+  ];
+
+  const sizesHTML = priceExamples.map(p => {
+    const s = costToSize(p.cost);
+    return `
+      <div class="pca-legend-bottom-item">
+        <div class="pca-legend-bottom-shape">
+          <svg width="48" height="48" viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="${s}" fill="#6B6B7B" fill-opacity="0.55" stroke="white" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="pca-legend-bottom-label">${p.label}</div>
+        <div class="pca-legend-bottom-desc">${p.desc}</div>
+      </div>
+    `;
+  }).join('');
+  document.getElementById('pcaLegendSizes').innerHTML = sizesHTML;
+}
+
+// =============================================================================
+// Family filter state and toggle
+// =============================================================================
+let activeFamilyFilter = null;
+
+function toggleFamilyFilter(familyId) {
+  // Toggle: if same family clicked again, clear filter
+  if (activeFamilyFilter === familyId) {
+    activeFamilyFilter = null;
+  } else {
+    activeFamilyFilter = familyId;
+  }
+  applyFamilyFilter();
+}
+
+function applyFamilyFilter() {
+  // Find all .pca-dot SVG elements and update their fill / opacity
+  const dots = document.querySelectorAll('.pca-svg-container .pca-dot');
+  dots.forEach(dot => {
+    const modelId = dot.getAttribute('data-model-id');
+    const model = PCA_POSITIONS.find(p => p.id === modelId);
+    if (!model) return;
+
+    if (activeFamilyFilter === null) {
+      // No filter - restore original color
+      dot.setAttribute('fill', FAMILY_COLOR[model.family]);
+      dot.setAttribute('fill-opacity', '0.88');
+      dot.style.filter = '';
+    } else if (model.family === activeFamilyFilter) {
+      // Active family - keep colored
+      dot.setAttribute('fill', FAMILY_COLOR[model.family]);
+      dot.setAttribute('fill-opacity', '0.95');
+      dot.style.filter = '';
+    } else {
+      // Dimmed - gray
+      dot.setAttribute('fill', '#CDCED5');
+      dot.setAttribute('fill-opacity', '0.35');
+      dot.style.filter = 'grayscale(100%)';
+    }
+  });
+
+  // Update legend row highlight
+  document.querySelectorAll('.pca-legend-row.clickable').forEach(row => {
+    const fid = row.getAttribute('data-family-id');
+    if (fid === activeFamilyFilter) {
+      row.classList.add('active');
+    } else {
+      row.classList.remove('active');
+    }
+  });
+
+  // Update hint
+  const hint = document.getElementById('pcaLegendHint');
+  if (hint) {
+    hint.textContent = activeFamilyFilter
+      ? 'Клик на то же семейство снова - снять фильтр'
+      : 'Клик на семейство = подсветить только его';
+  }
+}
+
+// =============================================================================
+// MODAL DATA - models, scenarios, all 132 diagnoses
+// =============================================================================
+const MODEL_DETAILS = {
+  sonnet: {
+    name: 'Claude Sonnet 4.6',
+    provider: 'Anthropic',
+    openrouterId: 'anthropic/claude-sonnet-4.6',
+    cost: '$0.10 за 12 задач',
+    diagnosis: 7, reconstruction: 7, calibration: 5,
+    summary: 'Лучшая модель эксперимента. Единственная модель которая надёжно воспроизводит арифметику ошибки на 12 из 12 сценариев. Также единственная заметила нюанс «вопрос про мальчиков, не про девочек» в word_03.',
+    quote: 'lin_01: «делит 12 на 3 вместо 21 на 3, получая x=1. В задаче 5 делит 8 на 4 вместо 12 на 4»',
+    bestFor: 'AI-помощник учителю (точное воспроизведение арифметики). Объяснение для ребёнка (адаптация русского языка). Любой сценарий с автономной диагностикой knowledge tracing (отслеживание понимания материала учеником).',
+    avoid: 'Никаких ограничений на основе данных эксперимента.',
+  },
+  opus48: {
+    name: 'Claude Opus 4.8',
+    provider: 'Anthropic',
+    openrouterId: 'anthropic/claude-opus-4.8',
+    cost: '$0.31 за 12 задач (фактически - вдвое дешевле прогноза)',
+    diagnosis: 7, reconstruction: 6, calibration: 7,
+    summary: 'Лучшая модель обновлённого эксперимента (средний балл 6.3/7, выше прежнего лидера Sonnet 5.9). Выпущена 28 мая 2026, через 41 день после Opus 4.7. Главный сдвиг относительно 4.7 - калибровка уверенности: разброс confidence 0.20-0.82 (9 уникальных значений из 12), с правильно низкой уверенностью на неоднозначных кейсах (word_01 - 0.20, lin_03 - 0.40) и высокой на ясных (frac_01 - 0.82). Это превосходит прежнего эталона калибровки GPT-5. Системно даёт две гипотезы. Уникально для всего эксперимента: на трёх сценариях с повреждёнными входными данными (ответы записаны как «?») заметила это и честно отметила, а на word_01 отказалась ставить диагноз по плохим данным и предложила сначала починить логирование - это редкая внимательность к качеству входа.',
+    quote: 'word_01: «The data is uninterpretable: every recorded answer is the literal string "?" … points to a data-capture or grading error» (буквально: «данные не интерпретируемы: каждый ответ записан как "?" … это указывает на ошибку сбора данных, а не на ошибку ученика») - единственная модель, заметившая повреждённый вход',
+    bestFor: 'AI-помощник учителю с приоритетом на честную самооценку (лучшая калибровка уверенности в эксперименте - можно строить пороги доверия на её confidence). Автономная диагностика. Объяснение для ребёнка (12/12 ответов на русском). Сценарии где важно признание нескольких гипотез.',
+    avoid: 'Склонна к автономному решению (2/12 передач учителю) - для архитектуры с обязательным участием учителя нужна явная настройка. Самая дорогая модель верхнего тира по цене за токен (хотя на практике обошлась дешевле 4.7 из-за более лаконичного рассуждения).',
+  },
+  opus: {
+    name: 'Claude Opus 4.7',
+    provider: 'Anthropic',
+    openrouterId: 'anthropic/claude-opus-4.7',
+    cost: '$0.62 за 12 задач',
+    diagnosis: 6, reconstruction: 6, calibration: 5,
+    summary: 'Верхний тир по воспроизведению арифметики. Лучшая модель для визуальных опорных подсказок в следующей задаче (например: «Нарисуй прямоугольник, раздели пополам»). Признаёт несколько гипотез одновременно.',
+    quote: 'lin_03: «may have guessed pattern-matching, then errors are systematic» (буквально: «возможно угадала по шаблону, потом ошибки стали системными») - явно две гипотезы',
+    bestFor: 'Сложные диагностические задачи где нужны несколько гипотез. Объяснение для ребёнка через визуальные образы.',
+    avoid: 'Не оптимальна по стоимости - Sonnet даёт сравнимое качество в 6 раз дешевле.',
+  },
+  gpt5: {
+    name: 'GPT-5',
+    provider: 'OpenAI',
+    openrouterId: 'openai/gpt-5',
+    cost: '$0.42 за 12 задач',
+    diagnosis: 6, reconstruction: 6, calibration: 6,
+    summary: 'Единственная модель с реальной калибровкой уверенности (разброс 0.62-0.95). Ловит побочные наблюдения которые другие пропускают: неравенство треугольника на geo_03, перенос ошибки между задачами на frac_02, отличие случайной описки от системной ошибки на lin_03.',
+    quote: 'geo_03: «Uses a+b=c instead of a^2+b^2=c^2; relies on memorized triples. Also overlooked that 3,4,7 violates triangle inequality.» (буквально: «использует a+b=c вместо a²+b²=c²; полагается на заученные тройки. Также не заметила, что 3, 4, 7 нарушает неравенство треугольника.»)',
+    bestFor: 'Сценарии где нужна самосознательная калибровка (конвейеры оценки, пороги уверенности). Продакшен-логика с принятием решения по уровню уверенности.',
+    avoid: 'Медленная (режим цепочки рассуждений, в 3-4 раза больше токенов вывода). Игнорирует профиль ученика при адаптации языка.',
+  },
+  gemini: {
+    name: 'Gemini 2.5 Pro',
+    provider: 'Google',
+    openrouterId: 'google/gemini-2.5-pro',
+    cost: '$0.14 за 12 задач',
+    diagnosis: 6, reconstruction: 5, calibration: 2,
+    summary: 'Системно передаёт учителю (`teacher_intervention` в 9 из 12 сценариев). Сильна на структурированном образовательном контенте. Но уверенность стабильно над 0.95 во всех сценариях - завышенная уверенность без вариации. ВАЖНО: это Gemini 2.5 Pro - на момент обновления дашборда (май 2026) она отстала на два поколения. Уже вышли Gemini 3.1 Pro (февраль 2026) и Gemini 3.5 Flash (май 2026, I/O), а Gemini 3.5 Pro обещана на июнь. Перепрогон на новых версиях запланирован - возможно, позиция Gemini в ранжировании изменится.',
+    quote: 'lin_01: «calculated 12 - 9. For 4x + 8 = 20, they calculated 20 + 8. This indicates direct teacher intervention.» (буквально: «посчитал 12 - 9. Для 4x + 8 = 20 посчитал 20 + 8. Это требует прямого вмешательства учителя.») (уверенность 0.85)',
+    bestFor: 'Архитектура с участием учителя, где передача учителю естественна. Массовая генерация образовательного контента.',
+    avoid: 'Автономный тьютор (склонна передавать учителю). Сценарии где уверенность критична (завышенная).',
+  },
+  gemini35f: {
+    name: 'Gemini 3.5 Flash',
+    provider: 'Google',
+    openrouterId: 'google/gemini-3.5-flash',
+    cost: '$0.43 за 12 задач',
+    diagnosis: 6, reconstruction: 6, calibration: 2,
+    summary: 'Новая модель (I/O, 19 мая 2026), пришла на смену Gemini 2.5 Pro. Заметно точнее в диагнозах, чем 2.5 Pro - называет конкретные механизмы (geo_01: «5×3=15 вместо периметра 16»), воспроизводит арифметику. НО средний балл 4.6/7 - ровно как у старой 2.5 Pro: калибровка уверенности не улучшилась (разброс всего 0.85-0.95, оценка 2/7), и модель редко признаёт несколько гипотез (4/7), обычно даёт одну уверенную версию. Несмотря на превосходство в coding и agentic бенчмарках над 3.1 Pro, на нашей задаче рассуждения-диагностики прироста относительно 2.5 Pro почти нет - это иллюстрация того, что прогресс в одних областях не переносится автоматически на другие.',
+    quote: 'geo_01: «confusing the concepts and formulas for area and perimeter; for the 5×3 rectangle calculated area (15) instead of perimeter (16)» (буквально: «путает площадь и периметр; для прямоугольника 5×3 посчитала площадь 15 вместо периметра 16»)',
+    bestFor: 'Быстрые агентные задачи и генерация контента (её основная сильная сторона по бенчмаркам). Точная диагностика на типовых ошибках, если калибровка не критична.',
+    avoid: 'Сценарии где нужна честная самооценка уверенности (калибровка слабая). Неоднозначные кейсы, требующие нескольких гипотез.',
+  },
+  gemini31p: {
+    name: 'Gemini 3.1 Pro',
+    provider: 'Google',
+    openrouterId: 'google/gemini-3.1-pro-preview',
+    cost: '$0.76 за 12 задач',
+    diagnosis: 6, reconstruction: 5, calibration: 2,
+    summary: 'Текущий Pro-тир Gemini (февраль 2026). Средний балл 4.8/7 - чуть выше старой 2.5 Pro (4.6). Сильная сторона - системно даёт несколько гипотез (6/7), как Claude Opus, и заметила повреждённые входные данные на нескольких сценариях. Но: на сценарии lin_03 модель сорвалась в поток рассуждения вслух и не выдала валидный JSON - сбой структурированного вывода, который в продакшене сломал бы конвейер. Калибровка такая же слабая, как у всех Gemini (разброс 0.75-0.95, оценка 2/7). Два поколения развития (2.5 → 3.1) дали лишь +0.2 балла на нашей задаче.',
+    quote: 'word_02: «There are two plausible hypotheses for his misconception…» (буквально: «есть две правдоподобные гипотезы о его ошибочном представлении…») - системное признание неоднозначности, как у Opus',
+    bestFor: 'Reasoning-heavy задачи и работа с длинными документами (рекомендуемая ниша по документации Google). Сценарии, где важно признание нескольких гипотез.',
+    avoid: 'Продакшен со строгим требованием к структурированному выводу (риск срыва в свободный текст). Сценарии, где критична калибровка уверенности.',
+  },
+  kimi: {
+    name: 'Kimi K2',
+    provider: 'Moonshot AI',
+    openrouterId: 'moonshotai/kimi-k2',
+    cost: '$0.01 за 12 задач',
+    diagnosis: 6, reconstruction: 6, calibration: 5,
+    summary: 'Экономный по стоимости конкурент по качеству. На типовых ошибках основанных на паттернах (frac_03 - проекция цифр, word_01) даёт воспроизведение уровня верхнего тира. На сложных многошаговых задачах - удовлетворительно, но не глубже. Sweet Spot эксперимента: примерно в 10 раз дешевле Sonnet при сопоставимом качестве на типичных задачах.',
+    quote: 'frac_03: «for 1/3 he wrote 0.13 (digits 1,3), for 3/4 wrote 0.34 (digits 3,4), and 2/5 became 0.25 (digits 2,5 backwards)» (буквально: «для 1/3 написал 0.13 [цифры 1 и 3], для 3/4 написал 0.34 [цифры 3 и 4], а 2/5 стало 0.25 [цифры 2 и 5 в обратном порядке]»)',
+    bestFor: 'Экономный по стоимости продакшен где основные ошибки типовые. Резерв для верхнего тира с 10-кратной экономией.',
+    avoid: 'Сложные многошаговые задачи рассуждения где нужно глубокое понимание.',
+  },
+  deepseek: {
+    name: 'DeepSeek V3',
+    provider: 'DeepSeek',
+    openrouterId: 'deepseek/deepseek-chat',
+    cost: '$0.004 за 12 задач',
+    diagnosis: 4, reconstruction: 4, calibration: 4,
+    summary: 'Сильна на простых арифметических ошибках (frac_01, frac_02). Серьёзные слепые пятна на сложных многошаговых ошибках: 3 случая неверного направления (frac_03 - назвала «периодические десятичные» вместо конкатенации цифр; geo_03 - общий диагноз; word_03 - инвертированная причинно-следственная связь, написала «считает проценты как вычитание» хотя проблема в обратном).',
+    quote: 'word_03 (НЕВЕРНО): «treating percentages as subtraction problems rather than multiplicative» (буквально: «трактует проценты как задачи на вычитание, а не на умножение») - реальная проблема обратная: модель остановилась за шаг до вычитания',
+    bestFor: 'Экономная первичная сортировка для простых ошибок. Гибридный конвейер: DeepSeek первичный проход, Sonnet проверяющий.',
+    avoid: 'Автономный диагноз на сложных ошибках. Использовать только под страховочными проверками.',
+  },
+  nemo_super: {
+    name: 'NVIDIA Nemotron Super 49B',
+    provider: 'NVIDIA',
+    openrouterId: 'nvidia/llama-3.3-nemotron-super-49b-v1.5',
+    cost: '$0.006 за 12 задач',
+    diagnosis: 5, reconstruction: 5, calibration: 6,
+    summary: 'Базируется на Llama 3.3 70B + NVIDIA RLHF (обучение с подкреплением на оценках людей) + поиск архитектуры. Прямое сравнение с базовой Llama в нашем эксперименте: конвейер NVIDIA добавил калибровку (разброс 0.7-0.85 против постоянного 0.8 у Llama) и структурированный вывод, но точность не выросла. На frac_03 необоснованная уверенность в неверном диагнозе. Подтверждает заявление NVIDIA: «не оптимизирована для математических рассуждений».',
+    quote: 'frac_03 (НЕВЕРНО): «Misconception in converting non-terminating/repeating fractions to decimals» (буквально: «ошибка в переводе непрерывных периодических дробей в десятичные») - реальная ошибка это конкатенация цифр, а не периодические десятичные',
+    bestFor: 'Сценарии где согласование с человеческими предпочтениями важнее чем чистая точность (например тон чата). Не для математической диагностики.',
+    avoid: 'Автономный knowledge tracing на математике - калиброванная, но не точная.',
+  },
+  nemo_nano: {
+    name: 'NVIDIA Nemotron Nano 9B',
+    provider: 'NVIDIA',
+    openrouterId: 'nvidia/nemotron-nano-9b-v2',
+    cost: '$0.002 за 12 задач',
+    diagnosis: 5, reconstruction: 6, calibration: 5,
+    summary: 'Сюрприз эксперимента. 9 миллиардов параметров (в 8 раз меньше Llama 70B), но глубина рассуждения на уровне флагманов 70B и выше. На geo_03 и word_01 дала полное воспроизведение арифметики. Очень многословная (от 560 до 2525 токенов вывода на простую задачу - в 3 раза больше Claude).',
+    quote: 'geo_03: «assumes 3+4=7 implies a right triangle. Subtracts leg from hypotenuse instead of using c²-a²=b². Doubts correct 5-12-13 triangle» (буквально: «предполагает, что 3+4=7 означает прямоугольный треугольник. Вычитает катет из гипотенузы вместо использования c²-a²=b². Сомневается в правильном треугольнике 5-12-13») - 3 точных наблюдения с воспроизведением арифметики',
+    bestFor: 'Экономный по стоимости продакшен. Сценарии собственного хостинга с ограничением по железу. Гибрид с Sonnet как проверяющим.',
+    avoid: 'Продакшен где критична скорость отклика (медленная из-за многословного вывода).',
+  },
+  cohere: {
+    name: 'Cohere Command R+',
+    provider: 'Cohere',
+    openrouterId: 'cohere/command-r-plus-08-2024',
+    cost: '$0.05 за 12 задач',
+    diagnosis: 4, reconstruction: 3, calibration: 5,
+    summary: 'Стиль учебника - «частое концептуальное препятствие», «классическая ошибка». Производит грамотный язык без конкретики. На frac_03 уникально неправильный диагноз («проблема с разрядностью» вместо конкатенации цифр). Лучше расплывчатой Llama, но хуже верхнего тира.',
+    quote: 'geo_01: «a specific issue with formula application» (буквально: «специфическая проблема с применением формулы») - шаблонный комментарий без конкретики какая формула с чем перепутана',
+    bestFor: 'Универсальный чат-ассистент. Контент с подтягиванием данных из базы знаний (Cohere оптимизирована под поиск).',
+    avoid: 'Диагностический анализ хода мышления ученика - стиль учебника не пригоден для knowledge tracing.',
+  },
+  llama: {
+    name: 'Llama 3.3 70B',
+    provider: 'Meta',
+    openrouterId: 'meta-llama/llama-3.3-70b-instruct',
+    cost: '$0.005 за 12 задач',
+    diagnosis: 2, reconstruction: 1, calibration: 1,
+    summary: 'Расплывчатые диагнозы на 12 из 12 сценариев. Никогда не воспроизводит арифметику - даёт переформулировку категории задачи в качестве диагноза. Уверенность постоянная 0.80 во всех 12 сценариях - нет калибровки. Следующая задача часто вредна (frac_01: возврат к «1/2 + 1/2» - уже освоенное).',
+    quote: 'lin_01: «Inconsistent application of algebraic operations» (буквально: «непоследовательное применение алгебраических операций») - просто переформулировка темы задачи',
+    bestFor: 'Универсальный чат, краткое содержание - не диагностические задачи.',
+    avoid: 'Автономный knowledge tracing - даёт расплывчатую информацию учителю на каждом сценарии.',
+  },
+  qwen: {
+    name: 'Qwen 2.5 72B',
+    provider: 'Alibaba',
+    openrouterId: 'qwen/qwen-2.5-72b-instruct',
+    cost: '$0.003 за 12 задач',
+    diagnosis: 1, reconstruction: 2, calibration: 3,
+    summary: 'Самая короткая модель эксперимента (среднее 165 токенов). 3 случая неверного направления из 12: lin_01 - «ошибка в умножении» (которой нет), geo_03 - «неравенство треугольника» (соседний концепт, не сама ошибка), и почти-неверный диагноз на frac_03. Уверенность 0.8-0.9 без видимой причины.',
+    quote: 'lin_01 (НЕВЕРНО): «Error in solving equations with multiplication» (буквально: «ошибка в решении уравнений с умножением») - в задаче нет ошибки в умножении, ошибка в делении',
+    bestFor: 'Краткий вывод на простых определённых задачах. Задачи на азиатских языках (не тестировано в эксперименте).',
+    avoid: 'Диагностический анализ где точность критична. Подменяет основной диагноз соседним концептом.',
+  },
+};
+
+const SCENARIO_DETAILS = {
+  lin_01: {
+    title: 'Ошибка знака при переносе',
+    category: 'Линейные уравнения',
+    grade: '7-8 класс',
+    student: 'Айдан, 7-й класс, около 6 месяцев изучает алгебру',
+    answers: [
+      { task: 'Реши: x + 5 = 12', ans: 'x = 7', ok: true },
+      { task: 'Реши: x - 3 = 10', ans: 'x = 13', ok: true },
+      { task: 'Реши: 2x + 6 = 14', ans: 'x = 4', ok: true },
+      { task: 'Реши: 3x - 9 = 12', ans: 'x = 1', ok: false },
+      { task: 'Реши: 4x + 8 = 20', ans: 'x = 7', ok: false },
+    ],
+    expert: 'Возможны две гипотезы: (A) ошибается в переносе через знак равенства, или (B) правильно переносит, но потом делит исходную константу вместо результата после первого шага.',
+    expertNext: '`easier_prerequisite` (более простая предпосылка): явная отработка правила знаков при переносе с визуальной диаграммой',
+  },
+  lin_02: {
+    title: 'Неполное раскрытие скобок',
+    category: 'Линейные уравнения',
+    grade: '7-8 класс',
+    student: 'Эмиль, 7-й класс, около 4 месяцев алгебры',
+    answers: [
+      { task: 'Раскрой: 2(x + 3)', ans: '2x + 6', ok: true },
+      { task: 'Раскрой: 3(x + 5)', ans: '3x + 15', ok: true },
+      { task: 'Раскрой: 5(x + 2y)', ans: '5x + 2y', ok: false },
+      { task: 'Раскрой: 4(2x + 3)', ans: '8x + 3', ok: false },
+      { task: 'Раскрой: 2(x + y + 1)', ans: '2x + y + 1', ok: false },
+    ],
+    expert: 'Раскрытие скобок: умножает только на первый член, остальные не распределяет.',
+    expertNext: '`easier_prerequisite` (более простая предпосылка): визуализация распределения как площади прямоугольника, разбитого на части',
+  },
+  lin_03: {
+    title: 'Путаница обратных операций',
+    category: 'Линейные уравнения',
+    grade: '8 класс',
+    student: 'Лейла, 8-й класс, год алгебры',
+    answers: [
+      { task: 'Реши: x/4 = 3', ans: 'x = 12', ok: true },
+      { task: 'Реши: 5x = 30', ans: 'x = 6', ok: true },
+      { task: 'Реши: x/3 = 9', ans: 'x = 3', ok: false },
+      { task: 'Реши: 7x = 21', ans: 'x = 7', ok: false },
+      { task: 'Реши: x/2 = 5', ans: 'x = 2.5', ok: false },
+    ],
+    expert: 'Путает обратные операции: при делении (x/3 = 9) делит вместо того чтобы умножать. Иногда угадывает правильно когда числа подсказывают.',
+    expertNext: '`easier_prerequisite` (более простая предпосылка): явное обсуждение обратных операций через метафору открывания коробки',
+  },
+  frac_01: {
+    title: 'Сложение дробей с разными знаменателями',
+    category: 'Дроби',
+    grade: '5-6 класс',
+    student: 'Рустам, 5-й класс, новичок в дробях',
+    answers: [
+      { task: '1/4 + 1/4', ans: '2/4', ok: true },
+      { task: '2/5 + 1/5', ans: '3/5', ok: true },
+      { task: '1/3 + 1/4', ans: '2/7', ok: false },
+      { task: '1/2 + 1/3', ans: '2/5', ok: false },
+      { task: '1/6 + 1/4', ans: '2/10', ok: false },
+    ],
+    expert: 'Классическая ошибка: «числитель + числитель над знаменатель + знаменатель». Не понимает почему нужен общий знаменатель.',
+    expertNext: '`easier_prerequisite` (более простая предпосылка): визуализация дробей через круговые диаграммы разного размера',
+  },
+  frac_02: {
+    title: 'Путаница умножения дробей со сложением',
+    category: 'Дроби',
+    grade: '6 класс',
+    student: 'Нармин, 6-й класс, изучает дроби',
+    answers: [
+      { task: '1/2 + 1/2', ans: '1', ok: true },
+      { task: '1/2 × 1/2', ans: '1', ok: false },
+      { task: '1/3 × 1/4', ans: '2/7', ok: false },
+      { task: '2/3 × 1/2', ans: '3/5', ok: false },
+      { task: '1/2 × 4', ans: '4/2', ok: false },
+    ],
+    expert: 'Смешивает правила сложения и умножения дробей. На умножении применяет «числитель действие числитель, знаменатель действие знаменатель», но действие неправильное.',
+    expertNext: '`related_concept` (родственное понятие): чётко разделить две операции через разные визуальные представления',
+  },
+  frac_03: {
+    title: 'Ошибки при переводе в десятичную',
+    category: 'Дроби',
+    grade: '6 класс',
+    student: 'Кямран, 6-й класс, переход к десятичным',
+    answers: [
+      { task: '1/2 = ? в виде десятичной', ans: '0.5', ok: true },
+      { task: '1/4 = ? в виде десятичной', ans: '0.25', ok: true },
+      { task: '1/3 = ? в виде десятичной', ans: '0.13', ok: false },
+      { task: '2/5 = ? в виде десятичной', ans: '0.25', ok: false },
+      { task: '3/4 = ? в виде десятичной', ans: '0.34', ok: false },
+    ],
+    expert: 'Соединяет числитель и знаменатель в строку вместо деления. Заученные значения 1/2 и 1/4 - факты без понимания логики.',
+    expertNext: '`easier_prerequisite` (более простая предпосылка): явный показ что дробь = числитель / знаменатель (деление столбиком)',
+  },
+  geo_01: {
+    title: 'Путаница площади и периметра',
+    category: 'Геометрия',
+    grade: '8-9 класс',
+    student: 'Тарана, 8-й класс, начало планиметрии',
+    answers: [
+      { task: 'Прямоугольник 4x6, площадь = ?', ans: '24', ok: true },
+      { task: 'Прямоугольник 5x3, периметр = ?', ans: '15', ok: false },
+      { task: 'Квадрат сторона 7, площадь = ?', ans: '28', ok: false },
+      { task: 'Квадрат сторона 4, периметр = ?', ans: '16', ok: true },
+      { task: 'Треугольник 3-4-5, периметр = ?', ans: '12', ok: true },
+    ],
+    expert: 'Иногда складывает все стороны (периметр), иногда умножает (площадь), не различая концепции. На квадрате 7 умножает 7x4 = 28, думая что это площадь.',
+    expertNext: '`related_concept` (родственное понятие): визуализация через физические объекты - периметр это бордюр, площадь это плитки',
+  },
+  geo_02: {
+    title: 'Углы при параллельных прямых',
+    category: 'Геометрия',
+    grade: '9 класс',
+    student: 'Орхан, 9-й класс, основы доказательств',
+    answers: [
+      { task: 'Параллельные прямые, угол 1 = 65°. Накрест лежащий?', ans: '65°', ok: true },
+      { task: 'То же. Односторонний?', ans: '65°', ok: false },
+      { task: 'Угол 1 = 130°. Соответственный?', ans: '130°', ok: true },
+      { task: 'Угол 1 = 130°. Вертикальный к одностороннему?', ans: '130°', ok: false },
+      { task: 'Угол 1 = 70°. Сумма пар односторонних?', ans: '140°', ok: false },
+    ],
+    expert: 'Запомнил правило «соответственные/накрест лежащие углы равны» и применяет ко всем парам. Не различает случай дополнительности (односторонние = 180°).',
+    expertNext: '`easier_prerequisite` (более простая предпосылка): схема по типу угла - какие равны, какие дополнительны',
+  },
+  geo_03: {
+    title: 'Неправильное применение теоремы Пифагора',
+    category: 'Геометрия',
+    grade: '9 класс',
+    student: 'Зара, 9-й класс, теорема Пифагора',
+    answers: [
+      { task: 'Прямоугольный треугольник, катеты 3, 4. Гипотенуза?', ans: '5', ok: true },
+      { task: 'Прямоугольный треугольник, катеты 6, 8. Гипотенуза?', ans: '10', ok: true },
+      { task: 'Стороны треугольника 3, 4, 7. Прямоугольный?', ans: 'Да', ok: false },
+      { task: 'Прямоугольный треугольник, катет 5, гипотенуза 13. Другой катет?', ans: '8', ok: false },
+      { task: 'Треугольник 5, 12, 13. Прямоугольный?', ans: 'Нет', ok: false },
+    ],
+    expert: 'Применяет a²+b²=c² не проверяя является ли треугольник прямоугольным и не различая катеты и гипотенузу. Использует аддитивное a+b=c в обратных случаях.',
+    expertNext: '`mastery_check` (проверка усвоения): разделить (1) проверка прямоугольности через теорему, (2) нахождение пропущенной стороны',
+  },
+  word_01: {
+    title: 'Многошаговая текстовая задача',
+    category: 'Текстовые задачи',
+    grade: '6 класс',
+    student: 'Ариф, 6-й класс, текстовые задачи',
+    answers: [
+      { task: 'У Анны 12 яблок, отдаёт 1/3 брату. Сколько осталось?', ans: '8', ok: true },
+      { task: 'Поезд при 60 км/ч проходит 180 км. Сколько времени?', ans: '3 часа', ok: true },
+      { task: 'У Тома 24 шарика, 1/4 красных, синих вдвое больше красных. Сколько не красных?', ans: '12', ok: false },
+      { task: '30 конфет, половину съели, 1/3 от остатка отдали. Сколько осталось?', ans: '5', ok: false },
+      { task: '18 карандашей, убрали 2, добавили 5, убрали половину. Карандаши?', ans: '9', ok: false },
+    ],
+    expert: 'Математические операции выполняет правильно. Проблема в разборе многошаговых текстовых задач - теряет состояние между шагами.',
+    expertNext: '`related_concept` (родственное понятие): опорные подсказки через пошаговые шаблоны',
+  },
+  word_02: {
+    title: 'Постановка уравнения по тексту',
+    category: 'Текстовые задачи',
+    grade: '7 класс',
+    student: 'Самир, 7-й класс, переход от слов к уравнениям',
+    answers: [
+      { task: 'Число удвоили и прибавили 5, получилось 17. Найди число.', ans: '6', ok: true },
+      { task: 'Число утроили и вычли 7, получилось 14. Найди число.', ans: '7', ok: true },
+      { task: 'Сумма двух последовательных целых = 25. Найди меньшее.', ans: '11', ok: false },
+      { task: 'Ручка на 3$ дороже карандаша. Вместе 9$. Карандаш?', ans: '4.5', ok: false },
+      { task: 'Возраст сейчас в 3 раза больше возраста 5 лет назад. Найди текущий возраст.', ans: '1.67', ok: false },
+    ],
+    expert: 'Простые постановки (одна переменная) решает. Сложные постановки (несколько неизвестных, отношения) - не может перевести слова в уравнения.',
+    expertNext: '`easier_prerequisite` (более простая предпосылка): опорная подсказка для фазы постановки отдельно от решения',
+  },
+  word_03: {
+    title: 'Проценты в текстовых задачах',
+    category: 'Текстовые задачи',
+    grade: '7-8 класс',
+    student: 'Лала, 8-й класс, проценты в контексте',
+    answers: [
+      { task: '20% от 50 это?', ans: '10', ok: true },
+      { task: '15% от 200 это?', ans: '30', ok: true },
+      { task: 'Рубашка $40, скидка 25%. Итоговая цена?', ans: '10', ok: false },
+      { task: 'Зарплата $1000, повышена на 10%. Новая зарплата?', ans: '100', ok: false },
+      { task: '240 учеников, 60% девочки. Сколько мальчиков?', ans: '144', ok: false },
+    ],
+    expert: 'Вычислительная часть процентов правильная. Но в контексте текстовой задачи возвращает только величину процента, а не итоговое значение.',
+    expertNext: '`related_concept` (родственное понятие): визуализация целое-и-часть в контексте процентов',
+  },
+};
+
+// Map from heatmap column index -> model id used in MODEL_DETAILS
+const HEATMAP_COL_TO_ID = ['sonnet', 'opus48', 'opus', 'gpt5', 'gemini', 'gemini35f', 'gemini31p', 'kimi', 'deepseek', 'nemo_super', 'nemo_nano', 'cohere', 'llama', 'qwen'];
+
+// Map from model id -> diagnoses.json model name (from response file)
+const ID_TO_FULL_NAME = {
+  sonnet: 'Claude Sonnet 4.6',
+  opus48: 'Claude Opus 4.8',
+  opus: 'Claude Opus 4.7',
+  gpt5: 'GPT-5',
+  gemini: 'Gemini 2.5 Pro',
+  gemini35f: 'Gemini 3.5 Flash',
+  gemini31p: 'Gemini 3.1 Pro',
+  kimi: 'Kimi K2',
+  deepseek: 'DeepSeek V3',
+  nemo_super: 'NVIDIA Nemotron Super 49B',
+  nemo_nano: 'NVIDIA Nemotron Nano 9B',
+  cohere: 'Cohere Command R+',
+  llama: 'Llama 3.3 70B',
+  qwen: 'Qwen 2.5 72B',
+};
+
+// All 132 diagnoses extracted from response file
+const DIAGNOSES = {"lin_01": {"Claude Opus 4.8": "Айдан успешно решает уравнения, где после переноса свободного члена коэффициент при x равен 1 (задачи 1, 2) или где деление даёт 'красивый' результат после п...", "Claude Opus 4.7": "Sign/operation error when isolating variable: adds constant instead of subtracting (and vice versa)", "Claude Sonnet 4.6": "Division error in final step of two-step equations", "Cohere Command R+": "Misapplication of inverse operations", "DeepSeek V3": "sign error in subtraction", "GPT-5": "Misapplies “move and change sign” in two-step equations", "Gemini 3.5 Flash": "Айдан успешно справляется с одношаговыми уравнениями (1 и 2), что показывает понимание принципа обратных операций.", "Gemini 3.1 Pro": "Since the exact answers were omitted (represented as '?'), the diagnosis is deduced from the correctness pattern.", "Gemini 2.5 Pro": "Applying same, not inverse, operation to move constants across the equals sign.", "Kimi K2": "Division misconception in multi-step equations", "Llama 3.3 70B": "Inconsistent application of algebraic operations", "NVIDIA Nemotron Nano 9B": "Systematic inverse operation error", "NVIDIA Nemotron Super 49B": "Misapplying inverse operations based on constant term's sign", "Qwen 2.5 72B": "Error in solving equations with multiplication"}, "lin_02": {"Claude Opus 4.8": "Эмиль успешно справляется с раскрытием скобок только в простейшем случае вида a(x + b), где внутри один член с переменной 'x' (коэффициент 1) и одна числовая...", "Claude Opus 4.7": "Incomplete distributive property: multiplies only the first term inside parentheses", "Claude Sonnet 4.6": "Distributive property fails when multiplier applies to non-first terms", "Cohere Command R+": "Misunderstanding of distributing constants over addition", "DeepSeek V3": "Partial application of distributive property", "GPT-5": "Partial distribution—only first term multiplied", "Gemini 3.5 Flash": "The student successfully expands expressions of the form a(x + b) where the variable inside has a coefficient of 1 and there are exactly two terms.", "Gemini 3.1 Pro": "The student successfully applies the distributive property strictly to expressions of the form a(x + b) where the variable 'x' has a coefficient of...", "Gemini 2.5 Pro": "Incomplete distribution; only multiplies the first term inside parentheses.", "Kimi K2": "Forgetting to distribute the multiplier to all terms inside parentheses", "Llama 3.3 70B": "Distributive property misconception", "NVIDIA Nemotron Nano 9B": "Systematic distributive property error", "NVIDIA Nemotron Super 49B": "Partial application of distributive property", "Qwen 2.5 72B": "Distribution error with multiple terms"}, "lin_03": {"Claude Opus 4.8": "The actual answers are not visible (all recorded as '?'), so this diagnosis is inferred from the pattern of which problems were correct vs.", "Claude Opus 4.7": "Confuses inverse operations: divides when she should multiply, and vice versa", "Claude Sonnet 4.6": "Inverse operation confusion: dividing instead of multiplying (and vice versa)", "Cohere Command R+": "Incorrect application of multiplication/division principle", "DeepSeek V3": "Inconsistent understanding of division in equations", "GPT-5": "Divides instead of multiplies in x/a=b; one careless slip on ax=b", "Gemini 3.5 Flash": "Leila is relying on intuitive arithmetic ('number-grabbing') rather than systematically applying inverse operations to both sides of the equation.", "Gemini 3.1 Pro": "[JSON FAIL] ) Wait, if she divides 21/7, she gets 3, which is correct.", "Gemini 2.5 Pro": "Confusing inverse operations for division-based one-step equations.", "Kimi K2": "Inconsistent operation reversal - confusing multiplication/division", "Llama 3.3 70B": "Multiplication misconception", "NVIDIA Nemotron Nano 9B": "Systematic operation inversion in equations", "NVIDIA Nemotron Super 49B": "Misapplies inverse operations in solving equations", "Qwen 2.5 72B": "Confusion between multiplication and division"}, "frac_01": {"Claude Opus 4.8": "Рустам правильно складывает дроби только с одинаковыми знаменателями (1/4+1/4, 2/5+1/5), но систематически ошибается, когда знаменатели разные (1/3+1/4, 1/2+...", "Claude Opus 4.7": "Adds numerators and denominators directly; missing common denominator concept for unlike fractions", "Claude Sonnet 4.6": "Adding fractions with unlike denominators: adds numerators and denominators separately", "Cohere Command R+": "Adding fractions with unlike denominators", "DeepSeek V3": "Misunderstanding adding unlike denominators", "GPT-5": "Adds numerators and denominators for unlike fractions", "Gemini 3.5 Flash": "Рустам отлично справляется со сложением дробей с одинаковыми знаменателями (задачи 1 и 2 решены верно).", "Gemini 3.1 Pro": "The student successfully adds fractions with the same denominator but fails when the denominators are different.", "Gemini 2.5 Pro": "Сложение числителей и знаменателей при работе с дробями с разными знаменателями.", "Kimi K2": "Adding numerators and denominators directly with unlike denominators", "Llama 3.3 70B": "Adding fractions with different denominators", "NVIDIA Nemotron Nano 9B": "Systematic misconception in fraction addition", "NVIDIA Nemotron Super 49B": "Misconception: Adding numerators and denominators separately for unlike fractions", "Qwen 2.5 72B": "Misunderstanding of adding fractions with unlike denominators"}, "frac_02": {"Claude Opus 4.8": "Нармин справляется со сложением дробей с одинаковыми знаменателями (1/2 + 1/2 верно), но систематически ошибается во ВСЕХ задачах на умножение дробей.", "Claude Opus 4.7": "Confuses fraction multiplication with addition; adds numerators and denominators instead of multiplying", "Claude Sonnet 4.6": "Student applies addition rules (add numerators/denominators) to fraction multiplication", "Cohere Command R+": "Multiplication misconception", "DeepSeek V3": "Multiplication of fractions misconception", "GPT-5": "Confuses × with +; adds across instead of multiply; doesn’t simplify", "Gemini 3.5 Flash": "The student understands how to add fractions with like denominators (correctly solving 1/2 + 1/2), but they do not know how to multiply fractions.", "Gemini 3.1 Pro": "Because the exact answers are missing (marked as '?'), the specific mechanical error is hidden.", "Gemini 2.5 Pro": "Систематическая ошибка: путает умножение дробей со сложением, складывая числители и знаменатели.", "Kimi K2": "Adding instead of multiplying fractions", "Llama 3.3 70B": "Multiplication of fractions misconception", "NVIDIA Nemotron Nano 9B": "Systematic addition error in fraction multiplication", "NVIDIA Nemotron Super 49B": "Misconception: Adding numerators/denominators instead of multiplying", "Qwen 2.5 72B": "Misunderstanding of fraction multiplication"}, "frac_03": {"Claude Opus 4.8": "Кямран успешно справляется только с дробями, десятичный эквивалент которых он, вероятно, запомнил наизусть (1/2 = 0,5 и 1/4 = 0,25 — самые распространённые т...", "Claude Opus 4.7": "Concatenation misconception: writes numerator and denominator as digits after decimal point", "Claude Sonnet 4.6": "Memorized simple fractions; cannot perform or apply long division for conversion", "Cohere Command R+": "Misconception with converting fractions to decimals", "DeepSeek V3": "Misunderstanding repeating decimals", "GPT-5": "Конкатенация: a/b записывает как 0.ab (кроме выученных эталонов)", "Gemini 3.5 Flash": "The student has successfully memorized the decimal equivalents of the most common benchmark unit fractions (1/2 = 0.5 and 1/4 = 0.25).", "Gemini 3.1 Pro": "Although the exact answers were hidden or recorded as '?', the pattern of correct and incorrect responses strongly suggests that the student has me...", "Gemini 2.5 Pro": "Treating numerator and denominator as decimal digits instead of dividing.", "Kimi K2": "Converting fractions to decimals by digit mapping", "Llama 3.3 70B": "Inconsistent decimal conversion", "NVIDIA Nemotron Nano 9B": "Systematic misconception in decimal conversion", "NVIDIA Nemotron Super 49B": "Misconception in converting non-terminating/repeating fractions to decimals", "Qwen 2.5 72B": "Misunderstanding of decimal conversion for fractions"}, "geo_01": {"Claude Opus 4.8": "The pattern (area of 4×6 correct, perimeter of 5×3 incorrect, area of square-7 incorrect, perimeter of square-4 correct, perimeter of triangle correct) sugge...", "Claude Opus 4.7": "Confuses area and perimeter formulas — multiplies sides for perimeter, adds for area", "Claude Sonnet 4.6": "Confusion between area and perimeter formulas for rectangles and squares", "Cohere Command R+": "Incorrect formula application", "DeepSeek V3": "Confusing area with perimeter", "GPT-5": "Confusing area and perimeter formulas (rectangles/squares)", "Gemini 3.5 Flash": "The student is confusing the concepts and formulas for area and perimeter of quadrilaterals.", "Gemini 3.1 Pro": "The student is likely ignoring the specific concepts of 'area' and 'perimeter' and instead applying a single rote operation based on the shape name...", "Gemini 2.5 Pro": "Confusing the concepts and formulas for area and perimeter of quadrilaterals.", "Kimi K2": "Confusing area and perimeter formulas", "Llama 3.3 70B": "Area calculation issue", "NVIDIA Nemotron Nano 9B": "Systematic confusion between area and perimeter formulas", "NVIDIA Nemotron Super 49B": "Confusion between area and perimeter formulas", "Qwen 2.5 72B": "Confuses area and perimeter formulas for rectangles and squares"}, "geo_02": {"Claude Opus 4.8": "Орхан правильно работает с парами углов, которые РАВНЫ исходному углу (накрест лежащие в №1: 65°, соответственные в №3: 130°), но систематически ошибается во...", "Claude Opus 4.7": "Confuses co-interior (supplementary) angles with equal angle pairs in parallel-line configurations", "Claude Sonnet 4.6": "Conflates co-interior (same-side interior) angles with alternate/corresponding angles", "Cohere Command R+": "Misunderstanding of co-interior and alternate interior angles", "DeepSeek V3": "Confusion between angle relationships", "GPT-5": "Assumes co-interior angles are equal (not supplementary)", "Gemini 3.5 Flash": "Student correctly identifies and calculates equal angle relationships (alternate interior and corresponding angles) but struggles with supplementar...", "Gemini 3.1 Pro": "The student incorrectly assumes that all angle pairs formed by a transversal intersecting parallel lines are equal.", "Gemini 2.5 Pro": "Путает равные и смежные углы (дающие в сумме 180°) при параллельных прямых.", "Kimi K2": "Same-side angles sum to 180° misconception", "Llama 3.3 70B": "Co-interior angle misconception", "NVIDIA Nemotron Nano 9B": "Misconception about co-interior angles", "NVIDIA Nemotron Super 49B": "Confusing supplementary vs. equal angle relationships", "Qwen 2.5 72B": "Confusion with co-interior angles"}, "geo_03": {"Claude Opus 4.8": "Зара успешно решает задачи прямого типа — когда даны оба катета и нужно найти гипотенузу (задачи 1 и 2: c = √(a²+b²)).", "Claude Opus 4.7": "Mechanical application of Pythagorean formula without true understanding of the a²+b²=c² relationship", "Claude Sonnet 4.6": "Can apply Pythagorean theorem forward but not in reverse or rearranged form", "Cohere Command R+": "Misunderstanding of the converse of the Pythagorean Theorem", "DeepSeek V3": "Misunderstanding Pythagorean theorem conditions", "GPT-5": "Uses a+b=c instead of a^2+b^2=c^2; relies on memorized triples", "Gemini 3.5 Flash": "Zara can successfully find the hypotenuse when both legs are given, likely by recognizing or calculating standard Pythagorean triples (3-4-5 and 6-...", "Gemini 3.1 Pro": "Zara treats the Pythagorean theorem as a one-way calculation ('square the two given numbers and add them') rather than a balanced equation ($a^2 + ...", "Gemini 2.5 Pro": "Confuses the Pythagorean theorem (a²+b²=c²) with an additive relationship (a+b=c).", "Kimi K2": "Misunderstands converse of Pythagorean theorem", "Llama 3.3 70B": "Inconsistent Pythagorean theorem application", "NVIDIA Nemotron Nano 9B": "Systematic misconception in applying Pythagorean theorem", "NVIDIA Nemotron Super 49B": "Misapplication of converse Pythagorean theorem", "Qwen 2.5 72B": "Misunderstands triangle inequality theorem"}, "word_01": {"Claude Opus 4.8": "The data is uninterpretable: every recorded answer is the literal string '?', yet problems 1-2 are marked CORRECT and problems 3-5 are marked INCORRECT.", "Claude Opus 4.7": "Difficulty with multi-step problems involving sequential operations on changing quantities", "Claude Sonnet 4.6": "Multi-step word problems: fails to track intermediate results across sequential operations", "Cohere Command R+": "Fractions and multiples application errors", "DeepSeek V3": "Fraction application errors", "GPT-5": "Confusing changing whole and complements in multi-step problems", "Gemini 3.5 Flash": "The student can successfully solve single-step word problems involving division and basic fractions of a whole (Problems 1 and 2).", "Gemini 3.1 Pro": "The student successfully solves single-step and basic two-step problems that use a single reference whole (e.g., finding a fraction of the original...", "Gemini 2.5 Pro": "Fails to complete all steps in multi-step word problems.", "Kimi K2": "Multi-step fraction sequence errors", "Llama 3.3 70B": "Fraction calculation errors", "NVIDIA Nemotron Nano 9B": "Systematic misconception in multi-step fraction problems", "NVIDIA Nemotron Super 49B": "Misinterpreting multi-step problem requirements", "Qwen 2.5 72B": "Misunderstanding fractions and operations on fractions"}, "word_02": {"Claude Opus 4.8": "NOTE: The actual student responses are all masked as '?', so this diagnosis is inferred from the CORRECT/INCORRECT pattern across problem TYPES rather than f...", "Claude Opus 4.7": "Fails to define variables and relationships when multiple unknowns are linked", "Claude Sonnet 4.6": "Fails to set up equations with two interdependent unknowns or age relationships", "Cohere Command R+": "Misinterpreting word problems, inconsistent with prior success", "DeepSeek V3": "Difficulty with multi-step relationships", "GPT-5": "Mis-modeling relations: consecutive numbers, 'more than', age shifts", "Gemini 3.5 Flash": "Самир успешно решает задачи, которые переводятся в простые уравнения с одной переменной и прямой цепочкой действий (например, 2x + 5 = 17).", "Gemini 3.1 Pro": "Samir correctly solves direct-translation problems that form simple two-step equations (ax + b = c) where the unknown is operated on in a straightf...", "Gemini 2.5 Pro": "Difficulty translating relational statements into algebraic equations.", "Kimi K2": "Variables used inconsistently across relationships", "Llama 3.3 70B": "Difficulty with algebraic equations", "NVIDIA Nemotron Nano 9B": "Systematic equation setup errors in word problems", "NVIDIA Nemotron Super 49B": "Misconception in translating multi-step word problems to equations", "Qwen 2.5 72B": "Difficulty with more complex word-to-equation translation"}, "word_03": {"Claude Opus 4.8": "Лала can correctly compute a simple percentage of a number when the question asks directly for 'X% of Y' (problems 1 and 2 correct).", "Claude Opus 4.7": "Computes percentage part but doesn't apply it to the context (subtract, add, or take complement)", "Claude Sonnet 4.6": "Confuses the percentage value with the final answer in applied context problems", "Cohere Command R+": "Applying percentages correctly in context.", "DeepSeek V3": "misunderstanding percentage application", "GPT-5": "Confuses percent amount with final value/complement", "Gemini 3.5 Flash": "Lala has mastered the basic skill of finding the percentage of a number (as seen in her correct answers for direct calculations).", "Gemini 3.1 Pro": "Lala successfully calculates the percentage of a base number, but she fails to perform the necessary second step in contextual word problems.", "Gemini 2.5 Pro": "Stops after first step in multi-step percentage word problems.", "Kimi K2": "Finding percentage amount only, ignoring base value", "Llama 3.3 70B": "Misapplying percentage concepts", "NVIDIA Nemotron Nano 9B": "Systematic misconception in applying percentages to real-world contexts", "NVIDIA Nemotron Super 49B": "Misapplying percentage calculations in contextual problems", "Qwen 2.5 72B": "Misunderstanding percentage decrease and total calculation"}};
+
+// Quality level descriptions for cell modal
+const QUALITY_DESC = {
+  precise: { label: 'Точно', symbol: '●', description: 'Модель назвала точный механизм ошибки и воспроизвела арифметику. Это уровень который помогает учителю работать с конкретным учеником.' },
+  correct: { label: 'Правильно', symbol: '◐', description: 'Модель правильно определила категорию ошибочного представления, но без глубокого воспроизведения конкретных чисел.' },
+  vague:   { label: 'Расплывчато',   symbol: '○', description: 'Диагноз правильный по теме задачи, но не указывает что именно ученик делает не так. Не помогает учителю.' },
+  wrong:   { label: 'Неверное направление', symbol: '✕', description: 'Диагноз ошибочен - подменяет реальное ошибочное представление соседним концептом или приписывает несуществующую ошибку.' },
+};
+
+// =============================================================================
+// MODAL FUNCTIONS
+// =============================================================================
+function openModal(eyebrow, title, subtitle, body) {
+  document.getElementById('modalEyebrow').textContent = eyebrow;
+  document.getElementById('modalTitle').textContent = title;
+  document.getElementById('modalSubtitle').textContent = subtitle || '';
+  document.getElementById('modalBody').innerHTML = body;
+  document.getElementById('modalOverlay').classList.add('visible');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('visible');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
+
+function openKellyModal() {
+  const body = `
+    <div class="modal-section">
+      <div class="modal-section-title">Что это</div>
+      <div class="modal-section-content">
+        <p style="margin: 0 0 10px 0;">Репертуарная решётка (Repertory Grid Technique, RGT) - метод выявления личных понятий человека, разработанный психологом Джорджем Келли в книге «Психология личных конструктов» (1955).</p>
+        <p style="margin: 0;">В классической версии метод применяется в психотерапии, исследованиях, оценке кадров - везде где нужно понять, по каким измерениям человек различает объекты в своей картине мира.</p>
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">Как работает классический метод Келли</div>
+      <div class="modal-section-content">
+        <p style="margin: 0 0 8px 0;"><strong>Шаг 1.</strong> Респондент называет 8-15 значимых для него людей или объектов (мама, начальник, лучший друг, сам респондент в детстве, идеальный партнёр и так далее) - это «элементы».</p>
+        <p style="margin: 0 0 8px 0;"><strong>Шаг 2.</strong> Исследователь предъявляет триады элементов и просит ответить: «Какие двое из этих троих похожи между собой и чем именно они отличаются от третьего?» Ответ даёт «конструкт» - двухполюсное измерение (например «надёжный - ненадёжный», «эмоциональный - холодный»).</p>
+        <p style="margin: 0 0 8px 0;"><strong>Шаг 3.</strong> После 10-20 триад собирается список конструктов, отражающих личную систему различения респондента.</p>
+        <p style="margin: 0;"><strong>Шаг 4.</strong> Респондент оценивает каждый элемент по каждому конструкту (1-7) - получается матрица. Её анализ показывает структуру личных понятий.</p>
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">Что мы сделали в этом эксперименте</div>
+      <div class="modal-section-content">
+        <p style="margin: 0 0 8px 0;">Применили технику Келли <strong>не к людям, а к AI-моделям</strong>. Это нестандартное применение - в литературе по RGT такой подход почти не встречается.</p>
+        <p style="margin: 0 0 8px 0;"><strong>Элементы:</strong> 11 AI-моделей (вместо людей в классике).</p>
+        <p style="margin: 0 0 8px 0;"><strong>Контекст:</strong> 12 учебных сценариев (вместо «один и тот же контекст для всех элементов» в классике).</p>
+        <p style="margin: 0 0 8px 0;"><strong>Триадное сравнение:</strong> для каждого сценария брали ответы трёх моделей и задавали вопрос Келли: «Какие двое из этих троих похожи в своём диагнозе и чем именно они отличаются от третьего?»</p>
+        <p style="margin: 0;"><strong>Конструкты:</strong> устойчивые двухполюсные измерения, появлявшиеся в 4 и более сценариев из 12. Получилось 8 измерений (см. секцию «8 измерений, по которым модели различаются»).</p>
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">Зачем нужен такой метод вместо стандартных AI-бенчмарков</div>
+      <div class="modal-section-content">
+        <p style="margin: 0 0 8px 0;">Стандартные тесты (MMLU, GSM8K, MATH) дают <strong>одно число на модель</strong> - точность. Это полезно для общего сравнения, но не отвечает на продуктовый вопрос «по каким измерениям модели реально отличаются».</p>
+        <p style="margin: 0 0 8px 0;">RGT даёт <strong>не одну метрику, а набор измерений</strong>, выявленных снизу-вверх из самих ответов. Это позволяет увидеть нетривиальные различия - например «эта модель калибрует уверенность, а эта - нет» или «эта адаптирует язык под имя ученика, а эта всегда отвечает по-английски».</p>
+        <p style="margin: 0;">Для выбора модели в продакшен важно понимать <strong>что именно</strong> каждая делает лучше или хуже - а не только «у кого выше средний балл».</p>
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">Ограничения подхода</div>
+      <div class="modal-section-content">
+        <p style="margin: 0 0 6px 0;"><strong>Субъективность интерпретации.</strong> Конструкты выделял один исследователь вручную. Для строгости нужно 2-3 независимых кодировщика и оценка межэкспертной согласованности.</p>
+        <p style="margin: 0 0 6px 0;"><strong>Малый объём выборки.</strong> 12 сценариев - это исследовательский, не статистический объём. Для решения о выборе модели в продакшен нужны 100+ сценариев.</p>
+        <p style="margin: 0;"><strong>Узкая область.</strong> Покрыты 5-9 классы и западная математическая традиция. Для других возрастов и культурных контекстов выводы могут отличаться.</p>
+      </div>
+    </div>
+  `;
+  openModal('МЕТОДОЛОГИЯ', 'Метод репертуарной решётки Келли', 'Классический метод + наше применение к AI-моделям', body);
+}
+
+function openModelModal(modelId) {
+  const m = MODEL_DETAILS[modelId];
+  if (!m) return;
+
+  const ratingBar = (val, max=7) => {
+    const cls = val <= 3 ? 'r-low' : val <= 5 ? 'r-mid' : 'r-high';
+    return `<div style="display: flex; align-items: center; gap: 10px; padding: 4px 0;">
+      <div style="width: 90px; font-size: 12px; color: var(--color-text-secondary);">${val}/7</div>
+      <div style="flex: 1; height: 8px; background: var(--color-bg-3); border-radius: 999px; overflow: hidden;">
+        <div class="${cls}" style="height: 100%; width: ${val/max*100}%; border-radius: 999px;"></div>
+      </div>
+    </div>`;
+  };
+
+  const body = `
+    ${m.pending ? `
+    <div style="background: linear-gradient(135deg, #FFF8DC 0%, #FFFCEC 100%); border: 2px solid #FACC15; border-radius: 12px; padding: 16px 20px; margin-bottom: 18px;">
+      <div style="font-weight: 900; color: #A37800; font-size: 13px; letter-spacing: 0.05em; margin-bottom: 6px;">⏳ ОЖИДАЕТ ОЦЕНКИ</div>
+      <div style="font-size: 13.5px; line-height: 1.55; color: #1A1A24;">Эта модель добавлена в дашборд сразу после релиза. Цифровые оценки появятся после прогона по 12 сценариям и ручного кодирования по 8 измерениям.</div>
+    </div>` : ''}
+
+    <div class="modal-section">
+      <div class="modal-meta-grid">
+        <div class="modal-meta-item">
+          <div class="modal-meta-label">Провайдер</div>
+          <div class="modal-meta-value">${m.provider}</div>
+        </div>
+        <div class="modal-meta-item">
+          <div class="modal-meta-label">Стоимость</div>
+          <div class="modal-meta-value">${m.cost}</div>
+        </div>
+        <div class="modal-meta-item" style="grid-column: 1 / -1;">
+          <div class="modal-meta-label">OpenRouter ID</div>
+          <div class="modal-meta-value" style="font-family: var(--font-mono); font-size: 12.5px;">${m.openrouterId}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">Поведение в эксперименте</div>
+      <div class="modal-section-content">${m.summary}</div>
+    </div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">Конкретный пример</div>
+      <div class="modal-quote">${m.quote}</div>
+    </div>
+
+    ${m.pending ? '' : `
+    <div class="modal-section">
+      <div class="modal-section-title">Оценки качественного анализа (среднее по 12 сценариям)</div>
+      <div style="margin-top: 8px;">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;"><div style="width: 200px; font-size: 13px;">Точность диагноза</div>${ratingBar(m.diagnosis)}</div>
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;"><div style="width: 200px; font-size: 13px;">Воспроизведение арифметики</div>${ratingBar(m.reconstruction)}</div>
+        <div style="display: flex; align-items: center; gap: 10px;"><div style="width: 200px; font-size: 13px;">Калибровка уверенности</div>${ratingBar(m.calibration)}</div>
+      </div>
+    </div>`}
+
+    <div class="modal-section">
+      <div class="modal-section-title">Лучший сценарий применения</div>
+      <div class="modal-section-content">${m.bestFor}</div>
+    </div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">Не подходит для</div>
+      <div class="modal-section-content">${m.avoid}</div>
+    </div>
+  `;
+
+  openModal(m.provider, m.name, 'Поведение модели на 12 KT-сценариях', body);
+}
+
+function openScenarioModal(scenarioId) {
+  const s = SCENARIO_DETAILS[scenarioId];
+  if (!s) return;
+
+  const answersHtml = s.answers.map((a, i) => `
+    <div>${i+1}. ${a.task} → '${a.ans}' ${a.ok ? '<span class="ok">[верно]</span>' : '<span class="wrong-mark">[неверно]</span>'}</div>
+  `).join('');
+
+  const body = `
+    <div class="modal-section">
+      <div class="modal-meta-grid">
+        <div class="modal-meta-item">
+          <div class="modal-meta-label">Категория</div>
+          <div class="modal-meta-value">${s.category}</div>
+        </div>
+        <div class="modal-meta-item">
+          <div class="modal-meta-label">Класс</div>
+          <div class="modal-meta-value">${s.grade}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">Профиль ученика</div>
+      <div class="modal-section-content">${s.student}</div>
+    </div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">5 последних ответов</div>
+      <div class="modal-answers-list">${answersHtml}</div>
+    </div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">Экспертный диагноз (эталон)</div>
+      <div class="modal-quote expert">${s.expert}</div>
+    </div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">Что должна делать хорошая модель</div>
+      <div class="modal-section-content"><strong style="color: var(--color-brand-primary);">${s.expertNext}</strong></div>
+    </div>
+  `;
+
+  openModal(s.category, `${scenarioId} · ${s.title}`, s.student, body);
+}
+
+function openCellModal(scenarioId, modelId, quality) {
+  const s = SCENARIO_DETAILS[scenarioId];
+  const m = MODEL_DETAILS[modelId];
+  const q = QUALITY_DESC[quality];
+  if (!s || !m) return;
+
+  // Get actual diagnosis from extracted data
+  const modelFullName = ID_TO_FULL_NAME[modelId];
+  const diagText = (DIAGNOSES[scenarioId] && DIAGNOSES[scenarioId][modelFullName]) || '(текст диагноза недоступен)';
+
+  const body = `
+    <div class="modal-section">
+      <div class="modal-meta-grid">
+        <div class="modal-meta-item">
+          <div class="modal-meta-label">Сценарий</div>
+          <div class="modal-meta-value">${scenarioId} · ${s.title}</div>
+        </div>
+        <div class="modal-meta-item">
+          <div class="modal-meta-label">Качество ответа</div>
+          <div class="modal-meta-value"><span class="modal-quality-pill ${quality}">${q.symbol} ${q.label}</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">Диагноз от модели</div>
+      <div class="modal-quote ${quality}">${diagText}</div>
+    </div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">Эталон (экспертный диагноз)</div>
+      <div class="modal-quote expert">${s.expert}</div>
+    </div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">Что означает уровень "${q.label}"</div>
+      <div class="modal-section-content">${q.description}</div>
+    </div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">Контекст модели</div>
+      <div class="modal-section-content" style="font-size: 13px; color: var(--color-text-secondary);">${m.summary}</div>
+    </div>
+  `;
+
+  openModal(m.name, scenarioId + ' × ' + ID_TO_FULL_NAME[modelId], q.label + ' - ' + s.category, body);
+}
+
+// =============================================================================
+// HEATMAP - 12 scenarios x 11 models
+// Quality levels: 'precise' / 'correct' / 'vague' / 'wrong'
+// Data from content analysis rounds 1-4
+// =============================================================================
+const HEATMAP_DATA = {
+  // Order matches columns: [sonnet, opus48, opus, gpt5, gemini, gemini35f, gemini31p, kimi, deepseek, nemo_super, nemo_nano, cohere, llama, qwen]
+  'lin_01':['precise','precise','correct','correct','correct','precise','precise','correct','correct','correct','correct','vague','vague','wrong'],
+  'lin_02':['precise','precise','precise','precise','correct','precise','precise','correct','correct','correct','correct','vague','vague','vague'],
+  'lin_03':['precise','correct','precise','precise','correct','precise','wrong','correct','correct','correct','correct','correct','vague','vague'],
+  'frac_01':['precise','precise','precise','precise','correct','precise','precise','correct','correct','correct','correct','correct','correct','correct'],
+  'frac_02':['precise','precise','precise','precise','correct','precise','correct','correct','correct','correct','correct','vague','vague','vague'],
+  'frac_03':['precise','precise','precise','precise','correct','precise','correct','precise','wrong','wrong','wrong','wrong','vague','vague'],
+  'geo_01':['precise','precise','precise','precise','correct','precise','precise','correct','correct','correct','correct','vague','vague','correct'],
+  'geo_02':['precise','precise','precise','precise','correct','precise','precise','correct','correct','correct','correct','correct','correct','correct'],
+  'geo_03':['precise','precise','precise','precise','correct','precise','precise','correct','vague','vague','correct','vague','vague','wrong'],
+  'word_01':['precise','correct','precise','precise','correct','correct','precise','precise','correct','correct','correct','vague','vague','vague'],
+  'word_02':['precise','precise','precise','precise','correct','precise','precise','correct','correct','correct','correct','vague','vague','vague'],
+  'word_03':['precise','precise','precise','precise','correct','precise','precise','correct','wrong','correct','correct','vague','vague','correct'],
+};
+
+const HEATMAP_MODELS = [
+  { short: 'Sonnet',    full: 'Claude Sonnet 4.6' },
+  { short: 'Opus 4.8',  full: 'Claude Opus 4.8' },
+  { short: 'Opus 4.7',  full: 'Claude Opus 4.7' },
+  { short: 'GPT-5',     full: 'GPT-5' },
+  { short: 'Gemini 2.5',full: 'Gemini 2.5 Pro' },
+  { short: 'Gem 3.5F',  full: 'Gemini 3.5 Flash' },
+  { short: 'Gem 3.1P',  full: 'Gemini 3.1 Pro' },
+  { short: 'Kimi K2',   full: 'Kimi K2' },
+  { short: 'DeepSeek',  full: 'DeepSeek V3' },
+  { short: 'NVIDIA-S',  full: 'NVIDIA Nemotron Super 49B' },
+  { short: 'NVIDIA-N',  full: 'NVIDIA Nemotron Nano 9B' },
+  { short: 'Cohere',    full: 'Cohere Command R+' },
+  { short: 'Llama',     full: 'Llama 3.3 70B' },
+  { short: 'Qwen',      full: 'Qwen 2.5 72B' },
+];
+
+const SCENARIO_NAMES = {
+  'lin_01': 'lin_01 · sign-flip',
+  'lin_02': 'lin_02 · distribution',
+  'lin_03': 'lin_03 · inverse ops',
+  'frac_01':'frac_01 · unlike denom',
+  'frac_02':'frac_02 · × vs +',
+  'frac_03':'frac_03 · digit concat',
+  'geo_01': 'geo_01 · area vs perim',
+  'geo_02': 'geo_02 · co-interior',
+  'geo_03': 'geo_03 · pythagorean',
+  'word_01':'word_01 · multi-step',
+  'word_02':'word_02 · equation setup',
+  'word_03':'word_03 · percentage final',
+};
+
+const CELL_LABEL = { precise: '●', correct: '◐', vague: '○', wrong: '✕' };
+
+function renderHeatmap() {
+  const container = document.getElementById('heatmapContainer');
+
+  // Header row
+  let html = '<div class="heatmap-row">';
+  html += '<div class="heatmap-scenario" style="background: var(--color-bg-3); font-family: var(--font-heading); font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-text-secondary); justify-content: flex-start; cursor: default;" onmouseover="this.style.background=\'var(--color-bg-3)\'">сценарий ↓ · модель →</div>';
+  for (const m of HEATMAP_MODELS) {
+    html += `<div class="heatmap-header" title="${m.full}">${m.short}</div>`;
+  }
+  html += '</div>';
+
+  // Data rows
+  for (const [sid, cells] of Object.entries(HEATMAP_DATA)) {
+    html += '<div class="heatmap-row">';
+    html += `<div class="heatmap-scenario" onclick="openScenarioModal('${sid}')" title="Клик: детали сценария">${SCENARIO_NAMES[sid]}</div>`;
+    cells.forEach((quality, i) => {
+      const model = HEATMAP_MODELS[i];
+      const modelId = HEATMAP_COL_TO_ID[i];
+      html += `<div class="heatmap-cell hm-${quality}" title="${model.full} · ${sid} · ${quality} (клик: детали)" onclick="openCellModal('${sid}', '${modelId}', '${quality}')">${CELL_LABEL[quality]}</div>`;
+    });
+    html += '</div>';
+  }
+
+  container.innerHTML = html;
+}
+
+// =============================================================================
+// DIMENSIONS
+// =============================================================================
+function renderDimensions() {
+  const container = document.getElementById('dimensionsContainer');
+  container.innerHTML = DIMENSIONS.map(d => {
+    // Sort models by rating descending for each dimension
+    const sortedModels = [...MODELS].sort((a, b) => d.ratings[b.id] - d.ratings[a.id]);
+    const ratings = sortedModels.map(m => {
+      const v = d.ratings[m.id];
+      const cls = v <= 3 ? 'r-low' : v <= 5 ? 'r-mid' : 'r-high';
+      const pct = (v / 7) * 100;
+      return `
+        <div class="rating-row">
+          <div class="rating-model">${m.name}</div>
+          <div class="rating-bar-bg"><div class="rating-bar-fg ${cls}" style="width: ${pct}%"></div></div>
+          <div class="rating-value">${v}/7</div>
+        </div>
+      `;
+    }).join('');
+
+    return `
+      <div class="dimension">
+        <div class="dim-header">
+          <div class="dim-number">${d.num}</div>
+          <div class="dim-title">${d.title}</div>
+        </div>
+        <div class="dim-what">${d.what}</div>
+        <div class="dim-poles">
+          <div class="pole low">
+            <div class="pole-label">← Слабый полюс</div>
+            <div><strong>${d.poleLow.label}.</strong></div>
+            <div class="pole-example">${d.poleLow.example}</div>
+          </div>
+          <div class="pole high">
+            <div class="pole-label">Сильный полюс →</div>
+            <div><strong>${d.poleHigh.label}.</strong></div>
+            <div class="pole-example">${d.poleHigh.example}</div>
+          </div>
+        </div>
+        <div class="dim-ratings">
+          <div class="dim-ratings-title">Оценки 1-7 (среднее по 12 сценариям, от лучшего к худшему)</div>
+          ${ratings}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+// Render PCA
+document.getElementById('pcaSvgContainer').innerHTML = renderPCA() + '<div class="pca-tooltip" id="pcaTooltip"></div>';
+renderPCALegend();
+
+// PCA dot interactivity
+const pcaContainer = document.getElementById('pcaSvgContainer');
+const tooltip = document.getElementById('pcaTooltip');
+
+pcaContainer.querySelectorAll('.pca-dot').forEach(dot => {
+  dot.addEventListener('mouseenter', e => {
+    const name = e.target.getAttribute('data-name');
+    tooltip.textContent = name;
+    tooltip.style.opacity = '1';
+  });
+  dot.addEventListener('mousemove', e => {
+    const rect = pcaContainer.getBoundingClientRect();
+    tooltip.style.left = (e.clientX - rect.left + 12) + 'px';
+    tooltip.style.top = (e.clientY - rect.top - 8) + 'px';
+  });
+  dot.addEventListener('mouseleave', () => {
+    tooltip.style.opacity = '0';
+  });
+  dot.addEventListener('click', e => {
+    const id = e.target.getAttribute('data-model-id');
+    openModelModal(id);
+  });
+});
+
+// Render heatmap
+renderHeatmap();
+
+// Render dimensions
+renderDimensions();
+</script>
+</body>
+</html>

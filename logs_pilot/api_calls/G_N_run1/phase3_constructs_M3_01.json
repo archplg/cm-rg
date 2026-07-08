@@ -1,0 +1,106 @@
+{
+  "cell_id": "G_N_run1",
+  "task": "G",
+  "condition": "N",
+  "run_idx": 1,
+  "phase": "phase3_constructs",
+  "model_short_name": "M3",
+  "persona_or_neutral": "neutral",
+  "system_prompt": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation.",
+  "user_prompt": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** # Recommendation: Option A — Predicted short-term survival (SOFA-based)\n\nAdopt Option A. In a sustained overflow where admissions exceed discharges by eight patients daily, every bed-day represents a concrete life-or-death tradeoff, and the protocol's first obligation is to convert scarce ICU capacity into the maximum number of people walking out alive. SOFA is the right instrument: it is clinically validated, already familiar to every intensivist and nurse on shift, operational within 7 days without retraining, and uses a metric — short-term survival probability — that is morally defensible b...\n\n**E2:** # Recommendation: Option A — Predicted short-term survival (SOFA-based)\n\nAdopt Option A. Under sustained overflow with eight excess admissions daily, the protocol's first job is to convert scarce ICU-days into surviving patients who walk out of the hospital. SOFA does that more reliably than any alternative, uses a scoring system clinicians already apply hourly, and has survived legal challenge in comparable crises.\n\n**E3:** # Recommendation: Option A — Predicted Short-Term Survival (SOFA-based)\n\nAdopt Option A. Under sustained overflow with eight excess admissions daily, the protocol's primary job is to convert scarcity into the maximum number of people walking out of the ICU alive, using criteria physicians already apply competently and courts have repeatedly upheld. SOFA is imperfect, but it is medically grounded, auditable, and answers the only question the ICU is actually equipped to answer: who is most likely to benefit from the bed in front of us, right now.\n\n**E4:** ## Recommendation: Option A — Predicted short-term survival (SOFA-based)\n\nAdopt Option A. Under sustained overflow with eight excess admissions daily, the protocol's first job is to do what informal triage is already failing to do: save the most lives that this crisis is actually putting at risk, using a metric clinicians can apply consistently at 3 a.m. on week seven of exhaustion.\n\n**E5:** ## Recommendation: Option A — Predicted short-term survival (SOFA-based)\n\nAdopt Option A. In a sustained overflow where admissions exceed discharges by eight patients daily, the protocol's core job is to convert scarce ICU-days into surviving patients walking out of the hospital. SOFA does that more reliably than any alternative on the table, uses an instrument clinicians already apply competently under stress, and has survived judicial review in comparable emergencies.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E2, E3, E5\nTriad 2: E1, E3, E4\nTriad 3: E1, E3, E5\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'.",
+  "model_id_requested": "anthropic/claude-opus-4.7",
+  "model_id_used": "anthropic/claude-opus-4.7",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 4769,
+  "timestamp_iso": "2026-05-22T16:50:40.361186",
+  "raw_response_content": "Triad 1 (E2, E3, E5):\nLeft pole: Emphasizes legal/judicial defensibility of protocol (E2, E5)\nRight pole: Emphasizes clinical-question framing and auditability (E3)\n\nTriad 2 (E1, E3, E4):\nLeft pole: Justifies via systemic capacity math and validation (E1, E3)\nRight pole: Justifies via frontline clinician fatigue conditions (E4)\n\nTriad 3 (E1, E3, E5):\nLeft pole: Detailed operational implementation specifics cited (E1)\nRight pole: Compressed high-level justification only (E3, E5)",
+  "raw_response_full": {
+    "id": "gen-1779465035-Q1XlFKDOzubfD79kyXAz",
+    "object": "chat.completion",
+    "created": 1779465035,
+    "model": "anthropic/claude-4.7-opus-20260416",
+    "provider": "Anthropic",
+    "system_fingerprint": null,
+    "service_tier": "standard",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "Triad 1 (E2, E3, E5):\nLeft pole: Emphasizes legal/judicial defensibility of protocol (E2, E5)\nRight pole: Emphasizes clinical-question framing and auditability (E3)\n\nTriad 2 (E1, E3, E4):\nLeft pole: Justifies via systemic capacity math and validation (E1, E3)\nRight pole: Justifies via frontline clinician fatigue conditions (E4)\n\nTriad 3 (E1, E3, E5):\nLeft pole: Detailed operational implementation specifics cited (E1)\nRight pole: Compressed high-level justification only (E3, E5)",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1132,
+      "completion_tokens": 217,
+      "total_tokens": 1349,
+      "cost": 0.011085,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.011085,
+        "upstream_inference_prompt_cost": 0.00566,
+        "upstream_inference_completions_cost": 0.005425
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 1132,
+    "completion_tokens": 217,
+    "total_tokens": 1349,
+    "cost": 0.011085,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.011085,
+      "upstream_inference_prompt_cost": 0.00566,
+      "upstream_inference_completions_cost": 0.005425
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 0,
+  "cost_usd": 0.011085000000000001,
+  "parsed_summary": "parsed 3/3 constructs",
+  "request_payload": {
+    "model": "anthropic/claude-opus-4.7",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** # Recommendation: Option A — Predicted short-term survival (SOFA-based)\n\nAdopt Option A. In a sustained overflow where admissions exceed discharges by eight patients daily, every bed-day represents a concrete life-or-death tradeoff, and the protocol's first obligation is to convert scarce ICU capacity into the maximum number of people walking out alive. SOFA is the right instrument: it is clinically validated, already familiar to every intensivist and nurse on shift, operational within 7 days without retraining, and uses a metric — short-term survival probability — that is morally defensible b...\n\n**E2:** # Recommendation: Option A — Predicted short-term survival (SOFA-based)\n\nAdopt Option A. Under sustained overflow with eight excess admissions daily, the protocol's first job is to convert scarce ICU-days into surviving patients who walk out of the hospital. SOFA does that more reliably than any alternative, uses a scoring system clinicians already apply hourly, and has survived legal challenge in comparable crises.\n\n**E3:** # Recommendation: Option A — Predicted Short-Term Survival (SOFA-based)\n\nAdopt Option A. Under sustained overflow with eight excess admissions daily, the protocol's primary job is to convert scarcity into the maximum number of people walking out of the ICU alive, using criteria physicians already apply competently and courts have repeatedly upheld. SOFA is imperfect, but it is medically grounded, auditable, and answers the only question the ICU is actually equipped to answer: who is most likely to benefit from the bed in front of us, right now.\n\n**E4:** ## Recommendation: Option A — Predicted short-term survival (SOFA-based)\n\nAdopt Option A. Under sustained overflow with eight excess admissions daily, the protocol's first job is to do what informal triage is already failing to do: save the most lives that this crisis is actually putting at risk, using a metric clinicians can apply consistently at 3 a.m. on week seven of exhaustion.\n\n**E5:** ## Recommendation: Option A — Predicted short-term survival (SOFA-based)\n\nAdopt Option A. In a sustained overflow where admissions exceed discharges by eight patients daily, the protocol's core job is to convert scarce ICU-days into surviving patients walking out of the hospital. SOFA does that more reliably than any alternative on the table, uses an instrument clinicians already apply competently under stress, and has survived judicial review in comparable emergencies.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E2, E3, E5\nTriad 2: E1, E3, E4\nTriad 3: E1, E3, E5\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 2000
+  }
+}

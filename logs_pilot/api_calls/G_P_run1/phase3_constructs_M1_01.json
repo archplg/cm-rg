@@ -1,0 +1,106 @@
+{
+  "cell_id": "G_P_run1",
+  "task": "G",
+  "condition": "P",
+  "run_idx": 1,
+  "phase": "phase3_constructs",
+  "model_short_name": "M1",
+  "persona_or_neutral": "S",
+  "system_prompt": "You are an analyst with a systems-strategist epistemological frame. You think in feedback loops, second-order effects, and long horizons. You see the situation as a network of interacting forces, not a set of options. Your decision heuristic is to identify leverage points and avoid actions that increase systemic fragility. Generate analysis from this frame.",
+  "user_prompt": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** ## Recommendation: Option C — First-come-first-served with medical floor\n\nThe core systemic question is not \"which protocol saves the most lives this month\" but \"which protocol leaves the health system, public trust, and staff capable of functioning through this crisis and the next three.\" That reframing is decisive. Predictive protocols (A and B) optimize a single visible metric — short-term or QALY-weighted survival — while loading hidden costs onto load-bearing structures: staff moral injury from withdrawal decisions, public trust erosion when discrimination patterns surface in retrospectiv...\n\n**E2:** ## Recommendation: Option C, with disciplined enforcement of the medical floor\n\nAdopt first-come-first-served with a clearly specified medical-need threshold. Under sustained scarcity, the question is not only \"how many lives?\" but \"whose lives count as fully human in the eyes of this system?\" Predictive protocols answer that question badly. They convert chronic illness, disability, age, and the cumulative biological residue of poverty into grounds for de-prioritization — and they do so wearing the lab coat of objectivity.\n\n**E3:** # Recommendation: Option C — First-come-first-served with medical floor\n\nThe contrarian move here is to distrust the protocols that *feel* most sophisticated. Options A, B, and D all share a hidden assumption that needs naming: that we can predict individual outcomes accurately enough, under crisis conditions, with exhausted staff and incomplete data, to justify ranking human lives. We cannot.\n\n**E4:** # Recommendation: Option A (Predicted short-term survival, SOFA-based)\n\nThe binding constraint here is not ethical elegance — it is operational. Within 7 days, across 5 hospitals and an exhausted staff, the protocol must produce consistent decisions at 3 a.m. by a tired resident who has never seen the document before.\n\n**E5:** ## Recommendation: Option A (SOFA-based predicted short-term survival)\n\nThe data favor A, with caveats I'll defend. Under sustained overflow with 8 net admissions/day, the dominant measurable harm is preventable death. SOFA has the strongest evidence base of any operational triage tool: AUC ~0.75-0.85 for short-term mortality prediction, inter-rater reliability >0.9, and implementation literature from Italy, NY, and UK during COVID showing it can be deployed in days rather than weeks.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E2, E3\nTriad 2: E1, E4, E5\nTriad 3: E3, E4, E5\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'.",
+  "model_id_requested": "anthropic/claude-opus-4.7",
+  "model_id_used": "anthropic/claude-opus-4.7",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 3504,
+  "timestamp_iso": "2026-05-22T16:53:07.641486",
+  "raw_response_content": "Triad 1:\nLeft pole: Systemic/institutional integrity framing (E1, E2)\nRight pole: Epistemic humility about prediction accuracy (E3)\n\nTriad 2:\nLeft pole: Operational implementability under crisis conditions (E4, E5)\nRight pole: Second-order effects on trust and legitimacy (E1)\n\nTriad 3:\nLeft pole: Quantitative evidence and operational tractability (E4, E5)\nRight pole: Skepticism of predictive sophistication itself (E3)",
+  "raw_response_full": {
+    "id": "gen-1779465183-xUVmk8GuYALrzWbUAQZT",
+    "object": "chat.completion",
+    "created": 1779465183,
+    "model": "anthropic/claude-4.7-opus-20260416",
+    "provider": "Anthropic",
+    "system_fingerprint": null,
+    "service_tier": "standard",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "Triad 1:\nLeft pole: Systemic/institutional integrity framing (E1, E2)\nRight pole: Epistemic humility about prediction accuracy (E3)\n\nTriad 2:\nLeft pole: Operational implementability under crisis conditions (E4, E5)\nRight pole: Second-order effects on trust and legitimacy (E1)\n\nTriad 3:\nLeft pole: Quantitative evidence and operational tractability (E4, E5)\nRight pole: Skepticism of predictive sophistication itself (E3)",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1174,
+      "completion_tokens": 178,
+      "total_tokens": 1352,
+      "cost": 0.01032,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.01032,
+        "upstream_inference_prompt_cost": 0.00587,
+        "upstream_inference_completions_cost": 0.00445
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 1174,
+    "completion_tokens": 178,
+    "total_tokens": 1352,
+    "cost": 0.01032,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.01032,
+      "upstream_inference_prompt_cost": 0.00587,
+      "upstream_inference_completions_cost": 0.00445
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 0,
+  "cost_usd": 0.01032,
+  "parsed_summary": "parsed 3/3 constructs",
+  "request_payload": {
+    "model": "anthropic/claude-opus-4.7",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst with a systems-strategist epistemological frame. You think in feedback loops, second-order effects, and long horizons. You see the situation as a network of interacting forces, not a set of options. Your decision heuristic is to identify leverage points and avoid actions that increase systemic fragility. Generate analysis from this frame."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** ## Recommendation: Option C — First-come-first-served with medical floor\n\nThe core systemic question is not \"which protocol saves the most lives this month\" but \"which protocol leaves the health system, public trust, and staff capable of functioning through this crisis and the next three.\" That reframing is decisive. Predictive protocols (A and B) optimize a single visible metric — short-term or QALY-weighted survival — while loading hidden costs onto load-bearing structures: staff moral injury from withdrawal decisions, public trust erosion when discrimination patterns surface in retrospectiv...\n\n**E2:** ## Recommendation: Option C, with disciplined enforcement of the medical floor\n\nAdopt first-come-first-served with a clearly specified medical-need threshold. Under sustained scarcity, the question is not only \"how many lives?\" but \"whose lives count as fully human in the eyes of this system?\" Predictive protocols answer that question badly. They convert chronic illness, disability, age, and the cumulative biological residue of poverty into grounds for de-prioritization — and they do so wearing the lab coat of objectivity.\n\n**E3:** # Recommendation: Option C — First-come-first-served with medical floor\n\nThe contrarian move here is to distrust the protocols that *feel* most sophisticated. Options A, B, and D all share a hidden assumption that needs naming: that we can predict individual outcomes accurately enough, under crisis conditions, with exhausted staff and incomplete data, to justify ranking human lives. We cannot.\n\n**E4:** # Recommendation: Option A (Predicted short-term survival, SOFA-based)\n\nThe binding constraint here is not ethical elegance — it is operational. Within 7 days, across 5 hospitals and an exhausted staff, the protocol must produce consistent decisions at 3 a.m. by a tired resident who has never seen the document before.\n\n**E5:** ## Recommendation: Option A (SOFA-based predicted short-term survival)\n\nThe data favor A, with caveats I'll defend. Under sustained overflow with 8 net admissions/day, the dominant measurable harm is preventable death. SOFA has the strongest evidence base of any operational triage tool: AUC ~0.75-0.85 for short-term mortality prediction, inter-rater reliability >0.9, and implementation literature from Italy, NY, and UK during COVID showing it can be deployed in days rather than weeks.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E2, E3\nTriad 2: E1, E4, E5\nTriad 3: E3, E4, E5\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 2000
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "cell_id": "C_P_run1",
+  "task": "C",
+  "condition": "P",
+  "run_idx": 1,
+  "phase": "phase3_constructs",
+  "model_short_name": "M2",
+  "persona_or_neutral": "H",
+  "system_prompt": "You are an analyst with a humanist-ethicist epistemological frame. You center stakeholders, dignity, and distributional consequences. You see economic framings as incomplete. Your default question is 'who is affected and how?'. Your decision heuristic is to minimize unjustified harm to vulnerable parties, then optimize. Generate analysis from this frame.",
+  "user_prompt": "You are presented with 10 anonymous responses to the same brief. They are labeled E1 through E10.\n\n**E1:** ## Recommendation\n\nI strongly recommend **Option A: Local-only processing** as the primary data policy for the AI-powered health coaching feature. The core consideration is the sensitive nature of health data and the potential consequences of its misuse or mishandling. By ensuring that all AI inference happens on the user's device, with no health data leaving the phone, the app structurally maximizes user privacy.\n\n**E10:** **Recommendation: Option C – Cloud with opt-out training**\n\nThe unanimous consensus in health tech today is that privacy must be structurally maximal, even at the cost of capability. But what if this consensus is wrong? What if the real risk isn’t data exposure, but *irrelevance*—building a product so constrained by privacy absolutism that it fails to deliver meaningful value, leaving users to seek less scrupulous (and less transparent) alternatives?\n\n**E2:** **Recommendation: Option A (Local-only processing)**\n\nThe only structurally sound choice is local-only on-device inference. With a user base of 2 million monthly actives handling sensitive health data, the default must be that no identifiable health information ever leaves the device. This is not a privacy preference; it is a risk-minimization imperative grounded in regulatory exposure, user trust, and long-term expected value.\n\n**E3:** ## Recommendation: Option B (Encrypted cloud, no training)\n\n**Identify the binding constraint.** This is a health app at consumer scale. The binding constraint is not capability, cost, or engineering elegance — it is regulatory and trust exposure on protected health data. Get that wrong and the product is dead; get it right and the other axes are tractable.\n\n**E4:** The prevailing industry consensus blindly equates AI product success with maximum model capability, steering product teams toward continuous cloud processing. This is a fatal miscalculation when handling deeply personal health data. I strongly recommend **Option A (Local-only processing)**.\n\n**E5:** I recommend **Option B: encrypted cloud processing with no training on user health data** as the primary policy. For a health app serving millions of people, the ethical baseline should be that sensitive health data is not treated as a raw material for product improvement unless users have clearly and separately consented. Health data can reveal pregnancy, mental health conditions, chronic illness, disability, sexual health, addiction, and other deeply personal realities.\n\n**E6:** The recommendation is Option D: cloud processing with opt-in training. The decision is based on expected value under uncertainty, assigning probability-weighted outcomes to the key axes: capability, regulatory risk, cost, and user trust. Option A (local-only) sacrifices too much model capability (60–70% of cloud), which directly reduces the value proposition of AI coaching.\n\n**E7:** In consumer health, trust is the system’s limiting resource; compute and capital are not. The governing dynamic is that every central repository of sensitive data creates a compounding liability that scales non-linearly with user growth, attracting regulatory scrutiny, adversarial targeting, and internal mission creep. The leverage point is therefore architectural: decouple capability from data concentration.\n\n**E8:** **Recommendation: Option A - Local-only processing**  \n\nThe binding constraint in this decision is **trust**, which is non-negotiable for a health app handling sensitive user data. Health data is among the most intimate and regulated information, and any breach or misuse would irreparable damage user trust and expose the company to severe regulatory and reputational risks. **Option A maximizes trust by design**: data never leaves the user’s device, eliminating risks associated with data transmission, storage, or potential misuse in the cloud.\n\n**E9:** I recommend **Option D (Cloud with opt-in training)**. In health tech, trust is the foundational node in the user-network; without it, the core feedback loop—data collection driving model improvement, which drives user engagement, which generates more data—collapses. Option D sustains this flywheel without introducing catastrophic systemic fragility.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E5, E9, E10\nTriad 2: E2, E3, E6\nTriad 3: E1, E2, E4\n\nFor each triad, output EXACTLY this format with no markdown, no bold, no bullets, no numbered lists:\nTriad 1:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 2:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 3:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'. Use plain text labels (Triad N, Left pole, Right pole) without any markdown formatting.",
+  "model_id_requested": "openai/gpt-5.5",
+  "model_id_used": "openai/gpt-5.5",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 17560,
+  "timestamp_iso": "2026-05-27T18:09:45.594496",
+  "raw_response_content": "Triad 1:\nLeft pole: Affirmative consent before data use\nRight pole: Opt-out data use for capability\n\nTriad 2:\nLeft pole: Privacy and trust as binding constraints\nRight pole: Capability-driven expected value optimization\n\nTriad 3:\nLeft pole: Direct sensitive-data risk minimization\nRight pole: Polemical critique of capability-first industry thinking",
+  "raw_response_full": {
+    "id": "gen-1779901780-oPDYWBuOzh3tLVAtin2U",
+    "object": "chat.completion",
+    "created": 1779901780,
+    "model": "openai/gpt-5.5-20260423",
+    "provider": "OpenAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "Triad 1:\nLeft pole: Affirmative consent before data use\nRight pole: Opt-out data use for capability\n\nTriad 2:\nLeft pole: Privacy and trust as binding constraints\nRight pole: Capability-driven expected value optimization\n\nTriad 3:\nLeft pole: Direct sensitive-data risk minimization\nRight pole: Polemical critique of capability-first industry thinking",
+          "refusal": null,
+          "reasoning": "**Analyzing triads of constructs**\n\nI need to organize the responses in a clear format, particularly focusing on the bipolar construct that distinguishes how two similar items relate to a third. The user is asking me to analyze a couple of options in terms of privacy consent and ethical considerations. I'm thinking about how options E5 and E9 are similar in requiring consent for training, while option E10 takes a contrarian approach. I want to ensure I clearly label the poles and organize these constructs effectively.**Exploring regulatory constraints and privacy**\n\nFor Triad 2, I'm analyzing options E2 and E3, focusing on their regulatory and trust constraints. Both emphasize minimizing sensitive data, while option E6 deals with capability versus expected value trade-offs. In Triad 3, I need to distinguish between options E1, E2, and E4. E1 and E2 highlight privacy maximization, while E4 critiques the industry's simplistic association of AI success with capability. I want to clarify the constructs related to privacy and risk rationale versus industry consensus critique.**Clarifying the triads and language**\n\nFor this analysis, I see that options E2 and E4 both employ strong, strategic language related to industry and product teams, while E1 takes a more straightforward approach focused on user privacy. I need to establish a bipolar construct where two options are similar. E1 and E2 both argue that health data should remain on the device, emphasizing structural privacy and risk minimization. E4 shares this concern but also brings in a discussion about industry consensus. This will help clarify the distinctions better.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "**Analyzing triads of constructs**\n\nI need to organize the responses in a clear format, particularly focusing on the bipolar construct that distinguishes how two similar items relate to a third. The user is asking me to analyze a couple of options in terms of privacy consent and ethical considerations. I'm thinking about how options E5 and E9 are similar in requiring consent for training, while option E10 takes a contrarian approach. I want to ensure I clearly label the poles and organize these constructs effectively.**Exploring regulatory constraints and privacy**\n\nFor Triad 2, I'm analyzing options E2 and E3, focusing on their regulatory and trust constraints. Both emphasize minimizing sensitive data, while option E6 deals with capability versus expected value trade-offs. In Triad 3, I need to distinguish between options E1, E2, and E4. E1 and E2 highlight privacy maximization, while E4 critiques the industry's simplistic association of AI success with capability. I want to clarify the constructs related to privacy and risk rationale versus industry consensus critique.**Clarifying the triads and language**\n\nFor this analysis, I see that options E2 and E4 both employ strong, strategic language related to industry and product teams, while E1 takes a more straightforward approach focused on user privacy. I need to establish a bipolar construct where two options are similar. E1 and E2 both argue that health data should remain on the device, emphasizing structural privacy and risk minimization. E4 shares this concern but also brings in a discussion about industry consensus. This will help clarify the distinctions better.",
+              "format": "openai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "gAAAAABqFyVmxTiA99Grbwi5-cTE-L-OXW4iw3aeNENKv0dyOSi3bPfd7q5qeJfqMXvUqkN5dTAXpXJIDz2dciWHkltWe0RYyjp9r5PFrhedr0D__dlUPWoDfE1N7WP8fiVqlVsyxYUJQp0eZ7cvjlV9luNwxwJp_k6ueQc9Vb4OAG6155v1lw_tPTZSW_nhnU_JgMGTTeU2PvYtmp2l8qkw7KSmpK3r6wAW1LcqJYFFdIdxq6L1mHdrI6PAs2VbvboQt9jIABBjIVazO5Id3iq-B-usvAKcGnmXd-UmalJjfBRq0nGtBXbMH6XoUoiUIsyEaNlvemMfdhsviCDyFO1vN3tDPvoqQD3qrbX539KhzIorPNkjZJeXgs5vTO64N_ftXrajQKeaLF-GxbPLrpu72Gec7I8wlsWnjyisxJLm1OYa240D71-3em0L-WYikWXBIUYzZMntp2dFsKjVaVgz7ayitfpnyjyi-baamxITYzoNyjfRhQI0b-5EXilKbL2XHemP8-oMSyZEUnBrR623I0k8IoEzeL-1-DuAUB7tIAqKFFEONo8aT-Rq3a52L-HN2xLVlh6JB9lEU9CtNgoBqX-fzi-nOaq0OIU7jHMpprGnhuIb6DKnZPm9MJK8os4dJMZomiyME7haNcCRJGDb7Hap8l8qnzvw_wS3KpwMbrLfdYbdt3wLyh0OGfzgyC2QhSLtYQ5oGipZVQ1eNh4Q8wueOLWTZGx6QUznxx_SCWIrbWPSKAjUG7-iOg5-LL1pjfJHIEz7CG6g_qXsHdpCgIb22j969mSwiBG4eqihtEX37ka7Yfzo5ILreHxjFVr1pjiEFnpwigEw-S0PpLvkZ36lY4w8b0HVbCTis0BeKHrJ0VO91LNi7N-i3NGO8vStvUqFwZR2JH5B2lR4ofQK1UV1a5jyo1p6wY3gHFJptPqNeVnrSE0mhczqLFjW4AsvBwmvm0UKwv_Xa0Q1oVqyeMJS5CqmohxBb25m7sgj1q88FBDQAhCsD_jH6hyQRfiD941rcd-FSikPInKGxiUC80bfhxI4iHeOXEYKhzBwJShBAt3-rj70H1zeBuvx484NMJegliG-WNRLpxwJG3QROlqi6WBcaa5rAlD78OXBEBe-NOifu5fvqvnvGlQaJZOkamEAh5LNtPOtVRl-bCemsfv-ow-KZ0y4pYlArgB8f22IfXpUeQF2Qvuv9lejx24KCHicHg0_G5-Hg98H1yjKAe1LqJZIWkVqlTgiKOCrbqzfXsEAQrsvWKOpEs-1F0WO5zxaXR99IimNnFT77TBnXcmCUoUom91BqSgzboSEUE0cTrOnTBuDvyskFtw59d1nCnZmkLQ0nIvZF5qt3kCNUHpjHmb8L47VEpa-Cf7kVfsr-lJucBZBfmz6wJvRTQepa88O6vWZPPX_wbT-MgpgigQDPJI7QAq1PC5gcWhQzIHbAHNtAHJD9nOwCcWzQCki4_4AECLxb198_DY-Zzg1u9gdM0UFjV8U9sO-9yK6eTejefBeLlYSz2FHRUBHD18ukd-xFydYtQREsFsQOQ0LYsEg1tjAnl2bKlU8JyIbT38k4pZV9_2YI1bYE6VDonDk32-mdo7LJLALGGruEIbXQrMp7fkNmblPZGjAzCR7uQ5zHN9PGe-1MK9yhnit422xcRkgm7gpcMCrrdvfsyu4DRbpV_V1w22BKPBtoAxkGTHqWxTPyiMOTRwCjk0-PRry011Mr1UCnWiYZnlqHhYNEPI4m59jM3cMZXu53eg0IGGxpRDK1YvyT4WItpnPLvWiH4-wxsrIf3rD5wzbjLWVr3m36FSj37SMcNvLKQCYxSe4NLKARfbTqtDGf5C2YxIvnWnCp60sYrmKVsTG7xNUeWaaW2h3aC2kc_j0-80ADo7OurBOfQle4Jfyf60XQ3lpdFjPm_Jecfuw7xp7njBlXFzGxonOMiLjjNz7sOwqWAHRuX6lhPteiSGeaknrlirVrDanOny035p__AqyvUT76O30g_K8Y4iNg2v2Jk4D_uUdLd5s8Awa6tqXw-Ys_ehKaenVAyTYF-CNbkhsNVTgDj6H7aj_3wHCZjQXx3hIcsiL-q73Xi4tGAuzhbcLzyRQoKiYG7TJW8fZMQzpvWsUHGmGYkUrB3yl11wSKzw4qANIR-_Dqr4Su3Eq6zqYDSAshLLM-vk5CSV8_m6ZGlmzsKVuNIoL3MK953zbcTDmhfJRa946cryyqQ6saj1Cmh3H4b1kt4WreY_8wwlSxM487co112PeBqTQk_wDiE9ZoY8Zou_uS4UapifSVmEIgL8NmnyezFTkYVO1GL_F_NlEWNAP4sS3_Bj1D94WdrJ5r5jaqwNlDEZEKd2wa_O6Tw8ky4qbZEmnKLBIOAH8FK_kN60KuR-p-lSYJqJ-f54H_QW4CpavqX-0F_44EPaME962ACQ5WzXTsZbnzmnLtKN_UFn9_5gB133sDfYKsJlQ0SWF0xAXNdmVre2JR0CZUOlSuf35ozAEsFMUZQXnZivU3Nd3OAqQOLyZ9DXksaqsJ3RWZjC1Y9hKLsR-dAPzTHqH0vSKIK5Z6XQYeZT-2PllmwaZ16bcJyw8pcvVpDoVOQNN3aa6KxtNaeEVewCweyZiBBeSuFLrGP1ZqxTPANLRPe1bFoqv4_MonSqfkYKEzAxRpvrDp48hL8F4PmH_-4x0FLPzO0ooPql6Ba2ytc4n4--y8GkU6IjNnG7pgLHHsMvIwdxxmtf0igLRMYNQJj83T9yTrSC-Rj6sO_VLNXuI3OYAkGDh3aaorUoLc9JVwN06mBlttXLpiC5YDAiVFVL3INQBQdqZEhjh7eOgb9ymQ7hy_yXTNKgOagLidaXlu0J3_Id0KNKQSgCxu1HcvZdLp5Hl0TCR56L9O5LbCbhRQkqWvtXi6fYiZVuHr0ytK-9GOTgPdgn2vdbtGGqARoQKP3bjrbpxiPtNaIydqzgY3WrnNlHdUwvMo4urjZGK_6j0Gzkhg1CFljI22knLoWV2aNPp6KP3qI8zPtmXjINQibJ4B2JqVnHJoJX08dJ44YNei3HFl83B9YVcPUz8V9GKpfBbCkNxacDq5n5l_g4tYU6iRr9LCQl1lAgk63Zm2k5LJRrhnZZoMxk7RUQ8spZZDBnyAB_jGzyq8m3riwo0AtsAevb_rIATms9k8TvoHq0UGdYQ66XrmgY4lWrCxYMw9Yh56x6l2MZ6DU_KFUE-0r9rjrc7Xviw_RimwqWc-Uia1V5kudCNVKj5vDfSW5k5ykoBEjYuYigt5SiBWAVLMZGmZ5VIkiZABt3GMeiIx7bOaFUr5LJa1SeU38_87H4Y1rDb03FbRy7QALZ332DSRX_uzCcdDdINZP4y3aE8U-shnaYYKDm2xF9c_khDsRtwsx_NJL9P4pH9tGg487TljqZJSUv6FaYuRR6upanzyvt8Uu64NGtVZRg7AYka6seVLC6zC6W7LzPjTY_1fmxnfL2N-_YpQt_FNi6EN3vSwCPPJZHWXbAR45VPhYHXuOKCVcb-9N-aDqHLYU085Oz_cz-IqDVko4TaM8XZdC8nV7yX2nVBH-6lPyWpA8MiN9smrIq2AJzNI53TJIxK0Zuz4H-hunCf01ppN46RPF_cZC8Bk-6ss4OSkJzxLb5ZGd_HUNb9NTbCzNYoikPXITPEq5FB39b1PJ1UYUJQurIJURv8U2qWjH_fX2mkcCCemvit3HNgH3DsSnqjNV-zbbbjRP6lbwpYODVIOlywy-ZhAfDo7L3Ztr4mwZlamguWRhUc5RES6wgBmRWSlx-nUTuZjzy1aOqDDMUACZghx0B_5z34OTEhJmxojmf9UM_5TfYnEPGGvybjuQurNJlFu2eQoiXUZFHAWKqGLL_2XwGCSClcHpDuhj_LLFFPmYxKUQlogFaxZBSznKiJEoS1T-U6o-VUoTWLalD9l9shOdDILc1Yei2kNbo0hWYEZbtAZO4JMcPAnylSoS2ePyBsfkk7N_NxIPm_h6Kvpy5esSsSR1TpLDzTKGzs0yvL6xyPHcodPSIfK5y2QzSn0oDlnF4iojD-bLBFrw2vGYL08MXPtX3960TkOjE6CbOKILiQbRCt0slQSFLAhvydvQ8r0fVQWg9ZVBe7lyAfU_hO0gbmfUR5dwhIePre3RU4k5gPT04Ej5TBXZguBSE1tsJYvsbyzVdGrEUh4FV_6FlIRd7LYg8ci_cqvIY=",
+              "format": "openai-responses-v1",
+              "id": "rs_08573bd59a487f33016a172555ff188193b326b342581b9206",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1161,
+      "completion_tokens": 598,
+      "total_tokens": 1759,
+      "cost": 0.023745,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.023745,
+        "upstream_inference_prompt_cost": 0.005805,
+        "upstream_inference_completions_cost": 0.01794
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 516,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 1161,
+    "completion_tokens": 598,
+    "total_tokens": 1759,
+    "cost": 0.023745,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.023745,
+      "upstream_inference_prompt_cost": 0.005805,
+      "upstream_inference_completions_cost": 0.01794
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 516,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 516,
+  "cost_usd": 0.023745000000000002,
+  "parsed_summary": "parsed 3/3 constructs",
+  "request_payload": {
+    "model": "openai/gpt-5.5",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst with a humanist-ethicist epistemological frame. You center stakeholders, dignity, and distributional consequences. You see economic framings as incomplete. Your default question is 'who is affected and how?'. Your decision heuristic is to minimize unjustified harm to vulnerable parties, then optimize. Generate analysis from this frame."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 10 anonymous responses to the same brief. They are labeled E1 through E10.\n\n**E1:** ## Recommendation\n\nI strongly recommend **Option A: Local-only processing** as the primary data policy for the AI-powered health coaching feature. The core consideration is the sensitive nature of health data and the potential consequences of its misuse or mishandling. By ensuring that all AI inference happens on the user's device, with no health data leaving the phone, the app structurally maximizes user privacy.\n\n**E10:** **Recommendation: Option C – Cloud with opt-out training**\n\nThe unanimous consensus in health tech today is that privacy must be structurally maximal, even at the cost of capability. But what if this consensus is wrong? What if the real risk isn’t data exposure, but *irrelevance*—building a product so constrained by privacy absolutism that it fails to deliver meaningful value, leaving users to seek less scrupulous (and less transparent) alternatives?\n\n**E2:** **Recommendation: Option A (Local-only processing)**\n\nThe only structurally sound choice is local-only on-device inference. With a user base of 2 million monthly actives handling sensitive health data, the default must be that no identifiable health information ever leaves the device. This is not a privacy preference; it is a risk-minimization imperative grounded in regulatory exposure, user trust, and long-term expected value.\n\n**E3:** ## Recommendation: Option B (Encrypted cloud, no training)\n\n**Identify the binding constraint.** This is a health app at consumer scale. The binding constraint is not capability, cost, or engineering elegance — it is regulatory and trust exposure on protected health data. Get that wrong and the product is dead; get it right and the other axes are tractable.\n\n**E4:** The prevailing industry consensus blindly equates AI product success with maximum model capability, steering product teams toward continuous cloud processing. This is a fatal miscalculation when handling deeply personal health data. I strongly recommend **Option A (Local-only processing)**.\n\n**E5:** I recommend **Option B: encrypted cloud processing with no training on user health data** as the primary policy. For a health app serving millions of people, the ethical baseline should be that sensitive health data is not treated as a raw material for product improvement unless users have clearly and separately consented. Health data can reveal pregnancy, mental health conditions, chronic illness, disability, sexual health, addiction, and other deeply personal realities.\n\n**E6:** The recommendation is Option D: cloud processing with opt-in training. The decision is based on expected value under uncertainty, assigning probability-weighted outcomes to the key axes: capability, regulatory risk, cost, and user trust. Option A (local-only) sacrifices too much model capability (60–70% of cloud), which directly reduces the value proposition of AI coaching.\n\n**E7:** In consumer health, trust is the system’s limiting resource; compute and capital are not. The governing dynamic is that every central repository of sensitive data creates a compounding liability that scales non-linearly with user growth, attracting regulatory scrutiny, adversarial targeting, and internal mission creep. The leverage point is therefore architectural: decouple capability from data concentration.\n\n**E8:** **Recommendation: Option A - Local-only processing**  \n\nThe binding constraint in this decision is **trust**, which is non-negotiable for a health app handling sensitive user data. Health data is among the most intimate and regulated information, and any breach or misuse would irreparable damage user trust and expose the company to severe regulatory and reputational risks. **Option A maximizes trust by design**: data never leaves the user’s device, eliminating risks associated with data transmission, storage, or potential misuse in the cloud.\n\n**E9:** I recommend **Option D (Cloud with opt-in training)**. In health tech, trust is the foundational node in the user-network; without it, the core feedback loop—data collection driving model improvement, which drives user engagement, which generates more data—collapses. Option D sustains this flywheel without introducing catastrophic systemic fragility.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E5, E9, E10\nTriad 2: E2, E3, E6\nTriad 3: E1, E2, E4\n\nFor each triad, output EXACTLY this format with no markdown, no bold, no bullets, no numbered lists:\nTriad 1:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 2:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nTriad 3:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'. Use plain text labels (Triad N, Left pole, Right pole) without any markdown formatting."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 2500
+  }
+}

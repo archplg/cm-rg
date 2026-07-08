@@ -1,0 +1,106 @@
+{
+  "cell_id": "B_N_run1",
+  "task": "B",
+  "condition": "N",
+  "run_idx": 1,
+  "phase": "phase3_constructs",
+  "model_short_name": "M4",
+  "persona_or_neutral": "neutral",
+  "system_prompt": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation.",
+  "user_prompt": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** # Primary Diagnosis: Option C — Loss of Psychological Safety Following the Layoff\n\nThe temporal evidence is the strongest signal here. A high-performing team was delivering well, then a layoff occurred 4 months ago, and within that window we see: senior voluntary attrition, missed milestones, and—most diagnostically—a shift in retro themes from \"what to ship next\" to \"process and communication.\" That linguistic shift is the fingerprint of a team that no longer feels safe taking ownership of outcomes and is instead negotiating defensive scaffolding. Why this beats the alternatives:\n\n- **Burnout...\n\n**E2:** # Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff\n\nThe timing is the decisive signal. A layoff occurred 4 months ago; performance and retention deteriorated over 6 months but the *shift in retro themes* — from \"what to ship\" to \"process and communication\" — is the classic fingerprint of a team that has stopped feeling safe to take risks and is now investing energy in self-protection. When engineers start optimizing for defensibility (process, documentation of decisions, communication trails), throughput drops and the most marketable people leave first.\n\n**E3:** # Primary Diagnosis: Loss of Psychological Safety (Option C)\n\nThe timeline is the single most important piece of evidence here, and it points decisively to Option C. A layoff occurred 4 months ago. Decline and attrition have accelerated over the past 6 months, with the steepest effects landing *after* the layoff.\n\n**E4:** # Primary Diagnosis: Option C — Loss of Psychological Safety Following the Layoff\n\nThe timeline is the strongest signal. A layoff occurred 4 months ago; the decline has unfolded over 6 months but accelerated in a way consistent with a discrete trust-rupture event. The retro shift — from \"what to ship\" to \"process and communication\" — is the canonical fingerprint of a team that no longer feels safe taking risks, raising concerns directly, or trusting that delivery effort will be reciprocated.\n\n**E5:** # Primary Diagnosis: Option C — Loss of Psychological Safety\n\nThe timing is the strongest signal. The layoff occurred 4 months ago; the decline became visible over the last 6 months (with the steepest indicators—senior departures and milestone misses—concentrated in the most recent two quarters). Layoffs are the single most common trigger for the exact symptom cluster described here, and the sequencing fits cleanly.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E2, E5\nTriad 2: E2, E3, E5\nTriad 3: E1, E2, E4\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'.",
+  "model_id_requested": "anthropic/claude-opus-4.7",
+  "model_id_used": "anthropic/claude-opus-4.7",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 4005,
+  "timestamp_iso": "2026-05-22T11:26:34.135904",
+  "raw_response_content": "Triad 1 (E1, E2, E5):\nLeft pole: Explains mechanism of defensive behavior in engineers\nRight pole: States diagnosis with statistical/base-rate justification\n\nTriad 2 (E2, E3, E5):\nLeft pole: Cites retro language shift as fingerprint\nRight pole: Relies solely on timeline and attrition sequencing\n\nTriad 3 (E1, E2, E4):\nLeft pole: Frames retro shift as defensive scaffolding behavior\nRight pole: Frames retro shift as loss of risk-taking trust",
+  "raw_response_full": {
+    "id": "gen-1779445590-3ztcgCgBE6xzGWsvoQxe",
+    "object": "chat.completion",
+    "created": 1779445590,
+    "model": "anthropic/claude-4.7-opus-20260416",
+    "provider": "Anthropic",
+    "system_fingerprint": null,
+    "service_tier": "standard",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "Triad 1 (E1, E2, E5):\nLeft pole: Explains mechanism of defensive behavior in engineers\nRight pole: States diagnosis with statistical/base-rate justification\n\nTriad 2 (E2, E3, E5):\nLeft pole: Cites retro language shift as fingerprint\nRight pole: Relies solely on timeline and attrition sequencing\n\nTriad 3 (E1, E2, E4):\nLeft pole: Frames retro shift as defensive scaffolding behavior\nRight pole: Frames retro shift as loss of risk-taking trust",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1134,
+      "completion_tokens": 193,
+      "total_tokens": 1327,
+      "cost": 0.010495,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.010495,
+        "upstream_inference_prompt_cost": 0.00567,
+        "upstream_inference_completions_cost": 0.004825
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 1134,
+    "completion_tokens": 193,
+    "total_tokens": 1327,
+    "cost": 0.010495,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.010495,
+      "upstream_inference_prompt_cost": 0.00567,
+      "upstream_inference_completions_cost": 0.004825
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 0,
+  "cost_usd": 0.010495,
+  "parsed_summary": "parsed 3/3 constructs",
+  "request_payload": {
+    "model": "anthropic/claude-opus-4.7",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+      },
+      {
+        "role": "user",
+        "content": "You are presented with 5 anonymous responses to the same brief. They are labeled E1 through E5.\n\n**E1:** # Primary Diagnosis: Option C — Loss of Psychological Safety Following the Layoff\n\nThe temporal evidence is the strongest signal here. A high-performing team was delivering well, then a layoff occurred 4 months ago, and within that window we see: senior voluntary attrition, missed milestones, and—most diagnostically—a shift in retro themes from \"what to ship next\" to \"process and communication.\" That linguistic shift is the fingerprint of a team that no longer feels safe taking ownership of outcomes and is instead negotiating defensive scaffolding. Why this beats the alternatives:\n\n- **Burnout...\n\n**E2:** # Primary Diagnosis: Option C — Loss of Psychological Safety Post-Layoff\n\nThe timing is the decisive signal. A layoff occurred 4 months ago; performance and retention deteriorated over 6 months but the *shift in retro themes* — from \"what to ship\" to \"process and communication\" — is the classic fingerprint of a team that has stopped feeling safe to take risks and is now investing energy in self-protection. When engineers start optimizing for defensibility (process, documentation of decisions, communication trails), throughput drops and the most marketable people leave first.\n\n**E3:** # Primary Diagnosis: Loss of Psychological Safety (Option C)\n\nThe timeline is the single most important piece of evidence here, and it points decisively to Option C. A layoff occurred 4 months ago. Decline and attrition have accelerated over the past 6 months, with the steepest effects landing *after* the layoff.\n\n**E4:** # Primary Diagnosis: Option C — Loss of Psychological Safety Following the Layoff\n\nThe timeline is the strongest signal. A layoff occurred 4 months ago; the decline has unfolded over 6 months but accelerated in a way consistent with a discrete trust-rupture event. The retro shift — from \"what to ship\" to \"process and communication\" — is the canonical fingerprint of a team that no longer feels safe taking risks, raising concerns directly, or trusting that delivery effort will be reciprocated.\n\n**E5:** # Primary Diagnosis: Option C — Loss of Psychological Safety\n\nThe timing is the strongest signal. The layoff occurred 4 months ago; the decline became visible over the last 6 months (with the steepest indicators—senior departures and milestone misses—concentrated in the most recent two quarters). Layoffs are the single most common trigger for the exact symptom cluster described here, and the sequencing fits cleanly.\n\nYour task: for each of the following triads of 3 responses, identify a single bipolar construct that distinguishes them. Specifically, identify how TWO of the three are similar to each other in a way that distinguishes them from the THIRD. Name the two poles of that dimension.\n\nTriads to analyze:\nTriad 1: E1, E2, E5\nTriad 2: E2, E3, E5\nTriad 3: E1, E2, E4\n\nFor each triad, output EXACTLY this format:\nTriad N:\nLeft pole: <short phrase, max 12 words>\nRight pole: <short phrase, max 12 words>\n\nBe specific. Avoid generic dichotomies like 'good vs bad'."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 2000
+  }
+}

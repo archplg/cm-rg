@@ -1,0 +1,106 @@
+{
+  "cell_id": "G_N_run1",
+  "task": "G",
+  "condition": "N",
+  "run_idx": 1,
+  "phase": "phase1_freeresponse",
+  "model_short_name": "M1",
+  "persona_or_neutral": "neutral",
+  "system_prompt": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation.",
+  "user_prompt": "# Task G-10: ICU triage protocol under sustained capacity overflow (extended)\n\n## Context\n\nSame as Task G: regional health system, 240 ICU beds, 6 weeks of overflow, exhausted staff, need formal triage protocol within 7 days. Ten candidate protocols instead of the original 5. **Choose one as the adopted protocol.**\n\n## Options\n\n**Option A: Predicted short-term survival** - SOFA score + 28-day survival prediction as sole ranking.\n\n**Option B: Predicted long-term outcome** - SOFA + QALY-weighted post-recovery prediction.\n\n**Option C: First-come-first-served with medical floor** - procedural fairness, minimal discretion, no withdrawal except medical futility.\n\n**Option D: Multi-principle scoring with lottery on ties** - survival 40%, life-cycle 20%, instrumental value 20%, pandemic factors 20%, lottery on ties.\n\n**Option E: Categorical exclusion + lottery for the rest** - small list of medical exclusions, then daily lottery among eligible.\n\n**Option F: Patient-and-family co-decision** - admission requires multidisciplinary team + patient/proxy decision. Withdrawal requires consensus including family. Outcomes: dignified; aligns with autonomy ethics; reduces moral injury via shared responsibility. Risks: slow; emotional burden on families; outcomes depend on family resources; resource-intensive for clinical team.\n\n**Option G: Trial-of-therapy with mandated time limits** - everyone admitted for trial period (e.g., 5-7 days). Withdrawal only after pre-defined time without improvement, evaluated against pre-defined criteria. Outcomes: avoids initial exclusion; transparent timeline; ethically defensible. Risks: still requires withdrawal decisions; can prolong suffering; uses bed days that might save more lives elsewhere.\n\n**Option H: Tiered system based on resource scarcity** - dynamic protocol: at <80% capacity use Option C, 80-95% switch to Option A, >95% switch to Option D. Re-evaluate weekly. Outcomes: adaptive to actual scarcity; matches ethical framework to severity; precedent in disaster medicine. Risks: complex to implement; staff training burden; tier transitions are politically explosive moments.\n\n**Option I: Community-deliberated framework** - convene a citizen jury (25-40 community members, diverse) over a weekend to deliberate and propose criteria. Adopt their recommendation. Outcomes: democratic legitimacy; reflects community values; precedent in Oregon health care priorities. Risks: takes >7 days; jury may produce internally inconsistent framework; may produce framework medical leadership cannot endorse.\n\n**Option J: Pre-pandemic preference registry** - patients pre-register their preferences for ICU care under scarcity (full intervention vs comfort-focused). During overflow, registered preferences guide allocation. Default for unregistered = full intervention. Outcomes: respects individual autonomy ex ante; transparent; preserves trust. Risks: registration uptake will be biased (well-resourced patients register more); changes nature of medical encounter into bureaucratic; doesn't apply to acute presentations.\n\n## What to provide\n\nChoose one as the adopted protocol. Provide 200-400 words of reasoning. Advocate; do not enumerate. Address: why this protocol, why not the most compelling alternative, what specific patient case would make you regret this choice.\n\n\nProvide your recommendation in 200-400 words. Advocate for a specific position; do not enumerate all options.",
+  "model_id_requested": "anthropic/claude-opus-4.7",
+  "model_id_used": "anthropic/claude-opus-4.7",
+  "used_fallback": false,
+  "attempts": 1,
+  "latency_ms": 17016,
+  "timestamp_iso": "2026-05-22T22:51:32.179404",
+  "raw_response_content": "# Recommendation: Option H (Tiered System Based on Resource Scarcity)\n\nAdopt the tiered protocol. The fundamental error in this debate is treating triage as a single ethical question when it is actually three questions stacked on top of each other, each activated at different scarcity levels. At 75% capacity, first-come-first-served with a medical futility floor is not only adequate—it is *ethically superior* because it preserves clinical judgment, patient trust, and the ordinary doctor-patient relationship. At 90%, that approach starts costing identifiable lives, and a survival-prediction screen becomes defensible. Above 95%, when every admission means another patient denied, the moral weight shifts toward multi-principle scoring that can be defended publicly. Option H is the only protocol honest about the fact that the ethics of rationing change with the degree of rationing.\n\nThe most compelling alternative is **Option G (trial-of-therapy)**, and I take it seriously because it largely avoids the front-door exclusion that traumatizes staff and families. But G has a fatal arithmetic problem under *sustained six-week* overflow: trial periods consume the scarce resource they are supposed to allocate. A 5-day trial for a patient with 10% survival odds occupies a bed that could have served two patients with 60% odds. G works for acute surges; it collapses under chronic scarcity, which is what we have.\n\nI also reject Option D as a standalone because applying multi-principle scoring at 70% capacity is ethically grotesque—rationing when you don't need to ration. And Option I's citizen jury, while legitimacy-enhancing, violates the 7-day constraint and risks producing something unimplementable.\n\n**The case that would make me regret this**: A 34-year-old mother of two presents on the Tuesday we transition from Tier 2 to Tier 3 because census crossed 95%. Under Monday's rules she gets admitted on survival prediction alone; under Tuesday's rules her instrumental-value score (unemployed, no frontline role) drops her below a 71-year-old physician with worse survival odds. She dies. Her family learns the threshold moved 18 hours before her arrival. The tier-transition moment is where this protocol's intellectual honesty becomes its operational cruelty—and I cannot fully defend that to her children. I accept this cost because the alternative is pretending the ethics don't actually change when the scarcity does.",
+  "raw_response_full": {
+    "id": "gen-1779486686-PSQ37fPL6CfxghKuEWMU",
+    "object": "chat.completion",
+    "created": 1779486686,
+    "model": "anthropic/claude-4.7-opus-20260416",
+    "provider": "Anthropic",
+    "system_fingerprint": null,
+    "service_tier": "standard",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "# Recommendation: Option H (Tiered System Based on Resource Scarcity)\n\nAdopt the tiered protocol. The fundamental error in this debate is treating triage as a single ethical question when it is actually three questions stacked on top of each other, each activated at different scarcity levels. At 75% capacity, first-come-first-served with a medical futility floor is not only adequate—it is *ethically superior* because it preserves clinical judgment, patient trust, and the ordinary doctor-patient relationship. At 90%, that approach starts costing identifiable lives, and a survival-prediction screen becomes defensible. Above 95%, when every admission means another patient denied, the moral weight shifts toward multi-principle scoring that can be defended publicly. Option H is the only protocol honest about the fact that the ethics of rationing change with the degree of rationing.\n\nThe most compelling alternative is **Option G (trial-of-therapy)**, and I take it seriously because it largely avoids the front-door exclusion that traumatizes staff and families. But G has a fatal arithmetic problem under *sustained six-week* overflow: trial periods consume the scarce resource they are supposed to allocate. A 5-day trial for a patient with 10% survival odds occupies a bed that could have served two patients with 60% odds. G works for acute surges; it collapses under chronic scarcity, which is what we have.\n\nI also reject Option D as a standalone because applying multi-principle scoring at 70% capacity is ethically grotesque—rationing when you don't need to ration. And Option I's citizen jury, while legitimacy-enhancing, violates the 7-day constraint and risks producing something unimplementable.\n\n**The case that would make me regret this**: A 34-year-old mother of two presents on the Tuesday we transition from Tier 2 to Tier 3 because census crossed 95%. Under Monday's rules she gets admitted on survival prediction alone; under Tuesday's rules her instrumental-value score (unemployed, no frontline role) drops her below a 71-year-old physician with worse survival odds. She dies. Her family learns the threshold moved 18 hours before her arrival. The tier-transition moment is where this protocol's intellectual honesty becomes its operational cruelty—and I cannot fully defend that to her children. I accept this cost because the alternative is pretending the ethics don't actually change when the scarcity does.",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1250,
+      "completion_tokens": 790,
+      "total_tokens": 2040,
+      "cost": 0.026,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.026,
+        "upstream_inference_prompt_cost": 0.00625,
+        "upstream_inference_completions_cost": 0.01975
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 1250,
+    "completion_tokens": 790,
+    "total_tokens": 2040,
+    "cost": 0.026,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.026,
+      "upstream_inference_prompt_cost": 0.00625,
+      "upstream_inference_completions_cost": 0.01975
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "tokens_reasoning": 0,
+  "cost_usd": 0.026000000000000002,
+  "parsed_summary": "free_response captured (2439 chars)",
+  "request_payload": {
+    "model": "anthropic/claude-opus-4.7",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an analyst. Read the brief carefully and provide your best-reasoned recommendation."
+      },
+      {
+        "role": "user",
+        "content": "# Task G-10: ICU triage protocol under sustained capacity overflow (extended)\n\n## Context\n\nSame as Task G: regional health system, 240 ICU beds, 6 weeks of overflow, exhausted staff, need formal triage protocol within 7 days. Ten candidate protocols instead of the original 5. **Choose one as the adopted protocol.**\n\n## Options\n\n**Option A: Predicted short-term survival** - SOFA score + 28-day survival prediction as sole ranking.\n\n**Option B: Predicted long-term outcome** - SOFA + QALY-weighted post-recovery prediction.\n\n**Option C: First-come-first-served with medical floor** - procedural fairness, minimal discretion, no withdrawal except medical futility.\n\n**Option D: Multi-principle scoring with lottery on ties** - survival 40%, life-cycle 20%, instrumental value 20%, pandemic factors 20%, lottery on ties.\n\n**Option E: Categorical exclusion + lottery for the rest** - small list of medical exclusions, then daily lottery among eligible.\n\n**Option F: Patient-and-family co-decision** - admission requires multidisciplinary team + patient/proxy decision. Withdrawal requires consensus including family. Outcomes: dignified; aligns with autonomy ethics; reduces moral injury via shared responsibility. Risks: slow; emotional burden on families; outcomes depend on family resources; resource-intensive for clinical team.\n\n**Option G: Trial-of-therapy with mandated time limits** - everyone admitted for trial period (e.g., 5-7 days). Withdrawal only after pre-defined time without improvement, evaluated against pre-defined criteria. Outcomes: avoids initial exclusion; transparent timeline; ethically defensible. Risks: still requires withdrawal decisions; can prolong suffering; uses bed days that might save more lives elsewhere.\n\n**Option H: Tiered system based on resource scarcity** - dynamic protocol: at <80% capacity use Option C, 80-95% switch to Option A, >95% switch to Option D. Re-evaluate weekly. Outcomes: adaptive to actual scarcity; matches ethical framework to severity; precedent in disaster medicine. Risks: complex to implement; staff training burden; tier transitions are politically explosive moments.\n\n**Option I: Community-deliberated framework** - convene a citizen jury (25-40 community members, diverse) over a weekend to deliberate and propose criteria. Adopt their recommendation. Outcomes: democratic legitimacy; reflects community values; precedent in Oregon health care priorities. Risks: takes >7 days; jury may produce internally inconsistent framework; may produce framework medical leadership cannot endorse.\n\n**Option J: Pre-pandemic preference registry** - patients pre-register their preferences for ICU care under scarcity (full intervention vs comfort-focused). During overflow, registered preferences guide allocation. Default for unregistered = full intervention. Outcomes: respects individual autonomy ex ante; transparent; preserves trust. Risks: registration uptake will be biased (well-resourced patients register more); changes nature of medical encounter into bureaucratic; doesn't apply to acute presentations.\n\n## What to provide\n\nChoose one as the adopted protocol. Provide 200-400 words of reasoning. Advocate; do not enumerate. Address: why this protocol, why not the most compelling alternative, what specific patient case would make you regret this choice.\n\n\nProvide your recommendation in 200-400 words. Advocate for a specific position; do not enumerate all options."
+      }
+    ],
+    "temperature": 1.0,
+    "max_tokens": 3000
+  }
+}

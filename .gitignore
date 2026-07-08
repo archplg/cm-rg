@@ -1,0 +1,113 @@
+# ============================================================================
+# Secrets - NEVER commit these
+# ============================================================================
+.env
+.env.*
+*.key
+*api_key*
+*API_KEY*
+OPENROUTER_API_KEY
+
+# ============================================================================
+# Large raw data - published on HuggingFace separately
+# (keeping aggregated results/analysis_results.json in repo)
+# ============================================================================
+results_phase2l/phase1_free_response/
+results_phase2l/phase2_anonymized/
+results_phase2l/phase3_constructs/
+results_phase2l/phase4_ratings/
+results_phase2l/_backups/
+results_phase2l/logs/
+results_phase2l/logs_phase2l/
+results_phase2l_backup_*/
+
+# Phase 2J/2K legacy raw cells (also published on HF)
+results/
+results_pilot/
+results_extended/
+results_phase2h/
+results_phase2j/
+results_phase2k/
+
+# Pre-flight checkpoints
+pre_flight/
+
+# But KEEP these small aggregate files:
+!results_phase2l/analysis_results.json
+!results_phase2l/analysis_summary.md
+!results_phase2l/state.json
+!results_phase2l/report_phase2l.html
+!results_phase2l/archplg_phase2l_map.html
+
+# ============================================================================
+# Python
+# ============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtualenv
+venv/
+env/
+.venv/
+.env/
+ENV/
+
+# ============================================================================
+# IDE / editor
+# ============================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ============================================================================
+# Testing / coverage
+# ============================================================================
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# ============================================================================
+# Jupyter
+# ============================================================================
+.ipynb_checkpoints/
+*.ipynb
+
+# ============================================================================
+# OS
+# ============================================================================
+*.log
+*.tmp
+*.bak
+*.orig
+
+# ============================================================================
+# Local outputs (from user's uploads, debug dumps)
+# ============================================================================
+uploads/
+outputs/
+Архипелаг*.html
+cleanup_bad_cells.ps1
+cleanup_phase4_unsalvageable.ps1
