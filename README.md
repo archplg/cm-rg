@@ -5,7 +5,7 @@ A methodology and dataset for measuring evaluative diversity across frontier lan
 [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Code License: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE-CODE)
 [![Dataset](https://img.shields.io/badge/HuggingFace-Dataset-yellow.svg)](huggingface.co/datasets/sergeydolgov/cross-model-repertory-grid)
-[![DOI](https://img.shields.io/badge/DOI-pending-lightgrey.svg)](10.5281/zenodo.20717308)
+[![DOI](https://img.shields.io/badge/DOI-pending-lightgrey.svg)](https://doi.org/10.5281/zenodo.20717308)
 [![arXiv](https://img.shields.io/badge/arXiv-pending-red.svg)](#)
 
 ## What this is
