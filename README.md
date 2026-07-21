@@ -16,6 +16,11 @@ This repository contains the full pipeline, the elicited dataset (codename "Arch
 
 ---
 
+[![Interactive dashboard + Papers: ](http://crossmodelrg.org)
+
+<img src=http://crossmodelrg.org/36.jpg>
+
+
 ## Phase 2L (June 2026) - frontier scale
 
 **Largest empirical M×M cross-model rating study to date.**
