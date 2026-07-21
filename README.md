@@ -16,7 +16,7 @@ This repository contains the full pipeline, the elicited dataset (codename "Arch
 
 ---
 
-[![Interactive dashboard + Papers: ](http://crossmodelrg.org)
+Interactive dashboard + Papers: http://crossmodelrg.org
 
 <img src=http://crossmodelrg.org/36.jpg>
 
