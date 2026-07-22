@@ -4,8 +4,8 @@ A methodology and dataset for measuring evaluative diversity across frontier lan
 
 [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Code License: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE-CODE)
-[![Dataset](https://img.shields.io/badge/HuggingFace-Dataset-yellow.svg)](https://huggingface.co/datasets/archplg/cm-rg-phase2l-raw)
-[![DOI](https://img.shields.io/badge/DOI-pending-lightgrey.svg)](#)
+[![Dataset](https://img.shields.io/badge/HuggingFace-Dataset-yellow.svg)](huggingface.co/datasets/sergeydolgov/cross-model-repertory-grid)
+[![DOI](https://img.shields.io/badge/DOI-pending-lightgrey.svg)](https://doi.org/10.5281/zenodo.20717308)
 [![arXiv](https://img.shields.io/badge/arXiv-pending-red.svg)](#)
 
 English · [Русский](README.ru.md)
@@ -25,6 +25,11 @@ See [`examples/claude-family-mini/`](examples/claude-family-mini/REPORT.md) for 
 The skill also closes the loop this methodology was built for: **diversity-aware orchestration**. Run a grid on *your* task, then `scripts/compose_panel.py` recommends which models to combine - the max-diversity panel, agreement blocs ("three Western flagships = one voice"), how many independent voices you actually have, which model should synthesize, and calibration offsets for aggregating their scores. Demo output: [`examples/claude-family-mini/PANEL.md`](examples/claude-family-mini/PANEL.md).
 
 ---
+
+Interactive dashboard + Papers: http://crossmodelrg.org
+
+<img src=http://crossmodelrg.org/36.jpg>
+
 
 ## Phase 2L (June 2026) - frontier scale
 
