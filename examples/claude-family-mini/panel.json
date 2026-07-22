@@ -1,0 +1,60 @@
+{
+  "task": "K (M&A under regulatory uncertainty)",
+  "date": "2026-07-21",
+  "pool": [
+    "claude-haiku",
+    "claude-sonnet",
+    "claude-opus",
+    "claude-fable"
+  ],
+  "panel": [
+    "claude-haiku",
+    "claude-fable",
+    "claude-sonnet"
+  ],
+  "panel_size": 3,
+  "effective_independent_voices": 2,
+  "pool_mean_r": 0.633,
+  "panel_mean_r": 0.514,
+  "agreement_blocs": [
+    [
+      "claude-sonnet",
+      "claude-opus",
+      "claude-fable"
+    ],
+    [
+      "claude-haiku"
+    ]
+  ],
+  "bloc_threshold_r": 0.7,
+  "synthesizer_suggestion": "claude-opus",
+  "centrality_mean_r": {
+    "claude-haiku": 0.347,
+    "claude-sonnet": 0.713,
+    "claude-opus": 0.751,
+    "claude-fable": 0.72
+  },
+  "calibration_offsets": {
+    "claude-haiku": 0.152,
+    "claude-sonnet": 0.125,
+    "claude-opus": -0.157,
+    "claude-fable": -0.12
+  },
+  "duplicate_warnings": [
+    {
+      "pair": [
+        "claude-fable",
+        "claude-sonnet"
+      ],
+      "r": 0.921
+    }
+  ],
+  "pairwise_r": {
+    "claude-haiku x claude-sonnet": 0.316,
+    "claude-haiku x claude-opus": 0.42,
+    "claude-haiku x claude-fable": 0.306,
+    "claude-sonnet x claude-opus": 0.903,
+    "claude-sonnet x claude-fable": 0.921,
+    "claude-opus x claude-fable": 0.931
+  }
+}

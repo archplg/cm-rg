@@ -1,6 +1,10 @@
 # ============================================================================
-# Secrets - NEVER commit these
+# CM-RG public repository .gitignore
+# Keeps the clean project; drops internal artifacts, raw data (on HuggingFace),
+# a different project's files (preezmo), and timestamped bundles.
 # ============================================================================
+
+# ── Secrets ──
 .env
 .env.*
 *.key
@@ -8,10 +12,30 @@
 *API_KEY*
 OPENROUTER_API_KEY
 
-# ============================================================================
-# Large raw data - published on HuggingFace separately
-# (keeping aggregated results/analysis_results.json in repo)
-# ============================================================================
+# ── Unrelated project (Preezmo) accidentally committed ──
+_preezmo_*.json
+preezmo_prism_v*.html
+
+# ── Large archives / stray blobs ──
+*.zip
+*.tar.gz
+zipqfbjF
+supplementary_materials.tar.gz
+
+# ── Timestamped internal bundles / prep dirs ──
+FINAL_BUNDLE_*/
+FOR_CLAUDE_*/
+
+# ── Raw phase data (published on HuggingFace) ──
+results/
+results_pilot/
+results_extended/
+results_phase2f/
+results_phase2h/
+results_phase2h_extended/
+results_phase2j/
+results_phase2k/
+results_minitest/
 results_phase2l/phase1_free_response/
 results_phase2l/phase2_anonymized/
 results_phase2l/phase3_constructs/
@@ -21,129 +45,100 @@ results_phase2l/logs/
 results_phase2l/logs_phase2l/
 results_phase2l_backup_*/
 
-# Phase 2J/2K legacy raw cells (also published on HF)
-results/
-results_pilot/
-results_extended/
-results_phase2f/
-results_phase2h/
-results_phase2h_extended/
-results_phase2j/
-results_phase2k/
-
-# Legacy logs from previous phases
+# ── Legacy logs ──
 logs/
-logs_pilot/
-logs_extended/
-logs_phase2f/
-logs_phase2h/
-logs_phase2h_extended/
-logs_phase2j/
-logs_phase2k/
+logs_*/
 
-# Legacy analysis outputs
-analysis/
-paper_outputs/
+# ── Internal working folders ──
+work/
+_отчет/
+_отчёт/
 ai_audit/
 coach_kit/
 executive_briefing/
 operator_outputs/
 release_bundle/
-
-# Large supplementary archives (use Git LFS if needed)
-*.tar.gz
-*.zip
-supplementary_materials.tar.gz
-
-# Timestamped bundles and prep directories (auto-generated)
-FINAL_BUNDLE_*/
-FOR_CLAUDE_*/
-diagnose_*/
-logs_minitest/
-construct_analysis/
-hf_release/
-hf_dataset/
 dataset_release/
-
-# Pre-flight checkpoints
+hf_dataset/
+hf_release/
 pre_flight/
+construct_analysis/
+diagnose_write_test/
+_launch_kit/
 
-# But KEEP these small aggregate files:
-!results_phase2l/analysis_results.json
-!results_phase2l/analysis_summary.md
-!results_phase2l/state.json
-!results_phase2l/report_phase2l.html
-!results_phase2l/archplg_phase2l_map.html
+# ── Fable model (dropped from the study - see config comments) ──
+fable_run_result.json
+fable_run_result.csv
+fable_phase1_result.json
+fable_probe_result.md
+fable_phase1.py
+fable_probe.py
+fable_run.py
+seed_state_fable.py
+check_fable.py
 
-# ============================================================================
-# Python
-# ============================================================================
+# ── Internal dev / test / one-off scripts (not for the public repo) ──
+check3_parser_test.py
+check4_atomic_writes_test.py
+check6_auto_retry_test.py
+check7_post_run_verify.py
+diagnose_write_corruption.py
+diagnose_write_corruption_report.md
+debug_failing_models.py
+recover_phase2f.py
+reparse_phase3.py
+reparse_phase4.py
+triage_phase2l.py
+dry_run_phase2l.py
+search_phase2l_alternatives.py
+show_recent_state.py
+serve_dashboard.py
+serve_map.py
+random17_experiment.py
+reshoot_5cells.ps1
+reshoot_full_output.log
+cleanup_bad_cells.ps1
+cleanup_phase4_unsalvageable.ps1
+prereq_check.ps1
+run_all.ps1
+start_phase4.ps1
+cleanup_and_publish.ps1
+CLEANUP_README.ru.md
+
+# ── Stray blobs / redundant internal docs ──
+_per_task_real.json
+README_AUTO.md
+AUDIT_REPORT.md
+АНАЛИТИЧЕСКИЙ_ОТЧЁТ_ДЛЯ_ВСЕХ_v2.md
+визуализации_отчёта.html
+monitor_dashboard.html
+flow_diagram.html
+repgrid_dashboard_v12.html
+results_phase2l/report_phase2l.html
+
+# ── Incomplete experiment run (raw model dumps) ──
+experiments/reliability-full/run_v1/
+experiments/**/run_*/raw/
+
+# ── Python / OS ──
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
 .Python
 build/
-develop-eggs/
 dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
 *.egg-info/
-.installed.cfg
-*.egg
-
-# Virtualenv
+.venv/
 venv/
 env/
-.venv/
-.env/
 ENV/
-
-# ============================================================================
-# IDE / editor
-# ============================================================================
 .vscode/
 .idea/
 *.swp
-*.swo
-*~
 .DS_Store
 Thumbs.db
-
-# ============================================================================
-# Testing / coverage
-# ============================================================================
-.pytest_cache/
-.coverage
-htmlcov/
-.tox/
-
-# ============================================================================
-# Jupyter
-# ============================================================================
-.ipynb_checkpoints/
-*.ipynb
-
-# ============================================================================
-# OS
-# ============================================================================
 *.log
 *.tmp
 *.bak
-*.orig
-
-# ============================================================================
-# Local outputs (from user's uploads, debug dumps)
-# ============================================================================
 uploads/
 outputs/
-Архипелаг*.html
-cleanup_bad_cells.ps1
-cleanup_phase4_unsalvageable.ps1

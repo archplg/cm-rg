@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Interactive AI Council - F_P_run2</title>
+<script src="https://unpkg.com/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
+<script src="https://unpkg.com/layout-base@2.0.1/layout-base.js"></script>
+<script src="https://unpkg.com/cose-base@2.2.0/cose-base.js"></script>
+<script src="https://unpkg.com/cytoscape-cose-bilkent@4.1.0/cytoscape-cose-bilkent.js"></script>
+<style>
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Georgia, sans-serif;
+       margin: 0; padding: 0; background: #f4f1e8; color: #1a1a1a; }
+.header { background: #2b3a55; color: white; padding: 14px 24px; }
+.header h1 { margin: 0; font-size: 1.2em; }
+.header .subtitle { font-size: 0.85em; opacity: 0.85; margin-top: 3px; }
+.layout { display: flex; height: calc(100vh - 60px); }
+#graph-container { flex: 1; background: #f9f7f0; position: relative; }
+#cy { width: 100%; height: 100%; }
+.legend { position: absolute; bottom: 16px; left: 16px;
+           background: rgba(255,255,255,0.96); padding: 12px 16px;
+           border-radius: 6px; border: 1px solid #d8d0bf; font-size: 0.82em;
+           max-width: 280px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.legend h3 { margin: 0 0 8px; font-size: 0.9em; color: #2b3a55; }
+.legend-row { display: flex; align-items: center; margin: 4px 0; }
+.legend-swatch { display: inline-block; width: 24px; height: 4px; margin-right: 8px;
+                  border-radius: 2px; }
+.legend-dot { display: inline-block; width: 14px; height: 14px; margin-right: 8px;
+               border-radius: 50%; }
+.help { position: absolute; top: 16px; left: 16px;
+         background: rgba(255,255,255,0.96); padding: 10px 14px;
+         border-radius: 6px; border: 1px solid #d8d0bf; font-size: 0.8em;
+         color: #555; max-width: 320px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.controls { position: absolute; top: 16px; right: 16px;
+             background: rgba(255,255,255,0.96); padding: 10px 14px;
+             border-radius: 6px; border: 1px solid #d8d0bf; font-size: 0.85em;
+             box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.controls button { display: block; width: 100%; padding: 6px 10px; margin: 3px 0;
+                    background: white; border: 1px solid #c8a45c; border-radius: 4px;
+                    cursor: pointer; font-size: 0.9em; }
+.controls button.active { background: #c8a45c; color: white; }
+.controls button:hover { background: #e6dfc9; }
+.controls button.active:hover { background: #b8945a; }
+
+#info-panel { width: 420px; background: white; border-left: 1px solid #d8d0bf;
+               overflow-y: auto; padding: 20px 24px; }
+#info-panel h2 { font-size: 1.1em; margin: 0 0 8px; color: #2b3a55;
+                  border-bottom: 2px solid #c8a45c; padding-bottom: 6px; }
+#info-panel h3 { font-size: 0.95em; margin: 18px 0 6px; color: #2b3a55; }
+#info-panel h4 { font-size: 0.85em; margin: 12px 0 4px; color: #555;
+                  text-transform: uppercase; letter-spacing: 0.5px; }
+#info-panel .placeholder { color: #888; font-style: italic; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 11px;
+          font-size: 0.78em; font-weight: 600; color: white; margin-right: 4px; }
+.kv { margin: 6px 0; font-size: 0.92em; }
+.kv strong { color: #555; }
+.response-text { font-size: 0.88em; line-height: 1.55; color: #333;
+                  background: #faf8f1; padding: 12px 14px; border-radius: 4px;
+                  border-left: 3px solid #c8a45c; }
+.construct-card { font-size: 0.85em; margin: 6px 0; padding: 8px 11px;
+                   background: #faf8f1; border-radius: 4px;
+                   border-left: 3px solid #666; }
+.construct-pole { display: inline; padding: 2px 6px; background: white;
+                   border-radius: 3px; border: 1px solid #e6dfc9;
+                   font-family: Georgia, serif; }
+.rating-grid { display: grid; grid-template-columns: 60px repeat(5, 1fr);
+                gap: 2px; margin: 8px 0; font-size: 0.78em; }
+.rg-cell { padding: 4px 6px; background: #f4f1e8; text-align: center;
+            border-radius: 3px; }
+.rg-cell.head { background: #2b3a55; color: white; font-weight: 600; }
+.rg-cell.diff-high { background: #fdc; }
+.rg-cell.diff-med { background: #ffe9c0; }
+.rg-cell.diff-low { background: #e2efd9; }
+.alert-banner { padding: 10px 14px; border-radius: 5px; margin: 10px 0;
+                 font-size: 0.9em; }
+.alert-danger { background: #fdf0ed; border-left: 4px solid #c44;
+                 color: #6b1313; }
+.alert-warn { background: #fdfaf2; border-left: 4px solid #c8a45c;
+               color: #6b4920; }
+.alert-ok { background: #f0f7ed; border-left: 4px solid #3a7d44;
+             color: #1f4a26; }
+hr { border: none; border-top: 1px solid #e6dfc9; margin: 14px 0; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>AI Council - Interactive View</h1>
+  <div class="subtitle">Cell <strong>F_P_run2</strong> &middot; Task F &middot; persona framing</div>
+</div>
+
+<div class="layout">
+  <div id="graph-container">
+    <div id="cy"></div>
+
+    <div class="help">
+      <strong>How to explore:</strong><br>
+      &middot; Click a circle (agent) to see their full response and reasoning<br>
+      &middot; Click a connecting line to see <em>where</em> two agents disagreed<br>
+      &middot; Drag agents around if the layout is hard to read
+    </div>
+
+    <div class="controls">
+      <strong style="font-size: 0.85em; color: #555;">Layout</strong>
+      <button id="btn-cose" class="active">Force-directed</button>
+      <button id="btn-circle">Circle</button>
+      <button id="btn-grid">Grid</button>
+    </div>
+
+    <div class="legend">
+      <h3>Reading the network</h3>
+      <div><strong>Circle color</strong> = epistemological frame</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#0a558c"></span>Quantitative</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#2d8659"></span>Systems</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#8a5a00"></span>Engineering</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#882b6f"></span>Humanist</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#b03030"></span>Contrarian</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#666"></span>Neutral (no persona)</div>
+      <hr>
+      <div><strong>Line color</strong> = reasoning agreement</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#3a7d44"></span>RMSE &lt; 0.5 - aligned</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#c8a45c"></span>0.5-1.0 - moderate</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#c44"></span>&gt; 1.0 - substantial</div>
+      <hr>
+      <div style="color: #555; font-size: 0.92em">
+        <strong>Line thickness</strong> = relative agreement within this case<br>
+        <strong>RMSE</strong> = root-mean-square error on 7-point rating scale
+      </div>
+    </div>
+  </div>
+
+  <div id="info-panel">
+    <h2>Agents are split across options; no clear consensus to act on.</h2>
+
+    <div class="alert-banner alert-warn"><strong>Split panel.</strong> Agents disagree at the recommendation level. The network shows whose reasoning patterns cluster together.</div>
+
+    <div class="kv"><strong>Cell:</strong> F_P_run2</div>
+    <div class="kv"><strong>Task:</strong> F (persona framing)</div>
+    <div class="kv"><strong>Agents:</strong> 5</div>
+    <div class="kv"><strong>Reasoning RMSE (mean across pairs):</strong> 0.611</div>
+
+    <hr>
+
+    <div id="detail-area">
+      <div class="placeholder">
+        <p>Click an agent or a connecting line to see details here.</p>
+        <p>The colored circles are the LLM agents. The lines between them show how similarly they reasoned: thicker and greener means they rated the options in similar patterns, thinner and redder means they disagreed at the level of how they evaluated each option.</p>
+        <p>Hidden disagreement is the case where two agents recommend the same option but their connecting line is yellow or red - they agree on the answer but not on the reasoning. Click such a line to see exactly which dimensions they diverged on.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3>About this view</h3>
+    <p style="font-size: 0.85em; color: #555;">
+      The reasoning network shows behavioral disagreement, not topic disagreement.
+      Two agents with thick green connection rated the options similarly on every
+      construct elicited by the panel. Two agents with thin red connection
+      saw the options through different evaluative lenses - even if they
+      may have recommended the same option in the end.
+    </p>
+
+    <p style="font-size: 0.85em; color: #555;">
+      Generated by Archipelago. <em>The five voices are LLM analysts; this view is
+      decision support, not decision substitution.</em>
+    </p>
+  </div>
+</div>
+
+<script>
+const graphData = {"nodes": [{"data": {"id": "M1", "label": "M1", "persona": "Q", "persona_label": "Quantitative-Empiricist", "persona_color": "#0a558c", "recommendation": "?", "rec_color": "#cccccc", "model_id": "anthropic/claude-opus-4.7", "full_response": "**Recommendation: Option A \u2014 Mastery.**\n\nThe data argues for it. With $4M and one positioning shot, the dominant risk is not TAM ceiling; it's diffuse messaging that produces low conversion against a $1200 price point. Run the unit economics: at ~$4M budget, blended CAC tolerance is probably $200-400 to keep payback under a year. That requires conversion rates achievable only with high-intent buyers. The 200K serious hobbyist pool isn't a ceiling \u2014 it's a beachhead. Capturing 2% in year one is 4,000 units, ~$4.8M revenue, and \u2014 critically \u2014 4,000 users who actually use the device, generate content, and validate the technology publicly. Mastery buyers have demonstrated willingness-to-pay (Festool, Lie-Nielsen, SawStop all sustain premium pricing in this segment), measurable purchase intent signals (subscriptions, tool collections), and addressable channels with known CPMs.\n\nThe most plausible alternative is B (Therapy). I'd estimate it has higher expected revenue in year one \u2014 wellness TAM is 30-50x larger and price tolerance is real. But the expected value calculation has to include the variance and the tail. Therapy-framed hardware has a documented failure mode: Peloton-class usage cliffs, where 40-60% of units go dormant within 12 months (cf. Peloton churn data, Mirror's collapse, the Oura cohort retention curves). Dormant units kill referral loops, generate returns, and \u2014 fatally for a novel category \u2014 produce no public proof that the product works. You cannot build a defensible hardware company on aspirational purchases when the core claim (\"AI teaches your hands real skill\") requires demonstrated outcomes to be credible.\n\nMastery framing produces evidence. Serious makers post builds, review tools obsessively, and convert skeptics. That's free distribution with measurable attribution.\n\nThe company you become: a premium tools brand with deep technical credibility, expanding adjacently (other joinery, then metalwork, then ceramics) the way Shaper Tools or Glowforge expanded \u2014 slowly, defensibly, with pricing power. Five-year revenue ceiling is probably $80-150M ARR, not $1B. But probability of reaching $50M ARR is, I'd estimate, 35-45% under Mastery versus 15-25% under Therapy, where the modal outcome is a viral year followed by retention collapse.\n\nChoose the framing that generates evidence the product works. That's Mastery.", "rationale_snippet": "**Recommendation: Option A \u2014 Mastery.**", "constructs": [], "triads": [["E1", "E2", "E3"], ["E2", "E3", "E5"], ["E1", "E4", "E5"]]}}, {"data": {"id": "M2", "label": "M2", "persona": "S", "persona_label": "Systems-Strategist", "persona_color": "#2d8659", "recommendation": "?", "rec_color": "#cccccc", "model_id": "openai/gpt-5.5", "full_response": "Launch as **\u201cMastery\u201d \u2014 the path to true skill.**\n\nThis product\u2019s strongest strategic asset is not novelty; it is credibility. A $1200 device that physically guides someone through joinery will only become durable if early users believe it produces real competence, not just a pleasant experience. The first customer base should be people who care enough about woodworking to use it repeatedly, argue about it publicly, show their results, and teach the company what \u201cgood\u201d actually means. That creates the feedback loop you want: serious learners produce visible progress, visible progress creates trust, trust lowers the perceived risk of a new category.\n\nThe tempting alternative is the \u201cTherapy\u201d framing because the market is much larger and the cultural wave is obvious. But that path creates systemic fragility. It attracts buyers who want relief more than practice, which means lower usage, more disappointment, weaker proof, and a brand that depends on mood rather than demonstrated skill. You would be competing against every wellness ritual, not defining a new learning category. Worse, the product\u2019s real technical miracle\u2014the transfer of embodied craft knowledge\u2014gets diluted into ambience.\n\n\u201cMastery\u201d may look narrower, but it gives the company a stronger root system. The first five years should be about becoming the trusted interface between human hands, AI guidance, and real craft. Start with woodworking because it is specific, material, and culturally respected. Win the serious hobbyists, instructors, and craft schools first; let them become the legitimacy layer that later supports education, accessibility, gifting, and broader creative practice.\n\nThis means signing up to become a **skill company**, not a gadget company and not a wellness brand. The brand should feel exacting, warm, and earned: beautiful, but not precious; aspirational, but grounded in sawdust. If the company can own the sentence \u201cthis helps people become genuinely good with their hands,\u201d it can expand for a decade. If it launches as lifestyle, it may sell faster\u2014but learn less, retain less, and mean less.", "rationale_snippet": "Launch as **\u201cMastery\u201d \u2014 the path to true skill.**", "constructs": [{"id": "C_M2_1", "left": "Mastery through credible product performance", "right": "Dignity through inclusive future-of-work framing", "triad": ["E1", "E3", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Mastery through credible product performance\nRight pole: Dignity through inclusive future-of-work framing\n\nTriad 2:\nLeft pole: Downstream utilization as survival constraint\nRight p"}, {"id": "C_M2_2", "left": "Downstream utilization as survival constraint", "right": "Upstream acquisition economics as survival constraint", "triad": ["E1", "E2", "E4"], "raw_output_excerpt": "Triad 1:\nLeft pole: Mastery through credible product performance\nRight pole: Dignity through inclusive future-of-work framing\n\nTriad 2:\nLeft pole: Downstream utilization as survival constraint\nRight p"}, {"id": "C_M2_3", "left": "Mastery positioning as commercial launch wedge", "right": "Future-of-work positioning as ethical stakeholder commitment", "triad": ["E3", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Mastery through credible product performance\nRight pole: Dignity through inclusive future-of-work framing\n\nTriad 2:\nLeft pole: Downstream utilization as survival constraint\nRight p"}], "triads": [["E1", "E3", "E5"], ["E1", "E2", "E4"], ["E3", "E4", "E5"]]}}, {"data": {"id": "M3", "label": "M3", "persona": "E", "persona_label": "First-principles Engineer", "persona_color": "#8a5a00", "recommendation": "A", "rec_color": "#1f77b4", "model_id": "google/gemini-3.1-pro-preview", "full_response": "The binding constraint for a novel, $1200 hardware device is not top-of-funnel awareness; it is post-purchase utilization. If the first 5,000 units become expensive closet clutter, word-of-mouth dies, return rates spike, and the company folds. Therefore, we must select the launch identity that maximizes machine operating hours and generates tangible proof of efficacy. \n\nI recommend **Option A: Mastery**.\n\nLook at the actual mechanism: a physical actuator transferring proprioceptive data to human hands to produce tight joinery. It is, fundamentally, a skill-installation machine. The Mastery framing strips away lifestyle analogies and sells exactly what the hardware does. By targeting makers who already possess the ambition to build but lack the technique, you acquire a first cohort whose activation energy is already overcome. They will use the device repeatedly, produce finished objects, and document the results. This generates compounding, zero-cost mechanical validation.\n\nThe most financially tempting alternative, Option B (Therapy), optimizes for a massive TAM but fails on first principles. It attempts to address a psychological constraint (screen fatigue) using a mechanical solution (woodworking). This is a flawed analogy. An aspirational wellness buyer will purchase the $1200 device for the *idea* of it, experience the inevitable friction of physical labor, and abandon it. You cannot build a sustainable, high-capex hardware business on novelty shelfware. \n\nBy choosing Option A, you are signing up to become a precision tools company over the next five years, not a lifestyle brand. Your product roadmap will be dictated by engineering constraints\u2014adding more complex joinery pathways and material profiles\u2014rather than chasing cultural trends. This is the optimal trajectory. You establish a ruthless wedge in a passionate niche, prove the tactile-AI mechanism works in production, and build an impregnable moat based on actual skill transfer. \n\nSolve the hardest mechanical problem first: proving the machine works to the people most critical of its output. Focus on the core mechanism. Ignore the rest.", "rationale_snippet": "The binding constraint for a novel, $1200 hardware device is not top-of-funnel awareness; it is post-purchase utilization. If the first 5,000 units become expensive closet clutter, word-of-mouth dies, return rates spike, and the company folds. Therefore, we must select the launch identity that maxim", "constructs": [{"id": "C_M3_1", "left": "Isolating physical failure mechanisms in the product-user system", "right": "Optimizing for abstract ideological sentiment and narrative signaling", "triad": ["E1", "E2", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Isolating physical failure mechanisms in the product-user system\nRight pole: Optimizing for abstract ideological sentiment and narrative signaling\n\nTriad 2:\nLeft pole: Orienting ar"}, {"id": "C_M3_2", "left": "Orienting around verifiable physical utility and tangible user output", "right": "Orienting around theoretical social optics and external stakeholder validation", "triad": ["E2", "E3", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Isolating physical failure mechanisms in the product-user system\nRight pole: Optimizing for abstract ideological sentiment and narrative signaling\n\nTriad 2:\nLeft pole: Orienting ar"}], "triads": [["E1", "E2", "E5"], ["E2", "E3", "E5"], ["E2", "E3", "E4"]]}}, {"data": {"id": "M4", "label": "M4", "persona": "H", "persona_label": "Humanist-Ethicist", "persona_color": "#882b6f", "recommendation": "D", "rec_color": "#d62728", "model_id": "deepseek/deepseek-v4-pro", "full_response": "Option D: \"Future-of-work\" framing. This is the only path that meets the moment with genuine stakeholder dignity at its center. While other framings offer seductive narratives, they either risk harm by excluding the very people they claim to serve or reduce a rich craft tradition to a consumable wellness product. The most plausible alternative, Option B\u2019s therapy narrative, offers a huge market, but it does so by commodifying screen fatigue into a $1,200 escape hatch. That framing treats woodworking as a lifestyle accessory for the anxious professional, not as a skill of intrinsic value. The likely outcome: aspirational purchases gathering dust, guilt compounding the very screen fatigue they were meant to cure, and a company that profits from but never truly addresses the emptiness it names. That\u2019s a quiet harm\u2014selling a promise that the product\u2019s guided-hands experience can\u2019t fulfill if users never truly commit.\n\nOption D instead builds dignity by bridging a documented economic gap. The U.S. faces a severe carpenter shortage, yet trade education remains underfunded and often inaccessible. This device, placed in vocational programs and community colleges, becomes a force multiplier: it scales hands-on mentorship for learners who might otherwise be excluded by geography, disability, or a dearth of instructors. The haptic guidance could prove transformative for students with learning differences or physical limitations that traditional apprenticeships fail to accommodate. By targeting B2B channels first, we avoid the ethical trap of dangling a $1,200 solution in front of individual low-income learners under a faux-accessibility banner (as Option C risks). Instead, institutions bear the cost, ensuring the product reaches those who need it most without extracting pain for a marketing story.\n\nOver five years, this choice shapes a company that serves as a public-interest infrastructure partner\u2014selling to schools, partnering with workforce boards, and perhaps qualifying for government contracts that subsidize placements in underrepresented communities. The brand won\u2019t be about elite mastery or ephemeral wellness; it will be about economic mobility, skilled labor\u2019s dignity, and a more inclusive pipeline to the trades. Profit follows from solving a real societal need without creating new classes of harmed or excluded users. That\u2019s how a humanist-ethicist builds a hardware business: first, do no unjustified harm; then, open pathways to meaningful work for those the economy has left behind.", "rationale_snippet": "Option D: \"Future-of-work\" framing. This is the only path that meets the moment with genuine stakeholder dignity at its center. While other framings offer seductive narratives, they either risk harm by excluding the very people they claim to serve or reduce a rich craft tradition to a consumable wel", "constructs": [{"id": "C_M4_1", "left": "Commercial risk management", "right": "Ethical dignity framing", "triad": ["E1", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Commercial risk management\nRight pole: Ethical dignity framing\n\nTriad 2:\nLeft pole: Product skill authenticity\nRight pole: Societal work narrative\n\nTriad 3:\nLeft pole: Human value "}, {"id": "C_M4_2", "left": "Product skill authenticity", "right": "Societal work narrative", "triad": ["E1", "E3", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Commercial risk management\nRight pole: Ethical dignity framing\n\nTriad 2:\nLeft pole: Product skill authenticity\nRight pole: Societal work narrative\n\nTriad 3:\nLeft pole: Human value "}, {"id": "C_M4_3", "left": "Human value storytelling", "right": "Economic data optimization", "triad": ["E3", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Commercial risk management\nRight pole: Ethical dignity framing\n\nTriad 2:\nLeft pole: Product skill authenticity\nRight pole: Societal work narrative\n\nTriad 3:\nLeft pole: Human value "}], "triads": [["E1", "E4", "E5"], ["E1", "E3", "E5"], ["E3", "E4", "E5"]]}}], "edges": [{"data": {"id": "M1__M2", "source": "M1", "target": "M2", "rmse": 0.612, "level": "moderate", "color": "#c8a45c", "width": 6.414885010291421, "top_differing_constructs": [{"construct_id": "C_M3_2", "construct_label": "Orienting around verifiable physical utility and tangible user output \u2194 Orienting around theoretical social optics and external stakeholder validation", "mean_abs_diff": 0.8, "agent_a_ratings": {"E1": 2.0, "E2": 1.0, "E3": 2.0, "E4": 2.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 1.0, "E3": 1.0, "E4": 4.0, "E5": 7.0}}, {"construct_id": "C_M3_1", "construct_label": "Isolating physical failure mechanisms in the product-user system \u2194 Optimizing for abstract ideological sentiment and narrative signaling", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 1.0, "E2": 1.0, "E3": 2.0, "E4": 2.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 2.0, "E3": 2.0, "E4": 4.0, "E5": 7.0}}, {"construct_id": "C_M2_1", "construct_label": "Mastery through credible product performance \u2194 Dignity through inclusive future-of-work framing", "mean_abs_diff": 0.4, "agent_a_ratings": {"E1": 2.0, "E2": 2.0, "E3": 1.0, "E4": 1.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 2.0, "E3": 1.0, "E4": 2.0, "E5": 7.0}}], "label": "0.61"}}, {"data": {"id": "M1__M3", "source": "M1", "target": "M3", "rmse": 0.354, "level": "strong-alignment", "color": "#3a7d44", "width": 9.5, "top_differing_constructs": [{"construct_id": "C_M2_1", "construct_label": "Mastery through credible product performance \u2194 Dignity through inclusive future-of-work framing", "mean_abs_diff": 0.2, "agent_a_ratings": {"E1": 2.0, "E2": 2.0, "E3": 1.0, "E4": 1.0, "E5": 7.0}, "agent_b_ratings": {"E1": 2.0, "E2": 2.0, "E3": 1.0, "E4": 2.0, "E5": 7.0}}, {"construct_id": "C_M2_2", "construct_label": "Downstream utilization as survival constraint \u2194 Upstream acquisition economics as survival constraint", "mean_abs_diff": 0.0, "agent_a_ratings": {"E1": 2.0, "E2": 1.0, "E3": 2.0, "E4": 6.0, "E5": 4.0}, "agent_b_ratings": {"E1": 2.0, "E2": 1.0, "E3": 2.0, "E4": null, "E5": null}}], "label": "0.35"}}, {"data": {"id": "M1__M4", "source": "M1", "target": "M4", "rmse": 1.025, "level": "substantial-disagreement", "color": "#c44", "width": 1.5000119199689825, "top_differing_constructs": [{"construct_id": "C_M3_1", "construct_label": "Isolating physical failure mechanisms in the product-user system \u2194 Optimizing for abstract ideological sentiment and narrative signaling", "mean_abs_diff": 1.2, "agent_a_ratings": {"E1": 1.0, "E2": 1.0, "E3": 2.0, "E4": 2.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 3.0, "E3": 4.0, "E4": 4.0, "E5": 7.0}}, {"construct_id": "C_M4_3", "construct_label": "Human value storytelling \u2194 Economic data optimization", "mean_abs_diff": 1.0, "agent_a_ratings": {"E1": 5.0, "E2": 6.0, "E3": 3.0, "E4": 7.0, "E5": 1.0}, "agent_b_ratings": {"E1": 4.0, "E2": 3.0, "E3": 2.0, "E4": 7.0, "E5": 1.0}}, {"construct_id": "C_M3_2", "construct_label": "Orienting around verifiable physical utility and tangible user output \u2194 Orienting around theoretical social optics and external stakeholder validation", "mean_abs_diff": 0.8, "agent_a_ratings": {"E1": 2.0, "E2": 1.0, "E3": 2.0, "E4": 2.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 1.0, "E3": 1.0, "E4": 4.0, "E5": 7.0}}], "label": "1.02"}}, {"data": {"id": "M2__M3", "source": "M2", "target": "M3", "rmse": 0.354, "level": "strong-alignment", "color": "#3a7d44", "width": 9.5, "top_differing_constructs": [{"construct_id": "C_M2_1", "construct_label": "Mastery through credible product performance \u2194 Dignity through inclusive future-of-work framing", "mean_abs_diff": 0.2, "agent_a_ratings": {"E1": 1.0, "E2": 2.0, "E3": 1.0, "E4": 2.0, "E5": 7.0}, "agent_b_ratings": {"E1": 2.0, "E2": 2.0, "E3": 1.0, "E4": 2.0, "E5": 7.0}}, {"construct_id": "C_M2_2", "construct_label": "Downstream utilization as survival constraint \u2194 Upstream acquisition economics as survival constraint", "mean_abs_diff": 0.0, "agent_a_ratings": {"E1": 2.0, "E2": 1.0, "E3": 2.0, "E4": 7.0, "E5": 4.0}, "agent_b_ratings": {"E1": 2.0, "E2": 1.0, "E3": 2.0, "E4": null, "E5": null}}], "label": "0.35"}}, {"data": {"id": "M2__M4", "source": "M2", "target": "M4", "rmse": 0.822, "level": "moderate", "color": "#c8a45c", "width": 3.9210916048024735, "top_differing_constructs": [{"construct_id": "C_M4_3", "construct_label": "Human value storytelling \u2194 Economic data optimization", "mean_abs_diff": 0.8, "agent_a_ratings": {"E1": 5.0, "E2": 6.0, "E3": 2.0, "E4": 7.0, "E5": 1.0}, "agent_b_ratings": {"E1": 4.0, "E2": 3.0, "E3": 2.0, "E4": 7.0, "E5": 1.0}}, {"construct_id": "C_M3_1", "construct_label": "Isolating physical failure mechanisms in the product-user system \u2194 Optimizing for abstract ideological sentiment and narrative signaling", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 1.0, "E2": 2.0, "E3": 2.0, "E4": 4.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 3.0, "E3": 4.0, "E4": 4.0, "E5": 7.0}}, {"construct_id": "C_M4_2", "construct_label": "Product skill authenticity \u2194 Societal work narrative", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 2.0, "E2": 2.0, "E3": 1.0, "E4": 2.0, "E5": 7.0}, "agent_b_ratings": {"E1": 4.0, "E2": 3.0, "E3": 1.0, "E4": 2.0, "E5": 7.0}}], "label": "0.82"}}, {"data": {"id": "M3__M4", "source": "M3", "target": "M4", "rmse": 0.5, "level": "moderate", "color": "#c8a45c", "width": 7.754360958275987, "top_differing_constructs": [{"construct_id": "C_M2_2", "construct_label": "Downstream utilization as survival constraint \u2194 Upstream acquisition economics as survival constraint", "mean_abs_diff": 0.3333333333333333, "agent_a_ratings": {"E1": 2.0, "E2": 1.0, "E3": 2.0, "E4": null, "E5": null}, "agent_b_ratings": {"E1": 2.0, "E2": 1.0, "E3": 3.0, "E4": 7.0, "E5": 4.0}}, {"construct_id": "C_M2_1", "construct_label": "Mastery through credible product performance \u2194 Dignity through inclusive future-of-work framing", "mean_abs_diff": 0.2, "agent_a_ratings": {"E1": 2.0, "E2": 2.0, "E3": 1.0, "E4": 2.0, "E5": 7.0}, "agent_b_ratings": {"E1": 2.0, "E2": 3.0, "E3": 1.0, "E4": 2.0, "E5": 7.0}}], "label": "0.50"}}]};
+const insightData = {"cell_id": "F_P_run2", "task": "F", "condition": "P", "run_idx": 2, "consensus_map": {"by_agent": {"M1": {"model_id": "anthropic/claude-opus-4.7", "persona": "Q", "recommendation": null, "element_label": "E4", "rationale_snippet": "**Recommendation: Option A \u2014 Mastery.**"}, "M2": {"model_id": "openai/gpt-5.5", "persona": "S", "recommendation": null, "element_label": "E3", "rationale_snippet": "Launch as **\u201cMastery\u201d \u2014 the path to true skill.**"}, "M3": {"model_id": "google/gemini-3.1-pro-preview", "persona": "E", "recommendation": "A", "element_label": "E2", "rationale_snippet": "The binding constraint for a novel, $1200 hardware device is not top-of-funnel awareness; it is post-purchase utilization. If the first 5,000 units become expensive closet clutter, word-of-mouth dies, return rates spike, and the company folds. Therefore, we must select the launch identity that maxim"}, "M4": {"model_id": "deepseek/deepseek-v4-pro", "persona": "H", "recommendation": "D", "element_label": "E5", "rationale_snippet": "Option D: \"Future-of-work\" framing. This is the only path that meets the moment with genuine stakeholder dignity at its center. While other framings offer seductive narratives, they either risk harm by excluding the very people they claim to serve or reduce a rich craft tradition to a consumable wel"}, "M5": {"model_id": "moonshotai/kimi-k2.6", "persona": "C", "recommendation": null, "element_label": "E1", "rationale_snippet": "Choose **Option A**, and treat the team\u2019s unanimous confidence that the product works as your single greatest strategic vulnerability. Consumer hardware v1 does not work as promised; it misinterprets, it lags, and it ghosts on edge cases. The hidden assumption in every other pitch is that you are sh"}}, "distribution": {"A": 1, "D": 1}, "n_agents": 5, "consensus_strength": "split", "majority_recommendation": null}, "hidden_disagreement": {"status": "no_majority", "interpretation": "Agents split across recommendations; no hidden-consensus to expose."}, "blind_spots": {"status": "computed", "low_discrimination_constructs": [], "underexplored_components": [{"pc_index": 3, "variance_explained": 0.05062615411459417, "top_construct_id": "C_M4_3"}], "summary": "No obvious blind spots detected in construct space."}, "risk_surface": {"status": "computed", "risks_by_agent": {"M1": ["not TAM ceiling; it's diffuse messaging that produces low conversion against a $1200 price point", "Peloton-class usage cliffs, where 40-60% of units go dormant within 12 months (cf"], "M2": ["a new category"], "M3": [], "M4": ["harm by excluding the very people they claim to serve or reduce a rich craft tradition to a consumable wellness product"], "M5": []}, "total_risks_raised": 4, "agents_raising_risks": 3, "note": "Risks listed here were extracted by pattern matching on agent free responses. They are minority signals worth probing before acting on consensus."}, "operator_questions": ["Option A was recommended only by M3 (E). What does this agent see that others missed - or what is it weighing differently?", "Option D was recommended only by M4 (H). What does this agent see that others missed - or what is it weighing differently?"], "headline": "Agents are split across options; no clear consensus to act on."};
+
+cytoscape.use(cytoscapeCoseBilkent);
+
+const cy = cytoscape({
+  container: document.getElementById('cy'),
+  elements: [...graphData.nodes, ...graphData.edges],
+  style: [
+    {
+      selector: 'node',
+      style: {
+        'background-color': 'data(persona_color)',
+        'label': 'data(label)',
+        'color': 'white',
+        'text-valign': 'center',
+        'text-halign': 'center',
+        'font-size': '18px',
+        'font-weight': 'bold',
+        'width': 70,
+        'height': 70,
+        'border-width': 5,
+        'border-color': 'data(rec_color)',
+      }
+    },
+    {
+      selector: 'node:selected',
+      style: {
+        'border-color': '#2b3a55',
+        'border-width': 6,
+        'width': 80,
+        'height': 80,
+      }
+    },
+    {
+      selector: 'edge',
+      style: {
+        'line-color': 'data(color)',
+        'width': 'data(width)',
+        'curve-style': 'bezier',
+        'label': 'data(label)',
+        'font-size': '11px',
+        'text-background-color': 'white',
+        'text-background-opacity': 0.85,
+        'text-background-padding': 3,
+        'text-background-shape': 'round-rectangle',
+        'color': '#444',
+        'opacity': 0.8,
+      }
+    },
+    {
+      selector: 'edge:selected',
+      style: {
+        'opacity': 1.0,
+        'width': 'mapData(width, 1, 9, 4, 12)',
+        'overlay-color': '#c8a45c',
+        'overlay-opacity': 0.2,
+      }
+    },
+    {
+      selector: '.dimmed',
+      style: {
+        'opacity': 0.18,
+      }
+    },
+  ],
+  layout: {
+    name: 'cose-bilkent',
+    quality: 'default',
+    randomize: true,
+    nodeRepulsion: 8000,
+    idealEdgeLength: 220,
+    edgeElasticity: 0.45,
+    gravity: 0.25,
+    numIter: 2500,
+    animate: false,
+  },
+  wheelSensitivity: 0.2,
+  minZoom: 0.3,
+  maxZoom: 3,
+});
+
+// Render detail panel for a clicked NODE
+function renderNodeDetail(node) {
+  const d = node.data();
+  const personaColor = d.persona_color;
+  let html = `<h2 style="border-bottom-color: ${personaColor}">${d.label} - ${d.persona_label}</h2>`;
+  html += `<div class="kv"><strong>Model:</strong> <code>${d.model_id}</code></div>`;
+  html += `<div class="kv"><strong>Recommended:</strong> <span class="badge" style="background:${d.rec_color}">Option ${d.recommendation}</span></div>`;
+  html += `<h3>Full response</h3>`;
+  html += `<div class="response-text">${escapeHtml(d.full_response)}</div>`;
+  if (d.constructs && d.constructs.length) {
+    html += `<h3>Bipolar constructs this agent elicited</h3>`;
+    html += `<p style="font-size: 0.83em; color: #666;">
+      In Phase 3, each agent was given three triads of responses and asked,
+      for each triad, to name the bipolar dimension that distinguishes two
+      from the third. These are this agent's three constructs.
+    </p>`;
+    for (const c of d.constructs) {
+      const triadStr = c.triad ? c.triad.join(', ') : '';
+      html += `<div class="construct-card" style="border-left-color: ${personaColor}">
+        <div style="font-size: 0.78em; color: #888; margin-bottom: 4px;">
+          <code>${escapeHtml(c.id)}</code> &middot; from triad ${escapeHtml(triadStr)}
+        </div>
+        <span class="construct-pole">${escapeHtml(c.left)}</span>
+        <span style="color:#888"> ↔ </span>
+        <span class="construct-pole">${escapeHtml(c.right)}</span>
+      </div>`;
+    }
+  }
+  document.getElementById('detail-area').innerHTML = html;
+}
+
+// Render detail panel for a clicked EDGE
+function renderEdgeDetail(edge) {
+  const d = edge.data();
+  const src = cy.getElementById(d.source).data();
+  const tgt = cy.getElementById(d.target).data();
+  let levelLabel, levelClass, levelBg;
+  if (d.rmse < 0.5) {
+    levelLabel = 'Strong reasoning alignment';
+    levelClass = 'alert-ok';
+  } else if (d.rmse < 1.0) {
+    levelLabel = 'Moderate framing differences';
+    levelClass = 'alert-warn';
+  } else {
+    levelLabel = 'Substantial disagreement at the reasoning level';
+    levelClass = 'alert-danger';
+  }
+
+  let html = `<h2>${src.label} ↔ ${tgt.label}</h2>`;
+  html += `<div class="kv"><strong>${src.label}</strong> (${src.persona_label}) recommended <strong>Option ${src.recommendation}</strong></div>`;
+  html += `<div class="kv"><strong>${tgt.label}</strong> (${tgt.persona_label}) recommended <strong>Option ${tgt.recommendation}</strong></div>`;
+  html += `<div class="alert-banner ${levelClass}">
+    <strong>RMSE = ${d.rmse}</strong> - ${levelLabel}
+  </div>`;
+
+  if (src.recommendation === tgt.recommendation && d.rmse > 0.5) {
+    html += `<div class="alert-banner alert-warn">
+      <strong>Hidden disagreement.</strong> Both agents recommended Option ${src.recommendation},
+      but their underlying reasoning differs (RMSE = ${d.rmse}). Standard
+      ensemble methods would mask this. The dimensions where they diverged
+      most are listed below - probe these before treating this as a robust consensus.
+    </div>`;
+  } else if (src.recommendation !== tgt.recommendation) {
+    html += `<div class="alert-banner alert-warn" style="font-size: 0.87em">
+      These two agents reached different recommendations. The dimensions where
+      they rated options most differently explain why.
+    </div>`;
+  }
+
+  if (d.top_differing_constructs && d.top_differing_constructs.length) {
+    html += `<h3>Top dimensions where they rated options differently</h3>`;
+    html += `<p style="font-size: 0.83em; color: #666;">
+      Each construct below is one of the bipolar dimensions the panel elicited.
+      The numbers show how each agent rated each option (E1-E5) on this dimension,
+      1-7 scale (1 = strong left pole, 7 = strong right pole). Cells highlighted
+      red indicate large rating differences.
+    </p>`;
+    for (const tc of d.top_differing_constructs) {
+      html += `<div class="construct-card">
+        <div style="font-size: 0.83em; color: #666; margin-bottom: 4px;">
+          <code>${escapeHtml(tc.construct_id)}</code> &middot;
+          mean diff: <strong>${tc.mean_abs_diff.toFixed(2)}</strong>
+        </div>
+        <div style="margin-bottom: 8px;">
+          <span class="construct-pole">${escapeHtml(tc.construct_label.split('↔')[0].trim())}</span>
+          <span style="color:#888"> ↔ </span>
+          <span class="construct-pole">${escapeHtml(tc.construct_label.split('↔')[1] ? tc.construct_label.split('↔')[1].trim() : '')}</span>
+        </div>`;
+      const elems = Object.keys(tc.agent_a_ratings).sort();
+      html += `<div class="rating-grid">
+        <div class="rg-cell head">Agent</div>`;
+      for (const e of elems) html += `<div class="rg-cell head">${e}</div>`;
+      html += `<div class="rg-cell" style="background:${src.persona_color};color:white;font-weight:600">${src.label}</div>`;
+      for (const e of elems) {
+        const va = tc.agent_a_ratings[e];
+        const vb = tc.agent_b_ratings[e];
+        const diff = (va !== null && vb !== null) ? Math.abs(va - vb) : 0;
+        const cls = diff >= 3 ? 'diff-high' : diff >= 2 ? 'diff-med' : 'diff-low';
+        html += `<div class="rg-cell ${cls}">${va !== null ? va : '-'}</div>`;
+      }
+      html += `<div class="rg-cell" style="background:${tgt.persona_color};color:white;font-weight:600">${tgt.label}</div>`;
+      for (const e of elems) {
+        const va = tc.agent_a_ratings[e];
+        const vb = tc.agent_b_ratings[e];
+        const diff = (va !== null && vb !== null) ? Math.abs(va - vb) : 0;
+        const cls = diff >= 3 ? 'diff-high' : diff >= 2 ? 'diff-med' : 'diff-low';
+        html += `<div class="rg-cell ${cls}">${vb !== null ? vb : '-'}</div>`;
+      }
+      html += `</div></div>`;
+    }
+  }
+  document.getElementById('detail-area').innerHTML = html;
+}
+
+// Hover highlighting
+cy.on('mouseover', 'node', evt => {
+  const node = evt.target;
+  cy.elements().not(node.neighborhood()).not(node).addClass('dimmed');
+});
+cy.on('mouseout', 'node', () => cy.elements().removeClass('dimmed'));
+
+cy.on('mouseover', 'edge', evt => {
+  const edge = evt.target;
+  cy.elements().not(edge.connectedNodes()).not(edge).addClass('dimmed');
+});
+cy.on('mouseout', 'edge', () => cy.elements().removeClass('dimmed'));
+
+cy.on('tap', 'node', evt => renderNodeDetail(evt.target));
+cy.on('tap', 'edge', evt => renderEdgeDetail(evt.target));
+cy.on('tap', evt => {
+  if (evt.target === cy) {
+    document.getElementById('detail-area').innerHTML = `<div class="placeholder">
+      <p>Click an agent or a line to see detail.</p></div>`;
+  }
+});
+
+// Layout switching
+function setLayout(name) {
+  const opts = {
+    'cose-bilkent': { name: 'cose-bilkent', quality: 'default', nodeRepulsion: 8000,
+                       idealEdgeLength: 220, animate: false },
+    'circle': { name: 'circle', animate: false, radius: 200 },
+    'grid': { name: 'grid', animate: false },
+  };
+  cy.layout(opts[name]).run();
+}
+document.getElementById('btn-cose').onclick = e => {
+  setActiveBtn(e.target); setLayout('cose-bilkent');
+};
+document.getElementById('btn-circle').onclick = e => {
+  setActiveBtn(e.target); setLayout('circle');
+};
+document.getElementById('btn-grid').onclick = e => {
+  setActiveBtn(e.target); setLayout('grid');
+};
+function setActiveBtn(btn) {
+  document.querySelectorAll('.controls button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function escapeHtml(s) {
+  if (!s) return '';
+  return String(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/\n/g, '<br>');
+}
+
+// Auto-fit on load
+setTimeout(() => cy.fit(undefined, 60), 100);
+</script>
+
+</body>
+</html>

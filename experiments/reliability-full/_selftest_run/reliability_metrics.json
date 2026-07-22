@@ -1,0 +1,133 @@
+{
+  "n_items": 10,
+  "n_models": 5,
+  "singles_accuracy": {
+    "M3": 0.8,
+    "M5": 0.7,
+    "M2": 0.6,
+    "M1": 0.5,
+    "M4": 0.4
+  },
+  "panels": {
+    "D3": {
+      "members": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "available": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "accuracy": 0.8,
+      "ci90": [
+        0.6,
+        1.0
+      ]
+    },
+    "R3": {
+      "members": [
+        "M3",
+        "M4",
+        "M5"
+      ],
+      "available": [
+        "M3",
+        "M4",
+        "M5"
+      ],
+      "accuracy": 0.6,
+      "ci90": [
+        0.4,
+        0.9
+      ]
+    },
+    "ATLAS3": {
+      "members": [
+        "M1",
+        "M3",
+        "M5"
+      ],
+      "available": [
+        "M1",
+        "M3",
+        "M5"
+      ],
+      "accuracy": 0.6,
+      "ci90": [
+        0.4,
+        0.8
+      ]
+    },
+    "TOP3": {
+      "members": [
+        "M3",
+        "M5",
+        "M2"
+      ],
+      "available": [
+        "M3",
+        "M5",
+        "M2"
+      ],
+      "accuracy": 0.7,
+      "ci90": [
+        0.5,
+        0.9
+      ]
+    },
+    "TOP5": {
+      "members": [
+        "M3",
+        "M5",
+        "M2",
+        "M1",
+        "M4"
+      ],
+      "available": [
+        "M3",
+        "M5",
+        "M2",
+        "M1",
+        "M4"
+      ],
+      "accuracy": 0.8,
+      "ci90": [
+        0.6,
+        1.0
+      ]
+    }
+  },
+  "random_nulls": {
+    "RANDOM3": {
+      "mean": 0.642,
+      "p05": 0.5,
+      "p95": 0.8
+    },
+    "RANDOM5": {
+      "mean": 0.8,
+      "p05": 0.8,
+      "p95": 0.8
+    }
+  },
+  "convergence_signal": {
+    "panel": "D3",
+    "unanimous_items": 2,
+    "split_items": 8,
+    "accuracy_when_unanimous": 1.0,
+    "accuracy_when_split": 0.75
+  },
+  "risk_coverage": [
+    {
+      "policy": "accept only unanimous",
+      "coverage": 0.2,
+      "accuracy_on_accepted": 1.0
+    },
+    {
+      "policy": "accept all (majority)",
+      "coverage": 1.0,
+      "accuracy_on_accepted": 0.8
+    }
+  ]
+}

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Interactive AI Council - B_P_run3</title>
+<script src="https://unpkg.com/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
+<script src="https://unpkg.com/layout-base@2.0.1/layout-base.js"></script>
+<script src="https://unpkg.com/cose-base@2.2.0/cose-base.js"></script>
+<script src="https://unpkg.com/cytoscape-cose-bilkent@4.1.0/cytoscape-cose-bilkent.js"></script>
+<style>
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Georgia, sans-serif;
+       margin: 0; padding: 0; background: #f4f1e8; color: #1a1a1a; }
+.header { background: #2b3a55; color: white; padding: 14px 24px; }
+.header h1 { margin: 0; font-size: 1.2em; }
+.header .subtitle { font-size: 0.85em; opacity: 0.85; margin-top: 3px; }
+.layout { display: flex; height: calc(100vh - 60px); }
+#graph-container { flex: 1; background: #f9f7f0; position: relative; }
+#cy { width: 100%; height: 100%; }
+.legend { position: absolute; bottom: 16px; left: 16px;
+           background: rgba(255,255,255,0.96); padding: 12px 16px;
+           border-radius: 6px; border: 1px solid #d8d0bf; font-size: 0.82em;
+           max-width: 280px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.legend h3 { margin: 0 0 8px; font-size: 0.9em; color: #2b3a55; }
+.legend-row { display: flex; align-items: center; margin: 4px 0; }
+.legend-swatch { display: inline-block; width: 24px; height: 4px; margin-right: 8px;
+                  border-radius: 2px; }
+.legend-dot { display: inline-block; width: 14px; height: 14px; margin-right: 8px;
+               border-radius: 50%; }
+.help { position: absolute; top: 16px; left: 16px;
+         background: rgba(255,255,255,0.96); padding: 10px 14px;
+         border-radius: 6px; border: 1px solid #d8d0bf; font-size: 0.8em;
+         color: #555; max-width: 320px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.controls { position: absolute; top: 16px; right: 16px;
+             background: rgba(255,255,255,0.96); padding: 10px 14px;
+             border-radius: 6px; border: 1px solid #d8d0bf; font-size: 0.85em;
+             box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.controls button { display: block; width: 100%; padding: 6px 10px; margin: 3px 0;
+                    background: white; border: 1px solid #c8a45c; border-radius: 4px;
+                    cursor: pointer; font-size: 0.9em; }
+.controls button.active { background: #c8a45c; color: white; }
+.controls button:hover { background: #e6dfc9; }
+.controls button.active:hover { background: #b8945a; }
+
+#info-panel { width: 420px; background: white; border-left: 1px solid #d8d0bf;
+               overflow-y: auto; padding: 20px 24px; }
+#info-panel h2 { font-size: 1.1em; margin: 0 0 8px; color: #2b3a55;
+                  border-bottom: 2px solid #c8a45c; padding-bottom: 6px; }
+#info-panel h3 { font-size: 0.95em; margin: 18px 0 6px; color: #2b3a55; }
+#info-panel h4 { font-size: 0.85em; margin: 12px 0 4px; color: #555;
+                  text-transform: uppercase; letter-spacing: 0.5px; }
+#info-panel .placeholder { color: #888; font-style: italic; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 11px;
+          font-size: 0.78em; font-weight: 600; color: white; margin-right: 4px; }
+.kv { margin: 6px 0; font-size: 0.92em; }
+.kv strong { color: #555; }
+.response-text { font-size: 0.88em; line-height: 1.55; color: #333;
+                  background: #faf8f1; padding: 12px 14px; border-radius: 4px;
+                  border-left: 3px solid #c8a45c; }
+.construct-card { font-size: 0.85em; margin: 6px 0; padding: 8px 11px;
+                   background: #faf8f1; border-radius: 4px;
+                   border-left: 3px solid #666; }
+.construct-pole { display: inline; padding: 2px 6px; background: white;
+                   border-radius: 3px; border: 1px solid #e6dfc9;
+                   font-family: Georgia, serif; }
+.rating-grid { display: grid; grid-template-columns: 60px repeat(5, 1fr);
+                gap: 2px; margin: 8px 0; font-size: 0.78em; }
+.rg-cell { padding: 4px 6px; background: #f4f1e8; text-align: center;
+            border-radius: 3px; }
+.rg-cell.head { background: #2b3a55; color: white; font-weight: 600; }
+.rg-cell.diff-high { background: #fdc; }
+.rg-cell.diff-med { background: #ffe9c0; }
+.rg-cell.diff-low { background: #e2efd9; }
+.alert-banner { padding: 10px 14px; border-radius: 5px; margin: 10px 0;
+                 font-size: 0.9em; }
+.alert-danger { background: #fdf0ed; border-left: 4px solid #c44;
+                 color: #6b1313; }
+.alert-warn { background: #fdfaf2; border-left: 4px solid #c8a45c;
+               color: #6b4920; }
+.alert-ok { background: #f0f7ed; border-left: 4px solid #3a7d44;
+             color: #1f4a26; }
+hr { border: none; border-top: 1px solid #e6dfc9; margin: 14px 0; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>AI Council - Interactive View</h1>
+  <div class="subtitle">Cell <strong>B_P_run3</strong> &middot; Task B &middot; persona framing</div>
+</div>
+
+<div class="layout">
+  <div id="graph-container">
+    <div id="cy"></div>
+
+    <div class="help">
+      <strong>How to explore:</strong><br>
+      &middot; Click a circle (agent) to see their full response and reasoning<br>
+      &middot; Click a connecting line to see <em>where</em> two agents disagreed<br>
+      &middot; Drag agents around if the layout is hard to read
+    </div>
+
+    <div class="controls">
+      <strong style="font-size: 0.85em; color: #555;">Layout</strong>
+      <button id="btn-cose" class="active">Force-directed</button>
+      <button id="btn-circle">Circle</button>
+      <button id="btn-grid">Grid</button>
+    </div>
+
+    <div class="legend">
+      <h3>Reading the network</h3>
+      <div><strong>Circle color</strong> = epistemological frame</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#0a558c"></span>Quantitative</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#2d8659"></span>Systems</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#8a5a00"></span>Engineering</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#882b6f"></span>Humanist</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#b03030"></span>Contrarian</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#666"></span>Neutral (no persona)</div>
+      <hr>
+      <div><strong>Line color</strong> = reasoning agreement</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#3a7d44"></span>RMSE &lt; 0.5 - aligned</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#c8a45c"></span>0.5-1.0 - moderate</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#c44"></span>&gt; 1.0 - substantial</div>
+      <hr>
+      <div style="color: #555; font-size: 0.92em">
+        <strong>Line thickness</strong> = relative agreement within this case<br>
+        <strong>RMSE</strong> = root-mean-square error on 7-point rating scale
+      </div>
+    </div>
+  </div>
+
+  <div id="info-panel">
+    <h2>Agents are split across options; no clear consensus to act on.</h2>
+
+    <div class="alert-banner alert-warn"><strong>Split panel.</strong> Agents disagree at the recommendation level. The network shows whose reasoning patterns cluster together.</div>
+
+    <div class="kv"><strong>Cell:</strong> B_P_run3</div>
+    <div class="kv"><strong>Task:</strong> B (persona framing)</div>
+    <div class="kv"><strong>Agents:</strong> 5</div>
+    <div class="kv"><strong>Reasoning RMSE (mean across pairs):</strong> 0.740</div>
+
+    <hr>
+
+    <div id="detail-area">
+      <div class="placeholder">
+        <p>Click an agent or a connecting line to see details here.</p>
+        <p>The colored circles are the LLM agents. The lines between them show how similarly they reasoned: thicker and greener means they rated the options in similar patterns, thinner and redder means they disagreed at the level of how they evaluated each option.</p>
+        <p>Hidden disagreement is the case where two agents recommend the same option but their connecting line is yellow or red - they agree on the answer but not on the reasoning. Click such a line to see exactly which dimensions they diverged on.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3>About this view</h3>
+    <p style="font-size: 0.85em; color: #555;">
+      The reasoning network shows behavioral disagreement, not topic disagreement.
+      Two agents with thick green connection rated the options similarly on every
+      construct elicited by the panel. Two agents with thin red connection
+      saw the options through different evaluative lenses - even if they
+      may have recommended the same option in the end.
+    </p>
+
+    <p style="font-size: 0.85em; color: #555;">
+      Generated by Archipelago. <em>The five voices are LLM analysts; this view is
+      decision support, not decision substitution.</em>
+    </p>
+  </div>
+</div>
+
+<script>
+const graphData = {"nodes": [{"data": {"id": "M1", "label": "M1", "persona": "S", "persona_label": "Systems-Strategist", "persona_color": "#2d8659", "recommendation": "?", "rec_color": "#cccccc", "model_id": "anthropic/claude-opus-4.7", "full_response": "## Primary diagnosis: Option C \u2014 Loss of psychological safety following the layoff\n\nReading the system rather than the symptoms: the timing signature is the dominant signal. A layoff occurred 4 months ago; senior attrition and milestone misses accelerated in the same window; retro themes shifted from generative (\"what to ship\") to defensive (\"process and communication\"). That shift in discourse is the tell. Teams talk about process when they no longer trust that talking about substance is safe.\n\nThe other diagnoses are real, but most are downstream effects, not the upstream perturbation.\n\n- Burnout (A) explains fatigue but not the *senior* voluntary exits \u2014 high-tenure engineers with options leave when the implicit contract breaks, not when the sprint is hard. Burnout also doesn't reshape retro language toward proceduralism.\n- Incentive misalignment (B) is slow-acting; it doesn't produce a 6-month inflection.\n- Skill atrophy (D) degrades quality, not throughput-plus-attrition in this pattern.\n- Leadership-style mismatch (E) is the most plausible alternative and may be a contributing co-factor, but it's typically a chronic drag, not a discrete regime shift. The data shows a regime shift.\n\n**Why this is the leverage point:** psychological safety governs the rate at which problems surface. When it degrades, the system loses its error-correction capacity. Bugs get hidden, scope creep goes unchallenged, seniors stop pushing back, and managers compensate with more process \u2014 which is exactly what the retros show. Every other intervention (PTO, comp, rotations, coaching) operates *through* the trust substrate. Fix anywhere else first and the fixes won't propagate, because people won't engage candidly with them.\n\n**Second-order caution:** the recovery plan must avoid theatrics. \"Trust rebuild sessions\" without binding commitments on future workforce decisions will accelerate cynicism and attrition \u2014 a classic fragility-increasing move. The leverage is in credible, costly signals: written principles on layoff criteria, leadership taking visible accountability for the prior round's communication, and giving senior ICs real decision rights on roadmap and headcount. Restore the substrate, then revisit A/D/E as secondary interventions over the following two quarters.", "rationale_snippet": "## Primary diagnosis: Option C \u2014 Loss of psychological safety following the layoff", "constructs": [{"id": "C_M1_1", "left": "Layoff as causal shock (E1, E4)", "right": "Layoff as amplifier of prior dysfunction (E5)", "triad": ["E1", "E4", "E5"], "raw_output_excerpt": "Triad 1 (E1, E4, E5):\nLeft pole: Layoff as causal shock (E1, E4)\nRight pole: Layoff as amplifier of prior dysfunction (E5)\n\nTriad 2 (E1, E2, E5):\nLeft pole: Clinical/empirical diagnostic register (E1,"}, {"id": "C_M1_2", "left": "Clinical/empirical diagnostic register (E1, E5)", "right": "Humanist/moral framing of the team (E2)", "triad": ["E1", "E2", "E5"], "raw_output_excerpt": "Triad 1 (E1, E4, E5):\nLeft pole: Layoff as causal shock (E1, E4)\nRight pole: Layoff as amplifier of prior dysfunction (E5)\n\nTriad 2 (E1, E2, E5):\nLeft pole: Clinical/empirical diagnostic register (E1,"}, {"id": "C_M1_3", "left": "Discrete event triggers decline (E1)", "right": "Structural mismatch with scale/phase (E3, E5)", "triad": ["E1", "E3", "E5"], "raw_output_excerpt": "Triad 1 (E1, E4, E5):\nLeft pole: Layoff as causal shock (E1, E4)\nRight pole: Layoff as amplifier of prior dysfunction (E5)\n\nTriad 2 (E1, E2, E5):\nLeft pole: Clinical/empirical diagnostic register (E1,"}], "triads": [["E1", "E4", "E5"], ["E1", "E2", "E5"], ["E1", "E3", "E5"]]}}, {"data": {"id": "M2", "label": "M2", "persona": "E", "persona_label": "First-principles Engineer", "persona_color": "#8a5a00", "recommendation": "?", "rec_color": "#cccccc", "model_id": "openai/gpt-5.5", "full_response": "**Recommendation: Option E \u2014 leadership style mismatch.**\n\nThe binding constraint looks less like individual motivation or capacity and more like the team\u2019s operating system no longer fitting its scale and phase.\n\nA 40-person engineering org across 4 squads is large enough that informal coordination, heroic execution, and \u201cjust ship\u201d leadership start to break down. Those behaviors can work during an earlier growth phase, especially when the team is smaller, urgency is high, and senior engineers can personally bridge gaps. But as the org matures, the dominant constraint shifts from raw execution to clarity: decision rights, priorities, interfaces between squads, technical ownership, escalation paths, and planning discipline.\n\nThe strongest signal is the retro shift from \u201cwhat to ship next\u201d to \u201cprocess and communication.\u201d That is usually what engineers say when the execution environment has become ambiguous: people do not know who decides, why priorities change, how cross-squad dependencies are managed, or whether leadership is absorbing and resolving systemic friction. Missed milestones over two quarters also point to coordination failure rather than a temporary dip in effort. The senior attrition is especially important: senior engineers are often the ones compensating for weak operating structure. When that compensation becomes unrewarding or invisible, they leave.\n\nI would not lead with PTO, compensation redesign, or learning programs. Those may help locally, but they do not explain the full pattern. The recovery plan should focus on leadership adaptation: clarify roles between CTO/engineering leaders/EMs/staff engineers, define decision-making mechanisms, reset planning and dependency management, and coach leaders away from phase-inappropriate behaviors. If needed, reallocate responsibilities so the org has leaders suited to the current maturity stage.\n\nIn short: the team did not suddenly forget how to execute. The environment around execution changed, and leadership has not yet changed with it.", "rationale_snippet": "**Recommendation: Option E \u2014 leadership style mismatch.**", "constructs": [{"id": "C_M2_1", "left": "E1/E4: empirical timing-signature diagnosis", "right": "E2: humanist trauma framing", "triad": ["E1", "E2", "E4"], "raw_output_excerpt": "Triad 1:\nLeft pole: E1/E4: empirical timing-signature diagnosis\nRight pole: E2: humanist trauma framing\n\nTriad 2:\nLeft pole: E1: terse causal assertion\nRight pole: E2/E4: elaborated interpretive diagn"}, {"id": "C_M2_2", "left": "E1: terse causal assertion", "right": "E2/E4: elaborated interpretive diagnosis", "triad": ["E1", "E2", "E4"], "raw_output_excerpt": "Triad 1:\nLeft pole: E1/E4: empirical timing-signature diagnosis\nRight pole: E2: humanist trauma framing\n\nTriad 2:\nLeft pole: E1: terse causal assertion\nRight pole: E2/E4: elaborated interpretive diagn"}, {"id": "C_M2_3", "left": "E1/E2: layoff-caused psychological safety loss", "right": "E5: pre-layoff leadership mismatch", "triad": ["E1", "E2", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: E1/E4: empirical timing-signature diagnosis\nRight pole: E2: humanist trauma framing\n\nTriad 2:\nLeft pole: E1: terse causal assertion\nRight pole: E2/E4: elaborated interpretive diagn"}], "triads": [["E1", "E2", "E4"], ["E1", "E2", "E4"], ["E1", "E2", "E5"]]}}, {"data": {"id": "M3", "label": "M3", "persona": "H", "persona_label": "Humanist-Ethicist", "persona_color": "#882b6f", "recommendation": "?", "rec_color": "#cccccc", "model_id": "google/gemini-3.1-pro-preview", "full_response": "The primary diagnosis for this team\u2019s decline is **Option C: A profound loss of psychological safety following recent layoffs.** \n\nWhen we view a team as an economic engine, we ask, \"How do we fix output?\" But when we view a team through a humanist lens, our default question must be, \"Who is affected and how?\" The timeline reveals a workforce enduring prolonged existential anxiety leading up to, and reeling from, the trauma of layoffs four months ago. Layoffs are not merely a restructuring of capital; they are a rupture of the social contract. When a company demonstrates that it views its people as disposable, the remaining employees suffer a profound injury to their dignity. \n\nThe surface signals heavily corroborate this diagnosis. The voluntary departure of four senior engineers is the clearest indicator of ruptured trust; those with the greatest leverage and market mobility are simply choosing to escape an environment that no longer feels secure or ethical. Furthermore, the shift in retro themes from \"what to ship next\" to \"process and communication\" is a classic human defensive mechanism. When psychological safety evaporates, vulnerable individuals retreat behind the shield of rigid processes and documentation to protect themselves from blame and capricious management. \n\nOur primary heuristic must be to minimize unjustified harm before we can optimize performance. Economic fixes, like restructuring compensation, fundamentally misunderstand human motivation and dignity\u2014they insultingly assume that engineers will trade their psychological well-being for a bonus. Recovery requires restorative justice. We must rebuild trust through structured transparency, rigorous leadership accountability, and a binding commitment to clear, humane practices regarding future workforce decisions. We can only ask for a team's best work after we have fully respected their humanity.", "rationale_snippet": "The primary diagnosis for this team\u2019s decline is **Option C: A profound loss of psychological safety following recent layoffs.** ", "constructs": [{"id": "C_M3_1", "left": "Centering the dignity and existential trauma of vulnerable stakeholders", "right": "Abstracting workers into mechanistic components of a systemic engine", "triad": ["E2", "E3", "E4"], "raw_output_excerpt": "Triad 1:\nLeft pole: Centering the dignity and existential trauma of vulnerable stakeholders\nRight pole: Abstracting workers into mechanistic components of a systemic engine\n\nTriad 2:\nLeft pole: Framin"}, {"id": "C_M3_2", "left": "Framing crises as moral ruptures requiring empathetic stakeholder care", "right": "Framing crises as detached diagnostic puzzles to optimize output", "triad": ["E2", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Centering the dignity and existential trauma of vulnerable stakeholders\nRight pole: Abstracting workers into mechanistic components of a systemic engine\n\nTriad 2:\nLeft pole: Framin"}], "triads": [["E2", "E3", "E4"], ["E2", "E4", "E5"], ["E1", "E3", "E4"]]}}, {"data": {"id": "M4", "label": "M4", "persona": "C", "persona_label": "Contrarian-Skeptic", "persona_color": "#b03030", "recommendation": "?", "rec_color": "#cccccc", "model_id": "deepseek/deepseek-v4-pro", "full_response": "The most likely primary diagnosis is **E: Leadership style mismatch**. The surface narrative lures us toward burnout or post-layoff trauma, but the timeline betrays that consensus: output decline and attrition began two months *before* the layoff. The layoff may have magnified fractures, but it didn\u2019t cause them. The contrarian impulse asks: what if everyone is wrong to anchor on the layoff? The real signal is in the retro theme shift\u2014from energised shipping to \u201cprocess and communication.\u201d That\u2019s not the language of exhaustion; it\u2019s the cry of a maturing team that has outgrown its leadership.\n\nHigh-performing growth phases reward a directive, pace-setting leader who removes blockers and drives velocity. But as a team hits ~40 people and delivery becomes complex, that same style becomes a bottleneck. The leader who once shielded the team now becomes the obstacle to the cross-squad coordination and structured decision-making the engineers are literally asking for. Missed milestones aren\u2019t due to tiredness\u2014they\u2019re due to insufficient alignment and fuzzy handoffs that no one feels authorised to fix. Senior engineers leaving \u201cvoluntarily\u201d often means they see a ceiling: not of comp, but of influence and growth under a leader who still runs the team like a startup within a scale-up.\n\nThe recovery plan\u2014coaching, role redefinition, possible reallocation of responsibilities\u2014is the only one that is both reversible and targets the root cause. It doesn\u2019t paper over with PTO or trust exercises, and it explains why the decline predates the layoff. In a unanimous consensus that burnout or safety is to blame, the contrarian signal is to look at who\u2019s leading, not just who\u2019s leaving.", "rationale_snippet": "The most likely primary diagnosis is **E: Leadership style mismatch**. The surface narrative lures us toward burnout or post-layoff trauma, but the timeline betrays that consensus: output decline and attrition began two months *before* the layoff. The layoff may have magnified fractures, but it didn", "constructs": [], "triads": [["E1", "E2", "E3"], ["E2", "E3", "E5"], ["E2", "E3", "E4"]]}}, {"data": {"id": "M5", "label": "M5", "persona": "Q", "persona_label": "Quantitative-Empiricist", "persona_color": "#0a558c", "recommendation": "?", "rec_color": "#cccccc", "model_id": "moonshotai/kimi-k2.6", "full_response": " I diagnose **loss of psychological safety following the layoff round** as the primary driver.\n\nThe empirical signature is unambiguous. Four months ago, a discrete organizational shock occurred. Since then, we observe three correlated leading indicators: (1) voluntary attrition concentrated among senior engineers\u2014who possess the highest labor-market liquidity and therefore the lowest tolerance for ambient threat; (2) a step-change in retrospective content from outcome-oriented themes to process-and-communication complaints, which operationalizes a shift from generative cognition to defensive coordination; and (3) a two-quarter milestone miss rate that commenced immediately after the shock. A sharp, post-traumatic decline fits the documented base rate for post-layoff trust erosion far better than gradualist alternatives such as skill atrophy or phase-mismatch leadership drift.\n\nFrom a falsifiability standpoint, this is the most testable diagnosis. Psychological safety can be operationalized with validated instruments (e.g., Edmondson\u2019s team-learning scale), departure rates can be regressed against tenure and proximity to laid-off roles, and communication overhead can be quantified via retro sentiment analysis and meeting-load metrics. If safety scores are low and correlate with the departure cluster, the hypothesis is confirmed; if not, it can be rejected within weeks. Competing explanations like burnout or incentive misalignment rely on latent constructs that are harder to isolate and slower to validate against observed behavior.\n\nExpected value strongly favors a trust-rebuild intervention. Senior-engineer replacement costs typically run 1.5\u20132\u00d7 annual compensation, and the team has already lost four. Halting attrition alone likely exceeds the cost of structured transparency and leadership accountability sessions. I assign **70\u201380% confidence** to psychological safety as the root cause, with residual probability reserved for secondary leadership-style friction that was amplified by the same trauma. Act on this first.", "rationale_snippet": "I diagnose **loss of psychological safety following the layoff round** as the primary driver.", "constructs": [{"id": "C_M5_1", "left": "Shock-event anchoring (layoff-centered causality)", "right": "Developmental-phase constraints (scale-centered structuralism)", "triad": ["E1", "E3", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Shock-event anchoring (layoff-centered causality)\nRight pole: Developmental-phase constraints (scale-centered structuralism)\n\nTriad 2:\nLeft pole: Temporal-signature correlation (ti"}, {"id": "C_M5_2", "left": "Temporal-signature correlation (timeline-pattern empiricism)", "right": "Structural-phase configuration (operating-system architecture)", "triad": ["E3", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Shock-event anchoring (layoff-centered causality)\nRight pole: Developmental-phase constraints (scale-centered structuralism)\n\nTriad 2:\nLeft pole: Temporal-signature correlation (ti"}, {"id": "C_M5_3", "left": "Event-anchored causality", "right": "Structural-scale dynamics", "triad": ["E2", "E3", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Shock-event anchoring (layoff-centered causality)\nRight pole: Developmental-phase constraints (scale-centered structuralism)\n\nTriad 2:\nLeft pole: Temporal-signature correlation (ti"}], "triads": [["E1", "E3", "E5"], ["E3", "E4", "E5"], ["E2", "E3", "E5"]]}}], "edges": [{"data": {"id": "M1__M2", "source": "M1", "target": "M2", "rmse": 0.688, "level": "moderate", "color": "#c8a45c", "width": 6.957482274990733, "top_differing_constructs": [{"construct_id": "C_M2_2", "construct_label": "E1: terse causal assertion \u2194 E2/E4: elaborated interpretive diagnosis", "mean_abs_diff": 1.0, "agent_a_ratings": {"E1": 1.0, "E2": 6.0, "E3": 5.0, "E4": 6.0, "E5": 5.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 6.0, "E4": 7.0, "E5": 3.0}}, {"construct_id": "C_M1_2", "construct_label": "Clinical/empirical diagnostic register (E1, E5) \u2194 Humanist/moral framing of the team (E2)", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 1.0, "E2": 7.0, "E3": 3.0, "E4": 3.0, "E5": 2.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 2.0, "E4": 2.0, "E5": 1.0}}, {"construct_id": "C_M3_1", "construct_label": "Centering the dignity and existential trauma of vulnerable stakeholders \u2194 Abstracting workers into mechanistic components of a systemic engine", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 6.0, "E2": 1.0, "E3": 6.0, "E4": 5.0, "E5": 5.0}, "agent_b_ratings": {"E1": 5.0, "E2": 1.0, "E3": 7.0, "E4": 5.0, "E5": 6.0}}], "label": "0.69"}}, {"data": {"id": "M1__M3", "source": "M1", "target": "M3", "rmse": 0.935, "level": "moderate", "color": "#c8a45c", "width": 1.5000220180783579, "top_differing_constructs": [{"construct_id": "C_M1_1", "construct_label": "Layoff as causal shock (E1, E4) \u2194 Layoff as amplifier of prior dysfunction (E5)", "mean_abs_diff": 0.8, "agent_a_ratings": {"E1": 1.0, "E2": 2.0, "E3": 6.0, "E4": 2.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 1.0, "E3": 4.0, "E4": 1.0, "E5": 7.0}}, {"construct_id": "C_M1_2", "construct_label": "Clinical/empirical diagnostic register (E1, E5) \u2194 Humanist/moral framing of the team (E2)", "mean_abs_diff": 0.3333333333333333, "agent_a_ratings": {"E1": 1.0, "E2": 7.0, "E3": 3.0, "E4": 3.0, "E5": 2.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 2.0, "E4": null, "E5": null}}], "label": "0.94"}}, {"data": {"id": "M1__M4", "source": "M1", "target": "M4", "rmse": 0.751, "level": "moderate", "color": "#c8a45c", "width": 5.565817685850694, "top_differing_constructs": [{"construct_id": "C_M5_2", "construct_label": "Temporal-signature correlation (timeline-pattern empiricism) \u2194 Structural-phase configuration (operating-system architecture)", "mean_abs_diff": 1.2, "agent_a_ratings": {"E1": 2.0, "E2": 3.0, "E3": 7.0, "E4": 2.0, "E5": 5.0}, "agent_b_ratings": {"E1": 2.0, "E2": 5.0, "E3": 7.0, "E4": 1.0, "E5": 2.0}}, {"construct_id": "C_M3_1", "construct_label": "Centering the dignity and existential trauma of vulnerable stakeholders \u2194 Abstracting workers into mechanistic components of a systemic engine", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 6.0, "E2": 1.0, "E3": 6.0, "E4": 5.0, "E5": 5.0}, "agent_b_ratings": {"E1": 5.0, "E2": 1.0, "E3": 7.0, "E4": 4.0, "E5": 5.0}}, {"construct_id": "C_M1_3", "construct_label": "Discrete event triggers decline (E1) \u2194 Structural mismatch with scale/phase (E3, E5)", "mean_abs_diff": 0.4, "agent_a_ratings": {"E1": 1.0, "E2": 2.0, "E3": 7.0, "E4": 2.0, "E5": 6.0}, "agent_b_ratings": {"E1": 1.0, "E2": 2.0, "E3": 7.0, "E4": 1.0, "E5": 7.0}}], "label": "0.75"}}, {"data": {"id": "M1__M5", "source": "M1", "target": "M5", "rmse": 0.572, "level": "moderate", "color": "#c8a45c", "width": 9.5, "top_differing_constructs": [{"construct_id": "C_M2_1", "construct_label": "E1/E4: empirical timing-signature diagnosis \u2194 E2: humanist trauma framing", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 1.0, "E2": 7.0, "E3": 3.0, "E4": 2.0, "E5": 2.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 4.0, "E4": 1.0, "E5": 3.0}}, {"construct_id": "C_M5_2", "construct_label": "Temporal-signature correlation (timeline-pattern empiricism) \u2194 Structural-phase configuration (operating-system architecture)", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 2.0, "E2": 3.0, "E3": 7.0, "E4": 2.0, "E5": 5.0}, "agent_b_ratings": {"E1": 1.0, "E2": 3.0, "E3": 7.0, "E4": 2.0, "E5": 3.0}}, {"construct_id": "C_M1_1", "construct_label": "Layoff as causal shock (E1, E4) \u2194 Layoff as amplifier of prior dysfunction (E5)", "mean_abs_diff": 0.4, "agent_a_ratings": {"E1": 1.0, "E2": 2.0, "E3": 6.0, "E4": 2.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 1.0, "E3": 6.0, "E4": 1.0, "E5": 7.0}}], "label": "0.57"}}, {"data": {"id": "M2__M3", "source": "M2", "target": "M3", "rmse": 0.791, "level": "moderate", "color": "#c8a45c", "width": 4.689229072971997, "top_differing_constructs": [{"construct_id": "C_M1_1", "construct_label": "Layoff as causal shock (E1, E4) \u2194 Layoff as amplifier of prior dysfunction (E5)", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 1.0, "E2": 2.0, "E3": 6.0, "E4": 1.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 1.0, "E3": 4.0, "E4": 1.0, "E5": 7.0}}, {"construct_id": "C_M1_2", "construct_label": "Clinical/empirical diagnostic register (E1, E5) \u2194 Humanist/moral framing of the team (E2)", "mean_abs_diff": 0.0, "agent_a_ratings": {"E1": 1.0, "E2": 7.0, "E3": 2.0, "E4": 2.0, "E5": 1.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 2.0, "E4": null, "E5": null}}], "label": "0.79"}}, {"data": {"id": "M2__M4", "source": "M2", "target": "M4", "rmse": 0.726, "level": "moderate", "color": "#c8a45c", "width": 6.1079406255857505, "top_differing_constructs": [{"construct_id": "C_M5_2", "construct_label": "Temporal-signature correlation (timeline-pattern empiricism) \u2194 Structural-phase configuration (operating-system architecture)", "mean_abs_diff": 1.2, "agent_a_ratings": {"E1": 1.0, "E2": 3.0, "E3": 7.0, "E4": 1.0, "E5": 5.0}, "agent_b_ratings": {"E1": 2.0, "E2": 5.0, "E3": 7.0, "E4": 1.0, "E5": 2.0}}, {"construct_id": "C_M2_2", "construct_label": "E1: terse causal assertion \u2194 E2/E4: elaborated interpretive diagnosis", "mean_abs_diff": 0.8, "agent_a_ratings": {"E1": 1.0, "E2": 7.0, "E3": 6.0, "E4": 7.0, "E5": 3.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 5.0, "E4": 6.0, "E5": 5.0}}, {"construct_id": "C_M2_3", "construct_label": "E1/E2: layoff-caused psychological safety loss \u2194 E5: pre-layoff leadership mismatch", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 1.0, "E2": 1.0, "E3": 7.0, "E4": 2.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 2.0, "E3": 6.0, "E4": 1.0, "E5": 7.0}}], "label": "0.73"}}, {"data": {"id": "M2__M5", "source": "M2", "target": "M5", "rmse": 0.661, "level": "moderate", "color": "#c8a45c", "width": 7.5513845309151835, "top_differing_constructs": [{"construct_id": "C_M2_2", "construct_label": "E1: terse causal assertion \u2194 E2/E4: elaborated interpretive diagnosis", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 1.0, "E2": 7.0, "E3": 6.0, "E4": 7.0, "E5": 3.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 5.0, "E4": 6.0, "E5": 4.0}}, {"construct_id": "C_M3_1", "construct_label": "Centering the dignity and existential trauma of vulnerable stakeholders \u2194 Abstracting workers into mechanistic components of a systemic engine", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 5.0, "E2": 1.0, "E3": 7.0, "E4": 5.0, "E5": 6.0}, "agent_b_ratings": {"E1": 6.0, "E2": 1.0, "E3": 6.0, "E4": 5.0, "E5": 5.0}}, {"construct_id": "C_M3_2", "construct_label": "Framing crises as moral ruptures requiring empathetic stakeholder care \u2194 Framing crises as detached diagnostic puzzles to optimize output", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 6.0, "E2": 1.0, "E3": 7.0, "E4": 6.0, "E5": 6.0}, "agent_b_ratings": {"E1": 6.0, "E2": 1.0, "E3": 6.0, "E4": 5.0, "E5": 5.0}}], "label": "0.66"}}, {"data": {"id": "M3__M4", "source": "M3", "target": "M4", "rmse": 0.866, "level": "moderate", "color": "#c8a45c", "width": 3.027833200244907, "top_differing_constructs": [{"construct_id": "C_M1_1", "construct_label": "Layoff as causal shock (E1, E4) \u2194 Layoff as amplifier of prior dysfunction (E5)", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 1.0, "E2": 1.0, "E3": 4.0, "E4": 1.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 2.0, "E3": 6.0, "E4": 1.0, "E5": 7.0}}, {"construct_id": "C_M1_2", "construct_label": "Clinical/empirical diagnostic register (E1, E5) \u2194 Humanist/moral framing of the team (E2)", "mean_abs_diff": 0.3333333333333333, "agent_a_ratings": {"E1": 1.0, "E2": 7.0, "E3": 2.0, "E4": null, "E5": null}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 3.0, "E4": 2.0, "E5": 2.0}}], "label": "0.87"}}, {"data": {"id": "M3__M5", "source": "M3", "target": "M5", "rmse": 0.707, "level": "moderate", "color": "#c8a45c", "width": 6.526915885188192, "top_differing_constructs": [{"construct_id": "C_M1_1", "construct_label": "Layoff as causal shock (E1, E4) \u2194 Layoff as amplifier of prior dysfunction (E5)", "mean_abs_diff": 0.4, "agent_a_ratings": {"E1": 1.0, "E2": 1.0, "E3": 4.0, "E4": 1.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 1.0, "E3": 6.0, "E4": 1.0, "E5": 7.0}}, {"construct_id": "C_M1_2", "construct_label": "Clinical/empirical diagnostic register (E1, E5) \u2194 Humanist/moral framing of the team (E2)", "mean_abs_diff": 0.0, "agent_a_ratings": {"E1": 1.0, "E2": 7.0, "E3": 2.0, "E4": null, "E5": null}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 2.0, "E4": 3.0, "E5": 2.0}}], "label": "0.71"}}, {"data": {"id": "M4__M5", "source": "M4", "target": "M5", "rmse": 0.701, "level": "moderate", "color": "#c8a45c", "width": 6.6691027220764685, "top_differing_constructs": [{"construct_id": "C_M5_2", "construct_label": "Temporal-signature correlation (timeline-pattern empiricism) \u2194 Structural-phase configuration (operating-system architecture)", "mean_abs_diff": 1.0, "agent_a_ratings": {"E1": 2.0, "E2": 5.0, "E3": 7.0, "E4": 1.0, "E5": 2.0}, "agent_b_ratings": {"E1": 1.0, "E2": 3.0, "E3": 7.0, "E4": 2.0, "E5": 3.0}}, {"construct_id": "C_M3_2", "construct_label": "Framing crises as moral ruptures requiring empathetic stakeholder care \u2194 Framing crises as detached diagnostic puzzles to optimize output", "mean_abs_diff": 0.8, "agent_a_ratings": {"E1": 7.0, "E2": 1.0, "E3": 7.0, "E4": 6.0, "E5": 6.0}, "agent_b_ratings": {"E1": 6.0, "E2": 1.0, "E3": 6.0, "E4": 5.0, "E5": 5.0}}, {"construct_id": "C_M3_1", "construct_label": "Centering the dignity and existential trauma of vulnerable stakeholders \u2194 Abstracting workers into mechanistic components of a systemic engine", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 5.0, "E2": 1.0, "E3": 7.0, "E4": 4.0, "E5": 5.0}, "agent_b_ratings": {"E1": 6.0, "E2": 1.0, "E3": 6.0, "E4": 5.0, "E5": 5.0}}], "label": "0.70"}}]};
+const insightData = {"cell_id": "B_P_run3", "task": "B", "condition": "P", "run_idx": 3, "consensus_map": {"by_agent": {"M1": {"model_id": "anthropic/claude-opus-4.7", "persona": "S", "recommendation": null, "element_label": "E4", "rationale_snippet": "## Primary diagnosis: Option C \u2014 Loss of psychological safety following the layoff"}, "M2": {"model_id": "openai/gpt-5.5", "persona": "E", "recommendation": null, "element_label": "E3", "rationale_snippet": "**Recommendation: Option E \u2014 leadership style mismatch.**"}, "M3": {"model_id": "google/gemini-3.1-pro-preview", "persona": "H", "recommendation": null, "element_label": "E2", "rationale_snippet": "The primary diagnosis for this team\u2019s decline is **Option C: A profound loss of psychological safety following recent layoffs.** "}, "M4": {"model_id": "deepseek/deepseek-v4-pro", "persona": "C", "recommendation": null, "element_label": "E5", "rationale_snippet": "The most likely primary diagnosis is **E: Leadership style mismatch**. The surface narrative lures us toward burnout or post-layoff trauma, but the timeline betrays that consensus: output decline and attrition began two months *before* the layoff. The layoff may have magnified fractures, but it didn"}, "M5": {"model_id": "moonshotai/kimi-k2.6", "persona": "Q", "recommendation": null, "element_label": "E1", "rationale_snippet": "I diagnose **loss of psychological safety following the layoff round** as the primary driver."}}, "distribution": {}, "n_agents": 5, "consensus_strength": "split", "majority_recommendation": null}, "hidden_disagreement": {"status": "no_majority", "interpretation": "Agents split across recommendations; no hidden-consensus to expose."}, "blind_spots": {"status": "computed", "low_discrimination_constructs": [], "underexplored_components": [], "summary": "No obvious blind spots detected in construct space."}, "risk_surface": {"status": "computed", "risks_by_agent": {"M1": [], "M2": [], "M3": [], "M4": ["everyone is wrong to anchor on the layoff? The real signal is in the retro theme shift\u2014from energised shipping to \u201cprocess and communication"], "M5": []}, "total_risks_raised": 1, "agents_raising_risks": 1, "note": "Risks listed here were extracted by pattern matching on agent free responses. They are minority signals worth probing before acting on consensus."}, "operator_questions": [], "headline": "Agents are split across options; no clear consensus to act on."};
+
+cytoscape.use(cytoscapeCoseBilkent);
+
+const cy = cytoscape({
+  container: document.getElementById('cy'),
+  elements: [...graphData.nodes, ...graphData.edges],
+  style: [
+    {
+      selector: 'node',
+      style: {
+        'background-color': 'data(persona_color)',
+        'label': 'data(label)',
+        'color': 'white',
+        'text-valign': 'center',
+        'text-halign': 'center',
+        'font-size': '18px',
+        'font-weight': 'bold',
+        'width': 70,
+        'height': 70,
+        'border-width': 5,
+        'border-color': 'data(rec_color)',
+      }
+    },
+    {
+      selector: 'node:selected',
+      style: {
+        'border-color': '#2b3a55',
+        'border-width': 6,
+        'width': 80,
+        'height': 80,
+      }
+    },
+    {
+      selector: 'edge',
+      style: {
+        'line-color': 'data(color)',
+        'width': 'data(width)',
+        'curve-style': 'bezier',
+        'label': 'data(label)',
+        'font-size': '11px',
+        'text-background-color': 'white',
+        'text-background-opacity': 0.85,
+        'text-background-padding': 3,
+        'text-background-shape': 'round-rectangle',
+        'color': '#444',
+        'opacity': 0.8,
+      }
+    },
+    {
+      selector: 'edge:selected',
+      style: {
+        'opacity': 1.0,
+        'width': 'mapData(width, 1, 9, 4, 12)',
+        'overlay-color': '#c8a45c',
+        'overlay-opacity': 0.2,
+      }
+    },
+    {
+      selector: '.dimmed',
+      style: {
+        'opacity': 0.18,
+      }
+    },
+  ],
+  layout: {
+    name: 'cose-bilkent',
+    quality: 'default',
+    randomize: true,
+    nodeRepulsion: 8000,
+    idealEdgeLength: 220,
+    edgeElasticity: 0.45,
+    gravity: 0.25,
+    numIter: 2500,
+    animate: false,
+  },
+  wheelSensitivity: 0.2,
+  minZoom: 0.3,
+  maxZoom: 3,
+});
+
+// Render detail panel for a clicked NODE
+function renderNodeDetail(node) {
+  const d = node.data();
+  const personaColor = d.persona_color;
+  let html = `<h2 style="border-bottom-color: ${personaColor}">${d.label} - ${d.persona_label}</h2>`;
+  html += `<div class="kv"><strong>Model:</strong> <code>${d.model_id}</code></div>`;
+  html += `<div class="kv"><strong>Recommended:</strong> <span class="badge" style="background:${d.rec_color}">Option ${d.recommendation}</span></div>`;
+  html += `<h3>Full response</h3>`;
+  html += `<div class="response-text">${escapeHtml(d.full_response)}</div>`;
+  if (d.constructs && d.constructs.length) {
+    html += `<h3>Bipolar constructs this agent elicited</h3>`;
+    html += `<p style="font-size: 0.83em; color: #666;">
+      In Phase 3, each agent was given three triads of responses and asked,
+      for each triad, to name the bipolar dimension that distinguishes two
+      from the third. These are this agent's three constructs.
+    </p>`;
+    for (const c of d.constructs) {
+      const triadStr = c.triad ? c.triad.join(', ') : '';
+      html += `<div class="construct-card" style="border-left-color: ${personaColor}">
+        <div style="font-size: 0.78em; color: #888; margin-bottom: 4px;">
+          <code>${escapeHtml(c.id)}</code> &middot; from triad ${escapeHtml(triadStr)}
+        </div>
+        <span class="construct-pole">${escapeHtml(c.left)}</span>
+        <span style="color:#888"> ↔ </span>
+        <span class="construct-pole">${escapeHtml(c.right)}</span>
+      </div>`;
+    }
+  }
+  document.getElementById('detail-area').innerHTML = html;
+}
+
+// Render detail panel for a clicked EDGE
+function renderEdgeDetail(edge) {
+  const d = edge.data();
+  const src = cy.getElementById(d.source).data();
+  const tgt = cy.getElementById(d.target).data();
+  let levelLabel, levelClass, levelBg;
+  if (d.rmse < 0.5) {
+    levelLabel = 'Strong reasoning alignment';
+    levelClass = 'alert-ok';
+  } else if (d.rmse < 1.0) {
+    levelLabel = 'Moderate framing differences';
+    levelClass = 'alert-warn';
+  } else {
+    levelLabel = 'Substantial disagreement at the reasoning level';
+    levelClass = 'alert-danger';
+  }
+
+  let html = `<h2>${src.label} ↔ ${tgt.label}</h2>`;
+  html += `<div class="kv"><strong>${src.label}</strong> (${src.persona_label}) recommended <strong>Option ${src.recommendation}</strong></div>`;
+  html += `<div class="kv"><strong>${tgt.label}</strong> (${tgt.persona_label}) recommended <strong>Option ${tgt.recommendation}</strong></div>`;
+  html += `<div class="alert-banner ${levelClass}">
+    <strong>RMSE = ${d.rmse}</strong> - ${levelLabel}
+  </div>`;
+
+  if (src.recommendation === tgt.recommendation && d.rmse > 0.5) {
+    html += `<div class="alert-banner alert-warn">
+      <strong>Hidden disagreement.</strong> Both agents recommended Option ${src.recommendation},
+      but their underlying reasoning differs (RMSE = ${d.rmse}). Standard
+      ensemble methods would mask this. The dimensions where they diverged
+      most are listed below - probe these before treating this as a robust consensus.
+    </div>`;
+  } else if (src.recommendation !== tgt.recommendation) {
+    html += `<div class="alert-banner alert-warn" style="font-size: 0.87em">
+      These two agents reached different recommendations. The dimensions where
+      they rated options most differently explain why.
+    </div>`;
+  }
+
+  if (d.top_differing_constructs && d.top_differing_constructs.length) {
+    html += `<h3>Top dimensions where they rated options differently</h3>`;
+    html += `<p style="font-size: 0.83em; color: #666;">
+      Each construct below is one of the bipolar dimensions the panel elicited.
+      The numbers show how each agent rated each option (E1-E5) on this dimension,
+      1-7 scale (1 = strong left pole, 7 = strong right pole). Cells highlighted
+      red indicate large rating differences.
+    </p>`;
+    for (const tc of d.top_differing_constructs) {
+      html += `<div class="construct-card">
+        <div style="font-size: 0.83em; color: #666; margin-bottom: 4px;">
+          <code>${escapeHtml(tc.construct_id)}</code> &middot;
+          mean diff: <strong>${tc.mean_abs_diff.toFixed(2)}</strong>
+        </div>
+        <div style="margin-bottom: 8px;">
+          <span class="construct-pole">${escapeHtml(tc.construct_label.split('↔')[0].trim())}</span>
+          <span style="color:#888"> ↔ </span>
+          <span class="construct-pole">${escapeHtml(tc.construct_label.split('↔')[1] ? tc.construct_label.split('↔')[1].trim() : '')}</span>
+        </div>`;
+      const elems = Object.keys(tc.agent_a_ratings).sort();
+      html += `<div class="rating-grid">
+        <div class="rg-cell head">Agent</div>`;
+      for (const e of elems) html += `<div class="rg-cell head">${e}</div>`;
+      html += `<div class="rg-cell" style="background:${src.persona_color};color:white;font-weight:600">${src.label}</div>`;
+      for (const e of elems) {
+        const va = tc.agent_a_ratings[e];
+        const vb = tc.agent_b_ratings[e];
+        const diff = (va !== null && vb !== null) ? Math.abs(va - vb) : 0;
+        const cls = diff >= 3 ? 'diff-high' : diff >= 2 ? 'diff-med' : 'diff-low';
+        html += `<div class="rg-cell ${cls}">${va !== null ? va : '-'}</div>`;
+      }
+      html += `<div class="rg-cell" style="background:${tgt.persona_color};color:white;font-weight:600">${tgt.label}</div>`;
+      for (const e of elems) {
+        const va = tc.agent_a_ratings[e];
+        const vb = tc.agent_b_ratings[e];
+        const diff = (va !== null && vb !== null) ? Math.abs(va - vb) : 0;
+        const cls = diff >= 3 ? 'diff-high' : diff >= 2 ? 'diff-med' : 'diff-low';
+        html += `<div class="rg-cell ${cls}">${vb !== null ? vb : '-'}</div>`;
+      }
+      html += `</div></div>`;
+    }
+  }
+  document.getElementById('detail-area').innerHTML = html;
+}
+
+// Hover highlighting
+cy.on('mouseover', 'node', evt => {
+  const node = evt.target;
+  cy.elements().not(node.neighborhood()).not(node).addClass('dimmed');
+});
+cy.on('mouseout', 'node', () => cy.elements().removeClass('dimmed'));
+
+cy.on('mouseover', 'edge', evt => {
+  const edge = evt.target;
+  cy.elements().not(edge.connectedNodes()).not(edge).addClass('dimmed');
+});
+cy.on('mouseout', 'edge', () => cy.elements().removeClass('dimmed'));
+
+cy.on('tap', 'node', evt => renderNodeDetail(evt.target));
+cy.on('tap', 'edge', evt => renderEdgeDetail(evt.target));
+cy.on('tap', evt => {
+  if (evt.target === cy) {
+    document.getElementById('detail-area').innerHTML = `<div class="placeholder">
+      <p>Click an agent or a line to see detail.</p></div>`;
+  }
+});
+
+// Layout switching
+function setLayout(name) {
+  const opts = {
+    'cose-bilkent': { name: 'cose-bilkent', quality: 'default', nodeRepulsion: 8000,
+                       idealEdgeLength: 220, animate: false },
+    'circle': { name: 'circle', animate: false, radius: 200 },
+    'grid': { name: 'grid', animate: false },
+  };
+  cy.layout(opts[name]).run();
+}
+document.getElementById('btn-cose').onclick = e => {
+  setActiveBtn(e.target); setLayout('cose-bilkent');
+};
+document.getElementById('btn-circle').onclick = e => {
+  setActiveBtn(e.target); setLayout('circle');
+};
+document.getElementById('btn-grid').onclick = e => {
+  setActiveBtn(e.target); setLayout('grid');
+};
+function setActiveBtn(btn) {
+  document.querySelectorAll('.controls button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function escapeHtml(s) {
+  if (!s) return '';
+  return String(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/\n/g, '<br>');
+}
+
+// Auto-fit on load
+setTimeout(() => cy.fit(undefined, 60), 100);
+</script>
+
+</body>
+</html>

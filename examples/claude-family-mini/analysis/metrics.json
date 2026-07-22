@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "task": "K (M&A under regulatory uncertainty)",
+    "condition": "N",
+    "date": "2026-07-21",
+    "runner": "claude-cowork-subagents (model aliases haiku/sonnet/opus/fable)",
+    "seed": 42,
+    "protocol": "CM-RG Phase 2L prompts, verbatim"
+  },
+  "n_models": 4,
+  "n_elements": 4,
+  "n_constructs": 47,
+  "n_ratings": 752,
+  "n_null_cells": 0,
+  "mean_pairwise_r": 0.633,
+  "median_pairwise_r": 0.661,
+  "pairwise_r": {
+    "claude-haiku x claude-sonnet": 0.316,
+    "claude-haiku x claude-opus": 0.42,
+    "claude-haiku x claude-fable": 0.306,
+    "claude-sonnet x claude-opus": 0.903,
+    "claude-sonnet x claude-fable": 0.921,
+    "claude-opus x claude-fable": 0.931
+  },
+  "skipped_pairs": [],
+  "calibration_mean_rating": {
+    "claude-haiku": 3.926,
+    "claude-sonnet": 3.899,
+    "claude-opus": 3.617,
+    "claude-fable": 3.654
+  },
+  "calibration_group_mean": 3.774,
+  "disagreement_per_element": {
+    "E1": 1.128,
+    "E2": 1.241,
+    "E3": 1.089,
+    "E4": 1.16
+  },
+  "constructs_per_rater": {
+    "claude-haiku": 11,
+    "claude-sonnet": 12,
+    "claude-opus": 12,
+    "claude-fable": 12
+  },
+  "construct_exact_duplicate_rate": 0.0,
+  "pca_variance_share": [
+    0.481,
+    0.352,
+    0.167
+  ],
+  "pca_top_loadings": {
+    "PC1": [
+      {
+        "construct": "sectioned vs continuous prose",
+        "loading": 0.295
+      },
+      {
+        "construct": "sectioned vs unbroken prose",
+        "loading": 0.295
+      },
+      {
+        "construct": "structured vs essayistic",
+        "loading": 0.293
+      },
+      {
+        "construct": "optionality-preserving vs clean-break",
+        "loading": 0.28
+      },
+      {
+        "construct": "tethered vs severed",
+        "loading": 0.268
+      }
+    ],
+    "PC2": [
+      {
+        "construct": "risk-transfer terms vs structure-only",
+        "loading": -0.319
+      },
+      {
+        "construct": "downside-capped vs uncapped",
+        "loading": -0.308
+      },
+      {
+        "construct": "hedged vs unhedged",
+        "loading": -0.305
+      },
+      {
+        "construct": "alternative-structure pivot vs revert-to-binary",
+        "loading": -0.292
+      },
+      {
+        "construct": "contractually-aggressive vs contractually-restrained",
+        "loading": -0.277
+      }
+    ]
+  }
+}

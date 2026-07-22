@@ -8,11 +8,21 @@ A methodology and dataset for measuring evaluative diversity across frontier lan
 [![DOI](https://img.shields.io/badge/DOI-pending-lightgrey.svg)](#)
 [![arXiv](https://img.shields.io/badge/arXiv-pending-red.svg)](#)
 
+English · [Русский](README.ru.md)
+
 ## What this is
 
 CM-RG transposes the Repertory Grid technique (Kelly, 1955) from human psychology onto frontier language models. Each model produces a free response to a decision task, then participates in triadic construct elicitation against anonymised peer responses. The result is a structured grid that reveals how each model carves the evaluative space differently from its peers.
 
 This repository contains the full pipeline, the elicited dataset (codename "Archipelago"), and the analyses behind the accompanying paper.
+
+## Try it in 15 minutes - the Claude Skill
+
+[`skill/cm-rg/`](skill/cm-rg/) packages the CM-RG protocol as an [Agent Skill](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview) for Claude Code / Claude. Drop it into your skills folder and ask Claude to "run a repertory grid on the models you can spawn": it runs the full four-phase protocol (free response - anonymization - triadic elicitation - cross-rating) on Claude-family subagents with **no API keys**, then computes agreement, calibration, and the element map with the bundled scripts. It can also measure **any 3-12 models available on OpenRouter** via the bundled spend-capped runner (`skill/cm-rg/scripts/run_openrouter.py` - dry-run cost estimates, offline selftest, hard `--max-usd` cap), drive this repository's full pre-registered pipeline, or analyze existing grids. Step-by-step guide: [`skill/cm-rg/USAGE.md`](skill/cm-rg/USAGE.md) ([RU](skill/cm-rg/USAGE.ru.md)).
+
+See [`examples/claude-family-mini/`](examples/claude-family-mini/REPORT.md) for a demo run on 4 Claude variants: all four unanimously picked the same option on the M&A task, yet the small-tier model applies the shared constructs very differently from the larger trio (r = 0.31-0.42 vs 0.90-0.93 within the trio) - a within-family echo of the paper's tier findings.
+
+The skill also closes the loop this methodology was built for: **diversity-aware orchestration**. Run a grid on *your* task, then `scripts/compose_panel.py` recommends which models to combine - the max-diversity panel, agreement blocs ("three Western flagships = one voice"), how many independent voices you actually have, which model should synthesize, and calibration offsets for aggregating their scores. Demo output: [`examples/claude-family-mini/PANEL.md`](examples/claude-family-mini/PANEL.md).
 
 ---
 
@@ -124,6 +134,8 @@ cross-model-repertory-grid/
   m5_sensitivity.py              robustness check for missing-data model
   build_dataset.py               Parquet + dataset card + Croissant metadata
   multi_run_pca_analysis.py      runs-as-elements PCA at higher dimensionality
+  skill/cm-rg/                   Claude Skill: no-key mini CM-RG or any OpenRouter models
+  examples/claude-family-mini/   demo grid from the skill (4 Claude variants)
   data/                          final published Parquet tables (after build)
   results/                       raw cells (Phase 1: 7 tasks x 2 conditions x 5 runs)
   results_pilot/                 pilot replication cells

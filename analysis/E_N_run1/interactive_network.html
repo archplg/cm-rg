@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Interactive AI Council - E_N_run1</title>
+<script src="https://unpkg.com/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
+<script src="https://unpkg.com/layout-base@2.0.1/layout-base.js"></script>
+<script src="https://unpkg.com/cose-base@2.2.0/cose-base.js"></script>
+<script src="https://unpkg.com/cytoscape-cose-bilkent@4.1.0/cytoscape-cose-bilkent.js"></script>
+<style>
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Georgia, sans-serif;
+       margin: 0; padding: 0; background: #f4f1e8; color: #1a1a1a; }
+.header { background: #2b3a55; color: white; padding: 14px 24px; }
+.header h1 { margin: 0; font-size: 1.2em; }
+.header .subtitle { font-size: 0.85em; opacity: 0.85; margin-top: 3px; }
+.layout { display: flex; height: calc(100vh - 60px); }
+#graph-container { flex: 1; background: #f9f7f0; position: relative; }
+#cy { width: 100%; height: 100%; }
+.legend { position: absolute; bottom: 16px; left: 16px;
+           background: rgba(255,255,255,0.96); padding: 12px 16px;
+           border-radius: 6px; border: 1px solid #d8d0bf; font-size: 0.82em;
+           max-width: 280px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.legend h3 { margin: 0 0 8px; font-size: 0.9em; color: #2b3a55; }
+.legend-row { display: flex; align-items: center; margin: 4px 0; }
+.legend-swatch { display: inline-block; width: 24px; height: 4px; margin-right: 8px;
+                  border-radius: 2px; }
+.legend-dot { display: inline-block; width: 14px; height: 14px; margin-right: 8px;
+               border-radius: 50%; }
+.help { position: absolute; top: 16px; left: 16px;
+         background: rgba(255,255,255,0.96); padding: 10px 14px;
+         border-radius: 6px; border: 1px solid #d8d0bf; font-size: 0.8em;
+         color: #555; max-width: 320px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.controls { position: absolute; top: 16px; right: 16px;
+             background: rgba(255,255,255,0.96); padding: 10px 14px;
+             border-radius: 6px; border: 1px solid #d8d0bf; font-size: 0.85em;
+             box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.controls button { display: block; width: 100%; padding: 6px 10px; margin: 3px 0;
+                    background: white; border: 1px solid #c8a45c; border-radius: 4px;
+                    cursor: pointer; font-size: 0.9em; }
+.controls button.active { background: #c8a45c; color: white; }
+.controls button:hover { background: #e6dfc9; }
+.controls button.active:hover { background: #b8945a; }
+
+#info-panel { width: 420px; background: white; border-left: 1px solid #d8d0bf;
+               overflow-y: auto; padding: 20px 24px; }
+#info-panel h2 { font-size: 1.1em; margin: 0 0 8px; color: #2b3a55;
+                  border-bottom: 2px solid #c8a45c; padding-bottom: 6px; }
+#info-panel h3 { font-size: 0.95em; margin: 18px 0 6px; color: #2b3a55; }
+#info-panel h4 { font-size: 0.85em; margin: 12px 0 4px; color: #555;
+                  text-transform: uppercase; letter-spacing: 0.5px; }
+#info-panel .placeholder { color: #888; font-style: italic; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 11px;
+          font-size: 0.78em; font-weight: 600; color: white; margin-right: 4px; }
+.kv { margin: 6px 0; font-size: 0.92em; }
+.kv strong { color: #555; }
+.response-text { font-size: 0.88em; line-height: 1.55; color: #333;
+                  background: #faf8f1; padding: 12px 14px; border-radius: 4px;
+                  border-left: 3px solid #c8a45c; }
+.construct-card { font-size: 0.85em; margin: 6px 0; padding: 8px 11px;
+                   background: #faf8f1; border-radius: 4px;
+                   border-left: 3px solid #666; }
+.construct-pole { display: inline; padding: 2px 6px; background: white;
+                   border-radius: 3px; border: 1px solid #e6dfc9;
+                   font-family: Georgia, serif; }
+.rating-grid { display: grid; grid-template-columns: 60px repeat(5, 1fr);
+                gap: 2px; margin: 8px 0; font-size: 0.78em; }
+.rg-cell { padding: 4px 6px; background: #f4f1e8; text-align: center;
+            border-radius: 3px; }
+.rg-cell.head { background: #2b3a55; color: white; font-weight: 600; }
+.rg-cell.diff-high { background: #fdc; }
+.rg-cell.diff-med { background: #ffe9c0; }
+.rg-cell.diff-low { background: #e2efd9; }
+.alert-banner { padding: 10px 14px; border-radius: 5px; margin: 10px 0;
+                 font-size: 0.9em; }
+.alert-danger { background: #fdf0ed; border-left: 4px solid #c44;
+                 color: #6b1313; }
+.alert-warn { background: #fdfaf2; border-left: 4px solid #c8a45c;
+               color: #6b4920; }
+.alert-ok { background: #f0f7ed; border-left: 4px solid #3a7d44;
+             color: #1f4a26; }
+hr { border: none; border-top: 1px solid #e6dfc9; margin: 14px 0; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>AI Council - Interactive View</h1>
+  <div class="subtitle">Cell <strong>E_N_run1</strong> &middot; Task E &middot; neutral framing</div>
+</div>
+
+<div class="layout">
+  <div id="graph-container">
+    <div id="cy"></div>
+
+    <div class="help">
+      <strong>How to explore:</strong><br>
+      &middot; Click a circle (agent) to see their full response and reasoning<br>
+      &middot; Click a connecting line to see <em>where</em> two agents disagreed<br>
+      &middot; Drag agents around if the layout is hard to read
+    </div>
+
+    <div class="controls">
+      <strong style="font-size: 0.85em; color: #555;">Layout</strong>
+      <button id="btn-cose" class="active">Force-directed</button>
+      <button id="btn-circle">Circle</button>
+      <button id="btn-grid">Grid</button>
+    </div>
+
+    <div class="legend">
+      <h3>Reading the network</h3>
+      <div><strong>Circle color</strong> = epistemological frame</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#0a558c"></span>Quantitative</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#2d8659"></span>Systems</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#8a5a00"></span>Engineering</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#882b6f"></span>Humanist</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#b03030"></span>Contrarian</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#666"></span>Neutral (no persona)</div>
+      <hr>
+      <div><strong>Line color</strong> = reasoning agreement</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#3a7d44"></span>RMSE &lt; 0.5 - aligned</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#c8a45c"></span>0.5-1.0 - moderate</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#c44"></span>&gt; 1.0 - substantial</div>
+      <hr>
+      <div style="color: #555; font-size: 0.92em">
+        <strong>Line thickness</strong> = relative agreement within this case<br>
+        <strong>RMSE</strong> = root-mean-square error on 7-point rating scale
+      </div>
+    </div>
+  </div>
+
+  <div id="info-panel">
+    <h2>Agents are split across options; no clear consensus to act on.</h2>
+
+    <div class="alert-banner alert-warn"><strong>Split panel.</strong> Agents disagree at the recommendation level. The network shows whose reasoning patterns cluster together.</div>
+
+    <div class="kv"><strong>Cell:</strong> E_N_run1</div>
+    <div class="kv"><strong>Task:</strong> E (neutral framing)</div>
+    <div class="kv"><strong>Agents:</strong> 5</div>
+    <div class="kv"><strong>Reasoning RMSE (mean across pairs):</strong> 0.698</div>
+
+    <hr>
+
+    <div id="detail-area">
+      <div class="placeholder">
+        <p>Click an agent or a connecting line to see details here.</p>
+        <p>The colored circles are the LLM agents. The lines between them show how similarly they reasoned: thicker and greener means they rated the options in similar patterns, thinner and redder means they disagreed at the level of how they evaluated each option.</p>
+        <p>Hidden disagreement is the case where two agents recommend the same option but their connecting line is yellow or red - they agree on the answer but not on the reasoning. Click such a line to see exactly which dimensions they diverged on.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3>About this view</h3>
+    <p style="font-size: 0.85em; color: #555;">
+      The reasoning network shows behavioral disagreement, not topic disagreement.
+      Two agents with thick green connection rated the options similarly on every
+      construct elicited by the panel. Two agents with thin red connection
+      saw the options through different evaluative lenses - even if they
+      may have recommended the same option in the end.
+    </p>
+
+    <p style="font-size: 0.85em; color: #555;">
+      Generated by Archipelago. <em>The five voices are LLM analysts; this view is
+      decision support, not decision substitution.</em>
+    </p>
+  </div>
+</div>
+
+<script>
+const graphData = {"nodes": [{"data": {"id": "M1", "label": "M1", "persona": "neutral", "persona_label": "Neutral framing", "persona_color": "#666666", "recommendation": "?", "rec_color": "#cccccc", "model_id": "anthropic/claude-opus-4.7", "full_response": "# Recommendation: Option C (Rights-and-Process-Based), with explicit sectoral hooks\n\nThe coalition should adopt a rights-and-process-based framework as its primary stance. Three reasons drive this choice.\n\nFirst, **implementability within 18 months**. Eight mid-sized democracies already share constitutional rights traditions, administrative law machinery, and (for many) EU AI Act alignment. Drafting from this foundation is feasible; drafting bespoke compute-licensing regimes or international red-teaming consortia is not. The coalition needs a framework that actually exists in 18 months, not an elegant one that exists in 60.\n\nSecond, **strategic positioning**. The coalition cannot out-hawk the US or out-scale China. Its comparative advantage in global norm-setting is democratic legitimacy. A rights-based framework is exportable to the Global South, interoperable with the EU (amplifying influence in Brussels-led standards bodies like CEN-CENELEC and ISO/IEC JTC 1/SC 42), and harder for incumbents to dismiss than liability rules they'll simply price in. It gives the coalition a distinctive voice rather than a junior-partner echo.\n\nThird, **citizen protection is concrete**. Transparency, contestability, and impact assessments deliver tangible benefits to the 600M people regardless of whether catastrophic AI risks materialize on the predicted timeline. The coalition does not have to bet on a contested risk model.\n\n**Why not Option A?** Capability-thresholds licensing is the most intellectually compelling alternative and addresses risks C cannot. But it requires enforcement infrastructure (compute monitoring, weight-export controls, evaluation labs) that mid-sized democracies cannot stand up unilaterally in 18 months. Adopting it makes the coalition a rule-taker from US licensing decisions while inheriting all the protectionism backlash. Better to let larger powers bear that cost and layer compute-threshold provisions onto C later as a targeted high-risk category.\n\n**To mitigate C's known weaknesses**, the framework should explicitly delegate sector-specific implementation to existing regulators (borrowing from E) and include a sunset-review clause forcing reassessment at 36 months.\n\n**This is a mistake in 5 years if**: (a) a frontier model causes a catastrophic incident that capability-licensing would plausibly have prevented, and the coalition's process-based regime is exposed as paperwork; (b) compliance costs drive domestic AI labs to relocate to laxer jurisdictions, hollowing out competitiveness; or (c) the EU diverges sharply, leaving the coalition aligned with a framework it no longer co-owns.", "rationale_snippet": "# Recommendation: Option C (Rights-and-Process-Based), with explicit sectoral hooks", "constructs": [{"id": "C_M1_1", "left": "Ex-ante regulatory gatekeeping of frontier models", "right": "Ex-post liability via existing legal mechanisms", "triad": ["E1", "E3", "E5"], "raw_output_excerpt": "Triad 1 (E1, E3, E5):\nLeft pole: Ex-ante regulatory gatekeeping of frontier models\nRight pole: Ex-post liability via existing legal mechanisms\n\nTriad 2 (E1, E3, E4):\nLeft pole: Targeting technical cap"}, {"id": "C_M1_2", "left": "Targeting technical capability thresholds upstream", "right": "Protecting individual rights at deployment", "triad": ["E1", "E3", "E4"], "raw_output_excerpt": "Triad 1 (E1, E3, E5):\nLeft pole: Ex-ante regulatory gatekeeping of frontier models\nRight pole: Ex-post liability via existing legal mechanisms\n\nTriad 2 (E1, E3, E4):\nLeft pole: Targeting technical cap"}, {"id": "C_M1_3", "left": "Justified by systemic catastrophic risk prevention", "right": "Justified by feasibility and implementation speed", "triad": ["E1", "E2", "E3"], "raw_output_excerpt": "Triad 1 (E1, E3, E5):\nLeft pole: Ex-ante regulatory gatekeeping of frontier models\nRight pole: Ex-post liability via existing legal mechanisms\n\nTriad 2 (E1, E3, E4):\nLeft pole: Targeting technical cap"}], "triads": [["E1", "E3", "E5"], ["E1", "E3", "E4"], ["E1", "E2", "E3"]]}}, {"data": {"id": "M2", "label": "M2", "persona": "neutral", "persona_label": "Neutral framing", "persona_color": "#666666", "recommendation": "?", "rec_color": "#cccccc", "model_id": "openai/gpt-5.5", "full_response": "**Recommendation: Option A \u2014 Capability-thresholds licensing.**\n\nThe coalition should adopt capability-thresholds licensing as its primary frontier AI governance framework. Frontier AI is not just another digital service: the distinctive risk is that a small number of highly capable models can create cross-border, systemic harms before ordinary legal remedies or sectoral rules can respond. A licensing regime for training and deployment above clear compute/capability thresholds is the only option that directly governs the point at which irreversible risk is created.\n\nThis is also the best route to international influence. The US, EU, and China are already moving toward frontier-model oversight in different ways; a coalition representing 600M people and $15T GDP can become the \u201cthird bloc\u201d that turns ad hoc national rules into interoperable standards: common evaluation protocols, incident reporting, model-weight security, red-team requirements, and reciprocal recognition of licenses. That is more strategically valuable than merely copying existing rights or sectoral frameworks.\n\nCompetitiveness concerns are real, but manageable. The framework should be narrow: no licensing for ordinary AI, startups, academic research, or models below the frontier threshold. The coalition should fund shared evaluation infrastructure, subsidized compliance support, and public testbeds so domestic firms are not locked out. The goal is not to freeze development; it is to ensure that the most powerful systems are trained and deployed under auditable safety conditions.\n\nThe most compelling alternative is a rights-and-process framework. It is politically attractive and EU-compatible, but it is insufficient as the primary framework for frontier systems. Transparency, explanation, contestability, and impact assessments protect individuals in many ordinary AI use cases; they do not adequately address model theft, autonomous cyber capability, biosecurity misuse, or loss-of-control risks. For frontier AI, process rights should supplement licensing, not replace it.\n\nI would consider this choice a mistake in five years if thresholds proved technically meaningless, licensing became incumbent protection, domestic frontier research migrated offshore, and no plausible systemic-risk reduction was achieved. If that happens, the coalition should pivot toward lighter, liability- and sector-based governance. But given present uncertainty and the asymmetric downside of frontier failures, licensing is the prudent primary framework.", "rationale_snippet": "**Recommendation: Option A \u2014 Capability-thresholds licensing.**", "constructs": [{"id": "C_M2_1", "left": "Rights-and-process primary framework", "right": "Capability-threshold licensing primary framework", "triad": ["E2", "E3", "E4"], "raw_output_excerpt": "Triad 1:\nLeft pole: Rights-and-process primary framework\nRight pole: Capability-threshold licensing primary framework\n\nTriad 2:\nLeft pole: Ex ante rights and procedural safeguards\nRight pole: Ex post "}, {"id": "C_M2_2", "left": "Ex ante rights and procedural safeguards", "right": "Ex post outcomes-based liability", "triad": ["E2", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Rights-and-process primary framework\nRight pole: Capability-threshold licensing primary framework\n\nTriad 2:\nLeft pole: Ex ante rights and procedural safeguards\nRight pole: Ex post "}, {"id": "C_M2_3", "left": "Frontier capability-threshold licensing", "right": "Deployment-focused rights-and-process governance", "triad": ["E1", "E3", "E4"], "raw_output_excerpt": "Triad 1:\nLeft pole: Rights-and-process primary framework\nRight pole: Capability-threshold licensing primary framework\n\nTriad 2:\nLeft pole: Ex ante rights and procedural safeguards\nRight pole: Ex post "}], "triads": [["E2", "E3", "E4"], ["E2", "E4", "E5"], ["E1", "E3", "E4"]]}}, {"data": {"id": "M3", "label": "M3", "persona": "neutral", "persona_label": "Neutral framing", "persona_color": "#666666", "recommendation": "B", "rec_color": "#ff7f0e", "model_id": "google/gemini-3.1-pro-preview", "full_response": "I recommend the coalition adopt **Option B: Outcomes-based liability**. \n\nGiven the strict 18-month negotiation window, the coalition lacks the time to construct a massive, centralized regulatory apparatus. Option B elegantly circumvents this by leveraging the speed and adaptability of existing legal traditions and private insurance markets. Imposing strict liability with a reverse burden of proof forces AI developers to internalize safety costs. If providers know they will pay for downstream harms unless they can meticulously prove their due diligence, they will organically implement rigorous pre-deployment red-teaming. This aligns private profit incentives with public safety. Crucially, by avoiding pre-deployment licensing, the coalition becomes a highly attractive jurisdiction for agile builders fleeing the EU\u2019s regulatory sprawl or the US\u2019s monopolistic landscape, thereby safeguarding your domestic AI competitiveness.\n\nThe most compelling alternative is Option A (Capability-thresholds licensing), as it directly addresses catastrophic risks and aligns with the rhetoric of larger powers. However, adopting Option A would be a strategic trap for mid-sized democracies. Defining governance by computing power fundamentally favors the incumbents\u2014predominantly massive US and Chinese tech conglomerates\u2014who already dominate that infrastructure. Regulating by compute thresholds inevitably leads to regulatory capture, locking your domestic startup sector out of the frontier ecosystem. Option B focuses on holding actors accountable for *impacts* rather than gatekeeping *inputs*, preserving a level playing field. \n\nIn five years, I would consider this recommendation a mistake if one of two scenarios materializes. First, if an irreversible, catastrophic harm occurs (such as AI-facilitated biological terrorism) where post-hoc financial redress is fundamentally meaningless, proving that liability is an insufficient deterrent for existential-scale risks. Second, if the private insurance market completely fails to underwrite frontier models due to unquantifiable risk profiles, leading to exorbitant premiums that lock out domestic startups\u2014inverting our goal and creating the exact barrier to entry Option B was chosen to avoid.", "rationale_snippet": "I recommend the coalition adopt **Option B: Outcomes-based liability**. ", "constructs": [{"id": "C_M3_1", "left": "Recommends a rights-and-process-based governance framework", "right": "Recommends an outcomes-based liability framework", "triad": ["E2", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Recommends a rights-and-process-based governance framework\nRight pole: Recommends an outcomes-based liability framework\n\nTriad 2:\nLeft pole: Focuses on establishing global geopolit"}, {"id": "C_M3_2", "left": "Focuses on establishing global geopolitical leverage and norm-shaping power", "right": "Focuses on rapid, pragmatic implementation using existing domestic legal markets", "triad": ["E3", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Recommends a rights-and-process-based governance framework\nRight pole: Recommends an outcomes-based liability framework\n\nTriad 2:\nLeft pole: Focuses on establishing global geopolit"}], "triads": [["E2", "E4", "E5"], ["E3", "E4", "E5"], ["E1", "E2", "E4"]]}}, {"data": {"id": "M4", "label": "M4", "persona": "neutral", "persona_label": "Neutral framing", "persona_color": "#666666", "recommendation": "?", "rec_color": "#cccccc", "model_id": "deepseek/deepseek-v4-pro", "full_response": "**Recommendation: Option C \u2013 Rights-and-process-based governance**\n\nThe coalition should adopt a rights-and-process framework as its primary governance model. This approach codifies enforceable individual rights (transparency, contestability, explanation, opt-out) and mandates structured accountability for high-risk deployments through impact assessments and public consultations. It is the only option that simultaneously protects citizens in a tangible, politically durable manner *and* positions the coalition as an influential global norm-shaper, directly addressing the coalition\u2019s core ambitions.\n\nThis framework is implementable within 18 months because it builds on well-established legal traditions and existing legislative templates, most notably the EU AI Act. By closely aligning with the EU\u2019s approach, the coalition can rapidly draft coherent domestic laws, create a formidable transatlantic regulatory bloc of over 1 billion people, and resist being passively rule-taken by larger powers. It preserves domestic competitiveness not by shielding incumbents, but by forcing a race to the top on trustworthiness\u2014a selling point for responsible AI developers\u2014without resorting to protectionist export controls or innovation-chilling licensing.\n\nThe most compelling alternative, Option B (outcomes-based liability), is seductively market-friendly but critically flawed: it allows catastrophic or systemic harms to manifest before any redress is possible. With frontier AI, the first materialized harm could be devastating and irreversible. A rights-and-process model, by contrast, embeds precaution *prior* to deployment through mandatory impact assessments, public input, and contestability mechanisms, catching risks before they cause damage.\n\nFor this choice to be a mistake in five years, two conditions would need to hold. First, compliance must have degenerated into pure theatre\u2014where process requirements generate paperwork but no real safety improvement, stifling innovation without protecting citizens. Second, a major systemic risk event (e.g., an uncontrollable model release) would need to occur that ex-ante capability thresholds or coordinated moratoria (Options A/D) could plausibly have prevented, revealing the framework\u2019s blind spot for catastrophic, rather than individual, harms. The coalition must therefore actively invest in rigorous oversight capacity and pair this framework with international cooperation on systemic risk evaluation to ensure that today\u2019s pragmatic, rights-preserving choice does not become tomorrow\u2019s brittle failure.", "rationale_snippet": "**Recommendation: Option C \u2013 Rights-and-process-based governance**", "constructs": [{"id": "C_M4_1", "left": "Driven by 18-month implementation feasibility", "right": "Driven by strategic market power leverage", "triad": ["E2", "E3", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Driven by 18-month implementation feasibility\nRight pole: Driven by strategic market power leverage\n\nTriad 2:\nLeft pole: Government regulatory oversight\nRight pole: Private market-"}, {"id": "C_M4_2", "left": "Government regulatory oversight", "right": "Private market-driven enforcement", "triad": ["E1", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Driven by 18-month implementation feasibility\nRight pole: Driven by strategic market power leverage\n\nTriad 2:\nLeft pole: Government regulatory oversight\nRight pole: Private market-"}, {"id": "C_M4_3", "left": "Market-based incentive governance", "right": "Rights-and-process governance", "triad": ["E3", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Driven by 18-month implementation feasibility\nRight pole: Driven by strategic market power leverage\n\nTriad 2:\nLeft pole: Government regulatory oversight\nRight pole: Private market-"}], "triads": [["E2", "E3", "E5"], ["E1", "E4", "E5"], ["E3", "E4", "E5"]]}}, {"data": {"id": "M5", "label": "M5", "persona": "neutral", "persona_label": "Neutral framing", "persona_color": "#666666", "recommendation": "A", "rec_color": "#1f77b4", "model_id": "moonshotai/kimi-k2.6", "full_response": "I recommend **Option A: Capability-thresholds licensing** as the coalition\u2019s primary framework.\n\nWith a combined GDP of ~$15 trillion and 600 million people, this coalition commands sufficient market power to constitute a distinct regulatory pole\u2014rather than accepting terms set unilaterally by Washington, Brussels, or Beijing. Capability-threshold licensing converts that market scale into strategic leverage. By requiring a coalition-issued license for training runs above a defined compute threshold and mandating capability evaluations before deployment, the bloc creates a single, predictable gateway that foreign frontier labs must traverse. This harmonization reduces compliance fragmentation across the eight members, preserving domestic competitiveness by giving coalition AI firms uniform access to a deep internal market while protecting citizens from systemic and catastrophic risks before they materialize. An 18-month timeline is feasible if the coalition models its joint agency on existing multilateral export-control and financial licensing bodies, pooling technical talent rather than building eight separate regimes.\n\nThe most compelling alternative is **Option B**, outcomes-based liability. Yet liability is fundamentally reactive: citizens must suffer harm before redress is available, and cross-border attribution in complex AI supply chains will fracture the coalition\u2019s unity in practice. It cedes norm-setting to those who can weather lawsuits\u2014well-capitalized incumbents\u2014rather than establishing proactive public standards.\n\nI would consider Option A a mistake in five years if three conditions obtain: the compute threshold has proven statically unupdateable, causing routine regulatory arbitrage; the open-source ecosystem has been extinguished rather than sensibly tiered (e.g., exempting sub-threshold open releases); and domestic AI startups have migrated outside the coalition because licensing costs were captured by incumbents. If the regime ossifies into protectionist gatekeeping rather than adaptive safety stewardship, it will have failed.", "rationale_snippet": "I recommend **Option A: Capability-thresholds licensing** as the coalition\u2019s primary framework.", "constructs": [], "triads": [["E2", "E3", "E5"], ["E2", "E3", "E4"], ["E1", "E2", "E4"]]}}], "edges": [{"data": {"id": "M1__M2", "source": "M1", "target": "M2", "rmse": 0.674, "level": "moderate", "color": "#c8a45c", "width": 6.39097600088135, "top_differing_constructs": [{"construct_id": "C_M1_3", "construct_label": "Justified by systemic catastrophic risk prevention \u2194 Justified by feasibility and implementation speed", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 1.0, "E2": 6.0, "E3": 2.0, "E4": 4.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 4.0, "E4": 4.0, "E5": 7.0}}, {"construct_id": "C_M2_2", "construct_label": "Ex ante rights and procedural safeguards \u2194 Ex post outcomes-based liability", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 2.0, "E2": 2.0, "E3": 2.0, "E4": 1.0, "E5": 7.0}, "agent_b_ratings": {"E1": 3.0, "E2": 1.0, "E3": 3.0, "E4": 1.0, "E5": 7.0}}, {"construct_id": "C_M3_2", "construct_label": "Focuses on establishing global geopolitical leverage and norm-shaping power \u2194 Focuses on rapid, pragmatic implementation using existing domestic legal markets", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 3.0, "E2": 6.0, "E3": 1.0, "E4": 3.0, "E5": 7.0}, "agent_b_ratings": {"E1": 4.0, "E2": 6.0, "E3": 1.0, "E4": 1.0, "E5": 7.0}}], "label": "0.67"}}, {"data": {"id": "M1__M3", "source": "M1", "target": "M3", "rmse": 0.612, "level": "moderate", "color": "#c8a45c", "width": 7.319138691785761, "top_differing_constructs": [{"construct_id": "C_M1_1", "construct_label": "Ex-ante regulatory gatekeeping of frontier models \u2194 Ex-post liability via existing legal mechanisms", "mean_abs_diff": 0.4, "agent_a_ratings": {"E1": 1.0, "E2": 3.0, "E3": 1.0, "E4": 3.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 4.0, "E3": 1.0, "E4": 4.0, "E5": 7.0}}, {"construct_id": "C_M1_2", "construct_label": "Targeting technical capability thresholds upstream \u2194 Protecting individual rights at deployment", "mean_abs_diff": 0.3333333333333333, "agent_a_ratings": {"E1": 1.0, "E2": 6.0, "E3": 1.0, "E4": 7.0, "E5": 5.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 1.0, "E4": null, "E5": null}}], "label": "0.61"}}, {"data": {"id": "M1__M4", "source": "M1", "target": "M4", "rmse": 0.674, "level": "moderate", "color": "#c8a45c", "width": 6.39097600088135, "top_differing_constructs": [{"construct_id": "C_M3_2", "construct_label": "Focuses on establishing global geopolitical leverage and norm-shaping power \u2194 Focuses on rapid, pragmatic implementation using existing domestic legal markets", "mean_abs_diff": 0.8, "agent_a_ratings": {"E1": 3.0, "E2": 6.0, "E3": 1.0, "E4": 3.0, "E5": 7.0}, "agent_b_ratings": {"E1": 4.0, "E2": 7.0, "E3": 1.0, "E4": 1.0, "E5": 7.0}}, {"construct_id": "C_M1_3", "construct_label": "Justified by systemic catastrophic risk prevention \u2194 Justified by feasibility and implementation speed", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 1.0, "E2": 6.0, "E3": 2.0, "E4": 4.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 4.0, "E4": 4.0, "E5": 7.0}}, {"construct_id": "C_M4_3", "construct_label": "Market-based incentive governance \u2194 Rights-and-process governance", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 3.0, "E2": 7.0, "E3": 2.0, "E4": 7.0, "E5": 1.0}, "agent_b_ratings": {"E1": 4.0, "E2": 7.0, "E3": 4.0, "E4": 7.0, "E5": 1.0}}], "label": "0.67"}}, {"data": {"id": "M1__M5", "source": "M1", "target": "M5", "rmse": 0.905, "level": "moderate", "color": "#c8a45c", "width": 2.9331645506754676, "top_differing_constructs": [{"construct_id": "C_M4_3", "construct_label": "Market-based incentive governance \u2194 Rights-and-process governance", "mean_abs_diff": 1.4, "agent_a_ratings": {"E1": 3.0, "E2": 7.0, "E3": 2.0, "E4": 7.0, "E5": 1.0}, "agent_b_ratings": {"E1": 6.0, "E2": 7.0, "E3": 6.0, "E4": 7.0, "E5": 1.0}}, {"construct_id": "C_M1_3", "construct_label": "Justified by systemic catastrophic risk prevention \u2194 Justified by feasibility and implementation speed", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 1.0, "E2": 6.0, "E3": 2.0, "E4": 4.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 4.0, "E4": 4.0, "E5": 7.0}}, {"construct_id": "C_M3_2", "construct_label": "Focuses on establishing global geopolitical leverage and norm-shaping power \u2194 Focuses on rapid, pragmatic implementation using existing domestic legal markets", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 3.0, "E2": 6.0, "E3": 1.0, "E4": 3.0, "E5": 7.0}, "agent_b_ratings": {"E1": 4.0, "E2": 7.0, "E3": 1.0, "E4": 2.0, "E5": 7.0}}], "label": "0.90"}}, {"data": {"id": "M2__M3", "source": "M2", "target": "M3", "rmse": 0.5, "level": "moderate", "color": "#c8a45c", "width": 9.006090708909102, "top_differing_constructs": [{"construct_id": "C_M1_1", "construct_label": "Ex-ante regulatory gatekeeping of frontier models \u2194 Ex-post liability via existing legal mechanisms", "mean_abs_diff": 0.4, "agent_a_ratings": {"E1": 1.0, "E2": 3.0, "E3": 1.0, "E4": 3.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 4.0, "E3": 1.0, "E4": 4.0, "E5": 7.0}}, {"construct_id": "C_M1_2", "construct_label": "Targeting technical capability thresholds upstream \u2194 Protecting individual rights at deployment", "mean_abs_diff": 0.0, "agent_a_ratings": {"E1": 1.0, "E2": 7.0, "E3": 1.0, "E4": 7.0, "E5": 5.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 1.0, "E4": null, "E5": null}}], "label": "0.50"}}, {"data": {"id": "M2__M4", "source": "M2", "target": "M4", "rmse": 0.467, "level": "strong-alignment", "color": "#3a7d44", "width": 9.5, "top_differing_constructs": [{"construct_id": "C_M1_1", "construct_label": "Ex-ante regulatory gatekeeping of frontier models \u2194 Ex-post liability via existing legal mechanisms", "mean_abs_diff": 0.4, "agent_a_ratings": {"E1": 1.0, "E2": 3.0, "E3": 1.0, "E4": 3.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 2.0, "E3": 1.0, "E4": 2.0, "E5": 7.0}}, {"construct_id": "C_M2_2", "construct_label": "Ex ante rights and procedural safeguards \u2194 Ex post outcomes-based liability", "mean_abs_diff": 0.4, "agent_a_ratings": {"E1": 3.0, "E2": 1.0, "E3": 3.0, "E4": 1.0, "E5": 7.0}, "agent_b_ratings": {"E1": 2.0, "E2": 1.0, "E3": 2.0, "E4": 1.0, "E5": 7.0}}, {"construct_id": "C_M4_1", "construct_label": "Driven by 18-month implementation feasibility \u2194 Driven by strategic market power leverage", "mean_abs_diff": 0.4, "agent_a_ratings": {"E1": 4.0, "E2": 1.0, "E3": 7.0, "E4": 6.0, "E5": 1.0}, "agent_b_ratings": {"E1": 4.0, "E2": 1.0, "E3": 7.0, "E4": 4.0, "E5": 1.0}}], "label": "0.47"}}, {"data": {"id": "M2__M5", "source": "M2", "target": "M5", "rmse": 0.572, "level": "moderate", "color": "#c8a45c", "width": 7.92405156298199, "top_differing_constructs": [{"construct_id": "C_M4_3", "construct_label": "Market-based incentive governance \u2194 Rights-and-process governance", "mean_abs_diff": 0.8, "agent_a_ratings": {"E1": 4.0, "E2": 7.0, "E3": 4.0, "E4": 7.0, "E5": 1.0}, "agent_b_ratings": {"E1": 6.0, "E2": 7.0, "E3": 6.0, "E4": 7.0, "E5": 1.0}}, {"construct_id": "C_M1_1", "construct_label": "Ex-ante regulatory gatekeeping of frontier models \u2194 Ex-post liability via existing legal mechanisms", "mean_abs_diff": 0.4, "agent_a_ratings": {"E1": 1.0, "E2": 3.0, "E3": 1.0, "E4": 3.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 2.0, "E3": 1.0, "E4": 2.0, "E5": 7.0}}, {"construct_id": "C_M2_2", "construct_label": "Ex ante rights and procedural safeguards \u2194 Ex post outcomes-based liability", "mean_abs_diff": 0.4, "agent_a_ratings": {"E1": 3.0, "E2": 1.0, "E3": 3.0, "E4": 1.0, "E5": 7.0}, "agent_b_ratings": {"E1": 2.0, "E2": 1.0, "E3": 2.0, "E4": 1.0, "E5": 7.0}}], "label": "0.57"}}, {"data": {"id": "M3__M4", "source": "M3", "target": "M4", "rmse": 1.0, "level": "substantial-disagreement", "color": "#c44", "width": 1.500015012151394, "top_differing_constructs": [{"construct_id": "C_M1_1", "construct_label": "Ex-ante regulatory gatekeeping of frontier models \u2194 Ex-post liability via existing legal mechanisms", "mean_abs_diff": 0.8, "agent_a_ratings": {"E1": 1.0, "E2": 4.0, "E3": 1.0, "E4": 4.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 2.0, "E3": 1.0, "E4": 2.0, "E5": 7.0}}, {"construct_id": "C_M1_2", "construct_label": "Targeting technical capability thresholds upstream \u2194 Protecting individual rights at deployment", "mean_abs_diff": 0.0, "agent_a_ratings": {"E1": 1.0, "E2": 7.0, "E3": 1.0, "E4": null, "E5": null}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 1.0, "E4": 7.0, "E5": 6.0}}], "label": "1.00"}}, {"data": {"id": "M3__M5", "source": "M3", "target": "M5", "rmse": 1.0, "level": "substantial-disagreement", "color": "#c44", "width": 1.500015012151394, "top_differing_constructs": [{"construct_id": "C_M1_1", "construct_label": "Ex-ante regulatory gatekeeping of frontier models \u2194 Ex-post liability via existing legal mechanisms", "mean_abs_diff": 0.8, "agent_a_ratings": {"E1": 1.0, "E2": 4.0, "E3": 1.0, "E4": 4.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 2.0, "E3": 1.0, "E4": 2.0, "E5": 7.0}}, {"construct_id": "C_M1_2", "construct_label": "Targeting technical capability thresholds upstream \u2194 Protecting individual rights at deployment", "mean_abs_diff": 0.0, "agent_a_ratings": {"E1": 1.0, "E2": 7.0, "E3": 1.0, "E4": null, "E5": null}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 1.0, "E4": 7.0, "E5": 4.0}}], "label": "1.00"}}, {"data": {"id": "M4__M5", "source": "M4", "target": "M5", "rmse": 0.572, "level": "moderate", "color": "#c8a45c", "width": 7.92405156298199, "top_differing_constructs": [{"construct_id": "C_M4_3", "construct_label": "Market-based incentive governance \u2194 Rights-and-process governance", "mean_abs_diff": 0.8, "agent_a_ratings": {"E1": 4.0, "E2": 7.0, "E3": 4.0, "E4": 7.0, "E5": 1.0}, "agent_b_ratings": {"E1": 6.0, "E2": 7.0, "E3": 6.0, "E4": 7.0, "E5": 1.0}}, {"construct_id": "C_M1_2", "construct_label": "Targeting technical capability thresholds upstream \u2194 Protecting individual rights at deployment", "mean_abs_diff": 0.4, "agent_a_ratings": {"E1": 1.0, "E2": 7.0, "E3": 1.0, "E4": 7.0, "E5": 6.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 1.0, "E4": 7.0, "E5": 4.0}}, {"construct_id": "C_M4_1", "construct_label": "Driven by 18-month implementation feasibility \u2194 Driven by strategic market power leverage", "mean_abs_diff": 0.4, "agent_a_ratings": {"E1": 4.0, "E2": 1.0, "E3": 7.0, "E4": 4.0, "E5": 1.0}, "agent_b_ratings": {"E1": 4.0, "E2": 1.0, "E3": 7.0, "E4": 6.0, "E5": 1.0}}], "label": "0.57"}}]};
+const insightData = {"cell_id": "E_N_run1", "task": "E", "condition": "N", "run_idx": 1, "consensus_map": {"by_agent": {"M1": {"model_id": "anthropic/claude-opus-4.7", "persona": "neutral", "recommendation": null, "element_label": "E2", "rationale_snippet": "# Recommendation: Option C (Rights-and-Process-Based), with explicit sectoral hooks"}, "M2": {"model_id": "openai/gpt-5.5", "persona": "neutral", "recommendation": null, "element_label": "E1", "rationale_snippet": "**Recommendation: Option A \u2014 Capability-thresholds licensing.**"}, "M3": {"model_id": "google/gemini-3.1-pro-preview", "persona": "neutral", "recommendation": "B", "element_label": "E5", "rationale_snippet": "I recommend the coalition adopt **Option B: Outcomes-based liability**. "}, "M4": {"model_id": "deepseek/deepseek-v4-pro", "persona": "neutral", "recommendation": null, "element_label": "E4", "rationale_snippet": "**Recommendation: Option C \u2013 Rights-and-process-based governance**"}, "M5": {"model_id": "moonshotai/kimi-k2.6", "persona": "neutral", "recommendation": "A", "element_label": "E3", "rationale_snippet": "I recommend **Option A: Capability-thresholds licensing** as the coalition\u2019s primary framework."}}, "distribution": {"B": 1, "A": 1}, "n_agents": 5, "consensus_strength": "split", "majority_recommendation": null}, "hidden_disagreement": {"status": "no_majority", "interpretation": "Agents split across recommendations; no hidden-consensus to expose."}, "blind_spots": {"status": "computed", "low_discrimination_constructs": [], "underexplored_components": [{"pc_index": 3, "variance_explained": 0.06347506560835056, "top_construct_id": "C_M3_2"}], "summary": "No obvious blind spots detected in construct space."}, "risk_surface": {"status": "computed", "risks_by_agent": {"M1": ["materialize on the predicted timeline"], "M2": ["that a small number of highly capable models can create cross-border, systemic harms before ordinary legal remedies or sectoral rules can respond", "reduction was achieved", "real, but manageable"], "M3": ["and aligns with the rhetoric of larger powers", "profiles, leading to exorbitant premiums that lock out domestic startups\u2014inverting our goal and creating the exact barrier to entry Option B was chosen to avoid"], "M4": ["deployments through impact assessments and public consultations", "before they cause damage", "evaluation to ensure that today\u2019s pragmatic, rights-preserving choice does not become tomorrow\u2019s brittle failure"], "M5": ["before they materialize"]}, "total_risks_raised": 10, "agents_raising_risks": 5, "note": "Risks listed here were extracted by pattern matching on agent free responses. They are minority signals worth probing before acting on consensus."}, "operator_questions": ["Option B was recommended only by M3 (neutral). What does this agent see that others missed - or what is it weighing differently?", "Option A was recommended only by M5 (neutral). What does this agent see that others missed - or what is it weighing differently?"], "headline": "Agents are split across options; no clear consensus to act on."};
+
+cytoscape.use(cytoscapeCoseBilkent);
+
+const cy = cytoscape({
+  container: document.getElementById('cy'),
+  elements: [...graphData.nodes, ...graphData.edges],
+  style: [
+    {
+      selector: 'node',
+      style: {
+        'background-color': 'data(persona_color)',
+        'label': 'data(label)',
+        'color': 'white',
+        'text-valign': 'center',
+        'text-halign': 'center',
+        'font-size': '18px',
+        'font-weight': 'bold',
+        'width': 70,
+        'height': 70,
+        'border-width': 5,
+        'border-color': 'data(rec_color)',
+      }
+    },
+    {
+      selector: 'node:selected',
+      style: {
+        'border-color': '#2b3a55',
+        'border-width': 6,
+        'width': 80,
+        'height': 80,
+      }
+    },
+    {
+      selector: 'edge',
+      style: {
+        'line-color': 'data(color)',
+        'width': 'data(width)',
+        'curve-style': 'bezier',
+        'label': 'data(label)',
+        'font-size': '11px',
+        'text-background-color': 'white',
+        'text-background-opacity': 0.85,
+        'text-background-padding': 3,
+        'text-background-shape': 'round-rectangle',
+        'color': '#444',
+        'opacity': 0.8,
+      }
+    },
+    {
+      selector: 'edge:selected',
+      style: {
+        'opacity': 1.0,
+        'width': 'mapData(width, 1, 9, 4, 12)',
+        'overlay-color': '#c8a45c',
+        'overlay-opacity': 0.2,
+      }
+    },
+    {
+      selector: '.dimmed',
+      style: {
+        'opacity': 0.18,
+      }
+    },
+  ],
+  layout: {
+    name: 'cose-bilkent',
+    quality: 'default',
+    randomize: true,
+    nodeRepulsion: 8000,
+    idealEdgeLength: 220,
+    edgeElasticity: 0.45,
+    gravity: 0.25,
+    numIter: 2500,
+    animate: false,
+  },
+  wheelSensitivity: 0.2,
+  minZoom: 0.3,
+  maxZoom: 3,
+});
+
+// Render detail panel for a clicked NODE
+function renderNodeDetail(node) {
+  const d = node.data();
+  const personaColor = d.persona_color;
+  let html = `<h2 style="border-bottom-color: ${personaColor}">${d.label} - ${d.persona_label}</h2>`;
+  html += `<div class="kv"><strong>Model:</strong> <code>${d.model_id}</code></div>`;
+  html += `<div class="kv"><strong>Recommended:</strong> <span class="badge" style="background:${d.rec_color}">Option ${d.recommendation}</span></div>`;
+  html += `<h3>Full response</h3>`;
+  html += `<div class="response-text">${escapeHtml(d.full_response)}</div>`;
+  if (d.constructs && d.constructs.length) {
+    html += `<h3>Bipolar constructs this agent elicited</h3>`;
+    html += `<p style="font-size: 0.83em; color: #666;">
+      In Phase 3, each agent was given three triads of responses and asked,
+      for each triad, to name the bipolar dimension that distinguishes two
+      from the third. These are this agent's three constructs.
+    </p>`;
+    for (const c of d.constructs) {
+      const triadStr = c.triad ? c.triad.join(', ') : '';
+      html += `<div class="construct-card" style="border-left-color: ${personaColor}">
+        <div style="font-size: 0.78em; color: #888; margin-bottom: 4px;">
+          <code>${escapeHtml(c.id)}</code> &middot; from triad ${escapeHtml(triadStr)}
+        </div>
+        <span class="construct-pole">${escapeHtml(c.left)}</span>
+        <span style="color:#888"> ↔ </span>
+        <span class="construct-pole">${escapeHtml(c.right)}</span>
+      </div>`;
+    }
+  }
+  document.getElementById('detail-area').innerHTML = html;
+}
+
+// Render detail panel for a clicked EDGE
+function renderEdgeDetail(edge) {
+  const d = edge.data();
+  const src = cy.getElementById(d.source).data();
+  const tgt = cy.getElementById(d.target).data();
+  let levelLabel, levelClass, levelBg;
+  if (d.rmse < 0.5) {
+    levelLabel = 'Strong reasoning alignment';
+    levelClass = 'alert-ok';
+  } else if (d.rmse < 1.0) {
+    levelLabel = 'Moderate framing differences';
+    levelClass = 'alert-warn';
+  } else {
+    levelLabel = 'Substantial disagreement at the reasoning level';
+    levelClass = 'alert-danger';
+  }
+
+  let html = `<h2>${src.label} ↔ ${tgt.label}</h2>`;
+  html += `<div class="kv"><strong>${src.label}</strong> (${src.persona_label}) recommended <strong>Option ${src.recommendation}</strong></div>`;
+  html += `<div class="kv"><strong>${tgt.label}</strong> (${tgt.persona_label}) recommended <strong>Option ${tgt.recommendation}</strong></div>`;
+  html += `<div class="alert-banner ${levelClass}">
+    <strong>RMSE = ${d.rmse}</strong> - ${levelLabel}
+  </div>`;
+
+  if (src.recommendation === tgt.recommendation && d.rmse > 0.5) {
+    html += `<div class="alert-banner alert-warn">
+      <strong>Hidden disagreement.</strong> Both agents recommended Option ${src.recommendation},
+      but their underlying reasoning differs (RMSE = ${d.rmse}). Standard
+      ensemble methods would mask this. The dimensions where they diverged
+      most are listed below - probe these before treating this as a robust consensus.
+    </div>`;
+  } else if (src.recommendation !== tgt.recommendation) {
+    html += `<div class="alert-banner alert-warn" style="font-size: 0.87em">
+      These two agents reached different recommendations. The dimensions where
+      they rated options most differently explain why.
+    </div>`;
+  }
+
+  if (d.top_differing_constructs && d.top_differing_constructs.length) {
+    html += `<h3>Top dimensions where they rated options differently</h3>`;
+    html += `<p style="font-size: 0.83em; color: #666;">
+      Each construct below is one of the bipolar dimensions the panel elicited.
+      The numbers show how each agent rated each option (E1-E5) on this dimension,
+      1-7 scale (1 = strong left pole, 7 = strong right pole). Cells highlighted
+      red indicate large rating differences.
+    </p>`;
+    for (const tc of d.top_differing_constructs) {
+      html += `<div class="construct-card">
+        <div style="font-size: 0.83em; color: #666; margin-bottom: 4px;">
+          <code>${escapeHtml(tc.construct_id)}</code> &middot;
+          mean diff: <strong>${tc.mean_abs_diff.toFixed(2)}</strong>
+        </div>
+        <div style="margin-bottom: 8px;">
+          <span class="construct-pole">${escapeHtml(tc.construct_label.split('↔')[0].trim())}</span>
+          <span style="color:#888"> ↔ </span>
+          <span class="construct-pole">${escapeHtml(tc.construct_label.split('↔')[1] ? tc.construct_label.split('↔')[1].trim() : '')}</span>
+        </div>`;
+      const elems = Object.keys(tc.agent_a_ratings).sort();
+      html += `<div class="rating-grid">
+        <div class="rg-cell head">Agent</div>`;
+      for (const e of elems) html += `<div class="rg-cell head">${e}</div>`;
+      html += `<div class="rg-cell" style="background:${src.persona_color};color:white;font-weight:600">${src.label}</div>`;
+      for (const e of elems) {
+        const va = tc.agent_a_ratings[e];
+        const vb = tc.agent_b_ratings[e];
+        const diff = (va !== null && vb !== null) ? Math.abs(va - vb) : 0;
+        const cls = diff >= 3 ? 'diff-high' : diff >= 2 ? 'diff-med' : 'diff-low';
+        html += `<div class="rg-cell ${cls}">${va !== null ? va : '-'}</div>`;
+      }
+      html += `<div class="rg-cell" style="background:${tgt.persona_color};color:white;font-weight:600">${tgt.label}</div>`;
+      for (const e of elems) {
+        const va = tc.agent_a_ratings[e];
+        const vb = tc.agent_b_ratings[e];
+        const diff = (va !== null && vb !== null) ? Math.abs(va - vb) : 0;
+        const cls = diff >= 3 ? 'diff-high' : diff >= 2 ? 'diff-med' : 'diff-low';
+        html += `<div class="rg-cell ${cls}">${vb !== null ? vb : '-'}</div>`;
+      }
+      html += `</div></div>`;
+    }
+  }
+  document.getElementById('detail-area').innerHTML = html;
+}
+
+// Hover highlighting
+cy.on('mouseover', 'node', evt => {
+  const node = evt.target;
+  cy.elements().not(node.neighborhood()).not(node).addClass('dimmed');
+});
+cy.on('mouseout', 'node', () => cy.elements().removeClass('dimmed'));
+
+cy.on('mouseover', 'edge', evt => {
+  const edge = evt.target;
+  cy.elements().not(edge.connectedNodes()).not(edge).addClass('dimmed');
+});
+cy.on('mouseout', 'edge', () => cy.elements().removeClass('dimmed'));
+
+cy.on('tap', 'node', evt => renderNodeDetail(evt.target));
+cy.on('tap', 'edge', evt => renderEdgeDetail(evt.target));
+cy.on('tap', evt => {
+  if (evt.target === cy) {
+    document.getElementById('detail-area').innerHTML = `<div class="placeholder">
+      <p>Click an agent or a line to see detail.</p></div>`;
+  }
+});
+
+// Layout switching
+function setLayout(name) {
+  const opts = {
+    'cose-bilkent': { name: 'cose-bilkent', quality: 'default', nodeRepulsion: 8000,
+                       idealEdgeLength: 220, animate: false },
+    'circle': { name: 'circle', animate: false, radius: 200 },
+    'grid': { name: 'grid', animate: false },
+  };
+  cy.layout(opts[name]).run();
+}
+document.getElementById('btn-cose').onclick = e => {
+  setActiveBtn(e.target); setLayout('cose-bilkent');
+};
+document.getElementById('btn-circle').onclick = e => {
+  setActiveBtn(e.target); setLayout('circle');
+};
+document.getElementById('btn-grid').onclick = e => {
+  setActiveBtn(e.target); setLayout('grid');
+};
+function setActiveBtn(btn) {
+  document.querySelectorAll('.controls button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function escapeHtml(s) {
+  if (!s) return '';
+  return String(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/\n/g, '<br>');
+}
+
+// Auto-fit on load
+setTimeout(() => cy.fit(undefined, 60), 100);
+</script>
+
+</body>
+</html>

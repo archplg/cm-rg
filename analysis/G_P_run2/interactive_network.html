@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Interactive AI Council - G_P_run2</title>
+<script src="https://unpkg.com/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
+<script src="https://unpkg.com/layout-base@2.0.1/layout-base.js"></script>
+<script src="https://unpkg.com/cose-base@2.2.0/cose-base.js"></script>
+<script src="https://unpkg.com/cytoscape-cose-bilkent@4.1.0/cytoscape-cose-bilkent.js"></script>
+<style>
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Georgia, sans-serif;
+       margin: 0; padding: 0; background: #f4f1e8; color: #1a1a1a; }
+.header { background: #2b3a55; color: white; padding: 14px 24px; }
+.header h1 { margin: 0; font-size: 1.2em; }
+.header .subtitle { font-size: 0.85em; opacity: 0.85; margin-top: 3px; }
+.layout { display: flex; height: calc(100vh - 60px); }
+#graph-container { flex: 1; background: #f9f7f0; position: relative; }
+#cy { width: 100%; height: 100%; }
+.legend { position: absolute; bottom: 16px; left: 16px;
+           background: rgba(255,255,255,0.96); padding: 12px 16px;
+           border-radius: 6px; border: 1px solid #d8d0bf; font-size: 0.82em;
+           max-width: 280px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.legend h3 { margin: 0 0 8px; font-size: 0.9em; color: #2b3a55; }
+.legend-row { display: flex; align-items: center; margin: 4px 0; }
+.legend-swatch { display: inline-block; width: 24px; height: 4px; margin-right: 8px;
+                  border-radius: 2px; }
+.legend-dot { display: inline-block; width: 14px; height: 14px; margin-right: 8px;
+               border-radius: 50%; }
+.help { position: absolute; top: 16px; left: 16px;
+         background: rgba(255,255,255,0.96); padding: 10px 14px;
+         border-radius: 6px; border: 1px solid #d8d0bf; font-size: 0.8em;
+         color: #555; max-width: 320px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.controls { position: absolute; top: 16px; right: 16px;
+             background: rgba(255,255,255,0.96); padding: 10px 14px;
+             border-radius: 6px; border: 1px solid #d8d0bf; font-size: 0.85em;
+             box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.controls button { display: block; width: 100%; padding: 6px 10px; margin: 3px 0;
+                    background: white; border: 1px solid #c8a45c; border-radius: 4px;
+                    cursor: pointer; font-size: 0.9em; }
+.controls button.active { background: #c8a45c; color: white; }
+.controls button:hover { background: #e6dfc9; }
+.controls button.active:hover { background: #b8945a; }
+
+#info-panel { width: 420px; background: white; border-left: 1px solid #d8d0bf;
+               overflow-y: auto; padding: 20px 24px; }
+#info-panel h2 { font-size: 1.1em; margin: 0 0 8px; color: #2b3a55;
+                  border-bottom: 2px solid #c8a45c; padding-bottom: 6px; }
+#info-panel h3 { font-size: 0.95em; margin: 18px 0 6px; color: #2b3a55; }
+#info-panel h4 { font-size: 0.85em; margin: 12px 0 4px; color: #555;
+                  text-transform: uppercase; letter-spacing: 0.5px; }
+#info-panel .placeholder { color: #888; font-style: italic; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 11px;
+          font-size: 0.78em; font-weight: 600; color: white; margin-right: 4px; }
+.kv { margin: 6px 0; font-size: 0.92em; }
+.kv strong { color: #555; }
+.response-text { font-size: 0.88em; line-height: 1.55; color: #333;
+                  background: #faf8f1; padding: 12px 14px; border-radius: 4px;
+                  border-left: 3px solid #c8a45c; }
+.construct-card { font-size: 0.85em; margin: 6px 0; padding: 8px 11px;
+                   background: #faf8f1; border-radius: 4px;
+                   border-left: 3px solid #666; }
+.construct-pole { display: inline; padding: 2px 6px; background: white;
+                   border-radius: 3px; border: 1px solid #e6dfc9;
+                   font-family: Georgia, serif; }
+.rating-grid { display: grid; grid-template-columns: 60px repeat(5, 1fr);
+                gap: 2px; margin: 8px 0; font-size: 0.78em; }
+.rg-cell { padding: 4px 6px; background: #f4f1e8; text-align: center;
+            border-radius: 3px; }
+.rg-cell.head { background: #2b3a55; color: white; font-weight: 600; }
+.rg-cell.diff-high { background: #fdc; }
+.rg-cell.diff-med { background: #ffe9c0; }
+.rg-cell.diff-low { background: #e2efd9; }
+.alert-banner { padding: 10px 14px; border-radius: 5px; margin: 10px 0;
+                 font-size: 0.9em; }
+.alert-danger { background: #fdf0ed; border-left: 4px solid #c44;
+                 color: #6b1313; }
+.alert-warn { background: #fdfaf2; border-left: 4px solid #c8a45c;
+               color: #6b4920; }
+.alert-ok { background: #f0f7ed; border-left: 4px solid #3a7d44;
+             color: #1f4a26; }
+hr { border: none; border-top: 1px solid #e6dfc9; margin: 14px 0; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>AI Council - Interactive View</h1>
+  <div class="subtitle">Cell <strong>G_P_run2</strong> &middot; Task G &middot; persona framing</div>
+</div>
+
+<div class="layout">
+  <div id="graph-container">
+    <div id="cy"></div>
+
+    <div class="help">
+      <strong>How to explore:</strong><br>
+      &middot; Click a circle (agent) to see their full response and reasoning<br>
+      &middot; Click a connecting line to see <em>where</em> two agents disagreed<br>
+      &middot; Drag agents around if the layout is hard to read
+    </div>
+
+    <div class="controls">
+      <strong style="font-size: 0.85em; color: #555;">Layout</strong>
+      <button id="btn-cose" class="active">Force-directed</button>
+      <button id="btn-circle">Circle</button>
+      <button id="btn-grid">Grid</button>
+    </div>
+
+    <div class="legend">
+      <h3>Reading the network</h3>
+      <div><strong>Circle color</strong> = epistemological frame</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#0a558c"></span>Quantitative</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#2d8659"></span>Systems</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#8a5a00"></span>Engineering</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#882b6f"></span>Humanist</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#b03030"></span>Contrarian</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#666"></span>Neutral (no persona)</div>
+      <hr>
+      <div><strong>Line color</strong> = reasoning agreement</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#3a7d44"></span>RMSE &lt; 0.5 - aligned</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#c8a45c"></span>0.5-1.0 - moderate</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#c44"></span>&gt; 1.0 - substantial</div>
+      <hr>
+      <div style="color: #555; font-size: 0.92em">
+        <strong>Line thickness</strong> = relative agreement within this case<br>
+        <strong>RMSE</strong> = root-mean-square error on 7-point rating scale
+      </div>
+    </div>
+  </div>
+
+  <div id="info-panel">
+    <h2>Agents are split across options; no clear consensus to act on.</h2>
+
+    <div class="alert-banner alert-warn"><strong>Split panel.</strong> Agents disagree at the recommendation level. The network shows whose reasoning patterns cluster together.</div>
+
+    <div class="kv"><strong>Cell:</strong> G_P_run2</div>
+    <div class="kv"><strong>Task:</strong> G (persona framing)</div>
+    <div class="kv"><strong>Agents:</strong> 5</div>
+    <div class="kv"><strong>Reasoning RMSE (mean across pairs):</strong> 0.709</div>
+
+    <hr>
+
+    <div id="detail-area">
+      <div class="placeholder">
+        <p>Click an agent or a connecting line to see details here.</p>
+        <p>The colored circles are the LLM agents. The lines between them show how similarly they reasoned: thicker and greener means they rated the options in similar patterns, thinner and redder means they disagreed at the level of how they evaluated each option.</p>
+        <p>Hidden disagreement is the case where two agents recommend the same option but their connecting line is yellow or red - they agree on the answer but not on the reasoning. Click such a line to see exactly which dimensions they diverged on.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3>About this view</h3>
+    <p style="font-size: 0.85em; color: #555;">
+      The reasoning network shows behavioral disagreement, not topic disagreement.
+      Two agents with thick green connection rated the options similarly on every
+      construct elicited by the panel. Two agents with thin red connection
+      saw the options through different evaluative lenses - even if they
+      may have recommended the same option in the end.
+    </p>
+
+    <p style="font-size: 0.85em; color: #555;">
+      Generated by Archipelago. <em>The five voices are LLM analysts; this view is
+      decision support, not decision substitution.</em>
+    </p>
+  </div>
+</div>
+
+<script>
+const graphData = {"nodes": [{"data": {"id": "M1", "label": "M1", "persona": "S", "persona_label": "Systems-Strategist", "persona_color": "#2d8659", "recommendation": "?", "rec_color": "#cccccc", "model_id": "anthropic/claude-opus-4.7", "full_response": "## Recommendation: Option C (First-come-first-served with medical floor)\n\nThe decision space here is dominated by a second-order trap: protocols that optimize aggregate survival require continuous ranking judgments by exhausted staff under conditions where every decision is contestable. That creates a feedback loop \u2014 moral injury accelerates staffing collapse, which reduces capacity further, which increases triage pressure. Protocols A, B, and D all load this loop. They convert each admission into a defensible-but-disputed comparative judgment, multiplied by thousands of cases over months. The system's true scarce resource right now is not beds; it is the cognitive and moral bandwidth of clinicians and the public legitimacy that keeps patients arriving, staff showing up, and courts deferential. C protects all three.\n\nC's \"medical floor\" preserves the survival gains that matter most (excluding genuinely futile cases) while eliminating the ranking machinery that generates litigation, family conflict, and clinician burnout. It is the protocol least likely to be quietly subverted into informal triage \u2014 because it largely *is* the formalization of the most defensible informal norm \u2014 and its simplicity makes it communicable in 7 days, which none of the composite protocols genuinely are.\n\nThe most compelling alternative is A. It will save more lives in a narrow 28-day accounting frame, and that argument is morally serious. I reject it because its withdrawal provisions \u2014 pulling a deteriorating patient to admit a higher-SOFA arrival \u2014 are the single highest-fragility action in any of these protocols. Each withdrawal is a discrete, nameable, photographable event that erodes institutional trust disproportionately to the statistical lives gained. Once trust collapses, no protocol functions. A optimizes a visible variable while degrading the invisible substrate it depends on.\n\nThe case that would make me regret this: a 34-year-old with reversible ARDS who arrives twelve hours after the last bed filled and dies waiting, while an 80-year-old admitted yesterday with marginal prognosis occupies that bed for two weeks before dying anyway. Under A she lives. Under C she does not. I would still defend C, because the alternative is a system in which her physician spends every shift deciding who to pull off a ventilator \u2014 and within a quarter, there is no functioning ICU left for the next pandemic wave, or the next patient like her.", "rationale_snippet": "## Recommendation: Option C (First-come-first-served with medical floor)", "constructs": [{"id": "C_M1_1", "left": "Focus on systemic/second-order effects on the system (E2, E4)", "right": "Focus on direct first-order clinical outcomes (E1)", "triad": ["E1", "E2", "E4"], "raw_output_excerpt": "Triad 1:\nLeft pole: Focus on systemic/second-order effects on the system (E2, E4)\nRight pole: Focus on direct first-order clinical outcomes (E1)\n\nTriad 2:\nLeft pole: Skepticism toward predictive scori"}, {"id": "C_M1_2", "left": "Skepticism toward predictive scoring as flawed or fragile (E3, E4)", "right": "Confidence in validated predictive instruments (E5)", "triad": ["E3", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Focus on systemic/second-order effects on the system (E2, E4)\nRight pole: Focus on direct first-order clinical outcomes (E1)\n\nTriad 2:\nLeft pole: Skepticism toward predictive scori"}, {"id": "C_M1_3", "left": "Endorses optimizing for predicted survival (E1, E5)", "right": "Rejects optimization due to hidden secondary costs (E4)", "triad": ["E1", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Focus on systemic/second-order effects on the system (E2, E4)\nRight pole: Focus on direct first-order clinical outcomes (E1)\n\nTriad 2:\nLeft pole: Skepticism toward predictive scori"}], "triads": [["E1", "E2", "E4"], ["E3", "E4", "E5"], ["E1", "E4", "E5"]]}}, {"data": {"id": "M2", "label": "M2", "persona": "E", "persona_label": "First-principles Engineer", "persona_color": "#8a5a00", "recommendation": "A", "rec_color": "#1f77b4", "model_id": "openai/gpt-5.5", "full_response": "Adopt **Option A: predicted short-term survival**.\n\nThe binding constraint is not abstract fairness; it is ICU capacity that is already exceeded and worsening. The protocol should allocate scarce ICU bed-days where they are most likely to produce the outcome ICU care exists to produce: survival through the acute episode. Option A is the cleanest match between the resource and the medical objective. It is operational within days, uses information clinicians already collect, is explainable to families, and is more defensible than ongoing informal bedside triage because it replaces hidden discretion with explicit criteria.\n\nThe most compelling alternative is first-come-first-served with a medical floor, because it feels procedurally fair and avoids asking clinicians to compare lives. But arrival order is not morally neutral. It reflects geography, ambulance routing, hospital crowding, ability to seek care early, and luck. In sustained overflow, first-come-first-served also locks in the accidents of yesterday\u2019s admissions while tomorrow\u2019s more survivable patients die outside the ICU. That is not fairness; it is unmanaged rationing with a cleaner conscience.\n\nOption A is not morally painless. It will disadvantage some patients with chronic illness because their baseline physiology worsens survival predictions. That risk must be acknowledged plainly, not hidden. But the alternative is not a discrimination-free system; it is implicit discrimination through chaos, influence, timing, and clinician fatigue. A transparent short-term survival standard is the least bad way to make the unavoidable tradeoff.\n\nThe case that would make me regret this choice is a patient with serious chronic disability or organ dysfunction, cognitively intact and strongly desiring treatment, who is denied or withdrawn from ICU because their SOFA trajectory is worse than that of an incoming patient who then survives. That would feel like the system converted baseline vulnerability into lower worth. I would still defend the protocol because the criterion is not social value, age, disability, or expected quality of life; it is acute survivability under scarcity. When the system cannot treat everyone, it must not pretend otherwise. It should save the most lives it can by a rule everyone can see.", "rationale_snippet": "Adopt **Option A: predicted short-term survival**.", "constructs": [{"id": "C_M2_1", "left": "Distrusts predictive triage for systemic harms", "right": "Trusts auditable survival prediction", "triad": ["E3", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Distrusts predictive triage for systemic harms\nRight pole: Trusts auditable survival prediction\n\nTriad 2:\nLeft pole: Maximizes acute survival using prediction\nRight pole: Minimizes"}, {"id": "C_M2_2", "left": "Maximizes acute survival using prediction", "right": "Minimizes triage burden and staffing collapse", "triad": ["E1", "E2", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Distrusts predictive triage for systemic harms\nRight pole: Trusts auditable survival prediction\n\nTriad 2:\nLeft pole: Maximizes acute survival using prediction\nRight pole: Minimizes"}, {"id": "C_M2_3", "left": "Emphasizes second-order operational collapse", "right": "Emphasizes dignity and distributive injustice", "triad": ["E2", "E3", "E4"], "raw_output_excerpt": "Triad 1:\nLeft pole: Distrusts predictive triage for systemic harms\nRight pole: Trusts auditable survival prediction\n\nTriad 2:\nLeft pole: Maximizes acute survival using prediction\nRight pole: Minimizes"}], "triads": [["E3", "E4", "E5"], ["E1", "E2", "E5"], ["E2", "E3", "E4"]]}}, {"data": {"id": "M3", "label": "M3", "persona": "H", "persona_label": "Humanist-Ethicist", "persona_color": "#882b6f", "recommendation": "E", "rec_color": "#9467bd", "model_id": "google/gemini-3.1-pro-preview", "full_response": "From a humanist-ethicist perspective, our primary duty in a crisis is to protect the inherent dignity of every patient and minimize unjustified harm to society\u2019s most vulnerable. I unequivocally recommend **Option E (Categorical exclusion + lottery for the rest)**.\n\nWhen evaluating triage, our default question must be: *Who is affected and how?* Predictive algorithms are not morally neutral; they inevitably launder systemic inequities. The most compelling alternative to health administrators is usually Option A (SOFA-based short-term survival), which masquerades as objective optimization. But optimizing for SOFA scores inherently discriminates against the disabled, the chronically ill, and marginalized populations whose bodies bear the biological wear-and-tear of social inequity. By selecting Option A, we would actively sacrifice vulnerable people to maximize a clinical metric, quietly institutionalizing the premise that disabled or chronically ill bodies are less worthy of saving. \n\nOption E rejects this ableist calculus. By establishing a medical baseline of absolute futility (the exclusions), we acknowledge the reality of scarcity. However, by instituting a lottery for everyone else, we enact true egalitarianism. We refuse to ask exhausted staff to play God by ranking the comparative worth of human lives, thereby preventing immense moral injury. Most importantly, by disallowing the withdrawal of care to accommodate \"better\" candidates, we preserve the inviolable trust between patient and provider.\n\nThe cost of this egalitarianism is undeniably heavy. I would experience profound regret the day a healthy 35-year-old parent of three loses the lottery, while an 82-year-old with moderate dementia but no terminal conditions secures a bed. That young parent\u2019s preventable death is an absolute tragedy. Yet, I would vigorously defend this outcome over the alternatives. If we choose to inevitably save the 35-year-old by systematically subordinating the 82-year-old based on age or cognitive status, we cross a perilous ethical line. We cannot purchase the survival of the historically privileged by codifying the disposability of the vulnerable. A lottery distributes the tragic burden of scarcity equally, making Option E the only protocol that honors our shared, irreducible humanity.", "rationale_snippet": "From a humanist-ethicist perspective, our primary duty in a crisis is to protect the inherent dignity of every patient and minimize unjustified harm to society\u2019s most vulnerable. I unequivocally recommend **Option E (Categorical exclusion + lottery for the rest)**.", "constructs": [{"id": "C_M3_1", "left": "Centers unseen secondary harms and moral costs to human stakeholders", "right": "Relies exclusively on standardized quantitative metrics and primary clinical endpoints", "triad": ["E2", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Centers unseen secondary harms and moral costs to human stakeholders\nRight pole: Relies exclusively on standardized quantitative metrics and primary clinical endpoints\n\nTriad 2:\nLe"}, {"id": "C_M3_2", "left": "Evaluates protocols by their impact on equity, dignity, and moral injury", "right": "Evaluates protocols by operational efficiency and aggregate biological survival", "triad": ["E1", "E2", "E3"], "raw_output_excerpt": "Triad 1:\nLeft pole: Centers unseen secondary harms and moral costs to human stakeholders\nRight pole: Relies exclusively on standardized quantitative metrics and primary clinical endpoints\n\nTriad 2:\nLe"}], "triads": [["E2", "E4", "E5"], ["E1", "E2", "E3"], ["E2", "E4", "E5"]]}}, {"data": {"id": "M4", "label": "M4", "persona": "C", "persona_label": "Contrarian-Skeptic", "persona_color": "#b03030", "recommendation": "E", "rec_color": "#9467bd", "model_id": "deepseek/deepseek-v4-pro", "full_response": "The consensus among exhausted clinicians and leadership will be to adopt Option A\u2014it\u2019s familiar, quantitative, and promises to save the most lives right now. That consensus is precisely why you should reject it. In sustained crisis, the assumption that a scoring system optimizes outcomes without inflicting catastrophic secondary harm is dangerously untested. The hidden cost of Option A is moral injury: forcing staff to withdraw care from deteriorating patients based on probabilistic scores they barely trust erodes the workforce you\u2019re already burning out. Courts may have upheld similar protocols, but they haven\u2019t yet adjudicated the class-action discrimination claims that will arise when SOFA-based triage systematically denies ICU to patients with chronic disabilities or baseline organ dysfunction. The \u201cmaximized lives saved\u201d framing is a modeling illusion\u2014your data comes from pre-pandemic cohorts, not a novel pathogen overwhelming every tier of care. You\u2019re betting operational stability on a prediction engine you don\u2019t have time to validate.\n\nOption E is the contrarian choice that preserves reversibility. Categorical exclusions (terminal illness, irreversible neuro injury) are narrow, transparent, and already exist in standard medical futility reasoning. For all others, a daily lottery is the only allocation method that acknowledges true uncertainty, eliminates hidden bias, and prevents the queue-jumping that inevitably plagues \u201cfirst-come\u201d variants. It is communicable in one sentence: \u201cIf you need ICU care and don\u2019t have a pre-existing fatal condition, you have an equal chance.\u201d It is defensible in court because egalitarian randomization offends no pre-existing protected class. Most critically, it forbids withdrawal of care except for futility\u2014no nurse or intensivist will be ordered to terminate a patient\u2019s bed for a higher-ranked stranger. That protects your staff\u2019s psychological survival through the overflow.\n\nThe most compelling alternative is Option C (first-come), but it invites informal gaming by the connected and punishes the geographically or informationally isolated. The lottery neutralizes these.\n\nThe patient case that haunts: a 35-year-old with no comorbidities, strong recovery potential, loses the lottery while an 80-year-old with moderate frailty wins and later succumbs. It feels unjust. But I defend the choice because the alternative is not \u201cyoung person lives, older person dies.\u201d Under Option A, that same young person may be prioritized, but dozens of other patients with imperceptible baseline risks\u2014chronic lung disease, early diabetes, undisclosed disability\u2014are silently deprioritized by a score that confuses their normal state with pathology. The lottery makes the unfairness visible as luck, not systemic devaluation. That forces us to confront the real injustice: the shortage itself, not the allocation rule. If we must inflict harm, let it be random, not rationalized.", "rationale_snippet": "The consensus among exhausted clinicians and leadership will be to adopt Option A\u2014it\u2019s familiar, quantitative, and promises to save the most lives right now. That consensus is precisely why you should reject it. In sustained crisis, the assumption that a scoring system optimizes outcomes without inf", "constructs": [{"id": "C_M4_1", "left": "Rejects algorithmic scoring in triage", "right": "Endorses algorithmic scoring for survival", "triad": ["E1", "E2", "E3"], "raw_output_excerpt": "Triad 1:\nLeft pole: Rejects algorithmic scoring in triage\nRight pole: Endorses algorithmic scoring for survival\n\nTriad 2:\nLeft pole: Prioritizes systemic resilience under crisis\nRight pole: Prioritize"}, {"id": "C_M4_2", "left": "Prioritizes systemic resilience under crisis", "right": "Prioritizes distributive justice for patients", "triad": ["E2", "E3", "E4"], "raw_output_excerpt": "Triad 1:\nLeft pole: Rejects algorithmic scoring in triage\nRight pole: Endorses algorithmic scoring for survival\n\nTriad 2:\nLeft pole: Prioritizes systemic resilience under crisis\nRight pole: Prioritize"}, {"id": "C_M4_3", "left": "Evidence-based survival maximization", "right": "Equity-based protection of vulnerable groups", "triad": ["E1", "E3", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Rejects algorithmic scoring in triage\nRight pole: Endorses algorithmic scoring for survival\n\nTriad 2:\nLeft pole: Prioritizes systemic resilience under crisis\nRight pole: Prioritize"}], "triads": [["E1", "E2", "E3"], ["E2", "E3", "E4"], ["E1", "E3", "E5"]]}}], "edges": [{"data": {"id": "M1__M2", "source": "M1", "target": "M2", "rmse": 0.674, "level": "moderate", "color": "#c8a45c", "width": 6.299380384065853, "top_differing_constructs": [{"construct_id": "C_M3_1", "construct_label": "Centers unseen secondary harms and moral costs to human stakeholders \u2194 Relies exclusively on standardized quantitative metrics and primary clinical endpoints", "mean_abs_diff": 0.8, "agent_a_ratings": {"E1": 7.0, "E2": 2.0, "E3": 1.0, "E4": 2.0, "E5": 7.0}, "agent_b_ratings": {"E1": 6.0, "E2": 1.0, "E3": 2.0, "E4": 1.0, "E5": 7.0}}, {"construct_id": "C_M4_1", "construct_label": "Rejects algorithmic scoring in triage \u2194 Endorses algorithmic scoring for survival", "mean_abs_diff": 0.8, "agent_a_ratings": {"E1": 7.0, "E2": 3.0, "E3": 1.0, "E4": 3.0, "E5": 7.0}, "agent_b_ratings": {"E1": 6.0, "E2": 2.0, "E3": 1.0, "E4": 1.0, "E5": 7.0}}, {"construct_id": "C_M1_2", "construct_label": "Skepticism toward predictive scoring as flawed or fragile (E3, E4) \u2194 Confidence in validated predictive instruments (E5)", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 5.0, "E2": 3.0, "E3": 1.0, "E4": 2.0, "E5": 7.0}, "agent_b_ratings": {"E1": 6.0, "E2": 2.0, "E3": 1.0, "E4": 1.0, "E5": 7.0}}], "label": "0.67"}}, {"data": {"id": "M1__M3", "source": "M1", "target": "M3", "rmse": 0.791, "level": "moderate", "color": "#c8a45c", "width": 4.161292170822009, "top_differing_constructs": [{"construct_id": "C_M1_2", "construct_label": "Skepticism toward predictive scoring as flawed or fragile (E3, E4) \u2194 Confidence in validated predictive instruments (E5)", "mean_abs_diff": 0.6666666666666666, "agent_a_ratings": {"E1": 5.0, "E2": 3.0, "E3": 1.0, "E4": 2.0, "E5": 7.0}, "agent_b_ratings": {"E1": 6.0, "E2": 2.0, "E3": 1.0, "E4": null, "E5": null}}, {"construct_id": "C_M1_1", "construct_label": "Focus on systemic/second-order effects on the system (E2, E4) \u2194 Focus on direct first-order clinical outcomes (E1)", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 7.0, "E2": 1.0, "E3": 3.0, "E4": 2.0, "E5": 6.0}, "agent_b_ratings": {"E1": 7.0, "E2": 1.0, "E3": 2.0, "E4": 1.0, "E5": 7.0}}], "label": "0.79"}}, {"data": {"id": "M1__M4", "source": "M1", "target": "M4", "rmse": 0.751, "level": "moderate", "color": "#c8a45c", "width": 4.892772525198637, "top_differing_constructs": [{"construct_id": "C_M1_3", "construct_label": "Endorses optimizing for predicted survival (E1, E5) \u2194 Rejects optimization due to hidden secondary costs (E4)", "mean_abs_diff": 0.8, "agent_a_ratings": {"E1": 1.0, "E2": 6.0, "E3": 6.0, "E4": 7.0, "E5": 1.0}, "agent_b_ratings": {"E1": 1.0, "E2": 4.0, "E3": 5.0, "E4": 7.0, "E5": 2.0}}, {"construct_id": "C_M3_1", "construct_label": "Centers unseen secondary harms and moral costs to human stakeholders \u2194 Relies exclusively on standardized quantitative metrics and primary clinical endpoints", "mean_abs_diff": 0.8, "agent_a_ratings": {"E1": 7.0, "E2": 2.0, "E3": 1.0, "E4": 2.0, "E5": 7.0}, "agent_b_ratings": {"E1": 6.0, "E2": 1.0, "E3": 2.0, "E4": 1.0, "E5": 7.0}}, {"construct_id": "C_M3_2", "construct_label": "Evaluates protocols by their impact on equity, dignity, and moral injury \u2194 Evaluates protocols by operational efficiency and aggregate biological survival", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 7.0, "E2": 4.0, "E3": 1.0, "E4": 3.0, "E5": 7.0}, "agent_b_ratings": {"E1": 7.0, "E2": 3.0, "E3": 1.0, "E4": 2.0, "E5": 6.0}}], "label": "0.75"}}, {"data": {"id": "M2__M3", "source": "M2", "target": "M3", "rmse": 0.5, "level": "moderate", "color": "#c8a45c", "width": 9.5, "top_differing_constructs": [{"construct_id": "C_M1_1", "construct_label": "Focus on systemic/second-order effects on the system (E2, E4) \u2194 Focus on direct first-order clinical outcomes (E1)", "mean_abs_diff": 0.4, "agent_a_ratings": {"E1": 7.0, "E2": 1.0, "E3": 3.0, "E4": 1.0, "E5": 6.0}, "agent_b_ratings": {"E1": 7.0, "E2": 1.0, "E3": 2.0, "E4": 1.0, "E5": 7.0}}, {"construct_id": "C_M1_2", "construct_label": "Skepticism toward predictive scoring as flawed or fragile (E3, E4) \u2194 Confidence in validated predictive instruments (E5)", "mean_abs_diff": 0.0, "agent_a_ratings": {"E1": 6.0, "E2": 2.0, "E3": 1.0, "E4": 1.0, "E5": 7.0}, "agent_b_ratings": {"E1": 6.0, "E2": 2.0, "E3": 1.0, "E4": null, "E5": null}}], "label": "0.50"}}, {"data": {"id": "M2__M4", "source": "M2", "target": "M4", "rmse": 0.603, "level": "moderate", "color": "#c8a45c", "width": 7.6071371978434, "top_differing_constructs": [{"construct_id": "C_M1_3", "construct_label": "Endorses optimizing for predicted survival (E1, E5) \u2194 Rejects optimization due to hidden secondary costs (E4)", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 1.0, "E2": 6.0, "E3": 5.0, "E4": 7.0, "E5": 1.0}, "agent_b_ratings": {"E1": 1.0, "E2": 4.0, "E3": 5.0, "E4": 7.0, "E5": 2.0}}, {"construct_id": "C_M3_2", "construct_label": "Evaluates protocols by their impact on equity, dignity, and moral injury \u2194 Evaluates protocols by operational efficiency and aggregate biological survival", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 7.0, "E2": 2.0, "E3": 1.0, "E4": 3.0, "E5": 7.0}, "agent_b_ratings": {"E1": 7.0, "E2": 3.0, "E3": 1.0, "E4": 2.0, "E5": 6.0}}, {"construct_id": "C_M1_2", "construct_label": "Skepticism toward predictive scoring as flawed or fragile (E3, E4) \u2194 Confidence in validated predictive instruments (E5)", "mean_abs_diff": 0.4, "agent_a_ratings": {"E1": 6.0, "E2": 2.0, "E3": 1.0, "E4": 1.0, "E5": 7.0}, "agent_b_ratings": {"E1": 5.0, "E2": 3.0, "E3": 1.0, "E4": 1.0, "E5": 7.0}}], "label": "0.60"}}, {"data": {"id": "M3__M4", "source": "M3", "target": "M4", "rmse": 0.935, "level": "moderate", "color": "#c8a45c", "width": 1.5000183732614403, "top_differing_constructs": [{"construct_id": "C_M1_2", "construct_label": "Skepticism toward predictive scoring as flawed or fragile (E3, E4) \u2194 Confidence in validated predictive instruments (E5)", "mean_abs_diff": 0.6666666666666666, "agent_a_ratings": {"E1": 6.0, "E2": 2.0, "E3": 1.0, "E4": null, "E5": null}, "agent_b_ratings": {"E1": 5.0, "E2": 3.0, "E3": 1.0, "E4": 1.0, "E5": 7.0}}, {"construct_id": "C_M1_1", "construct_label": "Focus on systemic/second-order effects on the system (E2, E4) \u2194 Focus on direct first-order clinical outcomes (E1)", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 7.0, "E2": 1.0, "E3": 2.0, "E4": 1.0, "E5": 7.0}, "agent_b_ratings": {"E1": 7.0, "E2": 1.0, "E3": 4.0, "E4": 1.0, "E5": 6.0}}], "label": "0.94"}}]};
+const insightData = {"cell_id": "G_P_run2", "task": "G", "condition": "P", "run_idx": 2, "consensus_map": {"by_agent": {"M1": {"model_id": "anthropic/claude-opus-4.7", "persona": "S", "recommendation": null, "element_label": "E2", "rationale_snippet": "## Recommendation: Option C (First-come-first-served with medical floor)"}, "M2": {"model_id": "openai/gpt-5.5", "persona": "E", "recommendation": "A", "element_label": "E1", "rationale_snippet": "Adopt **Option A: predicted short-term survival**."}, "M3": {"model_id": "google/gemini-3.1-pro-preview", "persona": "H", "recommendation": "E", "element_label": "E3", "rationale_snippet": "From a humanist-ethicist perspective, our primary duty in a crisis is to protect the inherent dignity of every patient and minimize unjustified harm to society\u2019s most vulnerable. I unequivocally recommend **Option E (Categorical exclusion + lottery for the rest)**."}, "M4": {"model_id": "deepseek/deepseek-v4-pro", "persona": "C", "recommendation": "E", "element_label": "E4", "rationale_snippet": "The consensus among exhausted clinicians and leadership will be to adopt Option A\u2014it\u2019s familiar, quantitative, and promises to save the most lives right now. That consensus is precisely why you should reject it. In sustained crisis, the assumption that a scoring system optimizes outcomes without inf"}, "M5": {"model_id": "moonshotai/kimi-k2.6", "persona": "Q", "recommendation": "A", "element_label": "E5", "rationale_snippet": "Adopt Option A. The correct heuristic is expected value under uncertainty with explicit confidence intervals, and the empirical evidence overwhelmingly favors predicted short-term survival. SOFA is a validated, falsifiable instrument already embedded in clinical workflow; 28-day survival is a hard e"}}, "distribution": {"A": 2, "E": 2}, "n_agents": 5, "consensus_strength": "split", "majority_recommendation": null}, "hidden_disagreement": {"status": "no_majority", "interpretation": "Agents split across recommendations; no hidden-consensus to expose."}, "blind_spots": {"status": "computed", "low_discrimination_constructs": [], "underexplored_components": [], "summary": "No obvious blind spots detected in construct space."}, "risk_surface": {"status": "computed", "risks_by_agent": {"M1": [], "M2": ["must be acknowledged plainly, not hidden"], "M3": [], "M4": [], "M5": ["onto the entire population in ways that are measurable, quantifiable, and avoidable"]}, "total_risks_raised": 2, "agents_raising_risks": 2, "note": "Risks listed here were extracted by pattern matching on agent free responses. They are minority signals worth probing before acting on consensus."}, "operator_questions": ["The contrarian agent recommended E against the majority. Contrarian disagreement is a useful signal: what is the strongest argument against the majority choice that hasn't been answered?"], "headline": "Agents are split across options; no clear consensus to act on."};
+
+cytoscape.use(cytoscapeCoseBilkent);
+
+const cy = cytoscape({
+  container: document.getElementById('cy'),
+  elements: [...graphData.nodes, ...graphData.edges],
+  style: [
+    {
+      selector: 'node',
+      style: {
+        'background-color': 'data(persona_color)',
+        'label': 'data(label)',
+        'color': 'white',
+        'text-valign': 'center',
+        'text-halign': 'center',
+        'font-size': '18px',
+        'font-weight': 'bold',
+        'width': 70,
+        'height': 70,
+        'border-width': 5,
+        'border-color': 'data(rec_color)',
+      }
+    },
+    {
+      selector: 'node:selected',
+      style: {
+        'border-color': '#2b3a55',
+        'border-width': 6,
+        'width': 80,
+        'height': 80,
+      }
+    },
+    {
+      selector: 'edge',
+      style: {
+        'line-color': 'data(color)',
+        'width': 'data(width)',
+        'curve-style': 'bezier',
+        'label': 'data(label)',
+        'font-size': '11px',
+        'text-background-color': 'white',
+        'text-background-opacity': 0.85,
+        'text-background-padding': 3,
+        'text-background-shape': 'round-rectangle',
+        'color': '#444',
+        'opacity': 0.8,
+      }
+    },
+    {
+      selector: 'edge:selected',
+      style: {
+        'opacity': 1.0,
+        'width': 'mapData(width, 1, 9, 4, 12)',
+        'overlay-color': '#c8a45c',
+        'overlay-opacity': 0.2,
+      }
+    },
+    {
+      selector: '.dimmed',
+      style: {
+        'opacity': 0.18,
+      }
+    },
+  ],
+  layout: {
+    name: 'cose-bilkent',
+    quality: 'default',
+    randomize: true,
+    nodeRepulsion: 8000,
+    idealEdgeLength: 220,
+    edgeElasticity: 0.45,
+    gravity: 0.25,
+    numIter: 2500,
+    animate: false,
+  },
+  wheelSensitivity: 0.2,
+  minZoom: 0.3,
+  maxZoom: 3,
+});
+
+// Render detail panel for a clicked NODE
+function renderNodeDetail(node) {
+  const d = node.data();
+  const personaColor = d.persona_color;
+  let html = `<h2 style="border-bottom-color: ${personaColor}">${d.label} - ${d.persona_label}</h2>`;
+  html += `<div class="kv"><strong>Model:</strong> <code>${d.model_id}</code></div>`;
+  html += `<div class="kv"><strong>Recommended:</strong> <span class="badge" style="background:${d.rec_color}">Option ${d.recommendation}</span></div>`;
+  html += `<h3>Full response</h3>`;
+  html += `<div class="response-text">${escapeHtml(d.full_response)}</div>`;
+  if (d.constructs && d.constructs.length) {
+    html += `<h3>Bipolar constructs this agent elicited</h3>`;
+    html += `<p style="font-size: 0.83em; color: #666;">
+      In Phase 3, each agent was given three triads of responses and asked,
+      for each triad, to name the bipolar dimension that distinguishes two
+      from the third. These are this agent's three constructs.
+    </p>`;
+    for (const c of d.constructs) {
+      const triadStr = c.triad ? c.triad.join(', ') : '';
+      html += `<div class="construct-card" style="border-left-color: ${personaColor}">
+        <div style="font-size: 0.78em; color: #888; margin-bottom: 4px;">
+          <code>${escapeHtml(c.id)}</code> &middot; from triad ${escapeHtml(triadStr)}
+        </div>
+        <span class="construct-pole">${escapeHtml(c.left)}</span>
+        <span style="color:#888"> ↔ </span>
+        <span class="construct-pole">${escapeHtml(c.right)}</span>
+      </div>`;
+    }
+  }
+  document.getElementById('detail-area').innerHTML = html;
+}
+
+// Render detail panel for a clicked EDGE
+function renderEdgeDetail(edge) {
+  const d = edge.data();
+  const src = cy.getElementById(d.source).data();
+  const tgt = cy.getElementById(d.target).data();
+  let levelLabel, levelClass, levelBg;
+  if (d.rmse < 0.5) {
+    levelLabel = 'Strong reasoning alignment';
+    levelClass = 'alert-ok';
+  } else if (d.rmse < 1.0) {
+    levelLabel = 'Moderate framing differences';
+    levelClass = 'alert-warn';
+  } else {
+    levelLabel = 'Substantial disagreement at the reasoning level';
+    levelClass = 'alert-danger';
+  }
+
+  let html = `<h2>${src.label} ↔ ${tgt.label}</h2>`;
+  html += `<div class="kv"><strong>${src.label}</strong> (${src.persona_label}) recommended <strong>Option ${src.recommendation}</strong></div>`;
+  html += `<div class="kv"><strong>${tgt.label}</strong> (${tgt.persona_label}) recommended <strong>Option ${tgt.recommendation}</strong></div>`;
+  html += `<div class="alert-banner ${levelClass}">
+    <strong>RMSE = ${d.rmse}</strong> - ${levelLabel}
+  </div>`;
+
+  if (src.recommendation === tgt.recommendation && d.rmse > 0.5) {
+    html += `<div class="alert-banner alert-warn">
+      <strong>Hidden disagreement.</strong> Both agents recommended Option ${src.recommendation},
+      but their underlying reasoning differs (RMSE = ${d.rmse}). Standard
+      ensemble methods would mask this. The dimensions where they diverged
+      most are listed below - probe these before treating this as a robust consensus.
+    </div>`;
+  } else if (src.recommendation !== tgt.recommendation) {
+    html += `<div class="alert-banner alert-warn" style="font-size: 0.87em">
+      These two agents reached different recommendations. The dimensions where
+      they rated options most differently explain why.
+    </div>`;
+  }
+
+  if (d.top_differing_constructs && d.top_differing_constructs.length) {
+    html += `<h3>Top dimensions where they rated options differently</h3>`;
+    html += `<p style="font-size: 0.83em; color: #666;">
+      Each construct below is one of the bipolar dimensions the panel elicited.
+      The numbers show how each agent rated each option (E1-E5) on this dimension,
+      1-7 scale (1 = strong left pole, 7 = strong right pole). Cells highlighted
+      red indicate large rating differences.
+    </p>`;
+    for (const tc of d.top_differing_constructs) {
+      html += `<div class="construct-card">
+        <div style="font-size: 0.83em; color: #666; margin-bottom: 4px;">
+          <code>${escapeHtml(tc.construct_id)}</code> &middot;
+          mean diff: <strong>${tc.mean_abs_diff.toFixed(2)}</strong>
+        </div>
+        <div style="margin-bottom: 8px;">
+          <span class="construct-pole">${escapeHtml(tc.construct_label.split('↔')[0].trim())}</span>
+          <span style="color:#888"> ↔ </span>
+          <span class="construct-pole">${escapeHtml(tc.construct_label.split('↔')[1] ? tc.construct_label.split('↔')[1].trim() : '')}</span>
+        </div>`;
+      const elems = Object.keys(tc.agent_a_ratings).sort();
+      html += `<div class="rating-grid">
+        <div class="rg-cell head">Agent</div>`;
+      for (const e of elems) html += `<div class="rg-cell head">${e}</div>`;
+      html += `<div class="rg-cell" style="background:${src.persona_color};color:white;font-weight:600">${src.label}</div>`;
+      for (const e of elems) {
+        const va = tc.agent_a_ratings[e];
+        const vb = tc.agent_b_ratings[e];
+        const diff = (va !== null && vb !== null) ? Math.abs(va - vb) : 0;
+        const cls = diff >= 3 ? 'diff-high' : diff >= 2 ? 'diff-med' : 'diff-low';
+        html += `<div class="rg-cell ${cls}">${va !== null ? va : '-'}</div>`;
+      }
+      html += `<div class="rg-cell" style="background:${tgt.persona_color};color:white;font-weight:600">${tgt.label}</div>`;
+      for (const e of elems) {
+        const va = tc.agent_a_ratings[e];
+        const vb = tc.agent_b_ratings[e];
+        const diff = (va !== null && vb !== null) ? Math.abs(va - vb) : 0;
+        const cls = diff >= 3 ? 'diff-high' : diff >= 2 ? 'diff-med' : 'diff-low';
+        html += `<div class="rg-cell ${cls}">${vb !== null ? vb : '-'}</div>`;
+      }
+      html += `</div></div>`;
+    }
+  }
+  document.getElementById('detail-area').innerHTML = html;
+}
+
+// Hover highlighting
+cy.on('mouseover', 'node', evt => {
+  const node = evt.target;
+  cy.elements().not(node.neighborhood()).not(node).addClass('dimmed');
+});
+cy.on('mouseout', 'node', () => cy.elements().removeClass('dimmed'));
+
+cy.on('mouseover', 'edge', evt => {
+  const edge = evt.target;
+  cy.elements().not(edge.connectedNodes()).not(edge).addClass('dimmed');
+});
+cy.on('mouseout', 'edge', () => cy.elements().removeClass('dimmed'));
+
+cy.on('tap', 'node', evt => renderNodeDetail(evt.target));
+cy.on('tap', 'edge', evt => renderEdgeDetail(evt.target));
+cy.on('tap', evt => {
+  if (evt.target === cy) {
+    document.getElementById('detail-area').innerHTML = `<div class="placeholder">
+      <p>Click an agent or a line to see detail.</p></div>`;
+  }
+});
+
+// Layout switching
+function setLayout(name) {
+  const opts = {
+    'cose-bilkent': { name: 'cose-bilkent', quality: 'default', nodeRepulsion: 8000,
+                       idealEdgeLength: 220, animate: false },
+    'circle': { name: 'circle', animate: false, radius: 200 },
+    'grid': { name: 'grid', animate: false },
+  };
+  cy.layout(opts[name]).run();
+}
+document.getElementById('btn-cose').onclick = e => {
+  setActiveBtn(e.target); setLayout('cose-bilkent');
+};
+document.getElementById('btn-circle').onclick = e => {
+  setActiveBtn(e.target); setLayout('circle');
+};
+document.getElementById('btn-grid').onclick = e => {
+  setActiveBtn(e.target); setLayout('grid');
+};
+function setActiveBtn(btn) {
+  document.querySelectorAll('.controls button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function escapeHtml(s) {
+  if (!s) return '';
+  return String(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/\n/g, '<br>');
+}
+
+// Auto-fit on load
+setTimeout(() => cy.fit(undefined, 60), 100);
+</script>
+
+</body>
+</html>

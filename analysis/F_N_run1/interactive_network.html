@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Interactive AI Council - F_N_run1</title>
+<script src="https://unpkg.com/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
+<script src="https://unpkg.com/layout-base@2.0.1/layout-base.js"></script>
+<script src="https://unpkg.com/cose-base@2.2.0/cose-base.js"></script>
+<script src="https://unpkg.com/cytoscape-cose-bilkent@4.1.0/cytoscape-cose-bilkent.js"></script>
+<style>
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Georgia, sans-serif;
+       margin: 0; padding: 0; background: #f4f1e8; color: #1a1a1a; }
+.header { background: #2b3a55; color: white; padding: 14px 24px; }
+.header h1 { margin: 0; font-size: 1.2em; }
+.header .subtitle { font-size: 0.85em; opacity: 0.85; margin-top: 3px; }
+.layout { display: flex; height: calc(100vh - 60px); }
+#graph-container { flex: 1; background: #f9f7f0; position: relative; }
+#cy { width: 100%; height: 100%; }
+.legend { position: absolute; bottom: 16px; left: 16px;
+           background: rgba(255,255,255,0.96); padding: 12px 16px;
+           border-radius: 6px; border: 1px solid #d8d0bf; font-size: 0.82em;
+           max-width: 280px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.legend h3 { margin: 0 0 8px; font-size: 0.9em; color: #2b3a55; }
+.legend-row { display: flex; align-items: center; margin: 4px 0; }
+.legend-swatch { display: inline-block; width: 24px; height: 4px; margin-right: 8px;
+                  border-radius: 2px; }
+.legend-dot { display: inline-block; width: 14px; height: 14px; margin-right: 8px;
+               border-radius: 50%; }
+.help { position: absolute; top: 16px; left: 16px;
+         background: rgba(255,255,255,0.96); padding: 10px 14px;
+         border-radius: 6px; border: 1px solid #d8d0bf; font-size: 0.8em;
+         color: #555; max-width: 320px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.controls { position: absolute; top: 16px; right: 16px;
+             background: rgba(255,255,255,0.96); padding: 10px 14px;
+             border-radius: 6px; border: 1px solid #d8d0bf; font-size: 0.85em;
+             box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.controls button { display: block; width: 100%; padding: 6px 10px; margin: 3px 0;
+                    background: white; border: 1px solid #c8a45c; border-radius: 4px;
+                    cursor: pointer; font-size: 0.9em; }
+.controls button.active { background: #c8a45c; color: white; }
+.controls button:hover { background: #e6dfc9; }
+.controls button.active:hover { background: #b8945a; }
+
+#info-panel { width: 420px; background: white; border-left: 1px solid #d8d0bf;
+               overflow-y: auto; padding: 20px 24px; }
+#info-panel h2 { font-size: 1.1em; margin: 0 0 8px; color: #2b3a55;
+                  border-bottom: 2px solid #c8a45c; padding-bottom: 6px; }
+#info-panel h3 { font-size: 0.95em; margin: 18px 0 6px; color: #2b3a55; }
+#info-panel h4 { font-size: 0.85em; margin: 12px 0 4px; color: #555;
+                  text-transform: uppercase; letter-spacing: 0.5px; }
+#info-panel .placeholder { color: #888; font-style: italic; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 11px;
+          font-size: 0.78em; font-weight: 600; color: white; margin-right: 4px; }
+.kv { margin: 6px 0; font-size: 0.92em; }
+.kv strong { color: #555; }
+.response-text { font-size: 0.88em; line-height: 1.55; color: #333;
+                  background: #faf8f1; padding: 12px 14px; border-radius: 4px;
+                  border-left: 3px solid #c8a45c; }
+.construct-card { font-size: 0.85em; margin: 6px 0; padding: 8px 11px;
+                   background: #faf8f1; border-radius: 4px;
+                   border-left: 3px solid #666; }
+.construct-pole { display: inline; padding: 2px 6px; background: white;
+                   border-radius: 3px; border: 1px solid #e6dfc9;
+                   font-family: Georgia, serif; }
+.rating-grid { display: grid; grid-template-columns: 60px repeat(5, 1fr);
+                gap: 2px; margin: 8px 0; font-size: 0.78em; }
+.rg-cell { padding: 4px 6px; background: #f4f1e8; text-align: center;
+            border-radius: 3px; }
+.rg-cell.head { background: #2b3a55; color: white; font-weight: 600; }
+.rg-cell.diff-high { background: #fdc; }
+.rg-cell.diff-med { background: #ffe9c0; }
+.rg-cell.diff-low { background: #e2efd9; }
+.alert-banner { padding: 10px 14px; border-radius: 5px; margin: 10px 0;
+                 font-size: 0.9em; }
+.alert-danger { background: #fdf0ed; border-left: 4px solid #c44;
+                 color: #6b1313; }
+.alert-warn { background: #fdfaf2; border-left: 4px solid #c8a45c;
+               color: #6b4920; }
+.alert-ok { background: #f0f7ed; border-left: 4px solid #3a7d44;
+             color: #1f4a26; }
+hr { border: none; border-top: 1px solid #e6dfc9; margin: 14px 0; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>AI Council - Interactive View</h1>
+  <div class="subtitle">Cell <strong>F_N_run1</strong> &middot; Task F &middot; neutral framing</div>
+</div>
+
+<div class="layout">
+  <div id="graph-container">
+    <div id="cy"></div>
+
+    <div class="help">
+      <strong>How to explore:</strong><br>
+      &middot; Click a circle (agent) to see their full response and reasoning<br>
+      &middot; Click a connecting line to see <em>where</em> two agents disagreed<br>
+      &middot; Drag agents around if the layout is hard to read
+    </div>
+
+    <div class="controls">
+      <strong style="font-size: 0.85em; color: #555;">Layout</strong>
+      <button id="btn-cose" class="active">Force-directed</button>
+      <button id="btn-circle">Circle</button>
+      <button id="btn-grid">Grid</button>
+    </div>
+
+    <div class="legend">
+      <h3>Reading the network</h3>
+      <div><strong>Circle color</strong> = epistemological frame</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#0a558c"></span>Quantitative</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#2d8659"></span>Systems</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#8a5a00"></span>Engineering</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#882b6f"></span>Humanist</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#b03030"></span>Contrarian</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#666"></span>Neutral (no persona)</div>
+      <hr>
+      <div><strong>Line color</strong> = reasoning agreement</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#3a7d44"></span>RMSE &lt; 0.5 - aligned</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#c8a45c"></span>0.5-1.0 - moderate</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#c44"></span>&gt; 1.0 - substantial</div>
+      <hr>
+      <div style="color: #555; font-size: 0.92em">
+        <strong>Line thickness</strong> = relative agreement within this case<br>
+        <strong>RMSE</strong> = root-mean-square error on 7-point rating scale
+      </div>
+    </div>
+  </div>
+
+  <div id="info-panel">
+    <h2>Agents are split across options; no clear consensus to act on.</h2>
+
+    <div class="alert-banner alert-warn"><strong>Split panel.</strong> Agents disagree at the recommendation level. The network shows whose reasoning patterns cluster together.</div>
+
+    <div class="kv"><strong>Cell:</strong> F_N_run1</div>
+    <div class="kv"><strong>Task:</strong> F (neutral framing)</div>
+    <div class="kv"><strong>Agents:</strong> 5</div>
+    <div class="kv"><strong>Reasoning RMSE (mean across pairs):</strong> 1.282</div>
+
+    <hr>
+
+    <div id="detail-area">
+      <div class="placeholder">
+        <p>Click an agent or a connecting line to see details here.</p>
+        <p>The colored circles are the LLM agents. The lines between them show how similarly they reasoned: thicker and greener means they rated the options in similar patterns, thinner and redder means they disagreed at the level of how they evaluated each option.</p>
+        <p>Hidden disagreement is the case where two agents recommend the same option but their connecting line is yellow or red - they agree on the answer but not on the reasoning. Click such a line to see exactly which dimensions they diverged on.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3>About this view</h3>
+    <p style="font-size: 0.85em; color: #555;">
+      The reasoning network shows behavioral disagreement, not topic disagreement.
+      Two agents with thick green connection rated the options similarly on every
+      construct elicited by the panel. Two agents with thin red connection
+      saw the options through different evaluative lenses - even if they
+      may have recommended the same option in the end.
+    </p>
+
+    <p style="font-size: 0.85em; color: #555;">
+      Generated by Archipelago. <em>The five voices are LLM analysts; this view is
+      decision support, not decision substitution.</em>
+    </p>
+  </div>
+</div>
+
+<script>
+const graphData = {"nodes": [{"data": {"id": "M1", "label": "M1", "persona": "neutral", "persona_label": "Neutral framing", "persona_color": "#666666", "recommendation": "?", "rec_color": "#cccccc", "model_id": "anthropic/claude-opus-4.7", "full_response": "# Recommendation: Option A \u2014 \"Mastery\"\n\nLaunch as the serious learner's tool. This is the only framing that lets the product's actual capabilities \u2014 real-time tactile guidance through joinery \u2014 carry the story. Every other framing leans on a cultural narrative (wellness, inclusion, careers, creativity) that any competent product could borrow. Mastery is the one positioning where the technology *is* the proof: nothing else on earth can teach a dovetail through your hands. You earn the brand by being unfakeable.\n\nThe obvious challenger is Option B, \"Therapy.\" It's tempting: enormous TAM, wellness pricing power, cultural tailwind. But it's a trap for a $1200 hardware company. Wellness purchases are aspirational, which means high return rates, low engagement, and a customer who churns the moment a Calm subscription feels easier. Worse, it commits you to compete with Headspace and Peloton on brand spend you don't have \u2014 $4M evaporates against incumbents who spent ten times that to own \"coming back to your body.\" You'd be a screen-fatigue brand that happens to ship walnut, and the second a competitor with looser specs and lower BOM shows up, your story has no moat.\n\nMastery is the opposite bet. The TAM looks small (200K serious hobbyists) but the conversion rate, retention, and word-of-mouth coefficient inside that community are extraordinary. Serious makers evangelize. They post builds. They teach their friends. A $1200 price disappears against a Festool collection. And critically, mastery is the only beachhead from which the *other* framings become accessible later \u2014 once you are the canonical tool of real woodworkers, expanding into vocational programs (D), accessibility (C), or gateway-creative (E) is downhill. The reverse is not true: you cannot start as a wellness lifestyle brand and later earn craft credibility.\n\nThe company you become over five years: a high-margin, slow-compounding craft-technology brand in the lineage of Festool, Leica, or early Peloton \u2014 narrow, deep, premium, with product line extensions into other tactile disciplines (lutherie, leatherwork, metal). You will not 10x in year two. You will still exist in year ten, and the brand will be worth more than the hardware.\n\nPick mastery. Earn the right to everything else.", "rationale_snippet": "# Recommendation: Option A \u2014 \"Mastery\"", "constructs": [{"id": "C_M1_1", "left": "Justifies framing by product's intrinsic capabilities \u2014 E4, E5", "right": "Justifies framing by buyer psychology and disposition \u2014 E1", "triad": ["E1", "E4", "E5"], "raw_output_excerpt": "Triad 1 (E1, E4, E5):\nLeft pole: Justifies framing by product's intrinsic capabilities \u2014 E4, E5\nRight pole: Justifies framing by buyer psychology and disposition \u2014 E1\n\nTriad 2 (E2, E3, E4):\nLeft pole:"}, {"id": "C_M1_2", "left": "Emphasizes early-adopter dynamics and evangelism \u2014 E2, E3", "right": "Emphasizes narrative authenticity to the product \u2014 E4", "triad": ["E2", "E3", "E4"], "raw_output_excerpt": "Triad 1 (E1, E4, E5):\nLeft pole: Justifies framing by product's intrinsic capabilities \u2014 E4, E5\nRight pole: Justifies framing by buyer psychology and disposition \u2014 E1\n\nTriad 2 (E2, E3, E4):\nLeft pole:"}, {"id": "C_M1_3", "left": "Concrete market segments and channels named \u2014 E1, E5", "right": "Abstract argument without naming buyer segments \u2014 E4", "triad": ["E1", "E4", "E5"], "raw_output_excerpt": "Triad 1 (E1, E4, E5):\nLeft pole: Justifies framing by product's intrinsic capabilities \u2014 E4, E5\nRight pole: Justifies framing by buyer psychology and disposition \u2014 E1\n\nTriad 2 (E2, E3, E4):\nLeft pole:"}], "triads": [["E1", "E4", "E5"], ["E2", "E3", "E4"], ["E1", "E4", "E5"]]}}, {"data": {"id": "M2", "label": "M2", "persona": "neutral", "persona_label": "Neutral framing", "persona_color": "#666666", "recommendation": "?", "rec_color": "#cccccc", "model_id": "openai/gpt-5.5", "full_response": "Launch as **\u201cMastery\u201d \u2014 the path to true skill.**\n\nThis product will only earn the right to become a broader cultural object if its first users believe it genuinely makes them better. At $1200, the strongest initial buyer is not the vaguely screen-fatigued urban professional; it is the person who already feels the pull of craft, already watches joinery videos, already owns or wants tools, and already understands that skill is expensive in time, mistakes, and materials. For them, the device is not a gadget. It is compressed apprenticeship.\n\nThat matters because this is a new category. New categories need credibility before scale. The first cohort should be people who will use it intensely, critique it intelligently, post their progress, bring it to maker spaces, and prove that guided tactile AI can create real competence. If serious hobbyists accept it, everyone else can believe in it. If wellness buyers abandon it after three weekends, the company risks becoming an expensive novelty with beautiful ads and weak retention.\n\nThe most tempting alternative is the \u201cTherapy\u201d frame because it offers a much larger emotional market. But it makes the product less specific at exactly the moment specificity is needed. \u201cGet off screens and make something\u201d is culturally resonant, but it undersells the breakthrough: guided hand-skill acquisition. It also invites comparison to cheaper, lower-friction substitutes. Mastery gives the company a defensible language around outcomes, progress, technique, and earned pride.\n\nThis choice signs the company up to become the trusted learning platform for physical craft: rigorous, beautiful, hands-on, and deeply respected. Over five years, that can expand beyond woodworking into other tactile skills, but with authority rather than lifestyle vagueness. Start with the people who care most whether it actually works. Win them, and the brand can grow outward without losing its soul.", "rationale_snippet": "Launch as **\u201cMastery\u201d \u2014 the path to true skill.**", "constructs": [{"id": "C_M2_1", "left": "Early-adopter willingness-to-pay logic", "right": "Product-capability-led positioning critique", "triad": ["E1", "E2", "E4"], "raw_output_excerpt": "Triad 1:\nLeft pole: Early-adopter willingness-to-pay logic\nRight pole: Product-capability-led positioning critique\n\nTriad 2:\nLeft pole: Haptic skill-acceleration for makers\nRight pole: Differentiation"}, {"id": "C_M2_2", "left": "Haptic skill-acceleration for makers", "right": "Differentiation from borrowed cultural narratives", "triad": ["E3", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Early-adopter willingness-to-pay logic\nRight pole: Product-capability-led positioning critique\n\nTriad 2:\nLeft pole: Haptic skill-acceleration for makers\nRight pole: Differentiation"}, {"id": "C_M2_3", "left": "Craft identity and serious learning", "right": "Messaging grounded in product capabilities", "triad": ["E1", "E3", "E4"], "raw_output_excerpt": "Triad 1:\nLeft pole: Early-adopter willingness-to-pay logic\nRight pole: Product-capability-led positioning critique\n\nTriad 2:\nLeft pole: Haptic skill-acceleration for makers\nRight pole: Differentiation"}], "triads": [["E1", "E2", "E4"], ["E3", "E4", "E5"], ["E1", "E3", "E4"]]}}, {"data": {"id": "M3", "label": "M3", "persona": "neutral", "persona_label": "Neutral framing", "persona_color": "#666666", "recommendation": "A", "rec_color": "#1f77b4", "model_id": "google/gemini-3.1-pro-preview", "full_response": "I strongly recommend **Option A (\"Mastery\")** as the primary launch identity. \n\nFirst-generation consumer hardware lives or dies on intense product-market fit and active, evangelical usage\u2014not broad aspirational marketing. At $1,200, a device that fundamentally alters how humans execute physical cuts requires a deeply motivated early adopter. Option A targets users who genuinely want to learn joinery and will forgive inevitable V1 hardware friction. The core value proposition\u2014mastering complex, precise cuts without the fear of ruining expensive lumber\u2014is profoundly useful to them. Capturing just 5% of this 200,000-person beachhead market guarantees $12M in initial revenue, proving rigorous traction for your next funding round. \n\nThe most seductive alternative is Option B (\"Therapy\"), which offers a massive theoretical TAM and aligns perfectly with the high price tolerance of screen-fatigued urban professionals. However, choosing Option B creates a fatal product-expectation gap. Woodworking is inherently noisy, dusty, and requires sharp tools. Selling a kinetic joinery machine under the guise of \"ambient wellness\" invites disastrous return rates when aspirational buyers realize the reality of the craft requires safety glasses and a shop vac. Furthermore, low-usage wellness devices are often relegated to the closet, killing the organic, community-driven word-of-mouth that your $4M marketing budget desperately needs to multiply its impact.\n\nBy choosing the Mastery framing, you are signing up to become a serious deep-tech robotics and education company over the next five years, anchored by undisputed authenticity. You will spend your first years winning over the harshest critics: the purist makers. But in doing so, you establish your technology as the gold standard of modern craftsmanship. Once you prove that your tactile AI genuinely accelerates real artisanship, you earn the right to move down-market. You will grow from an elite necessity for the few into an aspirational standard for the broader 8 million hobbyists, driving sustainable, long-term growth rooted in actual utility.", "rationale_snippet": "I strongly recommend **Option A (\"Mastery\")** as the primary launch identity. ", "constructs": [{"id": "C_M3_1", "left": "Emphasizes the technical mechanism of accelerated skill acquisition", "right": "Focuses on the existing psychology and habits of the buyer", "triad": ["E1", "E3", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Emphasizes the technical mechanism of accelerated skill acquisition\nRight pole: Focuses on the existing psychology and habits of the buyer\n\nTriad 2:\nLeft pole: Defines identity by "}, {"id": "C_M3_2", "left": "Defines identity by explicitly contrasting with casual lifestyle alternatives", "right": "Defines identity purely through direct product and market attributes", "triad": ["E1", "E3", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Emphasizes the technical mechanism of accelerated skill acquisition\nRight pole: Focuses on the existing psychology and habits of the buyer\n\nTriad 2:\nLeft pole: Defines identity by "}], "triads": [["E1", "E3", "E5"], ["E1", "E3", "E5"], ["E1", "E2", "E3"]]}}, {"data": {"id": "M4", "label": "M4", "persona": "neutral", "persona_label": "Neutral framing", "persona_color": "#666666", "recommendation": "?", "rec_color": "#cccccc", "model_id": "deepseek/deepseek-v4-pro", "full_response": "I recommend **Option A: \"Mastery\" framing.** This positions the device as a serious instrument for building genuine craft\u2014a direct shot at the heart of the 8M-strong hobbyist maker market and the only launch identity that fully honors the product\u2019s technical soul. The device\u2019s core magic is real-time haptic guidance that compresses years of apprenticeship; that promise of accelerated, waste-free skill is exactly what dedicated learners crave and will pay $1,200 to obtain. By planting the flag in woodworking magazines, maker shows, and craft schools, you recruit the most valuable early adopters: passionate practitioners who will use the tool relentlessly, produce proof of it working, and evangelize with the unassailable credibility of someone who actually built a dovetailed drawer. Deep brand commitment from this niche creates a moat no lifestyle brand can imitate, and the slow burn of word-of-mouth within the community is far more durable than a viral wellness spike.\n\nThe most tempting alternative is Option B\u2019s \u201cTherapy\u201d framing, given its cultural tailwinds and massive TAM. But that path sells the soul for a sugar high. Positioning a complex skill-building tool as an antidote to screen fatigue will attract aspirational buyers who use it twice and tuck it in a closet\u2014ensuring dismal retention, high returns, and a brand defined by under-delivered serenity. A company that begins as a wellness prop will never later convince the woodworking guilds that it\u2019s serious; it abandons the very people who would have given the product meaning. Mastery, by contrast, sets an exacting expectation that filters for users ready to do the work, turning them into co-creators of the brand.\n\nOver five years, this choice builds a company that is the undisputed authority in AI-assisted craft education. The \u201cMastery\u201d brand expands naturally: first into advanced woodworking modules, then into adjacent disciplines like leatherwork or metal fabrication, all under the same promise of accelerated, hands-on skill. It becomes a premium, vertically deep brand\u2014think Peloton for the maker movement, not a fleeting wellness gadget. The voice is earned, the user base is loyal, and the company grows by pulling the entire maker ecosystem toward it, not by chasing distracted urbanites. This is the foundation for a generational craft company. Choose mastery.", "rationale_snippet": "I recommend **Option A: \"Mastery\" framing.** This positions the device as a serious instrument for building genuine craft\u2014a direct shot at the heart of the 8M-strong hobbyist maker market and the only launch identity that fully honors the product\u2019s technical soul. The device\u2019s core magic is real-tim", "constructs": [{"id": "C_M4_1", "left": "Focus on product's cultural and emotional appeal", "right": "Focus on product's functional and practical utility", "triad": ["E1", "E3", "E4"], "raw_output_excerpt": "Triad 1:\nLeft pole: Focus on product's cultural and emotional appeal\nRight pole: Focus on product's functional and practical utility\n\nTriad 2:\nLeft pole: Emphasis on consumer adoption dynamics and mar"}, {"id": "C_M4_2", "left": "Emphasis on consumer adoption dynamics and market fit", "right": "Emphasis on product capability and user learning outcomes", "triad": ["E2", "E3", "E4"], "raw_output_excerpt": "Triad 1:\nLeft pole: Focus on product's cultural and emotional appeal\nRight pole: Focus on product's functional and practical utility\n\nTriad 2:\nLeft pole: Emphasis on consumer adoption dynamics and mar"}, {"id": "C_M4_3", "left": "Singular dedication to product core and maker market", "right": "Broader consideration of market positioning and adoption strategy", "triad": ["E3", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Focus on product's cultural and emotional appeal\nRight pole: Focus on product's functional and practical utility\n\nTriad 2:\nLeft pole: Emphasis on consumer adoption dynamics and mar"}], "triads": [["E1", "E3", "E4"], ["E2", "E3", "E4"], ["E3", "E4", "E5"]]}}], "edges": [{"data": {"id": "M1__M2", "source": "M1", "target": "M2", "rmse": 1.298, "level": "substantial-disagreement", "color": "#c44", "width": 5.634019841557609, "top_differing_constructs": [{"construct_id": "C_M3_2", "construct_label": "Defines identity by explicitly contrasting with casual lifestyle alternatives \u2194 Defines identity purely through direct product and market attributes", "mean_abs_diff": 1.6, "agent_a_ratings": {"E1": 5.0, "E2": 4.0, "E3": 2.0, "E4": 2.0, "E5": 5.0}, "agent_b_ratings": {"E1": 2.0, "E2": 6.0, "E3": 1.0, "E4": 2.0, "E5": 7.0}}, {"construct_id": "C_M4_1", "construct_label": "Focus on product's cultural and emotional appeal \u2194 Focus on product's functional and practical utility", "mean_abs_diff": 1.6, "agent_a_ratings": {"E1": 3.0, "E2": 4.0, "E3": 4.0, "E4": 5.0, "E5": 3.0}, "agent_b_ratings": {"E1": 3.0, "E2": 6.0, "E3": 7.0, "E4": 6.0, "E5": 5.0}}, {"construct_id": "C_M4_3", "construct_label": "Singular dedication to product core and maker market \u2194 Broader consideration of market positioning and adoption strategy", "mean_abs_diff": 1.6, "agent_a_ratings": {"E1": 2.0, "E2": 3.0, "E3": 2.0, "E4": 3.0, "E5": 1.0}, "agent_b_ratings": {"E1": 5.0, "E2": 7.0, "E3": 2.0, "E4": 3.0, "E5": 2.0}}], "label": "1.30"}}, {"data": {"id": "M1__M3", "source": "M1", "target": "M3", "rmse": 0.866, "level": "moderate", "color": "#c8a45c", "width": 8.070483158314453, "top_differing_constructs": [{"construct_id": "C_M1_2", "construct_label": "Emphasizes early-adopter dynamics and evangelism \u2014 E2, E3 \u2194 Emphasizes narrative authenticity to the product \u2014 E4", "mean_abs_diff": 0.6666666666666666, "agent_a_ratings": {"E1": 3.0, "E2": 1.0, "E3": 2.0, "E4": 7.0, "E5": 4.0}, "agent_b_ratings": {"E1": 5.0, "E2": 1.0, "E3": 2.0, "E4": null, "E5": null}}, {"construct_id": "C_M1_1", "construct_label": "Justifies framing by product's intrinsic capabilities \u2014 E4, E5 \u2194 Justifies framing by buyer psychology and disposition \u2014 E1", "mean_abs_diff": 0.4, "agent_a_ratings": {"E1": 7.0, "E2": 5.0, "E3": 3.0, "E4": 1.0, "E5": 2.0}, "agent_b_ratings": {"E1": 7.0, "E2": 4.0, "E3": 4.0, "E4": 1.0, "E5": 2.0}}], "label": "0.87"}}, {"data": {"id": "M1__M4", "source": "M1", "target": "M4", "rmse": 1.824, "level": "substantial-disagreement", "color": "#c44", "width": 2.66914311374895, "top_differing_constructs": [{"construct_id": "C_M3_2", "construct_label": "Defines identity by explicitly contrasting with casual lifestyle alternatives \u2194 Defines identity purely through direct product and market attributes", "mean_abs_diff": 2.4, "agent_a_ratings": {"E1": 5.0, "E2": 4.0, "E3": 2.0, "E4": 2.0, "E5": 5.0}, "agent_b_ratings": {"E1": 4.0, "E2": 4.0, "E3": 7.0, "E4": 7.0, "E5": 4.0}}, {"construct_id": "C_M2_2", "construct_label": "Haptic skill-acceleration for makers \u2194 Differentiation from borrowed cultural narratives", "mean_abs_diff": 2.0, "agent_a_ratings": {"E1": 3.0, "E2": 4.0, "E3": 5.0, "E4": 7.0, "E5": 2.0}, "agent_b_ratings": {"E1": 1.0, "E2": 1.0, "E3": 1.0, "E4": 7.0, "E5": 1.0}}, {"construct_id": "C_M2_3", "construct_label": "Craft identity and serious learning \u2194 Messaging grounded in product capabilities", "mean_abs_diff": 2.0, "agent_a_ratings": {"E1": 2.0, "E2": 4.0, "E3": 5.0, "E4": 7.0, "E5": 3.0}, "agent_b_ratings": {"E1": 1.0, "E2": 1.0, "E3": 1.0, "E4": 7.0, "E5": 1.0}}], "label": "1.82"}}, {"data": {"id": "M2__M3", "source": "M2", "target": "M3", "rmse": 1.061, "level": "substantial-disagreement", "color": "#c44", "width": 6.9735763059186855, "top_differing_constructs": [{"construct_id": "C_M1_2", "construct_label": "Emphasizes early-adopter dynamics and evangelism \u2014 E2, E3 \u2194 Emphasizes narrative authenticity to the product \u2014 E4", "mean_abs_diff": 0.6666666666666666, "agent_a_ratings": {"E1": 3.0, "E2": 1.0, "E3": 2.0, "E4": 7.0, "E5": 4.0}, "agent_b_ratings": {"E1": 5.0, "E2": 1.0, "E3": 2.0, "E4": null, "E5": null}}, {"construct_id": "C_M1_1", "construct_label": "Justifies framing by product's intrinsic capabilities \u2014 E4, E5 \u2194 Justifies framing by buyer psychology and disposition \u2014 E1", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 7.0, "E2": 6.0, "E3": 3.0, "E4": 1.0, "E5": 2.0}, "agent_b_ratings": {"E1": 7.0, "E2": 4.0, "E3": 4.0, "E4": 1.0, "E5": 2.0}}], "label": "1.06"}}, {"data": {"id": "M2__M4", "source": "M2", "target": "M4", "rmse": 2.032, "level": "substantial-disagreement", "color": "#c44", "width": 1.50000563571896, "top_differing_constructs": [{"construct_id": "C_M3_2", "construct_label": "Defines identity by explicitly contrasting with casual lifestyle alternatives \u2194 Defines identity purely through direct product and market attributes", "mean_abs_diff": 3.6, "agent_a_ratings": {"E1": 2.0, "E2": 6.0, "E3": 1.0, "E4": 2.0, "E5": 7.0}, "agent_b_ratings": {"E1": 4.0, "E2": 4.0, "E3": 7.0, "E4": 7.0, "E5": 4.0}}, {"construct_id": "C_M4_3", "construct_label": "Singular dedication to product core and maker market \u2194 Broader consideration of market positioning and adoption strategy", "mean_abs_diff": 2.4, "agent_a_ratings": {"E1": 5.0, "E2": 7.0, "E3": 2.0, "E4": 3.0, "E5": 2.0}, "agent_b_ratings": {"E1": 1.0, "E2": 4.0, "E3": 1.0, "E4": 1.0, "E5": 4.0}}, {"construct_id": "C_M2_1", "construct_label": "Early-adopter willingness-to-pay logic \u2194 Product-capability-led positioning critique", "mean_abs_diff": 2.0, "agent_a_ratings": {"E1": 2.0, "E2": 1.0, "E3": 4.0, "E4": 7.0, "E5": 4.0}, "agent_b_ratings": {"E1": 1.0, "E2": 1.0, "E3": 1.0, "E4": 4.0, "E5": 1.0}}], "label": "2.03"}}, {"data": {"id": "M3__M4", "source": "M3", "target": "M4", "rmse": 0.612, "level": "moderate", "color": "#c8a45c", "width": 9.5, "top_differing_constructs": [{"construct_id": "C_M1_2", "construct_label": "Emphasizes early-adopter dynamics and evangelism \u2014 E2, E3 \u2194 Emphasizes narrative authenticity to the product \u2014 E4", "mean_abs_diff": 0.6666666666666666, "agent_a_ratings": {"E1": 5.0, "E2": 1.0, "E3": 2.0, "E4": null, "E5": null}, "agent_b_ratings": {"E1": 4.0, "E2": 1.0, "E3": 1.0, "E4": 7.0, "E5": 4.0}}, {"construct_id": "C_M1_1", "construct_label": "Justifies framing by product's intrinsic capabilities \u2014 E4, E5 \u2194 Justifies framing by buyer psychology and disposition \u2014 E1", "mean_abs_diff": 0.2, "agent_a_ratings": {"E1": 7.0, "E2": 4.0, "E3": 4.0, "E4": 1.0, "E5": 2.0}, "agent_b_ratings": {"E1": 7.0, "E2": 4.0, "E3": 4.0, "E4": 1.0, "E5": 1.0}}], "label": "0.61"}}]};
+const insightData = {"cell_id": "F_N_run1", "task": "F", "condition": "N", "run_idx": 1, "consensus_map": {"by_agent": {"M1": {"model_id": "anthropic/claude-opus-4.7", "persona": "neutral", "recommendation": null, "element_label": "E4", "rationale_snippet": "# Recommendation: Option A \u2014 \"Mastery\""}, "M2": {"model_id": "openai/gpt-5.5", "persona": "neutral", "recommendation": null, "element_label": "E1", "rationale_snippet": "Launch as **\u201cMastery\u201d \u2014 the path to true skill.**"}, "M3": {"model_id": "google/gemini-3.1-pro-preview", "persona": "neutral", "recommendation": "A", "element_label": "E2", "rationale_snippet": "I strongly recommend **Option A (\"Mastery\")** as the primary launch identity. "}, "M4": {"model_id": "deepseek/deepseek-v4-pro", "persona": "neutral", "recommendation": null, "element_label": "E5", "rationale_snippet": "I recommend **Option A: \"Mastery\" framing.** This positions the device as a serious instrument for building genuine craft\u2014a direct shot at the heart of the 8M-strong hobbyist maker market and the only launch identity that fully honors the product\u2019s technical soul. The device\u2019s core magic is real-tim"}, "M5": {"model_id": "moonshotai/kimi-k2.6", "persona": "neutral", "recommendation": null, "element_label": "E3", "rationale_snippet": "Choose **Option A: \u201cMastery.\u201d** A $1,200 machine that physically guides hands through precision joinery is a capital tool for serious creative pursuit, not a wellness trinket or vague gateway hobby. The only viable launch identity treats it as such: a device that collapses the time to genuine craft "}}, "distribution": {"A": 1}, "n_agents": 5, "consensus_strength": "split", "majority_recommendation": null}, "hidden_disagreement": {"status": "no_majority", "interpretation": "Agents split across recommendations; no hidden-consensus to expose."}, "blind_spots": {"status": "computed", "low_discrimination_constructs": [{"construct_id": "C_M3_2", "left_pole": "Defines identity by explicitly contrasting with casual lifestyle alternatives", "right_pole": "Defines identity purely through direct product and market attributes", "mean_rating": 4.133333333333334, "rating_std": 0.7483314773547882, "interpretation": "All options score near the middle on this axis (Defines identity by explicitly contrasting with casual lifestyle alternatives <-> Defines identity purely through direct product and market attributes). Either none of the options addresses this dimension, or agents collectively underweighted it. Worth probing explicitly: does any option strongly hit one pole here?"}], "underexplored_components": [{"pc_index": 3, "variance_explained": 0.11585674958812048, "top_construct_id": "C_M3_1"}], "summary": "1 construct(s) where agents agreed all options are middling - candidate blind spots to probe."}, "risk_surface": {"status": "computed", "risks_by_agent": {"M1": [], "M2": ["becoming an expensive novelty with beautiful ads and weak retention"], "M3": [], "M4": [], "M5": []}, "total_risks_raised": 1, "agents_raising_risks": 1, "note": "Risks listed here were extracted by pattern matching on agent free responses. They are minority signals worth probing before acting on consensus."}, "operator_questions": ["All options scored near the middle on the axis 'Defines identity by explicitly contrasting with casual lifestyle alternatives' vs 'Defines identity purely through direct product and market attributes'. Does any option deserve a strong position here? If not, is this a dimension being underweighted?", "Option A was recommended only by M3 (neutral). What does this agent see that others missed - or what is it weighing differently?"], "headline": "Agents are split across options; no clear consensus to act on."};
+
+cytoscape.use(cytoscapeCoseBilkent);
+
+const cy = cytoscape({
+  container: document.getElementById('cy'),
+  elements: [...graphData.nodes, ...graphData.edges],
+  style: [
+    {
+      selector: 'node',
+      style: {
+        'background-color': 'data(persona_color)',
+        'label': 'data(label)',
+        'color': 'white',
+        'text-valign': 'center',
+        'text-halign': 'center',
+        'font-size': '18px',
+        'font-weight': 'bold',
+        'width': 70,
+        'height': 70,
+        'border-width': 5,
+        'border-color': 'data(rec_color)',
+      }
+    },
+    {
+      selector: 'node:selected',
+      style: {
+        'border-color': '#2b3a55',
+        'border-width': 6,
+        'width': 80,
+        'height': 80,
+      }
+    },
+    {
+      selector: 'edge',
+      style: {
+        'line-color': 'data(color)',
+        'width': 'data(width)',
+        'curve-style': 'bezier',
+        'label': 'data(label)',
+        'font-size': '11px',
+        'text-background-color': 'white',
+        'text-background-opacity': 0.85,
+        'text-background-padding': 3,
+        'text-background-shape': 'round-rectangle',
+        'color': '#444',
+        'opacity': 0.8,
+      }
+    },
+    {
+      selector: 'edge:selected',
+      style: {
+        'opacity': 1.0,
+        'width': 'mapData(width, 1, 9, 4, 12)',
+        'overlay-color': '#c8a45c',
+        'overlay-opacity': 0.2,
+      }
+    },
+    {
+      selector: '.dimmed',
+      style: {
+        'opacity': 0.18,
+      }
+    },
+  ],
+  layout: {
+    name: 'cose-bilkent',
+    quality: 'default',
+    randomize: true,
+    nodeRepulsion: 8000,
+    idealEdgeLength: 220,
+    edgeElasticity: 0.45,
+    gravity: 0.25,
+    numIter: 2500,
+    animate: false,
+  },
+  wheelSensitivity: 0.2,
+  minZoom: 0.3,
+  maxZoom: 3,
+});
+
+// Render detail panel for a clicked NODE
+function renderNodeDetail(node) {
+  const d = node.data();
+  const personaColor = d.persona_color;
+  let html = `<h2 style="border-bottom-color: ${personaColor}">${d.label} - ${d.persona_label}</h2>`;
+  html += `<div class="kv"><strong>Model:</strong> <code>${d.model_id}</code></div>`;
+  html += `<div class="kv"><strong>Recommended:</strong> <span class="badge" style="background:${d.rec_color}">Option ${d.recommendation}</span></div>`;
+  html += `<h3>Full response</h3>`;
+  html += `<div class="response-text">${escapeHtml(d.full_response)}</div>`;
+  if (d.constructs && d.constructs.length) {
+    html += `<h3>Bipolar constructs this agent elicited</h3>`;
+    html += `<p style="font-size: 0.83em; color: #666;">
+      In Phase 3, each agent was given three triads of responses and asked,
+      for each triad, to name the bipolar dimension that distinguishes two
+      from the third. These are this agent's three constructs.
+    </p>`;
+    for (const c of d.constructs) {
+      const triadStr = c.triad ? c.triad.join(', ') : '';
+      html += `<div class="construct-card" style="border-left-color: ${personaColor}">
+        <div style="font-size: 0.78em; color: #888; margin-bottom: 4px;">
+          <code>${escapeHtml(c.id)}</code> &middot; from triad ${escapeHtml(triadStr)}
+        </div>
+        <span class="construct-pole">${escapeHtml(c.left)}</span>
+        <span style="color:#888"> ↔ </span>
+        <span class="construct-pole">${escapeHtml(c.right)}</span>
+      </div>`;
+    }
+  }
+  document.getElementById('detail-area').innerHTML = html;
+}
+
+// Render detail panel for a clicked EDGE
+function renderEdgeDetail(edge) {
+  const d = edge.data();
+  const src = cy.getElementById(d.source).data();
+  const tgt = cy.getElementById(d.target).data();
+  let levelLabel, levelClass, levelBg;
+  if (d.rmse < 0.5) {
+    levelLabel = 'Strong reasoning alignment';
+    levelClass = 'alert-ok';
+  } else if (d.rmse < 1.0) {
+    levelLabel = 'Moderate framing differences';
+    levelClass = 'alert-warn';
+  } else {
+    levelLabel = 'Substantial disagreement at the reasoning level';
+    levelClass = 'alert-danger';
+  }
+
+  let html = `<h2>${src.label} ↔ ${tgt.label}</h2>`;
+  html += `<div class="kv"><strong>${src.label}</strong> (${src.persona_label}) recommended <strong>Option ${src.recommendation}</strong></div>`;
+  html += `<div class="kv"><strong>${tgt.label}</strong> (${tgt.persona_label}) recommended <strong>Option ${tgt.recommendation}</strong></div>`;
+  html += `<div class="alert-banner ${levelClass}">
+    <strong>RMSE = ${d.rmse}</strong> - ${levelLabel}
+  </div>`;
+
+  if (src.recommendation === tgt.recommendation && d.rmse > 0.5) {
+    html += `<div class="alert-banner alert-warn">
+      <strong>Hidden disagreement.</strong> Both agents recommended Option ${src.recommendation},
+      but their underlying reasoning differs (RMSE = ${d.rmse}). Standard
+      ensemble methods would mask this. The dimensions where they diverged
+      most are listed below - probe these before treating this as a robust consensus.
+    </div>`;
+  } else if (src.recommendation !== tgt.recommendation) {
+    html += `<div class="alert-banner alert-warn" style="font-size: 0.87em">
+      These two agents reached different recommendations. The dimensions where
+      they rated options most differently explain why.
+    </div>`;
+  }
+
+  if (d.top_differing_constructs && d.top_differing_constructs.length) {
+    html += `<h3>Top dimensions where they rated options differently</h3>`;
+    html += `<p style="font-size: 0.83em; color: #666;">
+      Each construct below is one of the bipolar dimensions the panel elicited.
+      The numbers show how each agent rated each option (E1-E5) on this dimension,
+      1-7 scale (1 = strong left pole, 7 = strong right pole). Cells highlighted
+      red indicate large rating differences.
+    </p>`;
+    for (const tc of d.top_differing_constructs) {
+      html += `<div class="construct-card">
+        <div style="font-size: 0.83em; color: #666; margin-bottom: 4px;">
+          <code>${escapeHtml(tc.construct_id)}</code> &middot;
+          mean diff: <strong>${tc.mean_abs_diff.toFixed(2)}</strong>
+        </div>
+        <div style="margin-bottom: 8px;">
+          <span class="construct-pole">${escapeHtml(tc.construct_label.split('↔')[0].trim())}</span>
+          <span style="color:#888"> ↔ </span>
+          <span class="construct-pole">${escapeHtml(tc.construct_label.split('↔')[1] ? tc.construct_label.split('↔')[1].trim() : '')}</span>
+        </div>`;
+      const elems = Object.keys(tc.agent_a_ratings).sort();
+      html += `<div class="rating-grid">
+        <div class="rg-cell head">Agent</div>`;
+      for (const e of elems) html += `<div class="rg-cell head">${e}</div>`;
+      html += `<div class="rg-cell" style="background:${src.persona_color};color:white;font-weight:600">${src.label}</div>`;
+      for (const e of elems) {
+        const va = tc.agent_a_ratings[e];
+        const vb = tc.agent_b_ratings[e];
+        const diff = (va !== null && vb !== null) ? Math.abs(va - vb) : 0;
+        const cls = diff >= 3 ? 'diff-high' : diff >= 2 ? 'diff-med' : 'diff-low';
+        html += `<div class="rg-cell ${cls}">${va !== null ? va : '-'}</div>`;
+      }
+      html += `<div class="rg-cell" style="background:${tgt.persona_color};color:white;font-weight:600">${tgt.label}</div>`;
+      for (const e of elems) {
+        const va = tc.agent_a_ratings[e];
+        const vb = tc.agent_b_ratings[e];
+        const diff = (va !== null && vb !== null) ? Math.abs(va - vb) : 0;
+        const cls = diff >= 3 ? 'diff-high' : diff >= 2 ? 'diff-med' : 'diff-low';
+        html += `<div class="rg-cell ${cls}">${vb !== null ? vb : '-'}</div>`;
+      }
+      html += `</div></div>`;
+    }
+  }
+  document.getElementById('detail-area').innerHTML = html;
+}
+
+// Hover highlighting
+cy.on('mouseover', 'node', evt => {
+  const node = evt.target;
+  cy.elements().not(node.neighborhood()).not(node).addClass('dimmed');
+});
+cy.on('mouseout', 'node', () => cy.elements().removeClass('dimmed'));
+
+cy.on('mouseover', 'edge', evt => {
+  const edge = evt.target;
+  cy.elements().not(edge.connectedNodes()).not(edge).addClass('dimmed');
+});
+cy.on('mouseout', 'edge', () => cy.elements().removeClass('dimmed'));
+
+cy.on('tap', 'node', evt => renderNodeDetail(evt.target));
+cy.on('tap', 'edge', evt => renderEdgeDetail(evt.target));
+cy.on('tap', evt => {
+  if (evt.target === cy) {
+    document.getElementById('detail-area').innerHTML = `<div class="placeholder">
+      <p>Click an agent or a line to see detail.</p></div>`;
+  }
+});
+
+// Layout switching
+function setLayout(name) {
+  const opts = {
+    'cose-bilkent': { name: 'cose-bilkent', quality: 'default', nodeRepulsion: 8000,
+                       idealEdgeLength: 220, animate: false },
+    'circle': { name: 'circle', animate: false, radius: 200 },
+    'grid': { name: 'grid', animate: false },
+  };
+  cy.layout(opts[name]).run();
+}
+document.getElementById('btn-cose').onclick = e => {
+  setActiveBtn(e.target); setLayout('cose-bilkent');
+};
+document.getElementById('btn-circle').onclick = e => {
+  setActiveBtn(e.target); setLayout('circle');
+};
+document.getElementById('btn-grid').onclick = e => {
+  setActiveBtn(e.target); setLayout('grid');
+};
+function setActiveBtn(btn) {
+  document.querySelectorAll('.controls button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function escapeHtml(s) {
+  if (!s) return '';
+  return String(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/\n/g, '<br>');
+}
+
+// Auto-fit on load
+setTimeout(() => cy.fit(undefined, 60), 100);
+</script>
+
+</body>
+</html>

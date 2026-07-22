@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Interactive AI Council - B_N_run4</title>
+<script src="https://unpkg.com/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
+<script src="https://unpkg.com/layout-base@2.0.1/layout-base.js"></script>
+<script src="https://unpkg.com/cose-base@2.2.0/cose-base.js"></script>
+<script src="https://unpkg.com/cytoscape-cose-bilkent@4.1.0/cytoscape-cose-bilkent.js"></script>
+<style>
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Georgia, sans-serif;
+       margin: 0; padding: 0; background: #f4f1e8; color: #1a1a1a; }
+.header { background: #2b3a55; color: white; padding: 14px 24px; }
+.header h1 { margin: 0; font-size: 1.2em; }
+.header .subtitle { font-size: 0.85em; opacity: 0.85; margin-top: 3px; }
+.layout { display: flex; height: calc(100vh - 60px); }
+#graph-container { flex: 1; background: #f9f7f0; position: relative; }
+#cy { width: 100%; height: 100%; }
+.legend { position: absolute; bottom: 16px; left: 16px;
+           background: rgba(255,255,255,0.96); padding: 12px 16px;
+           border-radius: 6px; border: 1px solid #d8d0bf; font-size: 0.82em;
+           max-width: 280px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.legend h3 { margin: 0 0 8px; font-size: 0.9em; color: #2b3a55; }
+.legend-row { display: flex; align-items: center; margin: 4px 0; }
+.legend-swatch { display: inline-block; width: 24px; height: 4px; margin-right: 8px;
+                  border-radius: 2px; }
+.legend-dot { display: inline-block; width: 14px; height: 14px; margin-right: 8px;
+               border-radius: 50%; }
+.help { position: absolute; top: 16px; left: 16px;
+         background: rgba(255,255,255,0.96); padding: 10px 14px;
+         border-radius: 6px; border: 1px solid #d8d0bf; font-size: 0.8em;
+         color: #555; max-width: 320px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.controls { position: absolute; top: 16px; right: 16px;
+             background: rgba(255,255,255,0.96); padding: 10px 14px;
+             border-radius: 6px; border: 1px solid #d8d0bf; font-size: 0.85em;
+             box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.controls button { display: block; width: 100%; padding: 6px 10px; margin: 3px 0;
+                    background: white; border: 1px solid #c8a45c; border-radius: 4px;
+                    cursor: pointer; font-size: 0.9em; }
+.controls button.active { background: #c8a45c; color: white; }
+.controls button:hover { background: #e6dfc9; }
+.controls button.active:hover { background: #b8945a; }
+
+#info-panel { width: 420px; background: white; border-left: 1px solid #d8d0bf;
+               overflow-y: auto; padding: 20px 24px; }
+#info-panel h2 { font-size: 1.1em; margin: 0 0 8px; color: #2b3a55;
+                  border-bottom: 2px solid #c8a45c; padding-bottom: 6px; }
+#info-panel h3 { font-size: 0.95em; margin: 18px 0 6px; color: #2b3a55; }
+#info-panel h4 { font-size: 0.85em; margin: 12px 0 4px; color: #555;
+                  text-transform: uppercase; letter-spacing: 0.5px; }
+#info-panel .placeholder { color: #888; font-style: italic; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 11px;
+          font-size: 0.78em; font-weight: 600; color: white; margin-right: 4px; }
+.kv { margin: 6px 0; font-size: 0.92em; }
+.kv strong { color: #555; }
+.response-text { font-size: 0.88em; line-height: 1.55; color: #333;
+                  background: #faf8f1; padding: 12px 14px; border-radius: 4px;
+                  border-left: 3px solid #c8a45c; }
+.construct-card { font-size: 0.85em; margin: 6px 0; padding: 8px 11px;
+                   background: #faf8f1; border-radius: 4px;
+                   border-left: 3px solid #666; }
+.construct-pole { display: inline; padding: 2px 6px; background: white;
+                   border-radius: 3px; border: 1px solid #e6dfc9;
+                   font-family: Georgia, serif; }
+.rating-grid { display: grid; grid-template-columns: 60px repeat(5, 1fr);
+                gap: 2px; margin: 8px 0; font-size: 0.78em; }
+.rg-cell { padding: 4px 6px; background: #f4f1e8; text-align: center;
+            border-radius: 3px; }
+.rg-cell.head { background: #2b3a55; color: white; font-weight: 600; }
+.rg-cell.diff-high { background: #fdc; }
+.rg-cell.diff-med { background: #ffe9c0; }
+.rg-cell.diff-low { background: #e2efd9; }
+.alert-banner { padding: 10px 14px; border-radius: 5px; margin: 10px 0;
+                 font-size: 0.9em; }
+.alert-danger { background: #fdf0ed; border-left: 4px solid #c44;
+                 color: #6b1313; }
+.alert-warn { background: #fdfaf2; border-left: 4px solid #c8a45c;
+               color: #6b4920; }
+.alert-ok { background: #f0f7ed; border-left: 4px solid #3a7d44;
+             color: #1f4a26; }
+hr { border: none; border-top: 1px solid #e6dfc9; margin: 14px 0; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>AI Council - Interactive View</h1>
+  <div class="subtitle">Cell <strong>B_N_run4</strong> &middot; Task B &middot; neutral framing</div>
+</div>
+
+<div class="layout">
+  <div id="graph-container">
+    <div id="cy"></div>
+
+    <div class="help">
+      <strong>How to explore:</strong><br>
+      &middot; Click a circle (agent) to see their full response and reasoning<br>
+      &middot; Click a connecting line to see <em>where</em> two agents disagreed<br>
+      &middot; Drag agents around if the layout is hard to read
+    </div>
+
+    <div class="controls">
+      <strong style="font-size: 0.85em; color: #555;">Layout</strong>
+      <button id="btn-cose" class="active">Force-directed</button>
+      <button id="btn-circle">Circle</button>
+      <button id="btn-grid">Grid</button>
+    </div>
+
+    <div class="legend">
+      <h3>Reading the network</h3>
+      <div><strong>Circle color</strong> = epistemological frame</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#0a558c"></span>Quantitative</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#2d8659"></span>Systems</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#8a5a00"></span>Engineering</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#882b6f"></span>Humanist</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#b03030"></span>Contrarian</div>
+      <div class="legend-row"><span class="legend-dot" style="background:#666"></span>Neutral (no persona)</div>
+      <hr>
+      <div><strong>Line color</strong> = reasoning agreement</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#3a7d44"></span>RMSE &lt; 0.5 - aligned</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#c8a45c"></span>0.5-1.0 - moderate</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#c44"></span>&gt; 1.0 - substantial</div>
+      <hr>
+      <div style="color: #555; font-size: 0.92em">
+        <strong>Line thickness</strong> = relative agreement within this case<br>
+        <strong>RMSE</strong> = root-mean-square error on 7-point rating scale
+      </div>
+    </div>
+  </div>
+
+  <div id="info-panel">
+    <h2>Agents are split across options; no clear consensus to act on.</h2>
+
+    <div class="alert-banner alert-warn"><strong>Split panel.</strong> Agents disagree at the recommendation level. The network shows whose reasoning patterns cluster together.</div>
+
+    <div class="kv"><strong>Cell:</strong> B_N_run4</div>
+    <div class="kv"><strong>Task:</strong> B (neutral framing)</div>
+    <div class="kv"><strong>Agents:</strong> 5</div>
+    <div class="kv"><strong>Reasoning RMSE (mean across pairs):</strong> 1.089</div>
+
+    <hr>
+
+    <div id="detail-area">
+      <div class="placeholder">
+        <p>Click an agent or a connecting line to see details here.</p>
+        <p>The colored circles are the LLM agents. The lines between them show how similarly they reasoned: thicker and greener means they rated the options in similar patterns, thinner and redder means they disagreed at the level of how they evaluated each option.</p>
+        <p>Hidden disagreement is the case where two agents recommend the same option but their connecting line is yellow or red - they agree on the answer but not on the reasoning. Click such a line to see exactly which dimensions they diverged on.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3>About this view</h3>
+    <p style="font-size: 0.85em; color: #555;">
+      The reasoning network shows behavioral disagreement, not topic disagreement.
+      Two agents with thick green connection rated the options similarly on every
+      construct elicited by the panel. Two agents with thin red connection
+      saw the options through different evaluative lenses - even if they
+      may have recommended the same option in the end.
+    </p>
+
+    <p style="font-size: 0.85em; color: #555;">
+      Generated by Archipelago. <em>The five voices are LLM analysts; this view is
+      decision support, not decision substitution.</em>
+    </p>
+  </div>
+</div>
+
+<script>
+const graphData = {"nodes": [{"data": {"id": "M1", "label": "M1", "persona": "neutral", "persona_label": "Neutral framing", "persona_color": "#666666", "recommendation": "?", "rec_color": "#cccccc", "model_id": "anthropic/claude-opus-4.7", "full_response": "# Primary Diagnosis: Option C \u2014 Loss of Psychological Safety Post-Layoff\n\nThe temporal evidence is the most compelling signal here. A layoff occurred 4 months ago; output decline and attrition span 6 months but accelerated in the window that maps cleanly to post-layoff aftermath. Four senior engineers \u2014 the people with the most market optionality and the clearest read on organizational health \u2014 chose to leave voluntarily. Seniors don't typically leave over pace or comp alone; they leave when they lose faith in the environment or in leadership's judgment.\n\nThe retro shift is the second strong tell. When teams move from \"what to ship\" to \"process and communication,\" they are signaling that the implicit contract \u2014 *we trust each other enough to focus on the work* \u2014 has broken. Process talk is what teams do when they can't safely talk about the real thing. That pattern is diagnostic of safety erosion, not of burnout (which usually surfaces as energy/quality complaints) or skill issues (which surface as technical friction).\n\nWhy not the alternatives?\n- **Burnout (A)** would predict decline but not specifically the senior-weighted attrition or the retro tone shift. It's likely a *secondary* effect \u2014 anxious teams overwork to feel secure.\n- **Incentives (B)** rarely flip this fast; comp structures that worked during strong delivery don't suddenly break.\n- **Skill atrophy (D)** is a multi-year drift, not a 6-month cliff.\n- **Leadership mismatch (E)** is plausible and may be *adjacent* \u2014 leadership likely mishandled the layoff communication \u2014 but framing it as a phase-fit problem buries the specific precipitating event under an abstraction. You'd treat the symptom, not the wound.\n\n**Recommended action:** Pursue C as primary. The trust-rebuild work \u2014 transparency on future workforce plans, leadership taking visible accountability, structured 1:1 listening \u2014 addresses the root. Expect burnout-relief measures (A) to be needed as a supporting track, since fear-driven overwork compounds the fatigue. Re-evaluate leadership fit (E) only after the safety baseline is restored; judging leaders mid-crisis confounds the diagnosis.", "rationale_snippet": "# Primary Diagnosis: Option C \u2014 Loss of Psychological Safety Post-Layoff", "constructs": [{"id": "C_M1_1", "left": "Cites specific retro-content shift as key evidence", "right": "Cites team size/scaling inflection as key evidence", "triad": ["E1", "E3", "E4"], "raw_output_excerpt": "Triad 1 (E1, E3, E4):\nLeft pole: Cites specific retro-content shift as key evidence\nRight pole: Cites team size/scaling inflection as key evidence\n\nTriad 2 (E1, E3, E5):\nLeft pole: Frames diagnosis ar"}, {"id": "C_M1_2", "left": "Frames diagnosis around organizational scale thresholds", "right": "Frames diagnosis around delivery trajectory decline", "triad": ["E1", "E3", "E5"], "raw_output_excerpt": "Triad 1 (E1, E3, E4):\nLeft pole: Cites specific retro-content shift as key evidence\nRight pole: Cites team size/scaling inflection as key evidence\n\nTriad 2 (E1, E3, E5):\nLeft pole: Frames diagnosis ar"}, {"id": "C_M1_3", "left": "Emphasizes structural/scaling operating-model breakdown", "right": "Emphasizes post-layoff psychological and attrition dynamics", "triad": ["E2", "E3", "E4"], "raw_output_excerpt": "Triad 1 (E1, E3, E4):\nLeft pole: Cites specific retro-content shift as key evidence\nRight pole: Cites team size/scaling inflection as key evidence\n\nTriad 2 (E1, E3, E5):\nLeft pole: Frames diagnosis ar"}], "triads": [["E1", "E3", "E4"], ["E1", "E3", "E5"], ["E2", "E3", "E4"]]}}, {"data": {"id": "M2", "label": "M2", "persona": "neutral", "persona_label": "Neutral framing", "persona_color": "#666666", "recommendation": "?", "rec_color": "#cccccc", "model_id": "openai/gpt-5.5", "full_response": "The most likely primary diagnosis is **Option E: leadership style mismatch**.\n\nThe strongest signal is the shift in retrospectives from \u201cwhat should we ship next?\u201d to \u201cprocess and communication.\u201d That usually indicates the team\u2019s operating model has outgrown its leadership model. A style that works well during an earlier growth or heroic-delivery phase \u2014 high urgency, informal alignment, founder/CTO-driven prioritization, reliance on senior engineers to fill gaps \u2014 can start to break down once the organization needs clearer interfaces, decision rights, planning discipline, and sustainable delegation.\n\nThe missed quarterly milestones are also consistent with this. A high-performing 40-person team across four squads can often compensate for weak process while energy and context are high. But as complexity rises, informal coordination stops scaling. The result is not immediate incompetence; it is friction: unclear ownership, rework, dependency misses, planning churn, and senior engineers becoming organizational shock absorbers. Over time, those senior engineers leave because they are carrying ambiguity rather than doing leveraged technical work.\n\nBurnout may be present, and the layoff may have worsened trust, but neither fully explains the pattern. If the primary issue were simply pace, retros would likely center on workload, exhaustion, interruptions, or lack of recovery. If it were primarily psychological safety after layoffs, I would expect more explicit fear, silence, risk avoidance, or distrust of leadership. Here, the dominant symptoms point to a team trying to operate at a new scale with an old leadership pattern.\n\nThe recovery plan should therefore focus on leadership and operating-model reset: clarify decision rights, redefine the role of engineering leadership, strengthen squad-to-squad coordination, coach leaders on the maturation-phase behaviors now required, and potentially reallocate responsibilities where leaders are still optimized for the previous phase. PTO and trust-building may help, but they will not fix the underlying coordination and leadership mismatch.", "rationale_snippet": "The most likely primary diagnosis is **Option E: leadership style mismatch**.", "constructs": [{"id": "C_M2_1", "left": "Scaling/operating-model breakdown", "right": "Symptom-led performance decline", "triad": ["E3", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Scaling/operating-model breakdown\nRight pole: Symptom-led performance decline\n\nTriad 2:\nLeft pole: Scaling-driven leadership mismatch\nRight pole: Layoff-driven psychological safety"}, {"id": "C_M2_2", "left": "Scaling-driven leadership mismatch", "right": "Layoff-driven psychological safety loss", "triad": ["E2", "E3", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Scaling/operating-model breakdown\nRight pole: Symptom-led performance decline\n\nTriad 2:\nLeft pole: Scaling-driven leadership mismatch\nRight pole: Layoff-driven psychological safety"}, {"id": "C_M2_3", "left": "Attrition-centered evidence", "right": "Structure-centered scaling evidence", "triad": ["E2", "E3", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Scaling/operating-model breakdown\nRight pole: Symptom-led performance decline\n\nTriad 2:\nLeft pole: Scaling-driven leadership mismatch\nRight pole: Layoff-driven psychological safety"}], "triads": [["E3", "E4", "E5"], ["E2", "E3", "E5"], ["E2", "E3", "E5"]]}}, {"data": {"id": "M3", "label": "M3", "persona": "neutral", "persona_label": "Neutral framing", "persona_color": "#666666", "recommendation": "E", "rec_color": "#9467bd", "model_id": "google/gemini-3.1-pro-preview", "full_response": "I recommend **Option E: Leadership style mismatch** as the primary diagnosis. The provided signals point to a classic organizational scaling inflection point rather than a sudden loss of technical capability or simple exhaustion. \n\nA team size of roughly 40 engineers across 4 squads is notoriously the phase where informal, ad-hoc execution breaks down. In the prior \"growth phase,\" strong delivery was likely achieved through sheer talent, individual heroics, and tight-knit informal networks. However, as the team scaled and the product matured, that early-stage leadership style became a bottleneck. \n\nThe smoking gun is the shift in retrospective themes from \"what to ship next\" to \"process and communication.\" This directly indicates that the team is starving for structured, mature operating systems that current leadership is failing to provide. The engineers do not lack motivation or technical skill; they lack the organizational clarity, alignment, and systems required to execute at their current size. \n\nFurthermore, the voluntary departure of four *senior* engineers strongly reinforces this diagnosis. Senior engineers typically absorb the most friction when organizational processes fail, as they are often informally expected to bridge the execution gaps between top leadership and the squads. When leadership fails to transition to a more mature operating model, senior talent departs\u2014not because the work is too hard, but because they are exhausted by navigating broken communication loops and unnecessary cross-squad friction. \n\nTo reverse the six-month decline, the CTO must implement Option E's recovery plan. Current engineering leaders need immediate coaching to transition from tactical, growth-stage managers to strategic, maturation-stage leaders. Roles and responsibilities must be redefined to establish the structural guardrails and communication channels the developer floor is actively requesting.", "rationale_snippet": "I recommend **Option E: Leadership style mismatch** as the primary diagnosis. The provided signals point to a classic organizational scaling inflection point rather than a sudden loss of technical capability or simple exhaustion. ", "constructs": [{"id": "C_M3_1", "left": "Selects leadership style mismatch as the primary diagnosis", "right": "Selects loss of psychological safety as the primary diagnosis", "triad": ["E1", "E2", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Selects leadership style mismatch as the primary diagnosis\nRight pole: Selects loss of psychological safety as the primary diagnosis\n\nTriad 2:\nLeft pole: Focuses on structural grow"}, {"id": "C_M3_2", "left": "Focuses on structural growing pains and team size at scale", "right": "Focuses on timeline correlations and specific triggering events", "triad": ["E1", "E2", "E3"], "raw_output_excerpt": "Triad 1:\nLeft pole: Selects leadership style mismatch as the primary diagnosis\nRight pole: Selects loss of psychological safety as the primary diagnosis\n\nTriad 2:\nLeft pole: Focuses on structural grow"}], "triads": [["E1", "E2", "E5"], ["E1", "E2", "E3"], ["E1", "E2", "E5"]]}}, {"data": {"id": "M4", "label": "M4", "persona": "neutral", "persona_label": "Neutral framing", "persona_color": "#666666", "recommendation": "A", "rec_color": "#1f77b4", "model_id": "deepseek/deepseek-v4-pro", "full_response": "I recommend **Option E: Leadership style mismatch** as the primary diagnosis.\n\nThe most telling signal here is the specific pattern of decline following strong delivery. When a high-performing team of 40 engineers across four squads moves from reliably hitting milestones to missing them for two consecutive quarters\u2014and when senior engineers begin leaving voluntarily\u2014it rarely indicates a uniform capacity collapse. Instead, it signals that the system around the team has shifted in ways that no longer amplify their effectiveness.\n\nThe retro theme change is the diagnostic smoking gun. Teams that shift from discussing \"what to ship next\" to fixating on \"process and communication\" aren't simply tired\u2014they're struggling with how decisions are made, how work is coordinated, and how clarity is maintained across squads. This is a classic signature of leadership that excels during growth phases (high autonomy, rapid decision-making, founder-like energy) but becomes misaligned during maturation, where cross-team dependencies, standardization, and deliberate communication become critical.\n\nThe departure of four senior engineers is particularly revealing. Senior engineers rarely leave primarily due to workload; they leave when they feel their effectiveness is compromised by organizational friction they cannot fix. In a maturation phase, if leadership continues operating with growth-phase instincts\u2014prioritizing velocity over predictability, favoring implicit over explicit coordination\u2014senior technical staff experience increasing frustration as their impact gets diluted by coordination failures.\n\nOption A (burnout) is a symptom, not a cause. Option C (layoff psychological safety shock) is possible, but a layoff four months ago doesn't explain a six-month trajectory that began before that event. The right intervention is leadership coaching focused on the transition from scaling to maturing, redefining the engineering lead's role to emphasize cross-squad alignment and organizational clarity, and potentially reallocating responsibilities so operational maturity gets dedicated attention alongside technical leadership.", "rationale_snippet": "I recommend **Option E: Leadership style mismatch** as the primary diagnosis.", "constructs": [{"id": "C_M4_1", "left": "Cites specific brief signals", "right": "References general scaling theory", "triad": ["E3", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Cites specific brief signals\nRight pole: References general scaling theory\n\nTriad 2:\nLeft pole: Leadership style mismatch diagnosis\nRight pole: Psychological safety loss diagnosis\n"}, {"id": "C_M4_2", "left": "Leadership style mismatch diagnosis", "right": "Psychological safety loss diagnosis", "triad": ["E2", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Cites specific brief signals\nRight pole: References general scaling theory\n\nTriad 2:\nLeft pole: Leadership style mismatch diagnosis\nRight pole: Psychological safety loss diagnosis\n"}, {"id": "C_M4_3", "left": "Attributes decline to internal scaling dynamics", "right": "Attributes decline to a recent layoff event", "triad": ["E2", "E4", "E5"], "raw_output_excerpt": "Triad 1:\nLeft pole: Cites specific brief signals\nRight pole: References general scaling theory\n\nTriad 2:\nLeft pole: Leadership style mismatch diagnosis\nRight pole: Psychological safety loss diagnosis\n"}], "triads": [["E3", "E4", "E5"], ["E2", "E4", "E5"], ["E2", "E4", "E5"]]}}, {"data": {"id": "M5", "label": "M5", "persona": "neutral", "persona_label": "Neutral framing", "persona_color": "#666666", "recommendation": "?", "rec_color": "#cccccc", "model_id": "moonshotai/kimi-k2.6", "full_response": " **Recommendation: Option E \u2014 Leadership style mismatch.** The team has outgrown a leadership model that reliably delivered during its growth phase but cannot coordinate a 40-person, four-squad organization in its current maturation phase.\n\nThe definitive signal is the retro shift from \u201cwhat to ship next\u201d to \u201cprocess and communication.\u201d When a team\u2019s own retros stop debating product and start fixating on how work moves between people, the operating system\u2014not the engineers\u2014is broken. In the prior growth phase, success likely relied on heroic, directive leadership: tight loops, implicit context, and centralized calls. At this scale, that same style produces decision bottlenecks, conflicting squad priorities, and hand-off friction. Engineers do not miss milestones for lack of effort; they miss them because coordination tax now exceeds the capacity of an unmanaged topology.\n\nFour senior engineers leaving voluntarily reinforces this. Seniors attrit when they lose autonomy and strategic influence, not merely when work is hard. A founder-style or pace-oriented leader who will not delegate scope turns senior ICs into executors, which is exactly the flight risk the brief describes.\n\nAlternatives fail to reconcile the symptoms. Burnout (A) would surface as sustainable-pace and overload complaints", "rationale_snippet": "**Recommendation: Option E \u2014 Leadership style mismatch.** The team has outgrown a leadership model that reliably delivered during its growth phase but cannot coordinate a 40-person, four-squad organization in its current maturation phase.", "constructs": [{"id": "C_M5_1", "left": "Endogenous structural leadership mismatch", "right": "Exogenous psychological safety rupture", "triad": ["E2", "E3", "E4"], "raw_output_excerpt": "Triad 1:\nLeft pole: Endogenous structural leadership mismatch\nRight pole: Exogenous psychological safety rupture\n\nTriad 2:\nLeft pole: Retrospective thematic shift signal\nRight pole: Temporal layoff co"}, {"id": "C_M5_2", "left": "Retrospective thematic shift signal", "right": "Temporal layoff correlation signal", "triad": ["E1", "E2", "E4"], "raw_output_excerpt": "Triad 1:\nLeft pole: Endogenous structural leadership mismatch\nRight pole: Exogenous psychological safety rupture\n\nTriad 2:\nLeft pole: Retrospective thematic shift signal\nRight pole: Temporal layoff co"}, {"id": "C_M5_3", "left": "Heroic leadership style failure", "right": "Scale-driven informal breakdown", "triad": ["E1", "E3", "E4"], "raw_output_excerpt": "Triad 1:\nLeft pole: Endogenous structural leadership mismatch\nRight pole: Exogenous psychological safety rupture\n\nTriad 2:\nLeft pole: Retrospective thematic shift signal\nRight pole: Temporal layoff co"}], "triads": [["E2", "E3", "E4"], ["E1", "E2", "E4"], ["E1", "E3", "E4"]]}}], "edges": [{"data": {"id": "M1__M2", "source": "M1", "target": "M2", "rmse": 0.947, "level": "moderate", "color": "#c8a45c", "width": 7.976455504398716, "top_differing_constructs": [{"construct_id": "C_M1_1", "construct_label": "Cites specific retro-content shift as key evidence \u2194 Cites team size/scaling inflection as key evidence", "mean_abs_diff": 1.0, "agent_a_ratings": {"E1": 1.0, "E2": 4.0, "E3": 6.0, "E4": 1.0, "E5": 3.0}, "agent_b_ratings": {"E1": 2.0, "E2": 4.0, "E3": 7.0, "E4": 2.0, "E5": 5.0}}, {"construct_id": "C_M1_2", "construct_label": "Frames diagnosis around organizational scale thresholds \u2194 Frames diagnosis around delivery trajectory decline", "mean_abs_diff": 1.0, "agent_a_ratings": {"E1": 2.0, "E2": 5.0, "E3": 2.0, "E4": 2.0, "E5": 4.0}, "agent_b_ratings": {"E1": 2.0, "E2": 6.0, "E3": 1.0, "E4": 2.0, "E5": 7.0}}, {"construct_id": "C_M2_3", "construct_label": "Attrition-centered evidence \u2194 Structure-centered scaling evidence", "mean_abs_diff": 1.0, "agent_a_ratings": {"E1": 6.0, "E2": 2.0, "E3": 6.0, "E4": 6.0, "E5": 5.0}, "agent_b_ratings": {"E1": 7.0, "E2": 1.0, "E3": 7.0, "E4": 6.0, "E5": 3.0}}], "label": "0.95"}}, {"data": {"id": "M1__M3", "source": "M1", "target": "M3", "rmse": 0.707, "level": "moderate", "color": "#c8a45c", "width": 9.5, "top_differing_constructs": [{"construct_id": "C_M1_2", "construct_label": "Frames diagnosis around organizational scale thresholds \u2194 Frames diagnosis around delivery trajectory decline", "mean_abs_diff": 0.6666666666666666, "agent_a_ratings": {"E1": 2.0, "E2": 5.0, "E3": 2.0, "E4": 2.0, "E5": 4.0}, "agent_b_ratings": {"E1": 2.0, "E2": 4.0, "E3": 1.0, "E4": null, "E5": null}}, {"construct_id": "C_M1_1", "construct_label": "Cites specific retro-content shift as key evidence \u2194 Cites team size/scaling inflection as key evidence", "mean_abs_diff": 0.4, "agent_a_ratings": {"E1": 1.0, "E2": 4.0, "E3": 6.0, "E4": 1.0, "E5": 3.0}, "agent_b_ratings": {"E1": 1.0, "E2": 4.0, "E3": 7.0, "E4": 1.0, "E5": 4.0}}], "label": "0.71"}}, {"data": {"id": "M1__M4", "source": "M1", "target": "M4", "rmse": 1.444, "level": "substantial-disagreement", "color": "#c44", "width": 4.825221688288738, "top_differing_constructs": [{"construct_id": "C_M5_3", "construct_label": "Heroic leadership style failure \u2194 Scale-driven informal breakdown", "mean_abs_diff": 2.2, "agent_a_ratings": {"E1": 2.0, "E2": 4.0, "E3": 6.0, "E4": 3.0, "E5": 3.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 7.0, "E4": 1.0, "E5": 7.0}}, {"construct_id": "C_M1_2", "construct_label": "Frames diagnosis around organizational scale thresholds \u2194 Frames diagnosis around delivery trajectory decline", "mean_abs_diff": 2.0, "agent_a_ratings": {"E1": 2.0, "E2": 5.0, "E3": 2.0, "E4": 2.0, "E5": 4.0}, "agent_b_ratings": {"E1": 4.0, "E2": 7.0, "E3": 1.0, "E4": 4.0, "E5": 7.0}}, {"construct_id": "C_M1_1", "construct_label": "Cites specific retro-content shift as key evidence \u2194 Cites team size/scaling inflection as key evidence", "mean_abs_diff": 1.6, "agent_a_ratings": {"E1": 1.0, "E2": 4.0, "E3": 6.0, "E4": 1.0, "E5": 3.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 7.0, "E4": 1.0, "E5": 7.0}}], "label": "1.44"}}, {"data": {"id": "M1__M5", "source": "M1", "target": "M5", "rmse": 0.707, "level": "moderate", "color": "#c8a45c", "width": 9.5, "top_differing_constructs": [{"construct_id": "C_M1_1", "construct_label": "Cites specific retro-content shift as key evidence \u2194 Cites team size/scaling inflection as key evidence", "mean_abs_diff": 0.8, "agent_a_ratings": {"E1": 1.0, "E2": 4.0, "E3": 6.0, "E4": 1.0, "E5": 3.0}, "agent_b_ratings": {"E1": 1.0, "E2": 4.0, "E3": 7.0, "E4": 1.0, "E5": 6.0}}, {"construct_id": "C_M1_2", "construct_label": "Frames diagnosis around organizational scale thresholds \u2194 Frames diagnosis around delivery trajectory decline", "mean_abs_diff": 0.8, "agent_a_ratings": {"E1": 2.0, "E2": 5.0, "E3": 2.0, "E4": 2.0, "E5": 4.0}, "agent_b_ratings": {"E1": 2.0, "E2": 4.0, "E3": 1.0, "E4": 2.0, "E5": 6.0}}, {"construct_id": "C_M4_1", "construct_label": "Cites specific brief signals \u2194 References general scaling theory", "mean_abs_diff": 0.8, "agent_a_ratings": {"E1": 2.0, "E2": 2.0, "E3": 5.0, "E4": 2.0, "E5": 3.0}, "agent_b_ratings": {"E1": 1.0, "E2": 2.0, "E3": 6.0, "E4": 1.0, "E5": 2.0}}], "label": "0.71"}}, {"data": {"id": "M2__M3", "source": "M2", "target": "M3", "rmse": 0.935, "level": "moderate", "color": "#c8a45c", "width": 8.052032626687051, "top_differing_constructs": [{"construct_id": "C_M1_2", "construct_label": "Frames diagnosis around organizational scale thresholds \u2194 Frames diagnosis around delivery trajectory decline", "mean_abs_diff": 0.6666666666666666, "agent_a_ratings": {"E1": 2.0, "E2": 6.0, "E3": 1.0, "E4": 2.0, "E5": 7.0}, "agent_b_ratings": {"E1": 2.0, "E2": 4.0, "E3": 1.0, "E4": null, "E5": null}}, {"construct_id": "C_M1_1", "construct_label": "Cites specific retro-content shift as key evidence \u2194 Cites team size/scaling inflection as key evidence", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 2.0, "E2": 4.0, "E3": 7.0, "E4": 2.0, "E5": 5.0}, "agent_b_ratings": {"E1": 1.0, "E2": 4.0, "E3": 7.0, "E4": 1.0, "E5": 4.0}}], "label": "0.94"}}, {"data": {"id": "M2__M4", "source": "M2", "target": "M4", "rmse": 1.349, "level": "substantial-disagreement", "color": "#c44", "width": 5.427325405709288, "top_differing_constructs": [{"construct_id": "C_M1_1", "construct_label": "Cites specific retro-content shift as key evidence \u2194 Cites team size/scaling inflection as key evidence", "mean_abs_diff": 1.4, "agent_a_ratings": {"E1": 2.0, "E2": 4.0, "E3": 7.0, "E4": 2.0, "E5": 5.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 7.0, "E4": 1.0, "E5": 7.0}}, {"construct_id": "C_M2_1", "construct_label": "Scaling/operating-model breakdown \u2194 Symptom-led performance decline", "mean_abs_diff": 1.2, "agent_a_ratings": {"E1": 1.0, "E2": 6.0, "E3": 1.0, "E4": 1.0, "E5": 6.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 1.0, "E4": 1.0, "E5": 1.0}}, {"construct_id": "C_M1_2", "construct_label": "Frames diagnosis around organizational scale thresholds \u2194 Frames diagnosis around delivery trajectory decline", "mean_abs_diff": 1.0, "agent_a_ratings": {"E1": 2.0, "E2": 6.0, "E3": 1.0, "E4": 2.0, "E5": 7.0}, "agent_b_ratings": {"E1": 4.0, "E2": 7.0, "E3": 1.0, "E4": 4.0, "E5": 7.0}}], "label": "1.35"}}, {"data": {"id": "M2__M5", "source": "M2", "target": "M5", "rmse": 0.974, "level": "moderate", "color": "#c8a45c", "width": 7.807178946575239, "top_differing_constructs": [{"construct_id": "C_M2_1", "construct_label": "Scaling/operating-model breakdown \u2194 Symptom-led performance decline", "mean_abs_diff": 1.0, "agent_a_ratings": {"E1": 1.0, "E2": 6.0, "E3": 1.0, "E4": 1.0, "E5": 6.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 1.0, "E4": 1.0, "E5": 2.0}}, {"construct_id": "C_M2_3", "construct_label": "Attrition-centered evidence \u2194 Structure-centered scaling evidence", "mean_abs_diff": 1.0, "agent_a_ratings": {"E1": 7.0, "E2": 1.0, "E3": 7.0, "E4": 6.0, "E5": 3.0}, "agent_b_ratings": {"E1": 6.0, "E2": 2.0, "E3": 7.0, "E4": 6.0, "E5": 6.0}}, {"construct_id": "C_M1_1", "construct_label": "Cites specific retro-content shift as key evidence \u2194 Cites team size/scaling inflection as key evidence", "mean_abs_diff": 0.6, "agent_a_ratings": {"E1": 2.0, "E2": 4.0, "E3": 7.0, "E4": 2.0, "E5": 5.0}, "agent_b_ratings": {"E1": 1.0, "E2": 4.0, "E3": 7.0, "E4": 1.0, "E5": 6.0}}], "label": "0.97"}}, {"data": {"id": "M3__M4", "source": "M3", "target": "M4", "rmse": 1.969, "level": "substantial-disagreement", "color": "#c44", "width": 1.5000063421786747, "top_differing_constructs": [{"construct_id": "C_M1_2", "construct_label": "Frames diagnosis around organizational scale thresholds \u2194 Frames diagnosis around delivery trajectory decline", "mean_abs_diff": 1.6666666666666667, "agent_a_ratings": {"E1": 2.0, "E2": 4.0, "E3": 1.0, "E4": null, "E5": null}, "agent_b_ratings": {"E1": 4.0, "E2": 7.0, "E3": 1.0, "E4": 4.0, "E5": 7.0}}, {"construct_id": "C_M1_1", "construct_label": "Cites specific retro-content shift as key evidence \u2194 Cites team size/scaling inflection as key evidence", "mean_abs_diff": 1.2, "agent_a_ratings": {"E1": 1.0, "E2": 4.0, "E3": 7.0, "E4": 1.0, "E5": 4.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 7.0, "E4": 1.0, "E5": 7.0}}], "label": "1.97"}}, {"data": {"id": "M3__M5", "source": "M3", "target": "M5", "rmse": 0.707, "level": "moderate", "color": "#c8a45c", "width": 9.5, "top_differing_constructs": [{"construct_id": "C_M1_1", "construct_label": "Cites specific retro-content shift as key evidence \u2194 Cites team size/scaling inflection as key evidence", "mean_abs_diff": 0.4, "agent_a_ratings": {"E1": 1.0, "E2": 4.0, "E3": 7.0, "E4": 1.0, "E5": 4.0}, "agent_b_ratings": {"E1": 1.0, "E2": 4.0, "E3": 7.0, "E4": 1.0, "E5": 6.0}}, {"construct_id": "C_M1_2", "construct_label": "Frames diagnosis around organizational scale thresholds \u2194 Frames diagnosis around delivery trajectory decline", "mean_abs_diff": 0.0, "agent_a_ratings": {"E1": 2.0, "E2": 4.0, "E3": 1.0, "E4": null, "E5": null}, "agent_b_ratings": {"E1": 2.0, "E2": 4.0, "E3": 1.0, "E4": 2.0, "E5": 6.0}}], "label": "0.71"}}, {"data": {"id": "M4__M5", "source": "M4", "target": "M5", "rmse": 1.153, "level": "substantial-disagreement", "color": "#c44", "width": 6.6743694671655796, "top_differing_constructs": [{"construct_id": "C_M5_3", "construct_label": "Heroic leadership style failure \u2194 Scale-driven informal breakdown", "mean_abs_diff": 1.8, "agent_a_ratings": {"E1": 1.0, "E2": 7.0, "E3": 7.0, "E4": 1.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 4.0, "E3": 7.0, "E4": 2.0, "E5": 2.0}}, {"construct_id": "C_M1_2", "construct_label": "Frames diagnosis around organizational scale thresholds \u2194 Frames diagnosis around delivery trajectory decline", "mean_abs_diff": 1.6, "agent_a_ratings": {"E1": 4.0, "E2": 7.0, "E3": 1.0, "E4": 4.0, "E5": 7.0}, "agent_b_ratings": {"E1": 2.0, "E2": 4.0, "E3": 1.0, "E4": 2.0, "E5": 6.0}}, {"construct_id": "C_M5_2", "construct_label": "Retrospective thematic shift signal \u2194 Temporal layoff correlation signal", "mean_abs_diff": 1.2, "agent_a_ratings": {"E1": 1.0, "E2": 7.0, "E3": 7.0, "E4": 1.0, "E5": 7.0}, "agent_b_ratings": {"E1": 1.0, "E2": 7.0, "E3": 4.0, "E4": 1.0, "E5": 4.0}}], "label": "1.15"}}]};
+const insightData = {"cell_id": "B_N_run4", "task": "B", "condition": "N", "run_idx": 4, "consensus_map": {"by_agent": {"M1": {"model_id": "anthropic/claude-opus-4.7", "persona": "neutral", "recommendation": null, "element_label": "E2", "rationale_snippet": "# Primary Diagnosis: Option C \u2014 Loss of Psychological Safety Post-Layoff"}, "M2": {"model_id": "openai/gpt-5.5", "persona": "neutral", "recommendation": null, "element_label": "E4", "rationale_snippet": "The most likely primary diagnosis is **Option E: leadership style mismatch**."}, "M3": {"model_id": "google/gemini-3.1-pro-preview", "persona": "neutral", "recommendation": "E", "element_label": "E3", "rationale_snippet": "I recommend **Option E: Leadership style mismatch** as the primary diagnosis. The provided signals point to a classic organizational scaling inflection point rather than a sudden loss of technical capability or simple exhaustion. "}, "M4": {"model_id": "deepseek/deepseek-v4-pro", "persona": "neutral", "recommendation": "A", "element_label": "E5", "rationale_snippet": "I recommend **Option E: Leadership style mismatch** as the primary diagnosis."}, "M5": {"model_id": "moonshotai/kimi-k2.6", "persona": "neutral", "recommendation": null, "element_label": "E1", "rationale_snippet": "**Recommendation: Option E \u2014 Leadership style mismatch.** The team has outgrown a leadership model that reliably delivered during its growth phase but cannot coordinate a 40-person, four-squad organization in its current maturation phase."}}, "distribution": {"E": 1, "A": 1}, "n_agents": 5, "consensus_strength": "split", "majority_recommendation": null}, "hidden_disagreement": {"status": "no_majority", "interpretation": "Agents split across recommendations; no hidden-consensus to expose."}, "blind_spots": {"status": "computed", "low_discrimination_constructs": [], "underexplored_components": [], "summary": "No obvious blind spots detected in construct space."}, "risk_surface": {"status": "computed", "risks_by_agent": {"M1": [], "M2": ["avoidance, or distrust of leadership"], "M3": [], "M4": [], "M5": ["the brief describes"]}, "total_risks_raised": 2, "agents_raising_risks": 2, "note": "Risks listed here were extracted by pattern matching on agent free responses. They are minority signals worth probing before acting on consensus."}, "operator_questions": ["Option E was recommended only by M3 (neutral). What does this agent see that others missed - or what is it weighing differently?", "Option A was recommended only by M4 (neutral). What does this agent see that others missed - or what is it weighing differently?"], "headline": "Agents are split across options; no clear consensus to act on."};
+
+cytoscape.use(cytoscapeCoseBilkent);
+
+const cy = cytoscape({
+  container: document.getElementById('cy'),
+  elements: [...graphData.nodes, ...graphData.edges],
+  style: [
+    {
+      selector: 'node',
+      style: {
+        'background-color': 'data(persona_color)',
+        'label': 'data(label)',
+        'color': 'white',
+        'text-valign': 'center',
+        'text-halign': 'center',
+        'font-size': '18px',
+        'font-weight': 'bold',
+        'width': 70,
+        'height': 70,
+        'border-width': 5,
+        'border-color': 'data(rec_color)',
+      }
+    },
+    {
+      selector: 'node:selected',
+      style: {
+        'border-color': '#2b3a55',
+        'border-width': 6,
+        'width': 80,
+        'height': 80,
+      }
+    },
+    {
+      selector: 'edge',
+      style: {
+        'line-color': 'data(color)',
+        'width': 'data(width)',
+        'curve-style': 'bezier',
+        'label': 'data(label)',
+        'font-size': '11px',
+        'text-background-color': 'white',
+        'text-background-opacity': 0.85,
+        'text-background-padding': 3,
+        'text-background-shape': 'round-rectangle',
+        'color': '#444',
+        'opacity': 0.8,
+      }
+    },
+    {
+      selector: 'edge:selected',
+      style: {
+        'opacity': 1.0,
+        'width': 'mapData(width, 1, 9, 4, 12)',
+        'overlay-color': '#c8a45c',
+        'overlay-opacity': 0.2,
+      }
+    },
+    {
+      selector: '.dimmed',
+      style: {
+        'opacity': 0.18,
+      }
+    },
+  ],
+  layout: {
+    name: 'cose-bilkent',
+    quality: 'default',
+    randomize: true,
+    nodeRepulsion: 8000,
+    idealEdgeLength: 220,
+    edgeElasticity: 0.45,
+    gravity: 0.25,
+    numIter: 2500,
+    animate: false,
+  },
+  wheelSensitivity: 0.2,
+  minZoom: 0.3,
+  maxZoom: 3,
+});
+
+// Render detail panel for a clicked NODE
+function renderNodeDetail(node) {
+  const d = node.data();
+  const personaColor = d.persona_color;
+  let html = `<h2 style="border-bottom-color: ${personaColor}">${d.label} - ${d.persona_label}</h2>`;
+  html += `<div class="kv"><strong>Model:</strong> <code>${d.model_id}</code></div>`;
+  html += `<div class="kv"><strong>Recommended:</strong> <span class="badge" style="background:${d.rec_color}">Option ${d.recommendation}</span></div>`;
+  html += `<h3>Full response</h3>`;
+  html += `<div class="response-text">${escapeHtml(d.full_response)}</div>`;
+  if (d.constructs && d.constructs.length) {
+    html += `<h3>Bipolar constructs this agent elicited</h3>`;
+    html += `<p style="font-size: 0.83em; color: #666;">
+      In Phase 3, each agent was given three triads of responses and asked,
+      for each triad, to name the bipolar dimension that distinguishes two
+      from the third. These are this agent's three constructs.
+    </p>`;
+    for (const c of d.constructs) {
+      const triadStr = c.triad ? c.triad.join(', ') : '';
+      html += `<div class="construct-card" style="border-left-color: ${personaColor}">
+        <div style="font-size: 0.78em; color: #888; margin-bottom: 4px;">
+          <code>${escapeHtml(c.id)}</code> &middot; from triad ${escapeHtml(triadStr)}
+        </div>
+        <span class="construct-pole">${escapeHtml(c.left)}</span>
+        <span style="color:#888"> ↔ </span>
+        <span class="construct-pole">${escapeHtml(c.right)}</span>
+      </div>`;
+    }
+  }
+  document.getElementById('detail-area').innerHTML = html;
+}
+
+// Render detail panel for a clicked EDGE
+function renderEdgeDetail(edge) {
+  const d = edge.data();
+  const src = cy.getElementById(d.source).data();
+  const tgt = cy.getElementById(d.target).data();
+  let levelLabel, levelClass, levelBg;
+  if (d.rmse < 0.5) {
+    levelLabel = 'Strong reasoning alignment';
+    levelClass = 'alert-ok';
+  } else if (d.rmse < 1.0) {
+    levelLabel = 'Moderate framing differences';
+    levelClass = 'alert-warn';
+  } else {
+    levelLabel = 'Substantial disagreement at the reasoning level';
+    levelClass = 'alert-danger';
+  }
+
+  let html = `<h2>${src.label} ↔ ${tgt.label}</h2>`;
+  html += `<div class="kv"><strong>${src.label}</strong> (${src.persona_label}) recommended <strong>Option ${src.recommendation}</strong></div>`;
+  html += `<div class="kv"><strong>${tgt.label}</strong> (${tgt.persona_label}) recommended <strong>Option ${tgt.recommendation}</strong></div>`;
+  html += `<div class="alert-banner ${levelClass}">
+    <strong>RMSE = ${d.rmse}</strong> - ${levelLabel}
+  </div>`;
+
+  if (src.recommendation === tgt.recommendation && d.rmse > 0.5) {
+    html += `<div class="alert-banner alert-warn">
+      <strong>Hidden disagreement.</strong> Both agents recommended Option ${src.recommendation},
+      but their underlying reasoning differs (RMSE = ${d.rmse}). Standard
+      ensemble methods would mask this. The dimensions where they diverged
+      most are listed below - probe these before treating this as a robust consensus.
+    </div>`;
+  } else if (src.recommendation !== tgt.recommendation) {
+    html += `<div class="alert-banner alert-warn" style="font-size: 0.87em">
+      These two agents reached different recommendations. The dimensions where
+      they rated options most differently explain why.
+    </div>`;
+  }
+
+  if (d.top_differing_constructs && d.top_differing_constructs.length) {
+    html += `<h3>Top dimensions where they rated options differently</h3>`;
+    html += `<p style="font-size: 0.83em; color: #666;">
+      Each construct below is one of the bipolar dimensions the panel elicited.
+      The numbers show how each agent rated each option (E1-E5) on this dimension,
+      1-7 scale (1 = strong left pole, 7 = strong right pole). Cells highlighted
+      red indicate large rating differences.
+    </p>`;
+    for (const tc of d.top_differing_constructs) {
+      html += `<div class="construct-card">
+        <div style="font-size: 0.83em; color: #666; margin-bottom: 4px;">
+          <code>${escapeHtml(tc.construct_id)}</code> &middot;
+          mean diff: <strong>${tc.mean_abs_diff.toFixed(2)}</strong>
+        </div>
+        <div style="margin-bottom: 8px;">
+          <span class="construct-pole">${escapeHtml(tc.construct_label.split('↔')[0].trim())}</span>
+          <span style="color:#888"> ↔ </span>
+          <span class="construct-pole">${escapeHtml(tc.construct_label.split('↔')[1] ? tc.construct_label.split('↔')[1].trim() : '')}</span>
+        </div>`;
+      const elems = Object.keys(tc.agent_a_ratings).sort();
+      html += `<div class="rating-grid">
+        <div class="rg-cell head">Agent</div>`;
+      for (const e of elems) html += `<div class="rg-cell head">${e}</div>`;
+      html += `<div class="rg-cell" style="background:${src.persona_color};color:white;font-weight:600">${src.label}</div>`;
+      for (const e of elems) {
+        const va = tc.agent_a_ratings[e];
+        const vb = tc.agent_b_ratings[e];
+        const diff = (va !== null && vb !== null) ? Math.abs(va - vb) : 0;
+        const cls = diff >= 3 ? 'diff-high' : diff >= 2 ? 'diff-med' : 'diff-low';
+        html += `<div class="rg-cell ${cls}">${va !== null ? va : '-'}</div>`;
+      }
+      html += `<div class="rg-cell" style="background:${tgt.persona_color};color:white;font-weight:600">${tgt.label}</div>`;
+      for (const e of elems) {
+        const va = tc.agent_a_ratings[e];
+        const vb = tc.agent_b_ratings[e];
+        const diff = (va !== null && vb !== null) ? Math.abs(va - vb) : 0;
+        const cls = diff >= 3 ? 'diff-high' : diff >= 2 ? 'diff-med' : 'diff-low';
+        html += `<div class="rg-cell ${cls}">${vb !== null ? vb : '-'}</div>`;
+      }
+      html += `</div></div>`;
+    }
+  }
+  document.getElementById('detail-area').innerHTML = html;
+}
+
+// Hover highlighting
+cy.on('mouseover', 'node', evt => {
+  const node = evt.target;
+  cy.elements().not(node.neighborhood()).not(node).addClass('dimmed');
+});
+cy.on('mouseout', 'node', () => cy.elements().removeClass('dimmed'));
+
+cy.on('mouseover', 'edge', evt => {
+  const edge = evt.target;
+  cy.elements().not(edge.connectedNodes()).not(edge).addClass('dimmed');
+});
+cy.on('mouseout', 'edge', () => cy.elements().removeClass('dimmed'));
+
+cy.on('tap', 'node', evt => renderNodeDetail(evt.target));
+cy.on('tap', 'edge', evt => renderEdgeDetail(evt.target));
+cy.on('tap', evt => {
+  if (evt.target === cy) {
+    document.getElementById('detail-area').innerHTML = `<div class="placeholder">
+      <p>Click an agent or a line to see detail.</p></div>`;
+  }
+});
+
+// Layout switching
+function setLayout(name) {
+  const opts = {
+    'cose-bilkent': { name: 'cose-bilkent', quality: 'default', nodeRepulsion: 8000,
+                       idealEdgeLength: 220, animate: false },
+    'circle': { name: 'circle', animate: false, radius: 200 },
+    'grid': { name: 'grid', animate: false },
+  };
+  cy.layout(opts[name]).run();
+}
+document.getElementById('btn-cose').onclick = e => {
+  setActiveBtn(e.target); setLayout('cose-bilkent');
+};
+document.getElementById('btn-circle').onclick = e => {
+  setActiveBtn(e.target); setLayout('circle');
+};
+document.getElementById('btn-grid').onclick = e => {
+  setActiveBtn(e.target); setLayout('grid');
+};
+function setActiveBtn(btn) {
+  document.querySelectorAll('.controls button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function escapeHtml(s) {
+  if (!s) return '';
+  return String(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/\n/g, '<br>');
+}
+
+// Auto-fit on load
+setTimeout(() => cy.fit(undefined, 60), 100);
+</script>
+
+</body>
+</html>
